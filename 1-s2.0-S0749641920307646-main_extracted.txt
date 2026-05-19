@@ -1,0 +1,1516 @@
+--- page 1 ---
+International Journal of Plasticity 138 (2021) 102919
+Available online 21 December 2020
+0749-6419/© 2020 Elsevier Ltd. All rights reserved.
+Machine learning-based constitutive model for J2- plasticity 
+Dong Phill Jang
+a
+, Piemaan Fazily
+a
+, Jeong Whan Yoon
+a , b , * 
+a
+Department of Mechanical Engineering, Korea Institute of Science and Technology, Daejeon, 34141, Republic of Korea 
+b
+School of Engineering, Deakin University, 75 Pigdons Rd., Wauran Ponds, VIC, 3216, Australia   
+ARTICLE INFO  
+Keywords: 
+Machine learning 
+Deep learning 
+Artificial neural network 
+Constitutive model 
+Finite element analysis 
+ABSTRACT  
+This research aims to propose a machine learning (ML)-based constitutive model to predict 
+elastoplastic behavior for J2-plasticity. An artificial neural network (ANN) was constructed to 
+replace the nonlinear stress-integration scheme conducted in the conventional theoretical 
+constitutive model under isotropic hardening and associated flow rule. The training dataset 
+required for the ANN Model was numerically generated based on the conventional return map -
+ping scheme in the principal stress space. The training has been effectively carried out with one 
+element simulation along all the possible plastic loading paths for problem independent training. 
+A conventional theoretical method is used for the unloading procedure. Therefore, ANN is 
+selectively utilized only for nonlinear plastic loading while keeping linear elastic loading and the 
+unloading with a physics-based model. After one element training, the ML-based constitutive 
+model was implemented in Abaqus User MATerial (UMAT) and its performance was verified. For 
+this purpose, one element and tensile test simulations were applied to examine the accuracy of the 
+ANN-based model. Also, for fully nonlinear strain-paths, a circular cup drawing simulation was 
+applied to predict the cup profiles which was compared with that to the conventional J2 plas -
+ticity. It was concluded that the simulation results predicted from the ANN-based model show 
+good agreement with those from the conventional J2-based constitutive model. Also, according to 
+simulation time, the ANN-based model shows an advantage in computational efficiency.   
+1. Introduction 
+Machine learning is one of the statistical modeling techniques that make a computer system learn or recognize the implicit patterns 
+of the given data without any explicit description. Using the data-driven nature of machine learning, abstract information or theo -
+retically unknown phenomena can be modeled. For this reason, machine learning emerges as an important technology in various 
+engineering fields, such as computer vision, automatic driving, robotics, etc. An artificial neural network (ANN) is an algorithm of the 
+machine learning group, which emulates the human brain. Among diverse machine learning algorithms, ANN is overwhelmingly being 
+popular due to its superior modeling performance and a wide range of applications as a universal approximator ( Hornik et al., 1989 ). 
+McCulloch et al. (1943) proposed the basic mechanism to implement the role of an actual biological neuron by a node inside ANN (see 
+Rumelhart et al., 1986 ) which built the foundation of optimization for ANN with Backpropagation of error. 
+Recently, the application of ANN for the field of manufacturing has gradually increased. Because of the data-driven nature of ANN 
+models, researchers can describe a functional relationship among the process variables without any physical background. Viswanathan 
+et al. (2003) applied a neural network along with a two-step trajectory of the binder force to control spring back during a channel 
+* Corresponding author. Department of Mechanical Engineering, Korea Institute of Science and Technology, Daejeon, 34141, Republic of Korea. 
+E-mail address: j.yoon@kaist.ac.kr (J.W. Yoon).  
+Contents lists available at ScienceDirect 
+International Journal of Plasticity 
+journal homepage: http://www. elsevier.co m/locate/ijp las 
+https://doi.org/10.1016/j.ijplas.2020.102919 
+Received 29 June 2020; Received in revised form 15 December 2020; Accepted 16 December 2020   
+
+--- page 2 ---
+International Journal of Plasticity 138 (2021) 102919
+2
+forming process. Zhao et al. (2005) utilized a neural network to identify material properties and friction coefficient for a deep drawing 
+with an axisymmetric workpiece. Chokshi et al. (2017) developed an ANN-based model predicting the phase distribution during 
+tailored hot stamping of 22MnB5 boron steel. Christoph et al. (2020) described the constitutive behavior of anisotropic elastic-plastic 
+foam structures using a hybrid multi-scale neural network approach. Similarly, Usman et al. (2019) proposed the ANN framework to 
+model stress-strain and texture evolution in single and polycrystal AA6063-T6 under tension and shear. The applicability of machine 
+learning for predicting stress hotspots in different kinds of FCC and HCP materials was demonstrated by Ankita et al. (2018, 2019). 
+Particularly in the metal plasticity field, ANN has widely been utilized for material modeling. Many researchers describe the 
+hardening behavior of metals with ANN taking the effects of strain rates and temperatures into account. Li et al. (2012) predicted the 
+flow behavior of low alloy steel at elevated temperatures and different strain rates with ANN, and the results from ANN showed a good 
+agreement with experimental data. Lin et al. (2008) used ANN to predict the flow behavior of medium carbon and low alloy steel 
+during hot deformation. Li et al. (2019) used ANN to predict the flow stress of DP800 steel at various temperatures and strain rates and 
+conducted a dog-bone tensile test simulation with the ANN-based hardening model. In these studies, ANN-based hardening models 
+predict hardening behavior at various temperatures and strain rates that could not be described as conventional rate- and 
+temperature-dependent hardening models such as the Johnson-Cook model (see Johnson et al., 1983). Ali et al. (2019) used ANN to 
+predict flow behavior and pole figure of polycrystalline metals under uniaxial tension and simple shear, and the results from ANN 
+matched up with the results from the crystal plasticity finite element (FE) method. 
+Unlike ANN-based hardening models, ANN-based constitutive models were studied by a few researchers (Ghaboussi et al., 1991; 
+Palau, 2012). Ghaboussi et al. (1991) published a pioneering paper, where they suggested an ANN-based constitutive model for plane 
+concrete under biaxial monotonic loading and uniaxial cyclic loading. The ANN model proposed by Ghaboussi et al. (1991) predicts 
+several loading paths successfully under the biaxial loading condition. However, because they used only a few experimental data for 
+training, the training data do not represent the overall material behavior of plane concrete. Therefore, their ANN model could not 
+predict untrained loading paths. Later, Palau et al. (2012) developed the ANN-based constitutive model to describe elastoplastic 
+behavior in the plane strain condition. Besides, they implemented their ANN model into a commercial FE code (ABAQUS/Explicit). 
+They predicted various types of nonlinear loading paths in single element simulation with the ANN model. However, similarly to the 
+work done by Ghaboussi et al. (1991), their ANN model could not predict untrained loading paths accurately. Consequently, they did 
+not report the multi-element simulation result with their ANN model. To apply an ANN-based constitutive model for practical FE 
+simulation, the ANN-based constitutive model needs to ensure accuracy for any arbitrary loading paths, even for untrained loading 
+paths. 
+In this paper, an ANN-based constitutive model, which is possible to predict any arbitrary loading path accurately, was developed. 
+The developed model replaces the nonlinear plastic correction procedure for the plastic loading path during the stress integration 
+method while keeping the elastic linear and loading and unloading with a conventional physics-based scheme. That way the training 
+for all the plastic loading paths can be efficiently achieved with one element training. Therefore, ANN can contribute to the most time- 
+consuming iterative procedure during stress integration by using ANN selectively by keeping the advantages of a physics-based model. 
+The developed model is problem independent. For FE analysis, constitutive equations are solved in the time-discrete domain. To 
+reduce the required size of training data, stress integration is performed in the principal stress domain. The solution algorithm with the 
+proposed ANN-based constitutive model will be proposed in Section 2. Training data were numerically generated by the conventional 
+theoretical return mapping model. Overfitting issue was observed during the training process, thus a suitable training dataset was 
+identified to prevent overfitting in Section 3.1. Furthermore, a case study on neural architectures was performed to investigate an 
+efficient neural architecture in Section 3.2. After training had been completed, the ANN model was implemented with UMAT (User 
+MATerial) interface for commercial software, ABAQUS2016/STANDARD. For verification, single-element simulations under three 
+typical loading paths: uniaxial tension, simple shear, and plane strain and dog-bone tensile test simulation were conducted. 
+Furthermore, in order to show the validity for any nonlinear strain paths, the proposed ANN-based constitutive model was applied to a 
+cup drawing simulation. The cup height profile and CPU time were compared to those for the conventional theoretical constitutive 
+model. The aforementioned simulation results will be discussed in Section 4. Finally, conclusions and future work will be summarized 
+in Section 5. 
+2. An artificial neural network-based constitutive model 
+The return mapping scheme is a popular solution algorithm to solve the governing equation of associated plastic evolution while 
+satisfying the consistency condition. In this paper, the proposed artificial neural network (ANN)-based constitutive model replaces the 
+aforementioned theoretical constitutive equations. An ANN achieves modeling performance by using the recognized patterns among 
+numerous data. In other words, an ANN can generally describe the unknown relationship among variables through the statistical 
+analysis of the given data themselves without any physics. However, in elastic prediction and plastic connection procedure, only the 
+plastic connection scheme which involves nonlinear iterations is replaced with the ANN model which makes the developed model to 
+help the physics-based model in terms of robustness and speed in this study. 
+2.1. Internal mechanism of artificial neural network 
+Artificial neural network (ANN) is mainly constructed by three types of layers: (1) input layer, (2) output layer, and (3) hidden 
+layers between the input and output layers. Each layer contains a number of nodes and the node connectivity is adjusted by weight and 
+bias parameters. In the operating process, each node receives the information from the preceding layer with two steps: (1) receiving 
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 3 ---
+International Journal of Plasticity 138 (2021) 102919
+3
+information and (2) activation. First, the information is delivered in the form of the weighted sum: the linear combination of nodal 
+values in the preceding layer by the weight and bias parameters. In this paper, He et al. (2015) initialization with the normal dis -
+tribution is utilized for weight initialization. After the delivery of the information, the current node is activated by Rectified Linear Unit 
+(ReLU) (see Nair et al., 2014 ) function called an activation function. 
+Assuming an ANN describes the nonlinear mapping from input variables N
+( i )
+to output variables N
+( o )
+, ANN computes along with 
+feed-forward directions from the input layer to the output layer as the following step:  
+1. Input variables are normalized to avoid ill-conditioning for optimization. Then, the input layer vector becomes 
+I = [ x
+1
+, x
+2
+, ⋯ , x
+N
+( i ) ]
+T
+(1)    
+2. The first hidden layer takes the weighted sum between the input layer and the first hidden layer and is activated by the ReLU 
+function, f . 
+H
+i
+( 1 )
+= f
+(
+∑
+N
+( i )
+j = 1
+W
+( 1 )
+ij
+x
+j
++ b
+( 1 )
+i
+)
+for i = 1 , 2 , ⋯ , N
+( 1 )
+(2)  
+where H
+i
+( 1 )
+, W
+ij
+( 1 )
+and, b
+( 1 )
+i 
+represent the activated nodal values of the first hidden layer, weight parameters, and bias parameters 
+between the first hidden and input layers, respectively. Superscripts indicate the order of the hidden layers, particularly superscript ‘ 1 ’ 
+indicates the first hidden layer, subscript ‘ i ’ and ‘ j ’ indicate the order of the components of the activated hidden and preceding hidden 
+Fig. 1. The neural architecture of the proposed ANN-based constitutive model.  
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 4 ---
+International Journal of Plasticity 138 (2021) 102919
+4
+layers, respectively. N
+( 1 )
+is the number of hidden nodes in the first hidden layer.  
+3. In succession, activation of subsequent M   1 hidden layers propagate toward the output layer. 
+activation of 2
+nd
+hidden layer : H
+i
+( 2 )
+= Relu
+∑
+N
+( 1 )
+j = 1
+W
+( 2 )
+ij
+H
+j
+( 1 )
++ b
+( 2 )
+i
+for i = 1 , 2 , ⋯ , N
+( 2 )
+activation of 3
+rd
+hidden layer : H
+i
+( 3 )
+= Relu
+∑
+N
+( 2 )
+j = 1
+W
+( 3 )
+ij
+H
+j
+( 2 )
++ b
+( 3 )
+i
+for i = 1 , 2 , ⋯ , N
+( 3 )
+⋮ 
+activation of M
+th
+hidden layer : H
+i
+( M )
+= Relu
+∑
+N
+( M   1 )
+j = 1
+W
+( M )
+ij
+H
+j
+( M   1 )
++ b
+( M )
+i
+for i = 1 , 2 , ⋯ , N
+( M )
+(3)  
+where M is the total number of the hidden layers.  
+4. Finally, the output variables are computed from the M
+th 
+hidden layer as the following equation, 
+y
+i
+=
+∑
+N
+( M )
+j = 1
+W
+( o )
+ij
+H
+( M )
+j
++ b
+( o )
+i
+(4) 
+As shown in Eq. (4) , the output variables are computed by the linear combination of the activated nodal values in the last hidden 
+layer. Note that the activation function is not utilized for the output layer. Also, the Adaptive Moment Estimation (ADAM) (see Kingma 
+et al., 2014 ) optimizer is utilized to reduce the cost function in our particular ANN model. Adam optimization is a stochastic gradient 
+descent method that is based on an adaptive estimation of first-order and second-order moments. The mean square error (MSE) was 
+employed as the cost function. The ANN model is trained, such that the MSE is minimized over several epochs or iterations. If no 
+improvement is observed in the value of cost function over 50 consecutive epochs the training is stopped. 
+2.2. Solution algorithm of the artificial neural network-based constitutive model 
+The proposed ANN-based constitutive model describes the nonlinear functional relationship among two trial principal stresses, 
+present flow stresses, and two updated principal stresses in the time-discrete domain as shown in Fig. 1 . The proposed ANN-based 
+constitutive model replaces the plastic corrector step in the return mapping algorithm for plane stress plasticity (see Simo et al., 1998 ). 
+In the conventional approach, return mapping is directly performed in the projected plane-stress subspace, such that a generic 
+plane stress tensor with the corresponding plane stress subspace S
+p 
+is defined as: 
+σ =
+⎡
+⎣
+σ
+xx
+σ
+xy
+0
+σ
+xy
+σ
+yy
+0
+0 0 0
+⎤
+⎦
+, S
+p
+=
+{
+σ
+⃒
+⃒
+σ
+xz
+= σ
+yz
+= σ
+zz
+= 0
+}
+(5) 
+Considering the solution algorithm for the time-discrete constitutive equations, it is identical to the elastic prediction step in the 
+conventional theoretical approach and the proposed ANN-based constitutive model. Subsequently, the consistency condition is 
+checked to identify whether the given loading path causes plastic evolution with the following equation: 
+R = σ
+ 
+σ
+TR
+)
+  ρ ( ε
+p , n
+) (6)  
+where R is the residual for the consistency condition, σ
+TR 
+is the trial stress tensor, ε
+p , n 
+is the present effective plastic strain, ρ is the 
+corresponding flow stress and σ is the equivalent stress. When the computed value of Eq. (6) is negative or zero, the updated stress is 
+the same as the trial stress. Then, the plastic strain is not accumulated, and the plastic corrector step is skipped. In contrast, if it is larger 
+than zero, the plastic corrector step requires the plastic correction by the return mapping method in the constrained plane-stress 
+subspace. 
+In the conventional approach, an iterative scheme such as the Newton-Raphson algorithm may be employed to compute the plastic 
+multiplier Δγ to obtain updated plane stress tensor, such that: 
+σ
+n + 1
+= σ
+TR
+  C
+e
+Δγ P σ
+n + 1
+(7)  
+where σ
+n + 1 
+is the updated stress tensor, σ
+TR 
+is the trial stress tensor, C
+e 
+is the plane stress elasticity matrix and P is the matrix defined by, 
+P =
+1
+3
+⎡
+⎣
+2   1 0
+  1 2 0
+0 0 6
+⎤
+⎦
+(8) 
+On the other hand, with R > 0 , the proposed ANN-based constitutive model operates with the following steps: 
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 5 ---
+International Journal of Plasticity 138 (2021) 102919
+5
+1. Compute spectral decomposition of the trial stress, i.e., 
+σ
+TR
+=
+∑
+2
+A = 1
+σ
+TR
+A
+n
+A
+⊗ n
+A
+(9)    
+2. Compute the updated principal stress with the ANN-based constitutive model, i.e., 
+ANN :
+⎧
+⎪
+⎪
+⎨
+⎪
+⎪
+⎩
+σ
+TR
+1
+σ
+TR
+2
+ρ ( ε
+p , n
+)
+⎫
+⎪
+⎪
+⎬
+⎪
+⎪
+⎭
+→
+{
+σ
+n + 1
+1
+σ
+n + 1
+2
+}
+(10)    
+3. Update the effective plastic strain assuming the consistency is maintained, i.e., 
+ρ ( ε
+p , n + 1
+) = σ
+ 
+σ
+n + 1
+)
+(11) 
+The effective plastic strain is computed as, 
+ε
+p , n + 1
+=
+(
+ρ
+K
+) 1
+n
+  ε
+0
+(12)  
+where K , ε
+0
+, and n are constants of Swift law computed based on materials flow stress curve.  
+4. Perform the rotation transformation of the updated stress tensor to the material coordinate, i.e., 
+σ
+n + 1
+=
+∑
+2
+A = 1
+σ
+n + 1
+A
+n
+A
+⊗ n
+A
+=
+∑
+2
+i = 1
+∑
+2
+j = 1
+σ
+n + 1
+ij
+e
+i
+⊗ e
+j
+(13)  
+3. Training data and neural architecture with one element FEM 
+For successful training, the suitable training dataset and neural architecture were identified. The most important factor determining 
+the modeling performance of ANN is the quality and quantity of training data. Training data should represent the overall features of the 
+modeling target, otherwise, the overfitting problem occurs during the training process. Before describing the ANN network, a brief 
+overview of the plane stress return mapping scheme was presented in section 3.1 . In Section 3.2 , the suitable training dataset that 
+prevents the overfitting problem was investigated. 
+The modeling performance of an ANN is also dependent on a neural architecture. In the neural network, there are several hidden 
+layers, and each layer has a number of nodes. A case study on neural architectures was performed and the best architecture in terms of 
+the modeling accuracy was identified in Section 3.3 . Thereafter the training of the ANN model was discussed in section 3.4 . 
+3.1. Review of plane stress return mapping method 
+Several procedures to find the numerical solution to the plane stress elastoplastic problem was discussed by Neto et al. (2008) . The 
+UMAT employed in this work utilizes an implicit return mapping scheme ( Simo and Taylor, 1986 ; Simo, 1998 ), where the return 
+mapping is performed in the constraint plane-stress subspace. Further, Yoon et al. (2004) presented a plane stress return mapping 
+method for a non-quadratic anisotropic yield function with three stress components ( Barlat et al., 2003 ) where finite element 
+implementation was performed based on the Euler-Backward method with ABAQUS UMAT. This section provides a brief overview of 
+the plane stress algorithm by Simo and Taylor (1986) with the ANN algorithm interface. 
+˙ε = ˙ε
+e
++ ˙ε
+p
+σ = C
+e
+ε
+e
+f =
+1
+2
+σ
+T
+P σ  
+1
+3
+ρ
+2
+( ε
+p
+)
+˙ε
+p
+= ˙γ P σ
+˙
+ε
+p
+= ˙γ
+̅̅̅̅̅̅̅̅̅̅̅̅̅ ̅
+2
+3
+σ
+T
+P σ
+√
+(14)  
+where stress vector is σ : =
+[
+σ
+xx
+σ
+yy
+σ
+xy
+]
+T
+, σ
+xz
+= σ
+yz
+= σ
+zz
+= 0, C
+e 
+is the plane stress elasticity matrix. Considering the general 
+framework for elastic predictor/return-mapping scheme, the elastic predictor state is computed as, 
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 6 ---
+International Journal of Plasticity 138 (2021) 102919
+6
+ε
+n + 1
+= ε
+n
++ Δ ε
+σ
+n + 1
+= C
+e
+ 
+ε
+n + 1
+  ε
+p
+)
+f
+TR
+=
+1
+2
+ 
+σ
+TR
+)
+T
+P σ
+TR
+ 
+1
+3
+ρ
+2
+( ε
+p , TR
+)
+(15) 
+If f
+TR
+≤ 0 the process is elastic else, the plastic return mapping utilizing a backward-Euler difference scheme requires solving the 
+following equations, 
+ε
+p , n + 1
+= ε
+p , n
++ Δ γ P σ
+n + 1
+ε
+p , n + 1
+= ε
+p , n
++ Δ γ
+̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅ ̅̅̅̅̅̅̅̅ ̅
+2
+3
+ 
+σ
+n + 1
+)
+T
+P σ
+n + 1
+√
+1
+2
+ 
+σ
+n + 1
+)
+T
+P σ
+n + 1
+ 
+1
+3
+ρ
+2
+( ε
+p , n + 1
+) = 0
+(16)  
+where Δγ is the plastic Lagrange multiplier. Assuming isotropic linear elasticity, the Cauchy stress vector at the end of increment is, 
+σ
+n + 1
+= σ
+n
++ C
+e
+Δ ε
+e
+= σ
+n
++ C
+e
+( Δ ε   Δ ε
+p
+)
+∵ σ
+TR
+= σ
+n
++ C
+e
+Δ ε
+σ
+n + 1
+= σ
+TR
+  C
+e
+Δγ P σ
+n + 1
+(17) 
+The Δγ , plastic Lagrange multiplier is determined using the Newton-Raphson iterative scheme enforcing the consistency condition 
+at the end of the time-step such that, 
+f ( Δγ ) : =
+1
+2
+ξ
+n + 1
+(
+Δ γ
+)
+ 
+1
+3
+ρ
+2
+(
+ε
+p , n
++ Δ γ
+̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅ ̅̅ ̅
+2
+3
+ξ
+n + 1
+(
+Δ γ
+)
+√ )
+= 0 (18)  
+where ξ
+n + 1
+= ( σ
+n + 1
+)
+T
+P σ
+n + 1 
+and with the solution of Δγ , the stress, plastic strain, and equivalent strain are updated. After the updated 
+stress caused by the material deformation is obtained, thickness strain is updated as, 
+ε
+33
+=  
+ν
+E
+ 
+σ
+xx
++ σ
+yy
+)
+ 
+(
+ε
+p
+xx
++ ε
+p
+yy
+)
+. (19) 
+A substantial advancement of the plane stress return mapping method is to completely determine the plastic part of the deformation 
+without an iterative estimation of the thickness strain increment as shown in Eq. (19) . 
+Finally, the elastoplastic tangent modulus is defined as, 
+d σ
+n + 1
+= C
+ep
+d ε
+n + 1
+(20)  
+where 
+C
+ep
+= C  
+Cm
+n + 1
+⊗ Cm
+n + 1
+m
+n + 1
+Cm
+n + 1
++ h
+′
+C =
+[
+C
+e
+  1
++ γ
+∂ m
+( n + 1 )
+∂ σ
+( n + 1 )
+]
+  1
+, m =
+∂ σ
+∂ σ
+, C
+e
+=
+E
+1   ν
+2
+⎡
+⎢
+⎢
+⎢
+⎣
+1 ν 0
+ν 1 0
+0 0
+1   ν
+2
+⎤
+⎥
+⎥
+⎥
+⎦
+On the other hand, the UMAT based on the ANN model focuses on replacing the iterative procedure for finding the updated stress 
+vector. Equations (16) – (18 ) are replaced by the ANN network as described in Section 2.2 . Given the trial stress vector σ
+TR
+: =
+[
+σ
+TR
+xx
+σ
+TR
+yy
+σ
+TR
+xy
+]
+T
+, the principal stresses are computed as, 
+σ
+TR
+1 , 2
+=
+1
+2
+(
+σ
+TR
+xx
++ σ
+TR
+yy
+)
+±
+̅̅̅̅̅̅̅̅̅̅̅̅̅̅ ̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅ ̅
+(
+σ
+TR
+xx
+  σ
+TR
+yy
+2
+) 2
++ σ
+TR
+xy
+2
+√
+(21)  
+cos 2 θ =
+σ
+TR
+xx
+  σ
+TR
+yy
+2
+̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅ ̅̅̅̅̅̅̅̅̅̅̅̅̅̅ ̅
+(
+σ
+TR
+xx
+  σ
+TR
+yy
+2
+) 2
++ σ
+TR
+xy
+2
+√ , sin 2 θ =
+σ
+TR
+xy
+̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅ ̅̅̅̅̅̅̅̅̅̅ ̅
+(
+σ
+TR
+xx
+  σ
+TR
+yy
+2
+) 2
++ σ
+TR
+xy
+2
+√ (22) 
+The above trial principal stresses along with flow stress are fed into the ANN network as indicated in equation (10) to calculate the 
+updated principal stresses. Thereafter, the updated principal stresses are transformed back to the material coordinates using the 
+following relations, 
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 7 ---
+International Journal of Plasticity 138 (2021) 102919
+7
+σ
+n + 1
+xx
+=
+1
+2
+ 
+σ
+n + 1
+1
++ σ
+n + 1
+2
+)
++
+1
+2
+ 
+σ
+n + 1
+1
+  σ
+n + 1
+2
+)
+cos 2 θ
+σ
+n + 1
+yy
+=
+1
+2
+ 
+σ
+n + 1
+1
++ σ
+n + 1
+2
+)
+ 
+1
+2
+ 
+σ
+n + 1
+1
+  σ
+n + 1
+2
+)
+cos 2 θ
+σ
+n + 1
+xy
+=  
+1
+2
+ 
+σ
+n + 1
+1
+  σ
+n + 1
+2
+)
+sin 2 θ
+(23)  
+3.2. An investigation into a suitable training dataset 
+Training data were numerically generated based on the conventional theoretical return mapping scheme. Recalling the ANN-based 
+constitutive model describes the nonlinear functional relationship among the three input variables ( σ
+TR
+1
+, σ
+TR
+2 
+and ρ ( ε
+p
+) ) and the two 
+output variables ( σ
+1 
+and σ
+2
+) in the time-discrete domain, the two trial stresses ( σ
+TR
+1 
+and σ
+TR
+2
+) are computed from the prescribed current 
+flow stress ρ ( ε
+p
+) and two updated stresses ( σ
+1 
+and σ
+2
+) with following equations: 
+[
+σ
+TR
+1
+σ
+TR
+2
+]
+=
+[
+σ
+1
+σ
+2
+]
++ Δγ
+E
+1   v
+2
+[
+1 v
+v 1
+][
+( 2 σ
+1
+  σ
+2
+) / 2 σ
+( 2 σ
+2
+  σ
+1
+) / 2 σ
+]
+(24)  
+where Δγ is the plastic parameter for the given loading path, E is the Elastic modulus and v is the Poisson ratio. The size of a training 
+dataset is dependent on two design variables of the data generation scheme. The first design variable is the density of data on the 
+hardening curve, which is relative to the input variable ρ ( ε
+p
+) shown in Fig. 2 . The non-uniform grid on ε
+p
+-axis is utilized, and interval 
+among non-uniform grid ( ε
+p
+n + 1
+  ε
+p
+n
+) , where the subscript n indicates the order of a data point on the hardening curve, should be 
+determined. The hardening curve using Swift law takes the form, 
+ρ ( ε
+p , n + 1
+) = K * ( ε
+0
++ ε
+p , n + 1
+)
+n
+[ MPa ] (25)  
+where K , ε
+0
+, and n are constants computed based on materials flow stress curve. 
+The second design variable is the density of data on the yield surface at the given hardening, which is related to the two output 
+variables ( σ
+1 
+and σ
+2
+) shown in Fig. 3 . The two updated principal stresses are represented in the polar coordinate as follows: 
+[
+σ
+1
+σ
+2
+]
+=
+[
+σ
+θ
+cos θ
+σ
+θ
+sin θ
+]
+ 
+π
+4
+≤ θ ≤
+3 π
+4
+(26)  
+where θ is the angle from the σ
+1
+-axis. Stress is equally discretized with the constant difference in the angle Δθ . 
+The size of the dataset and the complexity of the ANN network are the primary design factors as it poses a tradeoff. If the training 
+dataset cannot represent the overall features of the modeling target, in case of insufficient data, a deep ANN model may overfit the 
+modeling target. Contrary, If the training dataset is too big, a shallow ANN model may overfit the modeling target. The adjective 
+“ deep ” in deep learning usually indicates networks with multiple layers. To prevent the overfitting or underfitting problem, a sufficient 
+amount of training data is required. A deep neural architecture with 2 layers/30 nodes was employed for the selection of the size of the 
+training set. Further discussion of the neural architecture can be found in section 3.2 . To investigate the suitable density of training 
+data on the hardening curve, three distinct datasets were compared as shown in Table 1 . 
+For the first dataset, the interval among the non-uniform grid is a random value in the range of [10
+  3
+, 10
+  2
+] and the number of data 
+points on the hardening curve is 20. Hence, the effective plastic strain starting from the value of 0 in the hardening curve is discretized 
+into 20 points up to the maximum value of 0.1. From the first set to the third set, the interval among the non-uniform grid decreases 10 
+Fig. 2. Schematic representation of the density of training data on the hardening curve.  
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 8 ---
+International Journal of Plasticity 138 (2021) 102919
+8
+times, and accordingly, the number of data points on the hardening curve increases 10 times. After 10 epochs of training, the maximum 
+error of the mean of 2 output variables is plotted with respect to the epoch in Fig. 4 . 
+When the ANN model is trained by the first dataset, the maximum error for the ANN output σ
+1 
+decreases as training continues. 
+However, the maximum error for the second and third dataset increase, which is the observation of the overfitting. Additionally, the 
+maximum error for all datasets decreases as training continues. Consequently, a suitable interval of the non-uniform grid on ε
+p
+-axis is 
+[10
+  4
+, 10
+  3
+] following that of the second dataset. 
+Similarly, the suitable density of training data on the updated yield surface is investigated by comparing three datasets as shown in 
+Table 2 . 
+For the first set, the number of stress points on (half) yield surface is 45, and relevant Δθ = 2 . 5
+∘
+. 
+From the first to the third sets, the number of stress points increases, and accordingly relevant Δθ decreases. After 200 epochs of 
+training, the maximum error of the mean of 2 output variables is plotted with respect to the epoch in Fig. 5 . 
+When the ANN model is trained by the first dataset, the overfitting problem is observed after 180 epochs. When the ANN model is 
+trained by the second datasets, the maximum error for all datasets decreases as training continues. Consequently, a suitable number of 
+stress points on updated (half) yield surface is 180, and relevant Δθ = 1
+∘
+. To consider the large deformation regime, the maximum 
+effective plastic strain in training data ε
+p
+max 
+is defined 0.6 and determined the design variables for the training dataset are listed in 
+Table 3 . Note that excessively large loading paths are excluded, i.e., 
+σ
+ 
+σ
+TR
+)
+  ρ ( ε
+p
+) > 1 . 2 * ( initialyield stress ) (27)  
+3.3. Case study on neural architectures 
+The modeling performance of a neural network depends on two variables, depth, and wideness of the neural network. The quantitative 
+indicators of depth and wideness are the number of hidden layers and the number of hidden nodes per hidden layer, respectively. For the 
+depth, two levels were compared: two-layer and five-layer architectures. For the wideness, three levels were compared: ten-node, thirty- 
+node- and fifty-node architectures. Accordingly, six distinct neural architectures were compared. The maximum error of six different ar -
+chitectures right after 100 epochs are compared in Fig. 6 . For the case of 10 node-architectures, the error is large regardless of depth. If the 
+number of nodes per layer is larger than 30, the degree of error is similar for any architecture. The combination of 5 layers and 30 nodes 
+shows the minimum error among 6 architectures. Comparing the architecture with 5 layers/30 nodes and 5 layers/50 nodes, the error is 
+larger even though the number of nodes increases. Consequently, the architecture with 5 layers and 30 nodes was employed in this paper. 
+Glorot et al. (2011) indicated that linear rectifiers such as Rectified Linear Unit (ReLU) (see Nair et al., 2014 ), there is no gradient vanishing 
+effect due to activation non-linearities of Sigmoid or Tanh units. Hence, except for the output nodes, the ReLU was employed as the acti -
+vation function. 
+Fig. 3. Schematic representation of the number of stress points on updated (half) yield surface.  
+Table 1 
+Three distinct datasets with different density of training data on the hardening curve.  
+Set Interval between non-uniform 
+grid ( ε
+p
+n + 1
+  ε
+p
+n
+)  
+The number of data 
+points 
+on the hardening 
+curve 
+The maximum effective plastic 
+strain ( ε
+p
+max
+)  
+The number of stress 
+points 
+on the updated 
+yield surface 
+Plastic accumulation for given 
+loading path 
+Set1 [10
+  3
+, 10
+  2
+] 20 0.1 180 Δγ ∈ [10
+  6
+, 10
+  2
+]  
+Set2 [10
+  4
+, 10
+  3
+] 200 
+Set3 [10
+  5
+, 10
+  4
+] 2000  
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 9 ---
+International Journal of Plasticity 138 (2021) 102919
+9
+Fig. 4. Maximum mean square error (MSE) of the two output variables ( σ
+1 
+and σ
+2
+) versus epoch plot for 3 sets: (a) MSE based on ANN output σ
+1
+; (b) 
+MSE based on ANN output σ
+2
+. 
+Table 2 
+Three distinct datasets with different numbers of stress points on the updated yield surface.  
+Set Angle between neighboring 
+stress points ( Δ θ )  
+The number of stress points 
+on the trial yield surface 
+The maximum effective 
+plastic strain ( ε
+p
+max
+)  
+Interval between non- 
+uniform grid ( ε
+p
+n + 1
+  ε
+p
+n
+)  
+Plastic accumulation for 
+given loading path 
+Set1 2.5
+◦
+45 0.1 [10
+  4
+, 10
+  3
+] Δγ ∈ [10
+  6
+, 10
+  2
+]  
+Set2 1
+◦
+180 
+Set3 0.5
+◦
+360  
+Fig. 5. Maximum mean square error (MSE) of the two output variables ( σ
+1 
+and σ
+2
+) versus epoch plot for 3 sets: (a) MSE based on ANN output σ
+1
+; (b) 
+MSE based on ANN output σ
+2
+. 
+Table 3 
+Determined design variables for the training dataset.  
+Density of training data on the hardening curve Δ ε
+p
+∈ [10
+  4
+, 10
+  3
+] 
+ε
+p
+max
+= 0 . 6  
+1200 points 
+The number of stress points on the updated yield surface Δθ = 1
+◦
+180 points 
+Plastic accumulation for given loading path Δγ ∈ [10
+  6
+, 10
+  2
+]  –  
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 10 ---
+International Journal of Plasticity 138 (2021) 102919
+10
+3.4. Training the ANN model 
+After the selection of a suitable training dataset and neural architecture, the ANN network was trained and the cost function is 
+monitored for the course of training. The total size of the dataset was 338182, out of which 90% was used for training and 10% was 
+utilized for testing the performance of the ANN model. A fraction of 0.1 of the training set is used as a validation set during the training, 
+hence, avoiding overfitting, by monitoring the cost function of the validation set. Using early stopping criteria, such that if no 
+improvement is observed in the value of cost function for the validation set over 50 consecutive epochs the training is stopped. 
+Thereafter, the training stopped at 412 epochs, and the maximum error of the 2 output variables is plotted with respect to the epoch in 
+Fig. 7 . 
+Since the ANN model is trained, we extracted the weights and biases of the trained model. Thereafter, the ANN-based constitutive 
+model was implemented in Abaqus User MATerial (UMAT) using the mechanism explained in Section 2.1 , obtaining Eq. (10) . To 
+illustrate the characteristics of the proposed ANN model, one design case has been considered and implemented in MATLAB. A random 
+sample input was chosen from the dataset, such that σ
+TR
+1
+= 331 . 75 ​ MPa, σ
+TR
+2
+= 167 . 78 ​ MPa and ρ ( ε
+p , n
+) = 280 . 84 MPa . The input was 
+fed into the ANN model Blackbox, and the output of each hidden layer was noted as shown in Fig. 8 . Inactive neurons are because the 
+ReLU function does not activate for a negative input, and activates for positive input only. The output of the Blackbox was σ
+n + 1
+1
+=
+324 . 26 MPa and σ
+n + 1
+2
+= 165 . 22 MPa . Contrary to the convolutional neural network in which one can visualize the learned images in- 
+between hidden layers, such observation is rather difficult for numerical data-based ANN models. However, as the training proceeds, 
+the ANN model learns the explicit relationship between its input and output, as observed in section 4 . 
+4. Results and discussion 
+After training had been completed, the ANN-based constitutive model was implemented in the User MATerial interface (UMAT) for 
+ABAQUS 2016/STANDARD. To verify the accuracy of the proposed ANN-based constitutive model, single-element simulation under 
+four typical loading paths was conducted, and the simulation results were compared with those obtained from the conventional 
+theoretical constitutive model with Euler Backward return mapping scheme. Additionally, to verify the feasibility of the ANN-based 
+constitutive model for multi-element simulation, a dog-bone tensile test simulation was conducted. Finally, the ANN-based consti -
+tutive model was applied for a circular cup drawing simulation for fully nonlinear strain paths. The simulation results such as the cup 
+height and simulation time were compared with those obtained from the conventional theoretical constitutive model. 
+4.1. Verification1: single-element simulation 
+The ANN model replaces the conventional constitutive model composed of von Mises yield function and Swift isotropic hardening 
+law with the following equation: 
+ρ ( ε
+p
+) = 646 * ( 0 . 025 + ε
+p
+)
+0 . 227
+[ MPa ] (28) 
+Single-element uniaxial tension (elongated along the x-direction), simple shear, and plane strain (elongated along the x-direction), 
+and cyclic (uniaxial tension-compression-tension) simulation were conducted. The single-element was a four-node element with 
+reduced integration, donated as S4R. The young modulus was 70 GPa with Poisson ’ s ratio of 0.33. The fixed time increment setting was 
+employed with 100 increments. As shown in Fig. 9 , the stress responses predicted from the proposed ANN-based constitutive model 
+Fig. 6. Comparison of maximum MSE error right after 100 epochs by 6 distinct neural architectures.  
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 11 ---
+International Journal of Plasticity 138 (2021) 102919
+11
+Fig. 7. Maximum error of the 2 output variables using early stopping criteria.  
+Fig. 8. The Blackbox of the proposed ANN model indicating output of each layer for a random input sample.  
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 12 ---
+International Journal of Plasticity 138 (2021) 102919
+12
+show a good agreement with those predicted from the theoretical constitutive model. Comparing with the conventional theoretical 
+constitutive model, the mean relative errors for the four loading paths are less than 1%, and there is no overshooting value. Therefore, 
+the ANN model was successfully able to predict the correct loading path among all the possible loading paths employed in the training 
+set. 
+4.2. Verification2: dog-bone tensile test simulation 
+To verify the feasibility of the proposed ANN-based constitutive model on multi-elements simulation, a dog-bone tensile test 
+simulation was conducted. Utilized material properties are the same as those used in Section 4.1 . ASTM E8/E8M-16a (2016) sub-size 
+specimen was used for the simulation as shown in Fig. 10 . The shell element with reduced integration (S4R) was employed. The total 
+number of elements is 1000. The auto time increment setting was employed with the minimum 0.001 s and maximum 0.02 s for the 
+total time of 1 s. For boundary conditions, the left side of the specimen is fixed, and the right side of the specimen is stretched until 9 
+mm. 
+Fig. 11 and Fig. 12 show the comparisons of the effective stress and effective plastic strain predicted from the theoretical and 
+proposed ANN-based constitutive models, respectively. The results show a negligible difference between the proposed ANN-based and 
+theoretical constitutive models. For the dog-bone simulation when compared to the theoretical model the mean relative error of stress 
+responses predicted by the ANN is 0.31%. For effective plastic strain contour, there is no noticeable difference. 
+For the detailed comparisons, five points were selected from the dog-bone specimen, three in the gauge section, and two in the fillet 
+region as shown in Fig. 13 . In the gauge section, the longitudinal stress predicted from the ANN model exactly follows the targeted 
+constitutive equation, obtained from the analytical model as shown in Fig. 14 (a). Fig. 14 (b) shows the stress-triaxiality in the gauge 
+section. The stress-triaxiality predicted by the ANN model maintains the value of 
+1
+3
+, which means that the ANN model well describes the 
+uniaxial tension path in the gauge section. 
+In the fillet regions of a dog-bone specimen, the specimen undergoes more complex nonlinear strain paths, which contain both 
+normal stress and shear stress. Fig. 15 compares two normal stresses and the shear stresses predicted from the theoretical and ANN- 
+Fig. 9. Comparison of stress responses predicted by the ANN model and the theoretical model for the four typical loading paths: ( a ) uniaxial tension; 
+( b ) simple shear; (c) plane strain; (d) cyclic loading. 
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 13 ---
+International Journal of Plasticity 138 (2021) 102919
+13
+based constitutive models in the material embedded coordinate and both results are in good agreement. 
+4.3. Application: circular cup drawing simulation 
+The proposed ANN-based constitutive model was applied to a circular cup drawing simulation. The detailed dimensions and 
+process variables for circular cup drawing simulation were set by referring to Yoon et al. (2006) . The type of elements for the blank 
+sheet is S4R, and 360 elements with 394 nodes are utilized as shown in Fig. 16 . The auto time increment setting was employed with the 
+regulation of maximum time increment 5*10
+  3 
+for the total time of 1 s. 
+Cup height profiles predicted from both the theoretical and ANN models have a good agreement as shown in Fig. 17 . Because of the 
+isotropic nature of J2 plasticity, the cup height profile shows a straight line. 
+The effective stress and effective plastic strain contours were compared in Figs. 18 and 19 . In the case of effective stress contours, 
+there is max. 10 MPa difference at the bottom region of the cup. For the cup drawing simulation when compared to the theoretical 
+model the mean relative error of stress responses predicted by the ANN is 0.77%. For effective plastic strain contour, there is no 
+Fig. 10. ASTM E8/E8M-16a standard for the sub-size dog-bone specimen.  
+Fig. 11. Comparison of effective stress contours for the dog-bone tensile test simulation ( a ) Effective stress predicted by the theoretical constitutive 
+model; ( b ) Effective stress predicted by the ANN-based constitutive model. 
+Fig. 12. Comparison of effective plastic strain contours for the dog-bone tensile test simulation: ( a ) Effective plastic strain predicted by the ANN- 
+based constitutive; ( b ) Effective plastic strain predicted by the ANN-based constitutive model. 
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 14 ---
+International Journal of Plasticity 138 (2021) 102919
+14
+Fig. 13. Five points where the stress responses were extracted.  
+Fig. 14. The results of three points in the gauge section predicted by the ANN-based constitutive model: ( a ) longitudinal stress response; ( b ) stress- 
+triaxiality. 
+Fig. 15. Comparison of stress responses of two points in the fillet region predicted by the theoretical constitutive model and the ANN-based 
+constitutive model: ( a ) normal stress along the x-direction; ( b ) normal stress along the y-direction; (c) shear stress. 
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 15 ---
+International Journal of Plasticity 138 (2021) 102919
+15
+noticeable difference. Comparing the CPU time, the theoretical model takes 478s and the ANN model takes 425s, which is 11% of time 
+reduction. This result shows that the ANN model has computational efficiency in comparison with the conventional theoretical model. 
+It is caused by the feed-forward nature of the ANN model. In other words, the ANN model does not require iterative computation in 
+comparison to the theoretical model. 
+5. Conclusions 
+In this paper, an ANN-based constitutive model was developed to replace the nonlinear iterations for plastic correction schemes 
+during the stress-integration method under von-Mises yield function and isotropic hardening law. A conventional physics-based model 
+was kept utilized for elastic prediction, linear loading, and unloading. In this way, training can be done only for all the possible plastic 
+loading paths, which makes the problems independent. The return mapping scheme combined with the proposed ANN-based 
+constitutive model was used in the principal stress space. Training data were numerically generated by using the conventional 
+constitutive equations. Training data represents not only a single problem but also the overall feature of the elastoplastic constitutive 
+relation. 
+After training had been completed, the ANN-based constitutive model was implemented on a commercial FE code, ABAQUS2016/ 
+STANDARD. For verification purpose, single-element simulation under uniaxial tension, simple shear, and the plane strain were 
+conducted. Even though the aforementioned four loading paths themselves were not trained directly, the ANN-based constitutive 
+model predicts strain-stress response accurately, which implies the ANN-based constitutive model learned the elastoplastic consti -
+tutive relation. On the other hand, to verify the feasibility of multi-element simulation, a dog-bone tensile test simulation was con -
+ducted. It was verified that the ANN-based constitutive model describes both uniaxial tension in the gauge section and nonlinear 
+loading paths in the fillet regions well. Finally, the ANN-based constitutive model was applied for circular cup drawing simulation. The 
+predicted cup height profiles show a very small difference between the ANN-based constitutive model and the theoretical constitutive 
+model. In terms of computational efficiency, the ANN-based constitutive model achieved 11% of time reduction in comparison with the 
+theoretical constitutive model. This computational efficiency of the ANN-based constitutive model comes from the feed-forward nature 
+of ANN. In contrast to the conventional theoretical constitutive model, the ANN model performs stress integration without any iter -
+ative computation. 
+For future work, an ANN-based constitutive model for advanced anisotropic yield function will be developed to capture anisotropic 
+plastic behavior. For the application in FE analysis, drawing simulation and earing prediction will be conducted. In succession, the 
+modeling accuracy and computational efficiency of the ANN-based constitutive model will be evaluated for comparison with the 
+theoretical constitutive model. 
+CRediT authorship contribution statement 
+Dong Phill Jang: Writing - original draftWriting – original draft, contributed to implement the new model to FE method as well as 
+Fig. 16. Mesh design for the sheet blank.  
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 16 ---
+International Journal of Plasticity 138 (2021) 102919
+16
+preparing for an initial draft. Piemaan Fazily: Writing - original draftWriting – original draft, contributed to improve the developed 
+method with helping initial draft and revision. Jeong Whan Yoon: Supervision, Writing - original draftWriting – original draft, 
+contributed to develop the new model with supervision and writing the paper. 
+Declaration of competing interest 
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to 
+influence the work reported in this paper. 
+Fig. 17. Comparison of the cup height profiles predicted by the theoretical constitutive model and ANN-based constitutive model.  
+Fig. 18. Comparison of the effective stress contours predicted by: ( a ) the theoretical constitutive model; ( b ) ANN-based constitutive model.  
+Fig. 19. Comparison of the effective plastic strain contours predicted by: ( a ) the theoretical constitutive model; ( b ) ANN-based constitutive model.  
+D.P. Jang et al.                                                                                                                                                                                                         
+
+--- page 17 ---
+International Journal of Plasticity 138 (2021) 102919
+17
+Acknowledgement 
+This research was supported from the Future Defense Innovation Technology Development Program (Grant number: 
+2019M3F6A111008112) funded by the National Research Foundation of Korea and also from the Technology Innovation Program 
+(Grant number: 20004365) funded by the Ministry of Trade, Industry & Energy (MOTIE, Korea). The authors are grateful for the 
+supports. 
+References 
+Ali, U., Muhammad, W., Brahme, A., Skiba, O., Inal, K., 2019. Application of artificial neural networks in micromechanics for polycrystalline metals. Int. J. Plast. 120, 
+205–219. 
+Ankita, M., Elizabeth, A.H., 2018. Applied machine learning to predict stress hotspots I: face centered cubic materials. Int. J. Plast. 111, 122–134. 
+Ankita, M., Elizabeth, A.H., 2019. Applied machine learning to predict stress hotspots II: hexagonal close packed materials. Int. J. Plast. 114, 1–14. 
+ASTM E8/E8M-16a, 2016. Standard Test Methods for Tension Testing of Metallic Material. ASTM. E8/E8M.  
+Barlat, F., Brem, J.C., Yoon, J.W., Chung, K., Dick, R.E., Lege, D.J., Pourboghrat, F., Choi, S.-H., Chu, E., 2003. Plane stress yield function for aluminum alloy sheets - 
+Part 1: Theory. Int. J. Plast. 19, 1297–1319. 
+Chokshi, P., Dashwood, R., Hughes, D.J., 2017. Artificial Neural Network (ANN) based microstructural prediction model for 22MnB5 boron steel during tailored hot 
+stamping. Comput. Struct. 190, 162–172. 
+Christoph, S., Geralf, H., Meinhard, K., Martin, A., 2020. A hybrid approach to simulate the homogenized irreversible elastic–plastic deformations and damage of 
+foams by neural networks. Int. J. Plast. 126, 102624. 
+Ghaboussi, J., Garrett, J.H., Wu, X., 1991. Knowledge-based modeling of material behavior with neural networks. J. Eng. Mech. 117, 132–153. 
+Glorot, X., Bordes, A., Bengio, Y., 2011. Deep sparse rectifier neural networks. In: Proceedings of the Fourteenth International Conference on Artificial Intelligence and 
+Statistics, JMLR Workshop and Conference Proceedings, vol. 15, pp. 315–323. 
+He, K., Zhang, X., Ren, S., Sun, J., 2015. Delving deep into rectifiers: surpassing human-level performance on imagenet classification. In: Proceedings of the IEEE 
+International Conference on Computer Vision, pp. 1026–1034. 
+Hornik, K., Stinchcombe, M., White, H., 1989. Multilayer feedforward networks are universal approximators. Neural Network. 2 (5), 359–366. 
+Johnson, G.R., Cook, W.H., 1983. A constitutive model and data for metals subjected to large strains, high strain rates and high temperatures. In: Proceedings of the 
+7th International Symposium on Ballistics, pp. 541–547. 
+Kingma, D.P., Ba, J., Adam, 2014. A Method for Stochastic Optimization arXiv preprint arXiv. 1412.6980.  
+Li, H.-Y., Hu, J.-D., Wei, D.-D., Wang, X.-F., Li, Y.-H., 2012. Artificial neural network and constitutive equations to predict the hot deformation behavior of modified 
+2.25Cr–1Mo steel. Mater. Des. 42, 192–197. 
+Li, X., Roth, C.C., Mohr, D., 2019. Machine-learning based temperature- and rate-dependent plasticity model: application to analysis of fracture experiments on DP 
+steel. Int. J. Plast. 118, 320–344. 
+Lin, Y.C., Zhang, J., Zhong, J., 2008. Application of neural networks to predict the elevated temperature flow behavior of a low alloy steel. Comput. Mater. Sci. 43 (4), 
+752–758. 
+McCulloch, W.S., Pitts, W.H., 1943. A logical calculus of the ideas immanent in nervous activity. Bull. Math. Biophys. 5, 115–133. 
+Nair, V., Hinton, G.E., 2014. Rectified linear units improve Restricted Boltzmann machines. In: Proceedings of the 27
+th 
+International Conference on International 
+Conference on Machine Learning, pp. 807–814. 
+Neto, E.A. de S., Peric, D., Owen, D.R.J., 2008. Computational Methods for Plasticity: Theory and Applications. John Wiley & Sons, Ltd United Kingdom. 
+Palau, T., Kuhn, A., Nogales, S., Bohm, H.J., Rauh, A.A., 2012. Neural network based elasto-plasticity material model. In: ECCOMAS. 
+Rumelhart, D., Hinton, G., Williams, R., 1986. Learning representations by back-propagating errors. Nature 323, 533–536. 
+Simo, J.C., Taylor, R.L., 1986. Return mapping algorithm for plane stress elastoplasticity. Int. J. Numer. Methods Eng. 22, 649–670. 
+Simo, J.C., Hughes, T.J.R., 1998. Computational Inelasticity. Springer-Verlag New York, Inc. 
+Usman, A., Waqas, M., Abhijit, B., Oxana, S., Kaan, I., 2019. Pplication of artificial neural networks in micromechanics for polycrystalline metals. Int. J. Plast. 120, 
+205–219. 
+Viswanathan, V., Kinsey, B., Cao, J., 2003. Experimental implementation of neural network springback control for sheet metal forming. ASME J. Eng. Mater. Technol. 
+125 (2), 141–147. 
+Yoon, J.-W., Barlat, F., Dick, R.E., Chung, K., Kang, T.J., 2004. Plane stress yield function for aluminum alloy sheets— part II: FE formulation and its implementation. 
+Int. J. Plast. 20 (3), 495–522. 
+Yoon, J.W., Barlat, F., Dick, R.E., Karabin, M.E., 2006. Prediction of six or eight ears in a drawn cup based on a new anisotropic yield function. Int. J. Plast. 22 (1), 
+174–193. 
+Zhao, J., Wang, F., 2005. Parameter identification by neural network for intelligent deep drawing of axisymmetric workpieces. J. Mater. Process. Technol. 166 (3), 
+387–391. 
+D.P. Jang et al.                                                                                                                                                                                                         

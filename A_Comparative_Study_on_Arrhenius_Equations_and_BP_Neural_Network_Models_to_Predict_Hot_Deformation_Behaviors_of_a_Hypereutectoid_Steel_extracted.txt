@@ -1,0 +1,655 @@
+--- page 1 ---
+Received March 21, 2020, accepted March 28, 2020, date of publication April 7, 2020, date of current version April 22, 2020.
+Digital Object Identifier 10.1 109/ACCESS.2020.2986389
+A Comparative Study on Arrhenius Equations
+and BP Neural Network Models to Predict
+Hot Deformation Behaviors of a
+Hypereutectoid Steel
+LING QIAO
+ 1, YONG DENG 2, YUAN WANG 3, AND JINGCHUAN ZHU 1
+1School of Material Science and Engineering, Harbin Institute of Technology, Harbin 150001, China
+2State Key Laboratory for Advanced Metals and Materials, University of Science and Technology Beijing, Beijing 10083, China
+3College of Information Science and Engineering, Northeastern University, Shenyang 110819, China
+Corresponding author: Jingchuan Zhu (pg_hgd@163.com)
+ABSTRACT In order to predict the high-temperature deformation behavior of hypereutectoid steel, the hot
+compression tests were conducted in the strain rate range of (0.001∼1) s−1 and the deformation temperature
+range of (950∼1100)◦C. The experimental data were employed to develop the Arrhenius constitutive model
+and BP neural network model, and their predictability for high temperature ﬂow stress of hypereutectoid steel
+was further evaluated. Comparatively, a higher correlation coefﬁcient ( R) can be obtained for the BP neural
+network model compared with the Arrhenius constitutive equations. And the relative error within ±1% was
+more than 68.75% for the BP neural network model, while only 18.75% for the constitutive equations. The
+BP neural network model is considered more efﬁcient and accurate to predict the hot deformation behavior
+than the Arrhenius constitutive equations. Moreover, the well-trained BP neural network model is employed
+to predict the ﬂow stress varying with the deformation temperature and strain rate. The ﬂow stress decreases
+with the increasing deformation temperature and decreasing strain rate, which is in accordance with the
+experimental evaluation. The results indicate that BP neural network model is an efﬁcient tool for modelling
+and predicting the ﬂow behavior of hypereutectoid steels in high temperature applications.
+INDEX TERMS Hypereutectoid steel, hot deformation behavior, Arrhenius equations, BP neural network
+models.
+I. INTRODUCTION
+Hypereutectoid steel is widely applied in many industrial
+ﬁelds for its great mechanical property, especially in the ﬁeld
+of rail technology [1]–[3]. The understanding of the ﬂow
+behaviors of steels has become more essential to researchers
+engaged in hot deformation condition. To improve the
+mechanical performance of hypereutectoid steels, an explo-
+ration of the deformation behavior at high temperature has
+become a critical issue.
+Knowledge of the hot deformation mechanisms is consid-
+ered to be an essential prerequisite for the optimization of
+material properties [4]. However, the researches on the hyper-
+eutectoid steel is rare and this particular subject needs to be
+The associate editor coordinating the review of this manuscript and
+approving it for publication was Kathiravan Srinivasan
+ .
+investigated in great depth. Generally, the constitutive model
+is considered to be a great analytic method to describe the hot
+deformation behavior of materials based on the experimental
+data. With the great progress in the development of constitu-
+tive relationship, it primarily consists of the phenomenologi-
+cal, physically based and artiﬁcial neural network models [5].
+Without special considerations on the essential physical pro-
+cess, the Arrhenius type model was successfully used to
+describe the relationships between the mechanical properties
+and hot working conditions mathematically [6]–[8]. In partic-
+ular, Wu et al [9] proposed that the constitutive equation can
+be established to understand the thermal deformation mecha-
+nism and thus optimizing the thermal processing parameters
+and leading to improved thermal processing properties of
+steels. Zhou et al. [10] established the constitutive equation
+to predict the value of peak stress of Ni3Al-based alloy in
+VOLUME 8, 2020 This work is licensed under a Creative Commons Attribution 4.0 License. For more information, see https://creativecommons.org/licenses/by/4.0/ 68083
+
+--- page 2 ---
+L. Qiao et al.: Comparative Study on Arrhenius Equations and BP Neural Network Models to Predict Hot Deformation Behaviors
+hot deformation and gave the processing maps to determine
+the optimal processing parameters and unstable domains for
+hot working. Samantaray et al. [11] employed the Johnson
+Cook model, Zerilli-Armstrong model, and the Arrhenius-
+type constitutive equations to the describe the ﬂow behavior
+of modiﬁed 9Cr-1Mo steel respectively and the comparison
+presented that the Arrhenius-type equations exhibit better
+performance than the others.
+In recent year, the employment of artiﬁcial neural net-
+work (ANN) method in the prediction of constitutive
+relationships received considerable attention, especially to
+solve highly nonlinear and complex problems [12]–[27].
+Lin et al. [5], [6], [12], [16]–[18], Chen [19] employed
+phenomenological constitutive models, deep belief network
+model and adaptive-network-based fuzzy inference system
+model to describe the ﬂow behaviors of various materials
+and showing a very good correlation. These works can ver-
+ify the reliability of neural network. Duan [23] employed
+the Arrhenius-type model, multiple-linear regressed model
+and artiﬁcial neural network (ANN) model to describe the
+hot deformation behavior and microstructural evolution of
+Pb-Mg-10Al-0.5B alloy. And this work demonstrates the
+higher accuracy of ANN model. Since the artiﬁcial neural
+network learns from the experimental data and identify the
+relevant parameters and their interactions in a series of input
+and output values without material constants, it has become
+a powerful tool to establish the constitutive relationship and
+further predict the ﬂow behaviors during hot compression
+process.
+In present paper, hot compression tests were performed
+to obtain the rheological curves. Subsequently, constitutive
+relationships based on the Arrhenius constitutive equation
+and a three-layer feed-forward ANN model are employed
+to characterize the hot deformation behavior of the hyper-
+eutectoid steels. And the suitability of these two models to
+predict the hot deformation behavior was evaluated. Finally,
+the coupled effects of the deformation temperature and strain
+rate on the ﬂow behavior were systematically investigated
+and provided a reference for the actual industrial application.
+II. EXPERIMENTAL PROCEDURE
+The material used in this study was hypereutectoid steel
+and the chemical composition (wt%) was plotted in Table.1.
+Then these materials were processed into cylindrical speci-
+mens with a diameter of 6 mm and a height of 9 mm. The
+hot compression tests were carried out on a Gleeble-1500D
+thermo-mechanical simulator in the strain rate of 1 s −1,
+0.1 s−1, 0.01 s−1, 0.001s−1 and the deformation temperature
+of 950◦C, 1000◦C, 1050◦C, 1100◦C, respectively. To mini-
+mize the deformed friction between the specimens and simu-
+lator, the graphite was used as lubricant mixed with machine
+oil. Each sample was heated to the deformation temperature
+at a rate of 10 K/s and the samples are homogenized for 3 min
+before compression. During the examination, a thermocouple
+at the center of specimen was used to monitor the temper-
+ature while the stress–strain data at different temperatures
+TABLE 1. Chemical composition (wt%).
+and strain rates were recorded automatically. Furthermore,
+the deformation in height was 75% at the end of compression
+tests and the specimens were consequently taken out and then
+immediately water quenched to room temperature.
+III. RESULTS AND DISCUSSIONS
+A. FLOW BEHAVIOR ANAL YSIS
+Fig.1 depicts the typical true stress–strain curves obtained
+from the hot compression tests of the hypereutectoid steel.
+Apparently, the evolution of all the ﬂow stress curves follows
+the same trend. With the work hardening at the initial stage
+of deformation, the ﬂow stresses are increasing rapidly with
+the increase of strain and reach a peak value [28]. Attributed
+to the dynamic recrystallization, the softening effect con-
+tributes to a slight decrease in the ﬂow stress. Until arriv-
+ing at a balance of the work hardening and ﬂow softening,
+subsequently, a steady state was drawn for the ﬂow stress
+at the higher strain. Accordingly, the ﬂow stress tends to be
+intensely dependent on the forming temperature and strain
+rate under the working conditions. It is found that the ﬂow
+stress decreases with the increase in deformation tempera-
+tures for a given strain rate. The increasing temperature would
+decrease the critical shear stress of each slip system and
+increase the thermal activation energy, thus contributing to the
+dynamic recovery recrystallization. While for a speciﬁc tem-
+perature, the ﬂow stress generally increases with the increase
+in strain rates due to an increase of dislocation density and
+the dislocation multiplication rate. Moreover, the increasing
+strain rate tends to result in the inhomogeneity of plastic
+deformation and there is no enough time for the necessary
+deformation [29].
+B. ARRHENIUS CONSTITUTIVE EQUATION
+To further investigate the deformation behaviors of hypereu-
+tectoid steels, the constitutive equation is developed based on
+the experimental results. In the present work, Arrhenius equa-
+tion is used to describe the ﬂow behavior at high temperature,
+speciﬁcally the relationships between ﬂow stress, the strain
+rate, and deformation temperature. For the low stress level
+and high stress level, the relationships between the ﬂow stress
+and strain rate can be expressed in the following equations,
+respectively.
+˙ε= A1σ n1 exp
+(−Q
+RT
+)
+(1)
+˙ε= A2 exp(βσ) exp
+(−Q
+RT
+)
+(2)
+For all the stress level, the ﬂow stress and strain rate
+meet the hyperbolic sine function and can be represented as
+68084 VOLUME 8, 2020
+
+--- page 3 ---
+L. Qiao et al.: Comparative Study on Arrhenius Equations and BP Neural Network Models to Predict Hot Deformation Behaviors
+FIGURE 1. True stress-strain curves under different forming temperature
+and strain rates.
+the equation (3).
+˙ε= A3[sinh(ασ )]n exp
+(−Q
+RT
+)
+(3)
+whereσ is the ﬂow stress, A1, A2, A3, n1,α,β and n are the
+material constants. In addition, Zener-Hollomon parameter Z
+can be used to estimate the effects of deformation tempera-
+ture and strain rate on the deformation behaviors, which is
+expressed in the exponential equation (4) [30].
+Z=˙ε exp
+( Q
+RT
+)
+= A3[sinh(ασ )]n (4)
+where˙ε is strain rate(s−1), T is the deformation temperature
+(K), R is universal gas constant ( R= 8.3154 J/K/mol) and
+Q is the activation energy(kJ·mol−1). Take natural logarithm
+at both sides at equations (1) and (2), respectively, and the
+equations can be expressed as equations (5) and (6).
+ln˙ε= ln A1− Q
+RT+ n1 lnσ (5)
+ln˙ε= ln A2− Q
+RT+βσ (6)
+At a given deformation temperature, the partial differential
+equations of equations (5) and (6) can be obtained as follows.
+n1=
+[∂ ln˙ε
+∂ lnσ
+]
+T
+(7)
+β=
+[∂ ln˙ε
+∂σ
+]
+T
+(8)
+Take the linear regression and the Fig.2 gave a detailed
+description on the ln ˙ε-lnσ and ln˙ε-σ at different tempera-
+tures. The values of n1 andβ are determined as the slopes
+of the curves. Thus the average value can be obtained as
+n= 6.56MPa−1 and β = 0.09MPa−1. Then the value of
+α can be obtained according to α=β/n1= 0.0137 MPa−1.
+Take natural logarithm at both sides at equations (3), it can
+be expressed as follows.
+ln˙ε= ln A3+ n ln[sinh(ασ )]−
+( Q
+RT
+)
+(9)
+To obtain the plastic deformation behavior at high temper-
+ature, the activation energy is assumed to be stabilized in a
+small temperature range when the strain rate remains con-
+stant. Then, take partial differential to equation (9), thusn and
+Q can be expressed as equation (10) and (11), respectively.
+n=
+[ ∂ ln˙ε
+∂ ln[sinh(ασ )]
+]
+T
+(10)
+Q= R
+[ ∂ ln˙ε
+∂ ln[sinh(ασ )]
+]
+T
+[∂ ln[sinh(ασ )]
+∂(1/T )
+]
+˙ε
+(11)
+Subsequently, the linear regression analysis is performed
+and the ln ˙ε− ln[sinh(ασ )] and ln[sinh( ασ )]− 1/T at
+different strain rates were described in Fig.3. The averaged
+value of n and b can be obtained as n= 4.890, b= 8224.0,
+respectively, thus the average activation energy can be
+derived from the slopes of ln[sinh( ασ )]− 1/T plots as
+Q= Rnb= 334.4kJ/mol.
+Take logarithmic function at both side of equation (4), thus
+the equation (12) can be obtained. Then take linear regression
+ﬁtting on the data points of lnZ and ln[sinh(ασ )] additionally,
+VOLUME 8, 2020 68085
+
+--- page 4 ---
+L. Qiao et al.: Comparative Study on Arrhenius Equations and BP Neural Network Models to Predict Hot Deformation Behaviors
+FIGURE 2. Diagram of strain rate and flow stress at different
+temperatures.
+the averaged ﬁtting line is given in Fig.4. As can be seen, most
+of the data points lie very close to the line and the correlation
+coefﬁcients (R) is determined as 0.993.
+ln Z= ln A3+ n ln[sinh(ασ )] (12)
+A detailed analysis of the deformation constitutive equa-
+tions at high temperature is necessary in process of com-
+pression deformation. Speciﬁcally, regression analysis gives
+n= 4.791 and ln A3= 26.853. Based on the above analysis,
+the mathematic model of the hypereutectoid steel can be
+determined as the equation (13). Consequently, it is beneﬁcial
+to describe the ﬂow behavior and provide theory basis for hot
+deformation analysis.
+ln˙ε= 26.853+ 4.791× ln[sinh(0.0137σ )]− 40215
+T (13)
+C. ARTIFICIAL NEURAL MODEL
+In recent years, the excellent self-adaptive and self-learning
+ability enable the BP neural network an effective analyti-
+cal tool to model the hot deformation behavior of metal-
+lic materials [31]. The BP neural network model includes
+FIGURE 3. Diagram of strain rate and temperature at different strain rates.
+FIGURE 4. Diagram of ln Z − ln[sinh(ασ )].
+input layer, hidden layer and output layer [32], [33]. So far,
+it tends to be especially useful to address problems where the
+relationships between inputs and outputs are not sufﬁciently
+known. It shows an excellent ability to learn considerable
+data without any assumptions about their interrelations, and
+then is used to predict unknown values [34]. In this paper,
+a multi-layered BP neural network model was constructed on
+the basis of experimental data obtained from the investigation
+68086 VOLUME 8, 2020
+
+--- page 5 ---
+L. Qiao et al.: Comparative Study on Arrhenius Equations and BP Neural Network Models to Predict Hot Deformation Behaviors
+on the hot working behavior of the steel. The ﬂow stress is
+considered to be estimated, while the deformation tempera-
+ture and strain rate were used as input data.
+To obtain the great generalization ability and avoid over-
+ﬁtting phenomenon, Bayesian regularization algorithm was
+applied to improve the BP neural network. Remarkably,
+the neurons in the multilayer BP neural network are consid-
+ered to be fully interconnected by weights, and the optimal
+number of hidden layers and the neurons in each layer tends
+to exhibit signiﬁcant effects. During this examination, the
+neurons in the input layer denote the hot working parameters,
+including the deformation temperature and lg strain rate, and
+the neurons in the output layer denote the ﬂow stress. To ﬁnd
+the optimal architecture, the architecture containing neurons
+in the hidden layer are investigated and the accuracy of the
+predicted values is monitored before the optimal structure
+is determined. And the weights and thresholds of networks
+are constantly revised until acquiring the expected output.
+Finally, the number of nodes in the hidden layer is deter-
+mined to 7, which can avoid over-ﬁtting and simultaneously
+improve the computing efﬁciency. In this work, the learning
+rate was determined to be 0.05 with the allowed target error
+of 0.00005, and the maximum number of learning was set
+to 3000.
+Speciﬁcally, the mean squared error (MSE) is used for
+comparison between the experimental and predicted values
+to assess the quality of the proposed neural network model.
+The criterion of MSE can be expressed as follows [35].
+MSE= 1
+n
+n∑
+i=1
+(Ai− Oi)2 (14)
+where, Ai and Oi are the actual output and desired output at
+the output neuron i, respectively. The MSE is monitored dur-
+ing training process until no signiﬁcant improvement exists
+in the error. The training performance is illustrated in Fig.5.
+The asymptotes of ﬂow stress values were obtained from the
+BP neural networks and the experimental values. In general,
+the regression value (R) is of such importance and determines
+the correlation between the outputs and targets. Knowing that
+a great training performance can be conﬁrmed with the R
+values near to 1. In this case, despite a little scatter around
+line of equality between the analytical and predicted values
+of ﬂow stress, the high regression value of 0.995 suggests a
+great ﬁtting effect. Thus, the BP neural networks developed
+in this work can learn for the training data and incorporate it
+into its strategy to achieve perfect accuracy.
+D. COMPARISON OF THE ARRHENIUS EQUATIONS
+AND THE BP NEURAL NETWORK MODEL
+The ﬂow stress varying with temperature and strain rate
+was predicted through the Arrhenius constitutive equation
+and the BP neural network model in this work. Thus then,
+the variation between experimental data and the predicted
+data is evaluated. As can be seen from Fig.5, the consen-
+sus between the experimental values and the predicted ones
+FIGURE 5. Training results.
+based on the BP neural network model is very good for all
+tested temperature and strain rate range. However, there is
+a remarkable deviation between experimental values and the
+predicted values from the Arrhenius constitutive equations
+under some conditions, such as at 1050 ◦C in 0.1 s −1 and
+1100◦C in 0.1 s−1 respectively.
+Furthermore, the accuracy of the Arrhenius equation and
+the BP neural network model was further quantiﬁed by the
+statistical analysis of correlation coefﬁcient ( R) and relative
+errors (η). As the Fig.4 and Fig.5 illustrate, the values of
+R for the constitutive equations and the BP neural network
+model are 0.993 and 0.995, respectively, which suggests that
+the developed BP neural network model has more excel-
+lent predictability than the constitutive model. Additionally,
+the relative errors ( η) between the experimental values and
+predicted values were determined as follows.
+η(%)= Pi− Ei
+Ei
+× 100% (15)
+where E represents the experimental value and P repre-
+sents the predicted value by one model. The relative errors
+(η) of Arrhenius constitutive equations and BP neural net-
+work model were depicted as the relative frequency ver-
+sus relative error plot. As illustrated in Fig.6, the relative
+errors obtained from the constitutive equations are in the
+range of −8.6%∼13.9%; whereas those are found to vary
+from−10.5% to 7.9% for the BP neural network model.
+Meanwhile, the relative error (η) within±1% was observed
+for more than 68.75% of predicted data set of the BP neural
+network model, while only 18.75% of the predicted data sets
+for the constitutive equations. Obviously, signiﬁcant distinc-
+tions can be drawn between the two models and the BP neural
+network model performs more accurately.
+Comparatively, the Arrhenius equations obtain a relatively
+rough estimate for the ﬂow stress. Since the hot deformation
+behavior not only depends on the hot working conditions,
+including the deformation and strain rates, but also affected
+by many other factors. The relationships are very complex
+and highly non-linear. However, unlike the constitutive meth-
+ods, the BP neural network model learns from experimental
+VOLUME 8, 2020 68087
+
+--- page 6 ---
+L. Qiao et al.: Comparative Study on Arrhenius Equations and BP Neural Network Models to Predict Hot Deformation Behaviors
+FIGURE 6. Comparison of experimental values and predicted values by
+Arrhenius constitutive equations and the BP neural network model.
+data and recognizes its interrelations instead of a mathe-
+matical equation without considering the material constant.
+Thus, the results indicate that the BP neural network model
+FIGURE 7. Distributions on prediction error by models.
+FIGURE 8. Effect of temperature and strain rate on the flow stress.
+performs a highly accurate non-linear ﬁt and is particularly
+more efﬁcient than the constitutive equations to predict the
+ﬂow behavior of hypereutectoid steel.
+E. PREDICTION OF THE FLOW BEHAVIOR
+The BP neural network model established above shows a
+great performance after training, thus can be used with rea-
+sonable precision to extend the existing predictions beyond
+68088 VOLUME 8, 2020
+
+--- page 7 ---
+L. Qiao et al.: Comparative Study on Arrhenius Equations and BP Neural Network Models to Predict Hot Deformation Behaviors
+the availability of experimental data. To give a more detailed
+understanding, the ﬂow stress varying with deformation tem-
+perature and strain rate was predicted through the developed
+BP neural network model in this work. Thus, a counter plot
+of the ﬂow stress was drawn on the three-dimensional plane
+of deformation temperature and strain rate, as illustrated
+in Fig.8. The data points on the surface plots are adopted
+from the results predicted by the BP neural network model
+and most of the data points were outside the experimental
+conditions. The results suggest that the ﬂow stress varies
+from 32.8MPa to 151.8MPa with the decrease in tempera-
+ture from 950◦C to 1100◦C and the increase in the strain
+rate from 0.01 to 10 s−1. In particular, the variation obtained
+from the predicted value by BP neural network model agrees
+well with the experimental evaluation, which indicates that
+the proposed BP neural network model can be used to predict
+the ﬂow stress behavior instead of a considerable amount of
+experimental work.
+IV. CONCLUSION
+The present study analyzed the hot deformation behavior
+of hypereutectoid steel, investigated by a series of thermal
+deformation tests in the strain rate range of (0.001∼1) s−1 and
+the deformation temperature range of (950 ∼1100) C◦. The
+experimental stress–strain data were employed to develop
+the Arrhenius constitutive equations and the BP neural net-
+work model. And a comparative investigation was carried
+out on their predictability of the hot deformation behav-
+ior of hypereutectoid steel. The conclusions can be drawn
+as follows.
+(1) The predictability of the Arrhenius constitutive equa-
+tions and BP neural network model was further evaluated
+in terms of the correlation coefﬁcient (R) and the relative
+error(η). For the Arrhenius constitutive equations, R value
+is determined as 0.993, while for the BP neural network
+model it is found to be 0.995, respectively. The relative errors
+between experimental and predicted ﬂow stress obtained
+from the constitutive equations and BP neural network model
+are in the range of −8.6%∼13.9% and −10.5% to 7.9%,
+respectively. Moreover, the relative error within ±1% was
+observed for more than 68.75% for the BP neural net-
+work model, while only 18.75% for the constitutive equa-
+tions. Thus, the developed BP neural network model has
+better capability compared with the Arrhenius constitutive
+equations.
+(2) The BP neural network model for hypereutectoid steel
+can accurately predict the ﬂow stress behavior across a wider
+range of temperatures and strain rates. The coupled effects
+of the deformation temperature and strain rate on the ﬂow
+behavior were systematically investigated and the evolution
+indicates that the ﬂow stress decreases with the increasing
+deformation temperature and decreasing strain rate. Thus, the
+developed BP neural network model could not only quite well
+predict the hot deformation behavior but also signiﬁcantly
+reduce time and cost for the analyses.
+REFERENCES
+[1] P . Boonsukachote, S. Kingklang, and V . Uthaisangsuk, ‘‘Modelling of
+mechanical properties of pearlitic rail steel,’’ Key Eng. Mater ., vol. 798,
+pp. 3–8, Apr. 2019.
+[2] R. Masoudi Nejad, K. Farhangdoost, and M. Shariati, ‘‘Microstructural
+analysis and fatigue fracture behavior of rail steel,’’ Mech. Adv. Mater .
+Struct., vol. 27, no. 2, pp. 152–164, Jan. 2020.
+[3] Y . Lan, G. Zhao, Y . Xu, C. Y e, and S. Zhang, ‘‘Effects of quenching tem-
+perature and cooling rate on the microstructure and mechanical properties
+of U75 V rail steel,’’ Metallography, Microstruct., Anal. , vol. 8, no. 2,
+pp. 249–255, Apr. 2019.
+[4] S. Spigarelli, M. E. Mehtedi, M. Cabibbo, F. Gabrielli, and D. Ciccarelli,
+‘‘High temperature processing of brass: Constitutive analysis of hot
+working of Cu–Zn alloys,’’ Mater . Sci. Eng., A , vol. 615, pp. 331–339,
+Oct. 2014.
+[5] Y . C. Lin and X.-M. Chen, ‘‘A critical review of experimental results and
+constitutive descriptions for metals and alloys in hot working,’’ Mater .
+Des., vol. 32, no. 4, pp. 1733–1759, Apr. 2011.
+[6] Y . C. Lin, L.-T. Li, and Y .-Q. Jiang, ‘‘A phenomenological constitu-
+tive model for describing thermo-viscoplastic behavior of Al-Zn-Mg-Cu
+alloy under hot working condition,’’ Experim. Mech. , vol. 52, no. 8,
+pp. 993–1002, Oct. 2012.
+[7] J. E. Plumeri, Å. Madej, and W. Z. Misiolek, ‘‘Constitutive modeling
+and inverse analysis of the ﬂow stress evolution during high temperature
+compression of a new ZE20 magnesium alloy for extrusion applications,’’
+Mater . Sci. Eng., A, vols. 740–741, pp. 174–181, Jan. 2019.
+[8] N. R. Jaladurgam and A. K. Kanjarla, ‘‘Hot deformation characteristics and
+microstructure evolution of hastelloy C-276,’’Mater . Sci. Eng., A, vol. 712,
+pp. 240–254, Jan. 2018.
+[9] Y . Wu, Y . Liu, C. Li, X. Xia, Y . Huang, H. Li, and H. Wang, ‘‘Deformation
+behavior and processing maps of ni 3 al-based superalloy during isothermal
+hot compression,’’ J. Alloys Compounds, vol. 712, pp. 687–695, Jul. 2017.
+[10] Y . Zhou, Y . Liu, X. Zhou, C. Liu, J. Y u, Y . Huang, H. Li, and W. Li,
+‘‘Precipitation and hot deformation behavior of austenitic heat-resistant
+steels: A review,’’ J. Mater . Sci. Technol., vol. 33, no. 12, pp. 1448–1456,
+Dec. 2017.
+[11] D. Samantaray, S. Mandal, and A. K. Bhaduri, ‘‘A comparative study on
+Johnson cook, modiﬁed zerilli–armstrong and arrhenius-type constitutive
+models to predict elevated temperature ﬂow behaviour in modiﬁed 9Cr–
+1Mo steel,’’ Comput. Mater . Sci., vol. 47, no. 2, pp. 568–576, Dec. 2009.
+[12] Y . C. Lin, M.-S. Chen, and J. Zhong, ‘‘Constitutive modeling for elevated
+temperature ﬂow behavior of 42CrMo steel,’’Comput. Mater . Sci., vol. 42,
+no. 3, pp. 470–477, May 2008.
+[13] M. Arjomandi, S. H. Sadati, H. Khorsand, and H. Abdoos, ‘‘Austenite for-
+mation temperature prediction in steels using an artiﬁcial neural network,’’
+Defect Diffusion F orum, vols. 273–276, pp. 335–341, Feb. 2008.
+[14] H.-Y . Li, D.-D. Wei, Y .-H. Li, and X.-F. Wang, ‘‘Application of artiﬁcial
+neural network and constitutive equations to describe the hot compressive
+behavior of 28CrMnMoV steel,’’ Mater . Design, vol. 35, pp. 557–562,
+Mar. 2012.
+[15] S. Mandal, P . V . Sivaprasad, and S. V enugopal, ‘‘Constitutive ﬂow
+behaviour of austenitic stainless steels under hot deformation: Artiﬁcial
+neural network modelling to understand, evaluate and predict,’’ Model.
+Simul. Mater . Sci. Eng., vol. 14, no. 6, pp. 1053–1070, 2006.
+[16] Y . C. Lin, J. Zhang, and J. Zhong, ‘‘Application of neural networks to
+predict the elevated temperature ﬂow behavior of a low alloy steel,’’
+Comput. Mater . Sci., vol. 43, no. 4, pp. 752–758, Oct. 2008.
+[17] Y . C. Lin, J. Li, M.-S. Chen, Y .-X. Liu, and Y .-J. Liang, ‘‘A deep belief
+network to predict the hot deformation behavior of a ni-based superalloy,’’
+Neural Comput. Appl., vol. 29, no. 11, pp. 1015–1023, Jun. 2018.
+[18] Y . C. Lin, Y .-J. Liang, M.-S. Chen, and X.-M. Chen, ‘‘A comparative
+study on phenomenon and deep belief network models for hot deformation
+behavior of an Al–Zn–Mg–Cu alloy,’’ Appl. Phys. A , vol. 123, no. 1,
+Jan. 2017.
+[19] D.-D. Chen, Y . C. Lin, Y . Zhou, M.-S. Chen, and D.-X. Wen, ‘‘Dislocation
+substructures evolution and an adaptive-network-based fuzzy inference
+system model for constitutive behavior of a ni-based superalloy during hot
+deformation,’’ J. Alloys Compounds, vol. 708, pp. 938–946, Jun. 2017.
+[20] G. Ji, F. Li, Q. Li, H. Li, and Z. Li, ‘‘A comparative study on arrhenius-
+type constitutive model and artiﬁcial neural network model to predict high-
+temperature deformation behaviour in Aermet100 steel,’’ Mater . Sci. Eng.,
+A, vol. 528, nos. 13–14, pp. 4774–4782, May 2011.
+VOLUME 8, 2020 68089
+
+--- page 8 ---
+L. Qiao et al.: Comparative Study on Arrhenius Equations and BP Neural Network Models to Predict Hot Deformation Behaviors
+[21] R. Bobbili, B. V enkata Ramudu, and V . Madhu, ‘‘A physically-based
+constitutive model for hot deformation of Ti-10-2-3 alloy,’’ J. Alloys Com-
+pounds, vol. 696, pp. 295–303, Mar. 2017.
+[22] Z. Zhu, Y . Lu, Q. Xie, D. Li, and N. Gao, ‘‘Mechanical properties and
+dynamic constitutive model of 42CrMo steel,’’ Mater . Des., vol. 119,
+pp. 171–179, Apr. 2017.
+[23] Y . Duan, L. Ma, H. Qi, R. Li, and P . Li, ‘‘Developed constitutive mod-
+els, processing maps and microstructural evolution of Pb-Mg-10Al-0.5B
+alloy,’’Mater . Characterization, vol. 129, pp. 353–366, Jul. 2017.
+[24] Y . Duan, P . Li, L. Ma, and R. Li, ‘‘Dynamic recrystallization and processing
+map of Pb-30Mg-9Al-1B alloy during hot compression,’’ Metall. Mater .
+Trans. A, vol. 48, no. 7, pp. 3419–3431, Jul. 2017.
+[25] Z. Cai, H. Ji, W. Pei, X. Tang, X. Huang, and J. Liu, ‘‘Hot workability,
+constitutive model and processing map of 3Cr23Ni8Mn3N heat resistant
+steel,’’ V acuum, vol. 165, pp. 324–336, Jul. 2019.
+[26] M. S. Arun and U. Chakkingal, ‘‘A constitutive model to describe high
+temperature ﬂow behavior of AZ31B magnesium alloy processed by equal-
+channel angular pressing,’’ Mater . Sci. Eng., A , vol. 754, pp. 659–673,
+Apr. 2019.
+[27] W. Bao, L. Bao, D. Liu, D. Qu, Z. Kong, M. Peng, and Y . Duan, ‘‘Con-
+stitutive equations, processing maps, and microstructures of Pb-Mg-Al-B-
+0.4Y alloy under hot compression,’’ J. Mater . Eng. Perform., vol. 29, no. 1,
+pp. 607–619, Jan. 2020.
+[28] Y . Sun, Z. Wan, L. Hu, and J. Ren, ‘‘Characterization of hot processing
+parameters of powder metallurgy TiAl-based alloy based on the activation
+energy map and processing map,’’ Mater . Design, vol. 86, pp. 922–932,
+Dec. 2015.
+[29] F. Warchomicka, C. Poletti, and M. Stockinger, ‘‘Study of the hot
+deformation behaviour in Ti–5Al–5Mo–5 V –3Cr–1Zr,’’ Mater . Sci. Eng.,
+A, vol. 528, no. 28, pp. 8277–8285, Oct. 2011.
+[30] C. M. Sellars and W. J. McTegart, ‘‘On the mechanism of hot deformation,’’
+Acta Metallurgica, vol. 14, no. 9, pp. 1136–1138, 1966.
+[31] Z. Y . Chen, D. N. Zou, J. H. Y u, and Y . Han, ‘‘Artiﬁcial neural network
+approach to predict mechanical properties of 301 austenitic stainless steel,’’
+Mater . Sci. F orum, vol. 658, pp. 145–148, Jul. 2010.
+[32] W. K. Wong, C. W. M. Y uen, D. D. Fan, L. K. Chan, and E. H. K. Fung,
+‘‘Stitching defect detection and classiﬁcation using wavelet transform and
+BP neural network,’’ Expert Syst. Appl. , vol. 36, no. 2, pp. 3845–3856,
+Mar. 2009.
+[33] Y .-J. Song, B.-Y . Song, Z.-S. Zhang, and Y .-W. Chen, ‘‘The satel-
+lite downlink replanning problem: A BP neural network and hybrid
+algorithm approach for IoT Internet connection,’’ IEEE Access , vol. 6,
+pp. 39797–39806, 2018.
+[34] X. Xiao, G. Q. Liu, B. F. Hu, X. Zheng, L. N. Wang, S. J. Chen, and
+A. Ullah, ‘‘A comparative study on arrhenius-type constitutive equations
+and artiﬁcial neural network model to predict high-temperature defor-
+mation behaviour in 12Cr3WV steel,’’ Comput. Mater . Sci. , vol. 62,
+pp. 227–234, Sep. 2012.
+[35] S. Hashem and B. Schmeiser, ‘‘Improving model accuracy using optimal
+linear combinations of trained neural networks,’’ IEEE Trans. Neural
+Netw., vol. 6, no. 3, pp. 792–794, May 1995.
+LING QIAO received the B.S. degree in metal
+material engineering from the Shandong Univer-
+sity of Science and Technology, Qingdao, Shan-
+dong, in 2016, and the M.S. degree in materials
+science and engineering from the China Univer-
+sity of Petroleum (East China), Qingdao, Shan-
+dong, in 2019. She is currently pursuing the Ph.D.
+degree in materials science and engineering with
+the Harbin Institute of Technology, Harbin, Hei-
+longjiang, China.
+Her research interest includes new material design.
+YONG DENG received the B.S. degree in press
+working from the Xi’an University of Architecture
+and Technology, Xi’an, China, in 2001, and the
+M.S. degree in materials science and technology
+from the University of Science and Technology
+Beijing, Beijing, China, in 2013, where he is cur-
+rently pursuing the Ph.D. degree in materials sci-
+ence and technology.
+He has been as Special-Grade Researcher with
+the Ansteel Research Institute of V anadium and
+Titanium (iron and steel), Panzhihua, China, since 2001. His research inter-
+ests include development of rail products and rail processing technologies
+Prof. Deng awards and honors include the successful development of
+Pangang U71Mn series of heat-treated rails, 60D40 series of high-speed
+turnout rails, and so on. He has published six articles and 24 patents in the
+areas of rail steel development and rail processing technology.
+YUAN WANG received the B.S. degree in automa-
+tion from the Shandong University of Science
+and Technology, Qingdao, Shandong, in 2014, and
+the M.S. degree in control science and engineer-
+ing from the China University of Petroleum (East
+China), Qingdao, Shandong, in 2017. He is cur-
+rently pursuing the Ph.D. degree in control theory
+and control engineering with Northeastern Univer-
+sity, Liaoning, Shenyang, China.
+His research interests include neural networks,
+and fault-tolerant control and their industrial applications.
+JINGCHUAN ZHU received the B.S. degree in
+metalology and heat treatment from Chongqing
+University, Chongqing, China, in 1982, and the
+M.S. and Ph.D. degrees in metal materials and heat
+treatment from the Harbin Institute of Technology,
+Harbin, Heilongjiang, China, in 1991 and 1994,
+respectively.
+He is currently a Full Professor with the School
+of Materials Science and Engineering, Harbin
+Institute of Technology. He is the author who has
+more than 100 articles and two books. He has also more than ten patents
+in the area of materials. His research interest includes multi scale computer
+simulation and design of materials, functionally gradient composite material
+design, and so on. He is a Senior Member of China Metal Society, the Deputy
+Secretary General of Heilongjiang Materials and Testing Society, and the
+Executive Vice President of Heilongjiang Metal Society.
+68090 VOLUME 8, 2020

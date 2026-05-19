@@ -1,0 +1,13 @@
+﻿sample,nominal_diameter_before_tensile_mm,repeat,inferred_original_gauge_length_L0_mm_from_file,curve_last_engineering_strain_percent_reference_only,measured_final_gauge_length_Lu_mm,standard_total_elongation_after_fracture_percent,measured_fracture_min_diameter_du_mm,measured_fracture_min_area_Au_mm2,original_area_A0_mm2_from_nominal_diameter,standard_reduction_of_area_after_fracture_percent,note
+5 Y-1,5,1,50,9.156606,,,,,19.634954,,"Fill Lu and du/Au after fracture; A=(Lu-L0)/L0*100, Z=(A0-Au)/A0*100."
+5 Y-2,5,2,50,11.291096,,,,,19.634954,,"Fill Lu and du/Au after fracture; A=(Lu-L0)/L0*100, Z=(A0-Au)/A0*100."
+5.25 Y-1,5.25,1,50,8.97151,,,,,21.647537,,"Fill Lu and du/Au after fracture; A=(Lu-L0)/L0*100, Z=(A0-Au)/A0*100."
+5.25 Y-2,5.25,2,50,8.968844,,,,,21.647537,,"Fill Lu and du/Au after fracture; A=(Lu-L0)/L0*100, Z=(A0-Au)/A0*100."
+5.6 Y-1,5.6,1,50,12.628946,,,,,24.630086,,"Fill Lu and du/Au after fracture; A=(Lu-L0)/L0*100, Z=(A0-Au)/A0*100."
+5.6 Y-2,5.6,2,50,9.673504,,,,,24.630086,,"Fill Lu and du/Au after fracture; A=(Lu-L0)/L0*100, Z=(A0-Au)/A0*100."
+6.02 Y-1,6.02,1,50,10.886472,,,,,28.463144,,"Fill Lu and du/Au after fracture; A=(Lu-L0)/L0*100, Z=(A0-Au)/A0*100."
+6.02 Y-2,6.02,2,50,10.180654,,,,,28.463144,,"Fill Lu and du/Au after fracture; A=(Lu-L0)/L0*100, Z=(A0-Au)/A0*100."
+6.48 Y-1,6.48,1,50,14.514944,,,,,32.979183,,"Fill Lu and du/Au after fracture; A=(Lu-L0)/L0*100, Z=(A0-Au)/A0*100."
+6.48 Y-2,6.48,2,50,14.161774,,,,,32.979183,,"Fill Lu and du/Au after fracture; A=(Lu-L0)/L0*100, Z=(A0-Au)/A0*100."
+7 M-1,7,1,50,44.7368,,,,,38.48451,,"Fill Lu and du/Au after fracture; A=(Lu-L0)/L0*100, Z=(A0-Au)/A0*100."
+7 M-2,7,2,50,-0.70975,,,,,38.48451,,"Fill Lu and du/Au after fracture; A=(Lu-L0)/L0*100, Z=(A0-Au)/A0*100."

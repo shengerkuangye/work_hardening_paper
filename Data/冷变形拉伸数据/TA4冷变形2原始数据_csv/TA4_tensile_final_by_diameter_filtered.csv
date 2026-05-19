@@ -1,0 +1,7 @@
+﻿diameter_mm,valid_repeats_n,total_repeats_n,included_samples,excluded_samples,cold_reduction_percent_reference,Rp0.2_MPa_mean,Rp0.2_MPa_std,Rp0.2_MPa_valid_n,UTS_engineering_MPa_mean,UTS_engineering_MPa_std,UTS_engineering_MPa_valid_n,uniform_elongation_percent_mean,uniform_elongation_percent_std,uniform_elongation_percent_valid_n,fracture_strain_from_curve_percent_mean,fracture_strain_from_curve_percent_std,fracture_strain_from_curve_percent_valid_n,max_true_stress_MPa_mean,max_true_stress_MPa_std,max_true_stress_MPa_valid_n,elastic_modulus_GPa_mean,elastic_modulus_GPa_std,elastic_modulus_GPa_valid_n
+7,1,2,7 M-1,7 M-2,0,577.20662,0,1,711.6551,0,1,29.00394,0,1,44.7368,0,1,971.58248,0,1,104.43851,0,1
+6.48,1,2,6.48 Y-1,6.48 Y-2,14.305306,821.16572,0,1,869.14239,0,1,1.4521,0,1,14.514944,0,1,904.07476,0,1,106.40322,0,1
+6.02,0,2,,6.02 Y-1;6.02 Y-2,26.04,,,0,,,0,,,0,,,0,,,0,,,0
+5.6,2,2,5.6 Y-1;5.6 Y-2,,36,871.99035,13.556723,2,980.17385,1.442115,2,1.745328,0.0030490444,2,11.151225,2.0898131,2,1007.1727,7.1891173,2,102.7392,4.3983179,2
+5.25,0,2,,5.25 Y-1;5.25 Y-2,43.75,,,0,,,0,,,0,,,0,,,0,,,0
+5,2,2,5 Y-1;5 Y-2,,48.979592,909.06444,7.136815,2,1028.9314,9.6629892,2,1.710405,0.0056271558,2,10.223851,1.5093124,2,1050.6194,13.317186,2,105.17426,0.5306174,2
