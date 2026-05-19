@@ -1,0 +1,5 @@
+.codex_deps/
+pdf_deps/
+__pycache__/
+*.py[cod]
+
