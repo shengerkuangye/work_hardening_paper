@@ -1,0 +1,779 @@
+FILE: references\materials_13_03766.pdf
+PAGES: 12
+METADATA: {'/Author': 'Shin-Hyung Song', '/Title': 'A Comparison Study of Constitutive Equation, Neural Networks, and Support Vector Regression for Modeling Hot Deformation of 316L Stainless Steel', '/Subject': 'In this research, hot deformation experiments of 316L stainless steel were carried out at a temperature range of 800–1000 C and strain rate of 2  10-3–2  10-1. The flow stress behavior of 316L stainless steel was found to be highly dependent on the strain rate and temperature. After the experimental study, the flow stress was modeled using the Arrhenius-type constitutive equation, a neural network approach, and the support vector regression algorithm. The present research mainly focused on a comparative study of three algorithms for modeling the characteristics of hot deformation. The results indicated that the neural network approach and the support vector regression algorithm could be used to model the flow stress better than the approach of the Arrhenius-type equation. The modeling efficiency of the support vector regression algorithm was also found to be more efficient than the algorithm for neural networks.', '/Creator': 'LaTeX with hyperref package', '/Producer': 'pdfTeX-1.40.18', '/Keywords': '316L stainless; hot deformation; flow stress; neural network; support vector regression', '/CreationDate': "D:20200826170918+08'00'", '/ModDate': "D:20200826170918+08'00'", '/Trapped': '/False', '/PTEX.Fullbanner': 'This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) kpathsea version 6.2.3'}
+
+
+
+
+===== PAGE 1 =====
+materials
+Article
+A Comparison Study of Constitutive Equation,
+Neural Networks, and Support Vector Regression
+for Modeling Hot Deformation of 316L Stainless Steel
+Shin-Hyung Song
+Department of Smart Automobile, Soonchunhyang University, 22 Soonchunhyang-ro, Sinchang-myeon, Asan-si,
+Chungcheongnam-do 31538, Korea; neuro2@sch.ac.kr
+Received: 10 July 2020; Accepted: 24 August 2020; Published: 26 August 2020
+/gid00030/gid00035/gid00032/gid00030/gid00038/gid00001/gid00033/gid00042/gid00045/gid00001
+/gid00048/gid00043/gid00031/gid00028/gid00047/gid00032/gid00046
+Abstract: In this research, hot deformation experiments of 316L stainless steel were carried out at a
+temperature range of 800–1000◦C and strain rate of 2× 10−3–2× 10−1. The ﬂow stress behavior of
+316L stainless steel was found to be highly dependent on the strain rate and temperature. After the
+experimental study, the ﬂow stress was modeled using the Arrhenius-type constitutive equation,
+a neural network approach, and the support vector regression algorithm. The present research mainly
+focused on a comparative study of three algorithms for modeling the characteristics of hot deformation.
+The results indicated that the neural network approach and the support vector regression algorithm
+could be used to model the ﬂow stress better than the approach of the Arrhenius-type equation.
+The modeling eﬃciency of the support vector regression algorithm was also found to be more eﬃcient
+than the algorithm for neural networks.
+Keywords: 316L stainless; hot deformation; ﬂow stress; neural network; support vector regression
+1. Introduction
+Stainless steel is an iron-based alloy that is widely used because it has greater wear and
+corrosion resistance than other alloys such as mild steels and low alloy steels [ 1]. Depending on
+the alloying contents used, stainless steel can have good strength and oxidation resistance in high
+temperature environments, as well as the desired properties for cryogenic environments and marine
+applications [1–3]. One of the main types of stainless steel is austenitic stainless steel, which contains
+Cr (12–25 wt.%), Ni (8–25 wt.%), and Mo (0–6 wt.%) and has good high temperature properties.
+Austenitic stainless steel has several diﬀerent types and characteristics. For instance, stainless steel type
+316 is a molybdenum-added alloy which has good resistance to pitting, high temperature creep, and high
+temperature oxidation [3]. Thus, this alloy is often applied in defence and nuclear applications [ 3].
+Type 304 alloy contains about 18% Cr and about 8% Ni, and therefore is protected from the aggressive
+environment by passive ﬁlms made of chromium oxides [4,5]. Therefore, because 304 stainless steel
+has good corrosion resistance, the alloy is widely used in the gas and the oil industries [4,5]. Meanwhile,
+due to its excellent oxidation and creep resistance in high temperature environments, stainless steel
+type 310S is used in nuclear power plants and chemical industries [6].
+For the design and production of appropriate stainless-steel products, it is crucial that the
+deformation behaviors of the various types of stainless steel are thoroughly studied across a wide range
+of temperatures and strain rates, and a deformation model of the alloys should be developed. To date,
+many relevant studies have been conducted, including but not limited to a study on the deformation
+of 316 stainless steel under 0.1–100 s−1 of strain rate and 1173–1473 K temperature [7], a study on the
+compressive behavior of AISI 321 under the temperature range of 950–1100◦C and the strain rate of
+0.01–1 s−1 [8], and a study on the compression deformation behavior of AISI 304 under the strain rate
+of 0.001–5 s−1 and the temperature of 800–1200◦C.
+Materials 2020, 13, 3766; doi:10.3390/ma13173766 www.mdpi.com /journal/materials
+
+
+===== PAGE 2 =====
+Materials 2020, 13, 3766 2 of 12
+To date, a number of studies have attempted to model the ﬂow behavior of austenite stainless
+steels through various deformation experiments [3,8–12]. For example, Haj et al. [8] carried out hot
+compression tests for 321 stainless steel at temperatures ranging from 950 to 1100◦C and strain rates
+ranging from 0.01 s−1 to 1 s−1. In that study, a constitutive equation based on the Zener–Hollomon
+parameter was used to model the relationship between temperature, strain rate, and ﬂow stress.
+Nkhoma et al. [ 9] also employed a Zener–Hollomon parameter-based constitutive equation for
+modeling the hot deformation behavior of 321- and 304-type stainless steel under temperatures from
+800 to 1200◦C and strain rates from 0.001 s−1 to 5 s−1. In another study, the impact behavior of austenite
+stainless steel was modeled by Lee et al. [10]. In that experiment, 316L-type stainless steel was deformed
+by compressive SHPB (split Hopkinson pressure bar) test at a strain rate of 0.001–7500 s−1, to study
+the ﬂow behavior, and the ﬂow stress was modeled using the KHL (Khan–Huang–Liang) model.
+Mandal et al. [11] performed high-temperature deformation tests for Alloy D9 under temperatures
+ranging from 1123 to 1523 K and strain rates ranging from 0.001 s −1 to 100 s−1. In that study, the
+ﬂow stress of Alloy D9 was modeled using the Arrhenius-type equation. Gupta et al. [12] conducted
+hot tensile tests for 316-type stainless steel at 323–623 K temperatures and 0.0001–0.1 s−1 strain rates.
+In those tests, the ﬂow stress of 316 stainless steel was modeled employing the Johnson–Cook model,
+a modiﬁed type of the Zerilli–Armstrong model, and the Arrhenius-type equation.
+In addition to these traditional approaches, in a number of studies, the neural network model
+has also been employed to examine the hot deformation of alloys. For example, in the study by
+Gupta et al. [12], the neural network model was used to model hot deformation, and the results
+indicated that the neural network model had better performance than any of the other traditional
+constitutive models examined. Li et al. [ 13] conducted hot compression tests for Al–Zn–Mg alloy
+at temperatures from 340 to 500 ◦C and strain rates from 0.001 to 10 s −1. In that study, the ﬂow
+stress of the Al–Zn–Mg alloy was modeled using the Arrhenius-type model and the neural network
+model. The results found that the neural network model was better than the Arrhenius-type model.
+In a di ﬀerent study, Sabokpa et al. [ 14] performed hot compression tests for Ti600 at 250–400 ◦C
+temperatures and 0.0001–0.01 s−1 strain rates, while using the Arrhenius-type equation and the neural
+network model to model the ﬂow stress of Ti600. The results found that the neural network model had
+excellent performance.
+A literature study indicates that approaches employing constitutive equations were successfully
+used in modeling the hot deformation of stainless alloy. In particular, the Arrhenius-type equation has
+been the most widely used. However, the eﬀectiveness of the constitutive equations was often limited.
+Speciﬁcally, the complex nature of the hot deformation of metals makes it fundamentally diﬃcult to
+estimate the ﬂow behavior, and the nonlinearity of the relationship of deformation parameters with ﬂow
+stress, as well as the dispersion which can be shown in the experimental data also causes diﬃculties in
+modeling the ﬂow stress using constitutive equations [14]. It appears that the neural network approach
+should be used to complement the drawbacks of the constitutive equations described above. However,
+artiﬁcial neural network approaches have limited eﬃciency in model development and computation,
+since the accuracy and computation time of artiﬁcial neural networks are signiﬁcantly aﬀected by the
+modeling parameters, for example, the number of hidden layers and neurons. Therefore, there is a
+strong demand for adopting an algorithm that can be eﬃciently modeled and computed for predicting
+the ﬂow stress of high temperature deformation of alloys.
+In the present study, support vector machine-based regression was employed in modeling the
+ﬂow stress of hot deformation. To this end, 316-type stainless steel was hot deformed at temperatures
+from 800◦C to 1000◦C and strain rates from 0.0002 s−1 to 0.02 s−1. The ﬂow stress of the 316 stainless
+steel was modeled using the Arrhenius-type equation, a neural network model, and the support vector
+machine regression algorithm. The ﬂow stresses were obtained by diﬀerent models along with RMSE
+(root mean square error) values. A comparison of diﬀerent models and a discussion were also provided.
+
+
+===== PAGE 3 =====
+Materials 2020, 13, 3766 3 of 12
+2. Materials and Methods
+In the current study, hot tensile tests for 316-type stainless steel were done in the MTS-810 servo
+hydraulic material testing machine (Figure 1). The planar specimens for the tests were prepared by
+wire-EDM machining. Figure 2a shows the dimensions of the specimen and Figure 2b shows the
+actually prepared specimen. The high-temperature tensile experiments were done at strain rates of
+0.0002 s−1, 0.002 s−1, and 0.02 s−1, at temperatures of 800◦C, 900◦C, and 1000◦C, for each strain rate.
+Materials 2020, 13, x FOR PEER REVIEW 3 of 13 
+ 
+2. Materials and Methods 
+In the current study, hot tensile tests for 316-type stainless steel were done in the MTS-810 servo 
+hydraulic material testing machine (Figure 1). The planar specimens for the tests were prepared by 
+wire-EDM machining. Figure 2a shows the dimens ions of the specimen and Figure 2b shows the 
+actually prepared specimen. The high-temperature te nsile experiments were done at strain rates of 
+0.0002 s−1, 0.002 s−1, and 0.02 s−1, at temperatures of 800 °C, 900 °C, and 1000 °C, for each strain rate. 
+ 
+Figure 1. Equipment for tensile tests (MTS-810 material test system). 
+  
+(a) ( b) 
+Figure 2. (a) Dimensions of test specimen(mm); (b) Prepared test specimens. 
+The measured true stress-true strain curves for temperatures of 800 °C, 900 °C, and 1000 °C, 
+respectively, are shown in Figure 3a–c, under varying strain rates of 0.0002 s−1, 0.002 s−1, and 0.02 s−1. 
+Throughout the experiments, it is observed that flow stress is strongly dependent on the deformation 
+strain rate and temperature. It is observed that as the temperature increases, the stress decreases; 
+while as the stress increases, the strain rate increases. 
+Figure 1. Equipment for tensile tests (MTS-810 material test system).
+Materials 2020, 13, x FOR PEER REVIEW 3 of 13 
+ 
+2. Materials and Methods 
+In the current study, hot tensile tests for 316-type stainless steel were done in the MTS-810 servo 
+hydraulic material testing machine (Figure 1). The planar specimens for the tests were prepared by 
+wire-EDM machining. Figure 2a shows the dimens ions of the specimen and Figure 2b shows the 
+actually prepared specimen. The high-temperature te nsile experiments were done at strain rates of 
+0.0002 s−1, 0.002 s−1, and 0.02 s−1, at temperatures of 800 °C, 900 °C, and 1000 °C, for each strain rate. 
+ 
+Figure 1. Equipment for tensile tests (MTS-810 material test system). 
+  
+(a) ( b) 
+Figure 2. (a) Dimensions of test specimen(mm); (b) Prepared test specimens. 
+The measured true stress-true strain curves for temperatures of 800 °C, 900 °C, and 1000 °C, 
+respectively, are shown in Figure 3a–c, under varying strain rates of 0.0002 s−1, 0.002 s−1, and 0.02 s−1. 
+Throughout the experiments, it is observed that flow stress is strongly dependent on the deformation 
+strain rate and temperature. It is observed that as the temperature increases, the stress decreases; 
+while as the stress increases, the strain rate increases. 
+Figure 2. (a) Dimensions of test specimen(mm); (b) Prepared test specimens.
+The measured true stress-true strain curves for temperatures of 800 ◦C, 900 ◦C, and 1000 ◦C,
+respectively, are shown in Figure 3a–c, under varying strain rates of 0.0002 s−1, 0.002 s−1, and 0.02 s−1.
+Throughout the experiments, it is observed that ﬂow stress is strongly dependent on the deformation
+strain rate and temperature. It is observed that as the temperature increases, the stress decreases;
+while as the stress increases, the strain rate increases.
+
+
+===== PAGE 4 =====
+Materials 2020, 13, 3766 4 of 12
+Materials 2020, 13, x FOR PEER REVIEW 4 of 13 
+ 
+  
+(a) ( b) 
+ 
+(c) 
+Figure 3. True stress-true strain curves at (a) 800 °C, (b) 900 °C, (c) 1000 °C. 
+2.1. Arrhenius Type Constitutive Modeling 
+In this study, the Arrhenius-type equation was employed to model the hot deformation of 316L 
+stainless steel. The influences of temperature and st rain rate on the flow behavior is represented by 
+the Zener–Hollomon parameter, as shown below in Equation (1): 
+Z =  𝜀 ሶ exp ሺ𝑄
+𝑅𝑇ሻ (1) 
+where 
+𝜀ሶ =  𝐴𝐹ሺ𝜎ሻexp ሺ−𝑄
+𝑅𝑇 ሻ (2) 
+𝐹ሺ𝜎ሻ = ൝
+𝜎௡ᇱ                          𝛼𝜎 ൏ 0.8
+expሺ𝛽𝜎ሻ               𝛼𝜎 ൐ 1.2
+ሾsinhሺ𝛼𝜎ሻሿ௡               𝑎𝑙𝑙 𝛼𝜎
+ (3) 
+Q represents the activation energy (J·mol −1); R represents the gas constant (8.314 J∙m o lିଵKିଵ); 
+T denotes the temperature (K); and 𝜀ሶ is the strain rate ( sିଵሻ; while A, 𝑛′, α, β, and 𝑛 represents 
+material constants. 
+First, substituting the first Equation (3) into (2) and taking logarithms of both sides gives 
+𝑙𝑛σ = 1
+𝑛′  𝑙𝑛𝜀ሶ− 1
+𝑛ᇱ𝑙𝑛𝐵 (4) 
+Then, 𝑛′ can be obtained from the slopes of the lnσ−l n 𝜀ሶ curves. For instance, Figure 4a shows 
+the plot of lnσ−l n 𝜀ሶ when the strain is 0.3. 
+Figure 3. True stress-true strain curves at (a) 800◦C, (b) 900◦C, (c) 1000◦C.
+2.1. Arrhenius Type Constitutive Modeling
+In this study, the Arrhenius-type equation was employed to model the hot deformation of 316L
+stainless steel. The inﬂuences of temperature and strain rate on the ﬂow behavior is represented by the
+Zener–Hollomon parameter, as shown below in Equation (1):
+Z =
+.
+ε exp
+( Q
+RT
+)
+(1)
+where
+.
+ε = AF(σ) exp
+(−Q
+RT
+)
+(2)
+F(σ) =
+
+σn′ ασ< 0.8
+exp(βσ) ασ> 1.2
+[sinh(ασ)]n allασ
+(3)
+Q represents the activation energy (J·mol−1); R represents the gas constant (8.314 J·mol−1K−1);
+T denotes the temperature (K); and
+.
+ε is the strain rate ( s−1); while A, n′, α, β, and n represents
+material constants.
+First, substituting the ﬁrst Equation (3) into (2) and taking logarithms of both sides gives
+lnσ = 1
+n′ ln
+.
+ε− 1
+n′ lnB (4)
+Then, n′ can be obtained from the slopes of the lnσ− ln
+.
+ε curves. For instance, Figure 4a shows
+the plot of lnσ− ln
+.
+ε when the strain is 0.3.
+
+
+===== PAGE 5 =====
+Materials 2020, 13, 3766 5 of 12
+Materials 2020, 13, x FOR PEER REVIEW 5 of 13 
+ 
+  
+(a) ( b) 
+Figure 4. (a) lnσ−l n 𝜀ሶ plot and ( b) σ−l n 𝜀ሶ plot when strain is 0.3. 
+Further, substituting the second Equation (3) into (2) and taking logarithms of both sides gives: 
+σ =  1
+𝛽 𝑙𝑛𝜀ሶ− 1
+𝛽 𝑙𝑛𝐶 (5) 
+Similarly, β can be calculated from the slopes of the σ−l n 𝜀ሶ curves. Figure 4b shows the σ−
+ln𝜀ሶ plot. 
+The material constant α is defined as follows: 
+α =  𝛽
+𝑛′ (6) 
+Therefore, α is obtained after calculating β and 𝑛′. 
+The material constant 𝑛 can be obtained after substituting the last Equation (3) into (2) and 
+taking logarithms of both sides. From the equation shown below, n can be calculated using the slopes 
+of the ln𝜀ሶ− ln ሾsinhሺ𝛼𝜎ሻሿ curves as: 
+ln ሾsinhሺ𝛼𝜎ሻሿ  =  𝑙𝑛𝜀ሶ
+𝑛 ൅ 𝑄
+𝑛𝑅𝑇 − 𝑙𝑛𝐴
+𝑛  (7) 
+Figure 5a shows the plot of ln𝜀ሶ− ln ሾsinhሺ𝛼𝜎ሻሿ when the strain is 0.3.  Similarly, the material 
+constant Q  can be calculated from the ln ሾsinhሺ𝛼𝜎ሻሿ − ሺ
+ଵ
+்ሻ plot. Figure 5b shows the plot of 
+ln ሾsinhሺ𝛼𝜎ሻሿ − ሺ
+ଵ
+்ሻ. Using Equations (1) and (7), one can obtain the following equation: 
+lnZ =  lnA ൅ nlnሾsinhሺ𝛼𝜎ሻሿ (8) 
+From Equation (8), the material constant A can be calculated by using the y-intercept of the 
+lnZ − ln ሾsinhሺ𝛼𝜎ሻሿ plot, which is shown in Figure 5c. 
+ 
+ 
+ 
+ 
+Figure 4. (a) lnσ− ln
+.
+ε plot and (b) σ− ln
+.
+ε plot when strain is 0.3.
+Further, substituting the second Equation (3) into (2) and taking logarithms of both sides gives:
+σ = 1
+β ln
+.
+ε− 1
+β lnC (5)
+Similarly, β can be calculated from the slopes of the σ− ln
+.
+ε curves. Figure 4b shows the
+σ− ln
+.
+ε plot.
+The material constant α is deﬁned as follows:
+α = β
+n′ (6)
+Therefore, α is obtained after calculating β and n′.
+The material constant n can be obtained after substituting the last Equation (3) into (2) and taking
+logarithms of both sides. From the equation shown below, n can be calculated using the slopes of the
+ln
+.
+ε− ln[sinh(ασ)] curves as:
+ln[sinh(ασ)] = ln
+.
+ε
+n + Q
+nRT− lnA
+n (7)
+Figure 5a shows the plot ofln
+.
+ε− ln[sinh(ασ)] when the strain is 0.3. Similarly, the material constant
+Q can be calculated from the ln[sinh(ασ)]−
+(1
+T
+)
+plot. Figure 5b shows the plot of ln[sinh(ασ)]−
+(1
+T
+)
+.
+Using Equations (1) and (7), one can obtain the following equation:
+lnZ = lnA + nln[sinh(ασ)] (8)
+From Equation (8), the material constant A can be calculated by using the y-intercept of the
+lnZ− ln[sinh(ασ)] plot, which is shown in Figure 5c.
+After determining the material constants, one can obtain the equation describing the ﬂow stress
+using Equations (1) and (2) in the form of the equation below. Table 1 shows the parameters obtained
+for the Arrhenius equation.
+σ = 1
+α ln[
+(Z
+A
+)1
+n
++ [
+(Z
+A
+)2
+n
++ 1]
+1
+2
+] (9)
+
+
+===== PAGE 6 =====
+Materials 2020, 13, 3766 6 of 12
+Materials 2020, 13, x FOR PEER REVIEW 6 of 13 
+ 
+  
+(a) ( b) 
+ 
+(c) 
+Figure 5. (a) lnσ−l n 𝜀ሶ plot and ( b) ln ሾsinhሺ𝛼𝜎ሻሿ − ሺ
+ଵ
+்ሻ ( c) ln𝜀ሶ−l n  ሾ s i n h ሺ 𝛼 𝜎 ሻ ሿ plot when strain is 0.3. 
+After determining the material constants, one can obtain the equation describing the flow stress 
+using Equations (1) and (2) in the form of the equation below. Table 1 shows the parameters obtained 
+for the Arrhenius equation. 
+σ =  
+ଵ
+ఈln ሾቀ
+௓
+஺ቁ
+భ
+೙
+൅ሾ ቀ
+௓
+஺ቁ
+మ
+೙
+൅1 ሿ
+భ
+మ
+] (9) 
+Table 1. Parameters obtained for the Arrhenius-type constitutive equation. 
+Strain 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45 
+α 0.0091 0.0081 0.0076 0.0073 0.0071 0.007 0.0071 0.0073 0.0081 
+n 6.0452 5.4551 5.2624 5.1774 5.0818 5.014 4.9624 4.8867 5.2208 
+Q(kJ) 476.67 446.37 433.83 430.11 426.47 426.65 429.75 432.76 458.30 
+A 7.3454 × 
+1017 
+4.737 × 
+1016 
+1.493 × 
+1016 
+1.069 × 
+1016 
+7.41 × 
+1015 
+7.49 × 
+1015 
+9.96 × 
+1015  
+1.21 × 
+1016 
+9.634 × 
+1016 
+2.2. Neural Networks 
+Figure 6 is a schematic diagram of the developed neural networks. Each of the neural networks 
+has three layers, namely input, hidden, and output layers. In this study, two hidden layers were used 
+in the developed model. Each layer has neurons. Fo r example, the input layer has three neurons, 
+which represent the temperature, strain rate, and strain. Neurons are processed in terms of their 
+weight numbers. During the operation of the neural networks, the numbers received by a neuron 
+from the neurons in the previous layer are processed according to the weight number of the current 
+neuron. After the calculation, the calculated number is delivered to the neurons in the next layer in 
+Figure 5. (a) lnσ− ln
+.
+ε plot and (b) ln[sinh(ασ)]−
+(1
+T
+)
+(c) ln
+.
+ε− ln[sinh(ασ)] plot when strain is 0.3.
+Table 1. Parameters obtained for the Arrhenius-type constitutive equation.
+Strain 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45
+α 0.0091 0.0081 0.0076 0.0073 0.0071 0.007 0.0071 0.0073 0.0081
+n 6.0452 5.4551 5.2624 5.1774 5.0818 5.014 4.9624 4.8867 5.2208
+Q(kJ) 476.67 446.37 433.83 430.11 426.47 426.65 429.75 432.76 458.30
+A 7.3454×1017 4.737×1016 1.493×1016 1.069×1016 7.41×1015 7.49×1015 9.96×1015 1.21×1016 9.634×1016
+2.2. Neural Networks
+Figure 6 is a schematic diagram of the developed neural networks. Each of the neural networks
+has three layers, namely input, hidden, and output layers. In this study, two hidden layers were used
+in the developed model. Each layer has neurons. For example, the input layer has three neurons,
+which represent the temperature, strain rate, and strain. Neurons are processed in terms of their weight
+numbers. During the operation of the neural networks, the numbers received by a neuron from the
+neurons in the previous layer are processed according to the weight number of the current neuron.
+After the calculation, the calculated number is delivered to the neurons in the next layer in order. In the
+current model, the ﬁnal value is received by the output layer with one neuron, which represents the
+ﬂow stress of hot deformation. The numbers of hidden layers and neurons in the hidden layers directly
+and signiﬁcantly inﬂuence the accuracy of the prediction results. Gupta et al. [12] employed a single
+hidden layer with 15 hidden neurons. Li et al. [13] employed 18 hidden layers and Sabokpa et al. [14]
+employed 15 hidden neurons in a single hidden layer. In this research, the accuracy of the neural
+networks changed irregularly with the change of the numbers of hidden layers and neurons. Therefore,
+the ideal number of hidden layers and hidden neurons are decided after many simulations on a trial
+and error basis. In the current model, 250 neurons are used for each hidden layer. The activation
+function is the RELU (rectiﬁed linear unit) function. Training the neural network for good prediction
+accuracy involves obtaining the most appropriate set of weight values of neurons. For the current
+
+
+===== PAGE 7 =====
+Materials 2020, 13, 3766 7 of 12
+model, a back-propagation training algorithm with ADAM optimization was adopted. Mean square
+error is employed as a loss function for evaluating the performance of the neural networks during the
+training. Learning rate and weight decay are the parameters related to the amount being modiﬁed
+during the update of the weight of the neurons. In this research, 0.001 and 0.1 are chosen for learning
+rate and weight decay. In this research, the weight decay was set as 0.1 and the learning rate was set as
+0.01. For the development of the neural networks, Keras (a Python package) was utilized. For the
+training data of the current model, 324 points of data were chosen randomly from nine stress-strain
+curves for the strain range from 0.05 to 0.45. Another 81 points of data from the same nine curves
+for the strain range from 0.05 to 0.45 were chosen to test the developed model. To train the neural
+networks, training data is normalized by the equation below:
+xi, nor = xi− xmin
+xmax− xmin (10)
+Materials 2020, 13, x FOR PEER REVIEW 7 of 13 
+ 
+order. In the current model, the final value is re ceived by the output layer with one neuron, which 
+represents the flow stress of hot deformation. The numbers of hidden layers and neurons in the 
+hidden layers directly and significantly influence the accuracy of the prediction results. Gupta et al. 
+[12] employed a single hidden layer with 15 hidden neurons. Li et al. [13] employed 18 hidden layers 
+and Sabokpa et al. [14] employed 15 hidden neurons in a single hidden layer. In this research, the 
+accuracy of the neural networks changed irregularly with the change of the numbers of hidden layers 
+and neurons. Therefore, the ideal number of hi dden layers and hidden neurons are decided after 
+many simulations on a trial and error basis. In the current model, 250 neurons are used for each 
+hidden layer. The activation function is the RELU (rectified linear unit) function. Training the neural 
+network for good prediction accuracy involves obtaining the most appropriate set of weight values 
+of neurons. For the current model, a back-propagation training algorithm with ADAM optimization 
+was adopted. Mean square error is employed as a loss function for evaluating the performance of the 
+neural networks during the traini ng. Learning rate and weight decay are the parameters related to 
+the amount being modified during the update of th e weight of the neurons.  In this research, 0.001 
+and 0.1 are chosen for learning rate and weight decay. In this research, the weight decay was set as 
+0.1 and the learning rate was set as 0.01. For the development of the neural networks, Keras (a Python 
+package) was utilized. For the training data of th e current model, 324 points of data were chosen 
+randomly from nine stress-strain curves for the strain range from  0.05 to 0.45. Another 81 points of 
+data from the same nine curves for the strain range from 0.05 to 0.45 were chosen to test the developed 
+model. To train the neural networks, training data is normalized by the equation below: 
+𝑥
+௜,௡௢௥ =  𝑥௜−𝑥 ௠௜௡
+𝑥௠௔௫−𝑥 ௠௜௡ (10) 
+Here, 𝑥௜,௡௢௥ is the normalized value of the ith index data; 𝑥௜ is the ith data; and 𝑥௠௔௫ and 𝑥௠௜௡ 
+are maximum value and minimum value of data, respectively. Table 2 shows the process parameters 
+for the developed neural network model. 
+ 
+Figure 6. Neural network model. 
+Table 2. Processing parameters for the neural networks. 
+Parameter Neurons in 
+input Layer 
+Neurons in 
+Hidden 
+Layers 
+Output 
+Neuron Epochs Learning 
+Rate 
+Weight 
+Decay 
+Value 3 250,250 1 1500 0.001 0.1 
+2.3. SVR (Support Vector Regression) 
+SVR (support vector regression) [15] is an a pplied type of SVM (support vector machine) 
+classification algorithm. In SVR, the data is spli t into groups by hyperplane. The distance from the 
+hyperplane to the data at each group’s boundary is  called the margin, and the data on the marginal 
+Figure 6. Neural network model.
+Here, xi, nor is the normalized value of the ith index data; xi is the ith data; and xmax and xmin are
+maximum value and minimum value of data, respectively. Table 2 shows the process parameters for
+the developed neural network model.
+Table 2. Processing parameters for the neural networks.
+Parameter Neurons in
+Input Layer
+Neurons in
+Hidden Layers Output Neuron Epochs Learning Rate Weight Decay
+Value 3 250,250 1 1500 0.001 0.1
+2.3. SVR (Support Vector Regression)
+SVR (support vector regression) [ 15] is an applied type of SVM (support vector machine)
+classiﬁcation algorithm. In SVR, the data is split into groups by hyperplane. The distance from the
+hyperplane to the data at each group’s boundary is called the margin, and the data on the marginal
+boundary is called the support vector. The purpose of training the SVR is to ﬁnd the optimal hyperplane
+with the largest margin. Figure 7 shows a schematic diagram of the support vector machine algorithm
+with the original linear hyperplane. For the training of the current data, the relationship of input data
+with the output data is nonlinear and complex. Therefore, a new hyperplane is induced to a feature
+space by the kernel method to help train the nonlinear dataset. A Python package (Scikit-learn) was
+used in the current study. The regularization parameter is chosen to be 5000, and the epsilon value is
+chosen to be 0.003. Table 3 lists the process parameters for the developed SVR model.
+
+
+===== PAGE 8 =====
+Materials 2020, 13, 3766 8 of 12
+Materials 2020, 13, x FOR PEER REVIEW 8 of 13 
+ 
+boundary is called the support vector. The purpos e of training the SVR is to find the optimal 
+hyperplane with the largest margin. Figure 7 sh ows a schematic diagram of the support vector 
+machine algorithm with the original linear hyperplane. For the training of the current data, the 
+relationship of input data with the output da ta is nonlinear and complex. Therefore, a new 
+hyperplane is induced to a feature space by the kernel method to help train the nonlinear dataset. A 
+Python package (Scikit-learn) was used in the current study. The regularization parameter is chosen 
+to be 5000, and the epsilon value is chosen to be 0.003. Table 3 lists the process parameters for the 
+developed SVR model. 
+ 
+Figure 7. Support vector machine. 
+Table 3. Parameters for support vector regression. 
+Parameter Kernel C Epsilon 
+value Radial Basis 
+Function 5000 0.003 
+3. Results and Discussion 
+3.1. Arrhenius-Type Constituitive Modeling 
+Figure 8a–c shows the calculated true stress  by the Arrhenius equation indicated on the 
+experimental curves for 800 °C, 900 °C, and 1000 °C, respectively, when the strain rates are 0.0002 s−1, 
+0.002 s−1, and 0.02 s−1, respectively. The stresses predicted by the Arrhenius equation were close to the 
+experimental values. The RMSE (r oot mean square error) for the stress by the Arrhenius equation 
+was found to be 5.59. 
+  
+Figure 7. Support vector machine.
+Table 3. Parameters for support vector regression.
+Parameter Kernel C Epsilon
+value Radial Basis Function 5000 0.003
+3. Results and Discussion
+3.1. Arrhenius-Type Constituitive Modeling
+Figure 8a–c shows the calculated true stress by the Arrhenius equation indicated on the
+experimental curves for 800◦C, 900◦C, and 1000◦C, respectively, when the strain rates are 0.0002 s−1,
+0.002 s−1, and 0.02 s−1, respectively. The stresses predicted by the Arrhenius equation were close to the
+experimental values. The RMSE (root mean square error) for the stress by the Arrhenius equation was
+found to be 5.59.
+Materials 2020, 13, x FOR PEER REVIEW 9 of 13 
+ 
+  
+(a) ( b) 
+ 
+(c) 
+Figure 8. True stress-true strain curves at (a) 800 °C; (b) 900 °C; (c) 1000 °C. 
+3.2. Neural Networks 
+Figure 9 shows the calculated true stress by th e neural networks indicated on the measured 
+stress for the temperatures of (a) 800 °C, (b) 900 °C , and (c) 1000 °C, when the strain rates are 0.0002 
+s−1, 0.002 s−1, and 0.02 s−1. The RMSE of the true stress using the neural network model was found to 
+be 2.85. The results indicate that the true stress using the developed neural network is more similar 
+to the measured values than the stress calculated by the Arrheniu s equation. However, substantial 
+effort was needed to obtain an appropriate model with good process parameters. In addition, the 
+neural network model was computationally more expensive. 
+ 
+ 
+ 
+ 
+Figure 8. True stress-true strain curves at (a) 800◦C; (b) 900◦C; (c) 1000◦C.
+
+
+===== PAGE 9 =====
+Materials 2020, 13, 3766 9 of 12
+3.2. Neural Networks
+Figure 9 shows the calculated true stress by the neural networks indicated on the measured stress
+for the temperatures of (a) 800 ◦C, (b) 900◦C, and (c) 1000◦C, when the strain rates are 0.0002 s−1,
+0.002 s−1, and 0.02 s−1. The RMSE of the true stress using the neural network model was found to be
+2.85. The results indicate that the true stress using the developed neural network is more similar to the
+measured values than the stress calculated by the Arrhenius equation. However, substantial eﬀort was
+needed to obtain an appropriate model with good process parameters. In addition, the neural network
+model was computationally more expensive.
+Materials 2020, 13, x FOR PEER REVIEW 10 of 13 
+ 
+  
+(a) ( b) 
+ 
+(c) 
+Figure 9. True stress-true strain curves at (a) 800 °C; (b) 900 °C; (c) 1000 °C. 
+3.3. Support Vector Regression 
+Figure 10 shows the stress predicted using the support vector regressi on algorithm indicated 
+with the measured stress at (a) 800 °C, (b) 900 °C, and (c) 1000 °C for the strain rates of 0.0002 s−1, 0.002 
+s−1, and 0.02 s−1. The RMSE value for the stress by support vector regression was found to be 2.55. The 
+support vector regression could predict the stress with similar accuracy as the neural network model, 
+while being computationally less expensive. 
+ 
+ 
+ 
+ 
+Figure 9. True stress-true strain curves at (a) 800◦C; (b) 900◦C; (c) 1000◦C.
+3.3. Support Vector Regression
+Figure 10 shows the stress predicted using the support vector regression algorithm indicated
+with the measured stress at (a) 800 ◦C, (b) 900◦C, and (c) 1000 ◦C for the strain rates of 0.0002 s−1,
+0.002 s−1, and 0.02 s−1. The RMSE value for the stress by support vector regression was found to be
+2.55. The support vector regression could predict the stress with similar accuracy as the neural network
+model, while being computationally less expensive.
+
+
+===== PAGE 10 =====
+Materials 2020, 13, 3766 10 of 12
+Materials 2020, 13, x FOR PEER REVIEW 11 of 13 
+ 
+  
+(a) ( b) 
+ 
+(c) 
+Figure 10. True stress-true strain curves at (a) 800 °C; (b) 900 °C; (c) 1000 °C. 
+Table 4 shows the RMSEs (root mean square error) for three algorithms. 
+Table 4. Root mean square error using three algorithms. 
+Arrhenius Equation Neural Network Model Support Vector 
+Regression 
+5.59 2.85 2.55 
+In this research, a study on relative percentage errors by three algorithms was done. Figure 11 
+shows the relative frequency of errors versus relative percentage error using (a) Arrhenius equation, 
+(b) neural networks, and (c) the support vector machine algorithm. The plots (a), (b), and (c) for three 
+algorithms are provided with mean value, and stan dard deviation of relative percentage errors as 
+Equations (11) and (12): 
+μ =  1
+𝑛 ෍𝛿 ௜
+௡
+௜ୀଵ
+ (11) 
+w =  ඩ 1
+𝑛−1 ෍ሺ𝛿௜−𝜇 ሻଶ
+௡
+௜ୀଵ
+ (12) 
+where μ is the mean value of the relative percentage errors and w is the standard deviation, δ is the 
+relative percentage error, n is the number of samples, and i is the index of a sample. 
+Figure 10. True stress-true strain curves at (a) 800◦C; (b) 900◦C; (c) 1000◦C.
+Table 4 shows the RMSEs (root mean square error) for three algorithms.
+Table 4. Root mean square error using three algorithms.
+Arrhenius Equation Neural Network Model Support Vector Regression
+5.59 2.85 2.55
+In this research, a study on relative percentage errors by three algorithms was done. Figure 11
+shows the relative frequency of errors versus relative percentage error using (a) Arrhenius equation,
+(b) neural networks, and (c) the support vector machine algorithm. The plots (a), (b), and (c) for three
+algorithms are provided with mean value, and standard deviation of relative percentage errors as
+Equations (11) and (12):
+µ = 1
+n
+n∑
+i=1
+δi (11)
+w =
+√
+1
+n− 1
+n∑
+i=1
+(δi−µ)2 (12)
+where µ is the mean value of the relative percentage errors and w is the standard deviation, δ is the
+relative percentage error, n is the number of samples, and i is the index of a sample.
+
+
+===== PAGE 11 =====
+Materials 2020, 13, 3766 11 of 12
+Materials 2020, 13, x FOR PEER REVIEW 12 of 13 
+ 
+  
+(a) ( b) 
+ 
+(c) 
+Figure 11. Relative frequency vs. relative percentage error using ( a) Arrhenius equation; ( b) Neural 
+network; (c) Support vector regression. 
+The absolute value of the mean relative error by  the Arrhenius-type equation was found to be 
+approximately 0.06 which is relatively smaller than the absolute mean values by the neural network 
+approach and support vector machine algorithm. However, the standard deviation was found to be 
+much larger than that of the neural network and support vector machine which means that the errors 
+using the Arrhenius-type equation are more disp ersed. The absolute values of mean relative 
+percentage error by the neural network approach  and the support vector machine algorithm were 
+found to be slightly larger than that of the Arrhenius equation but the standard deviation value was 
+smaller than that of the Arrhenius equation. Th erefore, the performance of the neural network 
+approach and the support vector machine algorithm are considered to be more reliable than the 
+Arrhenius equation, while the support vector machine algorithm has more reliability than the neural 
+network approach. 
+4. Conclusions 
+This work presents a comparison of three algorithms that can be used for the modeling of the 
+hot deformation flow stress of 316L stainless steel . The Arrhenius equation, neural networks, and 
+support vector regression algorithms are compared in terms of their prediction accuracies and 
+computational efficiencies. The conclusions are presented as follows: 
+1. The flow stress calculated by the Arrhenius eq uation was similar to the measured stress. 
+However, the prediction accuracy still needs to be improved. 
+2. The neural networks could predict the flow stress with better RMSE than the Arrhenius equation. 
+However, the development and the optimization of the neural network model were not efficient. 
+Furthermore, the neural network model was not computationally efficient. 
+Figure 11. Relative frequency vs. relative percentage error using (a) Arrhenius equation; (b) Neural
+network; (c) Support vector regression.
+The absolute value of the mean relative error by the Arrhenius-type equation was found to be
+approximately 0.06 which is relatively smaller than the absolute mean values by the neural network
+approach and support vector machine algorithm. However, the standard deviation was found to be
+much larger than that of the neural network and support vector machine which means that the errors
+using the Arrhenius-type equation are more dispersed. The absolute values of mean relative percentage
+error by the neural network approach and the support vector machine algorithm were found to be
+slightly larger than that of the Arrhenius equation but the standard deviation value was smaller than
+that of the Arrhenius equation. Therefore, the performance of the neural network approach and the
+support vector machine algorithm are considered to be more reliable than the Arrhenius equation,
+while the support vector machine algorithm has more reliability than the neural network approach.
+4. Conclusions
+This work presents a comparison of three algorithms that can be used for the modeling of the hot
+deformation ﬂow stress of 316L stainless steel. The Arrhenius equation, neural networks, and support
+vector regression algorithms are compared in terms of their prediction accuracies and computational
+eﬃciencies. The conclusions are presented as follows:
+1. The ﬂow stress calculated by the Arrhenius equation was similar to the measured stress. However,
+the prediction accuracy still needs to be improved.
+2. The neural networks could predict the ﬂow stress with better RMSE than the Arrhenius equation.
+However, the development and the optimization of the neural network model were not eﬃcient.
+Furthermore, the neural network model was not computationally eﬃcient.
+
+
+===== PAGE 12 =====
+Materials 2020, 13, 3766 12 of 12
+3. The support vector regression algorithm predicted the ﬂow stress with similar RMSE as the neural
+network model. At the same time, developing the support vector regression model was eﬃcient
+and computationally inexpensive.
+4. The neural networks and support vector regression algorithms predicted the ﬂow stress more
+reliably than the Arrhenius equation. In addition, the performance of support vector regression
+was more reliable than the neural network.
+5. Although the neural network and the support vector regression algorithms calculated ﬂow stress
+with better RMSE than the Arrhenius equation, the algorithms could not extrapolate and predict
+the ﬂow stress outside the range of the training data.
+Funding: This work was supported by the Soonchunhyang University Research Fund (no. 20181005).
+Acknowledgments: The author wish to thank W.-D. Choi for the experiments.
+Conﬂicts of Interest: The author declares no conﬂict of interest.
+References
+1. Devaraju, A. Development of austenitic stainless steel type 316ln–A review. Int. J. Des. Manuf. T echnol. 2015,
+6, 48–53.
+2. Gardner, L.; Insausti, A.; Ng, K.T.; Ashraf, M. Elevated temperature material properties of stainless steel
+alloys. J. Constr. Steel Res. 2010, 66, 634–647.
+3. Prasad, K.S.; Gupta, A.K. A constitutive description to predict high-temperature ﬂow stress in austenitic
+stainless steel 316. Procedia Mater. Sci. 2014, 6, 347–353.
+4. Javidi, M.; Haghshenas, S.M.S.; Shariat, M.H. CO2 corrosion behavior of sensitized 304 and 316 austenitic
+stainless steels in 3.5 wt% NaCl solution and presence of H2S. Corros. Sci. 2020, 163, 108230.
+5. Yu, J.; Ji, G.; Liu, Q.; Zhang, J.; Shi, Z. Eﬀect of sol-gel ZrO2 ﬁlms on corrosion behavior of the 304 stainless
+steel in coal-gases environment at high temperature. Surf. Coat. T echnol. 2017, 331, 21–26.
+6. Zhang, X.; Li, D.; Li, Y.; Lu, S. The inﬂuence of niobium on the plastic deformation behaviors of 310 s
+austenitic stainless steel weld metals at diﬀerent temperatures. Mater. Sci. Eng. 2019, 743, 648–655.
+7. DeALMEIDA, J.A.; Barbosa, R. Hot deformation of austenitic stainless steel type 316 up to strain rates of
+100 s-1. ISIJ Int. 2005, 45, 296–298.
+8. Haj, M.; Mansouri, H.; Vafaei, R.; Ebrahimi, G.R.; Kanani, A. Hot compression deformation behavior of AISI
+321 austenitic stainless steel. Int. J. Miner. Metall. Mater. 2013, 20, 529.
+9. Nkhoma, R.K.; Siyasiya, C.W.; Stumpf, W.E. Hot workability of AISI 321 and AISI 304 austenitic stainless
+steels. J. Alloys Compd. 2014, 595, 103–112.
+10. Lee, W.S.; Lin, C.F.; Liu, T.J. Strain rate dependence of impact properties of sintered 316 L stainless steel.
+J. Nucl. Mater. 2006, 359, 247–257.
+11. Mandal, S.; Rakesh, V .; Sivaprasad, P .V .; Venugopal, S.; Kasiviswanathan, K.V . Constitutive equations to
+predict high temperature ﬂow stress in a Ti-modiﬁed austenitic stainless steel. Mater. Sci. Eng. 2009, 500,
+114–121.
+12. Gupta, A.K.; Anirudh, V .K.; Singh, S.K. Constitutive models to predict ﬂow stress in Austenitic Stainless
+Steel 316 at elevated temperatures. Mater. Des. 2013, 43, 410–418.
+13. Li, B.; Pan, Q.; Yin, Z. Microstructural evolution and constitutive relationship of Al–Zn–Mg alloy containing
+small amount of Sc and Zr during hot deformation based on Arrhenius-type and artiﬁcial neural network
+models. J. Alloys Compd. 2014, 584, 406–416.
+14. Sabokpa, O.; Zarei-Hanzaki, A.; Abedi, H.R.; Haghdadi, N. Artiﬁcial neural network modeling to predict the
+high temperature ﬂow behavior of an AZ81 magnesium alloy. Mater. Des. 2012, 39, 390–396.
+15. Drucker, H.; Burges, C.J.C.; Kaufman, L.; Smola, A.J.; Vapnik, V . Support vector regression machines.
+In Advances in Neural Information Processing Systems 9 ; MIT Press: Cambridge, MA, USA, 1997; pp. 155–161.
+© 2020 by the author. Licensee MDPI, Basel, Switzerland. This article is an open access
+article distributed under the terms and conditions of the Creative Commons Attribution
+(CC BY) license (http://creativecommons.org/licenses/by/4.0/).

@@ -1,0 +1,91 @@
+文献总结：Liu et al. (2024) Mg-3Dy hot-deformation flow-stress prediction and EBSD mechanism
+
+来源文件：
+- references/liu_2024_materials_research_express_11_056513.pdf
+
+题名：
+- Prediction of flow stress in Mg-3Dy alloy based on constitutive equation and PSO-SVR model
+
+基本信息：
+- 作者：Yafei Liu 等
+- 期刊：Materials Research Express, 2024, 11, 056513
+- DOI：10.1088/2053-1591/ad48de
+- 关键词：magnesium alloy; constitutive model; PSO-SVR model; thermal processing map; dynamic recrystallization mechanism
+- 材料对象：as-cast Mg-3Dy alloy
+- 研究类型：热压缩实验 + EBSD 组织分析 + Arrhenius/PSO-SVR 流动应力预测
+
+研究目的：
+- 研究 Mg-3Dy 合金在热压缩条件下的流动应力行为和组织演化。
+- 建立 Arrhenius 模型和 PSO-SVR 模型，比较两者对流动应力的预测精度。
+- 通过 EBSD 分析动态再结晶、晶界、KAM 和孪生等组织特征，并结合热加工图确定适宜加工窗口。
+
+实验条件：
+- 原料：高纯 Mg 和 Mg-20Dy 中间合金，熔铸制备 Mg-3Dy。
+- 均匀化：565 deg C，12 h。
+- 试样：直径 10 mm、高 15 mm 圆柱试样。
+- 热压缩温度：380-470 deg C。
+- 应变速率：0.001-1 s^-1。
+- 最终真应变：0.69，对应约 50% 压缩。
+- 压缩后水淬以保留高温组织。
+- EBSD 样品采用 7% 高氯酸酒精溶液电解抛光。
+
+主要组织结果：
+- 初始铸态 Mg-3Dy 中存在大量枝晶组织。
+- 变形温度和应变速率显著影响晶粒尺寸、晶界类型和动态再结晶行为。
+- 随温度升高，动态再结晶增强，低角度晶界可逐渐转变为高角度晶界。
+- 在 440 deg C 下，随应变速率升高，高角度晶界比例降低，低角度晶界增多；作者将其归因于高应变速率下动态再结晶时间不足，位错缠结并形成大量低角度晶界。
+- KAM 结果显示：
+  - 较低温度和较高应变速率下，合金内部位错和储能更明显；
+  - 随温度升高，平均 KAM 降低，说明动态再结晶消耗了位错和储存能；
+  - 在恒定温度下，随应变速率升高，KAM 从约 0.60 deg 增至 1.46 deg，说明位错在晶界附近累积。
+- 动态再结晶机制以 DDRX（discontinuous dynamic recrystallization）为主，表现为 necklace-like structure。
+- 孪生分析显示，部分孪晶变体遵循最大 Schmid 因子规律，但也有变体不符合该规律；作者将其解释为低温下局部应力集中导致低 Schmid 因子孪晶变体也可被激活。
+
+力学/流动应力行为：
+- 真应力-真应变曲线受温度和应变速率显著影响。
+- 作者将多数热压缩曲线分为三个阶段：
+  - work hardening stage：位错增殖导致应力快速上升，硬化速率高于动态回复速率；
+  - transition stage：动态回复/动态再结晶软化与加工硬化竞争，应力增长变慢；
+  - steady-state stage：软化与硬化接近平衡。
+- 该三阶段框架可借鉴到本项目的 work hardening 曲线描述，但需要明确本项目是室温冷变形/拉伸，不存在热变形中的 DRX 机制。
+
+模型结果：
+- Arrhenius 双曲正弦模型用于描述 Mg-3Dy 的热变形流动应力。
+- 计算得到热变形激活能 Q = 168.278 kJ/mol。
+- Arrhenius 模型预测精度：
+  - R2 = 0.97214。
+  - 在低温和部分应变速率条件下误差较大。
+- 作者认为 Arrhenius 模型没有显式考虑孪生、滑移和再结晶对流动应力的影响，因此预测能力有限。
+- PSO-SVR 模型：
+  - 输入/输出数据来自热压缩曲线；
+  - 训练集约 896 组，验证/测试点约 208 组；
+  - 最优参数：C = 19000, epsilon = 2.0, gamma = 15；
+  - 预测精度 R2 = 0.99982，MSE = 0.074。
+- PSO-SVR 明显优于 Arrhenius 模型，因为它能够从训练数据中捕捉温度、应变速率、应变和应力之间的非线性关系。
+
+热加工图结论：
+- 依据热加工图，Mg-3Dy 的适宜加工范围为 380-470 deg C 和 0.001-0.01 s^-1。
+- 380 deg C、1 s^-1 条件处于失稳区，也对应 Arrhenius 模型较大预测误差。
+
+对 Gr4B23271 冷变形 work hardening 论文的可用点：
+- 可借鉴“位错增殖导致初期加工硬化、回复/再结晶等软化机制与硬化竞争”的曲线解释框架；但应改写为适合冷变形商业纯钛的语言，避免直接套用热变形 DRX。
+- EBSD 证据链可借鉴：
+  - KAM 增大可作为局部取向梯度/位错储存增强的间接证据；
+  - LAGB/HAGB 比例变化可用于讨论位错结构演化或亚晶形成；
+  - 孪生需要通过 misorientation、pole figure、Schmid factor 等证据支持。
+- 可作为“模型未显式考虑孪生、滑移、再结晶等组织机制会影响流动应力预测”的方法学参考。
+- 对本项目尤其有用的是谨慎表述：若没有 EBSD 证据，不应直接断言孪生或特定滑移系激活。
+
+与本项目的局限：
+- 材料为 Mg-3Dy 稀土镁合金，不是 Gr4B23271 商业纯钛。
+- 变形方式为热压缩，不是冷拉/冷变形后的室温拉伸。
+- 动态再结晶（DRX/DDRX）属于热变形机制，不能直接用于解释本项目冷变形 work hardening。
+- 文中孪生机制属于镁合金 HCP 热压缩条件下的结果，不能直接移植到商业纯钛；只能作为 EBSD 论证方式的参考。
+
+可转化为论文表述的句子：
+- EBSD-based KAM maps and grain-boundary statistics are often used to connect flow-stress evolution with local misorientation, dislocation storage, and recrystallization or substructure development.
+- For the present cold-deformed Gr4B23271 titanium, any discussion of twinning or slip-system activity should be tied to direct EBSD evidence, such as characteristic misorientation, pole figures, or orientation-dependent deformation traces.
+
+证据类型归类：
+- 可支持：KAM/晶界/EBSD 作为组织-力学联系证据的方法；流动应力与组织机制耦合；模型误差与组织机制未显式考虑有关。
+- 不可直接支持：Gr4B23271 的 DRX 机制；商业纯钛具体孪晶比例；冷变形后的动态再结晶。

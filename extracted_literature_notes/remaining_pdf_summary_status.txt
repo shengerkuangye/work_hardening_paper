@@ -1,0 +1,26 @@
+剩余 PDF 总结状态
+
+已补充总结：
+- references/materials_13_03766.pdf
+  - summary: extracted_literature_notes/materials_13_03766_summary.txt
+- references/liu_2024_materials_research_express_11_056513.pdf
+  - summary: extracted_literature_notes/liu_2024_materials_research_express_11_056513_summary.txt
+
+已存在 extracted 笔记的 PDF：
+- references/ti6554_cryogenic_mechanical_properties_ml_liu_chuankun.pdf
+  - extracted: extracted_literature_notes/ti6554_cryogenic_mechanical_properties_ml_extracted.txt
+- references/ml_constitutive_modelling_material_nonlinearity_review.pdf
+  - extracted: extracted_literature_notes/ml_constitutive_modelling_material_nonlinearity_review_extracted.txt
+- references/arrhenius_bp_hot_deformation_hypereutectoid_steel.pdf
+  - extracted: extracted_literature_notes/arrhenius_bp_hot_deformation_hypereutectoid_steel_extracted.txt
+
+重复/备用 PDF：
+- references/ml_constitutive_modelling_material_nonlinearity_review_alt.pdf
+  - 与 ml_constitutive_modelling_material_nonlinearity_review.pdf 对应同一篇综述：
+    Machine learning-based constitutive modelling for material non-linearity: A review.
+  - 已有 extracted 笔记，因此未另做重复总结。
+
+中间派生文本：
+- extracted_literature_notes/pdf_text_work/
+  - 用于从 PDF 提取文字并核对摘要、实验、结果和结论。
+  - 原始 PDF 未被改动。

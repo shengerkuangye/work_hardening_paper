@@ -1,0 +1,2524 @@
+FILE: references\ml_constitutive_modelling_material_nonlinearity_review_alt.pdf
+PAGES: 20
+METADATA: {'/Title': 'Machine learning-based constitutive modelling for material non-linearity: A review'}
+
+
+
+
+===== PAGE 1 =====
+Mechanics of Advanced Materials and Structures
+ISSN: 1537-6494 (Print) 1537-6532 (Online) Journal homepage: www.tandfonline.com/journals/umcm20
+Machine learning-based constitutive modelling
+for material non-linearity: A review
+Arif Hussain, Amir Hosein Sakhaei & Mahmood Shaﬁee
+To cite this article: Arif Hussain, Amir Hosein Sakhaei & Mahmood Shaﬁee (2026) Machine
+learning-based constitutive modelling for material non-linearity: A review, Mechanics of
+Advanced Materials and Structures, 33:1, 2439557, DOI: 10.1080/15376494.2024.2439557
+To link to this article:  https://doi.org/10.1080/15376494.2024.2439557
+© 2024 The Author(s). Published with
+license by Taylor & Francis Group, LLC
+Published online: 17 Dec 2024.
+Submit your article to this journal 
+Article views: 7297
+View related articles 
+View Crossmark data
+Citing articles: 36 View citing articles 
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=umcm20
+
+
+===== PAGE 2 =====
+ORIGINAL ARTICLE
+Machine learning-based constitutive modelling for material non-linearity: A 
+review
+Arif Hussain
+a 
+, Amir Hosein Sakhaei
+a 
+, and Mahmood Shafiee
+a ,b 
+a
+Mechanical Engineering Group, School of Engineering, University of Kent, Canterbury, United Kingdom; 
+b
+School of Mechanical Engineering 
+Sciences, University of Surrey, Guildford, United Kingdom 
+ABSTRACT 
+Machine learning (ML) models are widely used across numerous scientific and engineering disci -
+plines due to their exceptional performance, flexibility, prediction quality, and ability to handle 
+highly complex problems if appropriate data are available. One example of such areas which has 
+attracted a lot of attentions in the last couple of years is the integration of data-driven approaches 
+in material modeling. There has been several successful researches in implementing ML-based 
+constitutive models instead of classical phenomenological models for various materials, particularly 
+those with non-linear mechanical behaviors. This review paper aims to systematically investigate 
+the literature on ML-based constitutive models for materials and classify these models based on 
+their suitability for material non-linearity including Non-linear elasticity (hyperelasticity), plasticity, 
+visco-elasticity, and visco-plasticity. Furthermore, we also reviewed and compared the ML-based 
+approaches that have been applied for architectured materials as these groups of materials are 
+designed to represent specific material behaviors that might not exist in classical and conventional 
+material categories. The other goal of this review paper is to provide initial steps in understanding 
+of various ML-based approaches for material modeling, including artificial neural networks (ANN), 
+Gaussian processes, random forests (RF), generated adversarial networks (GANs), support vector 
+machines (SVM), different regression models and physics-informed neural networks (PINN). This 
+paper also outlines different data collection methods, types of data, data processing approaches, 
+the theoretical background of the ML models, advantage and limitations of various models, and 
+potential future research directions. This comprehensive review will provide researchers with the 
+knowledge necessary to develop high-fidelity, robust, adaptable, flexible, and accurate data-driven 
+constitutive models for advanced materials.
+ARTICLE HISTORY 
+Received 23 July 2024 
+Accepted 4 December 2024 
+KEYWORDS 
+Data-driven material 
+models; machine learning; 
+material non-linearity; 
+architectured materials; 
+metamaterials   
+Nomenclature
+Greek symbols 
+ML Machine Learning 
+ANN Artificial Neural Networks 
+RF Random Forests 
+GAN Generated Adversarial Networks 
+SVM Support Vector Machines 
+PINN Physics-Informed Neural Networks 
+AI Artificial Intelligence 
+MD Molecular Dynamics 
+FEM Finite Element Method 
+TBNN Tensor Basis Neural Network 
+SPD-NN Symmetric Positive Definite Neural Network 
+FFNN Feed Forward Neural Network 
+ECNN Equilibrium basis Convolution Neural Network 
+DMN Deep Material Network 
+CANN Constitutive Artificial Neural Network 
+DEM Deep Energy Method 
+MSE Mean Square Error 
+RMSE Root Mean Square Error 
+LSTM Long-Short Term Memory 
+GA Genetic Algorithm 
+RSM Response Surface Method 
+EPR Evolutionary Polynomial Regression 
+NNO Neural Network Optimization 
+IPA Interior-Point Algorithm 
+RVM Relevance Vector Machine 
+GPR Gaussian Process Regression 
+KNN K-Nearest Neighbor 
+1. Introduction
+Machine learning models, as a subset of Artificial Intelli -
+gence (AI), are speedily infiltrating numerous scientific and 
+technological fields. This is due to the outstanding perform -
+ance of data analytics and computing models beyond human 
+capacity. Researchers in several disciplines of science use a 
+variety of methods to address the challenges posed by grow -
+ing data volumes. Therefore, ML is gaining prominence in 
+CONTACT Amir Hosein Sakhaei 
+ a.sakhaei@kent.ac.uk 
+ Mechanical Engineering Group, School of Engineering, University of Kent, Canterbury, CT2 7NT, 
+United Kingdom. 
+� 2024 The Author(s). Published with license by Taylor & Francis Group, LLC 
+This is an Open Access article distributed under the terms of the Creative Commons Attribution-NonCommercial-NoDerivatives License (http://creativecommons.org/licenses/by-nc-nd/4. 
+0/), which permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited, and is not altered, transformed, or built upon in 
+any way. The terms on which this article has been published allow the posting of the Accepted Manuscript in a repository by the author(s) or with their consent.
+MECHANICS OF ADVANCED MATERIALS AND STRUCTURES 
+2026, VOL. 33, NO. 1, 2439557 
+https://doi.org/10.1080/15376494.2024.2439557
+
+
+===== PAGE 3 =====
+various fields of engineering, including but not limited to: 
+biomedical engineering [ 1 ] advanced digital manufacturing 
+[ 2 ], autonomous driving vehicles [ 3 ], novel material design 
+and characterization [ 4–6 ], Structural Health Monitoring [ 7 , 
+8 ], robotics [ 9 ], civil and structural engineering [ 10 , 11 ], etc. 
+For example, in robotics, ML models play an essential role 
+in providing the ability to sense and communicate with the 
+world, make decisions, and learn from past experiences. In 
+the field of structural health monitoring, ML methods are 
+employed to monitor the safety and security of physical 
+structures, including buildings, bridges, airplanes, and other 
+electronic and mechanical equipment. With the help of these 
+models, engineers can analyze data from vibration and strain 
+measurements to identify structural faults and flaws, dam -
+age, and irregularities within the systems.
+In the field of material modeling, the combination of ML 
+and constitutive models is used to develop data-driven mod -
+els that best represent complex, high-dimensional, and non -
+linear material behaviors. These constitutive models that 
+could be high-dimensional, history-dependent, or rate- 
+dependent are used to estimate the mechanical behaviors of 
+materials, such as stiffness, strength, ductility, failure, frac -
+ture toughness, and delamination [ 12 ] under various work -
+ing conditions. It is also worth noting that ML techniques 
+not only exhibit the feature of predicting material properties 
+but also sometimes reduce computational time and costs by 
+providing robust simulation and optimization tools for 
+material design and processing [ 13 , 14 ].
+A successful data-driven ML-based material model should 
+also replace classical phenomenological material models, 
+which are commonly employed to study the behavior of 
+materials in different forums. Phenomenological material 
+models are usually based on the fundamental principles of 
+physics obtained through empirical studies. These models 
+are quite complex in an experiment, costly and time con -
+suming in development, and sometimes do not provide a 
+link between the microstructure details of the materials and 
+the material design strategy. Thus, data-driven ML-based 
+material models might overcome many of these challenges 
+and complexities owing to their high-fidelity structures and 
+dependence on a large and diverse dataset.
+Furthermore, advanced engineered materials such as 
+metamaterials have created new challenges and requirements 
+for material modeling. These materials exhibit distinctive 
+microstructure characteristics and demonstrate highly non -
+linear behavior at the macroscale level owing to their com -
+plicated geometries and microstructures. Hence, there is an 
+immediate need for highly robust models to evaluate data to 
+identify patterns and trends that can be used to develop new 
+or improve existing engineered materials with certain fea -
+tures and functionalities.
+In recent years, a broad variety of material models have 
+been designed based on machine learning (ML) or data- 
+driven methods, which are promising methods for constitu -
+tive modeling of materials. For example, Pal and Naskar 
+demonstrated that RF regression models could be useful to 
+monitor several parameters and identify non-linear relation -
+ships between the properties of the elastomeric material 
+[ 15 ]. Similarly, Liu et al. proved that support vector machine 
+models are suitable methodology nonlinear and high-dimen -
+sional regression through small scale dataset as they help to 
+eliminate local convergence issues [ 16 ]. As another example, 
+Huang et al. have employed ANN models to train high- 
+fidelity simulations and experimental data [ 17 ] in which the 
+proposed framework was trained using displacement field 
+data obtained from the experiments. They then observed 
+and reported the limitations of the model over complex rela -
+tions, such as viscoelasticity and plasticity, where the phys -
+ical system is time-dependent. Hence, although ML-based 
+constitutive modeling of materials has helped solve many 
+problems with different perspectives to study the behavior 
+of materials, there are still many challenges that need to be 
+considered in this growing field of research.
+This review paper aims to provide a pioneering compre -
+hensive review as well as insights into the development of 
+ML-based material models that are applied in simulations of 
+various materials with a specific focus on material non-lin -
+earity, such as hyperelasticity, plasticity, visco-elasticity, and 
+visco-plasticity. We then also investigate the ML-based 
+approaches for modeling the structurally engineered materi -
+als which may present multiple novel functional properties. 
+Furthermore, this review paper will provide the classification 
+of ML-based models based on their appropriateness for the 
+type of material non-linearity with focussing on theoretical 
+and practical concepts of both machine learning models and 
+physical material behaviors. Figure 1 presents an overview of 
+the areas covered in this study including the data collection, 
+analysis, and validation process. The first part of the figure 
+presents the data collection processes for the design of the 
+constitutive model of the material. Data might be obtained 
+through experiments, simulations, or hybrid techniques, 
+which are described in Section 2 of this review study. In 
+addition to data collection, the performance of the constitu -
+tive models strongly depends on the selection of appropriate 
+ML models. Thus, Section 3 presents ML-based material 
+models appropriate for various material non-linearity and 
+the classification of these methods based on their applica -
+tions. The comparison of results and observations and opin -
+ions is addressed in Section 4 . Finally, the study concludes 
+with future research directions in Section 5 .
+2. Data generating processes
+To develop a robust data-driven material model, it is crucial 
+to generate high-fidelity and appropriate sets of data that 
+can reflect all the physical phenomena of the investigated 
+material. Various approaches and methods have recently 
+been used by researchers to achieve reliable data, which 
+could be from performing physical experiments, specific 
+numerical simulations at various scales, and/or a combin -
+ation of these two methodologies. These approaches, along 
+with their challenges and benefits, are reviewed in this sec -
+tion to provide better directions for researchers on data gen -
+eration for ML-based material modeling.
+Classically, experimental methods were the first approach 
+to investigate the physical behavior of the materials and to 
+quantify these mechanical behaviors. There are several 
+2
+ A. HUSSAIN ET AL.
+
+
+===== PAGE 4 =====
+different experimental methods that have been used to col -
+lect data for developing constitutive models for materials. 
+For example, mechanical tests such as tensile, compression, 
+biaxial, torsion, and bending tests can be performed to pro -
+vide data on different material properties [ 18–21 ]. Zhou 
+et al. [ 19 ] developed a method based on the transparent 
+indentation method which was used to approximate the ten -
+sile deformation and stress of hyperelastic materials. 
+Although the experimental indentation method has tradi -
+tionally been used mostly for studying the mechanical prop -
+erties of isotropic materials, they claimed that instantaneous 
+mechanical properties exhibit anisotropic behavior during 
+tensile deformation, resulting in an elliptical rather than a 
+round contact zone.
+We could summarize some of the advantages of these 
+approaches as follows: (i) data and measurements from 
+practical and real-world examples of mechanical materials, 
+(ii) providing validation data for simulation-based models, 
+(iii) developing actual data from different complicated 
+small-size structures under various conditions, and (iv) 
+developing a probabilistic dataset and considering uncertain -
+ties [ 22 , 23 ] in the model based on repetition of experiments 
+and, therefore, considering the measurement and laboratory 
+errors in the nature of the models. However, experimental 
+approaches have some significant limitations, such as (i) the 
+limitation to generating a sufficiently large set of data, (ii) 
+the limitation of obtaining all the required physical details 
+or obtaining in-depth knowledge of the material, (iii) signifi -
+cant cost and time for conducting adequate experiments to 
+obtain appropriate data, and (iv) challenges in interpreting 
+the experimental data.
+The second and most frequently used approach to collect 
+data for data-driven material models is numerical simulations. 
+Although these numerical simulations might be validated 
+through some experiments, the simulations are the only data 
+collection route for these researches. One of the most signifi -
+cant benefits of numerical simulations is its ability to generate 
+enormous combined loading data sets, which can be challeng -
+ing when performing experiments due to its limitations in 
+terms of cost, time, and measurement equipment. For 
+example, Fernandez et al. [ 24 ] used purely periodic boundary 
+condition simulations on unit cell level to construct the consti -
+tutive behavior of a 3D cubic lattice using an ML-based 
+approach. In the same concept, Chung et al. [ 25 ] used 
+molecular dynamics (MD) simulation to develop a neural net -
+work constitutive model to study the hyperelastic behavior of 
+polymers. The MD simulations in that study contained various 
+loading such as uni-axial tension and compression, bi-axial 
+tension and compression, tri-axial tension and compression, 
+and simple shear. Furthermore, many studies employed the 
+macroscale finite element method (FEM), as a straightforward 
+and cost-effective way, to obtain an appropriate dataset for 
+their non-linear ML-based constitutive models [ 26–29 ]. 
+Among these numerical approaches, FEM is an appealing 
+method for providing meaningful and relevant data to train 
+ML algorithms with reasonable computational costs [ 30 ].
+Considering the most important numerical approaches in 
+the literature, we could observe that generating data through 
+numerical simulations offers some advantages, as follows (i) 
+it is more cost-effective in comparison to experimental 
+methods, (ii) various complex design structures can be 
+simulated under different loading conditions, (iii) some spe -
+cific properties that cannot be measured through experi -
+ments can be captured in simulations, and (iv) it could be 
+less time-consuming. However, these methods have some 
+limitations such as (i) the models need to be verified and 
+validated appropriately to generate trustworthy data, and (ii) 
+implementation of high-fidelity material models, simulation 
+strategies, and boundary conditions could be a challenge in 
+numerical approaches.
+Finally, the advantages and limitations of purely experimen -
+tal and simulation approaches to obtain data for data-driven 
+methods have led researchers to define a new framework that 
+works more effectively and robustly than the first two 
+approaches. This approach, which is the so-called “hybrid 
+approach” in the community, combines the data collected 
+from experiments and simulation analysis, maximizes the bene -
+fits, and reduces any potential drawbacks associated with indi -
+vidual processes. It is worth mentioning that this is a different 
+methodology from using the experiments to validate the 
+Figure 1. Overview of the data collection, analysis and validation process of an ML-based constitutive model.
+MECHANICS OF ADVANCED MATERIALS AND STRUCTURES
+ 3
+
+
+===== PAGE 5 =====
+simulations where all the final data comes from numerical 
+analysis. However, in a hybrid approach, a specific percentage 
+of the data is obtained from experiments, and the rest are 
+derived from numerical analysis. Fahimi et al. [ 31 ] and then 
+Narooei and Arman [ 32 ] used a hybrid approach in which 
+they developed an objective function that was equal to the 
+difference between the experimental results and those numer -
+ical simulation results to calculate the material parameters. 
+Furthermore, Alawwa et al. [ 33 ] and Alkebsi et.al [ 34 ] used a 
+combination of finite element simulation and experimental 
+studies to perform full characterization of a novel lattice 
+structure material to achieve enhanced mechanical perform -
+ance under compression.
+The advantages of the hybrid method include (i) combin -
+ing experimental and simulation methods for more compre -
+hensive results, (ii) capturing the detailed behavior of 
+materials, and (iii) enhancing the accuracy and validation of 
+the collected data. Moreover, certain limitations come with 
+using hybrid approaches, such as (i) tending to be more 
+complex and incorporating many other techniques as com -
+pared to experimental data and numerical simulations. 
+Furthermore, it may be (ii) more expensive to implement a 
+hybrid approach due to the additional resources, time, and 
+expertise it needs [ 35 ].
+3. Fundamental of ML approaches for material 
+modeling
+Researchers have recently developed ML as an efficient 
+method for training algorithms incorporated with a data set 
+of material properties. These ML algorithms identify com -
+plex relationships within datasets and predict behavior 
+beyond the range of the initial data. The robustness of these 
+material models is important for the material design process, 
+material selection for a product, and prediction and avoid -
+ance of mechanical failures [ 36 ].
+Kirchdoerfer and Ortiz [ 37 ] first introduced a data-driven 
+material model that approximates the constitutive law directly 
+from experimental materials data with relevant constraints 
+and conservation laws and by circumventing traditional 
+empirical modeling of materials. With such an approach, the 
+empirical view of material modeling along with uncertainty 
+and inaccuracy can be taken out without the loss of some 
+experimental data. Later on, Eggersmann et al. [ 38 ] extended 
+Kirchdoerfer and Ortiz model and introduced a model-free 
+data-driven approach for inelasticity problems. Their study 
+included the investigation of three different representations: 
+(i) material with memory, which indicates that the dataset of 
+the material has to depend on the material’s previous history 
+of deformation, (ii) differential materials, which refer to a 
+material dataset with a short history of strain and stress, and 
+(iii) the history variable, which indicates that the material 
+dataset is dependent on ad-hoc variables that have a history 
+of stress and strain information. They assumed that by using 
+the material datasets of the differential material and history 
+variable, they could represent the classical model of plasticity 
+and viscoelasticity. Similarly, Conti et al. [ 39 ] extended the 
+Kirchdoerfer and Ortiz work [ 37 ] to a finite-elasticity data- 
+driven model. In their framework, they described the behav -
+ior of the material employing a material data set having all 
+the states of the deformation gradient (F) and the first Piola- 
+Kirchhoff stresses (P) in a constraint set that helps to keep its 
+deviation from a material data set.
+To implement ML-based material models, some essential 
+steps have to be followed to obtain the complete benefits of 
+ML and AI techniques. The step-by-step process to study 
+the mechanical behavior of materials has been illustrated in 
+Figure 2 and explained in detail in the following section. 
+The first step is data generation, which can be done through 
+either experimental analysis, simulation, numerical analysis, 
+or a hybrid approach. This step has been explained in the 
+previous section more comprehensively. The second step is 
+the cleansing of data, which involves cleaning and sampling 
+the acquired data to extract the desired features from the 
+raw data and delete irrelevant information from the raw 
+data. This will help reduce the complexity of the dataset 
+while studying high-dimensional or 3D problems of 
+advanced materials. In the third step, the appropriate ML 
+approach is selected based on the type of data, physics, and 
+nature of the problem. This may be a regression, classifica -
+tion, or clustering problem. In this regard, the majority of 
+the ML-based models that are developed to study the consti -
+tutive behavior of materials are the tensor basis neural net -
+work (TBNN), symmetric positive definite neural network 
+(SPD-NN) [ 40 ], feedforward neural network (FFNN)[ 24 ], 
+equilibrium basis convolution neural network (ECNN) [ 41 ], 
+deep material network (DMN) [ 42 ], artificial neural network 
+(ANN) [ 43 , 44 ], constitutive artificial neural network 
+(CANN) [ 45 ], deep energy method (DEM)[ 46 ], and etc. The 
+theoretical background of these methods has been discussed 
+in detail in the following. Based on the selection of the ML 
+approach, the next step is to train the model with the proc -
+essed data characterized in the second step. The data set is 
+classified as training data, testing data, and sometimes cross- 
+validation data, which should be separated to avoid overfitting 
+during the training of the model. Finally, every ML-based 
+model requires an evaluation step to ensure accurate predic -
+tion and performance regarding the behavior of materials. 
+Parameters such as mean square error (MSE), root mean 
+square error (RMSE), training and validation losses, and 
+stress-strain predictions are examples of parameters to be con -
+sidered during the evaluation process of an ML-based model.
+To better understand the process of choosing an ML 
+approach for a material model, we first need to understand 
+the theoretical background of each ML methodology and 
+their mathematical specifications. For example, the random 
+forest algorithm is fundamentally made up of decision trees, 
+as schematically illustrated in Figure 3a . In constitutive 
+materials modeling, decision trees capture the relationship 
+between input and output parameters by partitioning the 
+features to predict the behavior of the complex material. 
+Moreover, RF usually combines many classification trees 
+based on ensemble learning principles, with the prediction 
+connection being randomly updated throughout implemen -
+tation to increase the diversity of the forest’s types of trees 
+[ 47 , 48 ]. Since RF relies on feedback from each decision tree 
+4
+ A. HUSSAIN ET AL.
+
+
+===== PAGE 6 =====
+to determine the ultimate output, it usually takes longer 
+time to make the decisions and therefore, it is complicated 
+to make a fast framework based on RF. It is also important 
+to discuss that Bootstrap is a critical technique for RF where 
+a new training dataset is made by repeatedly generating new 
+sample data randomly from the original training data. For 
+example, Liu et al. [ 49 ] have used RF together with the 
+Bootstrap approach to generate prediction trees for a lattice- 
+structured material which generate a functional relationship 
+between four lattice features ( X) and the equivalent elastic 
+modulus of the lattice structure ( Y) as
+Y ¼
+1
+n
+X
+n
+i¼1
+Y
+i
+¼
+1
+n
+X
+n
+i¼1
+f ðX, T
+i
+m
+Þ (1) 
+where n, is the number of prediction trees, T
+m
+¼
+ðX
+1
+, Y
+1
+Þ, ðX
+2
+, Y
+2
+Þ, :::, ðX
+m
+, Y
+m
+Þ is the training set. Such an 
+approach helps to introduce randomness and diversity into 
+the training process, reducing over-fitting and improving 
+model convergence with the final output.
+Among the other ML approaches, ANN stands out as 
+one of the widely used ML models for tasks such as regres -
+sion, classification, prediction, pattern, and image recogni -
+tion, while SVM is popular for detection, classification, and 
+regression in designing constitutive materials modeling. The 
+key differences between ANN and SVM lie in terms of the 
+representation and pattern recognition approach. As pre -
+sented schematically in Figure 3b and c , SVMs aim to find 
+a hyperplane or decision boundary to separate classes in the 
+input space, while ANNs map inputs to outputs through 
+transformations and activations in hidden layers, producing 
+continuous or discrete output values. Furthermore, SVMs 
+find a hyperplane in the input space to separate patterns, 
+utilizing a kernel function for non-linearly separable data, 
+while ANNs, especially deep neural networks, learn complex 
+non-linear mappings by composing multiple layers of neu -
+rons applying non-linear transformations to the input val -
+ues [ 50 , 51 ].
+Furthermore, CNN, as illustrated schematically in Figure 3e , 
+is one of the types of deep neural networks that are well 
+suited to processing spatially structured data using weight- 
+sharing and pooling layers for various regions of images and 
+volumes. These networks show great potential to determine 
+the complex relationship between strain distributions and 
+elasticity parameter fields by accurately obeying fundamental 
+physical equations [ 52 ]. Furthermore, the development of 
+RNN models, presented in Figure 3d , plays a significant role 
+in advancing data-driven modeling for elastic-plastic and 
+viscoelastic materials mainly due to the ability to incorporate 
+time and history dependence. Further fundamental theoretical 
+concepts of such models are explained in the elastoplastic and 
+viscoelastic sections of the paper.
+The Physics-Informed Neural Network (PINN), as illus -
+trated schematically in Figure 3f is another branch of ML- 
+based methods that work effectively for material modeling. 
+This method integrates fundamental physical laws and engin -
+eering design knowledge with the neural network training 
+process. The purpose of this integration is to boost the per -
+formance of the model by solving various problems with bet -
+ter accuracy and improving the generalizability of the 
+material model and as a results it has been growing signifi -
+cantly in computational mechanics forum in the recent years. 
+For example, the PINN approach has been used successfully 
+for the prediction of structural instability of materials [ 53 ], 
+the prediction of multiaxial fatigue life [ 54 ], structural opti -
+mization [ 55 ], and inverse engineering structural problems 
+[ 56 ]. Furthermore, the PINN models have the ability to be 
+trained with a small amount of data therefore, it could 
+improve the computational cost and training efficiency [ 57 ], 
+interpretability, and prediction accuracy. The critical aspect of 
+PINN, which plays a fundamental role in ensuring accurate 
+learning of the model and is shown in Figure 3f , is the total 
+cost or loss function as a representation of both the observed 
+data and the underlying physics of the problem. It provides 
+direction for the training procedure and facilitates the obtain -
+ing of solutions efficiently and practically in the scope.
+Figure 2. The step-by-step development process of validated ML-based material models.
+MECHANICS OF ADVANCED MATERIALS AND STRUCTURES
+ 5
+
+
+===== PAGE 7 =====
+In summary, these various ML-based methods provide 
+important insights regarding their potential benefits and limi -
+tations in constitutive modeling of materials. We could clearly 
+observe here that examining inherent elastic materials typic -
+ally does not require sophisticated ML models unless there 
+are unique motivations for their utilization. Therefore, regres -
+sion- or classification-based ML models are commonly used 
+for elastic materials[ 58 , 59 ]. However, in other cases, more 
+complex behaviors, such as non-linear material responses, 
+anisotropic characteristics, or material behaviors under 
+extreme conditions, must be captured which require more 
+sophisticated and advanced models. Therefore, in the follow -
+ing sections, we focus and review the implementation of ML- 
+based models for various non-linearity in material behaviors.
+4. ML-based approaches for material non-linearity
+There is a reasonable discussion in the scientific forum that 
+we don’t need any data-driven model when the physical 
+material behavior is very simple and involves only a few 
+material constants such as isotropic linear elasticity and what 
+would be the gain of adding extra modeling complexity?
+While this is a true statement that ML-based methods 
+would add complexity to simple physical material models 
+such as linear elasticity, we should not ignore the fact that 
+ML-based models could be fantastic tools for linear regres -
+sions for anisotropic linear elastic materials where phenom -
+enological models started to become more sophisticated. 
+Furthermore, another advantage of Ml-based models is the 
+capability of offering probabilistic approaches that could 
+Figure 3. The schematics of various ML-based models for constitutive modeling of materials.
+6
+ A. HUSSAIN ET AL.
+
+
+===== PAGE 8 =====
+consider the uncertainty and variations in experimental data 
+from material characterizations.
+Considering all the rapid advances in the field of ML- 
+based material models as well as considering the fact that a 
+model that covers nonlinearity in material models could 
+usually be used for linear elasticity, we focus our study on 
+application of ML-based models for nonlinear material 
+behaviors. To this aim, in this section we will focus on 
+hyper-elasticity, visco-elasticity, viscoplasticity, and the com -
+bined behavior in structural engineered materials.
+4.1. ML-based models for nonlinear elasticity 
+(hyperelasticity)
+Hyperelastic materials are a type of material which can endure 
+large deformation before failing and still remain elastic. This 
+means that the deformation is fully reversible with no plastic 
+deformation when the load is removed. This also indicates 
+that the stress-strain relationship of hyperelastic materials is 
+highly nonlinear. The principle of strain energy density serves 
+as the theoretical basis of constitutive modeling of hyperelastic 
+materials. This energy density is a function of the deformation 
+of the material and could be used to determine the stress- 
+strain relationship through constitutive tensor. Therefore, all 
+classical constitutive models for hyperelsatic materials present 
+a type of phenomenological model for the strain energy func -
+tion that includes various material constants. These material 
+constants would be identified by fitting the model to the 
+experimental data. Some famous theoretical hyperelastic mod -
+els include but are not limited shown in Table 1 .where I
+1
+; I
+2
+;
+and I
+3 
+are three invariants of strain tensor as
+I
+1
+ðCÞ ¼ tr ðCÞ ¼ I
+1
+ðBÞ
+I
+2
+ðCÞ ¼
+1
+2
+tr
+2
+ðCÞ − tr ðC
+2
+Þ
+� �
+¼ I
+2
+ðBÞ
+I
+3
+ðCÞ ¼ det ðCÞ ¼ I
+3
+ðBÞ
+(2) 
+with C ¼ F
+T
+F and B ¼ Ff
+t 
+are right and left Cauchy-Green 
+tensors, respectively, and F is the deformation gradient. The 
+stress tensor and elasticity tensor would then be found by 
+using the first and second derivative of the strain energy 
+function with respect to the right Cauchy-Green deform -
+ation tensor, respectively as
+S ¼ 2
+@ W
+@ C
+C ¼ 2
+@ S
+@ C
+¼ 4
+@
+2
+W
+@ C
+2
+(3) 
+where S is the second Piola-Kirchhoff stress tensor and C 
+the fourth-order elasticity tensor, respectively.
+Therefore, considering the importance of data in finding 
+material parameters for traditional hyperelastic models, 
+researchers started to discuss data-driven approaches to dir -
+ectly find the constitutive model from data without involv -
+ing phenomenological consideration. There were various 
+approaches for this purpose in the literature, such as train -
+ing a data-driven model to represent the strain energy func -
+tion or developing a model to directly link large 
+deformation stress components into the stress tensor, which 
+will be discussed in this section. These ML data-driven 
+approaches have significant advantages over phenomeno -
+logical models which include but are not limited to the 
+absence of phenomenological assumptions, the independence 
+of parameter calibration and the adaptation of the iterative 
+model using new data [ 60 , 61 ].
+Several ML-based models are designed to learn the strain 
+energy density from synthetic and experimental data for 
+hyperelastic materials. Pal et al. [ 15 ] developed three differ -
+ent regression ML models, including linear regression, sup -
+port vector regression (SVR), and random forest (RF), to 
+determine the effectiveness of the ML model in developing a 
+model for Marlow hyperelastic material. They collected the 
+data through an experimental process on rubber with 10 
+samples analyzed for every test. According to their out -
+comes, the linear regression model could not accurately pre -
+dict the performance parameters such as mean square error 
+(MSE) and mean absolute error (MAE). Furthermore, the 
+linear regression model produced outcomes with some 
+degree of randomness when compared to results from SVR. 
+However, the RF regression model consistently produced the 
+most reliable and deterministic outputs when compared to 
+the other three models.
+The other hyperelastic material model based on a NN 
+was presented by Shen et al. in [ 62 ]. Their model has been 
+trained by employing the test data from rubber that could 
+approximate the hyperelastic strain energy function. The 
+inputs of NN are two strain invariants along with the volu -
+metric strain ratio J and the trained model predicts the 
+strain energy. Although the ML model trained well to show 
+better performance as compared to existing strain energy 
+functions, some practical considerations should be taken 
+into account while gathering test data for rubber material in 
+order to train the neural network. In [ 45 ], they introduced a 
+constitutive ANN model for hyperelastic materials that 
+could include data from three different ways, i.e. stress- 
+strain, theoretical knowledge from the field of material the -
+ory, and also supplementary knowledge such as knowledge 
+of microstructure or materials processing. Such an ML 
+Table 1. Summary of the some key phenomenological hyperelastic models.
+Model name Strain energy funcion Material parameters Description
+Neo-Hookean W ¼ C
+10
+ðI
+1
+− 3Þ Only one parameter C
+10
+A basic model suitable for small strains
+Mooney-Rivlin W ¼ C
+10
+ðI
+1
+− 3Þ þ C
+01
+ðI
+2
+− 3Þ two parameters C
+10 
+and C
+01
+Suitable for moderate deformations under 200%
+Yeoh W ¼
+P
+3
+i¼1
+C
+i0
+ðI
+1
+− 3Þ
+i
+three parameters C
+10
+; C
+20
+; and C
+30
+Employing for rubber-like materials and capturing material behavior 
+using multiple parameters
+Ogden W ¼
+P
+N
+i¼1
+l
+i
+a
+i
+ðk
+a
+i
+1
+þ k
+a
+i
+2
+þ k
+a
+i
+3
+− 3Þ N (user-defined) parameters l
+i 
+and a
+i
+Suitable for wide strain range and better flexibility than the 
+Mooney-Rivlin model in describing curves
+Gent W ¼
+E
+6
+ðI
+m
+− 3Þln 1 −
+I 1 −3
+I
+m
+−3
+� �
+Two parameters E and I
+m
+Robust, mathematical simple and easily combined with physical 
+basis and suitable for large deformation
+MECHANICS OF ADVANCED MATERIALS AND STRUCTURES
+ 7
+
+
+===== PAGE 9 =====
+model would help reduce the required datasets for training 
+by including continuum mechanical knowledge. As a result, 
+the method would theoretically be able to predict the char -
+acteristics of new hyperelastic materials using knowledge 
+passed over direct mechanical or geometrical explanation.
+Moreover, Li and Chen [ 41 ] proposed an equilibrium- 
+based convolution neural network (ECNN) constitutive 
+modeling of hyperelastic material which is used to employ 
+displacement, strain and applied external force as input 
+information to train the model while stress is considered as 
+an internal variable. They found that enormous training 
+data could be obtained using a single specimen that deforms 
+unevenly under loading, and it was concluded that these 
+techniques are a substantial source of data generation. 
+However, stress related to a certain collection of strains 
+could be achieved by implementing equilibrium equation 
+intrinsic requirements within this proposed model. All strain 
+measurements in this study are based on logarithmic strain, 
+and the resulting deformation dataset includes 16,848 dis -
+tinct datasets. An unsupervised convolution neural network 
+was then designed to isolate the spatial stress components in 
+irregular deformation. The high level of consistency suggests 
+that the designed ECNN is capable of accurately represent -
+ing the local stress within the non-uniformly deformed 
+material. The proposed model is presented only for 2D 
+problems however, they claimed that their design could be 
+extended to solve 3D problems by using volumetric digital 
+image correlation (V-DIC) that helps to measure the 
+internal body deformation. Furthermore, the model only 
+contemplated history-independent hyperelastic constitutive 
+behavior, and for materials with history-dependent proper -
+ties such as viscoelastic or viscoplastic materials other types 
+of the model should be developed.
+Physics-informed neural networks (PINN) models could 
+also be employed to identify the constitutive relationships of 
+hyperelastic materials. These models provide versatility in 
+investigating hyperelastic material properties, encompassing 
+applications such as resolving inverse problems, implementing 
+multiscale modeling, establishing constitutive models for 
+hyperelastic soft tissues, and studying hyperelastic foams and 
+composites with remarkable precision and reliability. 
+Moreover, PINN incorporates potential energy, the colloca -
+tion method, and deep learning to identify the partial differ -
+ential equations (PDE) that determine the mechanical 
+deformation of hyperelastic materials. The implementation of 
+PINN to address PDEs is a more promising approach, how -
+ever, it comes with its own set of challenges and complexities. 
+For example, the weight and biases of the PINN models are 
+generally nonconvexly identified by using the optimization 
+problem and the automated differentiation (AD) utilized for 
+measuring spatial gradients is unstable [ 63 ]. The standard 
+PINN models are usually unable to accomplish appropriate 
+outcomes when addressing hypoelastic materials challenges, 
+mainly due to the significant deformation experienced by 
+hyperelastic materials. In order to address such challenges, 
+Luo et al. [ 64 ] proposed stepwise PINN (sPINN) (a combin -
+ation of PINN and Hughes-Winget algorithm) to solve large 
+deformation-related problems in hypoelastic materials. The 
+model is trained with different numerical synthesis datasets 
+having different training points including 700, 1000, and 
+1500. The results indicated that the sPINN exhibits the ability 
+to effectively and accurately predict the displacement and 
+stress distributions in path-dependent large deformation scen -
+arios on small datasets. Despite this, the concentration factor 
+is challenging for sPINN to capture precisely and the entire 
+training procedure requires a considerable amount of time.
+Finally, to better summerize and classify the suitable ML- 
+based approaches for hyperelasticity, we have provided 
+Table 2 as a comprehensive summary of different ML mod -
+els for hyperelastic material including their limitations and 
+advantages.
+4.2. ML-based models for plasticity and visco-plasticity
+Elastoplastic materials demonstrate unique properties due to 
+the combination of elastic and plastic properties, yield stress, 
+ultimate stress, and strain-hardening qualities. In addition, it 
+offers the property of hysteresis when subjected to cyclic 
+loads. Hence, to understand and design these materials, it is 
+crucial to develop high-fidelity material models that capture 
+their complex properties. The general stress-strain relations 
+of a typical elastoplastic material is the combination of the 
+elastic part e
+e 
+and plastic part e
+p 
+as
+r ¼ C � e − e
+pð Þ
+(4) 
+where C is the fourth-order elastic tensor and e is the total 
+strain having an elastic part and a plastic part. Therefore, 
+the main part of developing an elastoplastic constitutive 
+equation is the development of the phenomenological model 
+for plastic strain, e
+p
+: This usually includes the material con -
+stants that need to be determined after fitting the model 
+into experimental data. However, this is a challenging step 
+in phenomenological elastoplastic material models as it 
+might not be possible to perfectly fit the model to experi -
+mental data through moderation of material constants.
+To address this for elastoplastic materials, data-driven 
+models based on ML are designed to accelerate the develop -
+ment of the model by predicting e
+p 
+based on training over 
+history data [ 92 ]. Since plastic flow depends not only on the 
+current stress level but also on the loading history, to 
+develop a plastic material model, the fundamental data set 
+should be based on the stress-strain relationship and also 
+the stress-strain sequence pairs. Hence, training a data- 
+driven plasticity model requires sequence data from many 
+loading-unloading paths, knowing that every strain-stress 
+sequence pair represents a single loading-unloading path. 
+For example, equation 5 represent a typical ML-based elas -
+toplastic material model
+r
+t
+¼ f
+ML
+e
+t
+, h
+t
+ð Þ
+(5) 
+where h
+t 
+represents loading history, r
+t 
+and e
+t 
+are total stress 
+and strain at time t obtained from the experiment, respect -
+ively, and f
+ML 
+is a trained ML-based function.
+Among various ML approaches which are discussed in 
+the previous sections, ANN is an appropriate method for 
+analysis of elastic strain part of an elastoplastic strain 
+8
+ A. HUSSAIN ET AL.
+
+
+===== PAGE 10 =====
+function which is due to the relatively straightforward 
+nature of elastic strain. However, for the plastic strain part 
+which depends on history data of strain, the RNN approach 
+would be more suitable. This could be explained through 
+the theoretical background of RNN which is made from hid -
+den layer neurons that have connections with looping or 
+cyclic topology. As explained mathematically in [ 93 ], the 
+RNN architecture enables the hidden layer output H
+t 
+to be 
+influenced by the previous input x
+t 
+at the time step t as well 
+as the hidden output itself at step ðt − 1Þ allowing the net -
+work to have room for time-dependent relationships. These 
+characteristics of the RNN could be represented mathemat -
+ically as
+H
+t
+¼ f W
+1
+x
+t
+þ UH
+t −1
+þ b
+1
+  �
+(6) 
+where, f is the activation function, W
+1 
+is the weight, b
+1 
+is 
+bias for the hidden layers, and U is the matrix representing 
+the recurrent connection between the hidden layer at subse -
+quent steps. Therefore, UH
+t −1 
+component is the extra elem -
+ent that RNN models have in comparison to a standard 
+ANN which incorporates the sequential data into the model. 
+Following the same concept, Heider et al. [ 94 ] employed a 
+hybrid neural network that combined the traditional feed- 
+forward neural network with an RNN to handle path- 
+dependent material responses. The integrated supervised ML 
+model is trained with a dataset of 1176 experiment samples. 
+Due to the limitation of interpretability of standard deep 
+neural network predictions, they developed intermediate 
+predictions that attempt to comprehend stress-predicting 
+mechanisms by adding the concept of graph theory. Graph 
+theory is implemented to design models for large-scale, 
+high-fidelity solutions to continuum physics challenges. 
+Similarly, Wang et al. [ 95 ] designed a model to generate 
+data for history-dependent constitutive responses using a 
+multi-agent meta-modeling strategy. The multi-agent meta- 
+modeling strategy involves two main components, the model 
+agent works to predict the output stress from the input 
+strain history and data agents collect data from molecular 
+dynamics and discrete element simulations with the help of 
+the modeler agent in order to improve the quality of predic -
+tions by employing reinforcement supervised learning 
+technique.
+Although, RNNs have the benefit of retaining informa -
+tion from previous computations, allowing them to capture 
+sequential relationships in the data, they are sensitive to 
+vanishing gradients, which may limit the training process. 
+To circumvent this limitation, the concept of Long-Short 
+Term Memory (LSTM) was developed. The LSTM model is 
+presented in [ 96 ] for the accelerated elastoplastic analysis of 
+heterogeneous materials. It consists of a memory cell or cur -
+rent cell, C
+t
+; and three gate layers so-called forget gate, f
+t
+;
+input gate, i
+t
+; and the output gate, o
+t 
+as
+C
+t
+¼ f
+t
+� C
+t −1
+þ i
+t
+�
+�
+C
+t
+(7) 
+with
+f
+t
+¼ r W
+h
+f
+� h
+t −1
+þ W
+x
+f
+� x
+t
+þ b
+f
+� �
+(8) 
+and
+i
+t
+¼ r W
+h
+i
+� h
+t −1
+þ W
+x
+i
+� x
+t
+þ b
+i
+� �
+(9) 
+where W
+h
+f
+; W
+x
+f
+; b
+f 
+are the weights and bias of the forget 
+gate layer, W
+h
+i
+; W
+x
+i
+; b
+i 
+are the weights and biases of the 
+input gate layer, r is the activation function, and x
+t 
+is the 
+current input. The new information then could be added by 
+using a temporary cell state 
+�
+C
+t 
+which combines data from 
+the previous hidden state and the current input as
+�
+C
+t
+¼ tanh W
+h
+c
+� h
+t −1
+þ W
+x
+c
+� x
+t
+þ b
+c
+� �
+(10) 
+where W
+h
+c
+; W
+x
+c
+; b
+c 
+are the weights and bias of the temporary 
+cell state with the tanh activation function. Thus, the hidden 
+state h
+t 
+can be updated through the output gate layer as 
+h
+t
+¼ o
+t
+� tanh C
+t
+ð Þ (11) 
+where
+o
+t
+¼ r W
+h
+o
+� h
+t −1
+þ W
+x
+o
+� x
+t
+þ b
+o
+� �
+(12) 
+and W
+h
+o
+; W
+x
+o
+; b
+o 
+are the weights and bias of the output gate 
+layer.
+Table 3 provides a perspective summery on the range of 
+ML models used in elastic-plastic and visco-plastic constitu -
+tive models, including their limitations and advantages. As 
+can be seen in Table 3 , there has been a significant shift in 
+the primary approach to designing ML-based models for 
+plasticity over the years as new developments and insights 
+have emerged. Although initially ANN and SVM models 
+were employed for plasticity behavior, the most recent 
+research is focused on the development of RNN, GANN, 
+and PINN models. This is specially related to their unique 
+ability to leverage history-related aspects of materials.
+Table 2. A summary of important ML-based models for hyperelastic behavior.
+ML models Limitations Advantages References
+ANN Inconsistent convergence rate and model performance 
+susceptible to the selection of optimal parameters
+Mapping non-smooth function and high dimensional multiple 
+input-output with improved model accuracy
+[ 40 , 65–69 ]
+FFNN Interpretability risk and requires a huge dataset of 
+labeled data for several models
+offers universal function approximation, simple to implement 
+and can act as a convex function.
+[ 50 , 70–74 ]
+Physics-informed  
+NN (PINN)
+Challenges include formulation and computational cost Exhibits strong extrapolation ability, fast convergence, high 
+accuracy and satisfies polyconvexity
+[ 75–82 ]
+CNN limited to grid inputs and struggle with unstructured 
+input meshes
+Provide better generalization, high computational efficiency, 
+and support interpretability
+[ 41 , 83–87 ]
+SVM Computational complexity for large-scale datasets, 
+limited scalability, and limited interpretability
+Performs well in high-dimension space, has better generation 
+ability, accuracy and also provides convex loss function
+[ 88–91 ]
+MECHANICS OF ADVANCED MATERIALS AND STRUCTURES
+ 9
+
+
+===== PAGE 11 =====
+4.3. ML-based models for visco-elasticity
+The Visco-elastic behavior is a result of the internal struc -
+ture of some materials, which typically consist of complex, 
+interconnected polymer chain structures. The modeling of 
+viscoelastic materials obtains its theoretical foundations 
+from principles in physics and mechanics that include time- 
+dependent constitutive models, energy dissipation, 
+Rheological models, temperature and frequency influences, 
+etc [ 122 , 123 ]. The theoretical background of the viscoelastic 
+model originated with the incorporation of viscoelastic 
+behavior with the help of the Kelvin-Voigt model into the 
+initial fundamental model proposed by Winkler [ 124 ]. This 
+spring-damper-based model could be recapped as
+P ðx, t Þ ¼ kwðx, t Þ þ c _w ðx, t Þ (13) 
+where kwðx, t Þ and c _w ðx, t Þ represent the linear elastic and 
+viscoelastic behaviors, respectively, with k is stiffness, c is a 
+damping factor, wðx, t Þ and _w ðx, t Þ are displacement and 
+velocity, respectively. This equation is generally employed in 
+developing a classical constitutive model for viscoelastic 
+materials, where both elastic and viscous components con -
+tribute to the overall behavior. Later, Winkler’s original 
+model is improved by many other models such as Maxwell, 
+Zener, Poynting-Thomson, Burger Filonenko-Borodich, 
+Hetenyi, Pasternak, Kerr (three-parameters), Half-space, 
+Vlasov, and Reissner [ 122 ].
+Consequently, ML-based data-driven constitutive models 
+provide outstanding capabilities for analyzing the complex 
+properties and behaviors of viscoelastic materials by replac -
+ing the sophisticated physical theorems and phenomeno -
+logical models with material models that are driven directly 
+from data. These models are trained on large datasets of 
+numerical and experimental data to learn the complex rela -
+tionships between various factors that influence the behavior 
+of viscoelastic materials like stress-strain, temperature, time, 
+and various loading conditions. Prusty et al. [ 125 ] proposed 
+an inverse identification method based on a neural network 
+optimization (NNO) algorithm that identifies the frequency- 
+dependent constitutive parameters of viscoelastic materials 
+that were then experimentally verified. Viscoelastic materials 
+exhibit frequency-dependent features in their constitutive 
+parameters, particularly the storage and loss modulus, which 
+makes studying these properties critical for a comprehen -
+sive understanding of viscoelastic materials. The NNO 
+method accurately predicted the constitutive parameters 
+and demonstrated excellent agreement with the experimen -
+tal results. The theoretical concept of NNO is based on the 
+gradient-based interior-point algorithm (IPA) which is 
+used to solve optimization challenges.
+As discussed earlier, RNN models have the capacity to 
+capture long-term time dependency in the data. Therefore, 
+not only are they a good ML-based approach for elastoplastic 
+materials but also are an ideal option for modeling viscoelas -
+tic materials. Chen has developed an RNN model to represent 
+the viscoelasticity in 1D and 3D cases [ 126 ]. The numerical 
+algorithm for viscoelastic modeling comprises the implemen -
+tation of the generalized Maxwell material model as
+r
+nþ1
+¼ U
+0
+0
+H
+nþ1
+ð Þ1 þ c
+1
+S
+0
+nþ1
+þ
+X
+N
+I ¼1
+c
+I
+h
+ðI Þ
+nþ1
+(14) 
+where U
+0
+0
+ðH
+nþ1
+Þ1 and S
+0
+nþ1 
+represent the initial bulk stress 
+tensor and the initial elastic deviatoric stress tensor at time 
+t ðn þ 1Þ; respectively, and h
+ðI Þ
+nþ1 
+is the transient deviatoric 
+stress tensor in the I − th Maxwell element at the time t ðn þ
+1Þ: Furthermore, c
+I
+¼
+l
+I
+l 
+represents the fraction of elastic 
+shear modulus at I − th Maxwell element to the total shear 
+modulus l ¼ l
+1
+þ þ
+P
+N
+I ¼1
+l
+I
+: This developed RNN model 
+is also capable of predicting the viscoelastic behavior beyond 
+the test data by utilizing extrapolation. The model’s per -
+formance across the training and validation datasets is con -
+sistent, suggesting the design of a stable and resilient model.
+Similar to RNN models, PINNs have acquired popularity 
+for analyzing the complex behavior of viscoelastic materials. 
+PINNs stand out for their ability to integrate ML with fun -
+damental physics principles, making them the method of 
+choice for investigating the unique behavior of viscoelastic 
+materials. Dabiri et al. [ 127 ] developed neural networks that 
+take into account insights from multiple fractional constitu -
+tive models. The developed fractional rheology-informed 
+neural networks (RhINNs) are then used to identify the rele -
+vant parameters for three fractional viscoelastic constitutive 
+models including the Maxwell, Kelvin-Voigt and Zener 
+models. The output of the model in [ 127 ] is a material 
+response which is rðt Þ for the fractional Maxwell model and 
+the fractional Zener model and �ðt Þ for the fractional 
+Kelvin-Voigt model. Hence, this approach proposes a robust 
+framework for the data-driven inverse solution of fractional 
+constitutive models, aiming to enhance the effectiveness of 
+the solution process. Another important mechanics-informed 
+data-driven method was developed in [ 128 ] to train the 
+Table 3. A summary of important ML-based models for plasticity and visco-plasticity behavior.
+ML models Limitations Advantages References
+RNN Vanishing and exploding gradients are common 
+challenges and can be avoided using LSTM and GRU
+Ability to leverage sequential data and history-dependent 
+constitutive modeling
+[ 97–105 ]
+ANN Overfitting and required large datasets and loss of 
+accuracy for over-complex models
+Overall computational efficiency and easy implementation [ 106–111 ]
+PINN Complex implementation, formulation and also required 
+a comprehensive understanding of physics laws 
+(nonlinear hardening and softening law)
+Improving the stability, data efficiency, extrapolation, and 
+representing complex behaviors
+[ 112–115 ]
+SVM performance highly depend on the choice of kernel 
+function that needs a deep understanding within the 
+domain knowledge
+Effective for high-dimensional space, and computational 
+efficiency
+[ 116–118 ]
+Generative Adversarial  
+Networks (GAN)
+To generate better realistic samples, GANs need to 
+incorporate physical knowledge which can be 
+computationally intensive
+Generate high-quality synthetic data of the arbitrary size of 
+the material parameters, and also the ability to extrapolate 
+beyond the training range and improve training efficiency
+[ 119–121 ]
+10
+ A. HUSSAIN ET AL.
+
+
+===== PAGE 12 =====
+model from the constitutive law of nonlinear viscoelastic 
+material with stress-strain data. What makes these models 
+important is that these types of mechanics or physics- 
+informed models not only provide stable and high-precision 
+models but also efficiently incorporate mechanics-based con -
+straints into the model’s architecture and loss function, such 
+as dynamic stability, material stability, objectivity, internal 
+variable stability, and consistency.
+In general, ML models are an effective technique for 
+investigating the complex properties of viscoelastic materials. 
+However, the nature of the problem and the features of the 
+data set should influence the choice of an ML model. For 
+example, in [ 129 ] three ML models including SVM, rele -
+vance vector machine (RVM), and RF are employed to pre -
+dict the dynamic viscoelastic properties of asphalt binders. 
+The dataset for dynamic viscoelastic properties has 10 mac -
+roscale distinct parameters, whereas the dataset for compos -
+ition parameters contains 29 microscale distinct parameters 
+used for all these models. Even though the dataset was 
+small, the SVM outperformed the other two models in terms 
+of efficiency and accuracy in modeling viscoelastic proper -
+ties. This is due to the Gaussian function being chosen as 
+the SVM kernel function, resulting in impressive perform -
+ance under general smoothness assumptions. Similarly, six 
+ML models such as ANN, Robust Linear Regression, Linear 
+SVM, Decision Tree Regression, Gaussian Process 
+Regression (GPR) and Ensemble Regression are used in 
+[ 130 ] to predict the viscoelastic behavior of modified bitu -
+men. In relation to the linear nature of the data, most linear 
+ML models succeeded in making accurate predictions. 
+However, in terms of error metrics, Ensemble Regression 
+proved to be the most effective method for predicting the 
+viscoelastic properties of modified bitumens. In contrast, 
+ANN and GPR demonstrated the best performance of the 
+correlation metric. Therefore, the selection of an appropriate 
+ML-based model for viscoelasticity depends on the specific 
+task and the characteristics of the data.
+In Table 4 , various ML approaches which are appropriate 
+for developing constitutive models for viscoelastic materials 
+are summarized comprehensively. The table systematically 
+outlines the key information on the data types used, dataset 
+sizes, model types employed, and the efficacy and robustness 
+of the models in making predictions. The primary 
+observation is that RNN models are considered the preferred 
+choices for viscoelastic material modeling because of the 
+ability to account for history and time dependence in the 
+material behavior. Furthermore, it is noteworthy that certain 
+ML models are integrating the LSTM concept to account for 
+and incorporate the history and time-dependent behavior of 
+viscoelastic materials.
+4.4. ML-based models for non-linear architectured 
+materials
+In recent years, there has been an increase in the develop -
+ment of architectured materials with multi-functional features 
+that illustrates several non-linear material behaviousr 
+[ 145–150 ]. Therefore, for effective simulations of macroscopic 
+structures and to optimize the nonlinear mechanical behavior 
+associated with the fundamental unit cells of such architec -
+tured materials, a high-fidelity and robust material model is 
+essential. Challapalli et al. have recently described a new 
+design optimization method that uses statistical analysis tech -
+niques and supervised ML regression models with a dataset 
+of 2000 fingerprint samples to study mechanical metamaterial 
+[ 151 ]. The objective of their research was to develop and 
+design thin-walled cellular structures with highly increased 
+strength and recovery stress. They claimed that no prior inte -
+gration of these methods for structural optimization has been 
+provided, even though the single models used in this study 
+have been widely used in other research investigations. For 
+example, they used ML regression models and generated 
+adversarial networks (GAN) to optimize 3D lattice unit cells 
+for uniaxial and multiaxial strengths in their previous work 
+[ 152 ]. They also introduced the very first approach that uses 
+inverse ML with high-performance architectures that find, 
+evaluate, and optimize particular lattice unit cell designs. The 
+GAN provides numerous possible lattice unit cells for the 
+inverse design framework incorporated into the forward 
+regression model. The obtained lattice structures were deter -
+mined to have a greater load-sustaining capacity than that of 
+the octet lattice structure. Although the developed inverse ML 
+model can extensively be utilized for many other purposes, it 
+works exceptionally well in optimizing additional load-bearing 
+metamaterial structures.
+Table 4. A summary of important ML-based models for viscoelastic materials.
+ML models Limitations Advantages References
+RNN � large data requirements, 
+� computational cost specially when using LSTM 
+and GRU, 
+� the dimensionality of the problems affects the 
+extrapolation ability.
+� Sequential data handling and longer time sequence, 
+� Handling dynamic relationships (memory of previous 
+states and nonlinear)
+[ 126 , 131–135 ]
+K-means Clustering � Too high dimensions may affect the accuracy and 
+efficiency, 
+� Sensitive to the initialization of the clusters.
+� Easy to implement, 
+� Adapt to various shapes and sizes of clusters for 
+different data
+[ 136 , 137 ]
+PINN � Complexity in formulating cost functions, 
+� High computational cost
+� Reduce data dependency and capture rate- 
+dependency, 
+� Improved generalization and extrapolation, 
+� Can include and study complex phenomena
+[ 128 , 138–141 ]
+SVM � High-dimensional spaces with non-linear kernels) 
+can be challenging, 
+� necessity of pre-processing the data through 
+normalization
+� Robustness to Overfitting 
+� Carrying out risk minimization from the loss 
+function.
+[ 129 , 142–144 ]
+MECHANICS OF ADVANCED MATERIALS AND STRUCTURES
+ 11
+
+
+===== PAGE 13 =====
+Xue et al. [ 153 ] have extended the NN-based method for 
+modeling the response of non-linear elastic material for 
+small strain cases which was initially presented in [ 154 ] to 
+simulate the non-linear mechanical behavior of cellular 
+architectured materials subjected to large deformations. To 
+achieve this goal, they acquired training data through a sig -
+nificant number of represented volume element (RVE) sim -
+ulations at the microscopic or cellular level. Based on these 
+data, they trained an NN model to represent the macroscale 
+effective strain energy density, a function of macroscopic 
+strain and microscopic structural properties. Although their 
+NN model is a viable alternative to costly FEA for designing 
+and analyzing architectured materials, this work is limited to 
+2D applications and does not include material symmetry in 
+the model explanation. Furthermore, Xie et al. have imple -
+mented an AI algorithm based on ANN to solve the transi -
+ent bending properties of a metamaterial by considering 
+geometry, material properties, loading conditions as inputs 
+and corresponding deflection and stress distribution as out -
+puts [ 155 ].
+Bessa et al. developed a novel data-driven computational 
+approach to facilitate the process of designing and modeling 
+new material systems and structures [ 156 ]. Their approach, 
+as represented in Figure 4 , converged with different steps 
+such as experimental design, computational analysis, and 
+machine learning framework. The design of experiments is a 
+fundamental step in representing the high-dimensional input 
+variable space with a limited set of descriptors. Three types 
+of descriptors were required for the experimental step, such 
+as sampling material shape, microstructure material charac -
+teristics, and external factors (boundary conditions). As pre -
+sented in Figure 4 , the development of a database is the 
+second step that contains all of the relevant data points 
+required for capturing the macroscopic behavior of the 
+material. Finally, an ML model was employed to generate a 
+novel design structure based on the response database. Their 
+computational approach has some challenges as their large 
+RVE database restricts kriging because the inverse of the 
+covariance matrix uses excessive memory with their non- 
+optimised ML code. However, the dimensionality problem is 
+addressed by applying a self-consistent clustering analytic 
+strategy.
+The Bayesian regression framework also offers an effi -
+cient probabilistic approach and the capability to study the 
+unique behavior of architectured materials. It includes prior 
+knowledge such as material composition, mechanical prop -
+erties, and desired behaviors and predicts the behavior of 
+architectured materials. For example, the data-driven com -
+putational method introduced in [ 158 ] incorporates 
+Bayesian regression to optimize a structure that has an 
+unpredictable response. This is an extension of the method 
+described in [ 156 ] by incorporating additional improve -
+ments to achieve a Bayesian machine learning model that 
+integrates a measure of uncertainty and a multiobjective 
+optimization process. Similarly, the data-driven model in 
+[ 157 ] adopted the approach of [ 158 ] for the design of cellu -
+lar-architectured materials. Their computational data-driven 
+methodology investigates a novel metamaterial design and 
+tailors it to different end-use characteristics, core material 
+choices, parameters, and fabrication techniques. As illus -
+trated in Figure 4 , the core parameters in their model are 
+D
+1 
+and D
+2 
+as the diameters of the top and bottom base, P 
+as the height, and A as cross-sectional area with a moment 
+of inertia I
+x 
+and I
+y 
+and torsional constant J
+s
+:
+Although various ML models have been implemented to 
+study the non-linear behavior of architectured materials 
+with different strategies, structural analysis with inverse ML 
+attracted most of attention as it could support reverese 
+engineering the geometrical/material patterns. For example, 
+Challapalli and Li [ 159 ] were used a ML model to design a 
+3D-printable biomimetic rod with high buckling resistance 
+and then they expanded their model to design a novel sand -
+wich lattice structure material with high load capacity [ 152 ]. 
+Furthermore, Bastek et al. [ 160 ] proposed an ML-based 
+inverse design framework to predict different truss lattice 
+structures with data obtained from FEA simulations. After 
+training the model, it can be used to produce different lat -
+tice structures depending on the desired level of target stiff -
+ness. They demonstrated that the combination of stochastic 
+and physics-guided neural network models could provide a 
+Figure 4. A data-driven computational approach for design and modeling of novel architectured materials [ 157 ].
+12
+ A. HUSSAIN ET AL.
+
+
+===== PAGE 14 =====
+robust inverse design after the completion of training. 
+Additionally, Dos Reis et al. [ 161 ] introduced inverse engin -
+eering for architectured material design merging genetic 
+algorithms with discrete elements homogenization schemes 
+that incorporated the target compliance matrix. The 
+approach, as presented in Figure 5 , identifies internal mater -
+ial patterns that meet all the compliance matrix standards. 
+As presented in Figure 5 , the framework consists of three 
+different phases; (i) the initialization phase, (ii) the core 
+computations phase, and (iii) the results and validation 
+phases. The core computation involves the integration of 
+asymptotic homogenization and genetic algorithm techni -
+ques. These two methods are used to locate internal material 
+structures that effectively meet various target macroscale 
+material characteristics. The final phase involves the valid -
+ation of the results to determine whether the model has 
+reached convergence. If convergence is achieved, the ideal 
+internal design is produced; otherwise, the core computa -
+tional phase is repeated. Although the model can save com -
+putational costs while effectively reflecting elastic behavior, 
+it has a few limitations, including the inability to address 
+material nonlinearities and large strain responses using the 
+existing approach.
+Hence, the research and development of architectured 
+materials significantly benefit from the application of inverse 
+ML methods [ 162–165 ]. These methods offer an efficient 
+and cost-effective framework for extracting properties and 
+optimizing structures of architectural materials to achieve 
+the unique behaviors of these novel materials accurately.
+5. Observations, conclusions, and future directions
+The main objective of this study was to provide a review of 
+current ML-based models that are used in the characteriza -
+tion, design, and analysis of materials with specific non-linear 
+mechanical properties. In each section, ML-based material 
+models or approaches were discussed, highlighting the 
+advantages of techniques and research gaps to provide a com -
+prehensive comparison between various ML algorithms. 
+Moreover, the successful application of ML models to develop 
+the relationship between nonlinear material properties 
+depends on a variety of aspects, such as the selection and 
+types of data, the nature of the specific task, and the desired 
+characteristics to be acquired. Several ML models, including 
+ANN models such as FFNN, CNN, and RNN, and their sub -
+types have prospects depending on their applications. To 
+enhance the numerical robustness of the ML models, different 
+extensions have been added to the general NN model, such 
+as the convexity and Cholesky factor of the tangent stiffness 
+matrix, to obtain the desired results.
+Among all ML models, ANN-based approaches have pro -
+ven to be highly effective in terms of prediction quality, 
+flexibility, and performance to be implemented, specifically 
+for nonlinear elastic materials. ANN models for nonlinear 
+rete-independent materials can discover hidden and complex 
+relationships and patterns and make predictions outside the 
+range within large data samples. However, despite the sig -
+nificant potential of ANN methods in material modeling, 
+there are still several challenges related to them. These chal -
+lenges could be with the ANN models themselves or with 
+the type of material data that needs to be analyzed. In gen -
+eral, tackling these challenges requires developing precise 
+standards of material characterization that incorporate 
+essential physical characteristics, including material sym -
+metry [ 45 ], stability [ 73 ], and thermodynamic consistency. 
+For example, Klein et al. [ 166 ] presented a convex input 
+neural network model that meets the polyconvexity require -
+ment, implying the ellipticity of the constitutive model and 
+hence maintaining the material stability. This approach is a 
+subset of FFNN used in [ 24 ] by adding a material stability 
+concept. They also expanded their previous work to con -
+struct an ML-based constitutive model for electromechani -
+cally associated material behavior at finite deformation using 
+distinct sets of invariants as inputs [ 73 ]. This methodology 
+Figure 5. A Combined genetic algorithm and homogenization-based inverse design framework for novel architectured materials [ 161 ].
+MECHANICS OF ADVANCED MATERIALS AND STRUCTURES
+ 13
+
+
+===== PAGE 15 =====
+focusses on material stability, material objectivity, material 
+symmetry, and thermodynamics consistency. Regarding 
+numerical stability, the constitutive model developed in [ 40 ] 
+which employs symmetric positive definite neural networks 
+(SPD-NN), weakly implies convexity of the strain energy 
+function and fulfills Hill’s second-order work condition. 
+Therefore, it predicts the time consistency for path-dependent 
+and rate-dependent materials and improves numerical stabil -
+ity. Furthermore, it is observed several times that the incorp -
+oration of thermodynamics and other concepts based on 
+physics into the ANN models allows us to improve the train -
+ing process and better and faster convergence and accuracy.
+In the concept of non-linear rate-dependent materials 
+such as viscoelastic and viscoplastic materials, the research -
+ers have investigated and compared the performance of vari -
+ous ML models for developing a robust constitutive model. 
+In general, ANN, SVM, PINN, and RNN have been found 
+to be the most accurate and diverse ML models for such 
+tasks. The ability of RNN models to learn the time- and his -
+tory-dependent relationships is the key concept in modeling 
+viscoelastic, and viscoplastic materials over various loading 
+conditions. It is worth mentioning that although other ML 
+models such as SVM, RF, and GPR can also be effectively 
+designed for rate-dependent materials depending on particu -
+lar problems and applications, they still exhibit limitations 
+in various aspects, which are summarized in previous sec -
+tions. Many of these limitations are effectively addressed 
+through the use of PINN which has become increasingly 
+popular for analyzing the complex behavior of nonlinear 
+rate-dependent materials by integrating the principles of 
+physics and theoretical laws with the power of ML models. 
+PINN-based models not only provide stable and high-preci -
+sion models but also provide dynamic stability, material sta -
+bility, objectivity, internal variable stability, and consistency.
+Furthermore, the structure of Architectured materials is 
+designed in such a way that they exhibit mechanical properties 
+that cannot be found in naturally occurring materials. As a 
+result, various numerical approaches including ML models 
+have been used to understand, develop, and optimize the com -
+plicated non-linear correlations between mechanical character -
+istics and various geometric design parameters and the parent 
+materials of these materials. The recently designed ML models 
+for nonlinear architectured materials include ANN, FFNN, 
+CNN, DNN, GANs, and the inverse design framework. Inverse 
+ML models are among the models that have the potential to 
+develop appropriate internal structures to study the desirable 
+mechanical behavior of architectured materials by reverse 
+engineering. To develop innovative and novel architectures for 
+materials with tailored characteristics, these models consider 
+enormous amounts of data, identify patterns, accelerate design 
+processes, and make the designs efficient and cost-effective. It 
+is also worth mentioning that there are still certain obstacles in 
+this area that requires further research in future including data 
+availability, limited and noisy data, generalization, model selec -
+tion, and model validation.
+It is also noted that the ML models in conjunction with 
+optimization algorithm techniques provide multiobjective 
+functionalities that add aspects to the learning process, 
+resulting in improved convergence, robustness, and accur -
+acy. Some data-driven models will also make it possible to 
+have a very optimal framework and model, and enhance the 
+generalization ability by implementing topology optimization 
+as well as other high computational numerical approaches. 
+For example, the residual U-net (ResUnet) is used to gener -
+ate more accuracy during training for small datasets and it 
+produces more robust performance and enhances segmenta -
+tion accuracy when low-level and high-level information are 
+combined for training [ 167 ]. Furthermore, the model per -
+formance could be further enhanced by incorporating CNN 
+visualization techniques to identify several mechanical char -
+acteristics such as modulus, strength, and toughness, as well 
+as experimental parameters (crack direction and orientation, 
+composite design limitations) using FEM simulation.
+A PINN is another key future direction for the field when 
+employing ML-based models integrate engineering design and 
+basic physical rules as a source of training data. It uses partial 
+differential equations for the loss function to efficiently inte -
+grate ML with mechanical design. The focus of this integra -
+tion is to enhance efficiency by improving the generalizability 
+of the model in mechanical materials and allowing the solu -
+tion of a wider spectrum of problems with higher target 
+accuracy. Hence, many ML-based models have been reviewed 
+for their characterization and application in the design of 
+mechanical metamaterials. Each model has specific applica -
+tions and can have a different perspective by optimizing vari -
+ous parameters and merging different algorithms.
+Finally, the authors are aware of the plenty of current/ 
+ongoing research in this area that makes the conclusion of 
+this topic complicated. However, we believe this comprehen -
+sive summary of the key ML-based models with highlights 
+of their suitability for different types of material properties 
+could be specially a useful initial point for early career 
+researchers to start their research in this fast growing field.
+Disclosure statement
+No potential conflict of interest was reported by the author(s).
+ORCID
+Arif Hussain 
+ http://orcid.org/0009-0007-3482-4912 
+Amir Hosein Sakhaei 
+ http://orcid.org/0000-0001-6953-552X 
+Mahmood Shafiee 
+ http://orcid.org/0000-0002-6122-5719 
+References
+00[1] A. Maier, H. K €ostler, M. Heisig, P. Krauss, and S.H. Yang, 
+Known operator learning and hybrid machine learning in 
+medical imaging—a review of the past, the present, and the 
+future, Prog. Biomed. Eng., vol. 4, no. 2, pp. 022002, 2022. 
+DOI: 10.1088/2516-1091/ac5b13.
+00[2] M. Sharp, R. Ak, and T. Hedberg, Jr, A survey of the advanc -
+ing use and development of machine learning in smart manu -
+facturing, J. Manuf. Syst., vol. 48 Pt C, no. Pt C, pp. 170–179, 
+2018. DOI: 10.1016/j.jmsy.2018.02.004.
+00[3] M. Bachute, and J. Subhedar, Autonomous driving architec -
+tures: insights of machine learning and deep learning algo -
+rithms, Mach. Learn. Appl., vol. 6, pp. 100164, 2021. DOI: 10. 
+1016/j.mlwa.2021.100164.
+14
+ A. HUSSAIN ET AL.
+
+
+===== PAGE 16 =====
+00[4] Z. Song, X. Chen, F. Meng, G. Cheng, C. Wang, Z. Sun, and 
+W.-J. Yin, Machine learning in materials design: algorithm 
+and application, Chinese Phys. B., vol. 29, no. 11, pp. 116103, 
+2020. DOI: 10.1088/1674-1056/abc0e3.
+00[5] J. Chen, J. Zhang, and H. Zhao, Quantifying alignment devia -
+tions for uniaxial material mechanical testing via automated 
+machine learning, Mech. Adv. Mater. Struct., vol. 31, no. 5, 
+pp. 959–972, 2024. DOI: 10.1080/15376494.2022.2128122.
+00[6] Y. Yang, B. Chen, Y. Xia, S. Liu, Q. Xiao, W. Guo, and H. 
+Wang, Study and data-driven modeling of flexural behaviors 
+of ultra-high-performance concrete reinforced by milling steel 
+fiber, Mech. Adv. Mater. Struct., vol. 31, no. 27, pp. 9873– 
+9886, 2024. DOI: 10.1080/15376494.2023.2282106.
+00[7] F.-G. Yuan, S.A. Zargar, Q. Chen, and S. Wang, Machine 
+learning for structural health monitoring: challenges and 
+opportunities, Sensors and smart structures technologies for 
+civil, mechanical, and aerospace systems, 1137903, 2020.
+00[8] G. Zhang, L. Tang, Z. Liu, L. Zhou, Y. Liu, and Z. Jiang, 
+Machine-learning-based damage identification methods with 
+features derived from moving principal component analysis, 
+Mech. Adv. Mater. Struct., vol. 27, no. 21, pp. 1789–1802, 
+2020. DOI: 10.1080/15376494.2019.1710308.
+00[9] M. Soori, B. Arezoo, and R. Dastres, Artificial intelligence, 
+machine learning and deep learning in advanced robotics, a 
+review, Cogn. Robot., vol. 3, pp. 54–70, 2023. DOI: 10.1016/j. 
+cogr.2023.04.001.
+0[10] B.P. Koya, S. Aneja, R. Gupta, and C. Valeo, Comparative ana -
+lysis of different machine learning algorithms to predict mechan -
+ical properties of concrete, Mech. Adv. Mater. Struct., vol. 29, no. 
+25, pp. 4032–4043, 2022. DOI: 10.1080/15376494.2021.1917021.
+0[11] T.-T. Le, Practical machine learning-based prediction model 
+for axial capacity of square cfst columns, Mech. Adv. Mater. 
+Struct., vol. 29, no. 12, pp. 1782–1797, 2022. DOI: 10.1080/ 
+15376494.2020.1839608.
+0[12] T.R. Kumar, and M. Paggi, Data-driven and physics-based 
+methods to optimize structures against delamination, Mech. 
+Adv. Mater. Struct., pp. 1–17, 2024. DOI: 10.1080/15376494. 
+2024.2372696.
+0[13] T. Yasuda, S. Ookawara, S. Yoshikawa, and H. Matsumoto, 
+Materials processing model-driven discovery framework for 
+porous materials using machine learning and genetic algo -
+rithm: a focus on optimization of permeability and filtration 
+efficiency, Chem. Eng. J., vol. 453, pp. 139540, 2023. DOI: 10. 
+1016/j.cej.2022.139540.
+0[14] Q. Shao, J. Liu, Q. Huang, J. Yang, H. Hu, S. Belouettar, and 
+G. Giunta, A data-driven analysis on bridging techniques for 
+heterogeneous materials and structures, Mech. Adv. Mater. 
+Struct., vol. 28, no. 1, pp. 1–15, 2021. DOI: 10.1080/15376494. 
+2018.1546415.
+0[15] S. Pal, and K. Naskar, Machine learning model predict stress- 
+strain plot for marlow hyperelastic material design, Mater. 
+Today Commun., vol. 27, pp. 102213, 2021. DOI: 10.1016/j. 
+mtcomm.2021.102213.
+0[16] Q. Liu, W. Shi, and Z. Chen, Fatigue life prediction for vibra -
+tion isolation rubber based on parameter-optimized support 
+vector machine model, Fatigue Fract. Eng. Mat. Struct., vol. 
+42, no. 3, pp. 710–718, 2019. DOI: 10.1111/ffe.12945.
+0[17] D. Huang, K. Xu, C. Farhat, and E. Darve, Learning constitu -
+tive relations from indirect observations using deep neural net -
+works, Comput. Phys., vol. 416, pp. 109491, 2020. DOI: 10. 
+1016/j.jcp.2020.109491.
+0[18] D. Gonz �alez, A. Garc � ıa-Gonz �alez, F. Chinesta, and E. Cueto, A 
+data-driven learning method for constitutive modeling: appli -
+cation to vascular hyperelastic soft tissues, Materials., vol. 13, 
+no. 10, pp. 2319, 2020. DOI: 10.3390/ma13102319.
+0[19] L. Zhou, J. Zhou, S. Wang, L. He, and X. Wang, Evaluating 
+the tensile deformation and stress of hyperelastic material 
+based on transparent indentation method, Mater. Des., vol. 
+193, pp. 108804, 2020. DOI: 10.1016/j.matdes.2020.108804.
+0[20] P. Li, Z. Yu, Z. Peng, Y. Yao, and S. Chen, A data-driven sim -
+ple design of single-level nacre-inspired composites with high 
+strength and toughness, Mech. Adv. Mater. Struct., vol. 31, no. 
+13, pp. 2889–2900, 2024. DOI: 10.1080/15376494.2023.2166168.
+0[21] Z. Xue, X. Geng, X. Li, Y. Cao, J. Zhang, A. Aydeng, and J. 
+Liu, Compressive mechanical properties of lattice structures 
+filled with silicone rubber, Mech. Adv. Mater. Struct., vol. 31, 
+no. 27, pp. 9062–9072, 2024. DOI: 10.1080/15376494.2023. 
+2265354.
+0[22] S. Xiao, P. Deierling, S. Attarian, and A. El Tuhami, Machine 
+learning in multiscale modeling of spatially tailored materials 
+with microstructure uncertainties, Comput. Struct., vol. 249, 
+pp. 106511, 2021. DOI: 10.1016/j.compstruc.2021.106511.
+0[23] N. Kovachki, B. Liu, X. Sun, H. Zhou, K. Bhattacharya, M. 
+Ortiz, and A. Stuart, Multiscale modeling of materials: com -
+puting, data science, uncertainty and goal-oriented optimiza -
+tion, Mech. Mater., vol. 165, pp. 104156, 2022. DOI: 10.1016/j. 
+mechmat.2021.104156.
+0[24] M. Fern �andez, M. Jamshidian, T. B€ ohlke, K. Kersting, and O. 
+Weeger, Anisotropic hyperelastic constitutive models for finite 
+deformations combining material theory and data-driven 
+approaches with application to cubic lattice metamaterials, 
+Comput. Mech., vol. 67, no. 2, pp. 653–677, 2021. DOI: 10. 
+1007/s00466-020-01954-7.
+0[25] I. Chung, S. Im, and M. Cho, A neural network constitutive 
+model for hyperelasticity based on molecular dynamics simula -
+tions, Num. Meth. Eng., vol. 122, no. 1, pp. 5–24, 2021. DOI: 
+10.1002/nme.6459.
+0[26] J. Wilt, C. Yang, and G. Gu, Accelerating auxetic metamaterial 
+design with deep learning, Adv. Eng. Mater., vol. 22, no. 5, pp. 
+1901266, 2020. DOI: 10.1002/adem.202070018.
+0[27] W. Zhang, D. Li, T. Bui-Thanh, and M. Sacks, Simulation of 
+the 3D hyperelastic behavior of ventricular myocardium using 
+a finite-element based neural-network approach, Comput. 
+Methods Appl. Mech. Eng., vol. 394, pp. 114871, 2022. DOI: 
+10.1016/j.cma.2022.114871.
+0[28] L. Liao, and K. Yan, Research on the energy absorption per -
+formance of lattice filling structures based on homogenization 
+analysis technique, Mech. Adv. Mater. Struct., pp. 1–16, 2024. 
+DOI: 10.1080/15376494.2024.2418992.
+0[29] A. Mora, J. Palancares-D � ıaz, J. Varela-Soriano, M. Jimenez- 
+Martinez, A. Roman-Flores, L.I. Farfan-Cabrera, and E. Cuan- 
+Urquizo, Computational study on the torsional properties of 
+bioinspired tubular metamaterials, Mech. Adv. Mater. Struct., 
+vol. 31, no. 26, pp. 7767–7776, 2024. DOI: 10.1080/15376494. 
+2023.2249880.
+0[30] J. Fish, G. Wagner, and S. Keten, Mesoscopic and multiscale 
+modelling in materials, Nat. Mater., vol. 20, no. 6, pp. 774– 
+786, 2021. DOI: 10.1038/s41563-020-00913-0.
+0[31] S. Fahimi, M. Baghani, M.-R. Zakerzadeh, and A. Eskandari, 
+Developing a visco-hyperelastic material model for 3d finite 
+deformation of elastomers, Finite Elem. Anal. Des., vol. 140, 
+pp. 1–10, 2018. DOI: 10.1016/j.finel.2017.10.009.
+0[32] K. Narooei, and M. Arman, Generalization of exponential 
+based hyperelastic to hyper-viscoelastic model for investigation 
+of mechanical behavior of rate dependent materials, J. Mech. 
+Behav. Biomed. Mater., vol. 79, pp. 104–113, 2018. DOI: 10. 
+1016/j.jmbbm.2017.12.019.
+0[33] F. Alawwa, I. Barsoum, and R.K. Abu Al-Rub, Modeling, test -
+ing, and optimization of novel lattice structures for enhanced 
+mechanical performance, Mech. Adv. Mater. Struct., vol. 31, no. 
+26, pp. 8691–8714, 2024. DOI: 10.1080/15376494.2023.2262987.
+0[34] E.A.A. Alkebsi, T. Outtas, A. Almutawakel, H. Ameddah, and 
+T. Kanit, Design of mechanically compatible lattice structures 
+cancellous bone fabricated by fused filament fabrication of z- 
+abs material, Mech. Adv. Mater. Struct., vol. 30, no. 11, pp. 
+2269–2283, 2023. DOI: 10.1080/15376494.2022.2053904.
+0[35] H. Jin, E. Zhang, and H.D. Espinosa, Recent advances and 
+applications of machine learning in experimental solid 
+mechanics: a review, 2023.
+MECHANICS OF ADVANCED MATERIALS AND STRUCTURES
+ 15
+
+
+===== PAGE 17 =====
+0[36] K. Guo, Z. Yang, C. Yu, and M. Buehler, Artificial intelligence 
+and machine learning in design of mechanical materials, 
+Mater. Horiz., vol. 8, no. 4, pp. 1153–1172, 2021. DOI: 10. 
+1039/d0mh01451f.
+0[37] T. Kirchdoerfer, and M. Ortiz, Data-driven computational 
+mechanics, Comput. Methods Appl. Mech. Eng., vol. 304, pp. 
+81–101, 2016. DOI: 10.1016/j.cma.2016.02.001.
+0[38] R. Eggersmann, T. Kirchdoerfer, S. Reese, L. Stainier, and M. 
+Ortiz, Model-free data-driven inelasticity, Comput. Methods 
+Appl. Mech. Eng., vol. 350, pp. 81–99, 2019. DOI: 10.1016/j. 
+cma.2019.02.016.
+0[39] S. Conti, S. M €uller, and M. Ortiz, Data-driven finite elasticity, 
+Arch. Rational Mech. Anal., vol. 237, no. 1, pp. 1–33, 2020. 
+DOI: 10.1007/s00205-020-01490-x.
+0[40] K. Xu, D. Huang, and E. Darve, Learning constitutive relations 
+using symmetric positive definite neural networks, Comput. 
+Phys., vol. 428, pp. 110072, 2021. DOI: 10.1016/j.jcp.2020.110072.
+0[41] L. Li, and C. Chen, Equilibrium-based convolution neural net -
+works for constitutive modeling of hyperelastic materials, J. 
+Mech. Phys. Solids., vol. 164, pp. 104931, 2022. DOI: 10.1016/ 
+j.jmps.2022.104931.
+0[42] Z. Liu, C. Wu, and M. Koishi, Transfer learning of deep 
+material network for seamless structure–property predictions, 
+Comput. Mech., vol. 64, no. 2, pp. 451–465, 2019. DOI: 10. 
+1007/s00466-019-01704-4.
+0[43] K. Kalina, L. Linden, J. Brummund, P. Metsch, and M. K €astner, 
+Automated constitutive modeling of isotropic hyperelasticity 
+based on artificial neural networks, Comput. Mech., vol. 69, no. 
+1, pp. 213–232, 2022. DOI: 10.1007/s00466-021-02090-6.
+0[44] H. Bie, P. Li, and K.A. Alnowibet, Application of machine 
+learning method to estimate bending properties of advanced 
+composite elastic system subjected to external mechanical 
+loading, Mech. Adv. Mater. Struct., vol. 31, no. 29, pp. 11928– 
+11952, 2024. DOI: 10.1080/15376494.2024.2313152.
+0[45] K. Linka, M. Hillg €artner, K. Abdolazizi, R. Aydin, M. Itskov, 
+and C. Cyron, Constitutive artificial neural networks: a fast 
+and general approach to predictive data-driven constitutive 
+modeling by deep learning, Comput. Phys., vol. 429, pp. 
+110010, 2021. DOI: 10.1016/j.jcp.2020.110010.
+0[46] D. Abueidda, S. Koric, R. Al-Rub, C. Parrott, K. James, and N. 
+Sobh, A deep learning energy method for hyperelasticity and 
+viscoelasticity, Eur. J. Mech.-A/Solids., vol. 95, pp. 104639, 
+2022. DOI: 10.1016/j.euromechsol.2022.104639.
+0[47] F. Huang, H. Xiong, S. Chen, Z. Lv, J. Huang, Z. Chang, and 
+F. Catani, Slope stability prediction based on a long short- 
+term memory neural network: comparisons with convolutional 
+neural networks, support vector machines and random forest 
+models, Int. J. Coal Sci. Technol., vol. 10, no. 1, pp. 18, 2023. 
+DOI: 10.1007/s40789-023-00579-4.
+0[48] Z. Zisong, Coupled machine-learning approach and thermo -
+elasticity for analyzing thermal stability of the nanocomposite 
+sandwich system, Mech. Adv. Mater. Struct., pp. 1–17, 2024. 
+DOI: 10.1080/15376494.2024.2345207.
+0[49] Y. Liu, F. Sun, M. Chen, J. Xiao, J. Li, and B. Wu, Prediction 
+of equivalent elastic modulus for metal-coated lattice based on 
+machine learning, Appl. Compos. Mater., vol. 30, no. 4, pp. 
+1207–1229, 2023. DOI: 10.1007/s10443-022-10061-0.
+0[50] F.E. Bock, R.C. Aydin, C.J. Cyron, N. Huber, S.R. Kalidindi, 
+and B. Klusemann, A review of the application of machine 
+learning and data mining approaches in continuum materials 
+mechanics, Front. Mater., vol. 6, pp. 110, 2019. DOI: 10.3389/ 
+fmats.2019.00110.
+0[51] B. Dev, M.A. Rahman, M.J. Islam, M.Z. Rahman, and D. Zhu, 
+Properties prediction of composites based on machine learning 
+models: a focus on statistical index approaches, Mater. Today 
+Commun., vol. 38, pp. 107659, 2024. DOI: 10.1016/j.mtcomm. 
+2023.107659.
+0[52] A. Kamali, and K. Laksari, Physics-informed UNets for discov -
+ering hidden elasticity in heterogeneous materials, J. Mech. 
+Behav. Biomed. Mater., vol. 150, pp. 106228, 2024. DOI: 10. 
+1016/j.jmbbm.2023.106228.
+0[53] H.T. Mai, T.T. Truong, J. Kang, D.D. Mai, and J. Lee, A 
+robust physics-informed neural network approach for predict -
+ing structural instability, Finite Elem. Anal. Des., vol. 216, pp. 
+103893, 2023. DOI: 10.1016/j.finel.2022.103893.
+0[54] G. He, Y. Zhao, and C. Yan, MFLP-PINN: a physics-informed 
+neural network for multiaxial fatigue life prediction, Eur. J. 
+Mech. A Solids., vol. 98, pp. 104889, 2023. DOI: 10.1016/j. 
+euromechsol.2022.104889.
+0[55] H. Jeong, J. Bai, C.P. Batuwatta-Gamage, C. Rathnayaka, Y. 
+Zhou, and Y. Gu, A Physics-Informed Neural Network-based 
+Topology Optimization (PINNTO) framework for structural 
+optimization, Eng. Struct., vol. 278, pp. 115484, 2023. DOI: 10. 
+1016/j.engstruct.2022.115484.
+0[56] C. Xu, B.T. Cao, Y. Yuan, and G. Meschke, Transfer learning 
+based physics-informed neural networks for solving inverse 
+problems in engineering structures under different loading 
+scenarios, Comput. Methods Appl. Mech. Eng., vol. 405, pp. 
+115852, 2023. DOI: 10.1016/j.cma.2022.115852.
+0[57] A.M. Roy, R. Bose, V. Sundararaghavan, and R. Arr �oyave, 
+Deep learning-accelerated computational framework based on 
+Physics Informed Neural Network for the solution of linear 
+elasticity, Neural Netw., vol. 162, pp. 472–489, 2023. DOI: 10. 
+1016/j.neunet.2023.03.014.
+0[58] U. Bhandari, H. Ghadimi, C. Zhang, S. Yang, and S. Guo, 
+Predicting elastic constants of refractory complex concentrated 
+alloys using machine learning approach, Materials., vol. 15, no. 
+14, pp. 4997, 2022. DOI: 10.3390/ma15144997.
+0[59] C-s Zhu, G-z Li, N.V.J. Luis, W-j Dong, and L-j Wang, 
+Optimization of RF to alloy elastic modulus prediction based 
+on cuckoo algorithm, Comput. Mater. Sci., vol. 231, pp. 
+112515, 2024. DOI: 10.1016/j.commatsci.2023.112515.
+0[60] M. Naveed, A. Hameed, A.M. Rasool, D. Mukhtar, and T. 
+Ahmed, Ai-based non-linear models for mechanical and 
+toughness properties of sustainable fiber-reinforced geopoly -
+mer concrete (frgpc), Mech. Adv. Mater. Struct., pp. 1–25, 
+2024. DOI: 10.1080/15376494.2024.2390182.
+0[61] K.S. Jang, and G.J. Yun, Information-driven optimal experi -
+mental design with deep neural network surrogate model for 
+composite materials, Mech. Adv. Mater. Struct., vol. 31, no. 1, 
+pp. 210–217, 2024. DOI: 10.1080/15376494.2023.2242341.
+0[62] Y. Shen, K. Chandrashekhara, W. Breig, and L. Oliver, Finite 
+element analysis of V-ribbed belts using neural network based 
+hyperelastic material model, Int. J. Non. Linear Mech., vol. 40, 
+no. 6, pp. 875–890, 2005. DOI: 10.1016/j.ijnonlinmec.2004.10.005.
+0[63] D.W. Abueidda, S. Koric, E. Guleryuz, and N.A. Sobh, 
+Enhanced physics-informed neural networks for hyperelastic -
+ity, Num. Meth. Eng., vol. 124, no. 7, pp. 1585–1601, 2023. 
+DOI: 10.1002/nme.7176.
+0[64] Z. Luo, L. Wang, and M. Lu, A stepwise physics-informed 
+neural network for solving large deformation problems of 
+hypoelastic materials, Num. Meth. Eng., vol. 124, no. 20, pp. 
+4453–4472, 2023. DOI: 10.1002/nme.7323.
+0[65] A. Hussain, A.H. Sakhaei, and M. Shafiee, Development of an 
+artificial neural network (ANN) constitutive model for mech -
+anical metamaterials, American Society of Mechanical 
+Engineers Digital Collection, 2023.
+0[66] X. Liu, S. Tian, F. Tao, and W. Yu, A review of artificial 
+neural networks in the constitutive modeling of composite 
+materials, Compos. Part B Eng., vol. 224, pp. 109152, 2021. 
+DOI: 10.1016/j.compositesb.2021.109152.
+0[67] V. Nguyen-Thanh, X. Zhuang, and T. Rabczuk, A deep energy 
+method for finite deformation hyperelasticity, Eur. J. Mech.-A/ 
+Solids., vol. 80, pp. 103874, 2020. DOI: 10.1016/j.euromechsol. 
+2019.103874.
+0[68] A. Ballit, and T. Dao, Recurrent neural network to predict 
+hyperelastic constitutive behaviors of the skeletal muscle, Med. 
+Biol. Eng. Comput., vol. 60, no. 4, pp. 1177–1185, 2022. DOI: 
+10.1007/s11517-022-02541-z.
+16
+ A. HUSSAIN ET AL.
+
+
+===== PAGE 18 =====
+0[69] X. Li, M. Guo, and X. Zhou, A multivariate multiple regres -
+sion analysis of tire-road contact peak triaxial stress by using 
+machine learning methods, Mech. Adv. Mater. Struct., vol. 30, 
+no. 1, pp. 67–82, 2023. DOI: 10.1080/15376494.2021.2008067.
+0[70] J. Dornheim, L. Morand, H.J. Nallani, and D. Helm, Neural 
+networks for constitutive modeling: from universal function 
+approximators to advanced models and the integration of 
+physics, Arch. Computat. Methods Eng., vol. 31, no. 2, pp. 
+1097–1127, 2024. DOI: 10.1007/s11831-023-10009-y.
+0[71] N.N. Vlassis, R. Ma, and W. Sun, Geometric deep learning for 
+computational mechanics Part I: anisotropic hyperelasticity, 
+Comput. Methods Appl. Mech. Eng., vol. 371, pp. 113299, 
+2020. DOI: 10.1016/j.cma.2020.113299.
+0[72] A. Ghaderi, V. Morovati, and R. Dargazany, A physics- 
+informed assembly of feed-forward neural network engines to 
+predict inelasticity in cross-linked polymers, Polymers (Basel)., 
+vol. 12, no. 11, pp. 2628, 2020. DOI: 10.3390/polym12112628.
+0[73] D. Klein, R. Ortigosa, J. Mart � ınez-Frutos, and O. Weeger, 
+Finite electro-elasticity with physics-augmented neural net -
+works, Comput. Methods Appl. Mech. Eng., vol. 400, pp. 
+115501, 2022. DOI: 10.1016/j.cma.2022.115501.
+0[74] P. Thakolkaran, A. Joshi, Y. Zheng, M. Flaschel, L. De 
+Lorenzis, and S. Kumar, NN-EUCLID: deep-learning hypere -
+lasticity without stress data, J. Mech. Phys. Solids., vol. 169, 
+pp. 105076, 2022. DOI: 10.1016/j.jmps.2022.105076.
+0[75] Y. Zhu, N. Zabaras, P.-S. Koutsourelakis, and P. Perdikaris, 
+Physics-constrained deep learning for high-dimensional surro -
+gate modeling and uncertainty quantification without labeled 
+data, Comput. Phys., vol. 394, pp. 56–81, 2019. DOI: 10.1016/ 
+j.jcp.2019.05.024.
+0[76] D.W. Abueidda, Q. Lu, and S. Koric, Meshless physics- 
+informed deep learning method for three-dimensional solid 
+mechanics, Num. Meth. Eng., vol. 122, no. 23, pp. 7182–7201, 
+2021. DOI: 10.1002/nme.6828.
+0[77] E. Haghighat, M. Raissi, A. Moure, H. Gomez, and R. Juanes, 
+A deep learning framework for solution and discovery in solid 
+mechanics, May 2020.
+0[78] V. Tac ¸, K. Linka, F. Sahli-Costabal, E. Kuhl, and A.B. Tepole, 
+Benchmarking physics-informed frameworks for data-driven 
+hyperelasticity, Comput. Mech., vol. 73, no. 1, pp. 49–65, 
+2024. DOI: 10.1007/s00466-023-02355-2.
+0[79] K. Upadhyay, J.N. Fuhg, N. Bouklas, and K. Ramesh, Physics- 
+informed data-driven discovery of constitutive models with 
+application to strain-rate-sensitive soft materials, Comput. 
+Mech., pp. 1–30, 2024. DOI: 10.1007/s00466-024-02497-x.
+0[80] J.O. Schommartz, D.K. Klein, J.C.A. Cobo, and O. Weeger, 
+Physics-augmented neural networks for constitutive modeling 
+of hyperelastic geometrically exact beams, 2024.
+0[81] J.N. Fuhg, R.E. Jones, and N. Bouklas, Extreme sparsification 
+of physics-augmented neural networks for interpretable model 
+discovery in mechanics, Comput. Methods Appl. Mech. Eng., 
+vol. 426, pp. 116973, 2024. DOI: 10.1016/j.cma.2024.116973.
+0[82] I. Jeong, M. Cho, H. Chung, and D.-N. Kim, Data-driven non -
+parametric identification of material behavior based on phys -
+ics-informed neural network with full-field data, Comput. 
+Methods Appl. Mech. Eng., vol. 418, pp. 116569, 2024. DOI: 
+10.1016/j.cma.2023.116569.
+0[83] A. Mendizabal, P. M �arquez-Neila, and S. Cotin, Simulation of 
+hyperelastic materials in real-time using deep learning, Med. 
+Image Anal., vol. 59, pp. 101569, 2020. DOI: 10.1016/j.media. 
+2019.101569.
+0[84] S. Deshpande, J. Lengiewicz, and S.P.A. Bordas, Probabilistic 
+deep learning for real-time large deformation simulations, 
+Comput. Methods Appl. Mech. Eng., vol. 398, pp. 115307, 
+2022. DOI: 10.1016/j.cma.2022.115307.
+0[85] V. Krokos, V. Bui Xuan, S.P.A. Bordas, P. Young, and P. 
+Kerfriden, A Bayesian multiscale CNN framework to predict 
+local stress fields in structures with microscale features, 
+Comput. Mech., vol. 69, no. 3, pp. 733–766, 2022. DOI: 10. 
+1007/s00466-021-02112-3.
+0[86] X. Xu, G. Wang, H. Yan, L. Zhang, and X. Yao, Deep-learning- 
+enhanced digital twinning of complex composite structures and 
+real-time mechanical interaction, Compos. Sci. Technol., vol. 
+241, pp. 110139, 2023. DOI: 10.1016/j.compscitech.2023.110139.
+0[87] S. Deshpande, R.I. Sosa, S.P. Bordas, and J. Lengiewicz, 
+Convolution, aggregation and attention based deep neural net -
+works for accelerating simulations in mechanics, Front. Mater., 
+vol. 10, pp. 1128954, 2023. DOI: 10.3389/fmats.2023.1128954.
+0[88] C. Yang, W. Ma, J. Zhong, and Z. Zhang, Comparative study 
+of machine learning approaches for predicting creep behavior 
+of polyurethane elastomer, Polymers (Basel)., vol. 13, no. 11, 
+pp. 1768, 2021. DOI: 10.3390/polym13111768.
+0[89] E. Khosrowpour, and M.R. Hematiyan, Distributed load iden -
+tification for hyperelastic plates using gradient-based and 
+machine learning methods, Acta Mech., vol. 235, no. 5, pp. 
+3271–3291, 2024. DOI: 10.1007/s00707-024-03881-7.
+0[90] J.N. Fuhg, G.A. Padmanabha, N. Bouklas, B. Bahmani, W. Sun, 
+N.N. Vlassis, M. Flaschel, P. Carrara, and L. De Lorenzis, A 
+review on data-driven constitutive laws for solids, May 2024.
+0[91] Z. Yu, Y. Wang, S. Huang, T. Zhou, and L. Chang, Predicting 
+the unconfined compressive strength of rubber fiber modified 
+cemented paste backfill using support vector machine, IOP 
+Conf. Ser Earth Environ. Sci., vol. 791, no. 1, pp. 012037, 
+2021. DOI: 10.1088/1755-1315/791/1/012037.
+0[92] D. Huang, J. Fuhg, C. Weißenfels, and P. Wriggers, A 
+machine learning based plasticity model using proper orthog -
+onal decomposition, Comput. Methods Appl. Mech. Eng., vol. 
+365, pp. 113008, 2020. DOI: 10.1016/j.cma.2020.113008.
+0[93] P. Zhang, Z.-Y. Yin, and Y.-F. Jin, State-of-the-art review of 
+machine learning applications in constitutive modeling of 
+soils, Arch. Computat. Methods Eng., vol. 28, no. 5, pp. 3661– 
+3686, 2021. DOI: 10.1007/s11831-020-09524-z.
+0[94] Y. Heider, K. Wang, and W. Sun, SO (3)-invariance of 
+informed-graph-based deep neural network for anisotropic 
+elastoplastic materials, Comput. Methods Appl. Mech. Eng., 
+vol. 363, pp. 112875, 2020. DOI: 10.1016/j.cma.2020.112875.
+0[95] K. Wang, W. Sun, and Q. Du, A cooperative game for auto -
+mated learning of elasto-plasticity knowledge graphs and mod -
+els with AI-guided experimentation, Comput. Mech., vol. 64, 
+no. 2, pp. 467–499, 2019. DOI: 10.1007/s00466-019-01723-1.
+0[96] Q. Chen, R. Jia, and S. Pang, Deep long short-term memory 
+neural network for accelerated elastoplastic analysis of hetero -
+geneous materials: an integrated data-driven surrogate 
+approach, Compos. Struct., vol. 264, pp. 113688, 2021. DOI: 
+10.1016/j.compstruct.2021.113688.
+0[97] C. Settgast, M. Abendroth, and M. Kuna, Constitutive model -
+ing of plastic deformation behavior of open-cell foam struc -
+tures using neural networks, Mech. Mater., vol. 131, pp. 1–10, 
+2019. DOI: 10.1016/j.mechmat.2019.01.015.
+0[98] M. Gorji, M. Mozaffar, J. Heidenreich, J. Cao, and D. Mohr, 
+On the potential of recurrent neural networks for modeling 
+path dependent plasticity, J. Mech. Phys. Solids., vol. 143, pp. 
+103972, 2020. DOI: 10.1016/j.jmps.2020.103972.
+0[99] S. Guan, X. Zhang, S. Ranftl, and T. Qu, A neural network- 
+based material cell for elastoplasticity and its performance in 
+FE analyses of boundary value problems, Int. J. Plast., vol. 171, 
+pp. 103811, 2023. DOI: 10.1016/j.ijplas.2023.103811.
+[100] E. Ghane, M. Fagerstr €om, and M. Mirkhalaf, Recurrent neural 
+networks and transfer learning for predicting elasto-plasticity 
+in woven composites, Eur. J. Mech. A Solids., vol. 107, pp. 
+105378, 2024. DOI: 10.1016/j.euromechsol.2024.105378.
+[101] W.G. Dettmer, E.J. Muttio, R. Alhayki, and D. Peri �c, A frame -
+work for neural network based constitutive modelling of 
+inelastic materials, Comput. Methods Appl. Mech. Eng., vol. 
+420, pp. 116672, 2024. DOI: 10.1016/j.cma.2023.116672.
+[102] A. Danoun, E. Pruli �ere, and Y. Chemisky, Thermodynamically 
+consistent Recurrent Neural Networks to predict non linear 
+behaviors of dissipative materials subjected to non-propor -
+tional loading paths, Mech. Mater., vol. 173, pp. 104436, 2022. 
+DOI: 10.1016/j.mechmat.2022.104436.
+MECHANICS OF ADVANCED MATERIALS AND STRUCTURES
+ 17
+
+
+===== PAGE 19 =====
+[103] S. Vijayaraghavan, L. Wu, L. Noels, S.P. Bordas, S. Natarajan, 
+and L.A. Beex, Neural-network acceleration of projection- 
+based model-order-reduction for finite plasticity: application 
+to rves, arXiv preprint arXiv:2109.07747. 2021.
+[104] J.N. Heidenreich, C. Bonatti, and D. Mohr, Transfer learning of 
+recurrent neural network-based plasticity models, Num. Meth. 
+Eng., vol. 125, no. 1, pp. e7357, 2024. DOI: 10.1002/nme.7357.
+[105] Y. He, and S.J. Semnani, Machine learning based modeling of 
+path-dependent materials for finite element analysis, Comput. 
+Geotech., vol. 156, pp. 105254, 2023. DOI: 10.1016/j.compgeo. 
+2023.105254.
+[106] D.P. Jang, P. Fazily, and J.W. Yoon, Machine learning-based 
+constitutive model for j2-plasticity, Int. J. Plast., vol. 138, pp. 
+102919, 2021. DOI: 10.1016/j.ijplas.2020.102919.
+[107] A. Koeppe, F. Bamer, and B. Markert, An intelligent nonlinear 
+meta element for elastoplastic continua: deep learning using a 
+new time-distributed residual u-net architecture, Comput. 
+Methods Appl. Mech. Eng., vol. 366, pp. 113088, 2020. DOI: 
+10.1016/j.cma.2020.113088.
+[108] Y.J. Wong, K.B. Mustapha, Y. Shimizu, A. Kamiya, and S.K. 
+Arumugasamy, Development of surrogate predictive models 
+for the nonlinear elasto-plastic response of medium density 
+fibreboard-based sandwich structures, Int. J. Lightweight 
+Mater. Manuf., vol. 4, no. 3, pp. 302–314, 2021. DOI: 10.1016/ 
+j.ijlmm.2021.02.002.
+[109] M. Teranishi, Neural network constitutive model for uniaxial 
+cyclic plasticity based on return mapping algorithm, Mech. 
+Res. Commun., vol. 119, pp. 103815, 2022. DOI: 10.1016/j. 
+mechrescom.2021.103815.
+[110] C. Hari Manoj Simha, and M. Biglarbegian, An assessment of 
+shallow neural networks for stress updates in computational solid 
+mechanics, Int. J. Comput. Methods Eng. Sci. Mech., vol. 21, no. 
+6, pp. 277–291, 2020. DOI: 10.1080/15502287.2020.1836534.
+[111] A. Zhang, and D. Mohr, Using neural networks to represent 
+von Mises plasticity with isotropic hardening, Int. J. Plast., vol. 
+132, pp. 102732, 2020. DOI: 10.1016/j.ijplas.2020.102732.
+[112] M. Eghbalian, M. Pouragha, and R. Wan, A physics-informed 
+deep neural network for surrogate modeling in classical elasto- 
+plasticity, Comput. Geotech., vol. 159, pp. 105472, 2023. DOI: 
+10.1016/j.compgeo.2023.105472.
+[113] E. Haghighat, M. Raissi, A. Moure, H. Gomez, and R. Juanes, 
+A physics-informed deep learning framework for inversion 
+and surrogate modeling in solid mechanics, Comput. Methods 
+Appl. Mech. Eng., vol. 379, pp. 113741, 2021. DOI: 10.1016/j. 
+cma.2021.113741.
+[114] A.M. Roy, S. Guha, V. Sundararaghavan, and R. Arr �oyave, 
+Physics-infused deep neural network for solution of non-asso -
+ciative drucker–prager elastoplastic constitutive model, J. 
+Mech. Phys. Solids., vol. 185, pp. 105570, 2024. DOI: 10.1016/ 
+j.jmps.2024.105570.
+[115] S. Rezaei, A. Moeineddin, and A. Harandi, Learning solutions of 
+thermodynamics-based nonlinear constitutive material models 
+using physics-informed neural networks, Comput. Mech., vol. 74, 
+no. 2, pp. 333–366, 2024. DOI: 10.1007/s00466-023-02435-3.
+[116] Y. Feng, W. Gao, D. Wu, and F. Tin-Loi, Machine learning aided 
+stochastic elastoplastic analysis, Comput. Methods Appl. Mech. 
+Eng., vol. 357, pp. 112576, 2019. DOI: 10.1016/j.cma.2019.112576.
+[117] R. Shoghi, and A. Hartmaier, A machine learning constitutive 
+model for plasticity and strain hardening of polycrystalline 
+metals based on data from micromechanical simulations, 
+Mach. Learn Sci. Technol., vol. 5, no. 2, pp. 025008, 2024. 
+DOI: 10.1088/2632-2153/ad379e.
+[118] Y. Zhang, J. Qiu, Y-g Zhang, and R. Liao, The establishment 
+of a constitutive model of sand under monotonic loading by 
+adopting the support vector machine (SVM), Arab. J. Sci. 
+Eng., vol. 47, no. 4, pp. 4421–4435, 2022. DOI: 10.1007/ 
+s13369-021-06093-6.
+[119] L. Wu, C. Anglade, L. Cobian, M. Monclus, J. Segurado, F. 
+Karayagiz, U. Freitas, and L. Noels, Bayesian inference of high- 
+dimensional finite-strain visco-elastic–visco-plastic model 
+parameters for additive manufactured polymers and neural net -
+work based material parameters generator, Int. J. Solids Struct., 
+vol. 283, pp. 112470, 2023. DOI: 10.1016/j.ijsolstr.2023.112470.
+[120] R. Gulakala, B. Markert, and M. Stoffel, Generative learning- 
+based model for the prediction of 2d stress distribution, Proc. 
+Appl. Math. Mech., vol. 23, no. 4, pp. e202300201, 2023. DOI: 
+10.1002/pamm.202300201.
+[121] N. Y€ uksel, and H.R. B€ orkl €u, A generative deep learning 
+approach for improving the mechanical performance of struc -
+tural components, Appl. Sci., vol. 14, no. 9, pp. 3564, 2024. 
+DOI: 10.3390/app14093564.
+[122] D. Younesian, A. Hosseinkhani, H. Askari, and E. 
+Esmailzadeh, Elastic and viscoelastic foundations: a review on 
+linear and nonlinear vibration modeling and applications, 
+Nonlinear Dyn., vol. 97, no. 1, pp. 853–895, 2019. DOI: 10. 
+1007/s11071-019-04977-9.
+[123] J.H. Snoeijer, A. Pandey, M.A. Herrada, and J. Eggers, The 
+relationship between viscoelasticity and elasticity, Proc. R Soc. 
+A., vol. 476, no. 2243, pp. 20200419, 2020. DOI: 10.1098/rspa. 
+2020.0419.
+[124] E. Winkler, Die Lehre von der Elasticitaet und Festigkeit: mit 
+besonderer R€ ucksicht auf ihre Anwendung in der Technik, f €ur 
+polytechnische Schulen, Bauakademien, Ingenieure, 
+Maschinenbauer, Architecten, etc, H. Dominicus, 1867.
+[125] J.K. Prusty, G. Papazafeiropoulos, and S.C. Mohanty, 
+Experimental verification of the neural network optimization 
+algorithm for identifying frequency-dependent constitutive 
+parameters of viscoelastic materials, J. Vib. Eng. Technol., vol. 12, 
+no. 2, pp. 2147–2173, 2024. DOI: 10.1007/s42417-023-00972-y.
+[126] G. Chen, Recurrent neural networks (RNNs) learn the consti -
+tutive law of viscoelasticity, Comput. Mech., vol. 67, no. 3, pp. 
+1009–1019, 2021. DOI: 10.1007/s00466-021-01981-y.
+[127] D. Dabiri, M. Saadat, D. Mangal, and S. Jamali, Fractional rhe -
+ology-informed neural networks for data-driven identification 
+of viscoelastic constitutive models, Rheol. Acta., vol. 62, no. 
+10, pp. 557–568, 2023. DOI: 10.1007/s00397-023-01408-w.
+[128] F. As’ad, and C. Farhat, A mechanics-informed deep learning 
+framework for data-driven nonlinear viscoelasticity, Comput. 
+Methods Appl. Mech. Eng., vol. 417, pp. 116463, 2023. DOI: 
+10.1016/j.cma.2023.116463.
+[129] L. Shan, Y. Wang, S. Liu, X. Qi, and J. Wang, Establishment 
+of correlation model between compositions and dynamic 
+viscoelastic properties of asphalt binder based on machine 
+learning, Constr. Build. Mater., vol. 364, pp. 129902, 2023. 
+DOI: 10.1016/j.conbuildmat.2022.129902.
+[130] A. Sadat Hosseini, P. Hajikarimi, M. Gandomi, F. Moghadas 
+Nejad, and A.H. Gandomi, Optimized machine learning 
+approaches for the prediction of viscoelastic behavior of modi -
+fied asphalt binders, Constr. Build. Mater., vol. 299, pp. 
+124264, 2021. DOI: 10.1016/j.conbuildmat.2021.124264.
+[131] H. Jin, S. Yoon, F.C. Park, and K.H. Ahn, Data-driven consti -
+tutive model of complex fluids using recurrent neural net -
+works, Rheol. Acta., vol. 62, no. 10, pp. 569–586, 2023. DOI: 
+10.1007/s00397-023-01405-z.
+[132] A. Koeppe, F. Bamer, M. Selzer, B. Nestler, and B. Markert, 
+Explainable artificial intelligence for mechanics: physics- 
+explaining neural networks for constitutive models, Front. 
+Mater., vol. 8, pp. 1–16, 2022. DOI: 10.3389/fmats.2021. 
+824958.
+[133] J. He, S. Kushwaha, J. Park, S. Koric, D. Abueidda, and I. 
+Jasiuk, Sequential Deep Operator Networks (S-DeepONet) for 
+predicting full-field solutions under time-dependent loads, 
+Eng. Appl. Artif. Intell., vol. 127, pp. 107258, 2024. DOI: 10. 
+1016/j.engappai.2023.107258.
+[134] M. Karami, H. Lombaert, and D. Rivest-H �enault, Real-time 
+simulation of viscoelastic tissue behavior with physics-guided 
+deep learning, Comput. Med. Imaging Graph., vol. 104, pp. 
+102165, 2023. DOI: 10.1016/j.compmedimag.2022.102165.
+[135] J. Hinrichsen, C. Ferlay, N. Reiter, and S. Budday, Using drop -
+out based active learning and surrogate models in the inverse 
+18
+ A. HUSSAIN ET AL.
+
+
+===== PAGE 20 =====
+viscoelastic parameter identification of human brain tissue, 
+Front. Physiol., vol. 15, pp. 1321298, 2024. DOI: 10.3389/ 
+fphys.2024.1321298.
+[136] S. Chaouch, and J. Yvonnet, An unsupervised machine learn -
+ing approach to reduce nonlinear FE2 multiscale calculations 
+using macro clustering, Finite Elem. Anal. Des., vol. 229, pp. 
+104069, 2024. DOI: 10.1016/j.finel.2023.104069.
+[137] A.E.O. Ferreira, J. L. B. d Ara� ujo, W.P. Ferreira, J. S. d Sousa, 
+and C.L.N. Oliveira, Sublinear drag regime at mesoscopic 
+scales in viscoelastic materials, PLoS One., vol. 19, no. 3, pp. 
+e0299296, 2024. DOI: 10.1371/journal.pone.0299296.
+[138] K.P. Abdolazizi, K. Linka, and C.J. Cyron, Viscoelastic constitu -
+tive artificial neural networks (vcanns)–a framework for data- 
+driven anisotropic nonlinear finite viscoelasticity, Comput. Phys., 
+vol. 499, pp. 112704, 2024. DOI: 10.1016/j.jcp.2023.112704.
+[139] M. Maia, I.B. Rocha, D. Kova �cevi �c, and F. van der Meer, 
+Physically recurrent neural network for rate and path-depend -
+ent heterogeneous materials in a finite strain framework, arXiv 
+preprint arXiv:2404.17583. 2024.
+[140] S. Thakur, M. Raissi, and A.M. Ardekani, ViscoelasticNet: a 
+physics informed neural network framework for stress discov -
+ery and model selection, J. Non-Newtonian Fluid Mech., vol. 
+330, pp. 105265, 2024. DOI: 10.1016/j.jnnfm.2024.105265.
+[141] H. Holthusen, L. Lamm, T. Brepols, S. Reese, and E. Kuhl, 
+Theory and implementation of inelastic constitutive artificial 
+neural networks, Comput. Methods Appl. Mech. Eng., vol. 
+428, pp. 117063, 2024. DOI: 10.1016/j.cma.2024.117063.
+[142] M. Alas, S.I. Abba, S. Ismael Albrka Ali, A. Rahim, and N.I.M. 
+Yusoff, Evaluating the performance of aluminum oxide nano -
+particle-modified asphalt binder and modelling the viscoelastic 
+properties by using artificial neural networks and support vec -
+tor machines, Adv. Mater. Sci. Eng., vol. 2022, no. 1, pp. 1–11, 
+2022.)DOI: 10.1155/2022/9685454.
+[143] S. Li, T. Tian, H. Wang, Y. Li, J. Li, Y. Zhou, and J. Wu, 
+Development of a four-parameter phenomenological model for 
+the nonlinear viscoelastic behaviour of magnetorheological 
+gels, Mater. Des., vol. 194, pp. 108935, 2020. DOI: 10.1016/j. 
+matdes.2020.108935.
+[144] X. Fan, S. Lv, C. Xia, D. Ge, C. Liu, and W. Lu, Strength pre -
+diction of asphalt mixture under interactive conditions based 
+on BPNN and SVM, Case Stud. Constr. Mater., vol. 21, pp. 
+e03489, 2024. DOI: 10.1016/j.cscm.2024.e03489.
+[145] H. Chen, Y. Yao, Y. Liu, J. Leng, and W. Bian, A program -
+mable modular lattice metamaterial with multiple deforma -
+tions, Mech. Adv. Mater. Struct., vol. 31, no. 26, pp. 7932– 
+7943, 2024. DOI: 10.1080/15376494.2023.2252988.
+[146] R. Jafari Nedoushan, Y. An, and W.-R. Yu, New auxetic mate -
+rials with stretch-dominant architecture using simple trusses, 
+Mech. Adv. Mater. Struct., vol. 30, no. 3, pp. 609–625, 2023. 
+DOI: 10.1080/15376494.2021.2020940.
+[147] J. Hulme, A.H. Sakhaei, and M. Shafiee, Mechanical analysis 
+and additive manufacturing of 3d-printed lattice materials for 
+bone scaffolds, Materials Today: Proceedings, vol. 101, pp. 30– 
+37, 2024, ISSN 2214-7853, https://doi.org/10.1016/j.matpr.2023. 
+02.278.
+[148] Y. Su, X. Wu, and J. Shi, A novel 3d printable multimaterial aux -
+etic metamaterial with reinforced structure: improved stiffness 
+and retained auxetic behavior, Mech. Adv. Mater. Struct., vol. 29, 
+no. 3, pp. 408–418, 2022. DOI: 10.1080/15376494.2020.1774690.
+[149] O. Ochoa, E. Cuan-Urquizo, A. 
+�
+Alvarez-Trejo, A. Roman- 
+Flores, and R. Guerra Silva, Additively manufactured auxetic 
+arc-based architected metamaterial: mechanical properties and 
+their directional dependency, Mech. Adv. Mater. Struct., vol. 
+31, no. 25, pp. 6450–6463, 2024. DOI: 10.1080/15376494.2023. 
+2231453.
+[150] H. Chen, and F. Li, Design, simulation and experimental veri -
+fication of novel 3d metamaterial structures with negative 
+poisson’s ratio, Mech. Adv. Mater. Struct., vol. 30, no. 1, pp. 
+17–28, 2023. DOI: 10.1080/15376494.2021.2006839.
+[151] A. Challapalli, J. Konlan, and G. Li, Inverse machine learning 
+discovered metamaterials with record high recovery stress, Int. 
+J. Mech. Sci., vol. 244, pp. 108029, 2023. DOI: 10.1016/j. 
+ijmecsci.2022.108029.
+[152] A. Challapalli, D. Patel, and G. Li, Inverse machine learning 
+framework for optimizing lightweight metamaterials, Mater. Des., 
+vol. 208, pp. 109937, 2021. DOI: 10.1016/j.matdes.2021.109937.
+[153] T. Xue, A. Beatson, M. Chiaramonte, G. Roeder, J.T. Ash, Y. 
+Menguc, S. Adriaenssens, R.P. Adams, and S. Mao, A data- 
+driven computational scheme for the nonlinear mechanical 
+properties of cellular mechanical metamaterials under large 
+deformation, Soft Matter., vol. 16, no. 32, pp. 7524–7534, 
+2020. DOI: 10.1039/d0sm00488j.
+[154] B. Le, J. Yvonnet, and Q. He, Computational homogenization 
+of nonlinear elastic materials using neural networks, Num. 
+Meth. Eng., vol. 104, no. 12, pp. 1061–1084, 2015. DOI: 10. 
+1002/nme.4953.
+[155] M. Xie, L. Wang, and A.A. Ibraheem, Transient bending ana -
+lysis of the origami enriched metamaterial system: application 
+of deep neural networks in the mathematical framework for 
+metamaterial problems, Mech. Adv. Mater. Struct., pp. 1–15, 
+2024. DOI: 10.1080/15376494.2024.2352594.
+[156] M.A. Bessa, R. Bostanabad, Z. Liu, A. Hu, D.W. Apley, C. 
+Brinson, W. Chen, and W.K. Liu, A framework for data- 
+driven analysis of materials under uncertainty: countering the 
+curse of dimensionality, Comput. Methods Appl. Mech. Eng., 
+vol. 320, pp. 633–667, 2017. DOI: 10.1016/j.cma.2017.03.037.
+[157] M. Bessa, P. Glowacki, and M. Houlder, Bayesian machine 
+learning in metamaterial design: fragile becomes supercom -
+pressible, Adv. Mater., vol. 31, no. 48, pp. 1904845, 2019. 
+DOI: 10.1002/adma.201904845.
+[158] M. Bessa, and S. Pellegrino, Design of ultra-thin shell structures 
+in the stochastic post-buckling range using Bayesian machine 
+learning and optimization, Int. J. Solids Struct., vol. 139-140, 
+pp. 174–188, 2018. DOI: 10.1016/j.ijsolstr.2018.01.035.
+[159] A. Challapalli, and G. Li, 3D printable biomimetic rod with super -
+ior buckling resistance designed by machine learning, Sci. Rep., 
+vol. 10, no. 1, pp. 20716, 2020. DOI: 10.1038/s41598-020-77935-w.
+[160] J. Bastek, S. Kumar, B. Telgen, R. Glaesener, and D. Kochmann, 
+Inverting the structure–property map of truss metamaterials by 
+deep learning, Proc. Natl. Acad. Sci. U. S. A., vol. 119, no. 1, 
+pp. 2111505119, 2022. DOI: 10.1073/pnas.2111505119.
+[161] F. Dos Reis, and N. Karathanasopoulos, Inverse metamaterial 
+design combining genetic algorithms with asymptotic hom -
+ogenization schemes, Int. J. Solids Struct., vol. 250, pp. 
+111702, 2022. DOI: 10.1016/j.ijsolstr.2022.111702.
+[162] M. Maurizi, C. Gao, and F. Berto, Inverse design of truss lattice 
+materials with superior buckling resistance, NPJ Comput. Mater., 
+vol. 8, no. 1, pp. 1–12, 2022. DOI: 10.1038/s41524-022-00938-w.
+[163] Z. Liao, Y. Wang, L. Gao, and Z. Wang, Deep-learning-based 
+isogeometric inverse design for tetra-chiral auxetics, Compos. 
+Struct., vol. 280, pp. 114808, 2022. DOI: 10.1016/j.compstruct. 
+2021.114808.
+[164] B. Kim, S. Lee, and J. Kim, Inverse design of porous materials 
+using artificial neural networks, Sci. Adv., vol. 6, no. 1, pp. 
+eaax9324, 2020. DOI: 10.1126/sciadv.aax9324.
+[165] X. Zheng, T. Chen, X. Guo, S. Samitsu, and I. Watanabe, 
+Controllable inverse design of auxetic metamaterials using 
+deep learning, Mater. Des., vol. 211, pp. 110178, 2021. DOI: 
+10.1016/j.matdes.2021.110178.
+[166] D.K. Klein, M. Fern �andez, R.J. Martin, P. Neff, and O. 
+Weeger, Polyconvex anisotropic hyperelasticity with neural 
+networks, J. Mech. Phys. Solids., vol. 159, pp. 104703, 2022. 
+DOI: 10.1016/j.jmps.2021.104703.
+[167] D. Abueidda, S. Koric, and N. Sobh, Topology optimization of 
+2D structures with nonlinearities using deep learning, 
+Comput. Struct., vol. 237, pp. 106283, 2020. DOI: 10.1016/j. 
+compstruc.2020.106283.
+MECHANICS OF ADVANCED MATERIALS AND STRUCTURES
+ 19

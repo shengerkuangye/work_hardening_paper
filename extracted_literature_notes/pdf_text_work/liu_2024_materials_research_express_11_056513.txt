@@ -1,0 +1,818 @@
+FILE: references\liu_2024_materials_research_express_11_056513.pdf
+PAGES: 18
+METADATA: {'/Creator': 'IOPP', '/CrossMarkDomains[1]': 'iop.org', '/ModDate': "D:20260511014601+01'00'", '/robots': 'noindex', '/doi': '10.1088/2053-1591/ad48de', '/Keywords': 'magnesium alloy; constitutive model; PSO-SVR model; thermal processing map; dynamic recrystallization mechanism', '/Title': 'Prediction of flow stress in Mg-3Dy alloy based on constitutive equation and PSO-SVR model', '/CreationDate': "D:20240520132128+05'30'", '/crossmarkMajorVersionDate': '2024-05-21', '/Subject': 'Materials Research Express, 11(2024) 056513. doi:10.1088/2053-1591/ad48de', '/Author': 'Yafei Liu', '/Producer': 'iText® 5.5.13.5 ©2000-2026 iText Group NV (IOP Publishing Ltd; licensed version)'}
+
+
+
+
+===== PAGE 1 =====
+Materials Research
+Express
+              
+PAPER • OPEN ACCESS
+Prediction of flow stress in Mg-3Dy alloy based on
+constitutive equation and PSO-SVR model
+To cite this article: Yafei Liu et al 2024 Mater. Res. Express 11 056513
+ 
+View the article online for updates and enhancements.
+You may also like
+Deformation behavior, critical strain, and
+processing maps of an as-extruded Mg-
+2.5Zn-4Y by hot compression tests
+Guoxin Wang and Ying Guan
+-
+Effects of heat treatments on hot
+deformation behaviors of the Mg-8Gd-
+3Sm-0.5Zr alloy
+Limin Zhu, Quanan Li, Qing Zhang et al.
+-
+Comparison of two different constitutive
+equations for hot deformation of AZ91
+magnesium alloy
+Zhongtao He and Chun Xu
+-
+This content was downloaded from IP address 154.64.226.166 on 11/05/2026 at 01:46
+
+
+===== PAGE 2 =====
+Mater. Res. Express11 (2024) 056513 https://doi.org/10.1088/2053-1591/ad48de
+PAPER
+Prediction of ﬂow stress in Mg-3Dy alloy based on constitutive
+equation and PSO-SVR model
+Yafei Liu1, Yunduo Feng1, Qiangbing Liu1, Shiyu Luan2, Xiaowei Li1, Xiaoyu Liu1, Lei Zhang1,∗ and
+Jinhui Wang1,∗
+1 Qinghai Provincial Key Laboratory of New Light Alloys, Qinghai Provincial Engineering Research Center of High Performance Light
+Metal Alloys and Forming, Qinghai University, Xining 810016, People’s Republic of China
+2 College of Materials Science and Engineering, Shenyang University of Technology, Shenyang, 110870, People’s Republic of China
+∗ Authors to whom any correspondence should be addressed.
+E-mail: ahui1004@163.com and zhangleiqhu@163.com
+Keywords: magnesium alloy, constitutive model, PSO-SVR model, thermal processing map, dynamic recrystallization mechanism
+Abstract
+This study conducted hot compression experiments on as-cast Mg-3Dy alloy under deformation
+parameters of 380 °C–470 °C and 0.001–1s
+−1. The microstructure of the alloy was observed using
+EBSD, and theﬂow stress of the Mg-3Dy alloy was predicted using the Arrhenius model and the
+particle swarm optimization-support vector regression(PSO-SVR) model. The organizational
+analysis results showed that the main recrystallization mechanism in the alloy is the discontinuous
+dynamic recrystallization (DDRX) mechanism. The generation of twins in the alloy was mostly the
+result of local stress action. The optimal processing window for this alloy was determined to be
+380 °C–470 °C and 0.001–0.01 s
+−1 through the thermal processing map. The prediction accuracies of
+the Arrhenius model and PSO-SVR model were evaluated using the correlation coefﬁcient R2 and
+mean squared error MSE. The results showed that the PSO-SVR model signiﬁcantly outperforms the
+Arrhenius model in prediction accuracy, with R2 value of 0.99982 and MSE of 0.074.
+1. Introduction
+Magnesium has a wide range of applications in various industries due to its lightweight, high strength, excellent
+electromagnetic shielding, damping properties, low processing costs, and recyclability[1–5]. Due to its unique
+close-packed hexagonal (HCP) structure, magnesium alloys have fewer slip systems, greatly limiting their plastic
+deformation capability [6–8]. To overcome this limitation, other alloying elements are typically added to
+enhance the formability of magnesium. The role of rare earth elements in magnesium has gradually attracted
+attention because they can strengthen and age-harden magnesium through solid solution strengthening, reduce
+impurities, and reﬁne grain size. Therefore, the addition of rare earth elements can signiﬁcantly improve the
+performance and processing technology of magnesium alloys[9, 10].D y [11, 12] as one of the rare earth
+elements, can form high-temperature-resistant structures, enhance the mechanical and forming properties of
+magnesium, making magnesium alloys more easily formable[13–15]. Mg-Dy alloys have a wide range of
+industrial applications in the manufacturing of orthopedic implants[16], biodegradable cardiovascular stents
+[17], and improved magneto-dielectric materials[18], achieved through the process of thermal deformation.
+To delve deeper into the hot deformation behavior of magnesium alloys, investigating their deformation
+mechanisms and mechanical properties is a good starting point. During the hot deformation process of
+magnesium alloys, DRX is commonly observed, with continuous dynamic recrystallization(CDRX) and DDRX
+being the main types of DRX[19–21]. Wang et al [22] found in the hot deformation of AZ91 alloy at 523 K, twin-
+induced DRX primarily occurs in the form of DDRX. Liet al [23] studied the softening mechanism of Mg-2Ho
+alloy during hot deformation, namely DDRX and CDRX. A thorough investigation into the DRX mechanism of
+alloys can provide a basis for further material design and improvement. Thermal processing maps can provide
+guidance for alloy processing[24], identify suitable processing ranges, and better explore the thermal
+OPEN ACCESS
+RECEIVED
+24 February 2024
+REVISED
+6 May 2024
+ACCEPTED FOR PUBLICATION
+8 May 2024
+PUBLISHED
+21 May 2024
+Original content from this
+work may be used under
+the terms of theCreative
+Commons Attribution 4.0
+licence.
+Any further distribution of
+this work must maintain
+attribution to the
+author(s) and the title of
+the work, journal citation
+and DOI.
+© 2024 The Author(s). Published by IOP Publishing Ltd
+
+
+===== PAGE 3 =====
+deformation behavior therein. Ninget al [25] determined the optimal processing range for AZ42 magnesium
+alloy at 320 °C–350 °C and 0.5–1s −1 using 3D thermal processing maps Leiet al [26] identiﬁed the suitable
+processing range for the Al–5Mg–3Zn–1Cu alloy through thermal processing maps: 375°C–450 °C,
+0.001–0.1 s−1.
+In recent years, machine learning models[27, 28] have been widely used to predict theﬂow stress of
+magnesium alloys. SVR is one type of machine learning model. SVR demonstrates excellent performance in
+solving nonlinear regression and small-sample datasets. Yanet al [29] utilized PSOe-SVR to predict the high-
+temperature ﬂow stress of AZ80 magnesium alloy, showing higher prediction accuracy compared to the BPNN
+model. Guo et al [30] applied LHS-SVR and GA-SVR models to predict the thermal behavior of Ti-10V-2Fe-3Al
+alloy, achieving high prediction accuracy with correlation coefﬁcients R
+2 of 0.999975 and 0.999923. Liet al [31]
+modeled the constitutive behavior of 25CrMo4 steel using SVR with different algorithms, achieving an R2 of
+0.99974, providing a relatively accurate constitutive model. Due to SVR’s heavy reliance on parameters such as
+penalty factor, kernel function, and insensitive loss function, Particle Swarm Optimization can automatically
+search for the optimal solution in parameter space, enhancing the model’s prediction and generalization
+abilities. PSO-SVR model has currently been widely applied inﬁelds such as mechanical[32–34], petroleum
+[35, 36], chemical [37, 38], construction [39], and weather[40].
+This study investigated the hot deformation behavior of Mg-3Dy alloy through hot compression
+experiments, and established constitutive equations, a PSO-SVR model, and thermal processing maps while also
+studying the microstructural evolution of the alloy. The prediction accuracy of the PSO-SVR model and the
+Arrhenius model was compared using the R
+2 and MSE.
+2. Experimental process
+The experiment utilized high-purity magnesium(with a purity of 99.95 wt%) and Mg-20Dy intermediate alloy
+as raw materials, employing a melting-casting method to produce the Mg-3Dy alloy. Oxides on the raw materials
+were polished off, and the prepared alloy was placed in a drying oven at 200°C for 2 h. Once the magnesium
+ingot completely melted, the temperature of the melting furnace was raised to 730°C to introduce the Mg-20Dy
+alloy. After complete alloy fusion, thorough stirring, skimming, and a 30 min settling period, the molten alloy
+solution was poured into molds. Throughout the melting process, Ar(99% proportion) and SF
+6 (1%
+proportion) were used as protective gases to isolate the air.
+Cylindrical specimens of Ø10 mm× 15 mm were prepared from the ingots. The cut cylindrical specimens
+were homogenized at 565°C for 12 h. Deformation temperatures ranged from 380 to 470°C, and strain rates
+varied from 0.001 to 1 s−1, achieving aﬁnal true strain of 0.69. The entire hot compression experiment was
+conducted under vacuum. The alloy’s deformation temperature was increased at a rate of 5°Cs −1, followed by a
+5 min holding period, and immediately quenched in water after compression to preserve the high-temperature
+microstructure. Identical locations of the compressed samples were selected for EBSD observation. The
+prepared EBSD samples were electropolished in a 7% alcoholic perchloric acid solution at−35 °C for 1 min
+and 35 s.
+3. Experimental results
+3.1. Microstructure analysis of Mg-3Dy alloys
+Figure 1 shows the surface morphology of the as-cast Mg-3Dy alloy. Fromﬁgure 1, it can be observed that a large
+number of dendritic structures are present in the initial state microstructure of the as-cast Mg-3Dy alloy. This is
+due to the rapid growth of grains during the solidiﬁcation process of the alloy.
+Figure 2 presents the IPF maps and corresponding grain size distribution diagrams of as-cast Mg-3Dy alloy
+after compression deformation at different temperatures(380 to 470 °C) and strain rates(0.001 to 1 s
+−1). As can
+be seen fromﬁgure 2(h), with the increase in temperature, the average grain sizes of the alloy are 40.86μm,
+22.18 μm, 30.92 μm, and 56.05 μm, respectively. At 410°C, the recrystallization of the alloy is signiﬁcantly
+activated, and the average grain size of the alloy is the smallest at this time. With the increase in temperature, the
+average grain size of the alloy shows a gradual increasing trend, which is due to the growth of the recrystallized
+grains in the alloy. When the temperature is constant, with the decrease in strain rate, the average grain sizes of
+the alloy are 30.28μm, 25.39 μm, 30.92 μm, and 58.49 μm, respectively. At a strain rate of 0.1 s
+−1, the average
+grain size of the alloy is the smallest, which is because the recrystallization fraction is the highest at this time.
+With the further decrease in strain rate, the grain size shows a gradual increasing trend, which is due to the longer
+heating time at the lower strain rate, allowing the grains in the alloy to have sufﬁcient time to grow.
+Figure 3 illustrates the grain boundary maps and corresponding misorientation angle distribution
+diagrams of as-cast Mg-3Dy alloy after compression at various temperatures(380 to 470 °C) and strain rates
+2
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 4 =====
+(0.001 to 1 s−1). In theﬁgure, green lines represent low-angle grain boundaries, black lines represent high-angle
+grain boundaries, and red lines represent twin boundaries. Table1 shows the variations in grain boundary and
+tensile twin content at different temperatures and strain rates. With the increase in temperature, the fraction of
+high-angle grain boundaries in the alloy is 38.1%, 40.2%, 48.6%, and 49.1%, respectively. The proportion of
+high-angle grain boundaries shows an increasing trend with the increase in temperature, which is because most
+of the grains in the Mg-3Dy alloy undergo dynamic recrystallization during the deformation process, and most
+of the low-angle grain boundaries are transformed into high-angle grain boundaries due to the occurrence of
+dynamic recrystallization. When the temperature is 440°C, with the increase in strain rate, the fraction of high-
+angle grain boundaries in the alloy is 55.2%, 48.6%, 35%, and 28.1%, respectively, showing a clear decreasing
+trend, and low-angle grain boundaries gradually become the dominant type. This is because with the increase in
+strain rate, dynamic recrystallization does not have enough time to form, and as the strain progresses, a large
+number of dislocations become entangled and form a large number of low-angle grain boundaries.
+Figure 4 illustrates the KAM maps and corresponding KAM value distributions of as-cast Mg-3Dy alloy
+after compression deformation at different temperatures(380 °C–470 °C) and strain rates(0.001–1s
+−1).
+Observations from ﬁgures 4(a)–(g) reveal signiﬁcant internal generation of dislocations and energy
+Figure 1. Surface morphology of as-cast Mg-3Dy alloy.
+Figure 2. IPF maps and grain size distribution maps of compressed Mg-3Dy alloy.
+3
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 5 =====
+accumulation in the alloy after compression deformation. As shown inﬁgure 4(a), at a temperature of 380°C
+and a strain rate of 0.01 s−1, the alloy predominantly exhibits green areas, indicating the presence of numerous
+dislocation tangles, with an average KAM value of 1.15°. With increasing temperature, the average KAM value of
+the alloy gradually decreases, indicating increased dynamic recrystallization, which consumes a considerable
+amount of dislocations and energy. Conversely, at constant temperature[41], ﬁgures 4(e)–(g) demonstrate that
+with increasing strain rate, the KAM value of the alloy after compression deformation increases from 0.60° to
+1.46°. This is attributed to the decreased dynamic recrystallization time during alloy deformation due to the
+increased strain rate, leading to the accumulation of numerous dislocations at grain boundaries.
+3.2. True stress–strain curve
+Figure 5 depicts the true stress–strain curves of the as-cast Mg-3Dy alloy at temperatures(380 °C–470 °C) and
+strain rates (0.001–1s −1). The compression ratio in this experiment was 50%, resulting in aﬁnal true strain of
+0.69. The thermal compression curves exhibit signiﬁcant differences due to variations in deformation
+temperature and strain rate. Curve(a) in ﬁgure 5 demonstrates a trend of continuous hardening, while the
+trends of the other curves can be roughly divided into three stages. Theﬁrst stage, known as work hardening
+stage, involves a rapid increase in internal stress due to dislocation proliferation and diffusion, resulting in a
+work hardening rate higher than the dynamic recovery rate[42]. Transitioning into the second stage, or
+transition stage, the rate of stress growth slows down as competition between softening and work hardening
+induced by DRV and DRX occurs. The stress reaches its peak value when the softening rate equals the hardening
+rate [43]. Eventually, as deformation progresses, the softening rate equals the hardening rate, marking the onset
+of the ﬁnal stage: steady-state stage, until the end of hot compression[44].
+Figure 3. Grain boundaries maps and misorientation angle distribution maps of Mg-3Dy alloy.
+Table 1. Grain boundary occupancy(%) of Mg-3Dy alloy at different compression parameters.
+Boundary/
+Parameter
+380 °C
+0.01 s−1
+410 °C
+0.01 s−1
+440 °C
+0.01 s−1
+470 °C
+0.01 s−1
+440 °C
+0.001 s−1
+440 °C
+0.1 s−1
+440 °C
+1s −1
+LAGBs 61.9 59.8 51.4 50.9 44.8 65 71.9
+HAGBs 38.1 40.2 48.6 49.1 55.2 35 28.1
+Extension twin 21.6 1.47 18 1.2 10.3 8.06 6.45
+4
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 6 =====
+3.3. Prediction of rheological stresses by the intrinsic equations
+Arrhenius model is currently the most commonly used model for calculating and analyzing the relationship
+between the ﬂow stress σ of alloys and various parameters such as strain rate(ɛ) and temperature (T). The
+constitutive equations for ɛ mainly fall into three categories:(1), (2), and (3) [24, 45, 46].
+⎛
+⎝
+⎞
+⎠
+()es=- TAe x p Q
+R 11 n1
+⎛
+⎝
+⎞
+⎠
+() ( )eb s=- TAe x p e x p Q
+R 22
+⎛
+⎝
+⎞
+⎠
+[( ) ] ( )ea s=- TAs i n h e x p Q
+R 3n
+In this context, Q represents the activation energy,ɛ stands for strain rate, T denotes the deformation
+temperature (653.15–743.15 K), R is the universal gas constant(8.314 J/(mol·K)). A, n andβ are material
+constants, α (α = β/n1).
+The ασ values in this experiment range from 0.37 to 2.04. Equation(1) is applicable to low stresses where
+ασ < 0.8, while equation(2) is no longer suitable for high stresses whereασ > 1.2 in this experimental setup.
+Therefore, a broader stress range is accommodated by adopting equation(3), the hyperbolic sine equation. The
+Zener-Hollomon equation [47, 48], which is a function of temperature(T) and strain rate (ɛ ), is expressed as:
+⎛
+⎝
+⎞
+⎠
+()e=Z Texp Q
+R 4
+Take the logarithms of both sides of(1), (2) and (3) as follows:
+()es=+ - Tln lnA n ln Q
+R 511
+()eb s=+ - Tln ln A Q
+R 62
+[( ) ] ( )ea s=+ - Tln lnA nln sinh Q
+R 7
+To obtain the value of activation energy Q, assuming there is no functional relationship between Q and T, the
+calculation equation for Q is:
+Figure 4. KAM distribution maps of compressed Mg-3Dy alloy.
+5
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 7 =====
+⎧
+⎨⎩
+⎫
+⎬⎭
+⎧
+⎨⎩
+⎫
+⎬⎭[( ) ]
+[( ) ]
+() ()/
+
+
+e
+s
+s l= ¶
+¶a
+¶a
+¶ =
+eT RnQR ln
+ln sinh
+ln sinh
+1 8
+T
+By combining the experimental data with equations(5)–(8), the average slopes of(a) ln ɛ-lnσ and (b) ln ɛ-σ
+from ﬁgure 6 are determined to be n1: 5.891 andβ: 0.14483, respectively. By calculatingα = (β/n1), the value of
+α is found to be 0.024586. Additionally, the average slopes of(c) ln ɛ-ln[sinh(ασ )] and (d) ln[sinh(ασ )]−1000/
+T are determined to be n: 4.3623 andλ: 4.6399, respectively. Substituting these values into equation(8), the
+activation energy Q for the as-cast Mg-3Dy alloy is calculated to be 168.278 kJ/mol.
+To obtain a more precise material constant n, the formula for lnZ can be derived by simultaneously
+combining equations (3) and (4).
+[( ) ] ( ) s=+ aZln ln A n ln sinh 9
+Based on the data obtained fromﬁgure 7, the intercept lnA of lnZ- ln[sinh(ασ )] is 30.19, and the slope n is
+4.1513. Therefore, the constitutive equation for Mg-3Dy alloy is:
+⎛
+⎝
+⎞
+⎠
+[( ) ] ( )es=-e Tsinh 0.024586 exp 168278
+R 1030.19 4.1513
+According to ﬁgure 8, which illustrates the comparison between experimental and calculated rheological
+stress values for Mg-3Dy alloy, the hyperbolic sine function demonstrates generally good predictive
+performance. However, notable discrepancies are observed at lower temperatures, particularly at a strain rate of
+0.01 s
+−1. In theﬁgure, ‘exp’ indicates experimental values, while‘cal’ signiﬁes calculated values.
+The prediction performance of the hyperbolic sine function is evaluated using the coefﬁcient of
+determination (R2) and mean square error(MSE) [49]. Here, yi represents the experimental values, y̅represents
+the average of the experimental values, and ỹrepresents the predicted values. The evaluation metrics for the
+hyperbolic sine function are depicted inﬁgure 9. From ﬁgure 9(a), it can be observed that the constitutive
+equation’s predicted coefﬁcient of determination(R2:0.972), indicating a reasonably good prediction level.
+However, from the error plot inﬁgure 9(b),i t’s evident that the maximum error occurs at 380°C with a strain
+Figure 5. True stress–strain curves for alloys at different temperatures and strain rates:(a) 0.001 s−1 (b) 0.01 s−1 (c) 0.1 s−1 (d) 1s −1.
+6
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 8 =====
+rate of 1 s−1, reaching a high value of 38. Additionally, signiﬁcant errors are observed at all temperatures for a
+strain rate of 0.01 s−1. This is because the hyperbolic sine model is a physical model that does not consider the
+effects of twinning, slip, and recrystallization during hot deformation on theﬂow stress prediction, leading to
+inadequate prediction of the alloy’s rheological behavior.
+Figure 6. Linear ﬁts of (I) ln ɛ -lnσ, (II) ln ɛ-ln[sinh(ασ )], (III) ln ɛ -σ, (IV) ln[sinh(ασ )]−1000/T.
+Figure 7. lnZ- ln[sinh(ασ )] linear relationship plot.
+7
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 9 =====
+()
+()
+()–
+å
+å
+=-
+-
+-
+=
+~
+=
+R
+yy
+yy
+11 1 i
+n
+ii
+i
+n
+i
+2 1
+2
+1
+() ( )å=-
+=
+~
+MSE n yy1 12
+i
+n
+ii
+1
+2
+3.4. Thermal processing map
+The thermal processing map is an essential tool for optimizing thermal processing techniques, documenting the
+material’s plastic deformation capabilities under various thermal deformation conditions, including the
+inﬂuence of deformation temperature, strain rate, and strain, obtained by overlaying power dissipation maps
+and instability maps[50]. The power dissipated by the alloy during thermal deformation consists of two parts:
+one part is dissipated due to plastic deformation(G), and the other part is dissipated due to microstructural
+changes (J) [25], expressed as:
+() 
+
+òòse s e e s== + = +
+es
+PG J d d 13
+00
+The power dissipation factor(η) is utilized during the forming stage of materials to depict the ratio of energy
+consumed during the processing process, which has a close correlation with the microstructural evolution of the
+alloy. Its expression is:
+()h == +
+J
+J
+m
+m
+2
+1 14
+max
+In this equation, Jmax represents the maximum power dissipation, while m denotes the strain rate sensitivity
+index, with the expression for m being:
+Figure 8. Comparison of experimental and intrinsically calculated values of rheological stresses in Mg-3Dy alloys at different strain
+rates:(a) 0.001 s−1, (b) 0.01 s−1, (c) 0.1 s−1, (d) 1s −1.
+8
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 10 =====
+()
+
+es
+se
+s
+e= ¶
+¶ = ¶
+¶ = ¶
+¶m J
+G
+ln
+ln 15
+The value ofη does not directly reﬂect the formability of the material; instead, it needs to be studied in
+conjunction with instability maps. The formula for the instability map obtained using the theory proposed by
+Prasad et al [51] is as follows:
+⎛
+⎝
+⎞
+⎠() ( ) xe e=
+¶ +
+¶ +<
+m
+mln 1
+ln m0 1 6
+Where ξ(ɛ) represents the instability parameter, and whenξ(ɛ) is less than 0, the alloy undergoesﬂow
+instability. Utilizing the instability parameter can guide the design and optimization of the processing process.
+A thermal processing map of Mg-3Dy alloy was constructed by superimposing the power dissipation map
+and instability map at a true strain ofε= 0.69. In ﬁgure 10, contour values represent the magnitude of the power
+dissipation factor η, where the blue region indicates the material’s instability area and the green represents the
+suitable processing zone. Typically, the criticalη value for suitable processing in magnesium alloys is 0.3, so the
+boundary of the region represented byη > 0.3 in the map is marked with a black solid line. It is evident from the
+map that temperature and strain rate have a signiﬁcant inﬂuence on the processing map. Particularly at
+T = 380 °C and ɛ = 1s −1, the alloy is in the instability zone, which explains why the Arrhenius model has such a
+Figure 10. Thermal processing of Mg-3Dy alloy at 0.69 true strain.
+Figure 9. (a) Correlation between calculated and experimental values of hyperbolic sine function,(b) mean square error between
+calculated and experimental values of hyperbolic sine function.
+9
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 11 =====
+large prediction error for theﬂow stress on this hot compression curve(as shown inﬁgure 9(b)). The range of
+easy deformation for this alloy is 380°C–470 °C, and 0.001–0.01 s−1.
+4. Discussion
+4.1. Evolution of microstructure
+Observations from the IPF map inﬁgure 2 reveal signiﬁcant effects of deformation temperature and strain rate
+on the microstructure of Mg-3Dy alloy after hot compression. To further understand the inﬂuence of
+deformation temperature and strain rate on the alloy’s dynamic recrystallization behavior,ﬁgure 11 illustrates
+the recrystallized microstructure and its distribution of Mg-3Dy alloy under different deformation conditions. It
+is evident from theﬁgure that with increasing T and decreasingɛ, the number of deformed grains in the alloy
+gradually decreases, while the quantity of substructures and recrystallized grains increases. This is attributed to
+the fact that higher temperatures and lower strain rates signiﬁcantly promote dynamic recrystallization in Mg-
+3Dy alloy, leading to a notable reduction in the number of deformed grains and an increase in the quantity of
+substructures and recrystallized grains.
+To further explore the dynamic recrystallization mechanism of Mg-3Dy alloy during compression, analysis
+was conducted on representative regions in the IPF map ofﬁgure 2. Figure 12 presents the analysis results of the
+dynamic recrystallization mechanism in the R1 region ofﬁgure 2(f). Figures 12(a)–(b) depict the IPF map and
+KAM map of the R1 region, respectively. Figure12(a) reveals distinct necklace-like structures, characteristic of
+discontinuous dynamic recrystallization. As compression deformation initiates, a large number of dislocations
+generated within the alloy migrate towards grain boundaries, accumulating at these boundaries and causing
+boundary protrusions. Dislocation accumulation at grain boundaries results in the generation of signiﬁcant
+energy and numerous low-angle grain boundaries, leading to substructures. Under the driving force of
+dislocations, substructures undergo rotation, giving rise to recrystallized grains. It can be inferred that the R1
+region exhibits typical characteristics of DDRX[51–53]. Additionally, ﬁgure 12(c) presents the distribution of
+misorientation angles along the straight MN axis and KAM values, revealing recrystallized grains with large-
+angle grain boundaries and low dislocation density. This is attributed to the rotation of subgrains altering grain
+misorientation, while the rotation of substructures consumes considerable energy, resulting in a decrease in
+dislocation density. Figure12(d) represents the poleﬁgure of the R1 region, indicating a certain degree of
+Figure 11. DRX structures distribution maps of compressed Mg-3Dy alloy.
+10
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 12 =====
+randomness in the distribution of recrystallized grains, which can effectively reduce the texture strength to some
+extent.
+Four typical regions(R2, R3, R4, and R5) were selected for analysis inﬁgure 2. Figure 13(b), (f), (j), and (n)
+show the {0001} pole ﬁgures for each region. The orientation difference between the compression twins and the
+matrix is approximately 56° (see ﬁgure 13(a) and (e)), while the orientation difference for the tension twins is
+about 86° (see ﬁgures 13(i) and (m)). Additionally, the orientations of the matrix and twins in the{10 ̅11} and
+{10 ̅12} pole ﬁgures were analyzed. Since twins usually evolve from the matrix grains, they often share a
+common {10 ̅12} or {10 ̅11} plane with the matrix[54, 55]. Therefore, identifying the shared poles in the pole
+ﬁgures can help recognize the twin variant types, which is crucial for understanding the twinning behavior.
+In the tables inﬁgures 13(d), (h), (l), and (p), the Schmid factors(SF) of these four twin variants were
+calculated and veriﬁed, and the corresponding variants of the four twins are marked in red. Among the four twin
+variants, the variant corresponding to twin G1 exhibits the highest SF among the six twin variants, which is
+consistent with the maximum SF law. However, the activation of twin variants G2, G3, and G4 does not follow
+the maximum SF law. This is attributed to the low experimental temperature, which leads to severe stress
+localization, consistent with the experimental results shown inﬁgure 2. Severe stress localization can lead to
+signiﬁcant stress differences between different regions of the grains, sometimes even exceeding the local shear
+stress required for the activation of low Schmid factor variants. As a result, some twin variants with lower SF
+values can be activated, nucleated, and grow.
+4.2. PSO-SVR model
+The Support Vector Regression(SVR) algorithm is a classical regression method proposed by Vapnik[56]. The
+core idea of SVR is to minimize the error between predicted and actual values while maintaining the boundaries.
+For the given problem, the optimization equation of SVR is as follows:
+С( ) ( ) åwx x ++
+wx x =
+*
+*
+min 1
+2 17
+b i
+m
+i i,, ,
+2
+1i i
+Figure 12. DDRX region of R1:(a) IPF map, (b) KAM map, (c) misorientation angle distribution map and KAM value along line MN,
+(d) pole ﬁgure.
+11
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 13 =====
+⎧
+⎨
+⎪
+⎩⎪
+()
+() ()
+¦e x
+¦e x
+xx
+-+
+-+
+=
+
+
+
+*
+*
+st
+xy
+yx
+im
+..
+0, 0, 1, 2, ...., .
+18
+i i i
+i i i
+i i
+In this context,ω represents a column vector with n dimensions, b denotes the displacement term, C stands
+for the regularization constant which is greater than zero,εrepresents the computed loss, andξi and ξi* are slack
+variables.
+SVR tackles nonlinear problems by employing kernel functions to map them into higher-dimensional
+spaces for processing. The kernel functions in SVR include linear, polynomial, sigmoid, and radial basis kernel
+functions [34]. We adopt the radial basis kernel function, which is most suitable for regression problems, with
+the following expression:
+() ( ∣ ∣ ) ( )=- -Kxy r x y,e x p 1 9 2
+The function of the optimal hyperplane in high-dimensional space is determined by the kernel function:
+() ( ) () ( )å aa a a=- +
+=
+**fxy K xy b C,, , 0 , 2 0
+i
+n
+i i i i
+1
+αi and αi* are Lagrange multipliers used to solve quadratic programming problems.
+Figure 13. Twinning analysis of Mg-3Dy alloy.
+12
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 14 =====
+Figure 14. Depicts the ﬂowchart of the PSO-SVR model for predicting theﬂow stress of Mg-3Dy alloy.
+Figure 15. Comparison of experimental values of rheological stresses of Mg-3Dy alloys with PSO-SVR calculations at different strain
+rates: (a) 0.001 s−1, (b) 0.01 s−1, (c) 0.1 s−1, (d) 1s −1.
+13
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 15 =====
+Particle Swarm Optimization[57, 58] is an evolutionary computing technique proposed in 1995 by Dr
+Eberhart and Dr Kennedy, originating from the study of birdﬂocking behavior. It assumes a search space in
+D-dimensional space with N particles in the swarm. Each particle’s position is represented as Xi= (xi1,xi2, K,
+xiD) for I = 1,2, L, N. The‘best’ position each particle has experienced is denoted as pbesti= (p1,p2,KpD) for
+i = 1,2, L, N, while the overall best position found by the entire swarm so far is represented as gbest= (g1,g2, K
+gD). Typically, in the dth dimension(1  d  D), the position change is conﬁned within [Xmin,d, Xmax,d],
+while the velocity change is restricted within[-Vmax,d, Vmax,d].
+The velocity update formula for particle i in the d-th dimension:
+() ( ) ( )w=+ - + --v v c r pbest x c r gbest x 21i
+d
+i
+d
+i
+d
+i
+d
+i
+d
+i
+d1
+11 2 2
+Particle i’s position update formula in the d-th dimension:
+()=++xx v 22i
+d
+i
+d
+i
+d1
+V represents velocity vector. c1 is the cognitive learning factor, c2 is the social learning factor, and r1,r 2 are
+random numbers on[0,1]. ω is the inertia weight, where a larger value indicates a tendency to maintain the
+previous movement trajectory and explore unknown areas more. The detailedﬂowchart of PSO-SVR for
+predicting ﬂow stress is shown inﬁgure 14.
+This study utilizes the Python platform for prediction. During the computation process, the initial particle
+swarm size is set to 30, with 100 evolution generations, c1: 0.5, c2: 0.3, ω: 0.9. A total of 1104 input-output pairs
+were selected from the experimental hot compression curves, among which 208 stress points in the strain range
+of 0.05–0.65 with a step size of 0.05 were not used for training, but were used to validate the predictive ability of
+PSO-SVR. The remaining 896 input-output pairs were used as the training set to train the PSO-SVR model. In
+this case, the range of C values was from 1 to 20000, with a step size of 1000; the range of epsilon values was from
+1 to 2.5, with a step size of 0.1; the range of gamma values was from 1 to 25, with a step size of 1. After calculating
+with the particle swarm algorithm, the optimal SVR parameters corresponding to the best R
+2 were obtained as
+follows: C was 19000, epsilon was 2.0, and gamma was 15. The predicted results are depicted inﬁgures 15 and 16.
+Figure 15 represents the ﬂow stress prediction graph of the Mg-3Dy alloy using the PSO-SVR model. To
+facilitate comparison with the Arrhenius model’s accuracy, the PSO-SVR predictedﬂow stress points are also
+Figure 16. Comparison of the correlation and mean square error between predicted and experimentalﬂow stress values.(a), (c)
+Arrhenius model; (b), (d) PSO-SVR model.
+14
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 16 =====
+selected at 13 points with a strain interval of 0.05. This model utilizes a random 90% of the data from each hot
+compression curve as the training set, with the remaining 10% as the testing set. Evaluation of this model is also
+based on the R2 and MSE. Fromﬁgure 15, it is evident that the PSO-SVR model demonstrates high accuracy in
+predicting ﬂow stress.
+4.3. Comparison of the PSO-SVR model with the Arrhenius model
+The comparison of precision between the PSO-SVR model and the Arrhenius model in predicting theﬂow stress
+of the Mg-3Dy alloy is shown in the graph below. From the graph, it can be observed that the R2 value of the
+PSO-SVR model, 0.99982, is superior to that of the Arrhenius model, which is 0.97214, indicating a higher
+predictive accuracy. Moreover, the MSE of the PSO-SVR model is approximately a hundred times smaller than
+that of the Arrhenius model, demonstrating its excellent performance.
+The reason for this discrepancy is that the Arrhenius model only predicts theﬂow stress of the Mg-3Dy alloy
+from a physical perspective, without considering the inﬂuence of other factors such as twinning, slip, and
+recrystallization during thermal deformation. Hence, its predictive accuracy is not as ideal. On the other hand,
+the PSO-SVR model captures the nonlinear correlation among temperature, strain rate, strain, and stress of the
+Mg-3Dy alloy in the training dataset. The model encompasses all the thermal deformation mechanisms of the
+alloy present in the training dataset, which explains the high accuracy of the PSO-SVR model in predictingﬂow
+stress.
+5. Conclusion
+This study investigates the hot deformation behavior of as-cast Mg-3Dy alloy and establishes PSO-SVR and
+Arrhenius models for predicting itsﬂow stress. The important results of the entire text are as follows:
+(1) The DRX mechanism in the microstructure of Mg-3Dy alloy was analyzed. In this experiment, the
+deformation of Mg-3Dy alloy was primarily dominated by DDRX, showing characteristics of a necklace-
+like structure. As T increases and
+ɛ decreases, the recrystallization behavior of the alloy was promoted.
+(2) Based on the hot processing map of Mg-3Dy alloy, the optimal processing temperature and speed range for
+this alloy were determined to be 380°C–470 °C and 0.001–0.01 s−1.
+(3) The precision of the PSO-SVR model and the Arrhenius model in predicting the ﬂow stress of the Mg-3Dy
+alloy was compared using the R2 and MSE. The results showed that the R2 of the PSO-SVR model(0.99982)
+was higher than that of the Arrhenius model(0.97214), indicating its better applicability in predicting the
+ﬂow stress of the Mg-3Dy alloy.
+Acknowledgments
+Authors acknowledge theﬁnancial support of Qinghai Provincial Science and Technology Department Basic
+Research Program (No. 2023-ZJ-759) to carry out this research work.
+Data availability statement
+The data cannot be made publicly available upon publication because they contain sensitive personal
+information. The data that support theﬁndings of this study are available upon reasonable request from the
+authors.
+Declaration of competing interest
+The authors declare that they have no known competingﬁnancial interests or personal relationships that could
+have appeared to inﬂuence the work reported in this paper.
+ORCID iDs
+Lei Zhang https://orcid.org/0000-0002-3061-5984
+Jinhui Wang https://orcid.org/0000-0003-3658-360X
+15
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 17 =====
+References
+[1] Song J, She J, Chen D and Pan F 2020 Latest research advances on magnesium and magnesium alloys worldwideJournal of Magnesium
+and Alloys 8 1–41
+[2] Prasad S V S, Prasad S B, Verma K, Mishra R K, Kumar V and Singh S 2022 The role and signiﬁcance of Magnesium in modern day
+research-A review Journal of Magnesium and Alloys10 1–61
+[3] Jia Y, Jiang S, Tan J, Lu Z, Jiang J and Wang X 2022 The evolution of local stress during deformation twinning in a Mg-Gd-Y-Zn alloy
+Acta Mater. 222 117452
+[4] Yang Y, Xiong X, Chen J, Peng X, Chen D and Pan F 2021 Research advances in magnesium and magnesium alloys worldwide in 2020
+Journal of Magnesium and Alloys9 705–47
+[5] Zhao T, Hu Y, Wang Y, Dai Y, Zheng T, Li Z, Li K, He B, Zhang C and Pan F 2023 Deformation mechanism of high ductility Mg-Gd-
+Mn alloy during tensile processJournal of Magnesium and Alloys (https://doi.org/10.1016/j.jma.2023.10.004)
+[6] Luo X, Feng Z, Yu T, Luo J, Huang T, Wu G, Hansen N and Huang X 2020 Transitions in mechanical behavior and in deformation
+mechanisms enhance the strength and ductility of Mg-3GdActa Mater. 183 398–407
+[7] Wu Z, Yin B and Curtin W A 2016 Energetics of dislocation transformations in hcp metalsActa Mater. 119 203–17
+[8] Al-Zubaydi A S J, Zhilyaev A P, Wang S C and Reed P A S 2015 Superplastic behaviour of AZ91 magnesium alloy processed by high-
+pressure torsion Mater. Sci. Eng.A 637 1–11
+[9] Liu J, Bian D, Zheng Y, Chu X, Lin Y, Wang M, Lin Z, Li M, Zhang Y and Guan S 2020 Comparativein vitro study on binary Mg-RE(Sc,
+Y, La, Ce, Pr, Nd, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb and Lu) alloy systems Acta Biomater. 102 508–28
+[10] Wu G, Wang C, Sun M and Ding W 2021 Recent developments and applications on high-performance cast magnesium rare-earth
+alloys Journal of Magnesium and Alloys9 1–20
+[11] Guerza-Soualah F, Hanna A, Azzeddine H, Helbert A-L, Brisset F, Baudin T and Bradai D 2020 The deformation and recrystallization
+behaviour of an Mg-Dy alloy processed by plane strain compressionMaterials Today Communications 24 101239
+[12] Guerza-Soualah F, Azzeddine H, Baudin T, Helbert A-L, Brisset F and Bradai D 2020 Microstructural and textural investigation of an
+Mg–Dy alloy after hot plane strain compressionJournal of Magnesium and Alloys8 1198–207
+[13] Wu J, Chiu Y L and Jones I P 2016 Effect of Gd on the microstructure of as-cast Mg-4.2Zn-0.8Y(at%) alloys J. Alloys Compd.661
+455–60
+[14] Zhang Q, Li Q, Chen X, Bao J and Chen Z 2021 Effect of Sn addition on the deformation behavior and microstructural evolution of Mg-
+Gd-Y-Zr alloy during hot compressionMater. Sci. Eng.A 826 142026
+[15] Zheng J, Wang Q, Jin Z and Peng T 2010 Effect of Sm on the microstructure, mechanical properties and creep behavior of Mg–0.5Zn–
+0.4Zr based alloysMater. Sci. Eng.A 527 1677–85
+[16] Niranjan C A, Raghavendra T, Rao M P, Siddaraju C, Gupta M, Jain V K S and Aishwarya R 2023 Magnesium alloys as extremely
+promising alternatives for temporary orthopedic implants—a review Journal of Magnesium and Alloys11 2688–718
+[17] Hermawan H, Dubé D and Mantovani D 2010 Developments in metallic biodegradable stentsActa Biomater. 6 1693–7
+[18] Akhtar M, Ur Rehman A, Amin N, Hussain K and Imran Arshad M 2024 Correlation between structural and improved magneto-
+dielectric behaviour of Li-Mg-Dy ferrite/Graphene nanoplatelet composites and their potential applicationsJ. Magn. Magn. Mater.595
+171831
+[19] Kumar K, Ansari N, Narayan R L and Jain J 2023 The recrystallization, texture and mechanical behavior of hot rolled and annealed Mg-
+10Ho binary alloyJ. Alloys Compd.955 170329
+[20] Esmaeilpour H, Zarei-Hanzaki A, Eftekhari N, Abedi H R and Ghandehari Ferdowsi M R 2020 Strain induced transformation, dynamic
+recrystallization and texture evolution during hot compression of an extruded Mg-Gd-Y-Zn-Zr alloyMater. Sci. Eng.A 778 139021
+[21] Sun W, Deng Y, Zhan H, Zhou X, Yao Y, Liu W and Zeng G 2024 Interaction of dynamic precipitation and dynamic recrystallization of
+a Mg-4Sn-3Al-1Zn alloy during hot compressionJ. Alloys Compd.970 172434
+[22] Wang D, Zhu Q, Wei Z, Lin B, Jing Y, Shi Y, Misra R D K and Li J 2022 Hot deformation behaviors of AZ91 magnesium alloy:
+Constitutive equation, ANN-based prediction, processing map and microstructure evolutionJ. Alloys Compd.908 164580
+[23] Li X, Liu Y, Luan S, Ma D, Liu X, Liu Q and Wang J 2024 Investigation of deformation behavior of Mg-2Ho alloy based on hyperbolic
+sine constitutive equation and PSO-BP neural networkMaterials Today Communications 38 107613
+[24] Che B, Lu L, Kang W, Luo J, Ma M and Liu L 2021 Hot deformation behavior and processing map of a new type Mg-6Zn-1Gd-1Er alloy
+J. Alloys Compd.862 158700
+[25] Ning M, Chen X, Lin Y, Hu H, Zhou X, Zhang J, Lu X, Wu Y, Chen J and Shen Q 2023 Revealing the hot deformation behavior of AZ42
+Mg alloy by using 3D hot processing map based on a novel NGO-ANN modelJournal of Materials Research and Technology27 2292–310
+[26] Lei C, Wang Q, Tang H, Liu T, Li Z, Jiang H, Wang K, Ebrahimi M and Ding W 2021 Hot deformation constitutive model and
+processing maps of homogenized Al–5Mg–3Zn–1Cu alloy Journal of Materials Research and Technology14 324–39
+[27] Long J, Deng L, Jin J, Zhang M, Tang X, Gong P, Wang X, Xiao G and Xia Q 2024 Enhancing constitutive description and workability
+characterization of Mg alloy during hot deformation using machine learning-based Arrhenius-type modelJournal of Magnesium and
+Alloys (https://doi.org/10.1016/j.jma.2024.01.011)
+[28] Zhou Y-T, Xia Y-F, Jiang L, Long S and Yang D 2018 Modeling of the hotﬂow behaviors for Ti-6Al-4V-0.1Ru Alloy by GA-BPNN
+model and its applicationHigh Temperature Materials and Processes37 551–62
+[29] Lou Y, Ke C and Li L 2013 Accurately predicting high temperatureﬂow Stress of AZ80 magnesium alloy with particle swarm
+optimization-based support vector regressionApplied Mathematics & Information Sciences7 1093–102
+[30] Guo-Zheng Q, Zhi-Hua Z, Le Z and Qing L J A E 2016 Numerical descriptions of hotﬂow behaviors acrossβ transus for as-forged Ti–
+10V–2Fe–3Al alloy by LHS-SVR and GA-SVR and improvement in forming simulation accuracyAppl. Sci. 6 210
+[31] Li G F, Jiang Y, Fan L F, Xiao X, Zhang X K and Wang DJ A A 2023 Optimization-based parameter search of support vector regression
+for high-temperature compression constitutive modeling of 25CrMo4 steelAIP Advances 13 105109
+[32] Hu X P, Dong X D and Yu B H 2016 Method of optimal design with SVR-PSO for ultrasonic cutter assemblyProcedia CIRP 50 779–83
+[33] García Nieto P J, García-Gonzalo E, Sánchez Lasheras F and de Cos Juez F J 2015 Hybrid PSO–SVM-based method for forecasting of
+the remaining useful life for aircraft engines and evaluation of its reliabilityReliab. Eng. Syst. Saf.138 219–31
+[34] Guan-feng L, Yang J, Li-feng F, Xing X, Di W and Xi-kang Z 2023 Constitutive model of 25CrMo4 steel based on IPSO-SVR and its
+application in ﬁnite element simulationMaterials Today Communications35 106338
+[35] Akande K O, Owolabi T O, Olatunji S O and AbdulRaheem A 2017 A hybrid particle swarm optimization and support vector regression
+model for modelling permeability prediction of hydrocarbon reservoirJournal of Petroleum Science and Engineering150 43–53
+[36] Han B and Bian X 2018 A hybrid PSO-SVM-based model for determination of oil recovery factor in the low-permeability reservoir
+Petroleum 4 43–9
+16
+Mater. Res. Express11 (2024) 056513 Y Liu et al
+
+
+===== PAGE 18 =====
+[37] Wu W, Chen K and Tsotsas E 2024 Prediction of particle mixing in rotary drums by a DEM data-driven PSO-SVR modelPowder
+Technol. 434 119365
+[38] Qin T, Zeng S and Guo J 2015 Robust prognostics for state of health estimation of lithium-ion batteries based on an improved PSO–
+SVR model Microelectron. Reliab. 55 1280–4
+[39] Zhou H, Huang S, Zhang P, Ma B, Ma P and Feng X 2023 Prediction of jacking force using PSO-BPNN and PSO-SVR algorithm in
+curved pipe roofTunnelling Underground Space Technol.138 105159
+[40] Aderyani F R, Jamshid Mousavi S and Jafari F 2022 Short-term rainfall forecasting using machine learning-based approaches of PSO-
+SVR, LSTM and CNNJ. Hydrol. 614 128463
+[41] Serrano-Munoz I, Fernández R, Saliwan-Neumann R, González-Doncel G and Bruno G 2023 Dislocation structures after creep in an
+Al-3.85%Mg alloy studied using EBSD-KAM techniqueMater. Lett. 337 133978
+[42] Wang G, Mao P, Wang Z, Zhou L, Wang F and Liu Z 2022 High strain rates deformation behavior of an as-extruded Mg–2.5Zn–4Y
+magnesium alloy containing LPSO phase at high temperaturesJournal of Materials Research and Technology21 40–53
+[43] Harikrishna K, Bhowmik A, Davidson M J, Kumar R, Anqi A E, Rajhi A A, Alamri S and Kumar R 2024 Evaluation of constitutive
+equations for modeling and characterization of microstructure during hot deformation of sintered Al–Zn–Mg alloy Journal of Materials
+Research and Technology28 1523–37
+[44] Qin H, Kang S, Tang W and Liu Z 2024 Study ofﬂow stress in Mg-Gd-Y-Nd-Zr alloys based on IWOA-BPNN modelJournal of
+Materials Research and Technology30 2848–57
+[45] Ebrahimpourghandi B and Mahmudi R 2023 Hot deformation constitutive analysis and processing maps of the as-cast and wrought
+Mg–2.5Gd–0.5Zr alloy J. Alloys Compd.942 169132
+[46] Long S, Wu D-X, Wang S-Y, Jiang Y-P, Xia R-Z, Li S-S, Zhou Y-T, Peng P and Dai Q-W 2022 An optimized constitutive model and
+microstructure characterization of a homogenized Al-Cu-Li alloy during hot deformationJ. Alloys Compd.929 167290
+[47] Zhang F, Liu Z, Yang M, Su G, Zhao R, Mao P, Wang F and Sun S 2020 Microscopic mechanism exploration and constitutive equation
+construction for compression characteristics of AZ31-TD magnesium alloy at high strain rateMater. Sci. Eng.A 771 138571
+[48] Han L, Zhu X, Wei D, Yu Y and Wang G 2023 Construction of an Arrhenius constitutive model for Mg-Y-Nd-Zr-Gd rare earth
+magnesium alloy based on the Zener-Hollomon parameter and objective evaluation of its accuracy in the twinning-rich intervals
+Journal of Magnesium and Alloys (https://doi.org/10.1016/j.jma.2023.01.008)
+[49] Wei Z, Gao Q, Su X, Feng Z, Ma B, He F, Peng L, Li J and Zu G 2024 Flow characteristics, ANN-based prediction, 3D processing map,
+and interface microstructure of titanium/stainless steel bimetallic compositeJournal of Materials Research and Technology29 2918–35
+[50] Abidi A, Khdair A I and Kalbasi R 2021 Using ANN techniques to forecast thermal performance of a vacuum tube solar collectorﬁlled
+with SiO2/EG-water nanoﬂuid J. Taiwan Inst. Chem. Eng.128 301–13
+[51] Sahoo S K and Panigrahi S K 2022 Comparative study on high temperature deformation behavior and processing maps of Mg-4Zn-
+1RE-0.5Zr alloy with and withoutin situ sub-micron sized TiB2 reinforcementJournal of Magnesium and Alloys10 3520–41
+[52] Wang L, Jalar A and Dan L 2023 Dynamic precipitation and dynamic recrystallization behaviors of Mg-Gd-Nd-Zr magnesium alloy
+during thermal compression deformationJournal of Materials Research and Technology26 7634–48
+[53] Pei Y, Yuan M, Wei E and Teng B 2023 Effects of Sm element addition on the workability and microstructure evolution of Mg-Gd-Y-Zr
+alloy during hot deformationMater. Des. 230 111962
+[54] Deng J-F, Tian J, Chang Y, Zhou Y, Liang W and Ma J 2022 The role of{10–12} tensile twinning in plastic deformation and fracture
+prevention of magnesium alloysMater. Sci. Eng.A 853 143678
+[55] Guo X, Ma C, Zhao L, Chapuis A, Liu Q and Wu P 2021 Effect of pre-deformation on the activation stress of{10–12} twinning in Mg–
+3Al–1Zn alloy Mater. Sci. Eng.A 800 140384
+[56] Sain S R 1996 The nature of statistical learning theoryTechnometrics 38 409–409
+[57] Xu S, Xu X, Jia W, Liu W, Li J and Li D 2023 Microstructure-property mapping modeling for AZ31 alloy rolling deformation using
+improved PSO-BP neural networkJournal of Materials Research and Technology25 2127–39
+[58] Zhou Z, Gong H, You J, Liu S and He J 2021 Research on compression deformation behavior of aging AA6082 aluminum alloy based on
+strain compensation constitutive equation and PSO-BP network modelMaterials Today Communications 28 102507
+17
+Mater. Res. Express11 (2024) 056513 Y Liu et al

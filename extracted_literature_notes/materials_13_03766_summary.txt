@@ -1,0 +1,59 @@
+文献总结：Song, S.-H. (2020) 316L stainless steel hot-deformation flow-stress modelling
+
+来源文件：
+- references/materials_13_03766.pdf
+
+题名：
+- A Comparison Study of Constitutive Equation, Neural Networks, and Support Vector Regression for Modeling Hot Deformation of 316L Stainless Steel
+
+基本信息：
+- 作者：Shin-Hyung Song
+- 期刊：Materials, 2020, 13, 3766
+- 关键词：316L stainless; hot deformation; flow stress; neural network; support vector regression
+- 材料对象：316L 不锈钢
+- 研究类型：热变形实验 + 流动应力模型比较
+
+研究目的：
+- 比较 Arrhenius 型本构方程、神经网络模型和支持向量回归（SVR）模型对 316L 不锈钢热变形流动应力的预测能力。
+- 重点不是机制表征，而是评估传统本构模型与机器学习方法在非线性流动应力预测中的准确性和计算效率。
+
+实验与建模条件：
+- 热变形温度范围：800-1000 deg C。
+- 应变速率范围：2 x 10^-3 到 2 x 10^-1 s^-1。
+- 使用真应力-真应变曲线作为建模对象。
+- 比较模型：
+  - Arrhenius 型本构方程；
+  - Neural network model；
+  - Support vector regression model。
+
+主要结果：
+- 316L 不锈钢流动应力明显受温度和应变速率影响。
+- Arrhenius 方程可以给出与实验值趋势相近的预测，但误差分散较大，预测精度仍需提高。
+- 神经网络模型比 Arrhenius 方程具有更低 RMSE，但模型调参和优化过程较耗时，计算效率较低。
+- SVR 模型预测精度与神经网络相当，同时开发和计算成本更低。
+- 文中报告的 RMSE：
+  - Arrhenius equation: 5.59
+  - Neural network model: 2.85
+  - Support vector regression: 2.55
+- 作者认为神经网络和 SVR 的预测可靠性优于 Arrhenius 方程，其中 SVR 又比神经网络更高效、更可靠。
+- 重要限制：机器学习模型在训练数据范围内预测较好，但不能可靠外推到训练数据范围之外。
+
+对 Gr4B23271 冷变形 work hardening 论文的可用点：
+- 可作为“传统本构/经验模型难以处理复杂非线性变形响应”的背景文献。
+- 可用于说明：当应力-应变响应受温度、应变速率、组织演化等多因素耦合影响时，单一解析模型可能出现较大误差。
+- 可借鉴其模型评价指标，如 RMSE、相对误差分布、R 或 R2，用于比较不同拟合/预测方法。
+- 可引用其谨慎结论：机器学习模型通常依赖训练数据覆盖范围，外推能力有限。若本项目只做冷变形机制讨论，不宜过度引入机器学习预测。
+
+与本项目的局限：
+- 材料为 316L 不锈钢，不是商业纯钛。
+- 研究对象为热变形流动应力，不是室温冷拉/冷变形后的拉伸 work hardening。
+- 文中缺少针对钛的 EBSD/KAM/GND/织构证据，不能直接支撑 Gr4B23271 的位错累积、孪生或滑移机制。
+- 可作为方法学或背景引用，不适合作为本项目机制结论的直接证据。
+
+可转化为论文表述的句子：
+- Previous studies on metallic flow-stress modelling have shown that Arrhenius-type equations can capture the general deformation trend, whereas machine-learning models such as neural networks and support vector regression often provide lower prediction errors within the training range.
+- However, such data-driven models should be used cautiously for extrapolation, and their results do not replace microstructure-based interpretation of deformation mechanisms.
+
+证据类型归类：
+- 可支持：流动应力非线性、模型评价方法、机器学习与传统本构模型比较。
+- 不可直接支持：Gr4B23271 冷变形 work hardening 机制、EBSD-derived KAM/GND、商业纯钛的孪生/滑移活动。

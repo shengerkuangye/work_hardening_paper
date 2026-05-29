@@ -1,0 +1,21 @@
+﻿metric,value
+source_file,data\tensile_data\gr4b23271_cold_deformation_2_raw_csv\gr4b23271_cold_deformation_2_raw_d5_y_1.csv
+rows,5340
+elastic_fit_range_MPa,50-200
+elastic_modulus_GPa,105.6842097377155
+elastic_intercept_MPa,52.39614905086783
+elastic_fit_R2,0.9991996403468469
+elastic_fit_points,700
+Rp0.2_MPa,898.527860220248
+strain_at_Rp0.2,0.010006226410447589
+UTS_engineering_MPa,1022.09864679015
+strain_at_UTS_uniform_elongation,0.01714384
+max_true_stress_MPa,1041.20273706458
+true_strain_at_max_true_stress,0.0412632987312263
+fracture_engineering_strain_last,0.09156606
+fracture_true_strain_last,0.0876134173935983
+fracture_engineering_stress_last_MPa,226.831444613203
+max_load_N,20068.86
+estimated_area_mm2_from_load_over_stress,19.634954084936183
+estimated_diameter_mm,4.9999999999999964
+method_note,Rp0.2 uses 0.2% offset line based on linear fit of Engineering Stress vs Engineering Strain in 50-200 MPa elastic segment; UTS is max Engineering Stress.
