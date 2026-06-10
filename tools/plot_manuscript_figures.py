@@ -243,7 +243,7 @@ def make_mechanical_summary() -> None:
         markers=True,
     )
 
-    svg.save(FIGURES / "gr4b23271_mechanical_property_summary.svg")
+    svg.save(FIGURES / "ta4_mechanical_property_summary.svg")
 
 
 def make_strength_line() -> None:
@@ -268,7 +268,7 @@ def make_strength_line() -> None:
         (600, 80, 160, 72),
         markers=True,
     )
-    svg.save(FIGURES / "gr4b23271_strength_multi_metric_line.svg")
+    svg.save(FIGURES / "ta4_strength_multi_metric_line.svg")
 
 
 def make_ductility_line() -> None:
@@ -293,11 +293,11 @@ def make_ductility_line() -> None:
         (600, 80, 160, 72),
         markers=True,
     )
-    svg.save(FIGURES / "gr4b23271_ductility_multi_metric_line.svg")
+    svg.save(FIGURES / "ta4_ductility_multi_metric_line.svg")
 
 
 def make_stress_strain(kind: str) -> None:
-    reps = read_rows(FIGURES / "gr4b23271_representative_tensile_curves.csv")
+    reps = read_rows(FIGURES / "ta4_representative_tensile_curves.csv")
     palette = [COLORS["gray"], COLORS["blue"], COLORS["red"], COLORS["green"], COLORS["orange"], COLORS["purple"]]
     series: list[tuple[str, list[tuple[float, float]], str]] = []
     for rep, color in zip(reps, palette):
@@ -325,13 +325,13 @@ def make_stress_strain(kind: str) -> None:
         xticks = [0, 10, 20, 30, 40, 50]
         xlabel = "Engineering strain (%)"
         ylabel = "Engineering stress (MPa)"
-        output = "gr4b23271_engineering_stress_strain_representative_curves.svg"
+        output = "ta4_engineering_stress_strain_representative_curves.svg"
     else:
         xlim = (0, 40)
         xticks = [0, 5, 10, 15, 20, 25, 30, 35, 40]
         xlabel = "True strain (%)"
         ylabel = "True stress (MPa)"
-        output = "gr4b23271_true_stress_strain_representative_curves.svg"
+        output = "ta4_true_stress_strain_representative_curves.svg"
     legend_box = (588, 78, 256, 160) if kind == "engineering" else (588, 392, 256, 160)
     plot_xy_series(
         svg,
@@ -478,7 +478,7 @@ def display_sample_name(sample: str, diameter: str) -> str:
 
 
 def make_hardening_rate() -> None:
-    reps = read_rows(FIGURES / "gr4b23271_representative_tensile_curves.csv")
+    reps = read_rows(FIGURES / "ta4_representative_tensile_curves.csv")
     summary_rows = {r["sample"]: r for r in read_rows(TENSILE / "gr4b23271_cold_deformation_tensile_summary.csv")}
     series: list[tuple[str, float, list[tuple[float, float]]]] = []
     derived_rows: list[dict[str, str]] = []
@@ -528,7 +528,7 @@ def make_hardening_rate() -> None:
                 }
             )
 
-    with (FIGURES / "gr4b23271_work_hardening_rate_representative_curves.csv").open("w", encoding="utf-8", newline="") as f:
+    with (FIGURES / "ta4_work_hardening_rate_representative_curves.csv").open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=["sample", "cold_reduction_percent", "true_strain", "work_hardening_rate_MPa"])
         writer.writeheader()
         writer.writerows(derived_rows)
@@ -547,7 +547,7 @@ def make_hardening_rate() -> None:
             svg.polyline(plot_pts, color)
         legend_entries.append((f"{label} ({fmt(cold, 1)}%)", color))
     add_legend_box(svg, legend_entries, 622, 78, 222, 160)
-    svg.save(FIGURES / "gr4b23271_work_hardening_rate_representative_curves.svg")
+    svg.save(FIGURES / "ta4_work_hardening_rate_representative_curves.svg")
 
 
 def main() -> None:

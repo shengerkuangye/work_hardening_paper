@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="760" viewBox="0 0 980 760">
+<rect width="100%" height="100%" fill="white"/>
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#222;font-size:16px}
+.small{font-size:13px}.axis{stroke:#222;stroke-width:1.5}.grid{stroke:#d9d9d9;stroke-width:1}.tick{stroke:#222;stroke-width:1}
+.line{fill:none;stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
+.marker{stroke:#fff;stroke-width:1.3}
+</style>
+<text x="112" y="34" text-anchor="start" font-size="18">(a)</text>
+<line x1="112" y1="58" x2="872" y2="58" stroke="#222" class="axis"/>
+<line x1="872" y1="58" x2="872" y2="308" stroke="#222" class="axis"/>
+<line x1="112" y1="308" x2="872" y2="308" stroke="#222" class="axis"/>
+<line x1="112" y1="58" x2="112" y2="308" stroke="#222" class="axis"/>
+<line x1="112" y1="308" x2="112" y2="300" stroke="#222" class="tick"/>
+<text x="112" y="332" text-anchor="middle" class="small">0</text>
+<line x1="264" y1="308" x2="264" y2="300" stroke="#222" class="tick"/>
+<text x="264" y="332" text-anchor="middle" class="small">10</text>
+<line x1="416" y1="308" x2="416" y2="300" stroke="#222" class="tick"/>
+<text x="416" y="332" text-anchor="middle" class="small">20</text>
+<line x1="568" y1="308" x2="568" y2="300" stroke="#222" class="tick"/>
+<text x="568" y="332" text-anchor="middle" class="small">30</text>
+<line x1="720" y1="308" x2="720" y2="300" stroke="#222" class="tick"/>
+<text x="720" y="332" text-anchor="middle" class="small">40</text>
+<line x1="872" y1="308" x2="872" y2="300" stroke="#222" class="tick"/>
+<text x="872" y="332" text-anchor="middle" class="small">50</text>
+<line x1="112" y1="308" x2="120" y2="308" stroke="#222" class="tick"/>
+<text x="102" y="313" text-anchor="end" class="small">500</text>
+<line x1="112" y1="224.67" x2="120" y2="224.67" stroke="#222" class="tick"/>
+<text x="102" y="229.67" text-anchor="end" class="small">700</text>
+<line x1="112" y1="141.33" x2="120" y2="141.33" stroke="#222" class="tick"/>
+<text x="102" y="146.33" text-anchor="end" class="small">900</text>
+<line x1="112" y1="58" x2="120" y2="58" stroke="#222" class="tick"/>
+<text x="102" y="63" text-anchor="end" class="small">1100</text>
+<text x="492" y="366" text-anchor="middle">Cold reduction (%)</text>
+<text x="34" y="183" text-anchor="middle" transform="rotate(-90 34 183)">Strength (MPa)</text>
+<polyline points="112,274.46 321.39,164.25 507.81,141.33 659.2,130.08 777,106.96 856.49,108" stroke="#1f77b4" class="line"/>
+<circle cx="112" cy="274.46" r="5" fill="#1f77b4" class="marker"/>
+<circle cx="321.39" cy="164.25" r="5" fill="#1f77b4" class="marker"/>
+<circle cx="507.81" cy="141.33" r="5" fill="#1f77b4" class="marker"/>
+<circle cx="659.2" cy="130.08" r="5" fill="#1f77b4" class="marker"/>
+<circle cx="777" cy="106.96" r="5" fill="#1f77b4" class="marker"/>
+<circle cx="856.49" cy="108" r="5" fill="#1f77b4" class="marker"/>
+<polyline points="112,219.88 321.39,153 507.81,124.04 659.2,108 777,89.88 856.49,87.58" stroke="#d62728" class="line"/>
+<circle cx="112" cy="219.88" r="5" fill="#d62728" class="marker"/>
+<circle cx="321.39" cy="153" r="5" fill="#d62728" class="marker"/>
+<circle cx="507.81" cy="124.04" r="5" fill="#d62728" class="marker"/>
+<circle cx="659.2" cy="108" r="5" fill="#d62728" class="marker"/>
+<circle cx="777" cy="89.88" r="5" fill="#d62728" class="marker"/>
+<circle cx="856.49" cy="87.58" r="5" fill="#d62728" class="marker"/>
+<rect x="142" y="78" width="160" height="72" fill="white" stroke="#777" stroke-width="1"/>
+<line x1="160" y1="104" x2="188" y2="104" stroke="#1f77b4" stroke-width="2.8"/>
+<circle cx="174" cy="104" r="4" fill="#1f77b4" class="marker"/>
+<text x="196" y="108" text-anchor="start" class="small">Rp0.2</text>
+<line x1="160" y1="128" x2="188" y2="128" stroke="#d62728" stroke-width="2.8"/>
+<circle cx="174" cy="128" r="4" fill="#d62728" class="marker"/>
+<text x="196" y="132" text-anchor="start" class="small">Rm</text>
+<text x="112" y="390" text-anchor="start" font-size="18">(b)</text>
+<line x1="112" y1="414" x2="872" y2="414" stroke="#222" class="axis"/>
+<line x1="872" y1="414" x2="872" y2="664" stroke="#222" class="axis"/>
+<line x1="112" y1="664" x2="872" y2="664" stroke="#222" class="axis"/>
+<line x1="112" y1="414" x2="112" y2="664" stroke="#222" class="axis"/>
+<line x1="112" y1="664" x2="112" y2="656" stroke="#222" class="tick"/>
+<text x="112" y="688" text-anchor="middle" class="small">0</text>
+<line x1="264" y1="664" x2="264" y2="656" stroke="#222" class="tick"/>
+<text x="264" y="688" text-anchor="middle" class="small">10</text>
+<line x1="416" y1="664" x2="416" y2="656" stroke="#222" class="tick"/>
+<text x="416" y="688" text-anchor="middle" class="small">20</text>
+<line x1="568" y1="664" x2="568" y2="656" stroke="#222" class="tick"/>
+<text x="568" y="688" text-anchor="middle" class="small">30</text>
+<line x1="720" y1="664" x2="720" y2="656" stroke="#222" class="tick"/>
+<text x="720" y="688" text-anchor="middle" class="small">40</text>
+<line x1="872" y1="664" x2="872" y2="656" stroke="#222" class="tick"/>
+<text x="872" y="688" text-anchor="middle" class="small">50</text>
+<line x1="112" y1="664" x2="120" y2="664" stroke="#222" class="tick"/>
+<text x="102" y="669" text-anchor="end" class="small">0</text>
+<line x1="112" y1="628.29" x2="120" y2="628.29" stroke="#222" class="tick"/>
+<text x="102" y="633.29" text-anchor="end" class="small">10</text>
+<line x1="112" y1="592.57" x2="120" y2="592.57" stroke="#222" class="tick"/>
+<text x="102" y="597.57" text-anchor="end" class="small">20</text>
+<line x1="112" y1="556.86" x2="120" y2="556.86" stroke="#222" class="tick"/>
+<text x="102" y="561.86" text-anchor="end" class="small">30</text>
+<line x1="112" y1="521.14" x2="120" y2="521.14" stroke="#222" class="tick"/>
+<text x="102" y="526.14" text-anchor="end" class="small">40</text>
+<line x1="112" y1="485.43" x2="120" y2="485.43" stroke="#222" class="tick"/>
+<text x="102" y="490.43" text-anchor="end" class="small">50</text>
+<line x1="112" y1="449.71" x2="120" y2="449.71" stroke="#222" class="tick"/>
+<text x="102" y="454.71" text-anchor="end" class="small">60</text>
+<line x1="112" y1="414" x2="120" y2="414" stroke="#222" class="tick"/>
+<text x="102" y="419" text-anchor="end" class="small">70</text>
+<text x="492" y="722" text-anchor="middle">Cold reduction (%)</text>
+<text x="34" y="539" text-anchor="middle" transform="rotate(-90 34 539)">Ductility (%)</text>
+<polyline points="112,568.46 321.39,620.25 507.81,628.29 659.2,631.86 777,636.32 856.49,635.43" stroke="#2ca02c" class="line"/>
+<circle cx="112" cy="568.46" r="5" fill="#2ca02c" class="marker"/>
+<circle cx="321.39" cy="620.25" r="5" fill="#2ca02c" class="marker"/>
+<circle cx="507.81" cy="628.29" r="5" fill="#2ca02c" class="marker"/>
+<circle cx="659.2" cy="631.86" r="5" fill="#2ca02c" class="marker"/>
+<circle cx="777" cy="636.32" r="5" fill="#2ca02c" class="marker"/>
+<circle cx="856.49" cy="635.43" r="5" fill="#2ca02c" class="marker"/>
+<polyline points="112,505.07 321.39,531.86 507.81,537.21 659.2,547.93 777,549.71 856.49,553.29" stroke="#ff7f0e" class="line"/>
+<circle cx="112" cy="505.07" r="5" fill="#ff7f0e" class="marker"/>
+<circle cx="321.39" cy="531.86" r="5" fill="#ff7f0e" class="marker"/>
+<circle cx="507.81" cy="537.21" r="5" fill="#ff7f0e" class="marker"/>
+<circle cx="659.2" cy="547.93" r="5" fill="#ff7f0e" class="marker"/>
+<circle cx="777" cy="549.71" r="5" fill="#ff7f0e" class="marker"/>
+<circle cx="856.49" cy="553.29" r="5" fill="#ff7f0e" class="marker"/>
+<rect x="682" y="434" width="160" height="72" fill="white" stroke="#777" stroke-width="1"/>
+<line x1="700" y1="460" x2="728" y2="460" stroke="#2ca02c" stroke-width="2.8"/>
+<circle cx="714" cy="460" r="4" fill="#2ca02c" class="marker"/>
+<text x="736" y="464" text-anchor="start" class="small">A</text>
+<line x1="700" y1="484" x2="728" y2="484" stroke="#ff7f0e" stroke-width="2.8"/>
+<circle cx="714" cy="484" r="4" fill="#ff7f0e" class="marker"/>
+<text x="736" y="488" text-anchor="start" class="small">Z</text>
+</svg>

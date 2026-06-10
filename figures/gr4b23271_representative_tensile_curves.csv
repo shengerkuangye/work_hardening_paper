@@ -1,7 +1,0 @@
-diameter_mm,cold_reduction_percent_reference,sample,repeat,source_file,selection_score,Rp0.2_MPa,UTS_engineering_MPa,uniform_elongation_percent,fracture_strain_from_curve_percent,max_true_stress_MPa
-7,0,7 M-1,1,gr4b23271_cold_deformation_2_raw_d7_m_1.csv,0.462119,577.20662,711.6551,29.00394,44.7368,971.58248
-6.48,14.305306,6.48 Y-1,1,gr4b23271_cold_deformation_2_raw_d6_48_y_1.csv,0.00671602,821.16572,869.14239,1.4521,14.514944,904.07476
-6.02,26.04,6.02 Y-1,1,gr4b23271_cold_deformation_2_raw_d6_02_y_1.csv,0,886.08747,944.74667,1.26063,10.886472,962.5352
-5.6,36,5.6 Y-1,1,gr4b23271_cold_deformation_2_raw_d5_6_y_1.csv,0.059514,881.5764,979.15412,1.747484,12.628946,1012.2562
-5.25,43.75,5.25 Y-1,1,gr4b23271_cold_deformation_2_raw_d5_25_y_1.csv,0.0286912,954.7253,1023.1307,1.349048,8.97151,1037.1932
-5,48.979592,5 Y-1,1,gr4b23271_cold_deformation_2_raw_d5_y_1.csv,0.0470265,904.01795,1022.0986,1.714384,9.156606,1041.2027
