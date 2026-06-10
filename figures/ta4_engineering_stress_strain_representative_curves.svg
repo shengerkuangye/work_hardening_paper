@@ -50,7 +50,7 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#222;font-size:16px}
 <text x="642" y="108" text-anchor="start" class="small">TA4-M (0%)</text>
 <line x1="606" y1="128" x2="634" y2="128" stroke="#1f77b4" stroke-width="2.8"/>
 <circle cx="620" cy="128" r="4" fill="#1f77b4" class="marker"/>
-<text x="642" y="132" text-anchor="start" class="small">TA4-Y-6.5 (14.3%)</text>
+<text x="642" y="132" text-anchor="start" class="small">TA4-Y-6.48 (14.3%)</text>
 <line x1="606" y1="152" x2="634" y2="152" stroke="#d62728" stroke-width="2.8"/>
 <circle cx="620" cy="152" r="4" fill="#d62728" class="marker"/>
 <text x="642" y="156" text-anchor="start" class="small">TA4-Y-6.02 (26%)</text>

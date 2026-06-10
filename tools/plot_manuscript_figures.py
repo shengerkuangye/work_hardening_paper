@@ -40,6 +40,13 @@ def fmt_tick(value: float) -> str:
     return fmt(value, 2)
 
 
+def cold_reduction_for_plot(row: dict[str, str], key: str = "cold_reduction_percent_reference_vs_7mm") -> float:
+    diameter = float(row.get("nominal_diameter_group_mm") or row.get("diameter_mm") or 0.0)
+    if abs(diameter - 6.5) < 0.05 or abs(diameter - 6.48) < 0.05:
+        return 14.31
+    return float(row[key])
+
+
 class Svg:
     def __init__(self, width: int, height: int) -> None:
         self.width = width
@@ -200,7 +207,7 @@ def plot_xy_series(
 
 def make_mechanical_summary() -> None:
     rows = read_rows(TENSILE_ROOT / "gr4b23271_lab_tensile_by_diameter.csv")
-    x = [float(r["cold_reduction_percent_reference_vs_7mm"]) for r in rows]
+    x = [cold_reduction_for_plot(r) for r in rows]
     rp = [float(r["Rp0.2_MPa_mean"]) for r in rows]
     rm = [float(r["Rm_MPa_mean"]) for r in rows]
     elong = [float(r["total_elongation_A_percent_mean"]) for r in rows]
@@ -248,7 +255,7 @@ def make_mechanical_summary() -> None:
 
 def make_strength_line() -> None:
     rows = read_rows(TENSILE_ROOT / "gr4b23271_lab_tensile_by_diameter.csv")
-    x = [float(r["cold_reduction_percent_reference_vs_7mm"]) for r in rows]
+    x = [cold_reduction_for_plot(r) for r in rows]
     rp = [float(r["Rp0.2_MPa_mean"]) for r in rows]
     rm = [float(r["Rm_MPa_mean"]) for r in rows]
     svg = Svg(900, 620)
@@ -273,7 +280,7 @@ def make_strength_line() -> None:
 
 def make_ductility_line() -> None:
     rows = read_rows(TENSILE_ROOT / "gr4b23271_lab_tensile_by_diameter.csv")
-    x = [float(r["cold_reduction_percent_reference_vs_7mm"]) for r in rows]
+    x = [cold_reduction_for_plot(r) for r in rows]
     elong = [float(r["total_elongation_A_percent_mean"]) for r in rows]
     z = [float(r["reduction_of_area_Z_percent_mean"]) for r in rows]
     svg = Svg(900, 620)
@@ -298,10 +305,15 @@ def make_ductility_line() -> None:
 
 def make_stress_strain(kind: str) -> None:
     reps = read_rows(FIGURES / "ta4_representative_tensile_curves.csv")
+    summary_rows = {r["sample"]: r for r in read_rows(TENSILE / "gr4b23271_cold_deformation_tensile_summary.csv")}
     palette = [COLORS["gray"], COLORS["blue"], COLORS["red"], COLORS["green"], COLORS["orange"], COLORS["purple"]]
     series: list[tuple[str, list[tuple[float, float]], str]] = []
     for rep, color in zip(reps, palette):
         raw = read_rows(TENSILE / rep["source_file"])
+        meta = summary_rows.get(rep["sample"], {})
+        true_uts_limit_percent = None
+        if kind == "true" and meta.get("true_strain_at_max_true_stress_percent"):
+            true_uts_limit_percent = float(meta["true_strain_at_max_true_stress_percent"])
         x_key = "Engineering Strain" if kind == "engineering" else "Ture Strain"
         y_key = "Engineering Stress" if kind == "engineering" else "Ture Stress"
         values: list[tuple[float, float]] = []
@@ -314,6 +326,8 @@ def make_stress_strain(kind: str) -> None:
                 continue
             if x < 0 or y < 0 or x < last_x:
                 continue
+            if true_uts_limit_percent is not None and x > true_uts_limit_percent:
+                break
             values.append((x, y))
             last_x = x
         label = f"{display_sample_name(rep['sample'], rep['diameter_mm'])} ({fmt(float(rep['cold_reduction_percent_reference']), 1)}%)"
@@ -473,7 +487,7 @@ def display_sample_name(sample: str, diameter: str) -> str:
         return "TA4-M"
     value = float(diameter)
     if abs(value - 6.48) < 0.05:
-        return "TA4-Y-6.5"
+        return "TA4-Y-6.48"
     return f"TA4-Y-{fmt(value, 2)}"
 
 
@@ -489,7 +503,7 @@ def make_hardening_rate() -> None:
         meta = summary_rows[sample]
         rp_eng = float(meta["strain_at_Rp0.2"]) if meta["strain_at_Rp0.2"] else 0.0
         rp_true = math.log1p(max(rp_eng, 0.0))
-        fracture_true_strain = float(meta["fracture_true_strain_last_percent"]) / 100.0
+        true_uts_strain = float(meta["true_strain_at_max_true_stress_percent"]) / 100.0
         xs: list[float] = []
         ys: list[float] = []
         last_x = -1.0
@@ -499,7 +513,7 @@ def make_hardening_rate() -> None:
                 y = float(r["Ture Stress"])
             except (KeyError, ValueError):
                 continue
-            if x < rp_true + 0.001 or x > fracture_true_strain - 0.001 or x <= last_x:
+            if x < rp_true + 0.001 or x > true_uts_strain - 0.0005 or x <= last_x:
                 continue
             xs.append(x)
             ys.append(y)

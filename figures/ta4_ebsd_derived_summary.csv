@@ -1,0 +1,7 @@
+﻿folder,sample,cold_reduction_percent,area_weighted_equiv_diameter_um,mode_equiv_diameter_um,mode_area_fraction,dataset,mackenzie1_sum,mackenzie1_lagb_2_15_percent,mackenzie1_hagb_ge15_percent,mackenzie1_peak_angle_deg,mackenzie1_peak_value,mackenzie2_sum,mackenzie2_lagb_2_15_percent,mackenzie2_hagb_ge15_percent,mackenzie2_peak_angle_deg,mackenzie2_peak_value
+d7,TA4-M,0.0,8.105049999999999,6.005,0.08,data\ebsd_kpl_250221_7_df\scans\d7\ebsd_sample_7_map_15_dataset_1,0.9865,3.882412569690826,96.11758743030917,29.5,0.0185,1.0,0.0,0.0,0.0,1.0
+d6_48,TA4-Y-6.48,14.31,9.156534653465343,6.859999999999999,0.08,data\ebsd_kpl_250221_7_df\scans\d6_48\ebsd_sample_648_map_13_dataset_1,0.9908,28.895841744045214,71.10415825595479,5.5,0.106,1.0,0.0,0.0,0.0,1.0
+d6_02,TA4-Y-6.02,26.04,8.60770408163265,9.309999999999999,0.1,data\ebsd_kpl_250221_7_df\scans\d6_02\ebsd_sample_602_map_11_dataset_1,0.9866,11.372390026353132,88.62760997364686,5.5,0.0342,1.0,0.0,0.0,0.0,1.0
+d5_6,TA4-Y-5.60,36.0,9.994455445544553,7.69,0.1,data\ebsd_kpl_250221_7_df\scans\d5_6\ebsd_sample_56_map_9_dataset_1,0.9943,42.45197626470884,57.54802373529117,5.5,0.1462,1.0,0.0,0.0,0.0,1.0
+d5_25,TA4-Y-5.25,43.75,11.148316831683168,8.71,0.12,data\ebsd_kpl_250221_7_df\scans\d5_25\ebsd_sample_525_map_7_dataset_1,0.9962,54.286287893997184,45.713712106002816,5.5,0.1729,1.0,0.0,0.0,0.0,0.6667
+d5,TA4-Y-5.00,48.98,9.872474747474747,7.805,0.1,data\ebsd_kpl_250221_7_df\scans\d5\ebsd_sample_5_map_3_dataset_1,0.9945999999999999,49.27609089081037,50.72390910918963,5.5,0.1609,1.0001,0.0,0.0,0.0,0.6364

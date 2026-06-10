@@ -36,16 +36,16 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#222;font-size:16px}
 <text x="102" y="61" text-anchor="end" class="small">50</text>
 <text x="457" y="574" text-anchor="middle">Cold reduction (%)</text>
 <text x="34" y="286" text-anchor="middle" transform="rotate(-90 34 286)">Ductility (%)</text>
-<polyline points="112,269.9 302.1,403.3 471.35,424 608.8,433.2 715.75,444.7 787.92,442.4" stroke="#2ca02c" class="line"/>
+<polyline points="112,269.9 309.48,403.3 471.35,424 608.8,433.2 715.75,444.7 787.92,442.4" stroke="#2ca02c" class="line"/>
 <circle cx="112" cy="269.9" r="5" fill="#2ca02c" class="marker"/>
-<circle cx="302.1" cy="403.3" r="5" fill="#2ca02c" class="marker"/>
+<circle cx="309.48" cy="403.3" r="5" fill="#2ca02c" class="marker"/>
 <circle cx="471.35" cy="424" r="5" fill="#2ca02c" class="marker"/>
 <circle cx="608.8" cy="433.2" r="5" fill="#2ca02c" class="marker"/>
 <circle cx="715.75" cy="444.7" r="5" fill="#2ca02c" class="marker"/>
 <circle cx="787.92" cy="442.4" r="5" fill="#2ca02c" class="marker"/>
-<polyline points="112,106.6 302.1,175.6 471.35,189.4 608.8,217 715.75,221.6 787.92,230.8" stroke="#ff7f0e" class="line"/>
+<polyline points="112,106.6 309.48,175.6 471.35,189.4 608.8,217 715.75,221.6 787.92,230.8" stroke="#ff7f0e" class="line"/>
 <circle cx="112" cy="106.6" r="5" fill="#ff7f0e" class="marker"/>
-<circle cx="302.1" cy="175.6" r="5" fill="#ff7f0e" class="marker"/>
+<circle cx="309.48" cy="175.6" r="5" fill="#ff7f0e" class="marker"/>
 <circle cx="471.35" cy="189.4" r="5" fill="#ff7f0e" class="marker"/>
 <circle cx="608.8" cy="217" r="5" fill="#ff7f0e" class="marker"/>
 <circle cx="715.75" cy="221.6" r="5" fill="#ff7f0e" class="marker"/>
