@@ -1,0 +1,483 @@
+
+
+--- PAGE 1 ---
+材料工程 
+Journal of Materials Engineering 
+ISSN 1001-4381,CN 11-1800/TB 
+ 
+ 
+ 
+ 
+《材料工程》网络首发论文 
+ 
+题目： 富氧近α钛合金复合片层组织的微织构生成机制和力学行为 
+作者： 张海瑞，牛红志，张德良，张柯柯，陈光 
+收稿日期： 2026-05-17 
+网络首发日期： 2026-05-29 
+引用格式： 张海瑞，牛红志，张德良，张柯柯，陈光．富氧近α钛合金复合片层组织的
+微织构生成机制和力学行为[J/OL]．材料工程. 
+https://link.cnki.net/urlid/11.1800.TB.20260529.1534.016 
+ 
+ 
+ 
+ 
+ 
+ 
+网络首发：在编辑部工作流程中，稿件从录用到出版要经历录用定稿、排版定稿、整期汇编定稿等阶
+段。录用定稿指内容已经确定，且通过同行评议、主编终审同意刊用的稿件。排版定稿指录用定稿按照期
+刊特定版式（包括网络呈现版式）排版后的稿件，可暂不确定出版年、卷、期和页码。整期汇编定稿指出
+版年、 卷、 期、 页码均已确定的印刷或数字出版的整期汇编稿件。 录用定稿网络首发稿件内容必须符合 《出
+版管理条例》和《期刊出版管理规定》的有关规定；学术研究成果具有创新性、科学性和先进性，符合编
+辑部对刊文的录用要求，不存在学术不端行为及其他侵权行为；稿件内容应基本符合国家有关书刊编辑、
+出版的技术标准，正确使用和统一规范语言文字、符号、数字、外文字母、法定计量单位及地图标注等。
+为确保录用定稿网络首发的严肃性， 录用定稿一经发布， 不得修改论文题目、 作者、 机构名称和学术内容，
+只可基于编辑规范进行少量文字的修改。 
+出版确认：纸质期刊编辑部通过与《中国学术期刊（光盘版） 》电子杂志社有限公司签约，在《中国
+学术期刊 （网络版） 》 出版传播平台上创办与纸质期刊内容一致的网络版，以单篇或整期出版形式， 在印刷
+出版之前刊发论文的录用定稿、排版定稿、整期汇编定稿。因为《中国学术期刊（网络版） 》是国家新闻出
+版广电总局批准的网络连续型出版物（ISSN 2096-4188，CN 11-6037/Z），所以签约期刊的网络版上网络首
+发论文视为正式出版。 
+ 
+
+
+--- PAGE 2 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+富氧近 α 钛合金复合片层组织的微织构 
+生成机制和力学行为 
+ 
+张海瑞 1,2*，牛红志 3，张德良 3，张柯柯 1，陈  光 1* 
+（1 河南科技大学 高温轻合金及应用技术全国重点实验室 ，河南 洛阳 471023；2 河南科技大学 材料科学与
+工程学院，河南 洛阳 471023；3 东北大学 材料科学与工程学院，沈阳  110819） 
+摘要：为了解决粉末冶金钛合金富氧时强塑性失衡的难题，采用烧结 -热挤压工艺制备出氧含量 0.36%（质量分
+数）的两类 α/βt 复合片层组织近 α 钛合金。采用 SEM 和 TEM 分析晶体尺寸和形貌特征 ，通过 XRD 宏观织构
+和 EBSD 微观织构分析晶体取向信息， 结合室温拉伸测试和位错明场像研究组织与力学性能的关联及变形机制。
+结果表明：当复合片层组织耦合<0001>α 平行于挤压方向的微织构 时，合金在保持 1070 MPa 抗拉强度的同时，
+伸长率从 8.9%提升至 22.0%，实现强塑性良好匹配。β 相区热挤压织构遗传效应与 β→α 相变择优取向的协同作
+用导致微织构的产生 。锥面<c + a>位错在微织构区激活，且以波滑移方式运动，引发加工硬化率异常提升， 促
+进片层扭曲与晶界协调变形，进而 抑制晶界裂纹的萌生。 
+关键词：富氧近 α 钛合金；微织构；α/βt 复合片层组织；力学性能；加工硬化率 
+ doi:10.11868/j.issn.1001-4381.2026.000301 
+中图分类号：TG146.2 文献标识码：A   
+Micro-texture formation mechanism and mechanical behavior of composite lamellar 
+microstructure in oxygen -enriched near-α titanium alloys 
+ZHANG Hairui1,2*，NIU Hongzhi3，ZHANG Deliang3，ZHANG Keke1，CHEN Guang1* 
+（1 State Key Laboratory of Light Superalloys,  Henan University of Science and Technology, Luoyang 
+471023,Henan,China;2 School of Materials Science and Engineering,  Henan University of Science and Technology, 
+Luoyang 471023,Henan,China;3 School of Materials Science and Engineering,  Northeastern University, Shenyang 
+110819,China） 
+Abstract：To address the strength-ductility trade-off dilemma of high-oxygen powder metallurgy (PM) titanium alloys , 
+two types of near-α titanium alloys with α/βt composite lamellar microstructure and oxygen mass fraction of 0.36% are 
+fabricated via the combination of sintering and hot extrusion  process. The crystal size and morphological characteristics 
+网络首发时间：2026-05-29 17:03:31       网络首发地址：https://link.cnki.net/urlid/11.1800.TB.20260529.1534.016
+
+--- PAGE 3 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+are analyzed by scanning electron microscopy (SEM) and transmission electron microscopy (TEM). The crystallographic 
+orientation features are examined through X -ray diffraction (XRD) macro -texture and electron backscatter diffraction 
+(EBSD) micro-texture analyses. The relationships between microstructure, mechanical properties and the corresponding 
+deformation mechanisms are elucidated by combining room -temperature tensile tests and dislocation bright -field 
+imaging observations . The results show that the composite lamellar microstru cture coupled with an extrusion-direction-
+aligned <0001>α micro-texture significantly improves the elongation from 8.9% to 22.0% while maintaining a high 
+ultimate tensile strength of 1070 MPa, thereby achieving exceptional strength -ductility synergy. The generation 
+mechanism of the unique micro-texture is governed by the combined action of the texture inheritance during hot extrusion 
+in the β-phase field and the preferential orientation selection of β→α phase transformation.  The pyramidal < c+a> 
+dislocations are effectively activated in the micro -textured domains and move in a wavy slip mode, leading to an 
+anomalous increase in the work -hardening rate, promoting lamellar distortions and grain -boundary deformation 
+compatibility, and thereby suppressing the initiation of grain boundary cracks.  
+Key words：oxygen-enriched near α titanium alloy; micro-texture;α/βt composite lamellar microstructure ; mechanical 
+property; work-hardening rate  
+钛合金具有低密度、高比强度与刚度、优异的耐腐蚀性能和抗蠕变性能等优点， 被广泛应用于航空航天、
+生物医用和化工等领域[1]。近 α 型钛合金的 Al 当量小于 9%（质量分数，下同），Mo 当量为 2.8%~3.0%，该类
+合金虽室温强度中等，但 兼具优异的综合力学性能和 良好的塑性成形能力。目前，为提升钛合金制备过程中的
+能源与材料利用率， 粉末冶金、 超塑成形/扩散连接和激光增材制造等工艺已被广泛用于军工及民用领域的关键
+构件成形。激光成形虽可制备 结构复杂且性能达标的零部件 ，但存在设备购置成本高、球形预合金粉末价格昂
+贵等不足。从材料生命周期角度来看， 元素混合粉末冶金技术具有节能高效、 工艺流程简洁、原料适配性强等
+显著优势[2]。然而，该工艺需在 1200~1350 ℃保温 1~3 h 才能实现充分合金化， 易形成粗大的片层组织[3]。合
+金中的高氧含量与粗大片层组织均易在原始 β 晶界处萌生裂纹并快速扩展，降低塑性。因此，改善元素混合粉
+末冶金法制备钛合金的室温塑性，已成为 当前钛合金材料领域的 一个研究热点与重点攻关方向。  
+在金属材料中，引入组织异构化设计理念， 借助异构组织的微观异步变形效应，诱发更多几何必须位错，
+有助于协调材料变形，解决强度与塑性之间的矛盾[4-5]。对于近 α 钛合金，将普通片层组织在 α + β 两相区进行
+退火处理，原始 β 相基底会吞噬部分 α 片层并发生区域宽化；快速冷却过程中，宽化的 β 区域变得不稳定，内
+部会析出纳米尺度的针状次生 α 相，高温的 β 相则演变成 β 转变组织（β-transfromed structure ，简称 βt）。交错
+或平行分布的 α 片层与片层间隙处的 βt 区域共同构成 α/βt 复合片层组织[6-7]。与普通 α/β 片层界面对位错滑移的
+筛选效应不同，钛合金 α/βt 复合片层组织的位错运动容易在 α/βt 界面处受阻，缩短位错有效滑移距离 ，使得复
+合片层组织的屈服强度高于普通 α/β 片层组织[8]。Zhang 等[9]通过控制冷却速率，利用快扩散元素 Cr 和慢扩散
+
+--- PAGE 4 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+元素 Al 的再分配，调控 Ti-2.8Cr-4.5Zr-5.2Al 的马氏体相尺寸，空冷条件下得到 的样品抗拉强度为 1030 MPa、
+断后伸长率高达 22.8%；水冷条件下样品的抗拉强度高达 1400 MPa、断后伸长率为 12.6%。 
+此外，片层取向调控滑移行为决定钛合金和钛铝金属间化合物的各向异性规律 [10]。其中，晶体取向及对应
+织构在改善塑性方面发挥关键作用 [11]。在密排六方结构（HCP）镁合金中，当大多数晶粒的 c 轴平行于压缩方
+向时，锥面滑移（尤其是 <c + a>滑移）被激活，可显著改善材料的低温塑性变形能力 [12]。Mimoto 等[13]发现，
+细小等轴组织的 Ti-0.97O-0.11H 合金存在(0001)<101̅0>织构时，断后伸长率可达 23.9%。因此，晶体取向调控
+也是突破粉末冶金近 α 钛合金强塑性倒置矛盾的关键途径 。在 β 相变点以上热变形 的钛合金，冷却过程发生
+β→α 相变，α 首先在 β 晶界处形核，形成晶界 α 相（grain boundary, αGB）；随后，α 片层在 αGB 处形核，形成侧
+生 α 片（Widmanstätten grain boundary ，αWGB）区域[14]。αWGB 区域中的 α 片层通常与一侧的原始 β 晶粒保持
+(0001)α//{110}β 的位向关系，择优生长[15]，最终形成平行排列的 α/β 片层晶团。由于{110}β 与(0001)α 的晶面间
+距极为接近，大部分 αGB 在析出过程中也与一侧的原始 β 晶粒保持 Burgers 位向关系，与另一侧保持或不保持
+该位向关系，但遵循最小形核功原则形核 [16]。Bhattacharyya[17-18]和 Bohemen[19]等发现，在 β→α 相变过程中，当
+相邻原始 β 晶粒存在共同的{110}β 取向时，该晶界两侧析出的 αWGB 的(0001)α 均沿这一共同的{110}β 方向析出，
+发生变体选择和择优生长 ，导致 αGB 及晶界两边的 αWGB 具有相同的(0001)α 晶面取向；当相邻原始 β 晶粒不存
+在共同的{110}β 取向时，该晶界处析出的 αWGB 变体数量较多，取向随机且呈现多样化 [20]。 
+本工作以 Ti-3Al-2Zr-2Mo-0.36O 近 α 钛合金为研究对象，分别采用快速感应烧结与热挤压一体化成型技术
+和真空烧结后再经过 β 单相区热挤压制备片层组织钛合金 ，经过两相区退火处理 ，使 β 基底内析出密集分布的
+纳米尺度次生 α 相，形成 α/βt 复合片层组织。采用 SEM 和 TEM 分析晶体尺寸和形貌特征 ，通过 XRD 宏观织
+构和 EBSD 微观织构分析晶体取向信息 ，结合室温拉伸测试和位错明场像研究组织特征， 尤其是晶体取向与力
+学性能的关联及变形机制，为各类钛合金的组织调控、低成本高性能化制备提供理论依据。  
+1  实验材料与方法 
+1.1  实验材料 
+本工作使用的原材料为平均粒径为 3 mm 的 AlMo60 颗粒（辽宁忠世高新科技有限公司提供）和 0 级海绵
+钛颗粒（朝阳金达钛业提供 ），—200 目气雾化 Al 粉（北京兴荣源科技有限公司提供 ），中位粒径 D50=25 μ m，
+Mo 粉最大尺寸小于 5 μm、—200 目 ZrH2 粉，D50=26 μm，氢含量为 3.8%。在 9 × 104 Pa 的氢气压力下，将 0 级
+海绵钛在 600 ℃保温 4 h，完成氢化处理，氢化海 绵钛的氢含量为 4.0%。 
+TiH2 粉末采用机械球磨氢化海绵钛颗粒的方法制备。选用直径分别为 8 mm 和 16 mm 的不锈钢球，按质量
+比 1:1 混合， 以5:2 的球料比配料。 球磨罐在氩气气氛手套箱内装料和密封。 在行星式球磨机 （QM-3SP4） 上以
+300 r /min 的转速球磨 5 min 后，将球磨罐转移到手套箱里，进行粉末的筛分和钝化处理。 AlMo60 合金粉末采
+
+--- PAGE 5 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+用机械球磨 AlMo60 中间合金颗粒的方法制备。添加少量氢化海绵钛作为控制剂，以防粘罐。所用球料比和球
+磨氢化钛保持一致。以 400 r/min 的转速球磨 2 h 后，进行粉末筛分和钝化。将 TiH2 粉末、AlMo60 合金粉、纯
+Al 粉、ZrH2 粉按照 Ti−3Al−2Zr−2Mo 合金名义成分混合均匀后 ，称取 400 g 装入 H13 钢模具中，进行粉末压制
+（压制条件为 960 MPa 下保压 5 min） 。脱模后的粉末压坯直径为55 mm，高度为 56 mm。 
+1.2  实验方法 
+将粉末压坯放入感应线圈中，封闭气氛保护箱舱门。抽真空后，充入高纯氩气，保证气氛保护箱内部的氧
+含量低于 200 10-6。然后，以 80 ℃/min 的加热速率，将压坯快速感应加热 至 1300 ℃，保温 5 min。快速转移
+至气氛保护箱的挤压筒内， 完成挤压。 热挤压时， 模具预热到400 ℃， 挤压比为10：1。得到的合金挤压棒材 ，
+经过 700 ℃/6 h /FC 真空脱氢退火处理，氢含量降低至 0.014%，组织演变过程参考 文献[21]。然后在 880 ℃保
+温 1 h 后空冷，得到的样品命名为 880-PE1。粉末压坯在真空炉内进行烧结，初始气压为 510-3 Pa，以 10 ℃
+/min 的加热速率加热到 700 ℃，保温 1h 完成脱氢退火处理，然后加热到 1300 ℃保温 2 h。接着，将烧结后的
+钛合金圆柱体放入感应线圈中，在氩气气氛保护下，快速感应加热到 1100 ℃保温 3 min，随后立即转移到挤压
+筒内完成挤压。挤压比为 10:1， 和模具预热温度为400 ℃。 挤压后得到片层组织， 氢含量为0.018%。将片层组
+织在 880 ℃保温 1 h 后空冷，使得 β 基体内析出纳米尺度交错分布的次 生 α 相，获得的挤压棒材命名为 880-
+PE2。图 1 为 880-PE1 和 880-PE2 的加工和热处理示意图。  
+ 
+图 1 880-PE1（a）和 880-PE2（b）加工和热处理示意图  
+Fig.1 Schematic diagrams of proc essing and heat treatments for 880-PE1（a）and 880-PE2（b） 
+金相试样在磨制抛光后，采用 Kroll 试剂（体积分数配比：2%氢氟酸+8%硝酸+90%蒸馏水）进行腐蚀，腐
+蚀时间控制在 25 s 左右。采用光学显微镜（ ZEISS Axio Lab.A1 ） 、扫描电子显微镜（场发射JSM-7001F，钨灯
+
+
+--- PAGE 6 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+丝 JSM-6510A 和场发射 Quanta 250FEG ）、TEM 电镜（JEM-2100F）对材料的显微组织进行表征。 使用 Image 
+Pro Plus 软件对 SEM 拍摄的显微组织照片的相含量和组织构成进行统计。制备透射样品时，首先将线切割的薄
+片机械磨至 60 μm，再冲成 3 mm 的小圆片，以体积分数配比为 6%高氯酸+34%正丁醇+60%甲醇为抛光液进行
+双喷减薄，双喷减薄的参数为：−25 ℃环境，电压 25 V，电流 40 mA 左右。 
+采用氧/氮/氢分析仪（G8 GALILEO ）测试样品中的氧含量（均为 0.36%） 。样品的宏观织构分析在X 射线
+衍射仪（XRD, SmartLab 3, Rigaku）上完成，Cu 靶，波长为 0.154056 nm，工作电压为 40 kV，扫描速率为 6 ℃
+/min，扫描角度为 20°~90°，晶面常数选择(0002)。样品的微观晶体取向信息采用电子背散射技术（ EBSD）
+进行表征，EBSD 的制样步骤为：依次使用 80 目、400 目、1000 目和 2000 目砂纸打磨，然后用电解抛光的方
+法抛光大约 60~75 s， 去掉表面硬化层和残余应力。 电解液成分与制备透射样品的电解液一致。 在配备Symmetry 
+EBSD 采集系统的 ZEISS Cross Beam 550 扫描电镜上完成 EBSD 测试。EBSD 数据用 Channel 5 软件和 Aztec5.1
+软件进行后处理。 
+室温拉伸测试在 AG/X Plus 100 kN 试验机上进行。从挤压棒中间位置切取工字型的板状拉伸试样，标距段
+尺寸为：长 14 mm ，宽 3 mm ，厚度 2 mm 。拉伸前样品的平行段均采用 2000 目砂纸精磨和机械抛光处理。初
+始应变速率控制在 5.0 × 10-4 s-1，每个条件下测试 2~3 个试样，以保证数据准确性。  
+2  结果与分析 
+2.1  微观组织 
+880‑PE1 和 880‑PE2 的金相显微镜（OM）及扫描电子显微镜（SEM）图，如图 2 所示。可以看出，880‑PE1
+试样的组织由平直且 长条状 的晶界 α 片、晶界旁 的平行团簇状 αWGB 以及晶粒内部 的 α 条（Widmanstätten 
+intragranular，αWI）组成。高倍图片观察显示，其片层组织呈现 α/βt 复合片层特征，由 α 片层与纳米级次生 α 针
+强化的 βt 区域构成，如图 2（b-1）所示。 
+
+--- PAGE 7 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+ 
+图 2 880‑PE1（1）和 880‑PE2（2）微观组织 
+（a）OM；（b）SEM 照片 
+Fig.2 Microstructures of 880 ‑PE1（1）and 880‑PE2（2） （a） OM images；（b） SEM images 
+表 1 为 880‑PE1 和 880‑PE2 的相含量和尺寸。可知，880-PE1 样品的晶界 α 片平均宽度为 2.31 μm，原始 β
+晶粒尺寸不均匀，平均值约为 125 μ m。880‑PE2 试样同样为 α/βt 复合片层组织，也包含 αWGB、αWI 区域及晶界
+α 片。晶界 α 片平均宽度为 2.08 μm。由于 880‑PE2 的热挤压温度比 880‑PE1 低 200 ℃，其原始 β 晶粒尺寸相对
+均匀，平均值约为 78 μm。因两种试样采用相同的退火制度 （880 ℃/1 h/AC），880‑PE1 的 α 片层体积分数与宽
+度和 880‑PE2 试样的相近。其中，α 片层宽度大约为 0.9 μm，βt 区域体积分数约为 22.0%。由于晶界附近的元素
+扩散比晶内快[22]，导致晶界处的 α 片层宽度相对更大。综上，除因烧结方式与热挤压温度不同导致 原始 β 晶粒
+尺寸存在差异外，880‑PE1 与 880‑PE2 试样均为 α/βt 复合片层组织。 
+表 1 880‑PE1 和 880‑PE2 的相含量和尺寸 
+Table 1 Phase content and grain size of  880 ‑PE1 and 880‑PE2 
+Sample 
+volume 
+fraction of α/% 
+volume fraction 
+of βt/% 
+Grain size/μm 
+Mean width of α 
+laths/μm 
+Mean width of αGB/μm 
+
+
+--- PAGE 8 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+880-PE1 78.8 21.2 125 0.90 2.31 
+880-PE2 77.2 22.8 78 0.90 2.08 
+采用透射电镜对转变组织 βt 进行更详细的分析 ，图 3 为 880-PE1 的高角环形暗场 （High-Angle Annular 
+Dark-Field, HAADF）图和元素分布。可以看出，空冷条件下，βt 基底内部析出密集分布的细小针状 α 相，这些
+针状 α 相的长度为 200~500 nm，宽度为 20~50 nm。α 片层和 βt 区域之间存在明显的元素配分，βt 转变组织区域
+的元素含量继承了高温母相 β 的成分特点，其中 Mo 元素含量显著升高，Ti、Al 元素含量明显降低；而中性元
+素 Zr 在不同相之间的分布相对均匀 。这一现象表明，次生 α 相的生长过程与元素扩散密切相关 ，属于扩散控制
+的相变过程。 
+ 
+图 3 880-PE1 的 HAADF 图及相应元素分布 
+Fig.3 HAADF micrographs and corresponding elemental mappings of 880 -PE1  
+2.2  拉伸性能 
+图 4 为 880‑PE1 和 880‑PE2 的拉伸性能。图 4（a）为室温拉伸工程应力-应变曲线，可知 880-PE1 的屈服强
+度为（984±11） MPa，抗拉强度为（1076±7） MPa，断后伸长率为（8.9±0.37）%；880-PE2 的屈服强度为
+（975±9） MPa，抗拉强度为（1070±7） MPa，断后伸长率为（22.0±1.5）%。而常规细晶等轴组织 的抗拉
+强度为 675 MPa ，断后伸长率为 15%[15]，与其对比发现，880-PE2 的抗拉强度提高了 300 MPa ，断后伸长率提
+
+
+--- PAGE 9 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+高到 22.0%，实现了强度与塑性的协同提升。  
+图 4（b）为真应力-真应变曲线和加工硬化率曲线，可 以看出，屈服后应力-应变曲线上出现一个较长的平
+台， 与此对应的是加工硬化率曲线异常上升的阶段。 加工硬化率的异常增加， 使得均匀塑性变形阶段明显延长。
+尽管两种样品都出现加工硬化率异常增加的 现象，但 880-PE2 的均匀塑性变形阶段 明显比 880-PE1 更长，微观
+塑性失稳点从真应变 0.08 增加到 0.17。和 880-PE1 样品出现裂纹后立即断裂 的特征不同，880-PE2 样品的均匀
+塑性变形阶段和颈缩阶段得到同步提升 。加工硬化率异常增加现象在高氧含量 β 型 Ti-29Nb-13Ta-4.6Zr 钛合金
+中已有报道[23]，认为 0.70%的高氧含量，促使 β 型钛合金的塑性变形 机制从马氏体相变转变为位错滑移，同时
+固溶氧 与位错的相互作用 可促进 多滑移系启动， 进而导致 加工硬化率明显 升高 。在氧含量 为 0.65%、具有
+(0001)<101̅0>织构的纯钛中，高氧含量与织构的共同作用诱发锥面<a>滑移和柱面<a>滑移的双滑移，使位错之
+间更容易缠结，从而提升加工硬化率[24]。冷轧纯钛板表现为常见的 (0001)<101̅0>织构，当垂直于轧制方向拉伸
+时，即多数晶粒的 c 轴平行于加载方向时，硬取向晶粒中的 <c + a>位错被大量激活，拉伸曲线上也出现明显的
+加工硬化平台，使得屈服强度明显增 加[25]。本工作在氧含量为 0.36%的近 α 钛合金中同样发现加工硬化率异常
+上升现象，且试样的均匀塑性变形和颈缩阶段同步提升，其具体作用机制有待 从塑性变形行为方面 进行深入探
+究。 
+ 
+图 4 880‑PE1 和 880‑PE2 的拉伸性能 
+（a）工程应力-应变曲线；（b）真应力-真应变曲线与加工硬化率曲线  
+Fig.4 Tensile properties of 880‑PE1 and 880‑PE2 
+ (a) engineering stress -strain curves; (b) true stress-strain curves and work -hardening rates curves  
+2.3  拉伸断口附近晶体取向  
+采用 EBSD 分析 880-PE1 样品裂纹附近的晶体取向，如图 5 所示。当晶粒的 c 轴平行于拉伸方向时，由于
+<a>型位错的伯氏矢量与拉伸方向垂直， Schmid 因子（SF）趋近于 0。所以，理论上，柱面<a>、基面<a>和锥
+面<a>滑移都难以启动， 只有临界剪切应力较高的<c + a>型滑移系的 SF 较高， 接近于0.5。 通常将此类<a>型位
+
+
+--- PAGE 10 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+错 SF 因子趋近于 0，而<c + a>型位错的 SF 因子趋近于 0.5 的取向，定义为硬取向 [15]。EBSD 分析结果表明，
+二次裂纹的萌生并非仅发生于 硬取向的晶界 α 处，软取向的晶界 α 处同样有裂纹出现。当 αGB 一侧和交错分布
+的 αWI 相邻，另一侧和硬取向 αWGB 相邻时，裂纹易在 αGB 和 αWI 的界面处产生，如图 5（a）和 5（c）所示。从
+5(e)的 SF 分布图判断，该区域硬取向 αWGB 的<a>位错 SF 都低于 0.3，而<c + a>位错的 SF 都趋近于 0.5；当 αGB
+两侧是两个不同的软取向 αWGB 区域时，即<c + a>位错的 SF 都低于 0.3，一侧是基面<a>的 SF 大于 0.3，另一侧
+是柱面<a>的 SF 大于 0.3 时，裂纹仍然容易在 αGB 处产生，如图 5（b）和 5（d）所示。此外，复合片层组织样
+品 880-PE1 在拉伸断口附近并未发生片层扭曲现象，裂纹主要在 αGB 和 αWGB 区域的界面处产生 ，并沿着 αGB 方
+向扩展。 
+ 
+图 5 880-PE1 裂纹附近 EBSD 分析结果 
+（a），（b）SEM 图；（c），（d）IPF-X 及裂纹附近晶体取向；（e），（f）Schmid 因子分布图 
+Fig.5 EBSD analysis results of area around cracks in 880 -PE1  
+(a),(b) SEM images；(c),(d) IPF-X and corresponding orientational results of α-Ti laths near cracks; (e),(f) SF distribution maps 
+对 880-PE1 拉伸样品断口附近进行 EBSD 分析，其局部晶体取向差（ KAM）图和反极图（IPF） ，如图
+6 所示。可知，三叉晶界区域的 KAM 值最大，表明此处的变形协调能力差 ，易产生应力集中。当 αGB 两侧
+是相同取向的 αWGB 区域时，αGB 处没有裂纹产生。当 αGB 两侧的 αWGB 取向一致，对应着 KAM 图中应力集
+中最小的蓝色区域， 尤其是当两侧取向都是红色的硬取向区域时， 该区域的应力集中最小。以上研究表明，
+
+
+--- PAGE 11 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+在热挤压粉末冶金钛合金 的复合片层组织中，当连续分布的晶界 α 两侧的形貌结构和片层取向存在差异时，
+很容易诱发裂纹并迅速扩展，降低样品的整体伸长率。  
+ 
+图 6 880-PE1 两个区域断口附近 EBSD 结果 
+（a），（c）KAM 图；（b），（d）IPF-X 图及裂纹附近的晶 体取向 
+ Fig.6 EBSD results of area around cracks of two regions in 880-PE1 
+ (a), (c) KAM maps; (b), (d) IPF -X maps and crystallographic orientations around cracks  
+2.4  微织构及其生成机制  
+为澄清两种复合片层组织样品断后伸长率差异很大的本质原因，需捕捉大范围低占比取向信号。本工作采
+用对全域弱织构、微量次要织构敏感度更高的 XRD 宏观织构进行分析，如图 7 所示。结果表明，880-PE1 样品
+(0002)晶面的极密度点分布于挤压方向（extrusion direction, ED）周围的多个周向位置，晶粒取向相对分散， 未
+出现单一极强的取向集中 现象。而 880-PE2 样品(0002)晶面的极密度点集中在 ED 方向， 最大极密度高达11.49，
+说明绝大多数晶粒的(0002)基面法线平行于 ED 方向。上述织构差异主要和挤压工艺有关 ，880-PE1 样品中 αGB
+以及后续的 αWGB 形核和生长过程，受 Mo 元素扩散和真空脱氢退火时富氢 α 相分解的影响，造成样品微区的晶
+粒取向并不唯一。另外，αWGB 在原始界面处形核，向 β 晶粒内部生长，其取向随原始 β 晶粒取向的变化而改变。
+相对于 αWGB 区域，αWI 区域内的 α 片层呈交错分布，取向更加多样化。以上多重原因使得 880-PE1 样品在毫米
+级尺度，不存在明显织构。 
+
+
+--- PAGE 12 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+ 
+图 7 880-PE1 和 880-PE2 沿(0002)晶向的宏观织构图 
+Fig.7 Profiles of macroscopic texture along (0002) of 880 -PE1 and 880-PE2  
+图 8 为微织构的生成机制示意图 。880-PE2 样品在真空烧结之后热挤压变形 ，热变形完全在单一 β 相区完
+成，β 相中{110}<11̅1>滑移系最容易启动，导致高温下的挤压变形织构为 <110>β 晶向平行于挤压方向 。在随后
+的冷却过程中，β→α 固态相变遵循(0001)α//{110}β 位向关系，α 相的形核与长大具有变体选择性 [18]，最终形成
+<0001>α 平行于挤压方向的微织构区域 。α 相微织构直接受原始 β 晶粒取向和变体选择的影响 。Zhao 等[20]研究
+了锻态 Ti60 合金，认为原始 β 晶粒的{110}β 织构越强，相邻 β 晶粒具有相同(110)晶面的概率越高，β→α 相变
+过程中 α 相变体选择越明显 。Obasi 等[26]研究了挤压态 Ti-6Al-4V 合金，当挤压温度为 950 ℃ 时，β 相体积分数
+达到 70%，相邻 β 晶粒拥有共同<110>取向的概率明显高于 挤压温度为 800 ℃ 的样品。在密排六方结构中 ，具
+有共同(0001)晶面的 α 相拥有一致的 c 轴，当 c 轴平行于挤压方向时 ，可以称之为 c 织构[27]。其他 HCP 结构中
+的 c 织构，仅在稀土镁合金中有过报道 [28]，认为该织构的形成需要重合金化，且 通常由锥面<c + a>滑移诱发，
+这与本工作中钛合金<0001>微织构的生成机制明显不同 。Minoto 等[13]将 TiO2 和 TiH2 混合粉末压坯经 1300 ℃
+/1.5 h 真空烧结和 1000 ℃热挤压，制备出 0.97%氧含量的纯钛棒材，其细晶等轴组织呈现出 HCP 金属常见的
+(0001)<101̅0>织构。Liang 等[29]将 Ti-6Al-4V 合金粉末压坯在 1250 ℃烧结和同步热挤压，制备出 0.44%氧含量
+的钛合金棒材，表现为片层组织， 且含有<0001>晶向平行于挤压方向的微织构。  
+
+
+--- PAGE 13 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+ 
+图 8 微织构生成机理示意图  
+Fig.8 Schematic diagram of mechanism of micro -texture generation  
+织构类型主要受变形温度的 调控，挤压温度直接影响具有特定取向特征的原始 β 晶粒含量，继而决定后续
+析出 α 相的织构特征。α 取向的差异取决于 β→α 相变发生在热变形前还是热变形后 ，即变形温度高于或低于 相
+变点 Tβ。近 α 钛合金在 α + β 两相区进行热变形时，热变形过程中的主相是 α 相，按照界面最小能量原则 ，易
+得到等轴组织。并且热变形过程等轴晶粒 发生转动，以最小能量消耗完成变形，所以等轴组织的变形 主要以临
+界剪切应力最小的{101̅0}<12̅10>滑移为主导。 最终，在柱面滑移的作用下，等轴组织易出现(0001)<101̅0>织构。 
+本工作的<0001>微织构受热变形后 β→α 相变过程择优生长的调控 ，理论上，微织构的分布集中在原 始 β 晶
+界附近，在微米尺度上呈现弥散分布的特征 ，与传统的变形织构存在显著差异 。为进一步明确不同晶粒内部 α
+相的取向特征，并重构母相 β 晶粒，采用 EBSD 技术对 880-PE2 试样进行深入分析，结果如图 9 所示。根据
+Burgers 位向关系，在反极图（IPF-X）中用黑色实线勾勒出原始 β 晶界。分析可知，原始 β 内部由取向多样的
+片层晶团组成，原始 β 晶粒大小不超过 100 μm，可有效避免在粗大原始 β 晶界引发裂纹而导致提前断裂 。结合
+图 9(a)的 IPF 图和 9(c)的{0001}α 极图判断，880-PE2 样品存在<0001>微织构，且微织构区域跨越原始 β 晶界分
+布。图 9（b）和 9（d）为母相 β 晶粒的取向分布图 ，原始 β 晶粒的<110>β 晶向平行于挤压方向 ，进一步验证了
+微织构源于热变形在 β 相变点以上 100 ℃进行，是原始 β 晶粒取向和相变过程择优取向共同作用的结果 。 
+
+
+--- PAGE 14 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+ 
+图 9 880-PE2 的 IPF-X 图和极图 
+（a）α 相的 IPF-X 图；（b）根据 Burgers 位向关系重构的母 相 β 晶粒 IPF-X 图；（c），（d）极图 
+Fig.9 IPF-X maps and pole figures of 880 -PE2  
+ (a) IPF-X map of α phase; (b) IPF-X map of parent β grains reconstructed according to Burgers orientation relationship; (c), (d) pole 
+figures 
+2.5  微观塑性变形行为  
+采用 TEM 观察样品在不同应变量 时的位错形态，如图 10 所示。 根据消光条件， 衍射矢量g=(0002)时，<a>
+位错的伯氏矢量<112̅0>会因为 g·b=0 而消光。 所以， 在g=(0002)双光束条件下， 观察到的位错属于<c + a>型。
+由图 10（a）和 10（b）可知，两种样品的 α 片层内部均激活大量的<c + a>位错，并且以波滑移的形式存在 ，其
+中 880-PE2 的位错密度更高。从屈服阶段到断裂 ，具有<0001>微织构的 α/βt 复合片层组织样品，α 片层内部<c 
++ a>位错都以波滑移的形式运动，这是加工硬化率异常增加的根本原因，这一点在之前的文献中已经得到验证
+[15]。从图 10（c）可以看出，α/βt 界面两侧的位错密度明显不同 ，证实了 α/βt 界面对位错有明显的阻碍作用 。 
+ 
+图 10 拉伸样品不同应变时的 TEM 位错明场像 
+（a）880-PE1 样品,应变为 8.5%；（b）,（c）880-PE2 样品，应变为 19.5%  
+Fig.10 TEM BF dislocations micrographs of tensile samples at different strains  
+ (a) 880- PE1 at 8.5% strain; (b), (c) 880 - PE2 at 19.5% strain  
+
+
+--- PAGE 15 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+样品拉伸变形的断口特征，如图 11 所示。可以看出，880-PE1 样品在断口纤维区内部，除了二次裂纹之外
+还存在部分解理小平面，韧窝相对较浅，如图 11（a-1）所示。拉伸断口附近的表面滑移痕迹， 如图 11（a-2）
+和 11（a-3）所示，复合片层组织样品在拉伸断口附近没有发生片层扭曲。 滑移迹线在晶界处终止，晶界内部看
+不到明显的滑移线，滑移线在 αGB 处塞积，裂纹容易在 αGB 和 αWGB 区域的界面处产生 ，并沿着 αGB 方向扩展。 
+ 
+图 11 880-PE1(1)和 880-PE2(2)的拉伸变形特征 
+（a）断口形貌；（b），（c）纵截面迹线分析 
+Fig.11 Tensile deformation characteristics of 880 -PE1(1) and 880-PE2(2) 
+ (a)fracture morphologies; (b),(c) trace analysis of longitudinal sections  
+880-PE2 样品拉伸断口处有大量的微孔和韧窝 结构，没有二次裂纹和解理面，断口呈现明显的韧性断裂特
+征。和 880-PE1 相比，880-PE2 出现明显的片层扭曲，迹线分析表明晶界处可以协调塑性变形，如图 11（b-2）
+所示。拉伸过程中片层扭曲的程度增加 ，α/βt 复合片层组织晶界的裂纹明显减少 ，微裂纹仅在片层扭曲处和晶
+团交界处萌生，如图 11（b-3）所示。片层扭曲有助于缓解晶内局部应力集中 ，微织构区包含晶界 α 相，晶界 α
+相可以激活锥面位错并发生 塑性变形，进而协调原始 β 晶界处的应力集中 ，提高协调变形能力，有效避免晶界
+处的提前开裂，为颈缩阶段的延长提供有利条件 。 
+3  结论 
+（1） 采用烧结与热挤压工艺得到氧含量为0.36%的全致密钛合金棒材， 相对于没有微织构的复合片层组织
+样品，含有微织构的 α/βt 复合片层钛合金的抗拉强度为 1070 MPa，伸长率从 8.9%提高到 22.0%，实现抗拉强度
+和塑性的优良匹配。 
+（2）在 β 单相区热挤压，β 晶粒内部的{110}面上的滑移系主导塑性变形 ，导致母相 β 晶粒的法向<110>平
+
+
+--- PAGE 16 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+行于挤压方向，热变形后 β→α 固态相变遵循(0001)α//{110}β 位向关系择优生长，生成<0001>α 平行于挤压方向
+的微织构。 
+（3）α 片层微织构区域内部激活了<c + a>位错，并且以波滑移的形式运动 ，引起加工硬化率的异常增加 。 
+（4）微织构区包含晶界 α，可以发生塑性变形，促使片层发生扭曲，缓解晶界处的应力集中 ，避免晶界处
+诱发长裂纹而提前开裂。  
+参考文献 
+[1] Banerjee D,Williams J C.Perspectives on t itanium science and technology[J].Acta Materialia,2013,61(3):844 -879. 
+[2] Fang Z Z,Paramore J D,Sun P, et al. Free, powder metallurgy of titanium − past, present, and future[J].International Materials Reviews , 2017,63:407-459. 
+[3] Yan M,Dargusch M S,Ebel T,et al.A transmission electron microscopy and three -dimensional atom probe study of the oxygen -induced fine microstructural features in as -
+sintered Ti–6Al–4V and their impacts on ductility[J].Acta Materialia, 2014,68:196-206. 
+[4] Zhu Y T,Wu X L.Perspective on hetero-deformation induced (HDI) hardening and back stress[J].Materials Research Letters,2019,7(10):393 -398. 
+[5] Wang Y F,Zhu Y T,Yu Z J,et al.Hetero-zone boundary affected region:a primary microstructural factor controlling extra work hardening in het erostructure[J].Acta 
+Materialia,2022,241:118395.  
+[6] Lütjering G.Influence of processing on microstructure and mechanical properties of (α+β) titanium alloys[J].Materials Science and Engineering:A, 1998,243(1/2):32-45. 
+[7] Wu X G,Zhang B W,Zhang Y Y ,et al.Correlation between microstructures and tensile deformation behavior of a PM near α Ti–6Al–2Sn–4Zr–2Mo–0.1Si alloy[J].Materials 
+Science and Engineering:A, 2021,825:141909. 
+[8] Tan C S,Sun Q Y ,Xiao L,et al.Slip transmission behavior across α/β interface and s trength prediction with a modified rule of mixtures in TC21 titanium alloy[J].Journal of 
+Alloys and Compounds,2017,724:112 -120. 
+[9] Zhang C L,Bao X Y ,Hao M Y ,et al.Hierarchical nano-martensite-engineered a low-cost ultra-strong and ductile titanium alloy[J ].Nature Communications,2022,13:5966.  
+[10] 陈光,陈奉锐,朱德民,等.聚片孪生功能基元序构的高性能 TiAl 合金[J].金属学报,2026,62(4): 541-549. 
+Chen G,Chen F R,Zhu D M,et al.Polysynthetic twinned high -performance TiAl alloy with ordered structures of functional units[J].Acta Metallurgica Sinic a,2026,62(4): 541-549. 
+[11] Benmessaoud F,Cheikh M,Velay V ,et al.Role of grain size and crystallographic texture on tensile behavior induced by sliding mechanism in Ti-6Al-4V alloy[J].Materials 
+Science and Engineering:A,2020,774:138835.  
+[12] Zhang K,Zheng J H,Hopper C,et al.Enhanced plasticity at cryogenic temperature in a magnesium alloy[J].Materials Science and Engineering:A,2 021,811:141001. 
+[13] Mimoto T,Umeda J,Kondoh K.Strengthening behaviour and mechanisms of extruded powder metallurgy pure Ti materia ls reinforced with ubiquitous light 
+elements[J].Powder Metallurgy, 2016,59(3):223-228. 
+[14] Sun Z C,Guo S S,Yang H.Nucleation and growth mechanism of α-lamellae of Ti alloy TA15 cooling from an α+β phase field[J].Acta Materialia, 2013,61(6):2057-2064. 
+[15] Zhang H R,Niu H Z,Liu S,et al .Significantly enhanced tensile ductility and its origin of a 〈0001〉 micro-textured extrusion bar of a powder metallurgy near alpha 
+titanium alloy[J].Scripta Materialia,2022,213:114633.  
+[16] Obasi G C,Birosca S,Leo Prakash D G,e t al.The influence of rolling temperature on texture evolution and variant selection during α→β→α phase transformation in Ti -
+
+--- PAGE 17 ---
+材料工程 
+                                           Journal of Materials Engineering                                  网络首发 
+ 
+6Al-4V[J].Acta Materialia,2012,60(17):6013 -6024. 
+[17] Bhattacharyya D,Viswanathan G B,Denkenberger R,et al.The role of crystallogra phic and geometrical relationships between α and β phases in an α/β titanium alloy[J].Acta 
+Materialia,2003,51(16):4679-4691. 
+[18] Bhattacharyya D,Viswanathan G B,Fraser H L.Crystallographic and morphological relationships between β phase and the Widmanstät ten and allotriomorphic α phase at 
+special β grain boundaries in an α/β titanium alloy[J].Acta Materialia, 2007,55(20):6765-6778. 
+[19] van Bohemen S M C,Kamp A,Petrov R H,et al.Nucleation and variant selection of secondary α plates in a β Ti alloy[J].Acta Materialia,2008,56(20):5907-5914. 
+[20] Zhao Z B,Wang Q J,Hu Q M,et al .Effect of β (110) texture intensity on α-variant selection and microstructure morphology during β→α phase transformation in near 
+α titanium alloy[J].Acta Materialia,2017,126:372 -382. 
+[21] Zhang H R,Niu H Z,Yang C,et al.Origin of high strength and good ductility of TiH 2-based powder metallurgy titanium alloy with discontinuous lamellar 
+structures[J].Transactions of Nonferrous Metals Society of China,2025,35(10):3342 -3356. 
+[22] Gao X X,Zeng W D,Li X,et al.Effect of boundary on the alpha phase precipitation in a near -alpha titanium alloy[J].Materials Letters,2018,233:298 -301. 
+[23] Geng F,Niinomi M,Nakai M.Observation of yielding and strain hardening in a titanium alloy having high oxygen conte nt[J].Materials Science and 
+Engineering:A,2011,528(16/17):5435 -5445. 
+[24] Morita M,Suzuki S,Kato Y ,et al.Tensile deformation of texture-controlled titanium with high oxygen content at room temperature[J].Materials Science and 
+Engineering:A,2020,793:139660.  
+[25] Sofinowski K,Šmíd M,van Petegem S,et al. In situ characterization of work hardening and springback in grade 2 α-titanium under tensile load[J].Acta 
+Materialia,2019,181:87 -98. 
+[26] Obasi G C,Moat R J,Leo Prakash D G,et al. In situ neutron diffraction st udy of texture evolution and variant selection during the α→β→α phase transformation in Ti –
+6Al–4V[J].Acta Materialia,2012,60(20):7169 -7182. 
+[27] Umeda J,Tanaka T,Teramae T,et al.Microstructures analysis and quantitative strengthening evaluation of powder m etallurgy Ti–Fe binary extruded alloys with (α+β)-dual-
+phase[J].Materials Science and Engineering:A,2021,803:140708.  
+[28] Wang J,Ferdowsi M R G,Kada S R,et al.Appearance of textures with a c -axis parallel to the extrusion direction in Mg alloys[J].Scripta Materialia,2022,210:114422 . 
+[29] Liang C,Ma M X,Jia M T,et al.Microstructures and tensile mechanical properties of Ti –6Al–4V bar/disk fabricated by powder compact extrusion/forging[J].Materials 
+Science and Engineering:A,2014,619:290 -299. 
+                   
+基金项目：国家自然科学青年 基金项目（52301145） 
+收稿日期：2026-05-17；录用日期：2026-05-21     
+通讯作者：陈光（1962—），男，教授，博士，研究方向为轻质耐热金属间化合物 、高温合金定向凝固 、非晶复合、钢铁及加工，联系地址：河南省
+洛阳市洛龙区开元大道 263 号博园（471023），E-mail:gchen@njust.edu.cn ；张海瑞（1992—），女，讲师，博士，研究方向为粉末冶金钛合金的组织设计
+和塑性变形行为，联系 地址：河南省洛阳市洛龙区开元大道 263 号工科 1 号楼（471023），E-mail:hairui_z@163.com 
+（本文责编：王晶） 
