@@ -1,0 +1,7 @@
+sample,folder,input_file,cold_reduction_percent,total_pixel_count,alpha_ti_pixel_count,max_mrd,peak_x_ad,peak_y_rd,peak_z_nd,c_axis_to_ad_angle_deg,output_file
+7d,d7,ebsd_sample_7_map_15.ctf,0,360000,358203,6.74821241991951,0.00064056628520591,-0.909850291730246,0.414936183422489,89.9632982528494,C:\Users\22069\Documents\GitHub\work_hardening_paper\results\mtex_c_axis_pf\7d.png
+6.48d,d6_48,ebsd_sample_648_map_13.ctf,14.31,360000,350441,5.3366003528464,-0.0528698772617709,-0.666525378050433,0.74360520203469,86.969366166368,C:\Users\22069\Documents\GitHub\work_hardening_paper\results\mtex_c_axis_pf\6.48d.png
+6.02d,d6_02,ebsd_sample_602_map_11.ctf,26.04,360000,355266,4.86593832401989,-0.116258994203379,-0.681285432414385,0.72272678506249,83.3237527724347,C:\Users\22069\Documents\GitHub\work_hardening_paper\results\mtex_c_axis_pf\6.02d.png
+5.6d,d5_6,ebsd_sample_56_map_9.ctf,36,360000,335389,4.52563006067163,0.252156893653653,-0.871032809151504,0.421567012898994,75.3948171735581,C:\Users\22069\Documents\GitHub\work_hardening_paper\results\mtex_c_axis_pf\5.6d.png
+5.25d,d5_25,ebsd_sample_525_map_7.ctf,43.75,360000,317224,4.8831130798545,-0.00925559300693145,-0.743239503232124,0.668961415055724,89.4696860119817,C:\Users\22069\Documents\GitHub\work_hardening_paper\results\mtex_c_axis_pf\5.25d.png
+5d,d5,ebsd_sample_5_map_3.ctf,48.98,360000,328099,4.9793226403056,-0.228562789353363,0.97035468081248,0.0785547245448693,76.7875280901916,C:\Users\22069\Documents\GitHub\work_hardening_paper\results\mtex_c_axis_pf\5d.png
