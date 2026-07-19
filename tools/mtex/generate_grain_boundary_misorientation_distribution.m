@@ -188,13 +188,120 @@ sensitivityFile = fullfile(outputDir, ...
   "grain_boundary_detection_sensitivity.csv");
 distributionFile = fullfile(outputDir, ...
   "grain_boundary_misorientation_distribution.csv");
+distributionFigureFile = fullfile(outputDir, ...
+  "grain_boundary_misorientation_distribution.png");
+metricsFigureFile = fullfile(outputDir, ...
+  "grain_boundary_misorientation_metrics.png");
 writetable(summary, summaryFile);
 writetable(sensitivity, sensitivityFile);
 writetable(distribution, distributionFile);
+plot_boundary_distributions(summary, distribution, distributionFigureFile);
+plot_boundary_metrics(summary, metricsFigureFile);
 
 fprintf("SUMMARY=%s\n", summaryFile);
 fprintf("SENSITIVITY=%s\n", sensitivityFile);
 fprintf("DISTRIBUTION=%s\n", distributionFile);
+fprintf("DISTRIBUTION_FIGURE=%s\n", distributionFigureFile);
+fprintf("METRICS_FIGURE=%s\n", metricsFigureFile);
+end
+
+function plot_boundary_distributions(summary, distribution, outputFile)
+figureHandle = figure("Visible", "off", "Color", "white", ...
+  "Position", [100, 100, 1200, 900]);
+cleanupFigure = onCleanup(@() close(figureHandle));
+layout = tiledlayout(figureHandle, 2, 1, "Padding", "compact", ...
+  "TileSpacing", "compact");
+colors = lines(height(summary));
+panelLimits = [1, 94; 1, 15];
+panelTitles = ["Complete range (1-94 degree)"; ...
+  "Low-angle detail (1-15 degree)"];
+
+for panelIndex = 1:2
+  axesHandle = nexttile(layout);
+  hold(axesHandle, "on");
+  for sampleIndex = 1:height(summary)
+    rows = distribution.sample == summary.sample(sampleIndex);
+    plot(axesHandle, distribution.bin_center_deg(rows), ...
+      distribution.probability_density_per_degree(rows), ...
+      "Color", colors(sampleIndex,:), "LineWidth", 1.7, ...
+      "DisplayName", summary.sample(sampleIndex));
+  end
+  xlim(axesHandle, panelLimits(panelIndex,:));
+  xlabel(axesHandle, ...
+    "Ti-Hex grain-boundary misorientation (degree)");
+  ylabel(axesHandle, ...
+    "Length-weighted probability density (degree^{-1})");
+  title(axesHandle, panelTitles(panelIndex));
+  grid(axesHandle, "on");
+  box(axesHandle, "on");
+  text(axesHandle, 0.01, 0.92, sprintf("(%c)", 'a' + panelIndex - 1), ...
+    "Units", "normalized", "FontWeight", "bold");
+  if panelIndex == 1
+    legend(axesHandle, "Location", "eastoutside");
+  end
+end
+
+export_clean_png(figureHandle, outputFile);
+clear cleanupFigure
+end
+
+function plot_boundary_metrics(summary, outputFile)
+figureHandle = figure("Visible", "off", "Color", "white", ...
+  "Position", [100, 100, 1200, 800]);
+cleanupFigure = onCleanup(@() close(figureHandle));
+layout = tiledlayout(figureHandle, 2, 1, "Padding", "compact", ...
+  "TileSpacing", "compact");
+colors = lines(height(summary));
+xValues = summary.cold_reduction_percent;
+yValues = [100 * summary.lagb_length_fraction, ...
+  summary.lagb_length_density_um_per_um2];
+yLabels = ["LAGB length fraction (%)"; ...
+  "LAGB length density (\mum \mum^{-2})"];
+panelTitles = ["Low-angle grain-boundary length fraction"; ...
+  "Low-angle grain-boundary length density"];
+
+for panelIndex = 1:2
+  axesHandle = nexttile(layout);
+  hold(axesHandle, "on");
+  plot(axesHandle, xValues, yValues(:,panelIndex), "-", ...
+    "Color", [0.35, 0.35, 0.35], "LineWidth", 1.2, ...
+    "HandleVisibility", "off");
+  for sampleIndex = 1:height(summary)
+    plot(axesHandle, xValues(sampleIndex), ...
+      yValues(sampleIndex,panelIndex), "o", ...
+      "Color", colors(sampleIndex,:), ...
+      "MarkerFaceColor", colors(sampleIndex,:), "MarkerSize", 7, ...
+      "HandleVisibility", "off");
+    text(axesHandle, xValues(sampleIndex), ...
+      yValues(sampleIndex,panelIndex), "  " + summary.sample(sampleIndex), ...
+      "HorizontalAlignment", "left", "VerticalAlignment", "bottom");
+  end
+  xlim(axesHandle, [-2, 55]);
+  xlabel(axesHandle, "Cold reduction (%)");
+  ylabel(axesHandle, yLabels(panelIndex));
+  title(axesHandle, panelTitles(panelIndex));
+  grid(axesHandle, "on");
+  box(axesHandle, "on");
+  text(axesHandle, 0.01, 0.92, sprintf("(%c)", 'a' + panelIndex - 1), ...
+    "Units", "normalized", "FontWeight", "bold");
+end
+
+export_clean_png(figureHandle, outputFile);
+clear cleanupFigure
+end
+
+function export_clean_png(figureHandle, outputFile)
+axesHandles = findall(figureHandle, "Type", "axes");
+for axesHandle = reshape(axesHandles, 1, [])
+  if isprop(axesHandle, "Toolbar")
+    axesHandle.Toolbar = [];
+  end
+end
+drawnow;
+exportgraphics(figureHandle, char(outputFile), "Resolution", 300, ...
+  "BackgroundColor", "white");
+renderedImage = imread(outputFile);
+imwrite(renderedImage, outputFile, "png");
 end
 
 function stats = calculate_boundary_metrics(thetaDeg, segLengthUm, ...
