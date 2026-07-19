@@ -63,7 +63,7 @@ end
 
 previousVisibility = get(groot, "defaultFigureVisible");
 restoreVisibility = onCleanup(@() set(groot, ...
-  "defaultFigureVisible", previousVisibility)); %#ok<NASGU>
+  "defaultFigureVisible", previousVisibility));
 set(groot, "defaultFigureVisible", "off");
 
 pfAnnotations = @(varargin) text( ...
@@ -85,7 +85,19 @@ for i = 1:n
   mtexTitle(sampleNames(i));
 
   outputFiles(i) = fullfile(outputDir, sampleNames(i) + ".png");
-  saveFigure(char(outputFiles(i)));
+  figureHandle = gcf;
+  set(figureHandle, "Position", [100, 100, 900, 900]);
+  axesHandles = findall(figureHandle, "Type", "axes");
+  for ax = reshape(axesHandles, 1, [])
+    if isprop(ax, "Toolbar")
+      ax.Toolbar = [];
+    end
+  end
+  drawnow;
+  exportgraphics(figureHandle, char(outputFiles(i)), ...
+    "Resolution", 300, "BackgroundColor", "white");
+  renderedImage = imread(outputFiles(i));
+  imwrite(renderedImage, outputFiles(i), "png");
   assert(isfile(outputFiles(i)), "Output was not created: %s", outputFiles(i));
 
   peakX(i) = peakDirection{i}.x;
