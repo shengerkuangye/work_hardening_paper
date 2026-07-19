@@ -111,6 +111,117 @@ summaryFile = fullfile(outputDir, "c_axis_ad_alignment_summary.csv");
 distributionFile = fullfile(outputDir, "c_axis_ad_angle_distribution.csv");
 writetable(summary, summaryFile);
 writetable(distribution, distributionFile);
+
+metricsFigureFile = fullfile(outputDir, "c_axis_ad_alignment_metrics.png");
+distributionFigureFile = fullfile(outputDir, ...
+  "c_axis_ad_angle_distribution.png");
+plot_alignment_metrics(summary, metricsFigureFile);
+plot_angle_distribution(summary, distribution, distributionFigureFile);
+
 fprintf("SUMMARY=%s\n", summaryFile);
 fprintf("DISTRIBUTION=%s\n", distributionFile);
+fprintf("METRICS_FIGURE=%s\n", metricsFigureFile);
+fprintf("DISTRIBUTION_FIGURE=%s\n", distributionFigureFile);
+end
+
+function plot_alignment_metrics(summary, outputFile)
+figureHandle = figure("Visible", "off", "Color", "white", ...
+  "Position", [100, 100, 1200, 1000]);
+cleanupFigure = onCleanup(@() close(figureHandle));
+layout = tiledlayout(figureHandle, 3, 1, "Padding", "compact", ...
+  "TileSpacing", "compact");
+x = summary.cold_reduction_percent;
+
+axesHandle = nexttile(layout);
+plot(axesHandle, x, summary.alignment_factor, "-o", ...
+  "LineWidth", 1.8, "MarkerFaceColor", "auto");
+hold(axesHandle, "on");
+yline(axesHandle, 0, "--", "Random", "LineWidth", 1.2);
+ylim(axesHandle, [-0.5, 0.05]);
+ylabel(axesHandle, "F_{AD}");
+grid(axesHandle, "on");
+text(axesHandle, 0.01, 0.90, "(a)", "Units", "normalized", ...
+  "FontWeight", "bold");
+
+axesHandle = nexttile(layout);
+plot(axesHandle, x, summary.mean_angle_deg, "-o", ...
+  "LineWidth", 1.8, "MarkerFaceColor", "auto", ...
+  "DisplayName", "Mean");
+hold(axesHandle, "on");
+plot(axesHandle, x, summary.median_angle_deg, "-s", ...
+  "LineWidth", 1.8, "MarkerFaceColor", "auto", ...
+  "DisplayName", "Median");
+yline(axesHandle, 180/pi, "--", "Random mean", "LineWidth", 1.2, ...
+  "HandleVisibility", "off");
+yline(axesHandle, 60, ":", "Random median", "LineWidth", 1.2, ...
+  "HandleVisibility", "off");
+ylabel(axesHandle, "Angle to AD (degree)");
+legend(axesHandle, "Location", "best");
+grid(axesHandle, "on");
+text(axesHandle, 0.01, 0.90, "(b)", "Units", "normalized", ...
+  "FontWeight", "bold");
+
+axesHandle = nexttile(layout);
+plot(axesHandle, x, 100 * summary.fraction_within_15deg, "-o", ...
+  x, 100 * summary.fraction_within_30deg, "-s", ...
+  x, 100 * summary.fraction_within_45deg, "-^", ...
+  "LineWidth", 1.8, "MarkerFaceColor", "auto");
+ylabel(axesHandle, "Fraction (%)");
+xticks(axesHandle, x);
+xticklabels(axesHandle, compose("%g%% (%s)", x, summary.sample));
+xtickangle(axesHandle, 20);
+xlabel(axesHandle, "Cold reduction / sample");
+legend(axesHandle, {"<=15 degree", "<=30 degree", "<=45 degree"}, ...
+  "Location", "best");
+grid(axesHandle, "on");
+text(axesHandle, 0.01, 0.90, "(c)", "Units", "normalized", ...
+  "FontWeight", "bold");
+
+title(layout, "Alpha-Ti c-axis alignment relative to bar AD");
+export_clean_png(figureHandle, outputFile);
+clear cleanupFigure
+end
+
+function plot_angle_distribution(summary, distribution, outputFile)
+figureHandle = figure("Visible", "off", "Color", "white", ...
+  "Position", [100, 100, 1200, 800]);
+cleanupFigure = onCleanup(@() close(figureHandle));
+axesHandle = axes(figureHandle);
+hold(axesHandle, "on");
+colors = lines(height(summary));
+
+for i = 1:height(summary)
+  rows = distribution.sample == summary.sample(i);
+  plot(axesHandle, distribution.bin_center_deg(rows), ...
+    distribution.probability_density_per_degree(rows), ...
+    "LineWidth", 1.8, "Color", colors(i,:), ...
+    "DisplayName", summary.sample(i));
+end
+
+thetaReference = linspace(0, 90, 361)';
+randomDensityPerDegree = (pi/180) * sind(thetaReference);
+plot(axesHandle, thetaReference, randomDensityPerDegree, "k--", ...
+  "LineWidth", 1.8, "DisplayName", "Random");
+xlim(axesHandle, [0, 90]);
+xlabel(axesHandle, "c-axis angle to AD (degree)");
+ylabel(axesHandle, "Probability density (degree^{-1})");
+title(axesHandle, "Alpha-Ti c-axis angle distribution relative to bar AD");
+legend(axesHandle, "Location", "eastoutside");
+grid(axesHandle, "on");
+export_clean_png(figureHandle, outputFile);
+clear cleanupFigure
+end
+
+function export_clean_png(figureHandle, outputFile)
+axesHandles = findall(figureHandle, "Type", "axes");
+for axesHandle = reshape(axesHandles, 1, [])
+  if isprop(axesHandle, "Toolbar")
+    axesHandle.Toolbar = [];
+  end
+end
+drawnow;
+exportgraphics(figureHandle, char(outputFile), "Resolution", 300, ...
+  "BackgroundColor", "white");
+renderedImage = imread(outputFile);
+imwrite(renderedImage, outputFile, "png");
 end

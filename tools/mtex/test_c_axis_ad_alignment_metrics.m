@@ -51,6 +51,8 @@ if scanRoot ~= ""
   end
   assert(isfile(fullfile(outputDir, "c_axis_ad_alignment_summary.csv")));
   assert(isfile(fullfile(outputDir, "c_axis_ad_angle_distribution.csv")));
+  assert(isfile(fullfile(outputDir, "c_axis_ad_alignment_metrics.png")));
+  assert(isfile(fullfile(outputDir, "c_axis_ad_angle_distribution.png")));
 end
 
 fprintf("C_AXIS_AD_ALIGNMENT_TESTS_OK\n");
