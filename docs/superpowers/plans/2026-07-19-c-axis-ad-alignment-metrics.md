@@ -46,12 +46,7 @@
 Create `tools/mtex/test_c_axis_ad_alignment_metrics.m` with:
 
 ```matlab
-function test_c_axis_ad_alignment_metrics(scanRoot, outputDir)
-arguments
-  scanRoot (1,1) string = ""
-  outputDir (1,1) string = ""
-end
-
+function test_c_axis_ad_alignment_metrics
 edges = 0:2:90;
 
 [parallelStats, parallelDist] = compute_c_axis_ad_statistics( ...
@@ -71,30 +66,6 @@ assert(sum(normalDist.pixel_count) == 100);
 assert(abs(mixedStats.mean_cos2 - 0.5) < 1e-12);
 assert(abs(mixedStats.alignment_factor - 0.25) < 1e-12);
 assert(abs(mixedStats.alpha_ti_pixel_fraction - 0.5) < 1e-12);
-
-if scanRoot ~= ""
-  assert(outputDir ~= "", "outputDir is required for integration testing.");
-  [summary, distribution] = generate_c_axis_ad_alignment_metrics( ...
-    scanRoot, outputDir);
-  assert(height(summary) == 6);
-  assert(height(distribution) == 270);
-  assert(all(summary.total_pixel_count == 360000));
-  assert(all(summary.alpha_ti_pixel_count > 0));
-  assert(all(summary.alignment_factor >= -0.5 & ...
-    summary.alignment_factor <= 1));
-  assert(all(summary.fraction_within_15deg >= 0 & ...
-    summary.fraction_within_15deg <= 1));
-  for sample = unique(distribution.sample, "stable")'
-    rows = distribution.sample == sample;
-    assert(abs(sum(distribution.probability(rows)) - 1) < 1e-10);
-    assert(abs(sum(distribution.probability_density_per_degree(rows) .* ...
-      distribution.bin_width_deg(rows)) - 1) < 1e-10);
-  end
-  assert(isfile(fullfile(outputDir, "c_axis_ad_alignment_summary.csv")));
-  assert(isfile(fullfile(outputDir, "c_axis_ad_angle_distribution.csv")));
-  assert(isfile(fullfile(outputDir, "c_axis_ad_alignment_metrics.png")));
-  assert(isfile(fullfile(outputDir, "c_axis_ad_angle_distribution.png")));
-end
 
 fprintf("C_AXIS_AD_ALIGNMENT_TESTS_OK\n");
 end
@@ -182,7 +153,45 @@ git commit -m "feat: calculate c-axis axial alignment statistics"
 - Consumes: `scanRoot` and `outputDir` scalar strings.
 - Produces: `[summary, distribution] = generate_c_axis_ad_alignment_metrics(scanRoot, outputDir)` and two CSV files.
 
-- [ ] **Step 1: Run the integration test to verify the batch function is missing**
+- [ ] **Step 1: Extend the test with CSV integration assertions**
+
+Replace the Task 1 function declaration with the following declaration and arguments block, leaving the existing synthetic assertions immediately after it:
+
+```matlab
+function test_c_axis_ad_alignment_metrics(scanRoot, outputDir)
+arguments
+  scanRoot (1,1) string = ""
+  outputDir (1,1) string = ""
+end
+```
+
+Then insert this block immediately before `fprintf("C_AXIS_AD_ALIGNMENT_TESTS_OK\n");`:
+
+```matlab
+if scanRoot ~= ""
+  assert(outputDir ~= "", "outputDir is required for integration testing.");
+  [summary, distribution] = generate_c_axis_ad_alignment_metrics( ...
+    scanRoot, outputDir);
+  assert(height(summary) == 6);
+  assert(height(distribution) == 270);
+  assert(all(summary.total_pixel_count == 360000));
+  assert(all(summary.alpha_ti_pixel_count > 0));
+  assert(all(summary.alignment_factor >= -0.5 & ...
+    summary.alignment_factor <= 1));
+  assert(all(summary.fraction_within_15deg >= 0 & ...
+    summary.fraction_within_15deg <= 1));
+  for sample = unique(distribution.sample, "stable")'
+    rows = distribution.sample == sample;
+    assert(abs(sum(distribution.probability(rows)) - 1) < 1e-10);
+    assert(abs(sum(distribution.probability_density_per_degree(rows) .* ...
+      distribution.bin_width_deg(rows)) - 1) < 1e-10);
+  end
+  assert(isfile(fullfile(outputDir, "c_axis_ad_alignment_summary.csv")));
+  assert(isfile(fullfile(outputDir, "c_axis_ad_angle_distribution.csv")));
+end
+```
+
+- [ ] **Step 2: Run the integration test to verify the batch function is missing**
 
 Run:
 
@@ -192,7 +201,7 @@ Run:
 
 Expected: MATLAB exits nonzero because `generate_c_axis_ad_alignment_metrics` is undefined.
 
-- [ ] **Step 2: Implement fixed sample mapping and c-axis angle conversion**
+- [ ] **Step 3: Implement fixed sample mapping and c-axis angle conversion**
 
 The batch function must use the same folder/file/sample/deformation arrays as `generate_c_axis_pole_figures.m`, load each CTF with `convertEuler2SpatialReferenceFrame`, select `Ti-Hex`, and compute:
 
@@ -216,7 +225,7 @@ randomFraction30 = 1 - cosd(30);
 randomFraction45 = 1 - cosd(45);
 ```
 
-- [ ] **Step 3: Write the two CSV files**
+- [ ] **Step 4: Write the two CSV files**
 
 Use:
 
@@ -229,13 +238,13 @@ writetable(distribution, fullfile(outputDir, ...
 
 Assert six summary rows, 270 distribution rows, finite metrics, valid ranges, per-sample bin counts equal Ti-Hex pixel counts, and per-sample probabilities sum to one.
 
-- [ ] **Step 4: Temporarily satisfy figure assertions with no implementation change**
+- [ ] **Step 5: Run the CSV integration test to verify it passes**
 
-Do not weaken or remove the four output-file assertions in the test. Run the integration test and confirm it now fails specifically because the two PNG files have not been generated.
+Run the integration command from Step 2.
 
-Expected: the two CSV files exist, while the test exits nonzero at `c_axis_ad_alignment_metrics.png`.
+Expected: MATLAB exits 0, creates both CSV files, and prints `C_AXIS_AD_ALIGNMENT_TESTS_OK`.
 
-- [ ] **Step 5: Commit the verified CSV analysis**
+- [ ] **Step 6: Commit the verified CSV analysis**
 
 ```powershell
 git add -- tools/mtex/generate_c_axis_ad_alignment_metrics.m results/mtex_c_axis_ad_alignment/c_axis_ad_alignment_summary.csv results/mtex_c_axis_ad_alignment/c_axis_ad_angle_distribution.csv
@@ -253,7 +262,18 @@ git commit -m "feat: summarize c-axis axial alignment metrics"
 - Consumes: `summary` and `distribution` tables assembled by Task 2.
 - Produces: two 300-dpi PNG figures with fixed dimensions and no interactive axes toolbar.
 
-- [ ] **Step 1: Implement the three-panel scalar comparison**
+- [ ] **Step 1: Add failing figure-output assertions**
+
+Inside the integration block of `test_c_axis_ad_alignment_metrics.m`, add:
+
+```matlab
+assert(isfile(fullfile(outputDir, "c_axis_ad_alignment_metrics.png")));
+assert(isfile(fullfile(outputDir, "c_axis_ad_angle_distribution.png")));
+```
+
+Run the full integration command. Expected: MATLAB exits nonzero because `c_axis_ad_alignment_metrics.png` does not exist.
+
+- [ ] **Step 2: Implement the three-panel scalar comparison**
 
 Create an invisible 1200×1000 figure and use `tiledlayout(3,1)`. Plot:
 
@@ -284,7 +304,7 @@ xlabel("Cold reduction (%)");
 
 Use sample labels as data labels, add legends, grids, panel labels `(a)`–`(c)`, and export at 300 dpi with a white background.
 
-- [ ] **Step 2: Implement the angle-distribution comparison**
+- [ ] **Step 3: Implement the angle-distribution comparison**
 
 Plot the six `probability_density_per_degree` series against `bin_center_deg`. Add the theoretical random curve:
 
@@ -297,13 +317,13 @@ plot(thetaReference, randomDensityPerDegree, "k--", ...
 
 Fix x limits to `[0,90]`, label axes `c-axis angle to AD (degree)` and `Probability density (degree^{-1})`, add a legend and grid, then export at 300 dpi with a white background.
 
-- [ ] **Step 3: Run the full integration test**
+- [ ] **Step 4: Run the full integration test**
 
 Run the Task 2 Step 1 command.
 
 Expected: MATLAB exits 0 and prints `C_AXIS_AD_ALIGNMENT_TESTS_OK` after importing all six scans, writing both CSVs, and exporting both figures.
 
-- [ ] **Step 4: Run static and repository checks**
+- [ ] **Step 5: Run static and repository checks**
 
 Run:
 
@@ -314,14 +334,13 @@ git diff --check
 
 Expected: MATLAB prints `CHECKCODE_OK`; `git diff --check` exits 0.
 
-- [ ] **Step 5: Visually inspect both PNG files**
+- [ ] **Step 6: Visually inspect both PNG files**
 
 Verify all sample labels are legible, the scalar figure contains three panels, the distribution figure contains six sample curves plus the random reference, axes are not clipped, and no axes toolbar appears.
 
-- [ ] **Step 6: Commit the figures and final generator**
+- [ ] **Step 7: Commit the figures and final generator**
 
 ```powershell
 git add -- tools/mtex/generate_c_axis_ad_alignment_metrics.m tools/mtex/test_c_axis_ad_alignment_metrics.m results/mtex_c_axis_ad_alignment
 git commit -m "feat: plot c-axis axial alignment evolution"
 ```
-
