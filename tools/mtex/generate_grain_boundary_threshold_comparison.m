@@ -16,7 +16,10 @@ end
 
 artifactNames = [
   "grain_boundary_threshold_comparison_summary.csv";
-  "grain_boundary_threshold_comparison_distribution.csv"
+  "grain_boundary_threshold_comparison_distribution.csv";
+  "grain_boundary_threshold_5deg.png";
+  "grain_boundary_threshold_15deg.png";
+  "grain_boundary_threshold_comparison.png"
 ];
 for artifactName = artifactNames'
   artifactPath = fullfile(outputDir, artifactName);
@@ -185,10 +188,20 @@ summaryFile = fullfile(outputDir, ...
   "grain_boundary_threshold_comparison_summary.csv");
 distributionFile = fullfile(outputDir, ...
   "grain_boundary_threshold_comparison_distribution.csv");
+figure5File = fullfile(outputDir, "grain_boundary_threshold_5deg.png");
+figure15File = fullfile(outputDir, "grain_boundary_threshold_15deg.png");
+comparisonFigureFile = fullfile(outputDir, ...
+  "grain_boundary_threshold_comparison.png");
 writetable(summary, summaryFile);
 writetable(distribution, distributionFile);
+plot_threshold_case(summary, distribution, 5, figure5File);
+plot_threshold_case(summary, distribution, 15, figure15File);
+plot_threshold_comparison(summary, comparisonFigureFile);
 fprintf("SUMMARY=%s\n", summaryFile);
 fprintf("DISTRIBUTION=%s\n", distributionFile);
+fprintf("FIGURE_5=%s\n", figure5File);
+fprintf("FIGURE_15=%s\n", figure15File);
+fprintf("COMPARISON_FIGURE=%s\n", comparisonFigureFile);
 end
 
 function audit = audit_full_native_scan(ebsdFull, ~)
@@ -249,4 +262,144 @@ for sampleName = sampleNames'
   assert(max(summary.total_eligible_boundary_length_um(rows)) - ...
     min(summary.total_eligible_boundary_length_um(rows)) < 1e-8);
 end
+end
+
+function plot_threshold_case(summary, distribution, cutoffDeg, outputFile)
+sampleNames = unique(summary.sample, "stable");
+sampleColors = lines(numel(sampleNames));
+caseSummary = summary(summary.classification_angle_deg == cutoffDeg, :);
+caseDistribution = distribution( ...
+  distribution.classification_angle_deg == cutoffDeg, :);
+distributionYMax = 1.08 * max(caseDistribution.probability_density_per_degree);
+densityYMax = 1.08 * max(summary.lagb_length_density_um_per_um2);
+
+figureHandle = figure("Visible", "off", "Color", "w", ...
+  "Position", [50 50 1600 1100]);
+cleanupFigure = onCleanup(@() close(figureHandle));
+layout = tiledlayout(figureHandle, 2, 2, "Padding", "compact", ...
+  "TileSpacing", "compact");
+
+fullAxes = nexttile(layout);
+hold(fullAxes, "on");
+for sampleIndex = 1:numel(sampleNames)
+  rows = caseDistribution.sample == sampleNames(sampleIndex);
+  plot(fullAxes, caseDistribution.bin_center_deg(rows), ...
+    caseDistribution.probability_density_per_degree(rows), ...
+    "LineWidth", 1.6, "Color", sampleColors(sampleIndex, :), ...
+    "DisplayName", sampleNames(sampleIndex));
+end
+xline(fullAxes, cutoffDeg, "--k", "LineWidth", 1.2, ...
+  "HandleVisibility", "off");
+xlim(fullAxes, [2 94]);
+ylim(fullAxes, [0 distributionYMax]);
+xlabel(fullAxes, "Ti-Hex boundary misorientation (degree)");
+ylabel(fullAxes, "Length-weighted probability density (degree^{-1})");
+title(fullAxes, "Full boundary-angle distribution");
+legend(fullAxes, "Location", "northeast", "NumColumns", 2);
+grid(fullAxes, "on");
+
+lowAxes = nexttile(layout);
+hold(lowAxes, "on");
+patch(lowAxes, [2 cutoffDeg cutoffDeg 2], ...
+  [0 0 distributionYMax distributionYMax], [0.85 0.91 0.98], ...
+  "FaceAlpha", 0.45, "EdgeColor", "none", ...
+  "HandleVisibility", "off");
+for sampleIndex = 1:numel(sampleNames)
+  rows = caseDistribution.sample == sampleNames(sampleIndex);
+  plot(lowAxes, caseDistribution.bin_center_deg(rows), ...
+    caseDistribution.probability_density_per_degree(rows), ...
+    "LineWidth", 1.6, "Color", sampleColors(sampleIndex, :), ...
+    "HandleVisibility", "off");
+end
+xline(lowAxes, cutoffDeg, "--k", "LineWidth", 1.2, ...
+  "Label", sprintf("%g degree cutoff", cutoffDeg), ...
+  "LabelVerticalAlignment", "middle", "HandleVisibility", "off");
+xlim(lowAxes, [2 20]);
+ylim(lowAxes, [0 distributionYMax]);
+xlabel(lowAxes, "Ti-Hex boundary misorientation (degree)");
+ylabel(lowAxes, "Length-weighted probability density (degree^{-1})");
+title(lowAxes, sprintf("Low-angle detail: 2-%g degree", cutoffDeg));
+grid(lowAxes, "on");
+
+fractionAxes = nexttile(layout);
+plot(fractionAxes, caseSummary.cold_reduction_percent, ...
+  100 * caseSummary.lagb_length_fraction, "-o", "LineWidth", 1.8, ...
+  "MarkerSize", 7, "MarkerFaceColor", [0.12 0.47 0.71], ...
+  "Color", [0.12 0.47 0.71]);
+xlabel(fractionAxes, "Cold reduction (%)");
+ylabel(fractionAxes, "LAGB length fraction (%)");
+title(fractionAxes, sprintf("2-%g degree boundary fraction", cutoffDeg));
+xlim(fractionAxes, [0 50]);
+ylim(fractionAxes, [0 100]);
+grid(fractionAxes, "on");
+
+densityAxes = nexttile(layout);
+plot(densityAxes, caseSummary.cold_reduction_percent, ...
+  caseSummary.lagb_length_density_um_per_um2, "-s", ...
+  "LineWidth", 1.8, "MarkerSize", 7, ...
+  "MarkerFaceColor", [0.84 0.15 0.16], "Color", [0.84 0.15 0.16]);
+xlabel(densityAxes, "Cold reduction (%)");
+ylabel(densityAxes, "LAGB length density (\mum \mum^{-2})");
+title(densityAxes, sprintf("2-%g degree boundary density", cutoffDeg));
+xlim(densityAxes, [0 50]);
+ylim(densityAxes, [0 densityYMax]);
+grid(densityAxes, "on");
+
+title(layout, sprintf("Classification cutoff = %g degree; " + ...
+  "Detection floor = 2 degree; length weighted", cutoffDeg), ...
+  "FontWeight", "bold");
+exportgraphics(figureHandle, outputFile, "Resolution", 300);
+clear cleanupFigure
+end
+
+function plot_threshold_comparison(summary, outputFile)
+cutoffsDeg = unique(summary.classification_angle_deg, "stable");
+lineColors = [0.12 0.47 0.71;0.84 0.15 0.16];
+markers = ["o";"s"];
+densityYMax = 1.08 * max(summary.lagb_length_density_um_per_um2);
+
+figureHandle = figure("Visible", "off", "Color", "w", ...
+  "Position", [50 50 1500 650]);
+cleanupFigure = onCleanup(@() close(figureHandle));
+layout = tiledlayout(figureHandle, 1, 2, "Padding", "compact", ...
+  "TileSpacing", "compact");
+
+metricNames = ["lagb_length_fraction"; ...
+  "lagb_length_density_um_per_um2"];
+yLabels = ["LAGB length fraction (%)"; ...
+  "LAGB length density (\mum \mum^{-2})"];
+panelTitles = ["Effect of LAGB upper cutoff on length fraction"; ...
+  "Effect of LAGB upper cutoff on length density"];
+for panelIndex = 1:2
+  axesHandle = nexttile(layout);
+  hold(axesHandle, "on");
+  for cutoffIndex = 1:numel(cutoffsDeg)
+    cutoffDeg = cutoffsDeg(cutoffIndex);
+    rows = summary.classification_angle_deg == cutoffDeg;
+    yValues = summary.(metricNames(panelIndex))(rows);
+    if panelIndex == 1
+      yValues = 100 * yValues;
+    end
+    plot(axesHandle, summary.cold_reduction_percent(rows), yValues, ...
+      "-" + markers(cutoffIndex), "LineWidth", 2, "MarkerSize", 8, ...
+      "Color", lineColors(cutoffIndex, :), ...
+      "MarkerFaceColor", lineColors(cutoffIndex, :), ...
+      "DisplayName", sprintf("2-%g degree", cutoffDeg));
+  end
+  xlabel(axesHandle, "Cold reduction (%)");
+  ylabel(axesHandle, yLabels(panelIndex));
+  title(axesHandle, panelTitles(panelIndex));
+  xlim(axesHandle, [0 50]);
+  if panelIndex == 1
+    ylim(axesHandle, [0 100]);
+  else
+    ylim(axesHandle, [0 densityYMax]);
+  end
+  legend(axesHandle, "Location", "best");
+  grid(axesHandle, "on");
+end
+title(layout, "Detection floor = 2 degree; same boundary population", ...
+  "FontWeight", "bold");
+exportgraphics(figureHandle, outputFile, "Resolution", 300);
+clear cleanupFigure
 end

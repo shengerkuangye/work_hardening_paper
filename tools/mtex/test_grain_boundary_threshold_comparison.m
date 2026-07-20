@@ -30,9 +30,22 @@ assert(abs(stats15.lagb_length_density_um_per_um2 - 0.15) < 1e-12);
 
 if scanRoot ~= ""
   assert(outputDir ~= "", "outputDir is required for integration testing.");
+  preGenerationText = string(fileread(which( ...
+    "generate_grain_boundary_threshold_comparison")));
+  requiredFigureText = [
+    "grain_boundary_threshold_5deg.png";
+    "grain_boundary_threshold_15deg.png";
+    "grain_boundary_threshold_comparison.png";
+    "Detection floor = 2 degree"
+  ];
+  assert(all(contains(preGenerationText, requiredFigureText)), ...
+    "The generator does not yet implement the required comparison figures.");
   expectedFiles = [
     "grain_boundary_threshold_comparison_summary.csv";
-    "grain_boundary_threshold_comparison_distribution.csv"
+    "grain_boundary_threshold_comparison_distribution.csv";
+    "grain_boundary_threshold_5deg.png";
+    "grain_boundary_threshold_15deg.png";
+    "grain_boundary_threshold_comparison.png"
   ];
   prepare_empty_output_folder(outputDir, expectedFiles);
   generationStart = datetime("now");
