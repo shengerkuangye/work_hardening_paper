@@ -15,8 +15,11 @@ intended to distinguish the very-low-angle 2°–5° network from the broader
 - Detection/noise floor: 2° for both comparisons.
 - Classification case 1: LAGB is `2° <= theta < 5°`; HAGB is `theta >= 5°`.
 - Classification case 2: LAGB is `2° <= theta < 15°`; HAGB is `theta >= 15°`.
-- Grain reconstruction: full native EBSD grid, `unitCell`, `minPixel = 5`, no
-  boundary smoothing, and the corresponding two MTEX thresholds.
+- Grain reconstruction: reconstruct the full native EBSD grid once with
+  `unitCell`, `minPixel = 5`, no boundary smoothing, and MTEX thresholds
+  `[2°, 15°]`. Apply the 5° and 15° classification cutoffs afterward to the
+  same eligible boundary-segment population so that reconstruction differences
+  cannot be mistaken for a classification-threshold effect.
 - Weighting: boundary-segment length, not segment count.
 - Raw CTF files remain read-only.
 
@@ -59,7 +62,9 @@ sample order, axes, colors, and units where a direct comparison is intended.
   exists and then pass after implementation.
 - For every sample and threshold, LAGB plus HAGB length must equal total
   eligible boundary length and their fractions must sum to one.
-- The 5° LAGB network must be a subset of the 15° LAGB angle interval.
+- Both classification cases must have exactly the same total eligible boundary
+  length, and the 5° LAGB network must be an exact subset of the 15° LAGB
+  angle interval.
 - All twelve sample-threshold rows and all expected histogram bins must be
   present.
 - Full six-scan MATLAB integration, `checkcode`, PNG visual inspection, and

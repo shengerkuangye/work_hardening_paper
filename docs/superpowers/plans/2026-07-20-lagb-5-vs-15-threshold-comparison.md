@@ -4,14 +4,16 @@
 
 **Goal:** Generate reproducible MTEX statistics and figures comparing 2°–5° and 2°–15° Ti-Hex low-angle boundary definitions for all six EBSD scans.
 
-**Architecture:** Add one pure MATLAB metric helper and one independent batch generator that reuses the validated native-grid boundary partition and weighted-histogram helpers. Keep the detection floor fixed at 2°, reconstruct each 5°/15° classification case from the full EBSD grid, and write all new artifacts to a separate results directory.
+**Architecture:** Add one pure MATLAB metric helper and one independent batch generator that reuses the validated native-grid boundary partition and weighted-histogram helpers. Keep the detection floor fixed at 2°, reconstruct one common `[2°,15°]` boundary population from the full EBSD grid, classify that same population at 5° and 15°, and write all new artifacts to a separate results directory.
 
 **Tech Stack:** MATLAB R2025a, MTEX 6.1.1, native MATLAB tables/graphics, PowerShell verification.
 
 ## Global Constraints
 
 - Read only the six original CTF scans; never use `_denoised.ctf` inputs.
-- Keep the detection floor fixed at 2° and compare classification angles 5° and 15°.
+- Keep the detection floor fixed at 2°, reconstruct once with `[2°,15°]`, and
+  compare post-reconstruction classification angles 5° and 15° on the same
+  eligible boundary population.
 - Use full-grid `calcGrains(...,'unitCell',...,'minPixel',5)` without smoothing.
 - Analyze indexed Ti-Hex/Ti-Hex boundary segments and weight statistics by segment length.
 - Do not overwrite `results/mtex_grain_boundary_misorientation/`.
@@ -97,18 +99,20 @@ Expected: failure because the generator is undefined.
 
 - [ ] **Step 3: Implement the batch generator**
 
-For each scan and each `classificationAngleDeg` in `[5;15]`, load the original
-CTF, audit the 600×600 native grid, call:
+For each scan, load the original CTF, audit the 600×600 native grid, and call
+once:
 
 ```matlab
 [grains, ebsdFull.grainId] = calcGrains(ebsdFull, 'unitCell', ...
-  'threshold', [2 classificationAngleDeg] * degree, 'minPixel', 5);
+  'threshold', [2 15] * degree, 'minPixel', 5);
 ```
 
 Select Ti-Hex/Ti-Hex `innerBoundary` and `boundary`, pass their angles and
-lengths through `partition_ti_hex_boundary_segments`, verify persistent EBSD
-endpoint adjacency with `audit_native_grid_pairs`, calculate metrics with the
-Task 1 helper, and summarize `1:0.5:94` bins with
+lengths through `partition_ti_hex_boundary_segments` using the conventional
+15° reconstruction classification, and verify persistent EBSD endpoint
+adjacency with `audit_native_grid_pairs`. Apply the Task 1 helper to this same
+angle/length population first at 5° and then at 15°, and summarize
+`1:0.5:94` bins with
 `summarize_weighted_boundary_angles`. Write the two CSV files after validating
 all rows and conservation identities.
 
