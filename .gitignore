@@ -1,5 +1,6 @@
 .codex_deps/
 .codex_tmp/
+.worktrees/
 pdf_deps/
 __pycache__/
 *.py[cod]
