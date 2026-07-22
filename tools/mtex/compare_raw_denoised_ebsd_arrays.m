@@ -1,0 +1,47 @@
+function changes = compare_raw_denoised_ebsd_arrays( ...
+  rawPhase, denoisedPhase, rawIndexed, denoisedIndexed, ...
+  rawHexPhaseId, denoisedHexPhaseId, orientationCandidateDeg, ...
+  rawQuality, denoisedQuality)
+%COMPARE_RAW_DENOISED_EBSD_ARRAYS Audit pointwise paired array changes.
+
+rawPhase = double(rawPhase(:));
+denoisedPhase = double(denoisedPhase(:));
+rawIndexed = logical(rawIndexed(:));
+denoisedIndexed = logical(denoisedIndexed(:));
+orientationCandidateDeg = double(orientationCandidateDeg(:));
+pointCount = numel(rawPhase);
+assert(all([numel(denoisedPhase), numel(rawIndexed), ...
+  numel(denoisedIndexed), numel(orientationCandidateDeg)] == pointCount), ...
+  "All paired pointwise arrays must have equal length.");
+assert(isscalar(rawHexPhaseId) && isscalar(denoisedHexPhaseId));
+
+changes = struct();
+changes.phase_changed = rawPhase ~= denoisedPhase;
+changes.indexing_changed = rawIndexed ~= denoisedIndexed;
+changes.common_ti_hex = rawIndexed & denoisedIndexed & ...
+  rawPhase == rawHexPhaseId & denoisedPhase == denoisedHexPhaseId;
+changes.orientation_change_deg = nan(pointCount, 1);
+changes.orientation_change_deg(changes.common_ti_hex) = ...
+  orientationCandidateDeg(changes.common_ti_hex);
+changes.orientation_changed = isfinite(changes.orientation_change_deg) & ...
+  changes.orientation_change_deg > 1e-10;
+
+qualityNames = ["mad","bc","bs","bands","error"];
+for qualityName = qualityNames
+  fieldName = char(qualityName);
+  assert(isfield(rawQuality, fieldName) && ...
+    isfield(denoisedQuality, fieldName), ...
+    "Both quality structs must contain %s.", qualityName);
+  rawValues = double(rawQuality.(fieldName)(:));
+  denoisedValues = double(denoisedQuality.(fieldName)(:));
+  assert(numel(rawValues) == pointCount && ...
+    numel(denoisedValues) == pointCount, ...
+    "Quality field %s must match the point count.", qualityName);
+  differenceName = char(qualityName + "_difference");
+  changedName = char(qualityName + "_changed");
+  changes.(differenceName) = denoisedValues - rawValues;
+  same = rawValues == denoisedValues | ...
+    (isnan(rawValues) & isnan(denoisedValues));
+  changes.(changedName) = ~same;
+end
+end

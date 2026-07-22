@@ -167,5 +167,37 @@ for summaryIndex = 1:numel(summaryNames)
     expectedSummaryColumns.(name)));
 end
 
+foundationFunctions = [ ...
+  "comprehensive_ebsd_catalog.m"
+  "load_comprehensive_ebsd_scan.m"
+  "reconstruct_comprehensive_grains.m"
+  "sha256_file.m"
+  "compare_raw_denoised_ebsd_arrays.m"
+  "compare_raw_denoised_ebsd.m"
+  "comprehensive_ebsd_change_map_limits.m"
+  "generate_comprehensive_ebsd_audit.m"
+];
+toolDir = fileparts(mfilename("fullpath"));
+for fileName = foundationFunctions'
+  functionPath = fullfile(toolDir, fileName);
+  assert(isfile(functionPath), "Missing foundation function: %s", fileName);
+end
+
+reconstructionText = fileread(fullfile(toolDir, ...
+  "reconstruct_comprehensive_grains.m"));
+assert(contains(reconstructionText, "calcGrains(ebsdFull, 'unitCell'"));
+assert(~contains(reconstructionText, "smooth("));
+assert(~contains(reconstructionText, "gridify("));
+assert(~contains(reconstructionText, "calcGrains(ebsdFull('indexed')"));
+assert(~contains(reconstructionText, "calcGrains(ebsd('indexed')"));
+
+auditGeneratorText = fileread(fullfile(toolDir, ...
+  "generate_comprehensive_ebsd_audit.m"));
+assert(contains(auditGeneratorText, ...
+  "Raw/denoised EBSD pointwise audit (raw is primary)"));
+assert(contains(auditGeneratorText, "denoised - raw"));
+assert(contains(auditGeneratorText, '"AD (um)"'));
+assert(contains(auditGeneratorText, '"TD/RD (um)"'));
+
 fprintf("test_comprehensive_ebsd_contract passed\n");
 end
