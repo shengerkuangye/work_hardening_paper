@@ -16,11 +16,16 @@ if any(invalid, "all")
     "invalid values cannot be discarded.");
 end
 
-zeroRows = any(endpointIds == 0, 2);
-if boundaryKind == "inner" && any(zeroRows)
+zeroCount = sum(endpointIds == 0, 2);
+if boundaryKind == "outer" && any(zeroCount == 2)
+  error("validate_filter_boundary_endpoint_ids:DegenerateOuterEndpoint", ...
+    "An outer scan-perimeter boundary row must contain exactly one " + ...
+    "zero endpoint and one positive endpoint.");
+end
+if boundaryKind == "inner" && any(zeroCount > 0)
   error("validate_filter_boundary_endpoint_ids:UnexpectedZeroEndpoint", ...
     "Only outer scan-perimeter boundary rows may contain zero endpoints.");
 end
-removedRows = boundaryKind == "outer" & zeroRows;
+removedRows = boundaryKind == "outer" & zeroCount == 1;
 filteredEndpointIds = endpointIds(~removedRows, :);
 end
