@@ -133,6 +133,7 @@ contract.parameters.grid_x_cells = 600;
 contract.parameters.grid_y_cells = 600;
 contract.parameters.x_step_um = 0.5;
 contract.parameters.y_step_um = 0.5;
+contract.parameters.orientation_change_tolerance_deg = 1e-4;
 contract.parameters.primary_grain_detection_deg = 2;
 contract.parameters.boundary_classification_deg = 15;
 contract.parameters.min_grain_pixels = 5;

@@ -72,6 +72,7 @@ expectedParameterFields = [
   "grid_y_cells"
   "x_step_um"
   "y_step_um"
+  "orientation_change_tolerance_deg"
   "primary_grain_detection_deg"
   "boundary_classification_deg"
   "min_grain_pixels"
@@ -88,7 +89,7 @@ expectedParameterFields = [
 assert(isequal(string(fieldnames(contract.parameters)), ...
   expectedParameterFields));
 expectedParameterValues = { ...
-  "AD", "TD_RD", "ND", 600, 600, 0.5, 0.5, 2, 15, 5, ...
+  "AD", "TD_RD", "ND", 600, 600, 0.5, 0.5, 1e-4, 2, 15, 5, ...
   [0.5 1 2 5], [1 2], [2 5], 5, 5, 5, 5, "raw", "denoised"};
 for parameterIndex = 1:numel(expectedParameterFields)
   name = expectedParameterFields(parameterIndex);
@@ -171,6 +172,7 @@ foundationFunctions = [ ...
   "comprehensive_ebsd_catalog.m"
   "load_comprehensive_ebsd_scan.m"
   "reconstruct_comprehensive_grains.m"
+  "validate_filter_boundary_endpoint_ids.m"
   "sha256_file.m"
   "compare_raw_denoised_ebsd_arrays.m"
   "compare_raw_denoised_ebsd.m"

@@ -26,9 +26,11 @@ assert(isequal(double(ebsdFull.id(:)), sourceIds), ...
 xValues = unique(double(ebsdFull.x(:)));
 yValues = unique(double(ebsdFull.y(:)));
 outerEndpointIds = double(grains.boundary.ebsdId);
-outerEndpointIds = outerEndpointIds(all(outerEndpointIds > 0 & ...
-  isfinite(outerEndpointIds), 2), :);
+[outerEndpointIds, removedOuterRows] = ...
+  validate_filter_boundary_endpoint_ids(outerEndpointIds, "outer");
 innerEndpointIds = double(grains.innerBoundary.ebsdId);
+[innerEndpointIds, ~] = ...
+  validate_filter_boundary_endpoint_ids(innerEndpointIds, "inner");
 boundaryEndpointIds = [outerEndpointIds; innerEndpointIds];
 nativeGridAudit = audit_native_grid_pairs(boundaryEndpointIds, ...
   sourceIds, [double(ebsdFull.x(:)), double(ebsdFull.y(:))], ...
@@ -45,5 +47,6 @@ recon.small_grain_count = nnz(~summaryMask);
 recon.summary_grain_ids = double(grains.id(summaryMask));
 recon.mapped_pixel_count = length(ebsdFull);
 recon.indexed_pixel_count = nnz(ebsdFull.isIndexed);
+recon.scan_perimeter_boundary_face_count = nnz(removedOuterRows);
 recon.native_grid_audit = nativeGridAudit;
 end
