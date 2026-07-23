@@ -14,6 +14,8 @@ assert(height(selected) == 12);
 key = selected.sample + "|" + selected.variant;
 assert(numel(unique(key)) == 12);
 expectedReduction = [0;14.31;26.04;36;43.75;48.98];
+expectedSample = ["7d";"6.48d";"6.02d";"5.6d";"5.25d";"5d"];
+expectedDiameter = [7;6.48;6.02;5.6;5.25;5];
 prepared = struct();
 for variantName = ["raw","denoised"]
   variantRows = selected(selected.variant == variantName,:);
@@ -21,7 +23,15 @@ for variantName = ["raw","denoised"]
   assert(height(variantRows) == 6);
   assert(max(abs(variantRows.cold_reduction_percent - ...
     expectedReduction)) < 1e-10);
+  assert(isequal(variantRows.sample,expectedSample));
+  assert(max(abs(variantRows.diameter_mm - expectedDiameter)) < 1e-10);
   assert(all(isfinite(variantRows{:,6:8}),"all"));
+  assert(all(variantRows.c_axis_ad_p10_deg <= ...
+    variantRows.c_axis_ad_mean_deg));
+  assert(all(variantRows.c_axis_ad_p10_deg >= 0));
+  assert(all(variantRows.c_axis_ad_mean_deg <= ...
+    variantRows.c_axis_ad_p90_deg));
+  assert(all(variantRows.c_axis_ad_p90_deg <= 90));
   prepared.(variantName) = variantRows;
 end
 prepared.cold_reduction_percent = expectedReduction;
