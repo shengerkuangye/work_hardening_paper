@@ -164,8 +164,7 @@ Add:
 ```matlab
 function test_formal_generation(scanRoot, outputRoot)
 catalog = comprehensive_ebsd_catalog(scanRoot);
-rawPaths = catalog.input_path(catalog.variant == "raw");
-[beforeBytes,beforeTimes] = input_stats(rawPaths);
+[beforeBytes,beforeTimes] = input_stats(catalog.input_path);
 metadata = generate_c_axis_paper_figures(scanRoot,outputRoot);
 expected = ["c_axis_pole_figures_raw.png"; ...
   "c_axis_pole_figures_denoised.png"; ...
@@ -181,7 +180,7 @@ for fileName = expected'
   info = dir(fullfile(textureDir,fileName));
   assert(isscalar(info) && info.bytes > 0);
 end
-[afterBytes,afterTimes] = input_stats(rawPaths);
+[afterBytes,afterTimes] = input_stats(catalog.input_path);
 assert(isequal(beforeBytes,afterBytes));
 assert(isequal(beforeTimes,afterTimes));
 end
