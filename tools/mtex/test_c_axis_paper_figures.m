@@ -39,3 +39,37 @@ assert(prepared.common_y_limits_deg(2) >= ...
   max([prepared.raw.c_axis_ad_p90_deg; ...
   prepared.denoised.c_axis_ad_p90_deg]));
 end
+
+function test_formal_generation(scanRoot, outputRoot)
+catalog = comprehensive_ebsd_catalog(scanRoot);
+[beforeBytes,beforeTimes] = input_stats(catalog.input_path);
+metadata = generate_c_axis_paper_figures(scanRoot,outputRoot);
+expected = ["c_axis_pole_figures_raw.png"; ...
+  "c_axis_pole_figures_denoised.png"; ...
+  "c_axis_mean_orientation_raw.png"; ...
+  "c_axis_mean_orientation_denoised.png"];
+assert(isequal(metadata.output_name,expected));
+assert(height(metadata) == 4);
+assert(numel(unique(metadata.pole_color_max_mrd(1:2))) == 1);
+assert(numel(unique(metadata.y_min_deg(3:4))) == 1);
+assert(numel(unique(metadata.y_max_deg(3:4))) == 1);
+textureDir = fullfile(outputRoot,"05_texture");
+for fileName = expected'
+  info = dir(fullfile(textureDir,fileName));
+  assert(isscalar(info) && info.bytes > 0);
+end
+[afterBytes,afterTimes] = input_stats(catalog.input_path);
+assert(isequal(beforeBytes,afterBytes));
+assert(isequal(beforeTimes,afterTimes));
+end
+
+function [bytes,times] = input_stats(paths)
+bytes = zeros(numel(paths),1);
+times = zeros(numel(paths),1);
+for pathIndex = 1:numel(paths)
+  info = dir(paths(pathIndex));
+  assert(isscalar(info));
+  bytes(pathIndex) = info.bytes;
+  times(pathIndex) = info.datenum;
+end
+end
