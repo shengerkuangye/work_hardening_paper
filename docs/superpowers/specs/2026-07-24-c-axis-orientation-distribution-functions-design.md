@@ -25,8 +25,9 @@ Use the existing comprehensive EBSD texture data under
 - The alpha-Ti c-axis is antipodal, so `c` and `-c` are equivalent.
 - `raw_full` is the primary condition-level result.
 - `denoised_full` is shown in separate figures as requested.
-- `denoised_raw_common` is retained as a paired processing-sensitivity result
-  and is not treated as an independent sample.
+- `raw_common` and `denoised_raw_common` use the same persistent-source-ID
+  intersection and are retained as a paired processing-sensitivity result.
+  Neither is treated as an independent sample.
 - Pixel/area weighting is the primary weighting.
 - Area-weighted grain-mean orientations are a sensitivity result and do not
   appear as additional curves in the main figures.
@@ -218,10 +219,10 @@ The generator reads the existing per-orientation c-axis CSV and does not
 re-import all CTF files when the required registered orientations and weights
 are present.
 
-For `denoised_raw_common`, pixel-weighted rows are paired by persistent source
-ID and sample. Phase-changed or missing pairs are excluded and counted.
-Grain-mean rows are not paired by grain ID across processing variants because
-grain reconstruction may change their identity.
+For `raw_common` and `denoised_raw_common`, pixel-weighted rows are paired by
+persistent source ID and sample. Phase-changed or missing pairs are excluded and
+counted. Grain-mean rows are not paired by grain ID across processing variants
+because grain reconstruction may change their identity.
 
 The one-dimensional distribution calculation and spherical density evaluation
 are separate pure functions so they can be tested without plotting or file I/O.
