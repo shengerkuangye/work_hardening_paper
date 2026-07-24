@@ -9,6 +9,10 @@ assert(parallel.observed_probability(1) == 1);
 assert(all(parallel.observed_probability(2:end) == 0));
 assert(abs(audit.valid_source_weight-4) < 1e-12);
 assert(abs(audit.random_probability_sum-1) < 1e-12);
+expectedRandomProbability = ...
+  cosd(edges(1:end-1)')-cosd(edges(2:end)');
+assert(max(abs(parallel.random_probability- ...
+  expectedRandomProbability)) < 1e-15);
 
 normal = compute_c_axis_ad_distribution([90;90],[1;1],edges);
 assert(normal.observed_probability(end) == 1);
