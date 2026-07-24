@@ -37,6 +37,27 @@ assert(audit.canonicalized_source_count == 1);
   [-0.4 -0.8 -0.2],[1],18,72,7.5);
 assert(max(abs(positive.mrd-negative.mrd)) < 1e-10);
 
+theta = [12;20;28];
+phi = [0;55;120];
+sharpXyz = [cosd(theta), ...
+  sind(theta).*cosd(phi),sind(theta).*sind(phi)];
+[sharp,sharpFunction,sharpAudit] = ...
+  compute_c_axis_spherical_distribution( ...
+  sharpXyz,[1;2;1],36,144,5);
+assert(all(sharp.mrd >= 0));
+assert(abs(sum(sharp.cell_weight .* sharp.mrd)-1) < 5e-12);
+[~,sharpGridVectors] = build_c_axis_equal_area_grid(36,144);
+sharpFunctionMrd = double(sharpFunction.eval(sharpGridVectors));
+assert(all(sharpFunctionMrd >= 0));
+assert(max(abs(sharpFunctionMrd-sharp.mrd)) < 0.01);
+assert(abs(sum(sharp.cell_weight .* sharpFunctionMrd)-1) < 1e-5);
+assert(sharpAudit.raw_minimum_mrd < 0);
+assert(sharpAudit.raw_negative_mass > 0);
+assert(sharpAudit.raw_negative_mass < 0.005);
+assert(sharpAudit.raw_negative_cell_fraction > 0);
+assert(sharpAudit.maximum_negative_mass == 0.01);
+assert(sharpAudit.nonnegative_projection_scale < 1);
+
 [grid,gridVectors] = build_c_axis_equal_area_grid(36,144);
 randomXYZ = [gridVectors.x(:),gridVectors.y(:),gridVectors.z(:)];
 random = compute_c_axis_spherical_distribution( ...
