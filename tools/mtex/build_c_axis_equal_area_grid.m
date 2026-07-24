@@ -12,10 +12,10 @@ x = muGrid;
 y = radial .* cosd(phiGridDeg);
 z = radial .* sind(phiGridDeg);
 gridVectors = vector3d(x(:),y(:),z(:));
-gridIndex = (1:numel(x))';
+grid_index = (1:numel(x))';
 theta_ad_deg = thetaGridDeg(:);
 phi_about_ad_deg = phiGridDeg(:);
 cell_weight = repmat(1/numel(x),numel(x),1);
-gridTable = table(gridIndex,theta_ad_deg,phi_about_ad_deg, ...
+gridTable = table(grid_index,theta_ad_deg,phi_about_ad_deg, ...
   cell_weight);
 end

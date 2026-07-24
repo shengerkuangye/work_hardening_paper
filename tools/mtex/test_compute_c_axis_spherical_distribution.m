@@ -9,6 +9,8 @@ end
 function test_equal_area_grid()
 [grid,gridVectors] = build_c_axis_equal_area_grid(18,72);
 assert(height(grid) == 18*72);
+assert(isequal(string(grid.Properties.VariableNames), ...
+  ["grid_index","theta_ad_deg","phi_about_ad_deg","cell_weight"]));
 assert(length(gridVectors) == height(grid));
 assert(abs(sum(grid.cell_weight)-1) < 1e-12);
 assert(all(grid.theta_ad_deg > 0 & grid.theta_ad_deg < 90));
