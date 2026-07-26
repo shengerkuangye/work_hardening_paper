@@ -1,0 +1,173 @@
+function test_comprehensive_morphology_sensitivity(scanRoot, outputRoot)
+%TEST_COMPREHENSIVE_MORPHOLOGY_SENSITIVITY Independent sensitivity tests.
+
+assert(~isempty(which("grain2d")), ...
+  "MTEX is not loaded in the current MATLAB session.");
+test_synthetic_summary_rows();
+
+if nargin >= 1
+  assert(nargin == 2, ...
+    "Full-data testing requires scanRoot and outputRoot.");
+  test_full_data(string(scanRoot), string(outputRoot));
+end
+
+fprintf("test_comprehensive_morphology_sensitivity passed\n");
+end
+
+function test_synthetic_summary_rows()
+grains = synthetic_rectangular_grains();
+meta = table("synthetic", 1, 0, "raw", 'VariableNames', ...
+  {'sample','diameter_mm','cold_reduction_percent','variant'});
+
+domainRows = compute_morphology_sensitivity_rows(grains, meta, ...
+  "orientation_domain", 2, [1 3 5 10]);
+assert(height(domainRows) == 4);
+assert(isequal(domainRows.min_grain_pixels, [1;3;5;10]));
+assert(all(domainRows.grain_detection_deg == 2));
+assert(all(domainRows.object_type == "orientation_domain"));
+assert(isequal(domainRows.reconstructed_object_count_all, ...
+  repmat(4,4,1)));
+assert(isequal(domainRows.retained_object_count, [4;3;2;1]));
+assert(isequal(domainRows.retained_domain_count, [4;3;2;1]));
+assert(all(isnan(domainRows.retained_grain_count)));
+assert(max(abs(domainRows.retained_area_fraction - ...
+  [1;0.75;0.5;0.25])) < 1e-12);
+assert(max(abs(domainRows.excluded_area_fraction + ...
+  domainRows.retained_area_fraction - 1)) < 1e-12);
+assert(all(domainRows.coordinate_x == "AD"));
+assert(~any(domainRows.grain_smoothing_applied));
+
+hagbRow = compute_morphology_sensitivity_rows(grains, meta, ...
+  "hagb_grain", 15, 5);
+assert(height(hagbRow) == 1);
+assert(hagbRow.object_type == "hagb_grain");
+assert(hagbRow.retained_grain_count == 2);
+assert(isnan(hagbRow.retained_domain_count));
+assert(hagbRow.grain_detection_deg == 15);
+
+options = struct("grain_detection_deg", 2, ...
+  "min_grain_pixels", 5);
+[~, formalLike] = compute_grain_morphology_metrics(grains, meta, options);
+assert(abs(domainRows.retained_area_um2(3) - ...
+  formalLike.total_area_um2) < 1e-12);
+assert(domainRows.retained_object_count(3) == formalLike.grain_count);
+assert(abs(domainRows.ecd_number_median_um(3) - ...
+  formalLike.ecd_number_median_um) < 1e-12);
+assert(abs(domainRows.ecd_area_weighted_median_um(3) - ...
+  formalLike.ecd_area_weighted_median_um) < 1e-12);
+assert(abs(domainRows.aspect_ratio_number_median(3) - ...
+  formalLike.aspect_ratio_number_median) < 1e-12);
+assert(abs(domainRows.aspect_ratio_area_weighted_median(3) - ...
+  formalLike.aspect_ratio_area_weighted_median) < 1e-12);
+assert(abs(domainRows.long_axis_ad_angle_area_weighted_median_deg(3) - ...
+  formalLike.long_axis_ad_angle_area_weighted_median_deg) < 1e-12);
+
+expectedColumns = ["sample","diameter_mm", ...
+  "cold_reduction_percent","variant","object_type", ...
+  "grain_detection_deg","min_grain_pixels", ...
+  "coordinate_x","grain_smoothing_applied", ...
+  "reconstructed_object_count_all","retained_object_count", ...
+  "excluded_object_count","retained_domain_count", ...
+  "retained_grain_count","all_object_area_um2", ...
+  "retained_area_um2","retained_area_fraction", ...
+  "excluded_area_fraction","ecd_number_median_um", ...
+  "ecd_area_weighted_median_um", ...
+  "aspect_ratio_number_median", ...
+  "aspect_ratio_area_weighted_median", ...
+  "long_axis_ad_angle_area_weighted_median_deg"];
+assert(isequal(string(domainRows.Properties.VariableNames), ...
+  expectedColumns));
+end
+
+function grains = synthetic_rectangular_grains()
+xBreaks = 0:4;
+vertices = [xBreaks(:), zeros(5,1); xBreaks(:), ones(5,1)];
+polygons = cell(4,1);
+for grainIndex = 1:4
+  lowerLeft = grainIndex;
+  lowerRight = grainIndex + 1;
+  upperLeft = grainIndex + 5;
+  upperRight = grainIndex + 6;
+  polygons{grainIndex} = [lowerLeft lowerRight upperRight ...
+    upperLeft lowerLeft];
+end
+grains = grain2d(vertices, polygons, [], 'id', (1:4)');
+grains.numPixel = [1;3;5;10];
+end
+
+function test_full_data(scanRoot, outputRoot)
+assert(isfolder(scanRoot), "EBSD scan folder not found: %s", scanRoot);
+formalFile = fullfile(outputRoot, "02_grain_morphology", ...
+  "grain_morphology_summary.csv");
+assert(isfile(formalFile), ...
+  "Formal morphology summary not found: %s", formalFile);
+
+catalog = comprehensive_ebsd_catalog(scanRoot);
+rawCatalog = catalog(catalog.variant == "raw", :);
+[beforeBytes, beforeTimes] = input_file_stats(rawCatalog.input_path);
+summary = generate_comprehensive_morphology_sensitivity( ...
+  scanRoot, outputRoot);
+
+assert(height(summary) == 30);
+assert(all(summary.variant == "raw"));
+assert(nnz(summary.object_type == "orientation_domain") == 24);
+assert(nnz(summary.object_type == "hagb_grain") == 6);
+assert(isequal(unique(summary.min_grain_pixels( ...
+  summary.object_type == "orientation_domain")), [1;3;5;10]));
+assert(all(summary.grain_detection_deg( ...
+  summary.object_type == "orientation_domain") == 2));
+assert(all(summary.grain_detection_deg( ...
+  summary.object_type == "hagb_grain") == 15));
+assert(all(summary.min_grain_pixels( ...
+  summary.object_type == "hagb_grain") == 5));
+
+sensitivityDir = fullfile(outputRoot, "09_sensitivity");
+csvFile = fullfile(sensitivityDir, ...
+  "morphology_sensitivity_summary.csv");
+figureFile = fullfile(sensitivityDir, ...
+  "morphology_sensitivity_trends.png");
+assert(isfile(csvFile) && dir(csvFile).bytes > 0);
+assert(isfile(figureFile) && dir(figureFile).bytes > 0);
+csvSummary = readtable(csvFile, 'TextType', 'string');
+assert(isequal(string(csvSummary.Properties.VariableNames), ...
+  string(summary.Properties.VariableNames)));
+assert(height(csvSummary) == height(summary));
+
+formal = readtable(formalFile, 'TextType', 'string');
+formal = formal(formal.variant == "raw", :);
+primary = summary(summary.object_type == "orientation_domain" & ...
+  summary.grain_detection_deg == 2 & ...
+  summary.min_grain_pixels == 5, :);
+primary = sortrows(primary, "cold_reduction_percent");
+formal = sortrows(formal, "cold_reduction_percent");
+assert(isequal(primary.sample, formal.sample));
+assert(isequal(primary.retained_object_count, formal.grain_count));
+comparison = [ ...
+  primary.retained_area_um2 - formal.total_area_um2, ...
+  primary.ecd_number_median_um - formal.ecd_number_median_um, ...
+  primary.ecd_area_weighted_median_um - ...
+    formal.ecd_area_weighted_median_um, ...
+  primary.aspect_ratio_number_median - ...
+    formal.aspect_ratio_number_median, ...
+  primary.aspect_ratio_area_weighted_median - ...
+    formal.aspect_ratio_area_weighted_median, ...
+  primary.long_axis_ad_angle_area_weighted_median_deg - ...
+    formal.long_axis_ad_angle_area_weighted_median_deg];
+assert(max(abs(comparison), [], "all") < 1e-10, ...
+  "2 degree/minPixel 5 sensitivity rows differ from formal morphology.");
+
+[afterBytes, afterTimes] = input_file_stats(rawCatalog.input_path);
+assert(isequal(beforeBytes, afterBytes));
+assert(isequal(beforeTimes, afterTimes));
+end
+
+function [bytes, times] = input_file_stats(paths)
+bytes = nan(numel(paths),1);
+times = nan(numel(paths),1);
+for pathIndex = 1:numel(paths)
+  info = dir(paths(pathIndex));
+  assert(isscalar(info));
+  bytes(pathIndex) = info.bytes;
+  times(pathIndex) = info.datenum;
+end
+end
