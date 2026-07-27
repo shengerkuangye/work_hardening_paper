@@ -19,8 +19,15 @@ assert(height(sampleSummary) == 6);
 assert(height(sectionSummary) == 42);
 assert(isequal(sampleSummary.sample,["7d";"6.48d";"6.02d";"5.6d";"5.25d";"5d"]));
 assert(isequal(sampleSummary.diameter_mm,[7;6.48;6.02;5.6;5.25;5]));
-expectedColdReductionPercent = [0;14.305306;26.04;36;43.75;48.979592];
-assert(all(abs(sampleSummary.cold_reduction_percent - expectedColdReductionPercent) < 1e-6));
+rawCatalog = comprehensive_ebsd_catalog(scanRoot);
+rawCatalog = rawCatalog(rawCatalog.variant == "raw",:);
+[isRegistered,catalogOrder] = ismember(sampleSummary.sample,rawCatalog.sample);
+assert(all(isRegistered) && numel(unique(catalogOrder)) == 6);
+registeredCatalog = rawCatalog(catalogOrder,:);
+assert(isequal(registeredCatalog.cold_reduction_percent, ...
+  [0;14.31;26.04;36;43.75;48.98]));
+assert(isequal(sampleSummary.cold_reduction_percent, ...
+  registeredCatalog.cold_reduction_percent));
 assert(all(sampleSummary.valid_ti_hex_orientation_count > 0));
 assert(all(strlength(sampleSummary.input_path) > 0));
 assert(all(arrayfun(@isfile,sampleSummary.input_path)));

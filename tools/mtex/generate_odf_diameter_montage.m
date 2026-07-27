@@ -80,8 +80,7 @@ assert(isfinite(globalMaximumMrd) && globalMaximumMrd > 0);
 
 sample = catalog.sample;
 diameter_mm = catalog.diameter_mm;
-cold_reduction_percent = ...
-  (1 - (diameter_mm ./ diameter_mm(1)).^2) * 100;
+cold_reduction_percent = catalog.cold_reduction_percent;
 input_path = catalog.input_path;
 valid_ti_hex_orientation_count = validTiHexOrientationCount;
 crystal_symmetry = repmat("6/mmm",sampleCount,1);

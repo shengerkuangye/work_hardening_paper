@@ -98,11 +98,11 @@ The global seven-section color-limit maximum is
 | Sample | Diameter (mm) | Cold reduction (%) | Valid Ti-Hex orientations | Maximum of 7 sections (MRD) |
 |---|---:|---:|---:|---:|
 | 7d | 7.00 | 0 | 358203 | 9.89035261390408 |
-| 6.48d | 6.48 | 14.305306122449 | 350441 | 8.71699374087264 |
+| 6.48d | 6.48 | 14.31 | 350441 | 8.71699374087264 |
 | 6.02d | 6.02 | 26.04 | 355266 | 7.16900270789942 |
 | 5.6d | 5.60 | 36 | 335389 | 7.74574847172371 |
 | 5.25d | 5.25 | 43.75 | 317224 | 10.4912388697768 |
-| 5d | 5.00 | 48.9795918367347 | 328099 | 8.52463479098233 |
+| 5d | 5.00 | 48.98 | 328099 | 8.52463479098233 |
 
 The seven section maxima in `phi2 = 0,10,...,60 deg` order are:
 
@@ -132,14 +132,67 @@ The seven section maxima in `phi2 = 0,10,...,60 deg` order are:
   used for all 42 sections.
 - The sample and section table schemas, row counts, diameter-major ordering,
   and `phi2` ordering match the test contract.
-- Cold reduction is calculated from area reduction relative to the 7 mm
-  starting diameter because the shared catalog stores two-decimal rounded
-  values for some samples.
+- Cold reduction is copied directly from the sorted raw catalog so the output
+  preserves registered metadata without recalculation.
 - `git diff --check` reported no whitespace errors.
-- The existing test file and all raw EBSD inputs were left unchanged.
+- All raw EBSD inputs were left unchanged. The test changed only to add the
+  registered-metadata regression contract described below.
 
 ## Remaining concern / intentional gap
 
 The only intentional gap is PNG/PDF rendering, assigned to the subsequent
 task. Consequently, the full test exits nonzero at the first image assertion;
 all non-image checks, including separate CSV round-trip validation, pass.
+
+## Review fix: preserve registered cold-reduction metadata
+
+An Important review finding identified that the initial implementation
+recalculated `cold_reduction_percent` from diameter instead of preserving the
+registered raw catalog metadata. The test was updated first to construct
+`comprehensive_ebsd_catalog(scanRoot)`, filter its raw rows, sort those rows to
+the returned sample order, lock the registered literal sequence
+`[0;14.31;26.04;36;43.75;48.98]`, and require exact equality between the
+catalog and `sampleSummary`. Existing section-block equality assertions
+continue to verify propagation into all 42 section rows.
+
+### Review-fix RED
+
+The full test command documented above was run after changing only the test.
+
+- Wall time: 49.04 s
+- Exit: 1
+- Expected first failure:
+
+```text
+出错 test_generate_odf_diameter_montage (第 29 行)
+assert(isequal(sampleSummary.cold_reduction_percent, ...
+```
+
+This confirms that the new regression assertion rejected the diameter-derived
+values.
+
+### Review-fix GREEN boundary
+
+The production assignment was minimally changed to:
+
+```matlab
+cold_reduction_percent = catalog.cold_reduction_percent;
+```
+
+The same full MATLAB test command was then run again.
+
+- Wall time: 52.49 s
+- Exit: 1, expected because image rendering remains out of scope
+- All registered-metadata assertions and preceding non-image assertions
+  passed.
+- The first failure returned to the intentionally missing PNG:
+
+```text
+出错 test_generate_odf_diameter_montage (第 62 行)
+assert(isfile(fullfile(outputRoot,"odf_diameter_full_sections.png")));
+```
+
+No local `fundamentalRegionEuler` helper was added or changed; the direct MTEX
+three-output API call remains intact. No additional CSV-only run was performed
+for this review fix because the full test already passed the CSV existence and
+metadata propagation assertions before reaching the expected PNG boundary.
