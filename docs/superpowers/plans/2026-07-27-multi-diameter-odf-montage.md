@@ -37,11 +37,26 @@ assert(isfolder(scanRoot));
 assert(~isempty(which("EBSD")), "MTEX must be loaded for this test.");
 if isfolder(outputRoot), rmdir(outputRoot,"s"); end
 [sampleSummary, sectionSummary] = generate_odf_diameter_montage(scanRoot, outputRoot);
+sampleColumns = ["sample","diameter_mm","cold_reduction_percent", ...
+  "input_path","valid_ti_hex_orientation_count","crystal_symmetry", ...
+  "rotational_fundamental_zone","specimen_symmetry", ...
+  "kernel_halfwidth_deg","grid_resolution_deg","maximum_section_mrd", ...
+  "global_color_limit_max_mrd"];
+sectionColumns = ["sample","diameter_mm","cold_reduction_percent", ...
+  "input_path","valid_ti_hex_orientation_count","crystal_symmetry", ...
+  "rotational_fundamental_zone","specimen_symmetry", ...
+  "kernel_halfwidth_deg","grid_resolution_deg","phi2_deg", ...
+  "section_maximum_mrd","global_color_limit_max_mrd"];
+assert(isequal(string(sampleSummary.Properties.VariableNames),sampleColumns));
+assert(isequal(string(sectionSummary.Properties.VariableNames),sectionColumns));
 assert(height(sampleSummary) == 6);
 assert(height(sectionSummary) == 42);
 assert(isequal(sampleSummary.sample,["7d";"6.48d";"6.02d";"5.6d";"5.25d";"5d"]));
 assert(isequal(sampleSummary.diameter_mm,[7;6.48;6.02;5.6;5.25;5]));
-assert(isequal(sectionSummary.phi2_deg(1:7),(0:10:60)'));
+for sampleIndex = 1:6
+  sectionRows = (sampleIndex - 1) * 7 + (1:7);
+  assert(isequal(sectionSummary.phi2_deg(sectionRows),(0:10:60)'));
+end
 assert(all(sampleSummary.crystal_symmetry == "6/mmm"));
 assert(all(sampleSummary.rotational_fundamental_zone == "622"));
 assert(all(sampleSummary.specimen_symmetry == "1"));
@@ -54,8 +69,11 @@ assert(isfile(fullfile(outputRoot,"odf_diameter_summary.csv")));
 assert(isfile(fullfile(outputRoot,"odf_diameter_section_summary.csv")));
 assert(isfile(fullfile(outputRoot,"odf_diameter_full_sections.png")));
 assert(isfile(fullfile(outputRoot,"odf_diameter_full_sections.pdf")));
-assert(height(readtable(fullfile(outputRoot,"odf_diameter_summary.csv"))) == 6);
-assert(height(readtable(fullfile(outputRoot,"odf_diameter_section_summary.csv"))) == 42);
+roundTripSample = readtable(fullfile(outputRoot,"odf_diameter_summary.csv"),"TextType","string");
+roundTripSection = readtable(fullfile(outputRoot,"odf_diameter_section_summary.csv"),"TextType","string");
+assert(isequal(string(roundTripSample.Properties.VariableNames),sampleColumns));
+assert(isequal(string(roundTripSection.Properties.VariableNames),sectionColumns));
+assert(height(roundTripSample) == 6 && height(roundTripSection) == 42);
 end
 ```
 
@@ -83,19 +101,55 @@ git commit -m "test: define seven-section ODF diagnostic"
 
 **Interface:** Returns `sampleSummary` (six rows) and `sectionSummary` (42 rows), and writes their CSV counterparts.
 
-- [ ] **Step 1: Implement configuration and catalog selection**
+- [ ] **Step 1: Implement catalog selection and validate the imported orientation symmetries**
 
-Set `diameterOrder = ["7d";"6.48d";"6.02d";"5.6d";"5.25d";"5d"]`, `phi2Deg = (0:10:60)'`, `kernelHalfwidthDeg = 5`, and `gridResolutionDeg = 5`. Instantiate `alphaTiCS = crystalSymmetry("6/mmm")` and `barSS = specimenSymmetry("1")`; assert those values and the `622` rotational fundamental zone. Select only raw rows from `comprehensive_ebsd_catalog(scanRoot)`, assert six rows in `diameterOrder`, and reject `specimenSymmetry("222")` in every helper.
+Set `diameterOrder = ["7d";"6.48d";"6.02d";"5.6d";"5.25d";"5d"]`, `phi2Deg = (0:10:60)'`, `kernelHalfwidthDeg = 5`, and `gridResolutionDeg = 5`. Select only raw rows from `comprehensive_ebsd_catalog(scanRoot)` and assert six rows in `diameterOrder`. For each loaded `Ti-Hex` EBSD subset, preserve its imported orientation object and use it as the sole source of symmetry:
 
-- [ ] **Step 2: Implement one ODF and seven maxima per sample**
+```matlab
+tiOrientations = tiEbsd.orientations;
+assert(~isempty(tiOrientations));
+assert(string(tiOrientations.CS.pointGroup) == "6/mmm");
+assert(string(tiOrientations.CS.properGroup.pointGroup) == "622");
+assert(string(tiOrientations.SS.pointGroup) == "1");
+eulerRegion = fundamentalRegionEuler(tiOrientations.CS,tiOrientations.SS);
+assert(isequal(eulerRegion,[360 90 60] * degree));
+```
 
-For each catalog row, load `Ti-Hex`, calculate pixel-weighted density with `SO3DeLaValleePoussinKernel("halfwidth",5*degree)`, `CS = alphaTiCS`, and `SS = barSS`, then normalize by `double(mean(rbfOdf))`. Evaluate each `phi2Deg` in the `622` rotational fundamental zone at `5*degree`; store finite positive results in `sectionMaximumMrd(6,7)`. Set `globalMaximumMrd = max(sectionMaximumMrd,[],"all")`.
+Do not instantiate a separate `crystalSymmetry("6/mmm")` or `specimenSymmetry("1")` object, and do not assign a new symmetry to imported orientations. `fundamentalRegionEuler` is the local helper that returns the `[phi1Max PhiMax phi2Max]` Euler-region limits; it must verify `360/90/60 deg` for the imported `6/mmm`/`SS = 1` orientation pair and reject any `222` specimen symmetry.
+
+```matlab
+function eulerLimits = fundamentalRegionEuler(cs,ss)
+assert(string(cs.pointGroup) == "6/mmm");
+assert(string(cs.properGroup.pointGroup) == "622");
+assert(string(ss.pointGroup) == "1");
+eulerLimits = [360 90 60] * degree;
+end
+```
+
+- [ ] **Step 2: Implement one ODF and an executable seven-section maximum per sample**
+
+For each catalog row, calculate pixel-weighted density directly from `tiOrientations` with `SO3DeLaValleePoussinKernel("halfwidth",5*degree)`, normalize by `double(mean(rbfOdf))`, and retain the resulting ODF without changing its imported CS/SS. For every `phi2Deg`, compute the section maximum by literal Euler-grid sampling:
+
+```matlab
+phi1Deg = 0:5:355;
+PhiDeg = 0:5:90;
+[phi1Grid,PhiGrid] = meshgrid(phi1Deg,PhiDeg);
+sectionOrientations = orientation.byEuler(phi1Grid(:)*degree, ...
+  PhiGrid(:)*degree,phi2Deg(sectionIndex)*degree, ...
+  tiOrientations.CS,tiOrientations.SS);
+sectionMrd = real(eval(odf,sectionOrientations));
+sectionMrd = sectionMrd(:);
+assert(~isempty(sectionMrd) && all(isfinite(sectionMrd)));
+sectionMaximumMrd(scanIndex,sectionIndex) = max(sectionMrd);
+```
+
+Use the same `phi1 = 0:5:355`, `Phi = 0:5:90`, and `phi2 = 0:10:60 deg` grids for every sample. Assert every recorded maximum is finite and positive, then set `globalMaximumMrd = max(sectionMaximumMrd,[],"all")`.
 
 - [ ] **Step 3: Implement exact table schemas and CSV writes**
 
-`sampleSummary` columns are `sample`, `diameter_mm`, `cold_reduction_percent`, `input_path`, `valid_ti_hex_orientation_count`, `crystal_symmetry`, `rotational_fundamental_zone`, `specimen_symmetry`, `kernel_halfwidth_deg`, `grid_resolution_deg`, `maximum_section_mrd`, and `global_color_limit_max_mrd`.
+`sampleSummary` has exactly these 12 columns, in this order: `sample`, `diameter_mm`, `cold_reduction_percent`, `input_path`, `valid_ti_hex_orientation_count`, `crystal_symmetry`, `rotational_fundamental_zone`, `specimen_symmetry`, `kernel_halfwidth_deg`, `grid_resolution_deg`, `maximum_section_mrd`, and `global_color_limit_max_mrd`.
 
-`sectionSummary` has those leading sample metadata columns plus `phi2_deg`, `section_maximum_mrd`, and `global_color_limit_max_mrd`. Build the 42 rows using `repelem(catalog.sample,7)`, `repmat(phi2Deg,6,1)`, and `reshape(sectionMaximumMrd.',[],1)`, so records are ordered by diameter then phi2. Write the tables with:
+`sectionSummary` has exactly these 13 columns, in this order: `sample`, `diameter_mm`, `cold_reduction_percent`, `input_path`, `valid_ti_hex_orientation_count`, `crystal_symmetry`, `rotational_fundamental_zone`, `specimen_symmetry`, `kernel_halfwidth_deg`, `grid_resolution_deg`, `phi2_deg`, `section_maximum_mrd`, and `global_color_limit_max_mrd`. Build the 42 rows using `repelem(catalog.sample,7)`, `repmat(phi2Deg,6,1)`, and `reshape(sectionMaximumMrd.',[],1)`, so records are ordered by diameter then phi2. Write the tables with:
 
 ```matlab
 writetable(sampleSummary,fullfile(outputRoot,"odf_diameter_summary.csv"));
@@ -126,20 +180,32 @@ git commit -m "feat: calculate seven-section alpha-Ti ODF diagnostics"
 
 - [ ] **Step 1: Extend the test, then run RED**
 
-Add `imfinfo(fullfile(outputRoot,"odf_diameter_full_sections.png"))` checks for positive dimensions and `Height > Width/2`, then run the Task 1 command using `.codex_tmp/odf-montage-render-red`. Expected: failure because the renderer has not written the PNG/PDF.
+Add these checks, then run the Task 1 command using `.codex_tmp/odf-montage-render-red`:
+
+```matlab
+imageInfo = imfinfo(fullfile(outputRoot,"odf_diameter_full_sections.png"));
+assert(imageInfo.Width > 0 && imageInfo.Height > 0);
+assert(imageInfo.Width > imageInfo.Height, ...
+  "The 6-row by 7-column SS=1 diagnostic must be horizontally oriented.");
+assert(imageInfo.Width >= 2400 && imageInfo.Height >= 1800, ...
+  "The diagnostic raster is smaller than the planned publication output.");
+```
+
+Expected: failure because the renderer has not written the PNG/PDF.
 
 - [ ] **Step 2: Implement the matrix renderer**
 
-Create `tiledlayout(6,7)`, rows in registered diameter order and columns in `phi2Deg` order. Render one section per tile using:
+Create `tiledlayout(6,7)`, rows in registered diameter order and columns in `phi2Deg` order. Initialize `renderedSectionCount = 0`; render one section per tile using the ODF and imported `tiOrientations.CS`/`tiOrientations.SS` from the corresponding scan:
 
 ```matlab
 plotSection(odfModels{scanIndex},"phi2",phi2Deg(sectionIndex)*degree, ...
   "contourf","silent","resolution",gridResolutionDeg*degree, ...
   "colorRange",[0 globalMaximumMrd]);
 mtexColorMap parula
+renderedSectionCount = renderedSectionCount + 1;
 ```
 
-Preserve the `622` and `SS = 1` assertions, add diameter/cold-reduction labels in the first column and phi2 headings in the first row, then attach one east-side `ODF intensity (MRD)` colorbar with `[0 globalMaximumMrd]`. Export `odf_diameter_full_sections.png` at 600 dpi and `odf_diameter_full_sections.pdf` with `exportgraphics`; assert both are non-empty.
+After the nested row/column loop, require `assert(renderedSectionCount == 42)`. Preserve the imported-symmetry assertions (`6/mmm`, proper group `622`, and `SS = 1`), add diameter/cold-reduction labels in the first column and phi2 headings in the first row, then attach one east-side `ODF intensity (MRD)` colorbar with `[0 globalMaximumMrd]`. Export `odf_diameter_full_sections.png` at 600 dpi and `odf_diameter_full_sections.pdf` with `exportgraphics`; assert both are non-empty.
 
 - [ ] **Step 3: Run GREEN and commit**
 
@@ -161,7 +227,13 @@ git commit -m "feat: render multi-diameter ODF diagnostic matrix"
 
 - [ ] **Step 1: Generate final diagnostics**
 
-Run `generate_odf_diameter_montage` in a fresh MATLAB process with the raw scans directory and `results/mtex_odf_diameter_montage`; expect four non-empty artifacts.
+Run in a fresh MATLAB process:
+
+```powershell
+& 'C:\Program Files\MATLAB\R2025a\bin\matlab.exe' -batch "startup_mtex('noMenu'); addpath('tools/mtex'); generate_odf_diameter_montage(string(fullfile(pwd,'data','ebsd_kpl_250221_7_df','scans')), string(fullfile(pwd,'results','mtex_odf_diameter_montage')));"
+```
+
+Expected: MATLAB exits 0 and writes four non-empty artifacts.
 
 - [ ] **Step 2: Verify acceptance criteria**
 

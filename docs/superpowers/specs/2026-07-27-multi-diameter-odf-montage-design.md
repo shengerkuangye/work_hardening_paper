@@ -18,8 +18,7 @@ No manuscript representative sections are fixed in this design. They shall be ch
 - Phase: indexed `Ti-Hex` pixels only.
 - Primary statistical representation: pixel-weighted orientations.
 - The denoised CTF files and area-weighted grain-mean ODF are excluded from this diagnostic; they remain sensitivity analyses in the comprehensive EBSD workflow.
-- Crystal symmetry: alpha-Ti is configured as `6/mmm`. ODF rotations are evaluated in the corresponding `622` rotational fundamental zone.
-- Specimen symmetry: `SS = 1` for the bar specimens. Do not apply the plate-symmetry `222` assumption at any stage of ODF estimation, evaluation, or plotting.
+- Crystal and specimen symmetries are taken from each imported `Ti-Hex` orientation set and asserted as `6/mmm`, proper rotational group `622`, and `SS = 1`. Do not apply the plate-symmetry `222` assumption at any stage of ODF estimation, evaluation, or plotting.
 - Specimen coordinates follow the registered project convention: X = AD, Y = TD/RD, and Z = ND.
 - Sample labels include diameter and cold reduction: 7 mm/0%, 6.48 mm/14.31%, 6.02 mm/26.04%, 5.6 mm/36.00%, 5.25 mm/43.75%, and 5 mm/48.98%.
 
@@ -29,7 +28,7 @@ For each raw scan:
 
 1. Load the CTF with the existing MTEX coordinate conversion.
 2. Select valid `Ti-Hex` orientations and retain pixel weighting.
-3. Estimate the ODF with the same De la Vallee Poussin kernel for every sample, using a 5 deg halfwidth, `6/mmm` crystal symmetry, and `SS = 1`.
+3. Estimate the ODF directly from the imported `Ti-Hex` orientations with the same De la Vallee Poussin kernel for every sample, using a 5 deg halfwidth and the asserted imported `6/mmm`/`SS = 1` symmetries.
 4. Normalize the ODF to a unit mean so intensity is reported in multiples of a random distribution (MRD).
 5. Evaluate every `phi2 = 0:10:60 deg` section at 5 deg angular resolution.
 6. Record the maximum MRD for every sample--section pair.
