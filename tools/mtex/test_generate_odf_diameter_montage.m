@@ -1,7 +1,24 @@
-function test_generate_odf_diameter_montage(scanRoot, outputRoot)
+function test_generate_odf_diameter_montage(scanRoot)
 assert(isfolder(scanRoot));
 assert(~isempty(which("EBSD")), "MTEX must be loaded for this test.");
-if isfolder(outputRoot), rmdir(outputRoot,"s"); end
+helperPath = fullfile(fileparts(mfilename("fullpath")), ...
+  "normalize_positive_mean_density.m");
+assert(isfile(helperPath), ...
+  "The guarded texture-density normalization helper is missing.");
+[normalizedValues,normalizationFactor] = ...
+  normalize_positive_mean_density([1 3]);
+assert(normalizationFactor == 2);
+assert(abs(mean(normalizedValues) - 1) < 1e-12);
+assert_fails(@() normalize_positive_mean_density([NaN 1]), ...
+  "finite and positive");
+assert_fails(@() normalize_positive_mean_density([-1 -3]), ...
+  "finite and positive");
+assert_fails(@() normalize_positive_mean_density([1 1i]), ...
+  "finite and positive");
+
+outputRoot = string(tempname);
+mkdir(outputRoot);
+cleanupOutput = onCleanup(@() remove_test_output(outputRoot));
 [sampleSummary, sectionSummary] = generate_odf_diameter_montage(scanRoot, outputRoot);
 sampleColumns = ["sample","diameter_mm","cold_reduction_percent", ...
   "input_path","valid_ti_hex_orientation_count","crystal_symmetry", ...
@@ -90,9 +107,42 @@ pdfHeader = fread(pdfId,5,"*char").';
 fclose(pdfId);
 assert(strcmp(pdfHeader,"%PDF-"), ...
   "The diagnostic PDF does not contain a valid PDF header.");
+pdfBytes = fileread(fullfile(outputRoot,"odf_diameter_full_sections.pdf"));
+imageTokens = regexp(pdfBytes, ...
+  '/Subtype /Image\s+/Width ([0-9]+)\s+/Height ([0-9]+)',"tokens");
+mediaBoxToken = regexp(pdfBytes, ...
+  '/MediaBox \[0 0 ([0-9.]+) ([0-9.]+)\]',"tokens","once");
+assert(~isempty(imageTokens) && ~isempty(mediaBoxToken), ...
+  "The diagnostic PDF does not expose its raster and page dimensions.");
+imagePixelArea = sum(cellfun(@(token) ...
+  str2double(token{1}) * str2double(token{2}),imageTokens));
+pageAreaSquareInches = (str2double(mediaBoxToken{1}) / 72) * ...
+  (str2double(mediaBoxToken{2}) / 72);
+pageEquivalentImageDpi = sqrt(imagePixelArea / pageAreaSquareInches);
+assert(pageEquivalentImageDpi >= 590, ...
+  "The diagnostic PDF contains less than 590 dpi of page raster data.");
 roundTripSample = readtable(fullfile(outputRoot,"odf_diameter_summary.csv"),"TextType","string");
 roundTripSection = readtable(fullfile(outputRoot,"odf_diameter_section_summary.csv"),"TextType","string");
 assert(isequal(string(roundTripSample.Properties.VariableNames),sampleColumns));
 assert(isequal(string(roundTripSection.Properties.VariableNames),sectionColumns));
 assert(height(roundTripSample) == 6 && height(roundTripSection) == 42);
+clear cleanupOutput
+end
+
+function assert_fails(operation, expectedMessage)
+didFail = false;
+try
+  operation();
+catch exception
+  didFail = contains(exception.message,expectedMessage);
+end
+assert(didFail, ...
+  "Expected operation to fail with a message containing '%s'.", ...
+  expectedMessage);
+end
+
+function remove_test_output(path)
+if isfolder(path)
+  rmdir(path,"s");
+end
 end

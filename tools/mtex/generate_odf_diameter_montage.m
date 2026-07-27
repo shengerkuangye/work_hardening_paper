@@ -54,9 +54,12 @@ for scanIndex = 1:sampleCount
   validTiHexOrientationCount(scanIndex) = numel(tiOrientations);
   rbfOdf = calcDensity(tiOrientations,"kernel",kernel, ...
     "weights",ones(numel(tiOrientations),1),"silent");
-  rbfOdf = rbfOdf / double(mean(rbfOdf));
+  rbfOdf = normalize_positive_mean_density(rbfOdf);
   odf = SO3FunHarmonic(rbfOdf,"bandwidth",kernel.bandwidth);
-  odf = odf / double(mean(odf));
+  odf = normalize_positive_mean_density(odf);
+  assert(string(odf.CS.pointGroup) == "6/mmm");
+  assert(string(odf.CS.properGroup.pointGroup) == "622");
+  assert(string(odf.SS.pointGroup) == "1");
   odfs{scanIndex} = odf;
 
   for sectionIndex = 1:sectionCount
@@ -305,6 +308,7 @@ drawnow;
 exportgraphics(matrixFigure,char(pngPath),"Resolution",600, ...
   "BackgroundColor","white");
 exportgraphics(matrixFigure,char(pdfPath), ...
+  "ContentType","image","Resolution",600, ...
   "BackgroundColor","white");
 clear cleanupMatrix cleanupTemp
 end

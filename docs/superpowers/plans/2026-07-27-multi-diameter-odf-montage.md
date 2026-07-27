@@ -4,7 +4,7 @@
 
 **Goal:** Generate a 6-row by 7-column alpha-Ti ODF diagnostic for six raw EBSD scans, with six-row sample and 42-row sample--section MRD summaries for later manuscript-section selection.
 
-**Architecture:** A MATLAB entry point reuses the registered catalog and loader, estimates one pixel-weighted ODF per scan with `6/mmm` and `SS = 1`, evaluates `phi2 = 0:10:60 deg`, writes both summaries, derives one global MRD limit from all 42 section maxima, then renders the matrix. It does not select manuscript representative sections.
+**Architecture:** A MATLAB entry point reuses the registered catalog and loader, estimates one pixel-weighted ODF per scan with `6/mmm` and `SS = 1`, evaluates `phi2 = 0:10:60 deg`, writes both summaries, derives one global MRD limit from all 42 section maxima, then renders six identical seven-section row rasters and composes them at exact pixel size. It does not select manuscript representative sections.
 
 **Tech Stack:** MATLAB R2025a, MTEX 6.1.1, project EBSD helpers, MATLAB `exportgraphics`.
 
@@ -16,6 +16,7 @@
 - Use one MRD range from zero to the maximum across all 42 section maxima and a perceptually ordered non-rainbow map.
 - Do not modify raw or denoised CTF files.
 - Export `odf_diameter_full_sections.png`, `odf_diameter_full_sections.pdf`, `odf_diameter_summary.csv` (six rows), and `odf_diameter_section_summary.csv` (42 rows) under `results/mtex_odf_diameter_montage`.
+- Preserve approximately 600 dpi in the PNG metadata and at least 590 dpi of page-equivalent raster data in the image-content PDF.
 - Select manuscript angles only after checking the full diagnostic and the 42-row CSV. A later caption must use `selected phi2 sections` and list their angles.
 
 ---
@@ -32,10 +33,12 @@
 - [ ] **Step 1: Write the failing test**
 
 ```matlab
-function test_generate_odf_diameter_montage(scanRoot, outputRoot)
+function test_generate_odf_diameter_montage(scanRoot)
 assert(isfolder(scanRoot));
 assert(~isempty(which("EBSD")), "MTEX must be loaded for this test.");
-if isfolder(outputRoot), rmdir(outputRoot,"s"); end
+outputRoot = string(tempname);
+mkdir(outputRoot);
+cleanupOutput = onCleanup(@() rmdir(outputRoot,"s"));
 [sampleSummary, sectionSummary] = generate_odf_diameter_montage(scanRoot, outputRoot);
 sampleColumns = ["sample","diameter_mm","cold_reduction_percent", ...
   "input_path","valid_ti_hex_orientation_count","crystal_symmetry", ...
@@ -80,7 +83,7 @@ end
 - [ ] **Step 2: Run RED**
 
 ```powershell
-& 'C:\Program Files\MATLAB\R2025a\bin\matlab.exe' -batch "startup_mtex('noMenu'); addpath('tools/mtex'); test_generate_odf_diameter_montage(string(fullfile(pwd,'data','ebsd_kpl_250221_7_df','scans')), string(fullfile(pwd,'.codex_tmp','odf-montage-red')));"
+& 'C:\Program Files\MATLAB\R2025a\bin\matlab.exe' -batch "startup_mtex('noMenu'); addpath('tools/mtex'); test_generate_odf_diameter_montage(string(fullfile(pwd,'data','ebsd_kpl_250221_7_df','scans')));"
 ```
 
 Expected: MATLAB exits non-zero because `generate_odf_diameter_montage` is undefined.
@@ -97,6 +100,7 @@ git commit -m "test: define seven-section ODF diagnostic"
 **Files:**
 
 - Create: `tools/mtex/generate_odf_diameter_montage.m`
+- Create: `tools/mtex/normalize_positive_mean_density.m`
 - Test: `tools/mtex/test_generate_odf_diameter_montage.m`
 
 **Interface:** Returns `sampleSummary` (six rows) and `sectionSummary` (42 rows), and writes their CSV counterparts.
@@ -128,7 +132,7 @@ end
 
 - [ ] **Step 2: Implement one ODF and an executable seven-section maximum per sample**
 
-For each catalog row, calculate pixel-weighted density directly from `tiOrientations` with `SO3DeLaValleePoussinKernel("halfwidth",5*degree)`, normalize by `double(mean(rbfOdf))`, and retain the resulting ODF without changing its imported CS/SS. For every `phi2Deg`, compute the section maximum by literal Euler-grid sampling:
+For each catalog row, calculate pixel-weighted density directly from `tiOrientations` with `SO3DeLaValleePoussinKernel("halfwidth",5*degree)`. Normalize the radial-basis and converted harmonic ODFs with `normalize_positive_mean_density`, which rejects non-scalar, complex, non-finite, or non-positive means and verifies the output mean is unity. Assert the converted ODF's actual `6/mmm`, `622`, and `SS = 1` symmetries before retaining it. For every `phi2Deg`, compute the section maximum by literal Euler-grid sampling:
 
 ```matlab
 phi1Deg = 0:5:355;
@@ -195,17 +199,18 @@ Expected: failure because the renderer has not written the PNG/PDF.
 
 - [ ] **Step 2: Implement the matrix renderer**
 
-Create `tiledlayout(6,7)`, rows in registered diameter order and columns in `phi2Deg` order. Initialize `renderedSectionCount = 0`; render one section per tile using the ODF and imported `tiOrientations.CS`/`tiOrientations.SS` from the corresponding scan:
+For each diameter, render the seven requested sections as one identically sized temporary row raster using `plotSection(...,"layout",[1 7])`. Require seven non-empty MTEX `sphericalPlot` axes per row and 42 rendered axes overall. Export every row at 600 dpi, crop all six rows to one common non-white bounding box, then compose the six rasters at their exact pixel size in registered diameter order:
 
 ```matlab
-plotSection(odfModels{scanIndex},"phi2",phi2Deg(sectionIndex)*degree, ...
-  "contourf","silent","resolution",gridResolutionDeg*degree, ...
+plotSection(odfModels{scanIndex},"phi2",phi2Deg*degree, ...
+  "contourf","silent","layout",[1 7], ...
+  "resolution",gridResolutionDeg*degree, ...
   "colorRange",[0 globalMaximumMrd]);
 mtexColorMap parula
-renderedSectionCount = renderedSectionCount + 1;
+renderedSectionCount = renderedSectionCount + 7;
 ```
 
-After the nested row/column loop, require `assert(renderedSectionCount == 42)`. Preserve the imported-symmetry assertions (`6/mmm`, proper group `622`, and `SS = 1`), add diameter/cold-reduction labels in the first column and phi2 headings in the first row, then attach one east-side `ODF intensity (MRD)` colorbar with `[0 globalMaximumMrd]`. Export `odf_diameter_full_sections.png` at 600 dpi and `odf_diameter_full_sections.pdf` with `exportgraphics`; assert both are non-empty.
+After the row loop, require `assert(renderedSectionCount == 42)`. Preserve the imported-symmetry assertions (`6/mmm`, proper group `622`, and `SS = 1`), add diameter/cold-reduction labels at left and `phi2` headings above the seven columns, then attach one east-side `ODF intensity (MRD)` colorbar with `[0 globalMaximumMrd]`. Export the PNG at 600 dpi. Export the PDF with `ContentType="image"` and `Resolution=600`; the test must reject PDF page-raster density below 590 dpi. Assert both outputs are non-empty.
 
 - [ ] **Step 3: Run GREEN and commit**
 

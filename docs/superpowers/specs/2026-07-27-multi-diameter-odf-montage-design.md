@@ -38,9 +38,10 @@ All 42 cells use one global color range from 0 to the largest evaluated MRD amon
 ## Figure styling and outputs
 
 - Layout: six rows by seven columns, with rows ordered by decreasing diameter and columns ordered by increasing `phi2`.
+- Rendering uses six identically sized one-row MTEX section rasters, followed by a common-margin crop and exact-pixel composition into the final 6-by-7 canvas. This preserves the full `phi1 = 0--360 deg` axes while keeping row geometry identical.
 - The continuous color map must be perceptually ordered and must not use `jet` or a rainbow scale.
 - Background is white and typography is consistent with the existing EBSD figures.
-- Export the full diagnostic at publication resolution as PNG and PDF.
+- Export the full diagnostic at publication resolution as a 600 dpi PNG and a 600 dpi image-content PDF. The PDF must not use MATLAB's default vector export for the composed row rasters because that path downsamples them to screen resolution.
 - Do not export a manuscript representative-section figure until the full diagnostic and section-maxima CSV have been inspected and the selected `phi2` sections are documented.
 
 Outputs:
@@ -70,6 +71,8 @@ Automated checks must verify:
 - all 42 sample--section pairs have a finite, positive section maximum;
 - every cell uses the same global MRD upper limit, equal to the maximum across all 42 recorded section maxima;
 - the six-row and 42-row CSV files have the specified columns;
-- PNG and PDF outputs exist and are non-empty.
+- input and converted harmonic ODF means are real, finite, positive, scalar, and normalize to unity;
+- PNG and PDF outputs exist and are non-empty;
+- the PNG retains approximately 600 dpi metadata and the PDF contains at least 590 dpi of page-equivalent raster data.
 
 The final PNG is visually inspected for the six ordered rows, seven `phi2` columns, readable labels, a shared MRD colorbar, identical color limits, and absence of clipping or blank cells. Only after that inspection may a manuscript figure be designed from selected `phi2` sections.
