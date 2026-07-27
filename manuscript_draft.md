@@ -6,7 +6,7 @@
 
 ## Work Hardening Behavior and Microstructural Mechanism of Rotary-swaged TA4 Commercially Pure Titanium
 
-ABSTRACT: To clarify the effects of rotary-swaging cold deformation on the strength, ductility and work-hardening behavior of TA4 commercially pure titanium, TA4 bars with an initial diameter of 7 mm were rotary swaged at room temperature to obtain samples with cold reductions of 0-48.98%. Room-temperature uniaxial tensile tests were conducted to analyze the engineering stress-strain response and mechanical properties. The engineering stress-strain data were converted into true stress-true strain data to calculate the work-hardening rate. Optical metallography and EBSD characterization were used to examine the relationship between microstructural evolution and mechanical response. The results show that, as the cold reduction increased from 0 to 48.98%, the yield strength increased from 580.5 MPa to 980.0 MPa and the tensile strength increased from 711.5 MPa to 1029.0 MPa, whereas the elongation after fracture decreased from 26.75% to 8.00% and the reduction of area decreased from 44.5% to 31.0%. The true stress-true strain curves and work-hardening rate curves indicate that cold-deformed samples exhibited higher initial flow stress but a reduced uniform plastic deformation range and work-hardening capacity during subsequent tensile loading. Metallographic and EBSD results show that the initially equiaxed or nearly equiaxed grains gradually transformed into elongated deformation structures along the bar axis, accompanied by an overall increase in the fraction of 2°-15° low-angle misorientations. The strength increase is mainly associated with deformation-induced dislocation storage, grain-boundary or sub-boundary impediment, and directional evolution of grain morphology.
+ABSTRACT: To clarify the effects of rotary-swaging cold deformation on the strength, ductility and work-hardening behavior of TA4 commercially pure titanium, TA4 bars with an initial diameter of 7 mm were rotary swaged at room temperature to obtain samples with cold reduction ranging from 0 to 48.98%. Room-temperature uniaxial tensile tests were conducted to analyze the engineering stress-strain response and mechanical properties. The engineering stress-strain data were converted into true stress-true strain data to calculate the work-hardening rate. Optical metallography and EBSD characterization were used to examine the relationship between microstructural evolution and mechanical response. The results show that, as the cold reduction increased from 0 to 48.98%, the yield strength increased from 580.5 MPa to 980.0 MPa and the tensile strength increased from 711.5 MPa to 1029.0 MPa, whereas the elongation after fracture decreased from 26.75% to 8.00% and the reduction of area decreased from 44.5% to 31.0%. The true stress-true strain curves and work-hardening rate curves indicate that cold-deformed samples exhibited higher initial flow stress while showing a reduced uniform plastic deformation range and work-hardening capacity during subsequent tensile loading. Metallographic and EBSD results show that the initially equiaxed or nearly equiaxed grains gradually transformed into elongated deformation structures along the bar axis, accompanied by an overall increase in the fraction of 2°-15° low-angle misorientations. The strength increase is mainly associated with deformation-induced dislocation storage, grain-boundary or sub-boundary impediment, and directional evolution of grain morphology.
 
 Key words: TA4; commercially pure titanium; rotary swaging; cold deformation; work-hardening rate; EBSD
 
@@ -54,7 +54,7 @@ EBSD 表征样品与金相观察样品的状态保持一致，覆盖 TA4-M、TA4
 
 根据式（1）计算，未变形样品与旋锻态样品的直径分组分别为 7.00、6.48、6.02、5.60、5.25 和 5.00 mm，对应冷变形量分别为 0、14.31%、26.04%、36.00%、43.75% 和 48.98%。该系列样品能够反映截面减缩程度连续增加时 TA4 商业纯钛拉伸响应和加工硬化行为的变化。
 
-根据室温单轴拉伸试验获得的载荷-位移数据，结合试样原始截面积和标距换算得到工程应力-应变曲线。为比较不同冷变形量下 TA4 商业纯钛的拉伸响应，选取各样品组的代表性工程应力-应变曲线进行汇总。由图 1 可见，未变形样品 TA4-M 的应力水平较低，断裂前具有较长的塑性变形阶段；经旋锻冷变形后，各样品曲线整体向高应力水平移动，且屈服后的塑性变形区间明显缩短。该结果表明，旋锻冷变形提高了材料抵抗塑性变形的能力，同时降低了后续拉伸过程中的塑性变形空间。
+根据室温单轴拉伸试验获得的载荷-位移数据，结合试样原始截面积和标距换算得到工程应力-应变曲线。为比较不同冷变形量下 TA4 商业纯钛的拉伸响应，选取各样品组的代表性工程应力-应变曲线进行汇总。如图 1 所示，未变形样品 TA4-M 的应力水平较低，断裂前具有较长的塑性变形阶段；经旋锻冷变形后，各样品曲线整体向高应力水平移动，且屈服后的塑性变形区间明显缩短。该结果表明，旋锻冷变形提高了材料抵抗塑性变形的能力，同时降低了后续拉伸过程中的塑性变形空间。
 
 ![不同冷变形量 TA4 商业纯钛样品的工程应力-应变曲线](figures/ta4_engineering_stress_strain_representative_curves.svg)
 
@@ -73,7 +73,7 @@ EBSD 表征样品与金相观察样品的状态保持一致，覆盖 TA4-M、TA4
 
 表 1 不同冷变形量 TA4 商业纯钛样品的力学性能
 
-为进一步体现强度和塑性指标随冷变形量的变化规律，将屈服强度、抗拉强度、断后伸长率和断面收缩率绘制于同一图中。由图 2(a) 可见，屈服强度和抗拉强度均随冷变形量增加而整体升高，其中抗拉强度保持较为连续的上升趋势；屈服强度在 43.75% 和 48.98% 冷变形量之间出现局部差异，说明高变形量区间的屈服响应存在一定非单调变化。由图 2(b) 可见，断后伸长率和断面收缩率随冷变形量增加整体下降，表明旋锻冷变形在提高材料强度的同时降低了断裂前的塑性变形能力。
+为进一步体现强度和塑性指标随冷变形量的变化规律，将屈服强度、抗拉强度、断后伸长率和断面收缩率绘制于同一图中。如图 2(a) 所示，屈服强度和抗拉强度均随冷变形量增加而整体升高，其中抗拉强度保持较为连续的上升趋势；屈服强度在 43.75% 和 48.98% 冷变形量之间出现局部差异，说明高变形量区间的屈服响应存在一定非单调变化。如图 2(b) 所示，断后伸长率和断面收缩率随冷变形量增加整体下降，表明旋锻冷变形在提高材料强度的同时降低了断裂前的塑性变形能力。
 
 ![不同冷变形量 TA4 商业纯钛样品的力学性能指标变化](figures/ta4_mechanical_property_summary.svg)
 
@@ -81,13 +81,13 @@ EBSD 表征样品与金相观察样品的状态保持一致，覆盖 TA4-M、TA4
 
 ### 2.2 加工硬化行为
 
-工程应力-应变曲线能够反映不同冷变形量样品的宏观拉伸响应，但加工硬化行为需要结合真实应力-真实应变关系进一步分析。根据工程应力-应变数据换算得到代表性真实应力-真实应变曲线。由图 3 可见，冷变形样品在拉伸初期即表现出较高的真实应力水平，说明预先旋锻变形已使材料处于较高的加工硬化状态。随着冷变形量增加，曲线可持续发展的真实应变范围缩短，表明高变形量样品在后续单轴拉伸过程中可继续储存位错并发生均匀塑性变形的空间受到限制。
+工程应力-应变曲线能够反映不同冷变形量样品的宏观拉伸响应，但加工硬化行为需要结合真实应力-真实应变关系进一步分析。根据工程应力-应变数据换算得到代表性真实应力-真实应变曲线。如图 3 所示，冷变形样品在拉伸初期即表现出较高的真实应力水平，说明预先旋锻变形已使材料处于较高的加工硬化状态。随着冷变形量增加，曲线可持续发展的真实应变范围缩短，表明高变形量样品在后续单轴拉伸过程中可继续储存位错并发生均匀塑性变形的空间受到限制。
 
 ![不同冷变形量 TA4 商业纯钛样品的真实应力-真实应变曲线](figures/ta4_true_stress_strain_representative_curves.svg)
 
 图 3 不同冷变形量 TA4 商业纯钛样品的代表性真实应力-真实应变曲线
 
-根据真实应力-真实应变曲线计算得到的加工硬化率 θ = dσ/dε。由图 4 可见，各样品加工硬化率随真实塑性应变增加整体呈下降趋势；冷变形量较高的样品曲线分布区间明显缩短，说明预变形后材料的后续加工硬化空间降低。
+根据真实应力-真实应变曲线计算得到的加工硬化率 θ = dσ/dε。如图 4 所示，各样品加工硬化率随真实塑性应变增加整体呈下降趋势；冷变形量较高的样品曲线分布区间明显缩短，说明预变形后材料的后续加工硬化空间降低。
 
 ![不同冷变形量 TA4 商业纯钛样品的加工硬化率曲线](figures/ta4_work_hardening_rate_representative_curves.svg)
 
@@ -95,7 +95,7 @@ EBSD 表征样品与金相观察样品的状态保持一致，覆盖 TA4-M、TA4
 
 ### 2.3 微观组织
 
-为分析旋锻冷变形后力学响应变化的显微组织来源，对不同冷变形量样品的纵截面金相组织进行观察。图中 AD 表示棒材轴向，即旋锻过程中材料发生轴向延伸的加工方向；a-f 分别对应 TA4-M、TA4-Y-6.48、TA4-Y-6.02、TA4-Y-5.60、TA4-Y-5.25 和 TA4-Y-5.00，1-3 分别对应 100×、200× 和 500×。由图 5 可见，未变形样品 TA4-M 的显微组织主要由较均匀的等轴或近等轴晶粒组成，晶界轮廓较清晰，整体未表现出明显的定向拉长特征。经旋锻冷变形后，晶粒形貌开始发生定向变化，部分晶粒沿 AD 方向被拉长，纵截面组织逐渐呈现沿轴向分布的流线化特征。随着旋锻后直径进一步降低，晶粒拉长和带状化特征更加明显，等轴晶形貌逐渐减弱，说明冷变形使原始组织发生了明显的定向塑性变形。
+为分析旋锻冷变形后力学响应变化的显微组织来源，对不同冷变形量样品的纵截面金相组织进行观察。图 5 中，棒材轴向（axial direction, AD）为旋锻过程中材料发生轴向延伸的加工方向；a-f 分别对应 TA4-M、TA4-Y-6.48、TA4-Y-6.02、TA4-Y-5.60、TA4-Y-5.25 和 TA4-Y-5.00，1-3 分别对应 100×、200× 和 500×。如图 5 所示，未变形样品 TA4-M 的显微组织主要由较均匀的等轴或近等轴晶粒组成，晶界轮廓较清晰，整体未表现出明显的定向拉长特征。经旋锻冷变形后，晶粒形貌开始发生定向变化，部分晶粒沿 AD 方向被拉长，纵截面组织逐渐呈现沿轴向分布的流线化特征。随着旋锻后直径进一步降低，晶粒拉长和带状化特征更加明显，等轴晶形貌逐渐减弱，说明冷变形使原始组织发生了明显的定向塑性变形。
 
 从不同放大倍数的对比可以看出，100× 和 200× 图像主要反映整体组织均匀性和流线化程度，500× 图像则更清楚地显示晶粒边界形貌和晶粒拉长特征。TA4-M 样品在高倍下仍以近等轴晶为主；而较高冷变形量样品中，晶粒沿 AD 方向延伸，晶界呈现一定弯曲和拉伸特征，表明塑性变形在晶粒内部及晶界附近持续累积。该组织演化与拉伸曲线中强度升高和塑性区间缩短的现象相对应，其作用可能与位错累积、晶界对位错运动的阻碍以及变形过程中晶粒取向调整有关。
 
@@ -123,7 +123,7 @@ BC+晶界图进一步反映了冷变形后扫描区域内的局部变形衬度�
 
 图 8 不同冷变形量 TA4 商业纯钛样品的 EBSD 极图
 
-由表 2 可见，未变形样品中 2°-15° 低角度取向差比例较低，仅为 3.88%；旋锻冷变形后，该比例整体升高，在 36.00%、43.75% 和 48.98% 冷变形量样品中分别达到 42.45%、54.29% 和 49.28%。低角度取向差比例的增加说明冷变形过程中晶粒内部取向梯度和亚结构特征增强，可作为位错储存和局部塑性变形不均匀增加的 EBSD 证据。26.04% 冷变形量样品的低角度取向差比例低于相邻变形量样品，说明 EBSD 统计结果存在一定局部差异，后续机制讨论应结合取样位置、扫描区域和拉伸曲线可靠性综合判断。
+由表 2 可知，未变形样品中 2°-15° 低角度取向差比例较低，仅为 3.88%；旋锻冷变形后，该比例整体升高，在 36.00%、43.75% 和 48.98% 冷变形量样品中分别达到 42.45%、54.29% 和 49.28%。低角度取向差比例的增加说明冷变形过程中晶粒内部取向梯度和亚结构特征增强，可作为位错储存和局部塑性变形不均匀增加的 EBSD 证据。26.04% 冷变形量样品的低角度取向差比例低于相邻变形量样品，说明 EBSD 统计结果存在一定局部差异，后续机制讨论应结合取样位置、扫描区域和拉伸曲线可靠性综合判断。
 
 面积加权等效圆直径在 8.11-11.15 μm 范围内变化，未表现出随冷变形量增加而单调减小的趋势。因此，本文不将晶粒细化作为强度提升的主要依据，而重点关注冷变形引起的晶粒形貌定向演化、低角度取向差比例增加以及由此反映的位错储存和亚结构形成。由于当前 EBSD 输出尚未给出 KAM、GND 密度、孪生体积分数或特定滑移系活动的定量结果，相关内容不作为确定性结论。
 
