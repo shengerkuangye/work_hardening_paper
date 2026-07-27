@@ -61,6 +61,14 @@ assert(isfile(fullfile(outputRoot,"odf_diameter_summary.csv")));
 assert(isfile(fullfile(outputRoot,"odf_diameter_section_summary.csv")));
 assert(isfile(fullfile(outputRoot,"odf_diameter_full_sections.png")));
 assert(isfile(fullfile(outputRoot,"odf_diameter_full_sections.pdf")));
+imageInfo = imfinfo(fullfile(outputRoot,"odf_diameter_full_sections.png"));
+assert(imageInfo.Width > 0 && imageInfo.Height > 0);
+assert(imageInfo.Width > imageInfo.Height, ...
+  "The 6-row by 7-column SS=1 diagnostic must be horizontally oriented.");
+assert(imageInfo.Width >= 2400 && imageInfo.Height >= 1800, ...
+  "The diagnostic raster is smaller than the planned publication output.");
+pdfInfo = dir(fullfile(outputRoot,"odf_diameter_full_sections.pdf"));
+assert(pdfInfo.bytes > 0, "The diagnostic PDF is empty.");
 roundTripSample = readtable(fullfile(outputRoot,"odf_diameter_summary.csv"),"TextType","string");
 roundTripSection = readtable(fullfile(outputRoot,"odf_diameter_section_summary.csv"),"TextType","string");
 assert(isequal(string(roundTripSample.Properties.VariableNames),sampleColumns));
