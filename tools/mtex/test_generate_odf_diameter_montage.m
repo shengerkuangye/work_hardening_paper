@@ -67,8 +67,29 @@ assert(imageInfo.Width > imageInfo.Height, ...
   "The 6-row by 7-column SS=1 diagnostic must be horizontally oriented.");
 assert(imageInfo.Width >= 2400 && imageInfo.Height >= 1800, ...
   "The diagnostic raster is smaller than the planned publication output.");
+if strcmpi(imageInfo.ResolutionUnit,"meter")
+  xResolutionDpi = imageInfo.XResolution * 0.0254;
+  yResolutionDpi = imageInfo.YResolution * 0.0254;
+else
+  assert(strcmpi(imageInfo.ResolutionUnit,"Inch"));
+  xResolutionDpi = imageInfo.XResolution;
+  yResolutionDpi = imageInfo.YResolution;
+end
+assert(abs(xResolutionDpi - 600) < 1 && ...
+  abs(yResolutionDpi - 600) < 1, ...
+  "The diagnostic PNG must retain approximately 600 dpi metadata.");
+imageData = imread(fullfile(outputRoot,"odf_diameter_full_sections.png"));
+nonwhiteFraction = mean(any(imageData < 250,3),"all");
+assert(nonwhiteFraction >= 0.18, ...
+  "The diagnostic contains excessive white space.");
 pdfInfo = dir(fullfile(outputRoot,"odf_diameter_full_sections.pdf"));
 assert(pdfInfo.bytes > 0, "The diagnostic PDF is empty.");
+pdfId = fopen(fullfile(outputRoot,"odf_diameter_full_sections.pdf"),"r");
+assert(pdfId >= 0, "The diagnostic PDF cannot be opened.");
+pdfHeader = fread(pdfId,5,"*char").';
+fclose(pdfId);
+assert(strcmp(pdfHeader,"%PDF-"), ...
+  "The diagnostic PDF does not contain a valid PDF header.");
 roundTripSample = readtable(fullfile(outputRoot,"odf_diameter_summary.csv"),"TextType","string");
 roundTripSection = readtable(fullfile(outputRoot,"odf_diameter_section_summary.csv"),"TextType","string");
 assert(isequal(string(roundTripSample.Properties.VariableNames),sampleColumns));
