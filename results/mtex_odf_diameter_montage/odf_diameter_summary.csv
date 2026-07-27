@@ -1,0 +1,7 @@
+sample,diameter_mm,cold_reduction_percent,input_path,valid_ti_hex_orientation_count,crystal_symmetry,rotational_fundamental_zone,specimen_symmetry,kernel_halfwidth_deg,grid_resolution_deg,maximum_section_mrd,global_color_limit_max_mrd
+7d,7,0,C:\Users\Admin\Desktop\GithubRepo\work_hardening_paper-odf-sections\data\ebsd_kpl_250221_7_df\scans\d7\ebsd_sample_7_map_15.ctf,358203,6/mmm,622,1,5,5,9.89035261390408,10.4912388697768
+6.48d,6.48,14.31,C:\Users\Admin\Desktop\GithubRepo\work_hardening_paper-odf-sections\data\ebsd_kpl_250221_7_df\scans\d6_48\ebsd_sample_648_map_13.ctf,350441,6/mmm,622,1,5,5,8.71699374087264,10.4912388697768
+6.02d,6.02,26.04,C:\Users\Admin\Desktop\GithubRepo\work_hardening_paper-odf-sections\data\ebsd_kpl_250221_7_df\scans\d6_02\ebsd_sample_602_map_11.ctf,355266,6/mmm,622,1,5,5,7.16900270789942,10.4912388697768
+5.6d,5.6,36,C:\Users\Admin\Desktop\GithubRepo\work_hardening_paper-odf-sections\data\ebsd_kpl_250221_7_df\scans\d5_6\ebsd_sample_56_map_9.ctf,335389,6/mmm,622,1,5,5,7.74574847172371,10.4912388697768
+5.25d,5.25,43.75,C:\Users\Admin\Desktop\GithubRepo\work_hardening_paper-odf-sections\data\ebsd_kpl_250221_7_df\scans\d5_25\ebsd_sample_525_map_7.ctf,317224,6/mmm,622,1,5,5,10.4912388697768,10.4912388697768
+5d,5,48.98,C:\Users\Admin\Desktop\GithubRepo\work_hardening_paper-odf-sections\data\ebsd_kpl_250221_7_df\scans\d5\ebsd_sample_5_map_3.ctf,328099,6/mmm,622,1,5,5,8.52463479098233,10.4912388697768
