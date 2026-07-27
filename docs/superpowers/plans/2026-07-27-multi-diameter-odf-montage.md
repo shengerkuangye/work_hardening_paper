@@ -169,7 +169,7 @@ Run the Task 1 command using `.codex_tmp/odf-montage-summary-green`. Expected: o
 - [ ] **Step 5: Commit calculation and summaries**
 
 ```powershell
-git add -- tools/mtex/generate_odf_diameter_montage.m tools/mtex/test_generate_odf_diameter_montage.m
+git add -- tools/mtex/generate_odf_diameter_montage.m tools/mtex/normalize_positive_mean_density.m tools/mtex/test_generate_odf_diameter_montage.m
 git commit -m "feat: calculate seven-section alpha-Ti ODF diagnostics"
 ```
 
