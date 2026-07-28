@@ -1,6 +1,11 @@
 function test_generate_odf_diameter_montage(scanRoot)
 assert(isfolder(scanRoot));
 assert(~isempty(which("EBSD")), "MTEX must be loaded for this test.");
+originalConvention = getMTEXpref("EulerAngleConvention");
+cleanupConvention = onCleanup(@() setMTEXpref( ...
+  "EulerAngleConvention",originalConvention));
+setMTEXpref("EulerAngleConvention","Roe");
+assert(string(getMTEXpref("EulerAngleConvention")) == "Roe");
 helperPath = fullfile(fileparts(mfilename("fullpath")), ...
   "normalize_positive_mean_density.m");
 assert(isfile(helperPath), ...
@@ -38,6 +43,7 @@ outputRoot = string(tempname);
 mkdir(outputRoot);
 cleanupOutput = onCleanup(@() remove_test_output(outputRoot));
 [sampleSummary, sectionSummary] = generate_odf_diameter_montage(scanRoot, outputRoot);
+assert(string(getMTEXpref("EulerAngleConvention")) == "Roe");
 sampleColumns = ["sample","diameter_mm","cold_reduction_percent", ...
   "input_path","valid_ti_hex_orientation_count","crystal_symmetry", ...
   "rotational_fundamental_zone","specimen_symmetry", ...
@@ -63,6 +69,8 @@ assert(isequal(registeredCatalog.cold_reduction_percent, ...
   [0;14.31;26.04;36;43.75;48.98]));
 assert(isequal(sampleSummary.cold_reduction_percent, ...
   registeredCatalog.cold_reduction_percent));
+assert_bunge_section_maxima_match( ...
+  registeredCatalog(1,:),sectionSummary(1:7,:));
 assert(all(sampleSummary.valid_ti_hex_orientation_count > 0));
 assert(all(strlength(sampleSummary.input_path) > 0));
 assert(all(arrayfun(@isfile,sampleSummary.input_path)));
@@ -145,6 +153,34 @@ assert(isequal(string(roundTripSample.Properties.VariableNames),sampleColumns));
 assert(isequal(string(roundTripSection.Properties.VariableNames),sectionColumns));
 assert(height(roundTripSample) == 6 && height(roundTripSection) == 42);
 clear cleanupOutput
+clear cleanupConvention
+assert(string(getMTEXpref("EulerAngleConvention")) == ...
+  string(originalConvention));
+end
+
+function assert_bunge_section_maxima_match(catalogRow,sectionRows)
+[ebsdFull,~] = load_comprehensive_ebsd_scan(catalogRow);
+tiOrientations = ebsdFull("Ti-Hex").orientations;
+kernel = SO3DeLaValleePoussinKernel("halfwidth",5 * degree);
+rbfOdf = calcDensity(tiOrientations,"kernel",kernel, ...
+  "weights",ones(numel(tiOrientations),1),"silent");
+rbfOdf = normalize_positive_mean_density(rbfOdf);
+odf = SO3FunHarmonic(rbfOdf,"bandwidth",kernel.bandwidth);
+odf = normalize_positive_mean_density(odf);
+phi1Deg = 0:5:355;
+PhiDeg = 0:5:90;
+[phi1Grid,PhiGrid] = meshgrid(phi1Deg,PhiDeg);
+expectedSectionMaxima = zeros(7,1);
+for sectionIndex = 1:7
+  sectionOrientations = orientation.byEuler( ...
+    phi1Grid(:) * degree,PhiGrid(:) * degree, ...
+    sectionRows.phi2_deg(sectionIndex) * degree, ...
+    "Bunge",tiOrientations.CS,tiOrientations.SS);
+  sectionValues = real(eval(odf,sectionOrientations));
+  expectedSectionMaxima(sectionIndex) = max(sectionValues);
+end
+assert(all(abs(sectionRows.section_maximum_mrd - ...
+  expectedSectionMaxima) <= 1e-10));
 end
 
 function assert_fails(operation, expectedMessage)
