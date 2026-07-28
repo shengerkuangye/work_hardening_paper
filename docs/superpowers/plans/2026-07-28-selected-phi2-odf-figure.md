@@ -717,7 +717,7 @@ Open `odf_selected_phi2_sections.png` and verify:
 - [ ] **Step 4: Run the fresh completion gate**
 
 ```powershell
-& 'C:\Program Files\MATLAB\R2025a\bin\matlab.exe' -batch "startup_mtex('noMenu'); addpath('tools/mtex'); scanRoot=string(fullfile(pwd,'data','ebsd_kpl_250221_7_df','scans')); test_comprehensive_ebsd_contract; test_comprehensive_ebsd_helpers(scanRoot); test_generate_odf_selected_phi2_figure(scanRoot);"
+& 'C:\Program Files\MATLAB\R2025a\bin\matlab.exe' -batch "startup_mtex('noMenu'); addpath('tools/mtex'); scanRoot=string(fullfile(pwd,'data','ebsd_kpl_250221_7_df','scans')); test_comprehensive_ebsd_contract; test_comprehensive_ebsd_helpers(scanRoot); test_calculate_selected_phi2_odf_data(scanRoot); test_generate_odf_selected_phi2_figure(scanRoot);"
 git diff --check
 git status --short
 ```
