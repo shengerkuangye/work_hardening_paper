@@ -42,6 +42,7 @@ This project supports writing an academic paper focused on the work hardening me
   - optical microstructure,
   - cited literature.
 - If a conclusion needs EBSD-derived quantities such as KAM, GND density, grain size, misorientation, or texture intensity, check whether those data exist locally before asserting them.
+- On Windows, run MATLAB batches hidden with `Start-Process -WindowStyle Hidden` and `-nodesktop -nosplash -noFigureWindows -batch`; after exit, inventory `matlab.exe`, `MATLAB.exe`, and `MATLABWindow.exe`, clean only exact run-owned orphan `MATLABWindow.exe` PIDs after verifying launcher/main counts are zero, and never kill a pre-existing or interactive user process.
 
 ## Academic Wording Requirements
 
