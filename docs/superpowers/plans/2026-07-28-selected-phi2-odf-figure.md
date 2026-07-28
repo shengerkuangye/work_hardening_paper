@@ -4,7 +4,7 @@
 
 **Goal:** Generate a 6-row by 3-column alpha-Ti ODF figure at `phi2 = 0, 30, and 60 deg`, annotate each row with its formal MTEX ODF maximum, and write reproducible global-maximum and selected-section peak-position tables.
 
-**Architecture:** A new focused MATLAB entry point reuses the registered EBSD catalog, loader, guarded normalization, and contour-clipping helpers. It builds one pixel-weighted harmonic ODF per raw scan, calculates the formal ODF maximum with MTEX at 1 deg resolution, evaluates the three selected sections on a 1 deg grid, writes two CSVs, and renders six identical three-section row rasters into one shared-scale figure.
+**Architecture:** A calculation function reuses the registered EBSD catalog, loader, and guarded normalization helper to return six harmonic ODFs, formal MTEX maxima, and selected-section peak tables without writing files. A focused generator calls that tested calculation interface, writes two CSVs, clips nonphysical negative values only on the contour display grid, and renders six identical three-section row rasters into one shared-scale figure.
 
 **Tech Stack:** MATLAB R2025a, MTEX 6.1.1, existing project EBSD helpers, MATLAB `exportgraphics`.
 
@@ -176,33 +176,82 @@ git commit -m "test: define selected-phi2 ODF figure contract"
 
 **Files:**
 
-- Create: `tools/mtex/generate_odf_selected_phi2_figure.m`
-- Modify: `tools/mtex/test_generate_odf_selected_phi2_figure.m`
+- Create: `tools/mtex/calculate_selected_phi2_odf_data.m`
+- Create: `tools/mtex/test_calculate_selected_phi2_odf_data.m`
 
 **Interfaces:**
 
-- Consumes: `scanRoot (1,1) string`, `outputRoot (1,1) string`.
-- Produces: `[sampleSummary,peakSummary]`.
+- Consumes: `scanRoot (1,1) string`.
+- Produces:
+  `[sampleSummary,peakSummary,odfs,catalog] = calculate_selected_phi2_odf_data(scanRoot)`.
 - `sampleSummary`: six rows with formal MTEX ODF maxima and maximum
   orientations.
 - `peakSummary`: 18 rows with selected-section peak values and positions.
+- `odfs`: six normalized harmonic ODF objects used by Task 3.
+- `catalog`: six registered raw catalog rows in decreasing-diameter order.
 
-- [ ] **Step 1: Implement catalog selection and ODF construction**
+- [ ] **Step 1: Write the failing calculation test**
 
-Create `tools/mtex/generate_odf_selected_phi2_figure.m` with:
+Create `tools/mtex/test_calculate_selected_phi2_odf_data.m`:
 
 ```matlab
-function [sampleSummary,peakSummary] = ...
-  generate_odf_selected_phi2_figure(scanRoot,outputRoot)
-%GENERATE_ODF_SELECTED_PHI2_FIGURE Render selected alpha-Ti ODF sections.
+function test_calculate_selected_phi2_odf_data(scanRoot)
+assert(isfolder(scanRoot));
+assert(~isempty(which("EBSD")), "MTEX must be loaded for this test.");
+[sampleSummary,peakSummary,odfs,catalog] = ...
+  calculate_selected_phi2_odf_data(scanRoot);
+assert(height(sampleSummary) == 6 && height(peakSummary) == 18);
+assert(numel(odfs) == 6 && height(catalog) == 6);
+assert(isequal(sampleSummary.sample, ...
+  ["7d";"6.48d";"6.02d";"5.6d";"5.25d";"5d"]));
+assert(isequal(catalog.sample,sampleSummary.sample));
+assert(isequal(sampleSummary.cold_reduction_percent, ...
+  [0;14.31;26.04;36;43.75;48.98]));
+assert(all(sampleSummary.crystal_symmetry == "6/mmm"));
+assert(all(sampleSummary.rotational_fundamental_zone == "622"));
+assert(all(sampleSummary.specimen_symmetry == "1"));
+assert(all(sampleSummary.odf_maximum_resolution_deg == 1));
+assert(all(isfinite(sampleSummary.odf_maximum_mrd) & ...
+  sampleSummary.odf_maximum_mrd > 0));
+for sampleIndex = 1:6
+  rows = (sampleIndex - 1) * 3 + (1:3);
+  assert(isequal(peakSummary.phi2_deg(rows),[0;30;60]));
+  assert(string(odfs{sampleIndex}.CS.pointGroup) == "6/mmm");
+  assert(string(odfs{sampleIndex}.CS.properGroup.pointGroup) == "622");
+  assert(string(odfs{sampleIndex}.SS.pointGroup) == "1");
+end
+assert(all(isfinite(peakSummary.section_peak_mrd) & ...
+  peakSummary.section_peak_mrd > 0));
+assert(all(peakSummary.section_grid_resolution_deg == 1));
+globalLimit = max(sampleSummary.odf_maximum_mrd);
+assert(all(sampleSummary.global_color_limit_max_mrd == globalLimit));
+assert(all(peakSummary.global_color_limit_max_mrd == globalLimit));
+end
+```
+
+- [ ] **Step 2: Run the calculation test to verify RED**
+
+```powershell
+& 'C:\Program Files\MATLAB\R2025a\bin\matlab.exe' -batch "startup_mtex('noMenu'); addpath('tools/mtex'); test_calculate_selected_phi2_odf_data(string(fullfile(pwd,'data','ebsd_kpl_250221_7_df','scans')));"
+```
+
+Expected: MATLAB exits non-zero because
+`calculate_selected_phi2_odf_data` is undefined.
+
+- [ ] **Step 3: Implement catalog selection and ODF construction**
+
+Create `tools/mtex/calculate_selected_phi2_odf_data.m` with:
+
+```matlab
+function [sampleSummary,peakSummary,odfs,catalog] = ...
+  calculate_selected_phi2_odf_data(scanRoot)
+%CALCULATE_SELECTED_PHI2_ODF_DATA Calculate alpha-Ti ODF peak data.
 
 arguments
   scanRoot (1,1) string
-  outputRoot (1,1) string
 end
 assert(isfolder(scanRoot));
 assert(~isempty(which("EBSD")), "MTEX must be loaded.");
-if ~isfolder(outputRoot), mkdir(outputRoot); end
 
 diameterOrder = ["7d";"6.48d";"6.02d";"5.6d";"5.25d";"5d"];
 selectedPhi2Deg = [0;30;60];
@@ -277,7 +326,7 @@ assert(all(isfinite(sectionPeakMrd) & sectionPeakMrd > 0,"all"));
 globalMaximumMrd = max(odfMaximumMrd);
 ```
 
-- [ ] **Step 2: Build and write the exact tables**
+- [ ] **Step 4: Build and return the exact tables**
 
 Append:
 
@@ -322,38 +371,23 @@ peakSummary = table(sample,diameter_mm,cold_reduction_percent, ...
 assert(height(sampleSummary) == 6 && height(peakSummary) == 18);
 assert(isequal(reshape(peakSummary.phi2_deg,3,[]), ...
   repmat(selectedPhi2Deg,1,6)));
-writetable(sampleSummary, ...
-  fullfile(outputRoot,"odf_selected_phi2_summary.csv"));
-writetable(peakSummary, ...
-  fullfile(outputRoot,"odf_selected_phi2_peak_positions.csv"));
-```
-
-- [ ] **Step 3: Add a calculation-only gate before rendering**
-
-Append a call to a not-yet-defined renderer so the two CSVs are written before
-the expected Task 2 RED failure:
-
-```matlab
-pngPath = fullfile(outputRoot,"odf_selected_phi2_sections.png");
-pdfPath = fullfile(outputRoot,"odf_selected_phi2_sections.pdf");
-render_selected_phi2_matrix(odfs,catalog,selectedPhi2Deg, ...
-  odfMaximumMrd,globalMaximumMrd,pngPath,pdfPath);
 end
 ```
 
-- [ ] **Step 4: Run the integration test**
-
-Run the Task 1 command.
-
-Expected: MATLAB exits non-zero with
-`Unrecognized function or variable 'render_selected_phi2_matrix'`. Inspect the
-temporary output path printed by MATLAB only if needed; the calculation and
-both table-construction assertions must have completed before this failure.
-
-- [ ] **Step 5: Commit calculation and tables**
+- [ ] **Step 5: Run the focused calculation test to verify GREEN**
 
 ```powershell
-git add -- tools/mtex/generate_odf_selected_phi2_figure.m tools/mtex/test_generate_odf_selected_phi2_figure.m
+& 'C:\Program Files\MATLAB\R2025a\bin\matlab.exe' -batch "startup_mtex('noMenu'); addpath('tools/mtex'); test_calculate_selected_phi2_odf_data(string(fullfile(pwd,'data','ebsd_kpl_250221_7_df','scans')));"
+```
+
+Expected: MATLAB exits 0 and all ordering, symmetry, formal-maximum,
+selected-section, and shared-color-limit assertions pass without creating
+output files.
+
+- [ ] **Step 6: Commit the calculation interface**
+
+```powershell
+git add -- tools/mtex/calculate_selected_phi2_odf_data.m tools/mtex/test_calculate_selected_phi2_odf_data.m
 git commit -m "feat: calculate selected-phi2 ODF maxima"
 ```
 
@@ -361,7 +395,7 @@ git commit -m "feat: calculate selected-phi2 ODF maxima"
 
 **Files:**
 
-- Modify: `tools/mtex/generate_odf_selected_phi2_figure.m`
+- Create: `tools/mtex/generate_odf_selected_phi2_figure.m`
 - Modify: `tools/mtex/test_generate_odf_selected_phi2_figure.m`
 
 **Interfaces:**
@@ -370,7 +404,38 @@ git commit -m "feat: calculate selected-phi2 ODF maxima"
   maxima, one global color limit, PNG path, and PDF path.
 - Produces: one 600 dpi PNG and one 600 dpi image-content PDF.
 
-- [ ] **Step 1: Add the row-raster renderer**
+- [ ] **Step 1: Add the generator orchestration**
+
+Create `tools/mtex/generate_odf_selected_phi2_figure.m`:
+
+```matlab
+function [sampleSummary,peakSummary] = ...
+  generate_odf_selected_phi2_figure(scanRoot,outputRoot)
+%GENERATE_ODF_SELECTED_PHI2_FIGURE Render selected alpha-Ti ODF sections.
+
+arguments
+  scanRoot (1,1) string
+  outputRoot (1,1) string
+end
+assert(isfolder(scanRoot));
+assert(~isempty(which("EBSD")), "MTEX must be loaded.");
+if ~isfolder(outputRoot), mkdir(outputRoot); end
+[sampleSummary,peakSummary,odfs,catalog] = ...
+  calculate_selected_phi2_odf_data(scanRoot);
+writetable(sampleSummary, ...
+  fullfile(outputRoot,"odf_selected_phi2_summary.csv"));
+writetable(peakSummary, ...
+  fullfile(outputRoot,"odf_selected_phi2_peak_positions.csv"));
+selectedPhi2Deg = [0;30;60];
+pngPath = fullfile(outputRoot,"odf_selected_phi2_sections.png");
+pdfPath = fullfile(outputRoot,"odf_selected_phi2_sections.pdf");
+render_selected_phi2_matrix(odfs,catalog,selectedPhi2Deg, ...
+  sampleSummary.odf_maximum_mrd, ...
+  sampleSummary.global_color_limit_max_mrd(1),pngPath,pdfPath);
+end
+```
+
+- [ ] **Step 2: Add the row-raster renderer**
 
 Add this local function after the generator:
 
@@ -524,7 +589,7 @@ clear cleanupMatrix cleanupTemp
 end
 ```
 
-- [ ] **Step 2: Add local image and cleanup helpers**
+- [ ] **Step 3: Add local image and cleanup helpers**
 
 Append:
 
@@ -569,7 +634,7 @@ end
 end
 ```
 
-- [ ] **Step 3: Run GREEN**
+- [ ] **Step 4: Run GREEN**
 
 Run the Task 1 command.
 
@@ -577,7 +642,7 @@ Expected: MATLAB exits 0; the temporary output directory is deleted by the
 test; all table, symmetry, selected-section, raster, PDF, and resolution
 assertions pass.
 
-- [ ] **Step 4: Commit the renderer**
+- [ ] **Step 5: Commit the generator and renderer**
 
 ```powershell
 git add -- tools/mtex/generate_odf_selected_phi2_figure.m tools/mtex/test_generate_odf_selected_phi2_figure.m
