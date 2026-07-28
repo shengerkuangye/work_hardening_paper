@@ -16,6 +16,24 @@ assert_fails(@() normalize_positive_mean_density([-1 -3]), ...
 assert_fails(@() normalize_positive_mean_density([1 1i]), ...
   "finite and positive");
 
+clipHelperPath = fullfile(fileparts(mfilename("fullpath")), ...
+  "clip_negative_contour_zdata.m");
+assert(isfile(clipHelperPath), ...
+  "The negative contour-density clipping helper is missing.");
+clipFigure = figure("Visible","off");
+cleanupClipFigure = onCleanup(@() close(clipFigure));
+clipAxes = axes(clipFigure);
+[clipX,clipY] = meshgrid(linspace(-1,1,21));
+clipZ = clipX .^ 2 + clipY .^ 2 - 0.35;
+contourf(clipAxes,clipX,clipY,clipZ,[0 0.5 1 1.5]);
+clipContour = findall(clipAxes,"Type","contour");
+negativePointCount = nnz(clipContour.ZData < 0);
+assert(negativePointCount > 0);
+clippedPointCount = clip_negative_contour_zdata(clipAxes);
+assert(clippedPointCount == negativePointCount);
+assert(all(clipContour.ZData >= 0,"all"));
+clear cleanupClipFigure
+
 outputRoot = string(tempname);
 mkdir(outputRoot);
 cleanupOutput = onCleanup(@() remove_test_output(outputRoot));

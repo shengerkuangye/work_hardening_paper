@@ -176,6 +176,9 @@ for scanIndex = 1:sampleCount
     "MTEX did not render all seven requested phi2 section axes.");
   assert(all(arrayfun(@(axisHandle) ~isempty(axisHandle.Children), ...
     sectionAxes)),"One or more MTEX section axes are empty.");
+  clippedNegativePointCount = clip_negative_contour_zdata(sectionAxes);
+  fprintf("ODF row %d: clipped %d negative plot-grid points to 0 MRD.\n", ...
+    scanIndex,clippedNegativePointCount);
   for sectionIndex = 1:sectionCount
     sphericalPlotHandle = getappdata(sectionAxes(sectionIndex), ...
       "sphericalPlot");

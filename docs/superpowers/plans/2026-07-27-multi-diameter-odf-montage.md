@@ -17,6 +17,7 @@
 - Do not modify raw or denoised CTF files.
 - Export `odf_diameter_full_sections.png`, `odf_diameter_full_sections.pdf`, `odf_diameter_summary.csv` (six rows), and `odf_diameter_section_summary.csv` (42 rows) under `results/mtex_odf_diameter_montage`.
 - Preserve approximately 600 dpi in the PNG metadata and at least 590 dpi of page-equivalent raster data in the image-content PDF.
+- Clip negative MTEX contour-grid values to `0 MRD` for rendering only; do not modify the ODF models or numerical summaries.
 - Select manuscript angles only after checking the full diagnostic and the 42-row CSV. A later caption must use `selected phi2 sections` and list their angles.
 
 ---
@@ -178,6 +179,7 @@ git commit -m "feat: calculate seven-section alpha-Ti ODF diagnostics"
 **Files:**
 
 - Modify: `tools/mtex/generate_odf_diameter_montage.m`
+- Create: `tools/mtex/clip_negative_contour_zdata.m`
 - Test: `tools/mtex/test_generate_odf_diameter_montage.m`
 
 **Interface:** Writes the diagnostic PNG and PDF required by Task 1.
@@ -210,14 +212,14 @@ mtexColorMap parula
 renderedSectionCount = renderedSectionCount + 7;
 ```
 
-After the row loop, require `assert(renderedSectionCount == 42)`. Preserve the imported-symmetry assertions (`6/mmm`, proper group `622`, and `SS = 1`), add diameter/cold-reduction labels at left and `phi2` headings above the seven columns, then attach one east-side `ODF intensity (MRD)` colorbar with `[0 globalMaximumMrd]`. Export the PNG at 600 dpi. Export the PDF with `ContentType="image"` and `Resolution=600`; the test must reject PDF page-raster density below 590 dpi. Assert both outputs are non-empty.
+After each `plotSection` call, use `clip_negative_contour_zdata` to set nonphysical negative contour-grid values to `0 MRD` and assert that all rendered contour data are finite and nonnegative. This is a plotting-only operation and must not alter the ODF models or CSV summaries. After the row loop, require `assert(renderedSectionCount == 42)`. Preserve the imported-symmetry assertions (`6/mmm`, proper group `622`, and `SS = 1`), add diameter/cold-reduction labels at left and `phi2` headings above the seven columns, then attach one east-side `ODF intensity (MRD)` colorbar with `[0 globalMaximumMrd]`. Export the PNG at 600 dpi. Export the PDF with `ContentType="image"` and `Resolution=600`; the test must reject PDF page-raster density below 590 dpi. Assert both outputs are non-empty.
 
 - [ ] **Step 3: Run GREEN and commit**
 
 Run the Task 1 command using `.codex_tmp/odf-montage-test`. Expected: exit code 0. Then run:
 
 ```powershell
-git add -- tools/mtex/generate_odf_diameter_montage.m tools/mtex/test_generate_odf_diameter_montage.m
+git add -- tools/mtex/generate_odf_diameter_montage.m tools/mtex/clip_negative_contour_zdata.m tools/mtex/test_generate_odf_diameter_montage.m
 git commit -m "feat: render multi-diameter ODF diagnostic matrix"
 ```
 
