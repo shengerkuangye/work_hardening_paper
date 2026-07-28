@@ -667,4 +667,3 @@ only intentional result files are uncommitted.
 git add -- results/mtex_odf_selected_phi2/odf_selected_phi2_sections.png results/mtex_odf_selected_phi2/odf_selected_phi2_sections.pdf results/mtex_odf_selected_phi2/odf_selected_phi2_summary.csv results/mtex_odf_selected_phi2/odf_selected_phi2_peak_positions.csv
 git commit -m "results: add selected-phi2 ODF figure"
 ```
-
