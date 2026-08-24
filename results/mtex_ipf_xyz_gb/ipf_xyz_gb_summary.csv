@@ -1,0 +1,7 @@
+sample,diameter_mm,cold_reduction_percent,variant,input_path,valid_ti_hex_point_count,grain_detection_deg,boundary_classification_deg,lagb_2_10_length_um,hagb_ge10_length_um,lagb_2_10_length_fraction,hagb_ge10_length_fraction,coordinate_x,coordinate_y,coordinate_z
+7d,7,0,raw,C:\Users\Admin\Desktop\GithubRepo\work_hardening_paper\data\ebsd_kpl_250221_7_df\scans\d7\ebsd_sample_7_map_15.ctf,358203,2,10,611,35198.5,0.0170625113447549,0.982937488655245,AD,TD/RD,ND
+6.48d,6.48,14.31,raw,C:\Users\Admin\Desktop\GithubRepo\work_hardening_paper\data\ebsd_kpl_250221_7_df\scans\d6_48\ebsd_sample_648_map_13.ctf,350441,2,10,80709.5,29796.5,0.730363057209563,0.269636942790437,AD,TD/RD,ND
+6.02d,6.02,26.04,raw,C:\Users\Admin\Desktop\GithubRepo\work_hardening_paper\data\ebsd_kpl_250221_7_df\scans\d6_02\ebsd_sample_602_map_11.ctf,355266,2,10,31883,31293.5,0.504665500621275,0.495334499378725,AD,TD/RD,ND
+5.6d,5.6,36,raw,C:\Users\Admin\Desktop\GithubRepo\work_hardening_paper\data\ebsd_kpl_250221_7_df\scans\d5_6\ebsd_sample_56_map_9.ctf,335389,2,10,108413.5,25647,0.808690852264463,0.191309147735537,AD,TD/RD,ND
+5.25d,5.25,43.75,raw,C:\Users\Admin\Desktop\GithubRepo\work_hardening_paper\data\ebsd_kpl_250221_7_df\scans\d5_25\ebsd_sample_525_map_7.ctf,317224,2,10,134785.5,25293,0.841996270579747,0.158003729420253,AD,TD/RD,ND
+5d,5,48.98,raw,C:\Users\Admin\Desktop\GithubRepo\work_hardening_paper\data\ebsd_kpl_250221_7_df\scans\d5\ebsd_sample_5_map_3.ctf,328099,2,10,129277.5,28731.5,0.818165420957034,0.181834579042966,AD,TD/RD,ND

@@ -1,0 +1,2 @@
+kernel_halfwidth_deg,plot_resolution_deg,export_dpi,coordinate_x,coordinate_y,coordinate_z,pole_figures,inverse_pole_directions
+5,5,600,AD,TD/RD,ND,{0001}; {10-10}; {11-20},AD(X); TD/RD(Y); ND(Z)

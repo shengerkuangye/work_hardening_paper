@@ -1,0 +1,1066 @@
+          materials
+Article
+Promising Tensile and Fatigue Properties of
+Commercially Pure Titanium Processed by Rotary
+Swaging and Annealing Treatment
+Mingsai Wang 1 , Yanfei Wang 1 , Aihui Huang 1 , Lei Gao 1 , Yusheng Li 2 and
+Chongxiang Huang 1, *
+ 1   School of Aeronautics and Astronautics, Sichuan University, Chengdu 610065, China;
+     mingsaiwang@stu.scu.edu.cn (M.W.); yfwangscu@163.com (Y.W.); aihuihuang@stu.scu.edu.cn (A.H.);
+     lei.gao@scu.edu.cn (L.G.)
+ 2   Nano Structural Materials Center, School of Materials Science and Engineering, Nanjing University of
+     Science and Technology, Nanjing 210094, China; liyusheng@njust.edu.cn
+ *   Correspondence: chxhuang@scu.edu.cn
+                                                                                                     
+ Received: 19 October 2018; Accepted: 9 November 2018; Published: 13 November 2018                   
+
+
+ Abstract: The effect of the grain refinement and texture on tensile and fatigue properties in
+ commercially pure titanium (grade 2) processed by rotary swaging (RS) and an annealing treatment
+ is investigated. The as-processed sample consists of band-like grains on the longitudinal section and
+ equiaxed grains on the transversal section and revealed an obvious <10-10> fiber texture with respect
+ to the rod axis. Through this technique, a sample with a high tensile strength of 870 MPa, a high
+ uniform elongation of 8.5%, and a high fatigue limit of 490 MPa can be achieved, and the tensile
+ and fatigue properties are almost the same as those of a conventional Ti-6Al-4V alloy. The enhanced
+ mechanical properties and plastic deformation mechanism are discussed in terms of the observed
+ ultrafine-grained microstructure and strong fiber texture.
+
+ Keywords: strength and ductility; fatigue; pure titanium; texture; rotary swaging
+
+
+
+
+1. Introduction
+     For decades, titanium alloys have been of increasing importance in various areas such as the
+biomedical, aerospace, and automotive industries as well as in other specialized applications, due
+to their good combination of high biocompatibility, high strength-to-weight ratio, good mechanical
+properties, and excellent corrosion resistance [1–6]. Ti-6Al-4V is a general surgical material, but it is
+widely acknowledged that both the Al and V elements are capable of introducing long-term health
+problems [5]. In addition, due to the stress shielding effect introduced by the incompatibility in elastic
+modulus between the implanted alloy and the adjacent bone tissue, the former usually exhibits an
+insufficient loading capacity. The pure Ti, which has a relatively low Young’s modulus, contains no
+harmful elements. More importantly, the pure Ti is intrinsically biocompatible and exhibits excellent
+bone apposition. Therefore, commercially pure titanium (CP-Ti) has been considered as an alternative
+material in medical applications, such as dental implants, orthopedic implants, and cardiovascular
+stents [7–9]. However, the low strength, limited ductility, and low fatigue strength of CP-Ti restrict this
+possibility. Severe plastic deformation (SPD) can significantly increase the tensile strength of metallic
+materials through grain refinement, according to the Hall-Petch relationship. Nowadays, there is a
+body of research into the deformation behavior of ultrafine-grained (UFG) metals processed via equal
+channel angular pressing (ECAP), high-pressure torsion (HPT), hydrostatic extrusion (HE), rotationally
+accelerated shot peening (RASP), accumulative roll bonding, etc. [10–16]. In particular, a complex SPD
+processing method consisting of ECAP and other plastic deformation (such as rolling and extrusion)
+
+
+Materials 2018, 11, 2261; doi:10.3390/ma11112261                              www.mdpi.com/journal/materials
+Materials 2018, 11, 2261                                                                            2 of 11
+
+
+
+can enhance the yield strength further up to 1 GPa for CP-Ti [17,18]. However, the low ductility of
+these bulk UFG Ti samples prevents them from being used in practical applications.
+      Several strategies have been proposed to improve the ductility of UFG CP-Ti without
+sacrificing its strength. For instance, a combination of warm ECAP and cold extrusion followed
+by annealing treatment can improve the tensile strength up to 1050 MPa, with a total elongation
+of 8% [18]. Cryorolling followed by annealing treatment produced a fine structure consisting of
+bimodal/multimodal grain size distributions. This structure reveals a combination of a high yield
+strength of 926 MPa and a large uniform elongation of 11% [19]. More recently, asymmetrical rolling
+and subsequent partial recrystallization produced a heterogeneous lamella (HL) structure, which can
+unite the high strength of ultrafine grains and the high ductility of coarse grains [20]. Compared with
+the properties of those manufactured by traditional processing technologies, tensile strengths of CP-Ti
+parts processed by selective laser melting have been improved to 757 MPa while maintaining the total
+elongation of 19% [21]. By taking into account the strength, ductility, and product dimension, there are
+still major challenges associated with these techniques for mass production on an industrial scale.
+      As to the fatigue properties, several studies have revealed an enhanced high cycle fatigue (HCF)
+limit of UFG CP-Ti. The highest HCF limit of 460 MPa was reported in UFG CP-Ti (grade 2), produced
+by ECAP [22–24]. It was observed that the fatigue crack initiation was significantly delayed in the
+transverse direction due to the strong crystallographic texture of UFG Ti fabricated by accumulative roll
+bonding (ARB), while the crack propagation behavior was not obviously affected [25–27]. Although
+these studies revealed some interesting fatigue behaviors of UFG CP-Ti, investigations into the fatigue
+properties of UFG CP-Ti are still limited.
+      In this work, we use the technique of rotary swaging (RS) and annealing treatment to achieve
+a high-performance CP-Ti with an ultimate tensile strength of 870 MPa, uniform elongation of 8.5%,
+and fatigue limit of 490 MPa. A UFG-like microstructure with preferred orientation was revealed to be
+responsible for such high performance.
+
+2. Experimental Procedures
+      A commercially pure titanium (grade 2) was used as the studied material. A hot extruded bar
+in diameter of 32 mm was severely deformed by rotary swaging (RS) at room temperature (RT).
+The cross-section area reduction from 32 mm to 8 mm resulted in a strain of 2.77, according to ε =
+ln(A0 /A), where A0 and A are the initial and final cross section area of samples, respectively [28].
+Thereafter, the rods in the as-deformed state were annealed at 450 ◦ C and 500 ◦ C for 5 min, which were
+labeled as RSA450 and RSA500 samples, respectively.
+      The microstructures were observed by transmission electron microscope (TEM, Tecnai G2 20,
+FEI, Hillsboro, OR, USA) operating at 200 kV. The as-received TEM samples with a thickness of
+about 0.5 mm were cut from the RS-processed rods along the transversal and longitudinal sections,
+respectively. The slices were mechanically ground to a thickness of 60 µm and finally thinned
+by twin-jet polishing with a solution of perchloric acid (5%), butanol (35%) and methanol (60%).
+Electron-backscattered diffraction (EBSD) was carried out on a scanning electron microscope (SEM,
+Quant 250 FEG, FEI, Hillsboro, OR, USA) in order to examine the crystallographic texture. The step
+size was 100 nm, and the scanning voltage was 15 kV.
+      Dog-bone shaped tensile specimens with gauge size of 12 × 2 × 1 mm3 were cut from the
+RS-processed rods along the axial direction. Uniaxial tensile tests were performed at a strain rate of 5 ×
+10−4 s−1 at room temperature on a testing machine (BOSE ElectroForce 3230 DMA, Shimadzu, Tokyo,
+Japan). An extensometer was used to calibrate the strain during tension and each test was repeated for
+at least three samples. In order to evaluate the fatigue life processed by RS and annealing, high-cycle
+fatigue (HCF) tests were carried out using smooth funnel-shaped samples, on a high-frequency fatigue
+machine (QBG-100) at room temperature. The specimens were subjected to a symmetric load (R = −1)
+under axial loading with the controlled stress. The applied axial load was in a sinusoidal mode with a
+frequency of 80 Hz.
+  three times as high as for the CG sample. This sample loses ductility quickly due to its low strain
+  hardening ability. However, by means of a short (5 min) annealing at 450 °C, a remarkable uniform
+  elongation of 8.5% is regained. Meanwhile, the YS and UTS are still kept at high levels of 740 MPa
+  and 870 MPa, respectively. These excellent tensile properties are almost the same as those of
+  Ti-6Al-4V
+Materials           2261(see Table 1) and offer a wide potential for large-scale industrial application
+                alloy
+          2018, 11,                                                                                                        3 of[22].
+                                                                                                                                11
+  Further increasing annealing temperature to 500 °C results in a significant decrease (>100 MPa) in
+  strength, but only a slight increase in uniform elongation. Figure 1b shows the true stress-strain
+   Results
+3.curves      and Discussion
+           converted      from those in Figure 1a using a standard formula, demonstrating an obvious strain
+  hardening responsible for ductility. Based on the Hollomon equation (𝜎 = 𝐾𝜀 ), the strain hardening
+3.1. Tensile Properties
+  exponents (n) are calculated to be 0.102 and 0.088 for the RSA450 and RSA500 samples, respectively,
+      Figure in
+  as shown      1aFigure
+                     displays     It istypical
+                             1c. the     only slightly   curvesthan
+                                                tensilelower        of RS-processed
+                                                                         that (0.141) of samples       compared
+                                                                                            CG counterpart.          with their
+                                                                                                                  Therefore,     the
+coarse-grained
+  RSA450 and RSA500  (CG) counterparts.        The measured
+                               samples can yield                  yield strength
+                                                     a high uniform         ductility (YS)
+                                                                                       veryand
+                                                                                             closeultimate
+                                                                                                    to its CG tensile
+                                                                                                                 samplestrength
+                                                                                                                          (11.5%)
+  even of
+(UTS)    at athe  as-received
+               high   stress level.RS sample were 998 MPa and 1040 MPa, respectively, which are almost
+        Figureas1dhigh
+three times                as for the
+                      summaries       theCG  sample.
+                                          yield         This
+                                                 strength     sample
+                                                            and            loses ductility
+                                                                  the uniform      elongationquickly
+                                                                                                 of thedue    to itssamples
+                                                                                                                     low strain
+                                                                                                          present               and
+hardening      ability.inHowever,                                                               ◦ C, a remarkable uniform
+  those reported          literature byformeans    of a short
+                                           CP-Ti grade         (5 min) annealing
+                                                          2 [20,29–35].      In general,    450higher
+                                                                                        at the            the YS, the lower the
+elongation     of 8.5% isFor
+  uniform ductility.        regained.
+                                most UFG      and NS the
+                                         Meanwhile,             and UTS are
+                                                           YS produced
+                                                       CP-Ti                   bystill
+                                                                                   SPDkept   at high
+                                                                                         method,       levels
+                                                                                                    their      of 740 elongation
+                                                                                                            uniform    MPa and
+  is MPa,
+870  usually respectively.
+                lower than    These
+                                5%, excellent
+                                       while thetensile
+                                                   YS canproperties
+                                                             be much    arehigher
+                                                                             almostthan
+                                                                                     the same    as those
+                                                                                            700 MPa          of Ti-6Al-4V
+                                                                                                         [31,34].           alloy
+                                                                                                                   This severely
+(see Tabletheir
+  hinders     1) and    offer a wide
+                    industrial          potential
+                                  application.     for large-scale
+                                                 Recently,   a novelindustrial
+                                                                        HL structureapplication    [22]. Further
+                                                                                         by embedding                increasing
+                                                                                                             soft micro-grained
+annealing
+  lamellae temperature
+               into a hardtoUFG    500 ◦ lamellae
+                                          C results in  a significant
+                                                     matrix               decrease (>100
+                                                               was fabricated                         in strength, rolling
+                                                                                             MPa)asymmetric
+                                                                                      by using                       but onlyand  a
+slight  increasepartial
+  subsequent        in uniform                    Figurecan
+                                    elongation.which
+                            recrystallization,                 showsthe
+                                                           1b unite           truestrength
+                                                                          thehigh   stress-strain
+                                                                                              of UFG curves   converted
+                                                                                                         and the            from
+                                                                                                                   high uctility
+those
+  of CGin Figure           the adata
+                    1a using
+            [20]. And             standard   formula,
+                                        combining      demonstrating
+                                                     high   YS and uniform   an obvious   strain hardening
+                                                                                    elongation     jump outresponsible         for
+                                                                                                                  of the regular
+ductility.                                            (σ =      n
+                                                             Kε current
+  trade-offBased     on the
+               region,    as Hollomon
+                              shown in equation
+                                            Figure 1d.    The     ), the strain   hardening
+                                                                             RS and            exponents
+                                                                                        annealing            (n) are
+                                                                                                       process        calculated
+                                                                                                                 exhibit   similar
+   be 0.102 to
+topotential    and   0.088 for the
+                  strengthen      the CP-Ti
+                                       RSA450    and
+                                              with    RSA500
+                                                    only         samples,
+                                                          a limited            respectively,
+                                                                        sacrifice              as It
+                                                                                   of ductility.  shown
+                                                                                                     can beinseen
+                                                                                                                Figure   1c. It is1d
+                                                                                                                    in Figure
+  andslightly
+only    Table 1lowerthat than    that (0.141) ofofCG
+                           the combination           YScounterpart.
+                                                         and uniform      Therefore,
+                                                                             elongation     RSA450
+                                                                                       the of  current  and  RSA500 samples
+                                                                                                           RS-processed      CP-Ti
+can          a high
+     yield the
+  reaches             uniform
+                  level           ductility
+                         of tensile                close
+                                             very of
+                                      properties         to its CG
+                                                      Ti-6Al-4V     andsample
+                                                                           HL-Ti.(11.5%) even at a high stress level.
+
+                               (a)                                                               (b)
+
+
+
+
+  Materials 2018, 11, x FOR PEER REVIEW                                                                                        4 of 11
+
+
+                                (c)                                                               (d)
+
+
+
+
+        Figure
+      Figure     1. Tensile
+              1. Tensile     behaviors
+                         behaviors         of CP-Ti
+                                     of CP-Ti    processed   by RS by
+                                                        processed    andRS   and annealing
+                                                                           annealing           treatment:
+                                                                                      treatment:            (a)tensile
+                                                                                                   (a) typical   typical  tensile
+                                                                                                                       curves,
+      (b)curves, (b) true stress-strain
+          true stress-strain  curves, (c) curves,        plot −
+                                             plot of(c)ln(σ)  of ln(ε)  - ln(ε)
+                                                                 ln(σ) for      for indexing
+                                                                            indexing           strain hardening
+                                                                                       strain hardening            exponent
+                                                                                                            exponent    in thein
+        the Hollomon
+      Hollomon           equation
+                  equation          n ),=(d)
+                             (σ = kε(σ        ), (d) Excellent
+                                          kεnExcellent            strength-ductility
+                                                          strength-ductility    synergysynergy   of current
+                                                                                          of current         CP-Ti compared
+                                                                                                      CP-Ti compared     with
+              other experimental
+        withexperimental
+      other                 results. results.
+
+                 Table 1. Mechanical properties of present RS-processed samples and Ti-6Al-4V alloy.
+
+                                                                                                                  Total
+                                                  Yield Strength          UTS            Uniform
+     Materials                Samples                                                                             Elongation
+                                                  (MPa)                   (MPa)          Elongation (%)
+                                                                                                                  (%)
+                              CG                  318                     440            11.5                     28
+Materials 2018, 11, 2261                                                                                        4 of 11
+
+
+
+               Table 1. Mechanical properties of present RS-processed samples and Ti-6Al-4V alloy.
+
+                                         Yield Strength                                 Uniform           Total
+     Materials             Samples                               UTS (MPa)
+                                             (MPa)                                   Elongation (%)   Elongation (%)
+                              CG               318                   440                  11.5             28
+                              RS               998                   1040                  1.6             6
+  CP-Ti (grade 2)
+                            RSA450             740                    870                 8.5              17
+                            RSA500             620                    710                 9.5              19
+   Ti-6Al-4V [a]           ASTM F 67           795                   860                                   10
+                                       [a] (Ti-6Al-4V alloy for implants or bone).
+
+
+
+
+     Figure 1d summaries the yield strength and the uniform elongation of the present samples and
+those reported in literature for CP-Ti grade 2 [20,29–35]. In general, the higher the YS, the lower the
+uniform ductility. For most UFG and NS CP-Ti produced by SPD method, their uniform elongation is
+usually lower than 5%, while the YS can be much higher than 700 MPa [31,34]. This severely hinders
+their industrial application. Recently, a novel HL structure by embedding soft micro-grained lamellae
+into a hard UFG lamellae matrix was fabricated by using asymmetric rolling and subsequent partial
+recrystallization, which can unite the high strength of UFG and the high ductility of CG [20]. And the
+data combining high YS and uniform elongation jump out of the regular trade-off region, as shown
+in Figure 1d. The current RS and annealing process exhibit similar potential to strengthen the CP-Ti
+with only a limited sacrifice of ductility. It can be seen in Figure 1d and Table 1 that the combination
+of YS and uniform elongation of current RS-processed CP-Ti reaches the level of tensile properties of
+Ti-6Al-4V and HL-Ti.
+
+3.2. Fatigue Limit
+     A good fatigue limit of current RS-processed Ti can be expected since the HCF limit of metallic
+materials is mainly controlled by static strength [36–38]. Figure 2a shows the typical S-N curves of the
+RS-processed samples. For comparison, the curves of CG CP-Ti are also included [22]. The fatigue
+limit is defined as the stress at which the sample is deformed for 107 cycles under fully-reversed cycles
+without failure. It is measured that the fatigue limit of the RS sample in the as-received state is 460 MPa,
+which is double that of its CG counterpart. Surprisingly, the annealing treatment at 450 ◦ C for 5 min
+enhances the fatigue limit further to 490 MPa, although the tensile strength is lowered by 170 MPa
+from the as-received state. This measured fatigue limit is higher than that of most UFG CP-Ti (grade
+2) produced by ECAP and ARB methods and approaches that of Ti-6Al-4V alloy [22–25], as seen in
+Table 2. The fatigue ratio (σf /σUTS ) against tensile strength is plotted in Figure 2b. It can be seen
+that the fatigue ratio decreases with the increase of the strength (usually a decrease in grain size) [38],
+shaping a trade-off type of relationship. However, the RSA450 sample exhibits a large fatigue ratio
+(0.56) at a high tensile strength of 870 MPa. One can see that the HCF behavior of the RSA450 sample
+differs significantly from that of conventional CG and UFG CP-Ti [22–35,39], and is close to that of the
+Ti-6Al-4V alloy.
+     The HCF behavior of a material is usually described by the Basquin equation as:
+                                                                b
+                                                  σa = σ0 f 2N f                                                   (1)
+
+where Nf is the number of cycles to failure, σa is the stress amplitude, σ0 f is the fatigue strength
+coefficient and might be related to tensile strength, and b is the fatigue strength exponent. It is
+indicated that b could reflect the damage mechanism during fatigue and is influenced by strain
+localization at the crack initiation stage and the stress gradient at the crack propagation stage [38].
+A high absolute value of b is favorable for the initiation and propagation of cracks. Therefore, the
+absolute b value of the notched CG-Ti sample is almost twice as high as that of the smooth one [24].
+Table 2 represents the calculated b values of current RS-processed samples and some other reported
+    where Nf is the number of cycles to failure, σa is the stress amplitude, σ′f is the fatigue strength
+    coefficient and might be related to tensile strength, and b is the fatigue strength exponent. It is
+    indicated that b could reflect the damage mechanism during fatigue and is influenced by strain
+    localization at the crack initiation stage and the stress gradient at the crack propagation stage [38]. A
+    high absolute value of b is favorable for the initiation and propagation of cracks. Therefore, the
+Materials 2018, 11, 2261                                                                                                  5 of 11
+    absolute b value of the notched CG-Ti sample is almost twice as high as that of the smooth one [24].
+    Table 2 represents the calculated b values of current RS-processed samples and some other reported
+    CP-Ti
+CP-Ti        samples
+        samples              It isIt seen
+                     [24].[24].             thatthat
+                                      is seen     bothboth
+                                                        RS RS
+                                                            andandECAPECAP    deformation
+                                                                           deformation     raiseraise
+                                                                                                   thethe   absolute
+                                                                                                         absolute       value
+                                                                                                                    value   of bof b
+    significantly
+significantly         compared
+                 compared       with     thatthat
+                                       with        of CG-Ti,
+                                               of CG-Ti,      suggesting
+                                                          suggesting        an enhanced
+                                                                        an enhanced           stress
+                                                                                         stress       concentration
+                                                                                                  concentration     andand    strain
+                                                                                                                         strain
+    localization     for  crack     initiation   and/or
+localization for crack initiation and/or crack propagation due to remarkably decreased grain size. Thesize.
+                                                         crack   propagation    due   to  remarkably       decreased    grain
+    The absolute
+absolute      value of b value                     Ti can beTireduced
+                                   of the RS-processed
+                           the RS-processed                     can be reduced
+                                                                         from 0.053from    0.053
+                                                                                       in the      in the as-deformed
+                                                                                               as-deformed                  state to
+                                                                                                                 state to 0.034
+with0.034   with
+      a short   timea short             annealing,that
+                               time indicating
+                       annealing,                     indicating   that the
+                                                         the initiation      initiation
+                                                                         and/or           and/or of
+                                                                                  propagation       propagation      of a crack
+                                                                                                       a crack is retarded    by is
+    retarded byenvironment
+an ameliorated        an ameliorated          environment
+                                        of strain localization    strain
+                                                              ofand       localization
+                                                                     stress concentration.and This
+                                                                                                 stress   concentration.
+                                                                                                      is probably           This is
+                                                                                                                    the reason
+for probably
+    the RSA450    thesample        for the RSA450
+                       reasonexhibiting        a highersample     exhibiting
+                                                         fatigue limit,  thougha higher     fatigue
+                                                                                  its tensile          limit,
+                                                                                                strength       though
+                                                                                                           is lower     its that
+                                                                                                                     than    tensile
+    strength    is lower
+of the as-received one.     than    that  of the  as-received  one.
+
+    (a)                                                           (b)
+
+
+
+
+      Figure 2. (a) Dependence of the fatigue life (Nf ) on the cyclic maximum stress for RS and RSA450
+      samples;  (b)2.tensile
+           Figure            strength versus
+                      (a) Dependence          fatigue
+                                         of the       ratio
+                                                fatigue  lifefor
+                                                              (Nexperimental   data
+                                                                 f) on the cyclic   of CP-Ti grade
+                                                                                  maximum    stress 2for
+                                                                                                      andRSdata
+                                                                                                            andinRSA450
+                                                                                                                  the
+      literature and(b)
+           samples;    Ti-6Al-4V   alloy. versus fatigue ratio for experimental data of CP-Ti grade 2 and data in
+                          tensile strength
+          the2.literature
+      Table                   Ti-6Al-4V
+                          andfatigue
+                 Tensile and             alloy. of RS samples, in comparison with those of the CG samples in
+                                     properties
+      CG states from references [22,24].
+          Table 2. Tensile and fatigue properties of RS samples, in comparison with those of the CG samples in
+          CG states from references  YS[22,24]. UTS
+       Materials Samples                                σ f (MPa)    σ f /σ UTS      σ0f      b       Reference
+                                   (MPa)      (MPa)
+                                           YS        UTS          σf
+          Materials RSSamples 989                                            σf/σUTS 920 σ′f −0.053b        Reference
+                                         (MPa)1040 (MPa) 460 (MPa) 0.44
+                      RSA450         740        870         490         0.56         831     −0.034
+                              RS           989       1040        460          0.44       920     -0.053
+                         CG          248        418         210         0.50         311     −0.023      [24]
+         CP-Ti             RSA450          740        870        490          0.56       831     -0.034
+                                     635        669         350         0.52         654     −0.041      [24]
+       (Grade 2)              CG           248        418        210          0.50       311     -0.023        [24]
+                       ECAP          970        1050        420         0.40                             [22]
+            CP-Ti                    800   635   816  669   403  350    0.49  0.52       654     -0.041  [22] [24]
+          (Grade 2)         ECAP           970       1050        420          0.40                             [22]
+                                     870         895        425         0.47                             [24]
+                        ARB                800        816        403          0.49                             [22]
+                                     810         850        400         0.47                             [24]
+                                           870        895        425          0.47                             [24]
+       Ti-6Al-4V         CG ARB 875             965         515         0.53                             [22]
+                                           810        850        400          0.47                             [24]
+          Ti-6Al-4V           CG           875        965        515          0.53                             [22]
+3.3. Microstructures with Preferential Crystallographic Texture
+     3.3.
+       TheMicrostructures
+            microstructures     Preferential
+                           withof            Crystallographic
+                                    the sample                Texture
+                                                 after RS deformation       and subsequent annealing were
+           The by
+investigated        TEM and EBSD
+                 microstructures    of in
+                                       theorder to reveal
+                                            sample          RS strengthening
+                                                     after the  deformation and and subsequent
+                                                                                     toughening mechanisms.
+                                                                                                  annealing were
+Figure    3a–f  show   the  typical  TEM   micrographs   taken   from   the  rods along
+     investigated by TEM and EBSD in order to reveal the strengthening and toughening    the longitudinal  and
+                                                                                                     mechanisms.
+transversal    directions
+     Figure 3a–f   show therespectively.
+                               typical TEMThe microstructure
+                                              micrographs taken        RS sample
+                                                               of thefrom          in along
+                                                                            the rods  the as-received state is aand
+                                                                                             the longitudinal
+severely deformed structure, which is characterized by elongated bands on the longitudinal section
+and near equiaxed grains/subgrains on the transversal section, as shown in Figure 3a,b, respectively.
+It is seen that both band boundaries and grain boundaries are very blurry, and the grain shape is also
+not clear. The complex contrast within grains indicates high internal stress due to high dislocation
+density, as marked by the red dotted circle in Figure 3b. The grain/sub-grain size of the transversal
+section is ranged from 400 nm to 1 µm. By annealing treatment at the 450 ◦ C for 5 min, the hardness
+  severely deformed structure, which is characterized by elongated bands on the longitudinal section
+  and near equiaxed grains/subgrains on the transversal section, as shown in Figure 3a,b, respectively.
+  It is seen that both band boundaries and grain boundaries are very blurry, and the grain shape is also
+  not clear. The complex contrast within grains indicates high internal stress due to high dislocation
+  density,
+Materials 2018,as11,marked
+                     2261  by the red dotted circle in Figure 3b. The grain/sub-grain size of the transversal
+                                                                                                      6 of 11
+  section is ranged from 400 nm to 1 μm. By annealing treatment at the 450 °C for 5 minutes, the
+  hardness of RS450 sample is decreased from 280 ± 6 Hv to 256 ± 8 Hv, and apparent dislocation
+of RS450 sample is decreased from 280 ± 6 Hv to 256 ± 8 Hv, and apparent dislocation recovery
+  recovery could be observed in TEM images, as shown in Figure 3c,d. In comparison with the
+could be observed in TEM images, as shown in Figure 3c,d. In comparison with the microstructure
+  microstructure in as-received state, the dislocation density decreases remarkably and the grain
+in as-received state, the dislocation density decreases remarkably and the grain boundaries become
+  boundaries become sharper, as indicated by the red arrows in Figure 3d. Increasing the annealing
+sharper, as indicated by the red arrows in Figure 3d. Increasing the annealing temperature to 500 ◦ C,
+  temperature to 500 °C, dislocation recovery is more significant and static recrystallization takes place
+dislocation recovery is more significant and static recrystallization takes place as well, as shown in
+  as well, as shown in Figure 3e,f. It is seen in Figure 3e that some band boundaries have evolved into
+Figure 3e,f. It is seen in Figure 3e that some band boundaries have evolved into the grain boundaries
+  the grain boundaries due to significant dislocation recovery. Partial recrystallization is observed in
+due to significant dislocation recovery. Partial recrystallization is observed in the transversal section.
+  the transversal section. The recrystallized grains are mostly elliptical in shape with the size of 1–2
+The recrystallized grains are mostly elliptical in shape with the size of 1–2 µm, as marked with “R”
+  μm, as marked with “R” in Figure 3f. In addition, recovery can also result in very fine sub-grains
+in Figure 3f. In addition, recovery can also result in very fine sub-grains (200–400 nm) with very low
+  (200-400 nm) with very low dislocation density, as seen the sub-grains marked with “r” in Figure 3f.
+dislocation density, as seen the sub-grains marked with “r” in Figure 3f. In sum, apparent dislocation
+  In sum, apparent dislocation recovery and partial recrystallization occurred during annealing
+recovery and partial recrystallization occurred during annealing treatment, leading to a significant
+  treatment, leading to a significant decrease in dislocation density and formation of very fine-grained
+decrease in dislocation density and formation of very fine-grained structure.
+  structure.
+
+    (a)                                               (b)
+
+
+
+
+     (c)                                               (d)
+
+
+
+
+     (e)                                               (f)
+                                                                             r
+
+                                                                             r
+                                                                                                r
+
+
+                                                          R                R
+
+     Figure 3. Typical TEM micrographs showing the microstructures on longitudinal section (left side)
+     and transversal section (right side) of the RS-processed samples: (a,b) as-received, (c,d) RSA450,
+     (e,f) RSA500.
+
+    The severe RS deformation introduces a large number of defects (dislocations and grain/sub-grain
+boundaries) into grains, yielding deformed bands and grains/sub-grains in size of submicron-meter
+magnitude, which strengthen material significantly according to the Taylor dislocation strengthening
+           and transversal section (right side) of the RS-processed samples: (a,b) as-received, (c,d) RSA450, (e,f)
+           RSA500.
+
+          The severe RS deformation introduces a large number of defects (dislocations and
+    grain/sub-grain boundaries) into grains, yielding deformed bands and grains/sub-grains in size of
+Materials 2018, 11, 2261                                                                                                                    7 of 11
+    submicron-meter magnitude, which strengthen material significantly according to the Taylor
+    dislocation strengthening mechanism and Hall‒Petch relationship [40]. By annealing treatment,
+    dislocation
+mechanism       andrecovery
+                      Hall-Petch  and     partial recrystallization
+                                      relationship       [40]. By annealing      result    in a UFG-like
+                                                                                       treatment,               microstructure
+                                                                                                      dislocation    recovery and       with    a ow
+                                                                                                                                          partial
+    density of dislocations,
+recrystallization      result in a making
+                                       UFG-like         strong (Hall‒Petch
+                                                   Timicrostructure             with astrengthening)
+                                                                                           low density ofand        tough (regaining
+                                                                                                                dislocations,        makingstrainTi
+    hardening       capability),      as   shown      in    Figure      1.  Moreover,          the
+strong (Hall-Petch strengthening) and tough (regaining strain hardening capability), as shown in     significant   decrease         of   dislocation
+    density
+Figure        releases internal
+         1. Moreover,                  stress and
+                           the significant             smooths
+                                                 decrease             strain localization,
+                                                               of dislocation                      which internal
+                                                                                     density releases        could delaystresstheand initiation
+                                                                                                                                        smoothsand
+    propagation
+strain localization,     crackscould
+                      of which      effectively     during
+                                            delay the            fatigue
+                                                           initiation    and (apropagation
+                                                                                  small absolute        valueeffectively
+                                                                                                   of cracks    of b parameter  duringinfatigue
+                                                                                                                                            Table 3).
+    Therefore,     the   fatigue     limit    of  the
+(a small absolute value of b parameter in Table 3). Therefore, the fatigue limit of the RSA450 sample is its
+                                                        RSA450         sample       is   enhanced,      rather   than     lowered,       though
+    strengthrather
+enhanced,       is decreased       compared
+                       than lowered,        though  with     that in the
+                                                       its strength             as-received
+                                                                          is decreased            state. However,
+                                                                                               compared      with that in it isthestill  difficult to
+                                                                                                                                    as-received
+    understand       the  highly    uniform       elongation        of  the    RSA450        sample
+state. However, it is still difficult to understand the highly uniform elongation of the RSA450 sample that   can be   improved         only   by the
+thatdislocation     recoveryonly
+      can be improved             [35].byThere     would be an
+                                            the dislocation               additional
+                                                                     recovery        [35]. factor
+                                                                                              Therecontrolling
+                                                                                                       would be an   its additional
+                                                                                                                           plastic deformation
+                                                                                                                                           factor
+    during uniaxial
+controlling    its plastictension.
+                              deformation during uniaxial tension.
+          Figure
+      Figure         4 shows
+                4 shows       thethe    representative
+                                   representative           polepole    figures
+                                                                   figures            thethe
+                                                                                for for          RSA450
+                                                                                             RSA450          sample
+                                                                                                         sample         obtained
+                                                                                                                   obtained        from from
+                                                                                                                                           EBSD EBSD
+    characterization.
+characterization.       ForFor thethe   transversal
+                                   transversal            section,
+                                                     section,      thethe     texture
+                                                                         texture          is revealed
+                                                                                      is revealed              a <10-10>
+                                                                                                       as aas<10-10>     fiberfiber    texture
+                                                                                                                                  texture    withwith
+    respect
+respect           rodrod
+              to the
+          to the        axis,axis,  while
+                                while    thethe    basal
+                                               basal  plane plane     is parallel
+                                                                 is parallel           to the
+                                                                                  to the   rodrodaxis,axis, as shown
+                                                                                                        as shown           in Figure
+                                                                                                                     in Figure            ForFor
+                                                                                                                                     4a. 4a.   thethe
+    longitudinal
+longitudinal          section,
+                 section,     thethe    c-axis
+                                   c-axis        deflects
+                                             deflects     fromfromNDND   to TD to TD      uniformly
+                                                                                    uniformly           in the
+                                                                                                    in the       range
+                                                                                                             range   of 0of ◦ ~90  ◦ , while
+                                                                                                                                0°~90°,    while
+                                                                                                                                               thethe
+    deflection
+deflection   angleangle
+                      to RDto RD    direction
+                                direction         is not
+                                              is not  more  morethan than   ◦
+                                                                        10 10°,     as seen
+                                                                              , as seen         in Figure
+                                                                                            in Figure    4b. 4b. This
+                                                                                                              This       preferred
+                                                                                                                   preferred             orientation
+                                                                                                                                    orientation
+    feature   is typical     for HCP-Ti        produced       by   swaging         and/or     drawing
+feature is typical for HCP-Ti produced by swaging and/or drawing [41], suggesting that annealing           [41], suggesting        that   annealing
+    treatment     for  a
+treatment for a short time does not change the texture formed during RS. It has been revealed thatthat
+                          short   time    does    not   change      the    texture      formed     during     RS. It  has    been     revealed
+    texture
+texture       plays
+          plays       an important
+                  an important        rolerole   in the
+                                             in the  overalloverall    mechanical
+                                                                  mechanical               behavior
+                                                                                      behavior          of hexagonal
+                                                                                                   of hexagonal            close-packed
+                                                                                                                      close-packed             (HCP)
+                                                                                                                                           (HCP)
+    metals   [42–45].    Thus    the   strong    texture     would      influence       the   mechanical
+metals [42–45]. Thus the strong texture would influence the mechanical properties of RSA450 sample            properties      of RSA450      sample
+andandplay      a different
+          playdifferent     rolerole   compared
+                                  compared        with    the the
+                                                       with          ultrafine-grained
+                                                                ultrafine-grained                structure.
+                                                                                             structure.
+
+
+     (a)                                                                (b)
+
+
+
+
+          Figure
+       Figure     4. The
+               4. The polepole  figures
+                            figures  for for RSA450
+                                         RSA450       sample:
+                                                   sample:     basal
+                                                            basal     plane
+                                                                   plane         andand
+                                                                             {0001}
+                                                                         {0001}          prismatic
+                                                                                      prismatic     plane
+                                                                                                 plane {10-10}  for for
+                                                                                                            {10-10}
+          transversal section  (a) and  longitudinal  section (b), the rolling direction  alone rod  axis, the
+       transversal section (a) and longitudinal section (b), the rolling direction alone rod axis, the normal  normal
+          direction
+       direction andand
+                     the the transverse
+                         transverse       direction
+                                      direction werewere labeled
+                                                     labeled      as RD,
+                                                              as RD,      andand
+                                                                      ND,ND,   TD, TD,  respectively.
+                                                                                    respectively.
+
+          There
+      There  are are
+                  fourfour          slip slip
+                             possible
+                         possible               systems
+                                          systems         on three
+                                                     on three         slip planes
+                                                                slip planes   for pure    pure
+                                                                                      for Ti,     Ti, including
+                                                                                              including     <11-20>    slip onslip
+                                                                                                                    <11-20>       the on
+    the  prismatic    plane   {10-10},    <11-20>    slip on   the   basal  plane    {0001},   <11-20>
+prismatic plane {10-10}, <11-20> slip on the basal plane {0001}, <11-20> slip on the pyramidal plane       slip  on  the   pyramidal
+    plane
+{10-11}  and{10-11}
+              <11-23>  and   <11-23>
+                          slip           slip on theplane
+                               on the pyramidal          pyramidal       [41,46],{10-11}
+                                                                {10-11} plane      as shown [41,46],    as shown
+                                                                                                 in Figure            in Figureof 5a.
+                                                                                                              5a. Activation
+    Activation
+either            of either
+        hard or soft    modehard      or isoft
+                                of slip         mode ofby
+                                             controlled    slip
+                                                              theisloading
+                                                                     controlled    by the loading
+                                                                              orientation,               orientation,
+                                                                                              i.e., Schmid               i.e., Schmid
+                                                                                                               factor. Figure      5b
+    factor. Figure    5b
+shows that the curves of the Schmid factor vary with the angle between the c axis and the loadingaxis
+                          shows    that   the  curves   of the   Schmid    factor   vary   with   the   angle   between      the   c
+    and theinloading
+direction                direction
+               this study.           in thisisstudy.
+                              The result                The result isinalso
+                                                also summarized           Tablesummarized
+                                                                                   3, where the  in Table
+                                                                                                    possible 3, where
+                                                                                                                 maximum the possible
+                                                                                                                                 and
+    maximum
+minimum           and minimum
+             Schmid      factors forSchmid
+                                        the three    slip for
+                                                 factors       the three
+                                                          systems          slipθsystems
+                                                                      at two      angles areat two    θ angles
+                                                                                                  given.    Whenare the given.
+                                                                                                                           loadingWhen
+    the loading    direction   is parallel    to the rod  axis,   the orientation            ◦
+direction is parallel to the rod axis, the orientation corresponds to Θ = 90 and it is highly favorable for
+                                                                                     corresponds       to Θ   = 90° and    it is highly
+     prismatic for
+thefavorable     slip the  prismatic
+                       {10-10}  <11-20>  slip
+                                            with{10-10}
+                                                   Schmid<11-20>
+                                                            factor with    Schmid
+                                                                     varying           factor
+                                                                                from 0.43    to varying     from 0.43 tofor0.5,
+                                                                                                0.5, but unfavorable              thebut
+    unfavorable     for  the  basal  slip   {0001}  <11-20>    with   Schmid     factor  of  0. At   the
+basal slip {0001} <11-20> with Schmid factor of 0. At the same time, the Schmid factor of the pyramidal   same    time,   the  Schmid
+slipfactor
+     {10-11}    the pyramidal
+            of<11-20>     is higher slip
+                                       than{10-11}   <11-20>
+                                               0.4, which   canisalso
+                                                                    higher   than 0.4,with
+                                                                       be activated       which     can alsoflow
+                                                                                                increasing       be activated
+                                                                                                                      stress. The   with
+analysis of Schmid factor indicates that both the prismatic <11-20> slip systems and pyramidal <11-20>
+slip systems are in soft orientation relative to the tensile axis.
+  Materials 2018, 11, x FOR PEER REVIEW                                                                                       8 of 11
+
+
+          2018, 11,flow
+  increasing
+Materials           2261 stress. The analysis of Schmid factor indicates that both the prismatic <11-20>   slip
+                                                                                                     8 of 11
+  systems and pyramidal <11-20> slip systems are in soft orientation relative to the tensile axis.
+
+  (a)                                                         (b)
+
+
+
+
+     Figure   5. (a)
+         Figure      Schematic
+                  5. (a) Schematicillustration  of the
+                                      illustration      dominant
+                                                    of the  dominanttexture  in the
+                                                                       texture       RS-processed
+                                                                                 in the RS-processedsample.   Θ: Θ:
+                                                                                                        sample.   thethe
+                                                                                                                      angle
+                                                                                                                          angle
+     between
+         between     c-axis
+                thethe      andand
+                         c-axis  loading
+                                     loadingaxis; α: the
+                                               axis;      angle
+                                                      α: the     between
+                                                             angle  betweenthethe
+                                                                               a-axis  andand
+                                                                                   a-axis   loading  axisaxis
+                                                                                                          at the
+                                                                                               loading            condition
+                                                                                                              at the condition
+     where        loading
+             thethe
+         where                   is projected
+                            axisaxis
+                      loading                   onto
+                                     is projected     thethe
+                                                   onto    basal plane.
+                                                              basal      (b)(b)
+                                                                     plane.  Possible   maximum
+                                                                                 Possible maximum   andand
+                                                                                                         minimum
+                                                                                                            minimum  values
+                                                                                                                         values
+            a Schmid factor of three slip systems (prismatic, basal, and pyramidal <a> slips) as a function the
+     of aofSchmid   factor  of three  slip systems   (prismatic,  basal, and  pyramidal    <a>  slips) as a function  of  of the
+     angle   Θ. Θ.
+         angle
+                          Table 3. Schmid factors calculated for RSA450 sample.
+                            Table 3. Schmid factors calculated for RSA450 sample.
+                                       Prismatic <a> Slip    Basal <a> Slip     Pyramidal <a> Slip
+       Loading Direction
+    Loading                   Θ Prismatic <a> Slip Basal <a> Slip Pyramidal <a> Slip
+                       Θ                {10-10} <11-20>      {0001} <11-20>       {10-11} <11-20>
+    Direction                   ◦{10-10} <11-20>           {0001} <11-20>         {10-11} <11-20>
+                             80            0.42–0.49            0.15–0.17            0.41–0.49
+            //RD       80° 90◦0.42–0.49 0.43–0.5           0.15–0.17              0.41–0.49
+    //RD                                                            0                0.38–0.44
+                           90°         0.43–0.5                         0                          0.38–0.44
+
+       It is clear that the crystallographic texture formed during RS provides an ideal slip mode for the
+           It is clear that the crystallographic texture formed during RS provides an ideal slip mode for the
+subsequent tensile deformation. If the initial dislocation density on the slip plane is low, abundant
+   subsequent tensile deformation. If the initial dislocation density on the slip plane is low, abundant
+dislocation activities (e.g., generation, slipping, interaction, etc.) are anticipated to occur during tension.
+   dislocation activities (e.g., generation, slipping, interaction, etc.) are anticipated to occur during
+This is why dislocation recovery after a short annealing can make the RS-processed Ti sufficiently
+   tension. This is why dislocation recovery after a short annealing can make the RS-processed Ti
+tough, because of the remarkable decrease in dislocation density, as seen in Figure 3. It should be
+   sufficiently tough, because of the remarkable decrease in dislocation density, as seen in Figure 3. It
+noted that, in contrast to the fine grain size that sharply enhances yield strength, the soft model for
+   should be noted that, in contrast to the fine grain size that sharply enhances yield strength, the soft
+dislocation slip would result in a decrease of yield strength due to the relatively low critical resolved
+   model for dislocation slip would result in a decrease of yield strength due to the relatively low
+shear stress [44,47]. Therefore, there is an equilibrium of strength between the improvement from fine
+   critical resolved shear stress [44,47]. Therefore, there is an equilibrium of strength between the
+grain size and the drop due to the soft mode of dislocation slip. In the current pure Ti, the UFG-like
+   improvement from fine grain size and the drop due to the soft mode of dislocation slip. In the
+microstructure enhances strength significantly, while the easy slip mode of dislocation guarantees
+   current pure Ti, the UFG-like microstructure enhances strength significantly, while the easy slip
+ductility enough. An enhanced HCF limit of RS-processed CP-Ti is expected because the HCF life is
+   mode of dislocation guarantees ductility enough. An enhanced HCF limit of RS-processed CP-Ti is
+mainly determined by the strength [36–38]. As to the effect of texture on fatigue behaviors of UFG
+   expected because the HCF life is mainly determined by the strength [36–38]. As to the effect of
+Ti, it is revealed that the fatigue crack initiation depends on the loading direction of samples, which
+   texture on fatigue behaviors of UFG Ti, it is revealed that the fatigue crack initiation depends on the
+obviously could be understood by the ease of the prismatic slip [25]. However, the crack propagation
+   loading direction of samples, which obviously could be understood by the ease of the prismatic slip
+did not apparently depend on sample direction because of mutual cancelation effects of elongated
+   [25]. However, the crack propagation did not apparently depend on sample direction because of
+grains and texture [25]. A further study of the influence of texture on fatigue behaviors in UFG Ti is
+   mutual cancelation effects of elongated grains and texture [25]. A further study of the influence of
+still needed.
+   texture on fatigue behaviors in UFG Ti is still needed.
+4. Conclusions
+   4. Conclusions
+      A UFG-like microstructure with strong <10-10> fiber texture was developed in CP-Ti rods by RS
+        A UFG-like microstructure with strong <10-10> fiber texture was developed in CP-Ti rods by
+deformation and subsequent annealing treatment. When tested along the rod axis, this material exhibits
+   RS deformation and subsequent annealing treatment. When tested along the rod axis, this material
+excellent tensile properties with high strength of 870 MPa, high uniform elongation of 8.5%, and a high
+   exhibits excellent tensile properties with high strength of 870 MPa, high uniform elongation of 8.5%,
+fatigue limit of 490 MPa. It is found that the refined grain size contributed to the high strength, while
+   and a high fatigue limit of 490 MPa. It is found that the refined grain size contributed to the high
+the combination of significant dislocation recovery after annealing and the easy slip mode is responsible
+   strength, while the combination of significant dislocation recovery after annealing and the easy slip
+for the high ductility. Both the tensile and fatigue properties of current RS-processed pure Ti are very
+   mode is responsible for the high ductility. Both the tensile and fatigue properties of current
+close to those of the Ti-6Al-4V alloy, which offers potential for large-scale industrial application.
+Materials 2018, 11, 2261                                                                                      9 of 11
+
+
+
+Author Contributions: C.H. and M.W. conceived and designed the experiments; M.W., Y.W. and C.H. performed
+the experiments; C.H., M.W., L.G., A.H. and Y.L. analyzed the data; M.W. and C.H. wrote the paper. Each
+contributor was essential to the production of this work.
+Funding: This research was funded by the National Natural Science Foundation of China (11672195) and the
+Sichuan Youth Science and Technology Foundation (2016JQ0047).
+Acknowledgments: The support of this work by the National Natural Science Foundation of China (11672195)
+and the Sichuan Youth Science and Technology Foundation (2016JQ0047) is gratefully acknowledged.
+Conflicts of Interest: The authors declare no conflict of interest.
+
+References
+1.    Ehtemam-Haghighi, S.; Cao, G.; Zhang, L.C. Nanoindentation study of mechanical properties of Ti based
+      alloys with Fe and Ta additions. J. Alloys Compd. 2017, 692, 892–897. [CrossRef]
+2.    Haghighi, S.E.; Lu, H.B.; Jian, G.Y.; Cao, G.H.; Habibi, D.; Zhang, L.C. Effect of α” martensite on the
+      microstructure and mechanical properties of beta-type Ti–Fe–Ta alloys. Mater. Des. 2015, 76, 47–54. [CrossRef]
+3.    Okulov, I.V.; Bönisch, M.; Okulov, A.V.; Volegov, A.S.; Attar, H.; Ehtemam-Haghighi, S.; Calin, M.; Wang, Z.;
+      Hohenwarter, A.; Kaban, I.; et al. Phase formation, microstructure and deformation behavior of heavily
+      alloyed TiNb- and TiV-based titanium alloys. Mater. Sci. Eng. A 2018, 733, 80–86. [CrossRef]
+4.    Attar, H.; Ehtemam-Haghighi, S.; Kent, D.; Dargusch, M.S. Recent developments and opportunities in
+      additive manufacturing of titanium-based matrix composites: A review. Int. J. Mach. Tools Manuf. 2018, 133,
+      85–102. [CrossRef]
+5.    Ehtemam-Haghighi, S.; Prashanth, K.G.; Attar, H.; Chaubey, A.K.; Cao, G.H.; Zhang, L.C. Evaluation of
+      mechanical and wear properties of Ti-xNb-7Fe alloys designed for biomedical applications. Mater. Des. 2016,
+      111, 592–599. [CrossRef]
+6.    Okulov, I.V.; Wendrock, H.; Volegov, A.S.; Attar, H.; Kühn, U.; Skrotzki, W.; Eckert, J. High strength beta
+      titanium alloys: New design approach. Mater. Sci. Eng. A 2015, 628, 297–302. [CrossRef]
+7.    Elias, C.N.; Meyers, M.A.; Valiev, R.Z.; Monteiro, S.N. Ultrafine grained titanium for biomedical applications:
+      An overview of performance. J. Mater. Res. Technol. 2013, 2, 340–350. [CrossRef]
+8.    Rack, H.J.; Qazi, J.I. Titanium alloys for biomedical applications. Mater. Sci. Eng. C 2006, 26, 1269–1277.
+      [CrossRef]
+9.    Mora-Sanchez, H.; Sabirov, I.; Monclus, M.A.; Matykina, E.; Molina-Aldareguia, J.M. Ultra-fine grained pure
+      Titanium for biomedical applications. Mater. Technol. 2016, 31, 756–771. [CrossRef]
+10.   Stolyarov, V.V.; Zhu, Y.T.; Alexandrov, I.V.; Lowe, T.C.; Valiev, R.Z. Influence of ECAP routes on the
+      microstructure and properties of pure Ti. Mater. Sci. Eng. A 2001, 299, 59–67. [CrossRef]
+11.   Huang, Z.; Cao, Y.; Nie, J.; Zhou, H.; Li, Y. Microstructures and mechanical properties of commercially pure
+      Ti processed by rotationally accelerated shot peening. Materials 2018, 11, 366. [CrossRef] [PubMed]
+12.   Sergueeva, A.V.; Stolyarov, V.V.; Valiev, R.Z.; Mukherjee, A.K. Advanced mechanical properties of pure
+      titanium with ultrafine grained structure. Scr. Mater. 2001, 45, 747–752. [CrossRef]
+13.   Stolyarov, V.V.; Zhu, Y.T.; Lowe, T.C.; Islamgaliev, R.K.; Valiev, R.Z. A two step SPD processing of
+      ultrafine-grained titanium. Nanostruct. Mater. 1999, 11, 947–954. [CrossRef]
+14.   Pachla, W.; Kulczyk, M.; Sus-Ryszkowska, M.; Mazur, A.; Kurzydlowski, K.J. Nanocrystalline titanium
+      produced by hydrostatic extrusion. J. Mater. Process. Technol. 2008, 205, 173–182. [CrossRef]
+15.   Ma, X.; Huang, C.; Moering, J.; Ruppert, M.; Höppel, H.W.; Göken, M.; Narayan, J.; Zhu, Y. Mechanical
+      properties of copper/bronze laminates: Role of interfaces. Acta Mater. 2016, 116, 43–52. [CrossRef]
+16.   Huang, C.X.; Wang, Y.F.; Ma, X.L.; Yin, S.; Höppel, H.W.; Göken, M.; Wu, X.L.; Gao, H.J.; Zhu, Y.T. Interface
+      affected zone for optimal strength and ductility in heterogeneous laminate. Mater. Today 2018, 21, 713–719.
+      [CrossRef]
+17.   Stolyarov, V.V.; Zhu, Y.T.; Alexandrov, I.V.; Lowe, T.C.; Valiev, R.Z. Grain refinement and properties of pure
+      Ti processed by warm ECAP and cold rolling. Mater. Sci. Eng. A 2003, 343, 43–50. [CrossRef]
+18.   Stolyarov, V.V.; Zhu, Y.T.; Lowe, T.C.; Valiev, R.Z. Microstructure and properties of pure Ti processed by
+      ECAP and cold extrusion. Mater. Sci. Eng. A 2001, 303, 82–89. [CrossRef]
+19.   Yang, D.K.; Hodgson, P.D.; Wen, C.E. Simultaneously enhanced strength and ductility of titanium via
+      multimodal grain structure. Scr. Mater. 2010, 63, 941–944. [CrossRef]
+Materials 2018, 11, 2261                                                                                      10 of 11
+
+
+
+20.   Wu, X.; Yang, M.; Yuan, F.; Wu, G.; Wei, Y.; Huang, X.; Zhu, Y. Heterogeneous lamella structure unites
+      ultrafine-grain strength with coarse-grain ductility. Proc. Natl. Acad. Sci. USA 2015, 112, 14501–14505.
+      [CrossRef] [PubMed]
+21.   Attar, H.; Calin, M.; Zhang, L.C.; Scudino, S.; Eckert, J. Manufacture by selective laser melting and mechanical
+      behavior of commercially pure titanium. Mater. Sci. Eng. A 2014, 593, 170–177. [CrossRef]
+22.   Vinogradov, A.Y.; Stolyarov, V.V.; Hashimoto, S.; Valiev, R.Z. Cyclic behavior of ultrafine-grain titanium
+      produced by severe plastic deformation. Mater. Sci. Eng. A 2001, 318, 163–173. [CrossRef]
+23.   Zhernakov, V.S.; Latysh, V.V.; Stolyarov, V.V.; Zharikov, A.I.; Valiev, R.Z. The developing of nanostructured
+      SPD Ti for structural use. Scr. Mater. 2001, 44, 1771–1774. [CrossRef]
+24.   Kim, W.J.; Hyun, C.Y.; Kim, H.K. Fatigue strength of ultrafine-grained pure Ti after severe plastic deformation.
+      Scr. Mater. 2006, 54, 1745–1750. [CrossRef]
+25.   Kitahara, H.; Matsushita, S.; Tsushida, M.; Ando, S.; Tsuji, N. Fatigue properties of ARB-processed Ti sheets
+      with crystallographic texture. Int. J. Fatigue 2016, 92, 18–24. [CrossRef]
+26.   Kitahara, H.; Uchikado, K.; Jun-Ichi, M.; Iida, N.; Tsushida, M.; Tsuji, N.; Ando, S.; Tonda, H. Fatigue crack
+      propagation behavior in commercial purity Ti severely deformed by accumulative roll bonding process.
+      Mater. Trans. 2008, 49, 64–68. [CrossRef]
+27.   Kitahara, H.; Matsushita, S.; Tsushida, M. Effect of ARB Processing on Fatigue Crack Closure in Commercially
+      Pure Titanium. Mater. Trans. 2013, 54, 528–531. [CrossRef]
+28.   Pachla, W.; Kulczyk, M.; Przybysz, S.; Skiba, J.; Wojciechowski, K.; Przybysz, M.; Topolski, K.; Sobolewski, A.;
+      Charkiewicz, M. Effect of severe plastic deformation realized by hydrostatic extrusion and rotary swaging
+      on the properties of CP Ti grade 2. J. Mater. Process. Technol. 2015, 221, 255–268. [CrossRef]
+29.   Stolyarov, V.V.; Zeipper, L.; Mingler, B.; Zehetbauer, M. Influence of post-deformation on CP-Ti processed by
+      equal channel angular pressing. Mater. Sci. Eng. A 2008, 476, 98–105. [CrossRef]
+30.   Mendes, A.; Kliauga, A.M.; Ferrante, M.; Sordi, V.L. How severe plastic deformation at cryogenic temperature
+      affects strength, fatigue, and impact behaviour of grade 2 titanium. IOP Conf. Ser. Mater. Sci. Eng. 2014, 63,
+      012161. [CrossRef]
+31.   Kim, W.J.; Yoo, S.J.; Lee, J.B. Microstructure and mechanical properties of pure Ti processed by high-ratio
+      differential speed rolling at room temperature. Scr. Mater. 2010, 62, 451–454. [CrossRef]
+32.   Purcek, G.; Yapici, G.G.; Karaman, I.; Maier, H.J. Effect of commercial purity levels on the mechanical
+      properties of ultrafine-grained titanium. Mater. Sci. Eng. A 2011, 528, 2303–2308. [CrossRef]
+33.   Zherebtsov, S.V.; Dyakonov, G.S.; Salem, A.A.; Sokolenko, V.I.; Salishchev, G.A.; Semiatin, S.L. Formation of
+      nanostructures in commercial-purity titanium via cryorolling. Acta Mater. 2013, 61, 1167–1178. [CrossRef]
+34.   Milner, J.L.; Abu-Farha, F.; Bunget, C.; Kurfess, T.; Hammond, V.H. Grain refinement and mechanical
+      properties of CP-Ti processed by warm accumulative roll bonding. Mater. Sci. Eng. A 2013, 561, 109–117.
+      [CrossRef]
+35.   Li, Z.; Fu, L.; Fu, B.; Shan, A. Effects of annealing on microstructure and mechanical properties of
+      nano-grained titanium produced by combination of asymmetric and symmetric rolling. Mater. Sci. Eng. A
+      2012, 558, 309–318. [CrossRef]
+36.   Mughrabi, H.; Höppel, H.W.; Kautz, M. Fatigue and microstructure of ultrafine-grained metals produced by
+      severe plastic deformation. Scr. Mater. 2004, 51, 807–812. [CrossRef]
+37.   Hanlon, T.; Kwon, Y.N.; Suresh, S. Grain size effects on the fatigue response of nanocrystalline metals.
+      Scr. Mater. 2003, 49, 675–680. [CrossRef]
+38.   Huang, H.W.; Wang, Z.B.; Lu, J.; Lu, K. Fatigue behaviors of AISI 316L stainless steel with a gradient
+      nanostructured surface layer. Acta Mater. 2015, 87, 150–160. [CrossRef]
+39.   Medvedev, A.E.; Ng, H.P.; Lapovok, R.; Estrin, Y.; Lowe, T.C.; Anumalasetty, V.N. Effect of bulk
+      microstructure of commercially pure titanium on surface characteristics and fatigue properties after surface
+      modification by sand blasting and acid-etching. J. Mech. Behav. Biomed. Mater. 2016, 57, 55–68. [CrossRef]
+      [PubMed]
+40.   Huang, C.X.; Hu, W.P.; Wang, Q.Y.; Wang, C.; Yang, G.; Zhu, Y.T. An ideal ultrafine-grained structure for
+      high strength and high ductility. Mater. Res. Lett. 2015, 3, 88–94. [CrossRef]
+41.   Sabirov, I.; Perez-Prado, M.T.; Molina-Aldareguia, J.M.; Semenova, I.P.; Salimgareeva, G.K.; Valiev, R.Z.
+      Anisotropy of mechanical properties in high-strength ultra-fine-grained pure Ti processed via a complex
+      severe plastic deformation route. Scr. Mater. 2011, 64, 69–72. [CrossRef]
+Materials 2018, 11, 2261                                                                                    11 of 11
+
+
+
+42.   Wagner, F.; Ouarem, A.; Richeton, T.; Toth, L.S. Improving Mechanical Properties of cp Titanium by Heat
+      Treatment Optimization. Adv. Eng. Mater. 2018, 20, 1700237. [CrossRef]
+43.   Vinogradov, A.; Serebryany, V.N.; Dobatkin, S.V. Tailoring Microstructure and Properties of Fine Grained
+      Magnesium Alloys by Severe Plastic Deformation. Adv. Eng. Mater. 2018, 20, 1700785. [CrossRef]
+44.   Richeton, T.; Wagner, F.; Chen, C.; Tóth, L. Combined effects of texture and grain size distribution on the
+      tensile behavior of α-titanium. Materials 2018, 11, 1088. [CrossRef] [PubMed]
+45.   Song, B.; Wang, C.; Guo, N.; Pan, H.; Xin, R. Improving tensile and compressive properties of an extruded
+      AZ91 rod by the combined use of torsion deformation and aging treatment. Materials 2018, 10, 280. [CrossRef]
+      [PubMed]
+46.   Gong, J.; Wilkinson, A.J. Anisotropy in the plastic flow properties of single-crystal α titanium determined
+      from micro-cantilever beams. Acta Mater. 2009, 57, 5693–5705. [CrossRef]
+47.   Won, J.W.; Park, K.T.; Hong, S.G.; Lee, C.S. Anisotropic yielding behavior of rolling textured high purity
+      titanium. Mater. Sci. Eng. A 2015, 637, 215–221. [CrossRef]
+
+                           © 2018 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access
+                           article distributed under the terms and conditions of the Creative Commons Attribution
+                           (CC BY) license (http://creativecommons.org/licenses/by/4.0/).
+

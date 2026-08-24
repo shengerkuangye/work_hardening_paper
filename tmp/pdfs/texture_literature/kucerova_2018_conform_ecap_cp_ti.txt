@@ -1,0 +1,1592 @@
+          metals
+Article
+Characterization of the Microstructure, Local
+Macro-Texture and Residual Stress Field of
+Commercially Pure Titanium Grade 2 Prepared
+by CONFORM ECAP
+Gergely Németh 1,2, *, Klaudia Horváth 1,2 , Charles Hervoches 1 , Petr Cejpek 3 , Jan Palán 4 ,
+Michal Duchek 4 and Kristián Máthis 1,2
+ 1   Department of Neutron Physics, Nuclear Physics Institute of the CAS, Husinec—Řež 130, 250 68 Řež,
+     Czech Republic; horvathk@karlov.mff.cuni.cz (K.H.); hervoches@ujf.cas.cz (C.H.);
+     mathis@met.mff.cuni.cz (K.M.)
+ 2   Department of Physics of Materials, Faculty of Mathematics and Physics, Charles University, Ke Karlovu 5,
+     121 16 Prague 2, Czech Republic
+ 3   Department of Condensed Matter Physics, Faculty of Mathematics and Physics, Charles University, Ke
+     Karlovu 5, 121 16 Prague 2, Czech Republic; petr.cejpek@centrum.cz
+ 4   Metallurgical Technologies Department, COMTES FHT a.s., Průmyslová 995, 334 41 Dobřany,
+     Czech Republic; jan.palan@comtesfht.cz (J.P.); michal.duchek@comtesfht.cz (M.D.)
+ *   Correspondence: gergely1227@gmail.com; Tel.: +420-9-5155-1623
+                                                                                                     
+ Received: 4 November 2018; Accepted: 26 November 2018; Published: 29 November 2018                  
+
+
+ Abstract: The paper investigated the residual strain and stress distribution, microstructure,
+ and macro-texture along the transverse direction of commercially pure titanium grade 2 samples
+ prepared by the CONFORM ECAP technique. This method belongs to the severe plastic deformation
+ methods; hence, it could be assumed that residual stress fields would be present in the work-pieces.
+ Residual stresses cannot be directly measured; thus, neutron diffraction measurements, Electron
+ back-scatter diffraction (EBSD) investigations, and local X-ray macro-texture measurements were
+ performed in different regions of the sample to determine the data for the residual stress calculation.
+ The calculation was based on the modified Kröner model. Neutron diffraction strain scans and
+ residual stress calculations revealed that symmetrical residual strain and stress gradients with
+ compression character were present in the axial and hoop direction after one and two passes.
+ Asymmetric distribution of the residual strains and stresses remained after the third pass of the
+ CONFORM ECAP. EBSD investigations showed that after the first pass, significant grain refinement
+ occurred; however, further passes did not cause any dramatic grain refinement. X-ray texture
+ measurements revealed that local macro-texture was dependent on the number of passes of the
+ CONFORM ECAP and on the investigated area in the samples.
+
+ Keywords: titanium; CONFORM; ECAP; residual; strain; stress; EBSD; texture
+
+
+
+
+1. Introduction
+     Titanium and its alloys have a wide range of applications due to possessing high strength,
+low density, excellent corrosion resistivity, and nontoxicity [1]. For many years, the materials have
+been playing an important role in medicine, where a large number of implants are titanium-based.
+In biomedical application, the desired mechanical properties are usually achieved through alloying.
+However, some of the alloying elements are believed to be toxic to the human body, which limits the
+elements usage as biocompatible materials. Thus, the scientific community is constantly seeking
+
+
+Metals 2018, 8, 1000; doi:10.3390/met8121000                                     www.mdpi.com/journal/metals
+Metals 2018, 8, 1000                                                                                2 of 20
+
+
+
+for new approaches, which can lead to the enhancement of the mechanical properties without
+harmful additives.
+      One of the possible approaches is the processing of the material using severe plastic deformation
+(SPD). It has been shown that SPD processes can significantly improve the mechanical properties of
+materials through grain refinement and the introduction of many lattice defects [2]. The equal-channel
+angular pressing (ECAP) method, where the billet is pressed through two intersecting channels,
+belongs to the most popular method. The main advantage of this method is that the processed sample
+retains the initial cross-section in contrast to other industrial processing methods, for example, rolling
+or extrusion. In the last two decades, many studies have appeared on the topic of ECAP processed
+titanium alloys. All investigations agreed that the ECAP method led to an ultra-fine grained (UFG)
+microstructure and enhanced strength [3–8].
+      Despite the many benefits of the ECAP method, it cannot be used on an industrial scale because
+of the non-continuous manner of the process. This problem was overcome by the introduction of the
+CONFORM ECAP (C-ECAP) method [9], where the work-piece was driven forward in a curved die by
+the friction forces until it reached the abutment and was forced to turn an angle by shear as in a regular
+ECAP process. A comparative study by Medvedev et al. between conventional the ECAP and C-ECAP
+methods reported that after the application of C-ECAP, commercially pure (CP) titanium (Ti) grade
+4 exhibited finer grains and a higher yield and ultimate tensile strength than after the application of
+the conventional ECAP [10]. Nevertheless, it should be noted that the same study reported heavily
+distorted grains and structure after the C-ECAP, whilst there were almost defect-free grains after the
+conventional ECAP. This fact gives rise to the supposition that the C-ECAP treatment increases the
+probability of the existence of a higher residual stress field and an inhomogeneous strain distribution
+in the processed material [11,12].
+      The residual stresses in many cases can negatively influence the quality and behavior of engineering
+components. In some extreme situations, the existence of the stresses may lead to significant distortion
+or deformation of the parts or in the worst cases, even to fracture. Thus, understanding the stresses
+origin may allow the lengthening of the components service life. The residual stresses can be successfully
+studied using diffraction-based methods [13,14]. Neutron and hard X-ray diffraction measurements are
+preferentially used for this purpose, since they allow the studying of bulk samples, due to the large
+penetration depth of neutrons and the high-energy X-ray photons in the majority of the materials [14,15].
+However, only a few studies of this kind were performed on materials processed by the ECAP or C-ECAP
+methods [16], and limited data are available for the ECAP processed Ti.
+      The objective of the present paper was the investigation of the residual strain using neutron
+diffraction in CP Ti grade 2 samples processed by the C-ECAP method. Electron back-scatter diffraction
+(EBSD) studies and local X-ray texture measurements were also performed to elucidate the microscopic
+background responsible for the stress field. The influence of the number of C-ECAP passes on the
+residual strain field distribution was also discussed in detail.
+
+2. Materials and Methods
+     CP Ti grade 2 was studied in this work. The chemical composition of the samples can be found in
+Table 1.
+
+                         Table 1. Chemical composition of the processed material, wt.%.
+
+                   Element        Fe         O          C          H          N            Ti
+                   Content      0.046       0.12       0.023     0.0026     0.0076        Rest
+
+
+     Work-pieces in the form of 2 m long cylindrical rods with a diameter of 10 mm were subjected
+to the C-ECAP process as described in reference [9] using COMTES FHT a.s. company’s specially
+designed machine, as in reference [17]. Specimens passed 1×, 2×, and 3× through the C-ECAP
+Metals 2018, 8, 1000                                                                                                       3 of 20
+
+
+Metals 2018, 8, x FOR PEER REVIEW                                                                                          3 of 20
+machine on a route denoted as “A” during the multiple C-ECAP processes described in reference [18].
+Then,        long samples were cut from the rods after the mechanical treatments.
+      80 mmDiffraction
+2.1. Neutron
+      Neutron
+2.1. Neutron       diffraction (ND) measurements were carried out on the samples after the C-ECAP
+               Diffraction
+ treatment at the Nuclear Research Institute, Řež, Czech Republic, on the HK4 beamline. The beamline
+ HK4Neutron
+       is equippeddiffraction
+                       with a strain        measurements
+                                     (ND) scanner      SPN-100were     carried outsupported
+                                                                 diffractometer                      by a 2Dafter
+                                                                                         on the samples             the C-ECAP
+                                                                                                               position  sensitive
+treatment   at the  Nuclear         Research   Institute,  Řež, Czech   Republic,     on
+ detector (PSD) and a Si (111) monochromator. The complete description of the instrument    the HK4    beamline.   The  beamline
+                                                                                                                           can be
+HK4   is equipped      with
+ found in References [19,20]. a     strain scanner    SPN-100    diffractometer       supported     by  a  2D position  sensitive
+      The(PSD)
+detector                  a Si (111)wavelength
+                    and neutron
+            diffracted                     monochromator.
+                                                        was 2.13 TheÅ complete
+                                                                       and square    description
+                                                                                        shaped slits     the instrument
+                                                                                                     of with   3 mm side can   be
+                                                                                                                           length
+found   in References
+ were used.    The center  [19,20].
+                              of the 2D PSD was set to a fixed value 2θD = 55° during the experiments. This
+      The  diffracted    neutron
+ 2θD angle allowed the observation     wavelength     was 2.13 Å(101
+                                                 of reflections     and  square
+                                                                             and shaped
+                                                                      ̅ 1)         (0002),slits
+                                                                                              andwith     3 mm side
+                                                                                                   the nominal       length
+                                                                                                                  gauge      were
+                                                                                                                          volume
+used.   The  center   of  the  2D      PSD  was    set to a fixed  value    2θ   =   55 ◦ during the experiments. This 2θ
+ (NGV) was ~32.96 mm3.                                                       D                                                  D
+       allowed were
+angleSamples      the observation         of  reflections   1011    and   ( 0002 ) , and  the  nominal
+                          placed on the xyz stage, which allowed both the motion in three perpendicular    gauge  volume   (NGV)
+was  ∼32.96i.e.,
+               mmx, 3.
+ directions,           y, and z, as well as the rotation by an arbitrary angle.
+      Samples were
+      Samples      wereplaced
+                            scanned    on the  xyzND,
+                                           using     stage,  whichthe
+                                                          where      allowed
+                                                                         sampled         the motion
+                                                                                 bothgauge       volume in three
+                                                                                                            was perpendicular
+                                                                                                                  moved in the
+directions,  i.e., x, y, and    z,    as well  as the  rotation  by  an  arbitrary    angle.
+ coordinate system of the sample. The scanning was performed along a straight line by 1 mm shifts,
+ whichSamples      werethe
+         intersected       scanned
+                              center of   using    ND, where
+                                             the circular          the sampled
+                                                            cross-section.    This linegauge    volume
+                                                                                            lay in          was moved
+                                                                                                   the transverse          in the
+                                                                                                                      direction  in
+coordinate    system     of  the     sample.    The  scanning    was   performed       along
+ the conventional ECAP notation. Three scans were performed along the same line on each sample:a straight   line by  1 mm   shifts,
+which intersected the center of the circular cross-section. This line lay in the transverse direction in the
+ (1) diffraction
+conventional    ECAP vector    𝑞
+                               ⃗⃗⃗⃗𝑅 wasThree
+                          notation.         parallel
+                                                  scanswith
+                                                         weretheperformed      along of
+                                                                 radial direction       thethe sample;
+                                                                                             same   line on each sample:
+ (2) diffraction vector →      𝑞
+                               ⃗⃗⃗⃗𝐻 was parallel with the hoop direction;
+(1)                  vector q𝑞
+      diffraction vector
+ (3) diffraction                       wasparallel
+                               ⃗⃗⃗⃗R𝐴 was              withthe
+                                            parallelwith     theradial  direction of the sample;
+                                                                 axial direction.
+                              →
+(2)   diffraction
+      The          of theqscanning
+           schemevector    H was parallel withinthe
+                                   is drawn         hoop1.direction;
+                                                 Figure
+                         →
+(3)   diffraction vector q A was parallel with the axial direction.
+
+      The scheme of the scanning is drawn in Figure 1.
+
+
+
+
+                                             Figure 1. Scheme of the ND scans.
+                                             Figure 1. Scheme of the ND scans.
+
+     The differential form of Bragg’s Equation (1) was used for calculation of the lattice strain 𝜀 ℎ𝑘𝑙 of
+the particular crystallographic plains as follows.
+Metals 2018, 8, 1000                                                                                4 of 20
+
+
+
+     The differential form of Bragg’s Equation (1) was used for calculation of the lattice strain εhkl of
+the particular crystallographic plains as follows.
+
+                                           dhkl − d0hkl
+                                                                h        i             
+                                 hkl                                   B0       B      B0
+                             ε         =                      = − cot θhkl     θhkl − θhkl             (1)
+                                              d0hkl
+
+                B0 are the interplanar distance of the hkl planes of the stress-free reference and the
+     d0hkl and θhkl
+corresponding Bragg angle. Furthermore, dhkl and θhkl B are the interplanar distance of the hkl planes
+
+under load and the corresponding Bragg angle.
+     The ND scanning started at a distance of –3 mm and ended at distance of +3 mm from the center of
+the samples. Omission of the measurement points at the edges of the specimen (positions ±4 mm) was
+given by the fact that at these points the NGV was not completely filled with material, which resulted
+                B shifts, and consequently in spurious strains [21].
+in anomalous θhkl
+
+2.2. EBSD
+     Specimens for the microstructural analysis with the EBSD technique were cut from the samples
+used at the ND measurements. Samples were prepared by standard metallographic grinding on SiC
+papers (from 320 to 1200 grit), followed by three-step vibratory polishing for 24 h (Alumina 0.3 µm,
+Alumina 0.05 µm, and Colloidal Silica 0.04 µm—each for eight hours). Finally, the specimen surfaces
+were ion-beam polished on a Leica EM RES102 system (Leica Mikrosysteme, Wetzlar, Germany).
+The investigated surfaces were perpendicular to the axial direction.
+     Microstructure analysis based on the EBSD technique was performed using a scanning electron
+microscope FEI Quanta 200 FX (Thermo Fisher Scientific, Brno, Czech Republic). Working distance
+was 13 mm with accelerating voltage 15 kV. The scan was conducted with a 0.1 µm step size.
+     The scanned areas (left and right periphery, and the central part) were chosen with the aim to
+characterize the microstructure in the ND irradiated sample volume.
+
+2.3. X-ray Texture
+     The X-ray PANalytical XPert MRD (PANanalytical, Almelo, The Netherlands) diffractometer
+using CuKα radiation with polycapillary optics in the primary beam was employed for acquiring
+                          
+the (0002), 1010 , and 1011 pole figures. The orientation distribution functions (ODF) and the full
+pole figures were determined using MTEX 4.4 Free and open source software toolbox for MatLab
+(MathWorks, Natick, MA, USA) [22].
+
+2.4. Calculation of the Residual Stresses
+     The calculation of the residual stresses in the three perpendicular directions (axial, hoop,
+and radial) was based on the results acquired by the EBSD, X-ray texture, and ND measurements.
+The calculation was done using the software IsoDEC version from 9/21/2016 (NIST Center for Neutron
+Research, Gaithersburg, MD, USA) as in reference [23], where the computation was based on the
+model proposed by Kröner [24] and modified by Bollenrath [25] and Behnken [26]. Owing to the
+assumption of grain-interactions, the model allowed for the use of specific grain shapes to calculate
+the right diffraction elastic constants. Moreover, the crystallographic preferred orientation (texture) of
+the sample given by the orientation distribution function (ODF) was also included in the model.
+
+3. Results and Discussion
+
+3.1. Neutron Diffraction and Residual Strain
+                                                                        B angles were determined from
+      The residual strains were calculated using Equation (1), where θhkl
+the neutron diffraction measurements. The average of the measured θhkl  B angles between points −3 and
+                                                                                         B0 ), because the
+3 in the axial direction of the initial sample were taken as the stress-free reference (θhkl
+Metals 2018, 8, 1000                                                                                                        5 of 20
+
+
+
+angle variation through the sample was small in contrast to the hoop and radial directions. The residual
+strains in the radial, hoop, and axial directions are shown for each sample in Figure 2a–c. The sample
+       2018,
+Metalsthe
+after             FOR PEER REVIEW
+             8, x C-ECAP
+          first                                                                                      of 20
+                           pass was denoted as C1, then after the second pass as C2, and after the 5third
+pass as C3.
+
+
+
+
+      Figure 2. Residual strain distribution in the axial (a), hoop (b), and radial (c) direction of the samples
+      Figure
+      after        Residual
+            the2.first,      strain
+                        second, anddistribution
+                                    third C-ECAPin the axial (a), hoop (b), and radial (c) direction of the samples
+                                                   pass.
+      after the first, second, and third C-ECAP pass.
+3.1.1. Axial Direction
+ 3.1.1. Axial Direction
+       It was obvious that in the axial direction, after the first pass, the peripheral regions were almost
+        It waswhilst
+strain-free      obvious in that             of thedirection,
+                                   in the axial
+                              the center                          large the
+                                                      sample, after          firstwith
+                                                                         strain    pass,compression
+                                                                                          the peripheral     regionswas
+                                                                                                          character   werepresent.
+                                                                                                                             almost
+ strain-free
+This   behavior  whilst   in the
+                    resulted          large of
+                                in acenter       the gradient,
+                                              strain               wherestrain
+                                                       sample, large       the strain   compression
+                                                                                  with changed     from character
+                                                                                                          ∼−17 µε to was∼−present.
+                                                                                                                             600 µε
+ Thisthe
+(on     behavior
+           left sideresulted
+                       of Figurein2a-C1) largeandstrain
+                                                     from gradient,
+                                                            ∼−600 µε   where
+                                                                          to ∼−the110
+                                                                                    strain
+                                                                                       µε (onchanged    from
+                                                                                                the right   side~−17          ~−600
+                                                                                                                      με to2a-C1).
+                                                                                                                 of Figure
+ με (on the leftfrom
+Furthermore,          sidea of  Figure 2a-C1)
+                             comparison       of thisand   from
+                                                       result  with~−600
+                                                                     otherμε   to ~−110and
+                                                                            directions      με numbers
+                                                                                                (on the right   side (Figure
+                                                                                                                     of Figure
+                                                                                                           of passes             2a-
+                                                                                                                               2a–c)
+ C1).   Furthermore,        from    a   comparison       of  this
+it was obvious that such a large gradient was unique for this case.result  with    other  directions    and   numbers     of passes
+ (Figure
+       After   the it
+            2a–c)      was obvious
+                    second                that such
+                               pass (Figure            a large
+                                                 2a-C2),         gradient wasstrain
+                                                            the compression        unique    for this in
+                                                                                                      case.
+                                                                                         increased       the periphery, whereas
+in theAfter
+          center     second
+                thepart  it hadpass    (Figure
+                                  slightly        2a-C2), the
+                                               decreased.        compression strain
+                                                               Consequently,             increased
+                                                                                  the strain          in the
+                                                                                               gradient    wasperiphery,   whereas
+                                                                                                                less pronounced.
+    the center
+ in general,
+In              thepart
+                     shapeit had
+                              of theslightly    distributionConsequently,
+                                       strain decreased.                          the strain
+                                                                through the samples            gradient
+                                                                                           in the          was less after
+                                                                                                                     pronounced.
+                                                                                                   axial direction,        the first
+ In general,
+and                     was aof“V”
+                 the shape
+      second pass,                        strain distribution through the samples in the axial direction, after the
+                                    theform.
+       and second
+ first After   the thirdpass,   was
+                             pass              form. the compression strain reached a lower value in the center
+                                       a “V” 2a-C3),
+                                    (Figure
+of theAfter
+          samplethe third
+                     and atpass the(Figure
+                                      same time       the the
+                                                2a-C3),         compression
+                                                            strain  had increasedstraininreached    a lower value
+                                                                                            the periphery.           in the of
+                                                                                                                The shape     center
+                                                                                                                                the
+ of the sample
+overall             and at the same
+           strain distribution        lost time
+                                            the “V”the form,    had itincreased
+                                                        strainand                             wave-likeThe
+                                                                                     the periphery.
+                                                                        took on ainrather                     shape
+                                                                                                          shape      of the lowest
+                                                                                                                  with       overall
+ strain distribution
+compression        strain in    thethe
+                             lost         “V” ofform,
+                                     center               and it took
+                                                   the sample.            on a rather
+                                                                    The reason     was thatwave-like
+                                                                                               during theshape   with
+                                                                                                             third      the lowest
+                                                                                                                   C-ECAP      pass,
+ compression strain in the center of the sample. The reason was that during the third C-ECAP pass,
+ the alignment of the work-piece, as a consequence of the previous severe deformation, was not
+ precise. Consequently, the stress distribution during the processing was uneven, which caused the
+ asymmetric residual strains with wave-like form in the axial direction.
+Metals 2018, 8, 1000                                                                                 6 of 20
+
+
+
+the alignment of the work-piece, as a consequence of the previous severe deformation, was not precise.
+Consequently, the stress distribution during the processing was uneven, which caused the asymmetric
+residual strains with wave-like form in the axial direction.
+     In summary, the first pass introduced a large strain gradient in the axial direction toward the
+center of the sample. The increasing number of passes (2x-3x passes) increased the compression strain
+in the peripheral regions, whilst decreasing the compression strain in the center part.
+
+3.1.2. Hoop Direction
+     In the hoop direction, all of the values showed a compression strain character (Figure 2b). It was
+obvious that after the first and second pass, the strain distribution followed the same shape through
+the sample (Figure 2b-C1, C2). The difference was in the higher values of the compression strain after
+the second pass. After the third pass (Figure 2b-C3), the C-ECAP process resulted in a decrement
+of the compression strain (increasing the interplanar distance) on the left side of the sample, whilst
+on the right side of the sample, the interplanar distance decreased (compression character was more
+pronounced) with respect to the previous pass.
+
+3.1.3. Radial Direction
+     The residual strain distributions through the samples in the radial direction after the first and
+second pass showed a very homogenous nature with the compression character (Figure 2c-C1, C2).
+After the first pass, the values were distributed around −200 µε. Only at the right peripheral region of
+the sample was the strain closer to the stress-free reference. After the second pass, the residual strain
+values were distributed around −400 µε; however, at the left peripheral region, the compression strain
+had increased. The third pass resulted in an inhomogeneous residual strain distribution compared
+to the previous passes (Figure 2c-C3). In the right peripheral region, the compression strain slightly
+decreased to a level similar to that after the first pass, whilst in the left peripheral region, the strain
+distribution showed alternating behavior.
+     In summary, the C-ECAP process resulted in a relatively symmetric distribution of the residual
+strains in all directions after the first and second pass. The largest strain gradient was in the axial
+direction (Figure 2a), whilst in the radial direction (Figure 2b), the strain was homogenously distributed.
+This symmetry was interrupted by the application of the third C-ECAP treatment on the material.
+
+3.2. Microstructure: EBSD Results
+     The observed grain orientation map, pole figures, grain size distribution, and fractions of the
+low- and high-angle grain boundaries (LAGB and HAGB) of the initial state, after 1, 2, and 3 C-ECAP
+passes are shown in Figures 4–7. Samples after the C-ECAP treatment were studied in three different
+regions across the diameter, schematically shown in Figure 3. In this paper, the notation used at strain
+scanning by neutron diffraction to describe the cylindrical sample reference system that was used
+instead of the conventional axis notation used in material engineering (normal—ND, transverse—TD,
+and rolling direction—RD). In the pole figures, the vertical axis represented the hoop direction (Hoop),
+the horizontal axis represented the radial direction (Radial), and the normal of the pole figure plane
+represented the axial (Axial) direction.
+   Metals
+Metals    2018,
+       2018,     8, x FOR PEER REVIEW
+             8, 1000                                                                                     7 of 2020
+                                                                                                            7 of
+   Metals 2018, 8, x FOR PEER REVIEW                                                                    7 of 20
+
+
+
+
+   Figure 3. Scheme of the investigated regions with the Electron back-scatter diffraction (EBSD)
+   method.                 theinvestigated
+                Schemeofofthe  investigated regions
+          3. 3.
+     Figure
+   Figure    Scheme                                 withthe
+                                            regionswith  theElectron
+                                                             Electronback-scatter diffraction
+                                                                       back-scatter           (EBSD)
+                                                                                     diffraction     method.
+                                                                                                 (EBSD)
+   method.
+
+
+
+
+     Figure 4. Grain orientation maps, local micro-textures, grain size distributions, and the low- and
+     high-angle grain boundaries (HAGB and LAGB) fractions of the initial state in the periphery (a) and in
+     the center of the sample (b).
+   Metals 2018, 8, x FOR PEER REVIEW                                                                              8 of 20
+
+Metals 2018, 8, 1000
+         Figure  4. Grain orientation maps, local micro-textures, grain size distributions, and the low- and high-     8 of 20
+        angle grain boundaries (HAGB and LAGB) fractions of the initial state in the periphery (a) and in the
+        center of the sample (b).
+      In the initial state, the average grain sizes were in the µm domain (5–7 µm) and the grain shape
+was approximately       equiaxed
+        In the initial state,       in all the
+                              the average         regions
+                                              grain          (Figure
+                                                      sizes were       4a,b).
+                                                                   in the  μmIn   peripheral
+                                                                                domain        region
+                                                                                         (5–7 μm)       thethe
+                                                                                                   and(a),      (0001
+                                                                                                            grain      ) basal
+                                                                                                                   shape
+planes   were parallel to
+   was approximately          the axial
+                          equiaxed     in direction,     forming
+                                           all the regions           four4a,b).
+                                                                           distinct
+                                                                (Figure              maxima, which
+                                                                                 In peripheral  region were    between
+                                                                                                        (a), the  (0001) the
+                                                   
+   basal
+hoop     planes
+       and       were
+            radial      parallel toThe
+                    directions.      the axial
+                                            1010direction,
+                                                     prismatic forming
+                                                                   planesfour  distinct
+                                                                            formed      maxima,
+                                                                                      several     which in
+                                                                                               maxima     were
+                                                                                                             thebetween
+                                                                                                                  peripheral
+   the hoop
+region:        and radial directions.
+          one perpendicular       to the axial       (101̅0) prismatic
+                                             The direction       and thenplanes      formed
+                                                                             two which           ∼60◦maxima
+                                                                                              several
+                                                                                           were          inclinedinfrom
+                                                                                                                      the the
+   peripheral  region:  one   perpendicular      to  the  axial  direction  and   then two  which  were
+axial direction of the sample. This so-called partial fiber texture is typical for extruded hexagonal     ~60°   inclined
+   from the[27,28].
+materials     axial direction   of the sample.
+                      In the central     region (b),        so-called
+                                                      Thisthe  texturepartial    fiber texture
+                                                                         was completely        is typicalThe
+                                                                                                           for (extruded
+                                                                                             different.          0001) basal
+   hexagonal   materials   [27,28].   In  the   central   region    (b),
+                                                                     ◦   the  texture  was  completely
+planes formed two distinct maxima which were ∼40 inclined from the axial direction. Furthermore,          different.  The
+   (0001) basal planes formed two distinct maxima which were ~40° inclined from the axial direction.
+in the peripheral region, the fraction of the HAGB was less than in the center of the sample, whilst the
+   Furthermore, in the peripheral region, the fraction of the HAGB was less than in the center of the
+fraction of the LAGB did not depend on the measured region.
+   sample, whilst the fraction of the LAGB did not depend on the measured region.
+
+
+
+
+      Figure  5. Grain orientation maps, local micro-textures, grain size distributions, and the HAGB and
+        Figure 5. Grain orientation maps, local micro-textures, grain size distributions, and the HAGB and
+      LAGB   fractions
+        LAGB fractions ofofthe    sampleafter
+                             thesample   afterthe   firstC-ECAP
+                                               thefirst   C-ECAPpass  inthe
+                                                                 passin  theperiphery
+                                                                             periphery (a,c)  and in
+                                                                                        (a,c) and    the center
+                                                                                                  in the        of the
+                                                                                                         center of
+      sample  (b).
+        the sample (b).
+
+     After the first C-ECAP pass, significant grain refinement occurred in all the three regions,
+where the maximum grain size distribution was at 0.8 µm. However, other local maxima could
+be found at 2.7–3.7 µm (Figure 5a), 2.5–3.5 µm (Figure 5b), and 2 µm (Figure 5c). The microstructure
+   Metals 2018, 8, x FOR PEER REVIEW                                                                                    9 of 20
+Metals 2018, 8, 1000                                                                                                         9 of 20
+         After the first C-ECAP pass, significant grain refinement occurred in all the three regions, where
+   the maximum grain size distribution was at 0.8 μm. However, other local maxima could be found at
+was formed by a mixture of elongated and equiaxed grains. The dark areas in the EBSD maps were
+   2.7–3.7 μm (Figure 5a), 2.5–3.5 μm (Figure 5b), and 2 μm (Figure 5c). The microstructure was formed
+   by a with
+places   mixturea confidence
+                     of elongated index    (CI) < 0.1.grains.
+                                     and equiaxed       Most The probably,    the higher
+                                                                      dark areas              dislocation
+                                                                                     in the EBSD            density
+                                                                                                     maps were        caused
+                                                                                                                         with poor
+                                                                                                                  places        a
+diffraction   patterns     in  these  areas.  The   local  micro-texture      in   the  center   (b)
+   confidence index (CI) <0.1. Most probably, the higher dislocation density caused poor diffraction and  in the  right peripheral
+region   (c) was
+   patterns               areas. whilst
+                    the same,
+              in these           The localin the                in theregion
+                                                  left peripheral
+                                              micro-texture             center(a)      was
+                                                                                (b)itand   inslightly
+                                                                                              the rightdifferent.
+                                                                                                         peripheralInregion
+                                                                                                                      positions
+                                                                                                                              (c) (b)
+and   (c), the    0001
+   was the same, whilst in the left peripheral region (a) it was slightly different. In positions (b) and (c), by
+                (       )  basal  planes    formed    three    distinct   maxima:       along   the  hoop   axis  and  inclined
+   ◦
+45 the   ◦ from the axial direction, and then two on the radial axis perpendicular to the axial direction.
+     –55(0001)     basal planes formed three distinct maxima: along the hoop axis and inclined by 45°–55°
+The   firsthe
+   from     mentioned             andcomponent
+                            texture
+              axial direction,          then two onwas       also observed
+                                                       the radial                in other magnesium
+                                                                     axis perpendicular                      alloys processed
+                                                                                              to the axial direction.  The first by
+   mentioned      texture   component       was  also
+classical ECAP [29]. In the left peripheral region (c),observed     in  other  magnesium       alloys  processed
+                                                                              e were two distinct maxima near       by classical
+                                                                                                                          the edge
+of ECAP
+   the (0001[29].           left peripheral
+                   In thefigure,
+                ) pole             between region
+                                               the hoop (c), and     were
+                                                              therethe      twodirection.
+                                                                                    distinct maxima
+                                                                        radial                  However, nearthese
+                                                                                                               the edge
+                                                                                                                    maximaof the
+                                                                                                                               were
+   (0001)compared
+blurred,     pole figure, to between
+                              the sharp      hoop nd
+                                       themaxima     in the   radial direction.
+                                                         positions     (b) and (c), However,
+                                                                                       and parthese    maxima
+                                                                                                   of the maxima were  blurred,
+                                                                                                                     area included
+   compared
+       a 45◦ –60 to◦ the sharp maxima       in positions             (c), and
+                                                           (b) and The         part of     themaxima
+                                                                                                  1010 area
+                                                                                        inthe                  figures ineven
+                                                                                                         poleincluded           a
+                                                                                                       
+even                  inclination   from the    axial direction.           maxima                                          position
+   45°–60°   inclination     from  the   axial direction.    The  maxima     in   the   (101̅ 0) pole figures in position (a)
+(a) and (b) had the same location, whilst in position (c), there was no sharp and unique maximum.
+The      (b) had
+   and1011    the same location, whilst in position (c), there was no sharp and unique maximum. The
+               pole figures showed that hese planes had an almost homogenous distribution; however,
+   (101̅1) pole figures showed that these planes had an almost homogenous distribution; however, in
+in position (a), there was a local minimum in the surroundings of the axial direction. In addition,
+   position (a), there was a local minimum in the surroundings of the axial direction. In addition, after
+after the first C-ECAP pass, the sample exhibited a higher fraction of HAGBs in all the three regions
+   the first C-ECAP pass, the sample exhibited a higher fraction of HAGBs in all the three regions than
+than that in the initial state, which is typical for materials processed by ECAP [30,31].
+   that in the initial state, which is typical for materials processed by ECAP [30,31].
+
+
+
+
+      Figure 6. Grain orientation maps, local micro-textures, grain size distributions, and the HAGB and
+      LAGB fractions of the sample after the second C-ECAP pass in the periphery (a,c) and in the center of
+      the sample (b).
+ Metals 2018, 8, x FOR PEER REVIEW                                                                        10 of 20
+
+
+       Figure 6. Grain orientation maps, local micro-textures, grain size distributions, and the HAGB and
+Metals 2018, 8, 1000                                                                                         10 of 20
+       LAGB fractions of the sample after the second C-ECAP pass in the periphery (a,c) and in the center of
+       the sample (b).
+      According to grain size distributions of the sample after the second C-ECAP pass (Figure 6a–c),
+      According
+the maxima          to distributions
+               of the  grain size distributions
+                                      were at the   the sample
+                                                 of same        after
+                                                          position asthe  second
+                                                                       they       C-ECAP
+                                                                            had been   in thepass (Figure
+                                                                                                    of the 6a–c),
+                                                                                               case        sample
+ the maxima    of  the distributions  were at the  same  position as  they had  been in the  case of
+after the first pass. On the other hand, there were no other notable local maxima, indicating a more the sample
+ after the first pass.
+homogeneous                            hand, there
+                        On the otheralthough,
+                  microstructure,                 thewere no orientation
+                                                       grain                 local showed
+                                                             other notablemaps                indicating
+                                                                                   maxima, some          a more
+                                                                                                    larger  grains.
+ homogeneous      microstructure,   although,  the grain orientation  maps  showed   some
+From the (0001) pole figures, the maxima of the main texture component were blurred and ∼40 larger grains. From
+                                                                                                             ◦ –75◦
+ the (0001) pole figures, the maxima of the main texture component were blurred and ~40°–75°
+inclined from the axial direction in all the three regions. If we compared the 1010 pole figures in
+ inclined from the axial direction in all the three regions. If we compared the (101̅0) pole figures in
+positions (a), (b), and (c), it could be noticed that the distribution of these planes was very similar.
+ positions (a), (b), and (c), it could be noticed that the distribution of these planes was very similar.
+Owing to these features, the sample after the second C-ECAP pass exhibited the same microstructure
+ Owing to these features, the sample after the second C-ECAP pass exhibited the same microstructure
+in positions (a), (b), and (c). The only difference between the investigated regions was in the fraction
+ in positions (a), (b), and (c). The only difference between the investigated regions was in the fraction
+of the HAGBs, which was, in respect to level and distribution, the same as in the sample after one
+ of the HAGBs, which was, in respect to level and distribution, the same as in the sample after one C-
+C-ECAP pass.
+ ECAP pass.
+
+
+
+
+      Figure 7. Grain orientation maps, local micro-textures, grain size distributions, and the HAGB and
+       Figure 7. Grain orientation maps, local micro-textures, grain size distributions, and the HAGB and
+      LAGB fractions of the sample after the third C-ECAP pass in the periphery (a,c), and in the center of
+       LAGB fractions of the sample after the third C-ECAP pass in the periphery (a,c), and in the center of
+      the sample (b).
+       the sample (b).
+     In Figure 7a–c the microstructural characteristics of the left peripheral, center, and right peripheral
+regions of the sample after the third C-ECAP pass are shown, respectively. From the grain size
+distributions, it was obvious that further grain refinement had occurred. Maxima were around 0.5 µm
+Metals 2018, 8, 1000                                                                              11 of 20
+
+
+
+in all the three regions and the grains were equiaxed. In the grain orientation maps, large dark areas
+                                                                                                        
+with CI < 0.1 appeared, indicating high dislocation densities. The maxima of the (0001) and 1010
+pole figures were nearly at the same position in all the three investigated regions. Nevertheless,
+they were slightly different compared to the sample after two C-ECAP passes. The (0001) planes in
+position (a), (b), and (c) formed blurred maxima, inclined 55◦ –85◦ from the axial direction. The maxima
+               
+of the 1010 pole figure were in the axial directions. In addition, the fraction of the HAGBs had
+increased in all the regions (a), (b), and (c), compared to the previous cases.
+      In summary, the sample after the first C-ECAP pass exhibited a heterogeneous local micro-texture.
+The microstructure contained a mixture of elongated and equiaxed grains. However, there was
+a slight difference in the grain size distribution between the central region and the peripheral regions.
+Nevertheless, the fraction of the HAGBs had globally increased compared to the initial state. After the
+second C-ECAP pass, the sample exhibited a relatively homogenous microstructure from the point
+of view of local micro-texture and grain shape. There was no difference between the investigated
+regions. The fraction of the HAGBs remained at the same level as it was after one C-ECAP pass.
+The third C-ECAP pass resulted in the most homogeneous microstructure and it further increased
+the fraction of the HAGBs. In addition, the character of the distribution of the HAGBs remained the
+same, i.e., it increased from left to right through the sample. Black areas on the grain orientation maps
+revealed the inhomogeneous dislocation density at particular regions of the samples after the first and
+third pass.
+                                                                                                 
+      CP Ti primarily deforms by h ai slip on basal (0002), prismatic 1010 , or pyramidal 1011 planes
+and by twinning on particular planes [32–34]. Moreover, it was shown that twinning in CP Ti played
+an important role as one of the main deformation modes during conventional ECAP treatment at
+elevated temperatures [35–38]. However, twins were not observed in our samples in the cross-section,
+which did not necessarily mean that they were not present. Many conditions can influence the twin
+activity and density in hcp materials. In reference [38], the authors showed that the maximum twin
+density was achieved at 623K ECAP deformation temperature of CP Ti, whilst at 473 K, the twin
+density was almost one-third of the maximum density. At an 873 K pressing temperature, the twin
+density was 10 times lower and the twin width was below 0.1 µm.
+      In reference [39], Palán et al. simulated the conditions which prevailed in the C-ECAP machine.
+The authors results indicated that the temperature, the strain rate, and the velocity distribution were
+very inhomogeneous in the die. Thus, for example, the temperature in the die could reach 800–850 K
+where the twin density and width reached the minimum according to reference [38]. Our EBSD
+observations were conducted at a 0.1 µm step size, which was approximately the width of the expected
+twins at around 800–850 K deformation temperature. Hence, the EBSD measurement evaluation
+software would not recognize the twins, rather it would report an error for the measured pixel instead.
+Furthermore, the initial grain size could also influence the twinning activity as it was reported in
+reference [40] for the Mg alloys and for Ti [41] (including the strain rate). Our starting material had
+an average grain size of 5–7 µm, whilst in the above-mentioned experiments where twinning was
+reported, the average grain size of the starting materials was several times larger than ours. Thus,
+the relatively small initial grain size could probably have suppressed the formation of larger twins,
+which could be observed by our experimental conditions.
+
+3.3. X-ray Texture Measurements
+     The results of the X-ray texture measurements of the samples after one, two, and three passes in
+the three different regions of the sample (left peripheral-(a), center-(b), and right peripheral-(c)) are
+shown in Figures 8–10. The axis notation was identical to the axis notation at the EBSD measurements.
+Metals 2018, 8, 1000                                                                                                              12 of 20
+       Metals 2018, 8, x FOR PEER REVIEW                                                                               12 of 20
+
+
+
+
+                                                     
+      Figure   8. (0002
+            Figure       ), 1010
+                    8. (0002),  (101    and
+                                     ,̅ 0), and1011       polefigures
+                                                  (101̅1)pole          afterthe
+                                                               figures after       first
+                                                                             thefirst    C-ECAP
+                                                                                      C-ECAP passpass
+                                                                                                 in thein the periphery
+                                                                                                        periphery (a,c), (a,c),
+              theincentral
+      and inand             region
+                    the central region      ofofthe
+                                       (b)(b)     thesample.
+                                                      sample.
+
+      FromFrom      simulated
+              the the    simulated(0002
+                                      (0002)) pole     figures atathe
+                                                 pole figures         the   peripheral
+                                                                         peripheral  regionsregions
+                                                                                                (Figure(Figure     8a,c)
+                                                                                                          8a,c) after     afterC-the first
+                                                                                                                      the first
+      ECAP    pass,   the  (0002)   basal   planes   parallel  to
+C-ECAP pass, the (0002) basal planes parallel to the axial direction formed maxima on theofedge
+                                                                  the   axial direction formed      maxima    on the  edge     the of the
+      (0002)    pole    figures.  These     components       would      be  indicated   as   “parallel”
+(0002) pole figures. These components would be indicated as “parallel” components in the following         components      in  the
+      following text. Moreover, (0002) planes formed other maxima inclined at ~50°–60° from the axial
+text. Moreover, (0002) planes formed other maxima inclined at ∼50◦ –60◦ from the axial direction and
+      direction and distributed between the hoop and radial axis. However, the arrangement was in the
+distributed    between the hoop and radial axis. However, the arrangement was in the opposite sense
+      opposite sense and it was rotated to hoop axis by ~120°–130° around the axial direction. This texture
+and itcomponent
+        was rotated  wouldto hoop
+                              be notedaxis   the ∼
+                                         as by      120◦ –130
+                                                  “50°–60°”
+                                                                  ◦ around the axial direction. This texture component
+                                                               component.      The texture component “50°–60°” was also
+wouldobserved
+        be noted                   ◦ –60◦ ” component. The texture component “50◦ –60◦ ” was also observed in
+                      ourthe
+                  in as    EBSD“50investigation     (Figure 5). The same texture component was seen in the (0002)
+our EBSD     investigation
+      pole figure                (Figure
+                     in the central   region      The same
+                                             5).(Figure          texture
+                                                          8b), but  it lay oncomponent
+                                                                                the hoop axis.wasInseen     in the this
+                                                                                                      this region,   (0002
+                                                                                                                         was) pole
+                                                                                                                               the figure
+      only  notable    maximum,      and   parallel  components       were   not present.   The
+in the central region (Figure 8b), but it lay on the hoop axis. In this region, this was the only only  notable   maxima    in the notable
+      (101̅0) pole figures were inclined at ~ 25°–35° from the axial direction; however, the overall 
+maximum, and parallel components were not present. The only notable maxima in the 1010 pole
+      distribution of the maxima formed a ring around the axial direction. The position arrangement of the
+figures were inclined at ∼25◦ –35◦ from the axial direction; however, the overall distribution of the
+      maxima around the axial direction was in the opposite sense, as it was present at the (0002) pole
+maxima    formed
+      figures.         a ring around
+                The maxima      formed by        axial
+                                           the(101 ̅ 0) direction.
+                                                         were in an axialThedirection
+                                                                               positionindependently
+                                                                                          arrangementfrom     of the   measured around
+                                                                                                                   the maxima
+the axial  direction
+      region; however,   was   in the   opposite      sense,   as  it was    present   at  the   ( 0002 )  pole  figures.   The maxima
+                        the random distribution of the planes inclined by 35°–55° from the axial direction
+formed   by 1010
+      forming    a ring were
+                          in thein               direction
+                                    an axialregions.
+                                 peripheral                Theindependently
+                                                                most intense maxima from of    themeasured
+                                                                                             the     (0002) and     (101̅1)however,
+                                                                                                                 region;      pole     the
+      figures  were    in the central  region    (Figure   8b) and    ◦
+                                                                     at  the◦same  time,  the  least
+random distribution of the planes inclined by 35 –55 from the axial direction forming a ring in the   intense  maximum      of the
+      (101̅0)regions.
+               pole figure Thewas         found here.
+                                    alsointense
+                                                                                                 
+peripheral                      most               maxima of the (0002) and 1011 pole figures were in the central
+                                                                                                                
+region (Figure 8b) and at the same time, the least intense maximum of the 1010 pole figure was also
+found here.
+Metals 2018, 8, 1000                                                                                                              13 of 20
+       Metals 2018, 8, x FOR PEER REVIEW                                                                               13 of 20
+
+
+
+
+                                                
+       Figure 9. (0002   ), 1010 , and 1011 pole figures after the second C-ECAP pass in the periphery (a,c)
+            Figure 9. (0002), (101̅0), and (101̅1) pole figures after the second C-ECAP pass in the periphery
+       and in      central
+               theand
+            (a,c)     in the region         theofsample.
+                                     (b) of (b)
+                             central region        the sample.
+
+      The result     of texture
+             The result  of texturemeasurements
+                                    measurements on         thesample
+                                                        onthe      sample      after
+                                                                            after the the  second
+                                                                                       second        C-ECAP
+                                                                                                C-ECAP            pass
+                                                                                                           pass was      was in
+                                                                                                                      visible   visible in
+Figure   9a–c.9a–c.
+      Figure      In the      peripheral regions
+                           peripheral
+                      In the                          ((a)and
+                                           regions ((a)     and    (c)),
+                                                                 (c)),  thethe  simulated
+                                                                            simulated     (0002)
+                                                                                               (0002     pole figures
+                                                                                                   pole) figures  showedshowed
+                                                                                                                            that      that
+“50◦ –60  ◦ ” components
+      “50°–60°”    componentswere       almost exactly
+                                  werealmost       exactly at at
+                                                              thethesame    position
+                                                                          same        as theyas
+                                                                                  position      were in the
+                                                                                                  they   were sample
+                                                                                                                 in theafter  the
+                                                                                                                          sample     after
+            pass, whilst
+      firstpass,
+the first          whilst“parallel”
+                            “parallel” components
+                                           components  werewereslightly              In the central
+                                                                           rotated.rotated.
+                                                                        slightly               In theregion
+                                                                                                        central(Figure
+                                                                                                                  region9b),(Figure
+                                                                                                                              the      9b),
+      “50°–60°”
+         ◦      ◦  component was rotated counterclockwise to the hoop axis by ~20° around                          ◦  the axial
+the “50 –60 ” component was rotated counterclockwise to the hoop axis by ∼20 around the axial
+      direction, with respect to the position of the maximum after the first pass, and its intensity increased
+direction,   with respect to the position of the maximum after the first pass, and its intensity increased as
+      as well. The inclination of the maxima from the axial direction in the (101̅0) pole figures was the
+      The inclination
+well. same    as they wereofinthethemaxima
+                                     first pass,from          were direction
+                                                       the axial
+                                                   but they                        in the 1010
+                                                                       rotated clockwise             pole figures
+                                                                                              by ~25°–35°    around was     the same as
+                                                                                                                      the axial
+they direction
+      were in the      first pass,  but they      were The
+                                                         rotated       clockwise          ∼25
+                                                                                     by̅ 1)     ◦    ◦ around the axial direction
+                  compared    to previous   positions.        maxima       in the (101       pole–35
+                                                                                                  figure  were still xactly in
+                                                                                  
+compared
+      the axialto previous     positions.
+                  direction; however,        The density
+                                          higher    maxima       in theinclined
+                                                             regions        1011 by     ~35°–50°
+                                                                                     pole           werethe
+                                                                                            figure from     still exactly
+                                                                                                                axial        in the axial
+                                                                                                                      direction
+      appeared    in the  peripheral  regions    ((b) and  (c)).                   ◦     ◦
+direction; however, higher density regions inclined by ∼35 –50 from the axial direction appeared in
+the peripheral regions ((b) and (c)).
+Metals 2018, 8, 1000                                                                                                                      14 of 20
+        Metals 2018, 8, x FOR PEER REVIEW                                                                                      14 of 20
+
+
+
+
+                                                   
+       Figure 10. (0002), 1010 ̅, and 1011̅ pole figures after the third C-ECAP pass in the periphery (a,c)
+            Figure 10. (0002), (1010), and (1011) pole figures after the third C-ECAP pass in the periphery (a,c)
+       and in   incentral
+              the
+            and            region
+                   the central                 thesample.
+                                    (b)(b)ofofthe
+                               region              sample.
+
+      Figure    10a–c
+             Figure       revealed
+                       10a–c                furthertexture
+                              revealedfurther                     evolutionafter
+                                                        texture evolution       afterthethe   third
+                                                                                          third        C-ECAP
+                                                                                                  C-ECAP       pass. pass.
+                                                                                                                      A much   A weaker
+                                                                                                                                  much weaker
+intensity,    thanthan
+      intensity,      in the
+                          in the   previouspass,
+                                previous                  couldbebeseen
+                                                  pass, could           seenin in
+                                                                               thethe    (0002
+                                                                                    (0002)       ) pole
+                                                                                               pole   figurefigure
+                                                                                                                in thein   the position
+                                                                                                                        position   of the of the
+    ◦    ◦
+      “50°–60°”     texture  component         in  the  left peripheral  region   (a), though    it was
+“50 –60 ” texture component in the left peripheral region (a), though it was still present. The opposite  still  present.  The  opposite
+couldcould     be observed
+       be observed        in the    the right
+                                in right            peripheral
+                                             peripheral           region
+                                                                       (c) (c)
+                                                              region           where
+                                                                           where    thethe“50  ◦ –60◦ ” texture
+                                                                                             “50°–60°”      texture component
+                                                                                                                       component had   had gained
+      gained intensity compared to the previous pass. The basal component exhibited a much stronger
+intensity compared to the previous pass. The basal component exhibited a much stronger intensity
+      intensity in the left peripheral region (a), whilst in the right peripheral region (c), the intensity
+in the left peripheral region (a), whilst in the right peripheral region (c), the intensity maintained the
+      maintained the same level. The most intensive “50°–60°” texture component could be observed in the
+       level. region
+samecentral     The most       intensive
+                         (b), and               “50◦did
+                                     its position      –60◦not” texture
+                                                                 change in    comparisoncould
+                                                                          component          to thebe     observed
+                                                                                                       previous     pass.inThe
+                                                                                                                             theposition
+                                                                                                                                  central region
+(b), and             in the did
+           its position
+      of maxima              (101̅not
+                                    0) polechangefiguresin in
+                                                            comparison        to the((a)
+                                                               peripheral regions          and (c)) pass.
+                                                                                       previous       coincidedThewith
+                                                                                                                     position      of maxima in
+                                                                                                                           the positions
+             
+the 1010
+      after thepole    figures
+                   first C-ECAP   in peripheral
+                                       pass. However,     regions    ((a) andintensity
+                                                               the maxima        (c)) coincided        with the
+                                                                                           was stronger,             positions
+                                                                                                                 especially        after
+                                                                                                                                       leftthe first
+                                                                                                                              in the
+C-ECAPperipheral     region (a), where
+            pass. However,         the maxima the intensity     reached
+                                                         intensity    wasthe   maximum
+                                                                            stronger,       of the scale.
+                                                                                         especially           In the
+                                                                                                         in the    leftsame   region (a),
+                                                                                                                        peripheral      region (a),
+      the   (101̅ 1) planes formed three distinct notable maxima which were inclined by ~30°–40°from the
+where the intensity reached the maximum of the scale. In the same region (a), the 1011 planes formed
+      axial direction. On the other side of the sample (Figure 10c),                      except the clear maxima in the axial
+three distinct notable maxima which were                        inclined by ∼30◦ –40◦ from the axial direction. On the other
+      direction, the distribution of the (101̅1) planes inclined by ~30°–40° from the axial direction formed
+side of  the sample
+      blurred
+                           (Figure 10c), except the clear maxima in the axial direction, the distribution of the
+                regions with a higher intensity in the (101̅1) pole figure (c). The same held for the (101̅1)
+                                           30◦ –40     ◦ from the axial direction formed blurred regions with a higher
+       
+ 1011poleplanes
+             figureinclined       by ∼
+                     in the central     region     (b); however,    three regions could be spotted           with more clear edges.
+                                                                                                   
+intensity Thein the     1011 pole figure
+                   above-discussed         results(c). canThehelpsame    held for
+                                                                   to illustrate   thethe   1011 orientation
+                                                                                        preferred      pole figureininthe         central region
+                                                                                                                             thedifferent
+(b); however, three regions could be spotted with more clear edges.
+      regions    of  the  samples.      It  could     be  observed,    that  the  C-ECAP      mechanical        treatment    resulted    in
+      different   textures   in  the   different     regions.   However,     the “50°–60°”     component
+      The above-discussed results can help to illustrate the preferred orientation in the different             was  present    in all the
+regions of the samples. It could be observed, that the C-ECAP mechanical treatment resulted in
+different textures in the different regions. However, the “50◦ –60◦ ” component was present in all the
+regions, the rotation with respect to the radial axis was dependent on the region and the number of
+passes. The theoretical shear plane normal was inclined by 45◦ from the extrusion-axial direction
+Metals 2018, 8, 1000                                                                                                              15 of 20
+      Metals 2018, 8, x FOR PEER REVIEW                                                                                   15 of 20
+
+due to    the C-ECAP
+      regions,  the rotationdesign.           assumed,
+                                       If we to
+                               with respect      the radialforaxisexample,     after the
+                                                                   was dependent            first
+                                                                                        on the      passand
+                                                                                                 region    in the    central of
+                                                                                                               the number       region,
+that the   main
+      passes.  Thedeformation       mode
+                     theoretical shear      wasnormal
+                                         plane   a dislocation     slip by
+                                                         was inclined   in the    basalthe
+                                                                            45° from      (0002   ) planes indirection
+                                                                                             extrusion-axial      directiondue1120 ,
+then to  the C-ECAPthe
+      theoretically      design.  If wecomponent
+                                         assumed, forinexample,
+                             “50–60”                       the (0002after the first
+                                                                       ) pole    figurepass in the central
+                                                                                          should              region,
+                                                                                                     be inclined         that the
+                                                                                                                      exactly    by 45◦
+      main   deformation     mode    was  a dislocation  slip  in the basal   (0002)     planes   in direction     〈112̅ 0〉, then
+from the axial direction and fully located on the hoop axis. However, in our results, the maximum in
+      theoretically
+the (0002                   figure component
+                      the “50–60”   appeared atinathe ∼55(0002)    pole figure
+                                                            ◦ inclination.        should           may exactly
+                                                                                           be inclined              by 45° from
+            ) basal pole                                                      This   deviation            be explained       citing the
+      the axial direction and fully located on the hoop axis. However, in our results, the maximum in the
+results of Prangnell et. al. [42], where the authors showed with the help of finite element modelling
+      (0002) basal pole figure appeared at a ~55° inclination. This deviation may be explained citing the
+that the filling of the outer corner of the die in conventional ECAP was dependent on whether the
+      results of Prangnell et. al. [42], where the authors showed with the help of finite element modelling
+      thatbetween
+friction    the fillingthe  material
+                         of the         and the
+                                outer corner   of die  wall
+                                                  the die   in was   present. ECAP
+                                                                conventional      The present       outer curvature
+                                                                                         was dependent        on whether     ofthe
+                                                                                                                                the die
+corner   could   theoretically    change    the  real shear    plane,  which      resulted    in  a slightly
+      friction between the material and the die wall was present. The present outer curvature of the die       different     observed
+macro-texture
+      corner could  from              change thepredicted
+                           the theoretically
+                      theoretically               real shear one
+                                                               plane,  the material.
+                                                                    ofwhich     resulted inThe   material
+                                                                                              a slightly     flow in
+                                                                                                          different       the die was
+                                                                                                                       observed
+also simulated
+      macro-texture in reference                  it turned one
+                                    [43], where predicted
+                        from the theoretically                      that
+                                                               out of theits  distribution
+                                                                           material.            was highly
+                                                                                        The material     flow in dependent
+                                                                                                                    the die wason the
+valuealso   simulated
+       of the  frictionincoefficient.
+                           reference [43],  where it turned
+                                         Furthermore,          out that itsatdistribution
+                                                          as discussed         the end ofwas       highly
+                                                                                             Section    3.2,dependent
+                                                                                                             differenton       the
+                                                                                                                            conditions
+      value in
+prevailed     of different
+                  the friction   coefficient.
+                              parts            Furthermore,
+                                     of the C-ECAP       machine.as discussed
+                                                                      In reference at the[39]     of section
+                                                                                           end(Figure      2), it3.2.,
+                                                                                                                   wasdifferent
+                                                                                                                          shown that
+in theconditions
+        corners and prevailed   in different
+                          the adjacent        parts
+                                           areas, theof strain
+                                                        the C-ECAP      machine.
+                                                                 rate and    velocity In reference
+                                                                                          distribution[39] (Figure     2), it was zero.
+                                                                                                            was practically
+      shown that in the corners and the adjacent areas, the strain rate and velocity distribution was
+This may be additional evidence that the real shear plane can be different from the predicted one
+      practically zero. This may be additional evidence that the real shear plane can be different from the
+(Figure 11).
+      predicted one (Figure 11).
+
+
+
+
+                                     Figure 11. Simulated strain rate, as in reference [39].
+                                       Figure 11. Simulated strain rate, as in reference [39].
+
+      In summary,
+            In summary, it can        concluded
+                                  be be
+                             it can      concludedthat      the activity
+                                                       thatthe   activity of         particular
+                                                                                theparticular
+                                                                            ofthe                   slip
+                                                                                                 slip      system
+                                                                                                       system         depended
+                                                                                                                 depended      on theon the
+number     of  passes    and    the   relative    position    within    the   specimen.      After     the
+      number of passes and the relative position within the specimen. After the first pass in the central    first pass    in  the  central
+region,   the basal
+      region,          slipslip
+               the basal     system        〈112̅0〉(0002
+                                 system 1120              ) was
+                                                     (0002)   wasthe    dominant slip mode. However, in the peripheral
+                                                                   the dominant slip mode. However, in the peripheral
+      regions,
+regions,         the prismatic
+           the prismatic          slip
+                               slip    system 1120
+                                     system       〈112̅0〉 (101 ̅ 0) and
+                                                            1010          pyramidalslip
+                                                                     and pyramidal           system
+                                                                                          slip  system  of the  firstfirst
+                                                                                                            of the            〈112̅0〉1120
+                                                                                                                      orderorder
+         ̅
+ 1011(101   1) were
+         were          activated,
+                  activated,         which
+                                 which        couldbebededuced
+                                          could          deduced fromfrom thethepositions
+                                                                                  positions  ofofthethe
+                                                                                                      maxima
+                                                                                                          maxima  of the
+                                                                                                                       of measured
+                                                                                                                          the measured
+pole pole   figures.
+      figures.        In the
+                   In the           case,i.e.,
+                              firstcase,
+                           first                 the basal
+                                           i.e., the  basalslip
+                                                             slip        central
+                                                                    thethe
+                                                                 in in            region
+                                                                             central       after the
+                                                                                       region     afterfirst
+                                                                                                          thepass  (Figure
+                                                                                                                first pass 8b),   the 8b),
+                                                                                                                              (Figure
+      maximum of the “50–60” component in the (0002) pole figure lay fully on the hoop axis and was
+the maximum of the “50–60” component in the (0002) pole figure lay fully on the hoop axis and
+      inclined by 55° from the axial direction. Thus, the (0002) basal planes were parallel with the
+was inclined by 55◦ from the axial direction. Thus, the (0002) basal planes were parallel with the
+      mentioned other shear plane and preferably oriented for shear deformation in the vertical direction
+mentioned      other shear plane and preferably oriented for shear deformation in the vertical direction on
+      on the shear plane. In the second case, i.e., the prismatic and pyramidal first order slip in the
+the shear    plane.             second
+                      In the8a,c),
+      periphery (Figure                    case, i.e.,
+                                     the maxima         the“50–60”
+                                                    of the   prismatic     and pyramidal
+                                                                       component                 first order
+                                                                                      of the (0002)              slip in
+                                                                                                         pole figure    wasthe  periphery
+                                                                                                                             rotated
+(Figure   8a,c),from
+                   the maxima
+                        the hoop of     theon“50–60”      component        ofofthe  (0002̅) pole figure was rotated byby~120◦
+      by ~120°                        axis      each side.  The maxima          the (1010) pole figures were inclined          ◦ from the
+from ~30°
+       the hoop
+             from axis   on each
+                    the axial        side. The
+                                direction          maximabyof~60°
+                                             and rotated                1010 the
+                                                                 the from        pole
+                                                                                   hoopfigures    werearrangement
+                                                                                           axis. This     inclined by of  ∼30texture
+axial maxima
+       directionallowed      slipping
+                    and rotated       by 〈𝑎〉    ◦ from the hoop
+                                          ∼60dislocations               prismatic
+                                                              in theaxis.            and in pyramidal
+                                                                              This arrangement                           [44] in allowed
+                                                                                                               planesmaxima
+                                                                                                        of texture                the
+      direction   towards    the  center   of the  work-piece.    This  was   due  to the  fact that
+slipping h ai dislocations in the prismatic and in pyramidal planes [44] in the direction towards the in  peripheral    regions,  the
+centershear   direction
+         of the          had a normal
+                  work-piece.       This wascomponent
+                                                  due to to  thefact
+                                                           the    edge   of the
+                                                                      that       die beside the
+                                                                             in peripheral         verticalthe
+                                                                                                regions,      one.shear
+                                                                                                                    Consequently,
+                                                                                                                           direction had
+a normal component to the edge of the die beside the vertical one. Consequently, the stress fields of the
+different types of dislocations (basal, prismatic, and pyramidal) differently affected the residual strain
+distribution in particular regions. Obviously, a very large amount of basal dislocations was generated
+   Metals 2018, 8, x FOR PEER REVIEW                                                                                    16 of 20
+
+
+       stress
+  the 2018,
+Metals         fields of the different types of dislocations (basal, prismatic, and pyramidal) differently
+            8, 1000                                                                                   16 of 20
+   affected the residual strain distribution in particular regions. Obviously, a very large amount of basal
+   dislocations was generated during the first pass owing to the initial texture in the central region
+during   the4b).
+   (Figure    firstThis   owing to
+                    passresulted     in the  initial
+                                         a large     texture in the
+                                                  compression         central
+                                                                  residual      region
+                                                                             strain     (Figure
+                                                                                    in the axial 4b).   This resulted
+                                                                                                   direction              in a large
+                                                                                                                (Figure 2a-C1).
+compression      residual   strain    in  the  axial   direction  (Figure   2a-C1).   After  the
+   After the second pass, the prismatic and pyramidal dislocations also appeared beside the basal second      pass,  the prismatic
+andislocations
+     pyramidaldue   dislocations       also appeared                                                                         ◦ –60◦ ”
+                         to the rotated        “50°–60°”beside     the basal
+                                                             component.     Thisdislocations
+                                                                                   coexistencedue of to   the rotated
+                                                                                                       basal,            “50and
+                                                                                                                prismatic,
+component.       This coexistence
+   pyramidal dislocations                     basal,region
+                                  in theofcentral              couldand
+                                                       prismatic,         pyramidal
+                                                                      be observed       dislocations
+                                                                                     after  the third pass in theas central
+                                                                                                                    well. Inregion
+                                                                                                                              the
+could   be observed
+   periphery,    only theafter   the third
+                           prismatic      andpass     as well.
+                                                pyramidal        In the periphery,
+                                                              dislocations             only
+                                                                             were active      thethe
+                                                                                           after   prismatic
+                                                                                                       first andand     pyramidal
+                                                                                                                   second   pass.
+   They generated
+dislocations    were active        field,the
+                         stressafter       which
+                                              first acted  in the hoop
+                                                    and second     pass.direction    mainly after
+                                                                          They generated              the field,
+                                                                                                a stress    first C-ECAP     pass in
+                                                                                                                   which acted
+the(Figure  2b). However,
+     hoop direction      mainly after        second
+                                        the the
+                                     after        firstpass, they acted
+                                                        C-ECAP            in the axial
+                                                                   pass (Figure     2b).direction
+                                                                                          However,   as well
+                                                                                                         after(Figure    2a,b).pass,
+                                                                                                                 the second     It
+   could   be  assumed,    that   the   grain   size  influenced   the  dislocations   effects  in  the  different
+they acted in the axial direction as well (Figure 2a,b). It could be assumed, that the grain size influenced          directions.
+theAfter              pass, they
+          the third effects
+     dislocations              in thewere    only active
+                                          different        in the right
+                                                      directions.   Afterperiphery       can be
+                                                                            the thirdaspass,             fromonly
+                                                                                                  seenwere
+                                                                                               they              the maxima
+                                                                                                                      active inofthe
+       (0002)
+   theperiphery   and   (101̅ 0) seen     figures
+                                    pole from    the(Figure   10a,c).                          
+right                as can be                         maxima    of the (0002) and 1010 pole figures (Figure 10a,c).
+
+3.4.3.4. Residual
+      Residual           CalculationRresults
+                  StressCalculation
+               Stress                Rresults
+        The
+      The    residualstress
+           residual           wascalculated
+                       stresswas                 using the
+                                    calculated using                   describedininsection
+                                                             method described
+                                                        the method                     Section2.2.EBSD
+                                                                                                    EBSDandandX-ray
+                                                                                                                X-ray
+   texture measurements were conducted in the three regions (left and right peripheral regions, and the
+texture measurements were conducted in the three regions (left and right peripheral regions, and the
+   central region) of the samples; hence, the calculation was provided for each of the three investigated
+central region) of the samples; hence, the calculation was provided for each of the three investigated
+   regions and passes with separate ODFs. The grain shapes for particular regions and passes were
+regions and passes with separate ODFs. The grain shapes for particular regions and passes were
+   determined from our EBSD results in the cross section and from reference [39] in the longitudinal
+determined from our EBSD results in the cross section and from reference [39] in the longitudinal
+   section of the samples. The grain size and shape did not depend significantly on the region in the
+section  of the samples. The grain size and shape did not depend significantly on the region in the
+   sample for particular passes, as seen in section 3.2. Thus, it could be assumed that the same statement
+sample         as well forpasses,
+         for particular
+   was valid                      as seen
+                           the axial       in Section
+                                      direction.         −3,Thus,
+                                                 Points3.2.                      assumed
+                                                                   it couldtobethe
+                                                             −2 belonged                    that theregion,
+                                                                                   left peripheral   same statement
+                                                                                                            −1, 1, 1
+was  valid  as well for  the axial direction.  Points  −  3, − 2 belonged   to  the left peripheral
+   to the central region, and 2, 3 to the right peripheral region. The results of the calculation     region, −1,in1, 1
+                                                                                                        are seen
+   the central
+to Figure       region,
+           12a–c.        and  2, 3 to the right  peripheral   region.   The  results  of the calculation  are  seen in
+Figure 12a–c.
+
+
+
+
+      Figure 12. Residual stress distribution in the axial (a), hoop (b), and the radial (c) direction of the
+      samples after the first, second, and the third C-ECAP pass.
+Metals 2018, 8, 1000                                                                                 17 of 20
+
+
+
+      It could be seen from the stress distributions (Figure 12a–c), that the distributions followed almost
+the same shape as the strain distributions from Section 3.1 (Figure 2a–c). In the center of the sample
+C1 in the axial direction (Figure 12a), a relatively large, −63 MPa, stress prevailed, as was expected
+from the strain measurements. In the left peripheral region, the C1 sample exhibited +14 MPa tensile
+stress, whilst the right peripheral region was practically stress-free in the axial direction in contrast to
+the measured compression strain (Figure 2a). It was interesting to see the change of sign between the
+strain and the stress at points −3, −2, and 2 mm. At points −3, −2, and 2 mm, the strain was −17, −39,
+and −82 µε, respectively, but the stress was +14, +14, and +2 MPa. The same behavior was spotted
+at point −3 in the C2 sample (Figure 12a) and at points 2 and 3 mm in the sample C3 in the radial
+direction (Figure 12c). Sample C2 exhibited a very symmetric distribution of axial stresses around
+the center of the sample with the maximum of compression stress at −37 MPa. The compression
+stress increased from the edges towards the center of the sample C2. The C3 sample showed a large,
+−63 MPa, stress at the right peripheral point −3 mm. In the central region (−1, 0, and 1 mm) and in
+the right peripheral region (1 and 2 mm) the residual compression stress decreased.
+      In the hoop direction (Figure 12b), samples C1 and C2 showed a very symmetric distribution
+of stresses around the center; however, it was in opposite progress than it was in the axial direction.
+These samples had the lowest value of compression stress in the center and it increased towards the
+edges. Sample C1 seemed to be stress-free in the center. Sample C3 showed a linearly increasing
+compression stress from the left to the right edge in the hoop direction.
+      The residual compression stresses did not show any gradient in the radial direction for samples
+C1 and C2, though at point −3 mm it was slightly increased (Figure 12c), and they were distributed
+at around −18 MPa. Additionally, a very inhomogeneous distribution could be seen at sample C3.
+Its maximum compression stress was at point −1 mm. From this point, the stress decreased towards
+the right edge of the sample until its sign changed between points 1 and 2 mm. The right edge of the
+sample exhibited tensile stress at about +20 MPa.
+
+4. Conclusions
+     Neutron diffraction measurements revealed the residual strain distributions of the samples after
+one, two, and three passes of the C-ECAP machine. Symmetric strain gradients were present in the
+case of samples after first and second pass in the axial and hoop directions. In the radial direction,
+there was no gradient and also the strain distribution was constant through the sample. The third
+pass broke the gradient symmetry in the axial and hoop direction. Moreover, in the radial direction,
+the constant strain distribution was interrupted as well.
+     EBSD observations confirmed the grain refinement effect of multiple pass C-ECAP treatment;
+however, after the second pass, the grain refinement was not as significant as after the first pass.
+Deformation twins were not observed, though twins with nano-sized width may have been present.
+Thus, it is most likely that a dislocation slip was responsible for the deformation of the Ti during the
+C-ECAP treatment. This concept was supported by the experimental pole figures from the EBSD
+measurements and the local X-ray macro-texture measurements. In addition, the macro-texture of
+the samples was dependent on the investigated region, which could indicate the activation and
+combination of different slip systems as the function of the position in the work-piece.
+     The calculation of the residual stress distributions showed that compression residual stresses
+prevailed in the specimens after the C-ECAP process and they followed the shape of the distributions
+of the residual strains.
+
+Author Contributions: K.M. and G.N. conceived and designed the experiments; J.P. and M.D. prepared the
+C-ECAPed materials; C.H. performed the neutron diffraction experiments; G.N. prepared the samples for EBSD
+and X-ray texture measurements; K.H. studied microstructure of the samples using EBSD; P.C. performed the
+X-ray texture measurements; G.N. and K.M. analyzed the data; G.N. wrote the paper.
+Acknowledgments: The authors are grateful for the support from the Czech Science Foundation [GB14-36566G],
+and the Operational Programme Research, Development and Education, The Ministry of Education, Youth
+Metals 2018, 8, 1000                                                                                            18 of 20
+
+
+
+and Sports (OP RDE, MEYS) [CZ.02.1.01/0.0/0.0/16_013/0001794]. Neutron diffraction measurements were
+performed with the support of the Ministry of Education, Youth and Sports (CANAM infrastructure of the NPI
+CAS Rez—project No. LM2011019, and infrastructure “Reactors LVR-15 and LR-0”—project No. LM2015074).
+Conflicts of Interest: The authors declare no conflict of interest.
+
+References
+1.    Elias, C.N.; Lima, H.C.J.; Valiev, R.Z.; Meyers, M.A. Biomedical applications of titanium and its alloys, JOM:
+      The journal of the Minerals. Met. Mater. Soc. 2008, 60, 46–49. [CrossRef]
+2.    Lotkov, A.I.; Baturin, A.A.; Grishkov, V.N.; Kopylov, V.I. Possible role of crystal structure defects in grain
+      structure nanofragmentation under severe cold plastic deformation of metals and alloys. Phys. Mesomech.
+      2007, 10, 179–189. [CrossRef]
+3.    Semenova, I.P.; Modina, J.M.; Polyakov, A.V.; Klevtsov, G.V.; Klevtsova, N.A.; Pigaleva, I.N.; Valiev, R.Z.;
+      Langdon, T.G. Fracture toughness at cryogenic temperatures of ultrafine-grained Ti-6Al-4V alloy processed
+      by ECAP. Mater. Sci. Eng. A 2018, 716, 260–267. [CrossRef]
+4.    Stolyarov, V.V.; Alexandrov, I.V.; Valiev, R.Z.; Zhu, Y.T.; Lowe, T.C. Grain refinement and properties of pure
+      Ti processed by warm ECAP and cold rolling. Mater. Sci. Eng. A 2003, 343, 43–50. [CrossRef]
+5.    Dyakonov, G.S.; Mironov, S.; Semenova, I.P.; Valiev, R.Z.; Semiatin, S.L. Microstructure evolution and
+      strengthening mechanisms in commercial-purity titanium subjected to equal-channel angular pressing.
+      Mater. Sci. Eng. A 2017, 701, 289–301. [CrossRef]
+6.    Vinogradov AYu Stolyarov, V.V.; Hashimoto, S.; Valiev, R.Z. Cyclic behavior of ultrafine-grain titanium
+      produced by severe plastic deformation. Mater. Sci. Eng. A 2001, 318, 163–173. [CrossRef]
+7.    Dyakonov, G.S.; Zemtsova, E.; Mironov, S.; Semenova, I.P.; Valiev, R.Z.; Semiatin, S.L. An EBSD investigation
+      of ultrafine-grain titanium for biomedical applications. Mater. Sci. Eng. A 2015, 648, 305–310. [CrossRef]
+8.    Jäger, A.; Gärtnerova, V.; Tesař, K. Microstructure and anisotropy of the mechanical properties in
+      commercially pure titanium after equal channel angular pressing with back pressure at room temperature.
+      Mater. Sci. Eng. A 2015, 644, 114–120. [CrossRef]
+9.    Raab, G.J.; Valiev, R.Z.; Lowe, T.C.; Zhu, Y.T. Continuous processing of ultrafine grained Al by
+      ECAP-Conform. Mater. Sci. Eng. A 2004, 382, 30–34. [CrossRef]
+10.   Medvedev, A.; Ng, H.P.; Lapovok, R.; Estrin, Y.; Lowe, T.C.; Anumalasetty, V.N. Comparison of
+      laboratory-scale and industrial-scale equal channel angular pressing of commercial purity titanium.
+      Mater. Lett. 2015, 145, 308–311. [CrossRef]
+11.   Djavanroodi, F.; Omranpour, B.; Ebrahimi, M.; Sedighi, M. Designing of ECAP parameters based on strain
+      distribution uniformity. Prog. Nat. Sci. Mater. Int. 2012, 22, 452–460. [CrossRef]
+12.   Tong, Y.; Dmowski, W.; Witczak, Z.; Chuang, C.-P.; Egami, T. Residual elastic strain induced by equal channel
+      angular pressing on bulk metallic glasses. Acta Mater. 2013, 61, 1204–1209. [CrossRef]
+13.   Webster, G.A.; Wimpory, R.C. Non-destructive measurement of residual stress by neutron diffraction. J. Mater.
+      Process. Technol. 2001, 117, 395–399. [CrossRef]
+14.   Holmberg, J.; Steuwer, A.; Stormvinter, A.; Kristoffersen, H.; Haakanen, M.; Berglund, J. Residual stress state
+      in an induction hardened steel bar determined by synchrotron- and neutron diffraction compared to results
+      from lab-XRD. Mater. Sci. Eng. A 2016, 667, 199–207. [CrossRef]
+15.   Vidal, V.; Thilly, L.; Van Petegem, S.; Stuhr, U.; Lecouturier, F.; Renault, P.-O.; Van Swygenhoven, H. Plasticity
+      of nanostructured Cu-Nb-based wires: Strengthening mechanisms revealed by in situ deformation under
+      neutrons. Scr. Mater. 2009, 60, 171–174. [CrossRef]
+16.   Lee, H.H.; Gangwar, K.D.; Park, K.-T.; Woo, W.; Kim, H.S. Neutron diffraction and finite element analysis of
+      the residual stress distribution of copper processed by equal-channel angular pressing. Mater. Sci. Eng. A
+      2017, 682, 691–697. [CrossRef]
+17.   Kubina, T.; Dlouhý, J.; Kövér, M.; Hodek, J. Study of Thermal Stability of Ultra Fine-Grained Commercially
+      Pure Titanium Wire Prepared in Conform Equipment. Mater. Sci. Forum 2014, 782, 415–420. [CrossRef]
+18.   Valiev, R.Z.; Langdon, T.G. Principles of equal-channel angular pressing as a processing tool for grain
+      refinement. Prog. Mater. Sci. 2006, 51, 881–981. [CrossRef]
+19.   Mikula, P. Past and present status of neutron scattering at the research reactor in Řež. Mater. Struct. 2006, 13,
+      51–62.
+Metals 2018, 8, 1000                                                                                           19 of 20
+
+
+
+20.   Hervoches, C.H.; Mikula, P.; Vrána, M. Recent instrumentation upgrades on the residual strain/stress
+      diffractometer at NPI-Řež. In Proceedings of the 53rd International Scientific Conference on Experimental
+      Stress Analysis (EAN 2015), Český Krumlov, Czech Republic, 1–4 June 2015; pp. 119–120.
+21.   Hutchings, M.T.; Withers, P.J.; Holden, T.M.; Lorentzen, T. Introduction to the Characterization of Residual
+      Stresses by Neutron Diffraction; CRC Press: Boca Raton, FL, USA, 2005; Chapter 3.6.4.; ISBN 9780415310000.
+22.   Bachmann, F.; Hielscher, R.; Schaeben, H. Texture analysis with mtex—Free and open source software
+      toolbox. Solid State Phenom. 2010, 160, 63–68. [CrossRef]
+23.   Gnäupel-Herold, T. ISODEC: Software for calculating diffraction elastic constants. J. Appl. Crystallogr. 2012,
+      45, 573–574. [CrossRef]
+24.   Kröner, E. Berechnung der elastischen Konstanten des Vielkristalls aus den Konstanten des Einkristalls.
+      Zeitschrift für Physik 1958, 151, 504–518. [CrossRef]
+25.   Bollenrath, F.; Hauk, V.; Müller, E.H. Zur Berechnung der vielkristallinen Elastizitäts-konstanten aus den
+      Werten des Einkristalls. Z. Metallkunde 1967, 58, 76–82.
+26.   Behnken, H.; Hauk, V. Berechnung der Röntgenographischen Elastizitätskonstanten (REK) des Vielkristalls
+      aus den Einkirstalldaten fur beliebige Kristallsymmetrie. Z. Metallkunde 1986, 77, 620–626.
+27.   Kawałko, J.; Wroński, M.; Bieda, M.; Sztwiertnia, K.; Wierzbanowski, K.; Wojtas, D.; Łagoda, M.;
+      Ostachowski, P.; Pachla, W.; Kulczyk, M. Microstructure of titanium on complex deformation paths:
+      Comparison of ECAP, KOBO and HE techniques. Mater. Charact. 2018, 141, 19–31. [CrossRef]
+28.   Garcés, G.; Oñorbe, E.; Gan, W.; Máthis, K.; Tolnai, D.; Horváth, K.; Pérez, P.; Adeva, P. Evolution of twinning
+      in extruded AZ31 alloy with bimodal grain structure. Mater. Charact. 2017, 126, 116–124. [CrossRef]
+29.   Minárik, P.; Král, R.; Čížek, J.; Chmelík, F. Effect of different c/a ratio on the microstructure and mechanical
+      properties in magnesium alloys processed by ECAP. Acta Mater. 2016, 107, 83–95. [CrossRef]
+30.   Iwahashi, Y.; Horita, Z.; Nemoto, M.; Langdon, T.G. An investigation of microstructural evolution during
+      equal-channel angular pressing. Acta Mater. 1997, 45, 4733–4741. [CrossRef]
+31.   Stolyarov, V.V.; Theodore Zhu, Y.; Alexandrov, I.V.; Lowe, T.C.; Valiev, R.Z. Influence of ECAP routes on the
+      microstructure and properties of pure Ti. Mater. Sci. Eng. A 2001, 299, 59–67. [CrossRef]
+32.   Yoo, M.H. Slip, Twinning, and Fracture in Hexagonal Close-Packed Metals. Metall. Trans. A 1981, 12, 409–418.
+      [CrossRef]
+33.   Minonishi, Y.; Morozumi, S.; Yoshinaga, H. {1122} <1123> slip in titanium. Scr. Metall. 1982, 16, 427–430.
+      [CrossRef]
+34.   Paton, N.E.; Backofen, W.A. Plastic deformation of titanium at elevated temperatures. Metall. Trans. 1970, 1,
+      2839–2847. [CrossRef]
+35.   Suwas, S.; Beausir, B.; Tóth, L.S.; Fundenberger, J.-J.; Gottstein, G. Texture evolution in commercially pure
+      titanium after warm equal channel angular extrusion. Acta Mater. 2011, 59, 1121–1133. [CrossRef]
+36.   Kim, I.; Jeong, W.-S.; Kim, J.; Park, K.-T.; Shin, D.H. Deformation structures of pure Ti produced by equal
+      channel angular pressing. Scr. Mater. 2001, 45, 575–580. [CrossRef]
+37.   Chen, Y.J.; Li, Y.J.; Walmsley, J.C.; Dumoulin, S.; Gireesh, S.S.; Armada, S.; Skaret, P.C.; Roven, H.J.
+      Quantitative analysis of grain refinement in titanium during equal channel angular pressing. Scr. Mater.
+      2011, 64, 904–907. [CrossRef]
+38.   Kim, I.; Kim, J.; Shin, D.H.; Lee, C.S.; Hwang, S.K. Effects of equal channel angular pressing temperature on
+      deformation structures of pure Ti. Mater. Sci. Eng. A 2003, 342, 302–310. [CrossRef]
+39.   Palán, J. Comprehensive evaluation of properties of ultrafine to nanocrystalline wires of Grade 2 titanium
+      made by Conform SPD and rotary swaging technique, in process.
+40.   Lahaie, D.; Embury, J.D.; Chadwick, M.M.; Gray, G.T. A note on the deformation of fine grained magnesium
+      alloys. Scr. Metall. Mater. 1992, 27, 139–142. [CrossRef]
+41.   Luan, Q.; Britton, T.B.; Jun, T.-S. Strain rate sensitivity in commercial pure titanium: The competition between
+      slip and deformation twinning. Mater. Sci. Eng. A 2018, 734, 385–397. [CrossRef]
+42.   Prangnell, P.B.; Harris, C.; Roberts, S.M. Finite element modelling of equal channel angular extrusion.
+      Scr. Mater. 1997, 37, 983–989. [CrossRef]
+Metals 2018, 8, 1000                                                                                         20 of 20
+
+
+
+43.   Duchek, M.; Kubina, T.; Hodek, J.; Dlouhy, J. Development of the production of ultrafine-grained titanium
+      with the conform equipment. Mater. Tehnol. 2013, 47, 515–518.
+44.   Gunderov, D.V.; Polyakov, A.V.; Semenova, I.P.; Raab, G.I.; Churakova, A.A.; Gimaltdinova, E.I.; Sabirov, I.;
+      Segurado, J.; Sitdikov, V.D.; Alexandrov, I.V.; et al. Evolution of microstructure, macrotexture and mechanical
+      properties of commercially pure Ti during ECAP-conform processing and drawing. Mater. Sci. Eng. A 2013,
+      562, 128–136. [CrossRef]
+
+                        © 2018 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access
+                        article distributed under the terms and conditions of the Creative Commons Attribution
+                        (CC BY) license (http://creativecommons.org/licenses/by/4.0/).
+

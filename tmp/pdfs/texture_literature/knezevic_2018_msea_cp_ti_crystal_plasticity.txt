@@ -1,0 +1,1757 @@
+LA-UR-17-29636 (Accepted Manuscript)
+
+Deformation behavior of CP-titanium: Experiment and crystal plasticity
+modeling
+Wronski, M
+Mariyappan, Arul Kumar
+Capolungo, Laurent
+Tome, Carlos
+Wierzbanowski, K
+Mccabe, Rodney James
+
+Provided by the author(s) and the Los Alamos National Laboratory (2018-07-03).
+To be published in: Materials Science and Engineering: A
+DOI to publisher's version: 10.1016/j.msea.2018.03.017
+Permalink to record: http://permalink.lanl.gov/object/view?what=info:lanl-repo/lareport/LA-UR-17-29636
+
+Disclaimer:
+Approved for public release. Los Alamos National Laboratory, an affirmative action/equal opportunity employer, is operated by the Los Alamos
+National Security, LLC for the National Nuclear Security Administration of the U.S. Department of Energy under contract DE-AC52-06NA25396.
+Los Alamos National Laboratory strongly supports academic freedom and a researcher's right to publish; as an institution, however, the
+Laboratory does not endorse the viewpoint of a publication or guarantee its technical correctness.
+
+Author’s Accepted Manuscript
+Deformation behavior of CP-titanium: Experiment
+and Crystal plasticity modeling
+M. Wronski, M. Arul Kumar, L. Capolungo, R.J.
+McCabe, K. Wierzbanowski, C.N. Tomé
+www.elsevier.com/locate/msea
+
+PII:
+DOI:
+Reference:
+
+S0921-5093(18)30353-8
+https://doi.org/10.1016/j.msea.2018.03.017
+MSA36210
+
+To appear in: Materials Science & Engineering A
+Received date: 22 November 2017
+Revised date: 28 February 2018
+Accepted date: 5 March 2018
+Cite this article as: M. Wronski, M. Arul Kumar, L. Capolungo, R.J. McCabe,
+K. Wierzbanowski and C.N. Tomé, Deformation behavior of CP-titanium:
+Experiment and Crystal plasticity modeling, Materials Science & Engineering A,
+https://doi.org/10.1016/j.msea.2018.03.017
+This is a PDF file of an unedited manuscript that has been accepted for
+publication. As a service to our customers we are providing this early version of
+the manuscript. The manuscript will undergo copyediting, typesetting, and
+review of the resulting galley proof before it is published in its final citable form.
+Please note that during the production process errors may be discovered which
+could affect the content, and all legal disclaimers that apply to the journal pertain.
+
+Deformation behavior of CP-titanium: Experiment and Crystal plasticity
+modeling
+M. Wronski1, M. Arul Kumar2,*, L. Capolungo2, R.J. McCabe2, K. Wierzbanowski1, C.N.
+Tomé2
+1
+
+2
+
+AGH University of Science and Technology, Faculty of Physics and Applied Computer
+Science, al. Mickiewicza 30, 30-059 Krakow, Poland
+
+Materials Science and Technology Division, Los Alamos National Laboratory, Los Alamos,
+NM 87545, USA
+
+Abstract
+The deformation behavior of commercially pure titanium is studied using experiments and a
+crystal plasticity model. Compression tests along the rolling, transverse, and normaldirections, and tensile tests along the rolling and transverse directions are performed at room
+temperature to study the activation of slip and twinning in the hexagonal closed packed
+titanium. A detailed EBSD based statistical analysis of the microstructure is performed to
+develop statistics of both {10-12} tensile and {11-22} compression twins. A simple Monte
+Carlo (MC) twin variant selection criterion is proposed within the framework of the viscoplastic self-consistent (VPSC) model with a dislocation density (DD) based law used to
+describe dislocation hardening. In the model, plasticity is accommodated by prismatic, basal
+and pyramidal slip modes, and {10-12} tensile and {11-22} compression twinning modes.
+The VPSC-MC model successfully captures the experimentally observed activation of low
+Schmid factor twin variants for both tensile and compression twins modes. The model also
+predicts macroscopic stress-strain response, texture evolution and twin volume fraction that
+are in agreement with experimental observations.
+Keywords: crystal plasticity, twin variant selection, titanium, dislocation density
+1. Introduction
+Titanium and its alloys are used in several industries, including automotive and
+aerospace, due to their high specific strength. A lack of available crystallographic slip
+systems in hexagonal close packed (HCP) titanium necessitates the activation of twinning to
+accommodate any arbitrary deformation [1-3]. In HCP titanium, {10-12} twins normally
+accommodate extension along the c-axis and are frequently referred to as tensile twins, and
+
+1
+
+{11-22} twins normally accommodate contraction along the c-axis and are frequently
+referred to as compression twins. While dislocation slip is rather homogeneous over the
+crystals and involves gradual lattice reorientation, deformation twins are localized, lamellar
+shaped domains within the crystal resulting in a significant lattice reorientation [3-5]. For
+instance, in titanium with the c/a ratio of 1.588, the lattice rotation and local shear strain
+associated with {10-12} <0111> tensile twins is approximately 85o and 17.4%, respectively.
+The heterogeneous twinning microstructure greatly affects the polycrystal deformation
+behavior through: i) reorientation to a harder or softer orientation resulting in the activation
+of different deformation modes, ii) a Hall-Petch effect due to twin induced grain subdivision,
+
+iii)
+
+creation
+
+of
+
+immobile
+
+dislocation
+
+content
+
+within
+
+twins
+
+due
+
+to
+
+boundary/dislocation interactions [6-10]. These twinning related effects need to be
+considered explicitly to study the deformation behavior of HCP titanium.
+Deformation twinning is a sequential process of creation of an embryo (nucleation),
+propagation of this embryo as a lamella into the crystal or grain, and subsequent thickening
+(growth) of the twin lamella. Each of these events is stochastic and depends on several
+factors including microstructural features, internal stresses, direction and rate of loading,
+strain level, and temperature [4,11-14]. For example, the work of Bieler et al. [4] in pure
+titanium using in-situ x-ray diffraction shows that the highest resolved shear stress (RSS)
+twin variant is activated in a grain surrounded by hard grain orientations; whereas low RSS
+twin variants are activated in grains surrounded by ‘soft’ neighbor orientations.
+Understanding of twin variant selection is important because it affects the microstructural
+evolution, such as the formation of parallel twins and/or twin-twin intersections, and then it
+controls the overall deformation behavior and texture evolution [15]. Most models rely on
+the average stress state in the grain and a maximum Schmid factor criterion for twin variant
+selection. However, twin variant activation depends on local stress fluctuations inside the
+grain and near grain boundaries, and a systematic study is required to establish the statistical
+distribution of twin variants in a particular material system. Extensive statistical analysis
+providing the distribution of twin variants in HCP Mg and Zr have been reported [11-12].
+An equivalent study for titanium, however, is not available. In this work we report the
+statistical distribution of twin variants in HCP commercially pure titanium obtained by
+employing the recently developed automated twinning analysis software METIS to analyze
+EBSD images of the deformed microstructure [16-17].
+Understanding the deformation mechanisms including twinning activity and twin
+variant selection, requires a predictive crystal plasticity model. Over several decades, several
+2
+
+experimental and computational modeling efforts have been dedicated to understand
+deformation mechanisms and their effect on the material response of titanium and its alloys
+[8-9, 18-29]. Most of the experimental literature on titanium concerns the effect of twinning
+on mechanical anisotropy and strain hardening [5, 8-9, 24, 30-31], and on failure
+mechanisms [32-33]. A few studies also focus on the effect of interstitial alloying elements
+on deformation twinning [34].
+In what concerns crystal plasticity modeling of Ti, some relevant studies have been
+performed to understand the deformation mechanisms. The crystal plasticity finite element
+(CP-FE) approach has been extensively used to study the deformation mechanisms and
+associated behavior of HCP titanium [9, 24, 26, 28, 31]. The CP-FE studies connect the
+observed strain hardening behavior and texture evolution to twin and slip activities, and
+most use an empirical hardening equation like the Voce law. Recent work of Zecevic et al.
+[29] analyzes the deformation mechanism using CP-FE coupled with a dislocation density
+based hardening law. The few studies based on the effective medium visco-plastic selfconsistent (VPSC) model rely on an empirical hardening law [24, 26, 35]. All of these CPFE and VPSC works treat twining in Ti as a deterministic process, and neglect the
+experimentally observed statistical variations. A stochastic twinning model has been
+previously developed for HCP Mg and Zr [36-38] that probabilistically accounts for
+variation in the microstructural and mechanical responses in order to capture the
+experimentally observed statistical variations in twin nucleation and growth. Successful
+application of such a stochastic twinning model for titanium requires knowledge of the
+distribution of microstructural features such as grain size, grain boundary facet area, number
+of grain boundaries; and the local stress fluctuations due to inter-grain interactions and preexisting twins [38-42]. All of these distributions need to be incorporated in probabilistic
+manner leadings to several model parameters. To avoid this cumbersome undertaking, in this
+work we propose a simple Monte Carlo based twin variant selection model to capture the
+experimentally observed twinning statistics.
+In this work, we perform a systematic experimental and computational modeling to
+understand the deformation mechanisms in rolled commercially pure titanium with a splitbasal initial texture. Compression and tension tests are performed along rolling, normal and
+transverse directions to activate tensile and compressive twinning modes. An automated
+EBSD twinning analysis software (METIS) is used to analyze and establish the statistical
+twin variant distributions [16-17]. On the modeling side we develop a simple Monte Carlo
+twin variant selection scheme, and implement it within the framework of VPSC. Model
+3
+
+parameters are calibrated by fitting the experimentally measured stress-strain response,
+texture evolution and twin volume fraction evolution. The agreement between observed and
+predicted twin variant distribution validates the proposed Monte Carlo twin variant selection
+scheme.
+2. Experiments
+(a) Initial microstructure
+
+(b) Deformed microstructure
+
+(c) Initial texture
+
+Figure 1. (a) Initial and (b) 10% RD compressed microstructure, and (c) initial texture of commercially
+pure titanium considered for the present study. Compression along rolling direction to 10% activates
+deformation twinning. The microstructural images are obtained from the rolling plane and the inverse pole
+figure color maps corresponds to sample ND direction.
+Table 1. Chemical composition of titanium grade 2
+
+Element
+
+Nitrogen
+
+Carbon
+
+Hydrogen
+
+Iron
+
+Oxygen
+
+Titanium
+
+Max. content (%)
+
+0.03
+
+0.06
+
+0.015
+
+0.3
+
+0.25
+
+balance
+
+In this work, rolled commercially pure titanium (grade 2) was used and its chemical
+composition is given in Table 1. The initial microstructure and texture of the material is
+shown in Figs. 1(a) and (c), respectively. The average grain diameter is 10.5 m (~87 m2
+area) with a standard deviation of 6.9 m, and the initial texture exhibits split-basal poles. To
+study the anisotropic behavior of HCP titanium in connection with crystal symmetry and
+deformation mechanisms we performed compression tests along the rolling (RDC),
+transverse (TDC) and normal (NDC) directions, and tensile test along the rolling (RDT) and
+transverse (TDT) directions. The gauge dimension of the tensile samples is 12.5x5x5 mm3
+and the compression samples is 12x8x8 mm3 with the long dimension corresponds to the
+loading direction. Tensile and compression tests were performed at a strain rate of 10-3 and
+10-4 /s, respectively, at room temperature. For all five tests, different samples were strained to
+
+4
+
+5%, 10% and 20% for characterization purpose. In-situ or interrupted in-situ methods are
+suitable to study the evolution of microstructure, twinning, and texture, at a micron scale.
+However, in this work we are concerned with implementing a numerically efficient approach
+for simulating texture, mechanical response, and microstructural evolution at a macroscopic
+scale. We use, for such purpose, different samples that are deformed to different strain levels
+for each loading condition. Electron Back Scatter Diffraction (EBSD) was used to capture the
+deformation microstructure and texture. To perform EBSD imaging, deformed samples were
+mechanically ground with silicon carbide paper to grade 4000 and then electro-polished in
+the Struers A3 solution. EBSD scans of a 3.0x3.0 mm2 area (from nine different scans) using
+a 10m step size was collected and analyzed using TSL-OIM software to obtain
+crystallographic textures. Twinning statistics (see Sec. 5 for more detail) were obtained based
+on 0.2m step size EBSD scans over total areas of ~0.42 mm2 (from six different scans of
+350x200m areas each) for each sample. A recently developed automated twin statistics code
+was employed to analyze the EBSD data [16-17]. In the present study, only {10-12} tensile
+and {11-22} compression twins were observed, and those are the ones accounted for in the
+simulations.
+
+Table 2. Volume fraction (in %) of tensile and compression twin determined from EBSD maps
+and VPSC model (in brackets) at strain of 0.1.
+
+RDT
+
+TDT
+
+RDC
+
+TDC
+
+NDC
+
+Tensile twins
+
+1.28 (0.4)
+
+6.58 (10.6)
+
+28.68 (19.9)
+
+3.76 (8.2)
+
+5.21 (5.5)
+
+Compression twins
+
+0.99 (0.5)
+
+0.63 (0.3)
+
+0.30 (0.8)
+
+4.16 (2.9)
+
+10.85 (9.8)
+
+5
+
+Stress-strain response
+
+Relative activity
+
+400
+300
+200
+Exp
+Model
+
+100
+0.05
+
+0.10
+
+0.15
+
+0.4
+0.2
+
+Logarithmic strain
+
+0.15
+
+10
+5
+0
+0.00
+
+0.20
+
+300
+200
+Exp
+Model
+
+100
+0.05
+
+0.10
+
+0.15
+
+0.8
+
+0.4
+0.2
+0.0
+0.00
+
+0.20
+
+Prismatic <a>
+Pyramidal <c+a>
+Basal <a>
+TTw
+CTw
+
+0.6
+
+0.05
+
+0.10
+
+0.15
+
+40
+30
+
+400
+200
+
+Exp
+Model
+0.05
+
+0.10
+
+0.15
+
+0.8
+0.6
+0.4
+0.2
+0.0
+0.00
+
+0.20
+
+0.15
+
+30
+
+0.05
+
+0.10
+
+0.15
+
+0.20
+
+TTw - Model
+CTw - Model
+TTw - Exp
+CTw - Exp
+
+20
+10
+0
+0.00
+
+0.20
+
+0.05
+
+0.10
+
+0.15
+
+0.20
+
+Logarithmic strain
+
+200
+
+Exp
+Model
+0.05
+
+0.10
+
+0.15
+
+0.6
+0.4
+0.2
+0.0
+0.00
+
+0.20
+
+Prismatic <a>
+Pyramidal <c+a>
+Basal <a>
+TTw
+CTw
+
+0.05
+
+0.10
+
+0.15
+
+Volume fraction [%]
+
+400
+
+Relative activity
+
+40
+30
+
+10
+0
+0.00
+
+0.20
+
+TTw - Model
+CTw - Model
+TTw - Exp
+CTw - Exp
+
+20
+
+Logarithmic strain
+
+0.05
+
+0.10
+
+0.15
+
+0.20
+
+Logarithmic strain
+
+1.0
+
+600
+400
+200
+
+Exp
+Model
+0.05
+
+0.10
+
+0.15
+
+Logarithm ic strain
+
+0.20
+
+Relative activity
+
+800
+
+Prismatic <a>
+Pyramidal <c+a>
+Basal <a>
+TTw
+CTw
+
+0.8
+0.6
+0.4
+0.2
+0.0
+0.00
+
+0.05
+
+0.10
+
+0.15
+
+Logarithmic strain
+
+0.20
+
+Volume fraction [%]
+
+True stress [MPa]
+
+0.10
+
+0.8
+
+Logarithmic strain
+
+True stress [MPa]
+
+TTw - Model
+CTw - Model
+TTw - Exp
+CTw - Exp
+
+1.0
+
+600
+
+0
+0.00
+
+0.05
+
+40
+
+Logarithmic strain
+
+800
+
+NDC
+
+TTw
+CTw
+
+Volume fraction [%]
+
+600
+
+Relative activity
+
+True stress [MPa]
+
+Logarithmic strain Basal <a>
+
+0
+0.00
+
+0.20
+
+10
+0
+0.00
+
+0.20
+
+Prismatic <a>
+Pyramidal <c+a>
+
+1.0
+
+Logarithmic strain
+
+TDC
+
+0.15
+
+Logarithmic strain
+
+800
+
+0
+0.00
+
+0.10
+
+20
+
+Logarithmic strain
+
+RDC
+
+0.05
+
+Logarithmic strain
+
+Volume fraction [%]
+
+400
+
+Relative activity
+
+True stress [MPa]
+
+0.10
+
+TTw - Model
+CTw - Model
+TTw - Exp
+CTw - Exp
+
+1.0
+
+500
+
+0
+0.00
+
+0.05
+
+15
+
+Logarithmic strain
+
+600
+
+TDT
+
+Prismatic <a>
+Pyramidal <c+a>
+Basal <a>
+TTw
+CTw
+
+0.6
+
+0.0
+0.00
+
+0.20
+
+20
+
+0.8
+
+Volume fraction [%]
+
+500
+
+0
+0.00
+
+Twin volume fraction
+
+1.0
+
+Relative activity
+
+RDT
+
+True stress [MPa]
+
+600
+
+40
+30
+
+TTw - Model
+CTw - Model
+TTw - Exp
+CTw - Exp
+
+20
+10
+0
+0.00
+
+0.05
+
+0.10
+
+0.15
+
+0.20
+
+Logarithmic strain
+
+Figure 2. Deformation behavior of polycrystalline titanium under different loading conditions. First
+column: measured and model predicted stress-strain response; second column: model predicted relative
+activities of slip and twin modes; third column: measured and model predicted twin volume fraction
+evolution.
+
+The experimentally measured stress-strain response for all five loading conditions is
+shown in Fig. 2. The difference in mechanical behavior for tension and compression loading
+along the RD, TD, and ND is significant. The initial yield stress for RDT and TDT is ~307
+and ~338 MPa, respectively. For RDC, TDC and NDC is ~300, 343 and 395 MPa,
+respectively. The spread of about 25% in yield stresses shows that asymmetry at yield is nonnegligible and the spread increases with strain hardening. Similar observations are reported
+by Hama et al. [31], Nixon et al. [26] and Zecevic et al. [29]. Measured twin volume fraction
+
+6
+
+at 10% strain using EBSD is shown in the third column of Fig. 2 and also presented in Table
+2. As mentioned before, {10-12} tensile and {11-22} compression twins are activated, an
+example of which are the {10-12} tensile twins is shown for RDC 10% in Fig. 1(b).
+Specifically, {10-12} tensile twins are mainly activated for RDC and TDT, whereas {11-22}
+compression twins are activated for NDC, although a small tensile twin activity is also
+observed in NDC. The evolution of deformation texture with strain for all loading cases is
+shown in Fig. 3. For RDT, texture evolves gradually and there is no clear evidence of twin
+reorientation, which is in agreement with the measured twin volume fraction. In RDC and
+TDT, the twinning reorientation of ~90o related to {10-12} tensile twinning is clearly evident.
+In NDC, the activation of {11-22} compression twin leads to the observed grains
+reorientation of ~60o. In TDC, the weak texture evolution may be associated with the small
+activation of both {10-12} tensile and {11-22} compression twins. Comparing all five
+loading cases, activation of tensile and compression twins is statistically significant only in
+RDC and NDC cases, respectively. As a consequence, only these two cases will be
+considered for further statistical analysis in Sec. 5.
+Measured
+ε = 0.05
+
+ε = 0.10
+
+Predicted
+ε = 0.20
+
+ε = 0.05
+
+ε = 0.20
+
+ε = 0.10
+
+RDT
+
+TDT
+
+RDC
+
+TDC
+RD
+
+NDC
+TD
+
+Figure 3. (0001) Pole figures of deformation texture evolution for Ti under different loading conditions as
+measured by EBSD (left) and predicted by VPSC-DD model (right).
+
+7
+
+3.
+
+Crystal plasticity modeling
+To study the underlying active deformation mechanisms of CP-Ti and to provide an
+
+insight into the observed twinning and strain hardening behaviors, here we employed a viscoplastic self-consistent (VPSC) model. A comprehensive description of the VPSC model
+originally developed by Lebensohn and Tome [43] can be found in Lebensohn et al [44]. In
+Sections 3.1 and 3.2, the polycrystal model and dislocation density based hardening law for
+slip and twinning systems will be briefly described. The Monte Carlo scheme used for twin
+variant selection and reorientation is novel and will be described in Section 3.2.
+
+3.1 The Visco-Plastic Self Consistent (VPSC) model
+VPSC model describes the polycrystal as a collection of orientations (grains) with
+associated volume fractions chosen to represent the initial texture of the aggregate. Each
+grain is regarded as a visco-plastic inclusion embedded in, and interacting with, a
+“homogeneous effective medium” (HEM), which has the average properties of the aggregate.
+The macroscopic response of the polycrystal results from the contribution of each grain. The
+visco-plastic compliance of the HEM is given by a self-consistent condition applied on the
+grain averages. At the single crystal level, the strain rate of a grain is accommodated by the
+shear rates of slip and twinning systems, as:
+̇
+
+∑
+̇
+
+̇ ∑
+
+(
+
+)
+
+(1)
+
+Here, ms and ̇ is the symmetric Schmid tensor and shear rate of system s. ̇ denotes a
+normalized shear rate, n is the inverse strain-rate sensitivity,
+
+is the stress tensor, and
+
+is
+
+the threshold shear stress or critical resolved shear stress (CRSS) required to activate system s.
+The latter is given by the constitutive law described in Section 3.2. In order to avoid the
+further strain-rate dependence associated with the power n in Eq. 1, ̇ is chosen equal to the
+norm of the macroscopic strain rate ‖ ̇ ‖. The constitutive laws relating strain-rate and stress
+for the aggregate are written in a linearized form as:
+̇
+
+̅ ̅
+
+̅̇
+
+(2)
+
+Where ̅ and ̅̇ are the macroscopic visco-plastic compliance tensor and back-extrapolated
+terms for the aggregate, respectively. The inclusion formalism couples stress and strain-rate
+in the grain (
+
+̇ ) with the average stress and strain-rate in the effective medium ( ̅ ̅̇ )
+
+through the interaction equation:
+
+8
+
+̇
+
+̅̇
+
+(
+
+(
+
+̅
+
+)
+
+) (
+
+̅)
+
+E is the visco-plastic Eshelby tensor, ̅
+tensor for the secant interaction ( ̅̇
+
+(3)
+
+is the macroscopic visco-plastic compliance
+
+), and the parameter neff “tunes” the stiffness of the
+
+inclusion-matrix interaction: neff = 0 for a Taylor case, neff =1 for the stiff secant case, and neff
+= n (=20 in our calculations) for the compliant tangent case. In this work, following the
+systematic analysis of Lebensohn et al. [44], we adopt an intermediate compliance neff = 10 in
+Eq. 3.
+
+3.2 Constitutive hardening law
+Here we use a thermally activated dislocation density based hardening law (DD
+model) developed by Beyerlein and Tome [45]. In this model, evolution of threshold shear
+stress follows the changes in the dislocation density on individual slip systems. Within this
+DD model, the threshold shear stress for slip
+
+is expressed as,
+(4)
+
+where
+
+,
+
+and
+
+is the friction stress (depend on the Peierls stress, precipitates and
+
+the initial dislocation content), forest dislocation interaction stress and dislocation
+substructure interaction stress, respectively. In this work, experiments are performed at a
+fixed strain rate and temperature, and so we assume constant value for friction stress
+evolution of forest dislocation interaction stress
+
+. The
+
+follows the traditional Taylor law [46],
+
+as,
+√
+
+where
+
+(5)
+
+is a dislocation interaction parameter, and
+
+,
+
+and
+
+is the value of the
+
+Burgers vector, effective shear modulus and forest dislocation density of system s. The
+hardening contribution of dislocations stored within substructures, such as cell walls, related
+to substructure dislocation density
+√
+
+(
+
+√
+
+according to Madec et al. [47]:
+
+)
+
+(6)
+
+Here, ksub = 0.086 is an empirical parameter recovering the Taylor law for low substructure
+dislocation densities [48]. The evolution of the forest density
+
+governed by the generation
+
+or storage and the removal of dislocations, via:
+√
+
+( ̇ )
+
+(7)
+
+9
+
+where
+
+is a coefficient for dislocation storage via statistical trapping of gliding dislocations
+
+by forest obstacles and
+
+is a coefficient for dynamic recovery by thermally activated
+
+mechanisms, and it is given as [45],
+̇
+
+(
+
+( ̇ ))
+
+Here, k, ̇ ,
+
+(8)
+
+and Ds are the Boltzmann constant, a reference strain rate, an effective
+
+activation enthalpy and a drag stress, respectively. The change in substructure dislocation
+density is controlled by the rate of recovery of all active dislocations through:
+∑
+
+|
+
+|
+
+(9)
+
+where qs is a dislocation recovery rate that quantifies the fraction of dislocations stored as
+substructure.
+Twinning: Here, we assume that twinning has associated, as slip, a critical resolved shear
+stress of activation in the twinning plane and along the twinning direction (see Eq. 1).
+However, twinning differs from slip in its directionality, which we model by allowing
+activation only if the resolved shear stress is positive (along the shear direction of the twin).
+Similar to slip, the evolution of threshold shear stress or CRSS of twinning
+
+is a sum of a
+
+temperature- and rate-independent frictional stress and a rate-independent latent hardening
+term that coupling slip and twin systems as,
+∑
+
+(10)
+
+3.3 Variant selection and twin reorientation model
+An aspect of twinning that needs to be incorporated into the models is the fact that
+twins are domains inside the grain (usually of lamellar morphology) with a different
+orientation than the surrounding matrix. These twinned regions contribute to the texture of
+the aggregate and also act as effective barriers for the propagation of dislocations or other
+twin lamellae. Based on the practical limitation that simulations cannot treat every twin as a
+new orientation, in the past we have implemented a Predominant Twin Reorientation (PTR)
+scheme [49] in the VPSC framework to account for twinning reorientation. The PTR criterion
+consists on finding the most active twin system in the grain, and reorienting the whole grain
+according to such system, provided other conditions are also met. In this work we introduce a
+variation of the PTR model based on a Monte-Carlo (MC) selection criterion of the active
+twin variant which, while favoring the predominant twin system, may also predict
+reorientation on less favorable twin variants.
+
+10
+
+As in the case of the PTR scheme, within each grain g we keep track of the shear
+strain
+⁄
+
+contributed by each twin system t, and of the associated volume fraction
+(St is the characteristic twin shear). The sum over all twin systems associated with a
+
+given twin mode, and over all grains, represents the 'accumulated twin fraction' Vacc,mode in the
+aggregate for the particular twin mode (the one that would be measured by SEM).
+∑ ∑
+
+(11)
+
+At each incremental step, some grains are fully reoriented by twinning provided
+certain conditions are fulfilled. We call 'effective twinned fraction' Veff,mode the volume
+associated with the fully reoriented grains for that mode, and define a threshold volume
+fraction Vth,mode
+
+(12)
+which has to be exceeded for grains to be reoriented. The algorithm given by Eq. 12 prevents
+grain reorientation by twinning until a minimum volume fraction of twinning, Ath1, is
+accumulated in any given system. In the calculations presented here we use a rather low value
+of the threshold
+
+Ath1=0.02 (typically Ath1=0.10 in the PTR calculations), and a value
+
+Ath2=0.50 for the upper threshold. As twin shear takes place Vacc,mode increases and the
+threshold Vthres, mode decreases. After each deformation increment we pick grains at random,
+and identify in each the twin system with the highest accumulated volume fraction (PTS). If
+the latter is larger than the threshold Vthres, mode then the grain is allowed to reorient, and Veff,
+mode
+
+and Vthres, mode are updated. As more grains are fully reoriented by twinning, Veff, mode
+
+increases and so does the threshold. The process is repeated until either all grains are
+randomly checked or until the effective twin volume exceeds the accumulated twin volume.
+In the latter case we stop reorientation by twinning and proceed to the next deformation step.
+A characteristic of this process is that the twinned fraction is consistent with the shear activity
+that the twins contribute to deformation. Note that the predicted twin reorientation, and so
+the evolution of twin fraction, depends very weakly on the choice of parameters Ath1 and
+Ath2. The reason is that the PTR and the MC schemes are predominantly controlled by the
+feedback represented by the condition that
+
+⁄
+
+should not exceed the value 1.
+
+Even values of Ath1= 0.0 and Ath2 = 1.0 are used, there is little difference with the results
+reported in Figs. 2 and 3.
+
+11
+
+In the PTR scheme, only the historically most active twin system in each grain is
+considered for reorienting the whole grain by twinning. In the MC scheme every, twin
+system (variant) has a chance, proportional to the accumulated volume fraction that each
+would have associated. The computational procedure consists of ‘aligning’ the twin fraction
+of each system in sequential intervals proportional to
+
+, normalizing them
+
+with the sum, picking a random number 0<r<1 , and choosing the twin whose segment
+contains r . This procedure gives a larger probability to the predominant twin in the grain
+(first variant), but also assigns non-negligible probability to lesser variants. A result of this
+procedure is illustrated in Fig. 4 for the case of RDC after 20% strain, to be discussed later in
+Section 4.4.
+Observe that while PTR always picks the most favorable variant, twins with lesser
+Schmid factors are selected by the MC scheme. We will show later that this approach predicts
+distributions of twin variants that closely resemble the experimentally observed distributions.
+The result can be interpreted as an empirical way to capture the role-played by stress
+fluctuations inside grains in activating twinning. The MC scheme is an efficient, although
+empirical, way to introduce fluctuations not addressed by the effective medium approach in
+which VPSC is based. Niezgoda et al. [38] and Arul Kumar et al. [36] have proposed
+methods for introducing stress fluctuations at grain boundaries and at grain interiors,
+respectively, based on computationally complex preliminary calculations of distributions.
+
+Figure 4. Comparison between PTR and Monte Carlo schemes for tensile twin variant selection associated with
+RDC. Frequency distribution of relative Schmid factor (defined as: Schmid factor of twin used for reorienting
+grain / maximum Schmid factor among all twin variants). The result shows the activation of lower Schmid twin
+variants in the Monte Carlo scheme, in contrast with the PTR scheme.
+
+4. Model predictions
+A visco-plastic self-consistent (VPSC) model, coupled with a Monte Carlo (MC) twin variant
+selection scheme, is employed here to predict the deformation behavior of polycrystal
+
+12
+
+titanium. The initial discrete texture consists of 15552 grains that reproduce the split-basal
+texture shown in Fig. 1(c). In the model, plastic deformation is accommodated by prismatic
+〈 〉 {
+
+̅ }〈
+
+̅ 〉 , basal 〈 〉 {
+
+modes, and tensile: {
+
+̅ }〈
+
+}〈
+
+̅ 〉 and pyramidal 〈
+
+̅ 〉 and compression: {
+
+̅ }〈
+
+〉 {
+
+̅ }〈
+
+̅ 〉 slip
+
+̅ 〉 twins. Parameters of the
+
+dislocation density based hardening law presented in Sec. 3.2 are obtained by fitting the
+experimentally measured stress-strain response, texture evolution and twin volume fraction
+evolutions of all five loading cases (RDC, TDC, NDC, RDT and TDT) together. However the
+twinning statistics presented in Sec.5 is not used in the fitting process. The constitutive law
+parameters are listed in Tables 3 and 4 for slip and twinning modes, respectively.
+Table 3. Hardening model parameters controlling the evolution of critical shear stresses of slip systems.
+
+α=1 Prismatic <a>
+
+α=2 Basal <a>
+
+α=3 Pyramidal <c+a>
+
+2.9511 x 10-10
+
+2.9511 x 10-10
+
+5.5364 x10-10
+
+[MPa]
+
+90.5
+
+170
+
+210
+
+[m-1]
+
+2.5 x 108
+
+1.5 x109
+
+5.0 x 109
+
+gα
+
+0.002
+
+0.002
+
+0.0055
+
+Dα [MPa]
+
+100
+
+100
+
+100
+
+bα[m]
+
+Table 4. Hardening model parameters controlling the evolution of critical shear stresses of twin systems.
+
+β=1 Tensile twin
+β
+
+b [m]
+
+6.0040 x10
+
+-11
+
+β=2 Compression twin
+8.2015 x 10-11
+
+180
+
+250
+
+[MPa] 180
+
+250
+
+C1β
+
+100
+
+1000
+
+C2β
+
+50
+
+50
+
+C3β
+
+250
+
+170
+
+[MPa]
+
+The stress-strain response, relative activities of deformation modes and the evolution
+of twin volume fraction predicted by the VPSC-MC model for all five loading cases is shown
+in the first, second and third columns of Fig. 2, respectively. Except for TDT, the predicted
+stress-strain response shows good agreement with the experimental measurement. The overprediction of the TDT flow stress may be due to incipient necking in the experimental test,
+which the polycrystal model would not reproduce. If it were coming from deformation
+localization close to grain boundaries, local FE modeling of the same system reported
+13
+
+recently by Zecevic et al. [29] should capture it. However, the results of Zecevic et al. [29]
+also show a tendency to over-predict TDT, and clearly over-predict NDT. In RDT, prismatic
+<a> slip mainly accommodates the plastic deformation with small contribution from basal
+<a> and pyramidal <c+a> slip, and twinning activity is practically negligible over the entire
+deformation range, which is in good agreement with the experimental observation (see Table
+2). TDT is also dominated by prismatic <a> slip with the addition of tensile twinning activity.
+The model predicts a tensile twin volume fraction of 10.6% at 10% strain, which is higher
+than the measurement (6.6%). In RDC, the early stages of deformation are mainly
+accommodated by prismatic slip and tensile twinning with both basal and pyramidal slip
+modes being activated at higher strains. Here the evolution of tensile twin volume fraction
+increases steadily with strain. The predicted tensile twin volume fraction is ~29% at 10%
+strain, which is higher than the measurement (20%). In TDC, the plastic deformation is
+accommodated by prismatic and basal slip modes with a small contribution from twinning.
+Similar to TDT and RDC, the model predicts slightly higher twin volume fractions compared
+to the experimental observations. For NDC, all three-slip modes are activated at low strains
+and the contribution of pyramidal slip decreases with increasing compression twin activity.
+Compression twinning is the more active twinning mode for NDC with a lesser contribution
+from tensile twinning. Model predicted volume fractions of tensile and compression twins at
+10% strain agree with the experimental observations.
+The model predicted deformation texture evolution for all five loading cases at strain
+levels of 5%, 10% and 20% as shown in Fig. 3 along with EBSD based experimental
+textures. As discussed in Sec. 2, the key features of the texture evolution are connected with
+twinning activities. A comparison between model predictions and experimental measurement
+shows, in general, very good agreement. Predicted deformation mechanisms in the present
+work are qualitatively similar to the recent work of Zecevic et al. [29] that used an elastoplastic self-consistent scheme with a dislocation hardening law similar to ours, implemented
+in a finite element framework.
+
+5. Twin variant statistics
+In this section, we analyze the twin variant statistics in titanium extracted from the
+EBSD images, as mentioned in Sec. 2. A recently developed automated twinning analysis
+tool is employed to analyze the microstructure [16-17]. Developing reliable statistical
+
+14
+
+correlations associated with twinning behavior requires analysis of a large number of twins
+and grains. As a consequence, only the RDC and NDC cases are considered for {10-12}
+tensile and {11-22} compression twins, respectively, at a strain of 10%. The 0.42 mm2 area
+(5 scans each) with 0.2 micron steps on the RDC and NDC samples gave a total of 4678
+grains and 2128 tensile twins for RDC and 4249 grains and 1198 compression twins for
+NDC. A separate and in-depth analysis of twinning, variants and twin-twin junctions for this
+system can be found in [49].
+For tensile and compressive twins, all six variants are considered in the analysis, and
+the twin variants in each grain (
+
+) are classified in order of decreasing Schmid
+
+factor. In the EBSD twinning analysis, the Schmid factor for each twin variant is calculated
+using the macroscopic tensile or compressive stress direction, and the parent grain
+orientation. Accordingly,
+
+( ) and
+
+( ) are the highest and lowest Schmid factor variants,
+
+respectively. The EBSD-extracted twin variant frequency distribution of tensile twins for
+RDC and compression twins for NDC is shown in the left side of Fig. 5. Tensile twin variants
+1 and 2 seem to be activated in the majority of grains (~77.2%), along with small
+contributions from the other variants. In addition, variant 1 (54.1%) is highly active compared
+to variant 2 (23.1%). On the other hand, the first three variants of compression twins are
+equally active in NDC ( ( )
+
+( )
+
+( )
+
+) and, similar to
+
+tensile twins, the last three variants are statistically less active. These results clearly provide
+evidence for the nucleation of low variant twins in the polycrystal, and the trend is stronger
+for the compression twins compared to tensile twins. The distribution of area fraction for all
+variants of tensile and compressive twins is shown in the right column of Fig. 5. Similar to
+the frequency distribution, the first two variants of tensile twins, and the first three variants of
+compression twin have high twin volume fractions compared to other low variants.
+
+15
+
+Twinning frequency
+
+Twin area fraction
+0.25
+
+PTR calc 10%
+MC calc 10%
+Exp 10%
+
+0.6
+0.4
+
+PTR calc 10%
+MC calc 10%
+Exp 10%
+
+0.20
+
+Volume fraction
+
+0.8
+
+Frequency
+
+Tensile twin
+
+1.0
+
+0.2
+
+0.15
+0.10
+0.05
+
+0.0
+
+0.00
+V1
+
+V2
+
+V3
+
+V4
+
+V5
+
+V6
+
+V1
+
+V2
+
+Ttw variants
+1.0
+
+V4
+
+V5
+
+V6
+
+0.06
+PTR calc 10%
+MC calc 10%
+Exp 10%
+
+0.6
+0.4
+0.2
+
+PTR calc 10%
+MC calc 10%
+Exp 10%
+
+0.05
+
+Volume fraction
+
+0.8
+
+Frequency
+
+Compressive twin
+
+V3
+
+Ttw variants
+
+0.04
+0.03
+0.02
+0.01
+
+0.0
+
+0.00
+V1
+
+V2
+
+V3
+
+V4
+
+Ctw variants
+
+V5
+
+V6
+
+V1
+
+V2
+
+V3
+
+V4
+
+V5
+
+V6
+
+Ctw variants
+
+Figure 5. Frequency and area fraction statistics of tensile and compression twins obtained from RDC and NDC
+loading conditions, at a strain of 10% compression show predominance of the first two most highly favored
+variants, with larger observed experimental contributions of the other four variants than predicted by the model.
+
+The experimental and model predicted twinning frequencies and twin volume
+fractions for both, tensile and compression twins are compared in Figure 5. In addition to the
+VPSC-MC model predictions, VPSC-PTR predicted distributions are also shown in Fig. 5 to
+illustrate the effectiveness of the simple Monte Carlo scheme. In the VPSC model (both PTR
+and MC scheme), twin variants are identified using the individual grain stress, which is
+different than the macroscopic stress (see Sec. 3.3), while experimentally observed twin
+variants are classified using the macroscopic loading condition. To directly compare the
+model predictions with the experiment, we have re-ranked the model selected twin variants
+using the macroscopic polycrystal stress instead of individual grain stresses. The PTR scheme
+primarily activates variant 1 tensile twins and variant 1 and 2 in compression twins, which is
+different from the experimental observations. Note that the PTR scheme will always activate
+variant 1 with respect to an individual grain stress, and the activation of variant 2 seen in the
+compression twins in Fig. 5 is an effect of re-ranking of twin variants using the polycrystal
+16
+
+average stress. Compared to the PTR scheme, the Monte Carlo scheme activates more low
+variant twins in agreement with the experimental observations, but to lesser extent than
+experimentally observed. For the twin volume fraction distributions, the VPSC-MC model
+predictions are also in better agreement with the experiments compared to the VPSC-PTR
+model. Although the proposed stochastic scheme is simple, it captures the experimentally
+observed lower Schmid factor twin variant activation.
+
+6. Discussion
+Implications of MC scheme: Several studies have been dedicated to understanding the twin
+variant selection process in HCP Ti [28, 51-54] using different criterions such as
+minimization of deformation energy, neighboring grain slip and/or twin induced twin
+nucleation, and neighboring grain accommodation of twinning shear. The most common
+conclusion in all of these studies is that local stress fluctuations and the microstructural
+heterogeneity in the polycrystal cause the activation of low Schmid factor twin variants for
+both tensile and compression twin modes. Several local processes can develop stress
+fluctuations in a grain such as i) grain-grain interactions; ii) neighboring grain twins induced
+local stresses; iii) non-uniform stresses induced by dislocation interactions. The VPSC model
+cannot realize such local intra-granular mechanisms, and so they have to be incorporated into
+the model in an ad-hoc fashion. As mentioned in Sec. 1, a complex twin stochastic model was
+developed to explicitly account for the local stress fluctuations and microstructural
+heterogeneity [36-38]. But in this work, we have introduced a stochasticity associated with
+twinning via a simple Monte Carlo scheme for twin variant selection. The arbitrary random
+selection used to identify the twin variant indirectly represents the twinning probability
+associated with local stress fluctuations and microstructural heterogeneities. Even if the
+proposed MC scheme simplifies the complex twinning process into a simple random number
+selection, it succeeds qualitatively in activating the statistically correct twin variants for both
+tensile and compression twin modes as seen in Fig. 5.
+Low SF variants are more likely for compression twin mode than tensile twin mode: The
+detailed EBSD based statistical analysis and the model predictions of twin variant distribution
+shown in Fig. 5 suggest that more low variant twins are activated for {11-22} compression
+twins compared to {10-12} tensile twins. It can be shown, via a simple Schmid factor
+analysis, that the reason is the relative inclination of twin variants with respect to loading. For
+
+17
+
+this analysis, we used the same 15552 grains polycrystal from the simulations (see Fig. 1b).
+The Schmid factor for each of the six {10-12} tensile and {11-22} compression twins was
+calculated for compression along the rolling and normal directions, respectively. The twin
+variants with negative Schmid factors are removed from the analysis. To understand the
+activation of lower variants, we can plot the distribution of those variants’ SF versus the SF
+of variant-1. The distribution of the SF of variant-3 of tensile twins is shown in the insert of
+Fig. 6 as a function of the SF of variant-1. If the SF of variants 2 to 6 is close to the maximum
+SF, then chances are favorable that local stress fluctuations may lead to their activation. We
+quantify the chance of activating a particular variant
+
+(
+
+) instead of or together with
+
+variant-1 using the following equation.
+
+ì
+ï 1 if mig > 0.15 m1g
+åí
+g=1 ï
+î 0 Otherwise
+fi =
+,
+N
+N
+
+Where
+
+and
+
+i = 2...6
+
+(13)
+
+are the Schmid factor of variant-i and variant-1 of grain g, and N is the
+
+total number of grains. The expression is calculated for all variants of tensile and
+compression twins separately, and the choice of factor 0.15 in the above equation is arbitrary.
+The calculated chances of activating twin variants
+
+(
+
+) instead
+
+of or together with
+
+variant-1 is shown in Fig. 6. It clearly suggests that the chances for the activation of lower SF
+twin variants is high for compression twins during NDC compared to tensile twinning during
+RDC. This is due to the orientation of the twinning systems relative to the axial loading
+conditions considered in this study. Tensile twins are at about 45o with respect to the c-axis,
+and can be activated either by applying tension along c-axis or compression perpendicular to
+the c-axis. Tension along the c-axis gives the same SF for all six variants, but compression
+perpendicular to the prismatic plane will give similar high SFs for only two co-zonal twin
+variants. In the case of compression twins, the angle between the twin plane and the c-axis is
+about 30o.
+
+Compression along the c-axis can activate all six variants, but tension
+
+perpendicular to the c-axis will tend to induce larger SF in non-co-zonal twins. For the
+current texture in the NDC case, most of the grain c-axes are subjected to compression with a
+slight tilt due to spread in the basal texture, and can activate more than two variants based on
+SF analysis. In the RDC case, most of the grains are subjected to prismatic plane compression
+and so it can activate only two high SF variants.
+
+18
+
+80
+TTW%
+
+CTW
+0.5
+
+Tensile twin:
+Variant-3 Vs variant-1
+
+0.4
+
+60
+
+Varinat 3 Schmid factor
+
+% of variant-i within 15% of V1
+
+70
+
+50
+40
+
+0.3
+
+0.2
+
+0.1
+
+0.0
+0
+
+30
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+0.5
+
+Variant 1 Schmid factor
+
+20
+10
+0
+2
+
+3
+
+4
+
+5
+
+6
+
+Twin variant number
+
+Figure 6. Percent probability of activating variants
+
+(
+
+) instead of or together with variant-1 for
+
+tensile and compression twin modes. The insert shows the distribution of variant-3 SF as a function of
+variant-1 SF for tensile twins. The overlap between the population (blue) and the shaded domain
+shows several grain orientations where the v3 SF is within the 15% band of v1.
+
+7.
+
+Summary
+The deformation behavior of HCP CP-titanium was studied using experimental and
+computational modeling, with an emphasis on understanding twin variant activation and
+statistics. Tensile and compression tests along different directions relative to a split basal
+texture were performed to study the stress-strain response and microstructure and texture
+evolution. EBSD based statistical of twinning in the deformed microstructures was performed
+to establish the distribution of twin variants. The VPSC model was used to simulate the
+deformation behavior, and a simple Monte Carlo twin variant selection scheme was proposed
+to account for the stochasticity associated with twinning. The proposed VPSC-MC model
+captures the experimentally measured stress-strain response, texture evolution, twin volume
+fraction evolution and twin variants statistics.
+
+19
+
+Acknowledgments
+This work was funded by the US Department of Energy, Office of Basic Energy Sciences
+(OBES) FWP-06SCPE401. MW and KW were supported by the National Science Centre
+(NCN) via grant DEC-2015/19/D/ST8/00818 and partly by the AGH UST statutory tasks
+within subsidy of the Polish Ministry of Science and Higher Education.
+References
+A. Akhtar, "Basal slip and twinning in α-Titanium single crystals", Metall Trans 6A (1975)
+1105-1113
+[2]. A.T. Churchman, "The slip modes of titanium and the effect of purity on their occurrence
+during tensile deformation of single crystals", Proc. Royal Soc. London A226 (1954) 216-226
+[3]. M.H. Yoo, "Slip, twinning and fracture in Hexagonal Close Packed metals", Met. Trans. 12A
+(1981) 409-418
+[4]. T.R. Bieler, L. Wang, A.J. Beaudoin, P. Kenesel, U. Lienert, “In-situ characterization of twin
+nucleation in pure Ti using 3D-XRD”, Metall Mater Trans 45A (2014) 109-122
+[5]. Y.B. Chun, S.H. Yu, S.L. Semiatin, S.K. Hwang, “Effect of deformation twinning on
+microstructure and texture evolution during cold rolling of CP-titanium”, Mat Sci Eng A 398
+(2005) 209-219
+[6]. S.R. Kalidindi, A.A. Salem, R.D. Doherty, "Role of deformation twinning on strain hardening
+in cubic and hexagonal polycrystalline metals”, Adv. Eng. Mats. 5 (2003) 229-232
+[7]. A.L. Oppedal, H. El Kadiri, C.N. Tomé, G.C. Kaschner, S.C. Vogel, J.C. Baird, M.F.
+Horstemeyer, “Effect of dislocation transmutation on modeling hardening mechanisms by
+twinning in magnesium”, Intl J of Plasticity 30-31 (2012) 41-61
+[8]. A.A. Salem, S.R. Kalidindi, R.D. Doherty, "Strain hardening of titanium: role of deformation
+twinning”, Acta Mater 51 (2003) 4225-37
+[9]. A.A. Salem, S.R. Kalidindi, Semiatin S.L., “Strain hardening due to deformation twinning in atitanium: Constitutive relations and crystal plasticity modeling”, Acta Mater 53 (2005) 34953502
+[10]. M. Arul Kumar, I.J. Beyerlein, C.N. Tomé, “A measure of plastic anisotropy for hexagonal
+close packed metals: Application to alloying effects on the formability of Mg”, J Alloys and
+Compounds 695 (2017) 1488-1497
+[11]. I.J. Beyerlein, L. Capolungo, P.E. Marshall, R.J. McCabe, C.N. Tomé, "Statistical analyses of
+deformation twinning in magnesium", Philos Magazine 90 (2010) 2161-2190
+[12]. L. Capolungo, P.E. Marshall, R.J. McCabe, I.J. Beyerlein, C.N. Tomé, "Nucleation and
+propagation of twins in Zr: a statistical study", Acta Mater 57 (2009) 6047-6056
+[13]. S.G. Song, G.T. Gray III, "Influence of temperature and strain rate on slip and twinning
+behavior of Zr”, Metall Mater Trans 26A (1995) 2665-2675
+[14]. M. Arul Kumar, I.J. Beyerlein, C.N. Tomé, “Grain size constraints on twin expansion in
+hexagonal close packed crystals”, J Appl Phys 120 (2016) 155105
+[15]. Q. Yu, J. Wang, Y. Jiang, R.J. McCabe, N. Li, C.N. Tomé, “Twin-twin interactions in
+Magnesium”, Acta Mater 77 (2014) 28-42
+[16]. P.A. Juan, C. Pradalier, S. Berbenni, R. J. McCabe, C.N. Tomé, L. Capolungo, “A statistical
+analysis of the influence of microstructure and twin-twin junctions on twin nucleation and
+growth in Zr”, Acta Mater 95 (2015) 399-410
+[17]. P.-A. Juan, C. Pradalier , R. McCabe, L. Capolungo, “A graph theory based automated twin
+recognition technique for electron backscatter diffraction analysis”, Integrating Materials and
+Manufacturing Innovation (2017) Accepted for publication.
+[18]. T.R. Bieler, M.A. Crimp, Y. Yang, L. Wang, P. Eisenlohr, D.E. Mason, W. Liu, G.E. Ice,
+"Strain heterogeneity and damage nucleation at grain boundaries during monotonic deformation
+in commercial purity titanium", J Mater 61 (2009) 45-52
+[1].
+
+20
+
+[19]. N. Bozzolo, N. Dewobroto, H.R. Wenk, F. Wagner, "Microstructure and microtexture of highly
+cold-rolled commercial purity titanium", J Mater Sci 42 (2007) 2405-2416
+[20]. A.M. Garde, R.E. Reed-Hill, "The importance of mechanical twinning in the stress-strain
+behavior of swaged high purity fine grained titanium below 424oK", Metall Trans 2 (1971)
+2885-2888
+[21]. A. Ghaderi and M.R. Barnett, "Sensitivity of deformation twinning to grain size in titanium and
+magnesium", Acta Mater 59 (2011) 7824-7839
+[22]. G.T. Gray III, "Influence of strain rate and temperature on the structure, property and behavior
+of high-purity Titanium", J. Phys. IV France 7 (1997) C3 423-428
+[23]. Y. Guo, H. Abdolvand, T.B. Britton, A.J. Wilkinson, “Growth of {1122} twins in titanium: A
+combined experimental and modeling investigation of the local state of deformation”, Acta
+Mater 126 (2017) 221-235
+[24]. M. Knezevic, R.A. Lebensohn, O. Cazacu, B. Revil-Baudard, G. Proust, S.C. Vogel, M.E.
+Nixon, “Modeling bending of a-titanium with embedded polycrystal plasticity in implicit finite
+elements”, Mat Sci Eng A 564 (2013) 116-126
+[25]. S. Nemat-Nasser, W.G. Guo, J.Y. Cheng, "Mechanical properties and deformation mechanisms
+of a commercially pure titanium", Acta Mater 47 (1999) 3705-20
+[26]. M.E. Nixon, R.A, Lebensohn, O. Cazacu, C. Liu, “Experimental and finite element analysis of
+the anisotropic response of high-purity a-titanium in bending”, Acta Mater 58 (2010) 5759-5767
+[27]. K. Okazaki and H. Conrad, “Effects of interstitial content and grain size on the strength of
+titanium at low temperatures”, Acta Metall Mater 21 (1973) 1117-1129
+[28]. L. Wang, R.I. Barabash, Y. Yang, T.R. Bieler, M.A. Crimp, P. Eisenlohr, W. Liu, G.E. Ice,
+“Experimental characterization and crystal plasticity modeling of heterogeneous deformation in
+polycrystalline α-Ti”, Metall Mater Trans 42A (2011) 626-635
+[29]. M. Zecevic, I.J. Beyerlein, M. Knezevic, "Coupling elasto-plastic self-consistent crystal
+plasticity and implicit finite elements: Applications to compression, cyclic tension-compression,
+and bending to large strains", Int J Plasticity 93 (2017) 187-211
+[30]. N. Benmhenni, S. Bouvier, R. Brenner, T. Chauveau, B. Bacroix, "Micromechanical modeling
+of monotonic loading of CP-Ti: Correlation between macroscopic and microscopic behavior",
+Mater Sci Eng A573 (2013) 222-233
+[31]. T. Hama, A. Kobuki, H. Takuda, “Crystal plasticity finite element analysis of anisotropic
+behavior in a commercially pure titanium grade 1 sheet”, Int J Plasticity 91 (2017) 77-108
+[32]. T. Xiaoli and G. Haicheng, “Fatigue crack initiation in high purity titanium crystals”,
+International Journal of Fatigue 18 (1996) 329-333
+[33]. Z.F. Zhang, H.C. Gub, X.L.Tanb, "Low cycle fatigue behaviors of commercial purity titanium”,
+Materials Science and Engineering, A252 (1998) 85-92
+[34]. H. Conrad, "Effect of interstitial solutes on the strength and ductility of Titanium", Progress in
+Materials Science 26 (1981) 123-403
+[35]. B.M. Morrow, R.A. Lebensohn, C.P. Trujillo, D.T. Martinez, F.L. Addessio, C.A. Bronkhorst,
+T. Lookman, E. K. Cerreta, “Characterization and modeling of mechanical behavior of single
+crystal titanium deformed by split-Hopkinson pressure bar”, Int J Plasticity 82 (2016) 225-240
+[36]. M. Arul Kumar, I.J. Beyerlein, R.A. Lebensohn, C.N. Tomé, “Neighboring grain dependence
+on twin local stresses and twin thickening in HCP metals”, Modeling and Simulation in
+Materials Science and Engineering 25 (2017) 064007 (25pp)
+[37]. I.J. Beyerlein, R.J. McCabe, C.N. Tomé, “Effect of microstructure on the nucleation of
+deformation twins in polycrystalline high-purity magnesium: a multiscale modeling study”, J
+Mech Phys Solids 59 (2011) 988-1003
+[38]. S.R. Niezgoda, A.K. Kanjarla, I.J. Beyerlein, C.N. Tomé, “Stochastic model of twin nucleation
+in polycrystals: an application to hexagonal close packed metals”, Int J Plasticity 56 (2014) 119138
+[39]. M. Arul Kumar, A.K. Kanjarla, S.R. Niezgoda, R.A. Lebensohn, C.N. Tomé, “Numerical study
+of the stress state of a deformation twin in magnesium”, Acta Materialia 84 (2015) 349-358
+[40]. M. Arul Kumar, I.J. Beyerlein, C.N. Tomé, “Effect of local stress fields on twin characteristics
+in HCP metals”, Acta Materialia 116 (2016) 143-154
+[41]. M. Arul Kumar, I.J. Beyerlein, R.J. McCabe, C.N. Tomé, “Grain neighbor effects on twin
+
+21
+
+transmission in hexagonal close packed materials”, Nature communications 7 (2016) 13826
+[42]. H. Abdolvand, M. Majkut, J. Oddershede, J.P. Wright, M.R. Daymond, “Study of 3-D stress
+development in parent and twin pairs of a hexagonal close packed polycrystal: Part II crystal
+plasticity finite element modeling”, Acta Materialia 93 (2015) 235-245
+[43]. R.A. Lebensohn, C.N. Tomé, "A self-consistent anisotropic approach for the simulation of
+plastic deformation and texture development of polycrystals -Application to zirconium alloys",
+Acta Metall Mater 41 (1993) 2611-24
+[44]. R.A. Lebensohn, C.N. Tomé, P. Ponte Castañeda, “Self-consistent modeling of the mechanical
+behavior of viscoplastic polycrystals incorporating intragranular field fluctuations”, Philos Mag
+87 (2007) 4287-4322
+[45]. I.J. Beyerlein, C.N. Tomé, “A dislocation based constitutive law for pure Zr including
+temperature effects”, Int J Plasticity 24 (2008) 867-895
+[46]. H. Mecking, U.F. Kocks, "Kinetics of flow and strain hardening", Acta Metall Mater 29 (1981)
+1865-75
+[47]. R. Madec, B. Devincre, L.P. Kubin, “From dislocation junctions to forest hardening”, Phys Rev
+Lett 89 (2002) 255508
+[48]. L. Capolungo, I.J. Beyerlein, G.C. Kaschner, C.N. Tomé, "On the interaction between slip
+dislocations and twins in HCP Zr", Mat Sci Eng A 513-514 (2009) 42-51
+[49]. C.N. Tomé, R. A. Lebensohn, U.F. Kocks, "A model for texture development dominated by
+deformation twinning: application to zirconium alloys", Acta Metall Mater 39 (1991) 26672680
+[50]. M. Arul Kumar, M. Wronski, R. J. McCabe, L. Capolungo, K. Wierzbanowski, C. N. Tomé,
+“Role of microstructure on twin nucleation and growth in HCP titanium”, Acta Mater 148
+(2017) 123-132
+[51]. L. Bao, C. Schuman, J-S. Lecomte, M-J. Philippe, X. Zhao, C. Esling, "A study of twin variant
+selection and twin growth in titanium", Advanced Engineering Materials 13 (2011) 928-932
+[52]. H. Qin, J. J. Jonas, H. Yu, N. Brodusch, R. Gauvin and X. Zhang, “Initial and accommodation
+of primary twins in high purity titanium”, Acta Mater 71 (2014) 293-305
+[53]. S. Wang, C. Schuman, L. Bao, J.S. Lecomte, Y. Zhang, J.M. Raulot, M.J. Philippe, X. Zhao, C.
+Esling, “Variant selection criterion for twin variants in titanium alloys deformed by rolling”,
+Acta Mater 60 (2012) 3912-3919
+[54]. S. Xu, L.S. Toth, C. Schuman, J-S. Lecomte, M.R. Barnett, “Dislocation mediated variant
+selection for secondary twinning in compression of pure titanium”, Acta Mater 124 (2017) 5970
+
+22
+
+

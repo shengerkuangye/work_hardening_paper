@@ -1,0 +1,13 @@
+# Header: Project1::ebsd_sample_7_map_15 cleaned-Dil::Ti-Hex	::IPF   8/7/2026
+# 
+
+(Highlighted Points)/(Total Number of Points) =  0.000
+(Highlighted Points)/(Number of Good Points) =  0.000
+(Highlighted Points)/(Number of Partition Points) =  0.000
+
+Gray Scale Map Type:<none>
+
+Color Coded Map Type: Inverse Pole Figure [001]
+
+
+Boundaries: <none> 

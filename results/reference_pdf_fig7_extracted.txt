@@ -1,0 +1,832 @@
+                                                            Materials Science & Engineering A 975 (2026) 150869
+
+
+                                                                  Contents lists available at ScienceDirect
+
+
+                                                     Materials Science & Engineering A
+                                                         journal homepage: www.elsevier.com/locate/msea
+
+
+
+
+Numerical simulation of cold working and microstructure–property
+regulation of TA16 titanium alloy
+Yanlong Xia a , Guiyang Yu a , Byung-Ho Yoon b , Peng Cao c , Yanliang Yi a,* , Zhentao Yu a,**
+a
+  Institute of Advanced Wear & Corrosion Resistant and Functional Materials, Jinan University, Guangzhou, 510632, China
+b
+  Department of Orthopedic Surgery, College of Medicine, Ewha Womans University, Mokdong Hospital, Seoul, 07985, South Korea
+c
+  Materials Engineering, The University of Auckland, Private Bag 92019, Auckland, 1142, New Zealand
+
+
+
+
+A R T I C L E I N F O                                    A B S T R A C T
+
+Keywords:                                                To address the limited systematic understanding of microstructural evolution and strengthening mechanisms in
+TA16 alloy                                               TA16 alloy tubes under the complex stress state induced by cyclic reciprocating cold rolling—where severe work
+Finite element simulation                                hardening and restricted cold formability hinder the production of high-performance tubing—this study com­
+Multi-pass cold rolling
+                                                         bines ABAQUS simulations of stress field distribution at varying reductions with experimental characterization. A
+Microstructure evolution
+Mechanical properties
+                                                         TA16 alloy tube with a yield strength of 750 MPa and dimensions of Φ14.4 × 2.15 mm was successfully
+Strengthening mechanisms                                 fabricated. Simulation results indicate that a single-pass reduction of 45% yields optimal stress distribution and
+                                                         forming quality, effectively preventing surface wrinkling and cracking. Experimental observations reveal that
+                                                         with increasing rolling passes, the initial equiaxed grain structure gradually develops into a micron-scale fibrous
+                                                         morphology. The average grain size refines from 19.68 μm to 2.52 μm, the fraction of low-angle grain boundaries
+                                                         increases to 67.8%, the geometrically necessary dislocation density reaches 2.94 × 1014 m− 2, and the texture
+                                                         evolves from an atypical bimodal distribution to a strong {10-10}//AD fiber texture. Concerning deformation
+                                                         mechanisms, {10-12} tensile twinning dominates at early stages, whereas basal slip and pyramidal <c+a> slip
+                                                         prevail later, with prismatic slip strongly suppressed due to grain rotation. Mechanically, the ultimate tensile
+                                                         strength rises to 852 MPa while elongation declines to 9.5%. Among strengthening contributions, grain refine­
+                                                         ment plays a more significant role in strength enhancement, acting synergistically with dislocation strengthening
+                                                         to dominate the strengthening and toughening behavior of the alloy. This work elucidates the intrinsic proc­
+                                                         ess–microstructure–performance relationship during multi-pass cold rolling, providing a theoretical foundation
+                                                         for process optimization and precise property control in titanium alloy tubes.
+
+
+
+
+1. Introduction                                                                              which not only disrupts the uniformity of the microstructure but also
+                                                                                             adversely affects service performance, particularly by markedly
+    As a typical alpha-phase titanium alloy, TA16 exhibits high specific                     reducing its room-temperature workability. This has become a critical
+strength, excellent corrosion resistance, and good weldability, and has                      issue restricting the fabrication of high-performance TA16 tubes.
+significant application value in fields such as aviation hydraulic systems,                      Among available processing methods for seamless titanium alloy
+aerospace structural components, marine engineering equipment, and                           tubular components—extrusion, drawing, spinning, and rolling—rolling
+chemical vessels [1,2]. During the fabrication of tubes from this alloy,                     has drawn considerable research interest due to its exceptional dimen­
+precise control of mechanical properties directly determines the upper                       sional accuracy, low cost, and operational simplicity [9]. Crucially,
+limit of its service performance, which in turn heavily depends on the                       rolling enables microstructural reconstruction via plastic deformation,
+selection of appropriate processing routes [3,4]. The processing route                       offering a key route to enhance the mechanical strength of tubular
+not only achieves the desired geometry but also profoundly influences                        products. Systematic control of rolling parameters allows optimization
+the final properties by tailoring the microstructure [5–8]. However,                         of the microstructural characteristics and mechanical performance of
+TA16 alloy exhibits significant work hardening during processing,                            the alloy [10–13]. Chen et al. [14] conducted a comprehensive
+
+
+
+    * Corresponding author.
+    ** Corresponding author.
+      E-mail addresses: y_yanliang@163.com (Y. Yi), ninyzt@163.com (Z. Yu).
+
+https://doi.org/10.1016/j.msea.2026.150869
+Received 27 May 2026; Received in revised form 11 July 2026; Accepted 31 July 2026
+Available online 3 August 2026
+0921-5093/© 2026 Elsevier B.V. All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+Y. Xia et al.                                                                                                        Materials Science & Engineering A 975 (2026) 150869
+
+
+investigation into the deformation behavior of hot-rolled Ti-55511 alloy            characterize the equivalent stress–strain distribution under different
+under varying thickness reductions and found that increasing reduction              per-pass reduction levels, thereby identifying a rolling process window
+concurrently improves both tensile strength and elongation, primarily               conducive to uniform deformation and satisfactory surface quality.
+due to refinement and fragmentation of grain boundary α-phase. Du                   Through integration with experimental validation, the intrinsic proc­
+et al. [15] showed that in metastable TB8 titanium alloy,                           ess–microstructure–performance relationship of TA16 alloy during
+cold-rolling-induced twins and kink bands segment and refine the matrix             multi-pass cold rolling is systematically elucidated, with the aim of
+grains, shortening the mean free path for dislocation motion and thereby            furnishing a theoretical and experimental basis for optimizing the cold
+markedly elevating the yield strength and tensile strength of the alloy at          rolling process and controlling the properties of high-performance tita­
+high strains. Jia et al. [16] further reported that greater rolling reduction       nium alloy tubes.
+raises dislocation density and total grain boundary area, which
+strengthens the tensile properties of near-α CT20 titanium alloy while              2. Experimental and computational methods
+reducing ductility. Collectively, these findings confirm that mechanical
+property optimization through cold rolling parameters is intrinsically              2.1. Materials
+linked to microstructural evolution. Moreover, variations in dominant
+deformation mechanisms—dislocation dynamics and twinning                                The material used in this study is TA16, an α-phase titanium alloy
+behavior—across different deformation stages are central to under­                  with a nominal composition of Ti-2Al-2.5Zr. Its chemical composition
+standing the fundamental structure-property relationship.                           (wt.%) is as follows: C 0.01, H 0.001, O 0.07, N 0.006, Al 2.0, Zr 2.5, and
+    The α phase in titanium alloys exhibits a hexagonal close-packed                Ti balance (95.413). An extruded tube blank with dimensions of
+(HCP) crystal structure, which, due to its low symmetry and a severely              Ф90 × 20 mm was vacuum annealed at 750 ◦ C for 2 h and used as the
+restricted number of independent slip systems, often requires additional            cold rolling feedstock. Following multi-pass rolling, a final tube with
+mechanisms such as twinning to accommodate plastic deformation,                     dimensions of Φ14.4 × 2.15 mm was produced. Fig. 1 depicts the initial
+leading to complex deformation behavior [17]. According to the von                  microstructure. As presented in Fig. 1a, the extruded tube blank exhibits
+Mises criterion, accommodating plastic flow in HCP structures typically             an equiaxed grain structure. Fig. 1b displays the corresponding grain
+requires the activation of a minimum of five independent slip systems               size distribution, which falls predominantly within the interval of
+[18]. This requirement consequently demands the activation of addi­                 10–25 μm, with an average grain size of approximately 19.68 μm.
+tional deformation modes, with particular emphasis on the <c> axis -
+dominated deformation mechanisms, including pyramidal <c+a> slip                    2.2. Room-temperature tensile testing
+and tensile/compressive twins (ETW/CTW). These mechanisms play a
+pivotal role in governing the macroscopic mechanical response of the                    Variations in the dimensions of the alloy material necessitate cor­
+material [19,20]. At ambient temperature, the critical resolved shear               responding differences in tensile specimen geometry (as illustrated in
+stress (CRSS) for distinct slip systems varies significantly across different       Fig. 1). For both the extruded tube and the first-pass rolled condition (Af
+crystallographic directions. The c/a ratio of α-phase titanium alloys is            specimen, Ф68.90 × 14.75 mm), tensile specimens of circular cross-
+measured at 1.588, which deviates substantially from the ideal HCP                  section were machined along the AD (axial) direction, having a gauge
+structure. Among these systems, prismatic <a> slip displays the lowest              length of 25 mm and a diameter of 5 mm. The tensile specimen for the
+CRSS, rendering it the dominant slip mechanism. In contrast, activation             finished tube (Ae specimen) takes the form of a tubular segment with a
+of pyramidal <c+a> slip poses the highest energetic barrier [21,22].                gauge length of 50 mm and a total length of 110 mm, in accordance with
+Given this crystallographic asymmetry, deformation twinning emerges                 GB/T 228.1-2021. An Instron 9657 universal testing machine was
+as an essential mechanism for accommodating deformation along the                   employed to conduct room-temperature tensile tests, during which a
+c-axis in hexagonal close-packed metals. The nucleation and propaga­                constant crosshead displacement rate of 0.5 mm/min was maintained
+tion of twins not only induce pronounced grain refinement and reor­                 throughout the test duration. To ensure the reliability and reproduc­
+ientation of crystallographic domains but also impose significant                   ibility of the experimental data, a minimum of three replicate specimens
+constraints on subsequent plastic flow behavior. As an illustration, Wang           was evaluated for each processing condition.
+et al. [23] demonstrated that the synergistic effect of a high dislocation
+density coupled with a strong radial texture developed during cold                  2.3. Material characterization
+rolling optimizes the Schmid factors (SFs) for slip systems, substantially
+promoting the activation of {10-11}<11-20> and {10-12}<11-20> slip                      Specimens were first sectioned by electrical discharge machining
+modes, thereby enabling Ti-Al-V-Zr-Fe titanium tubes to achieve an                  (EDM) and then ground and polished on the transverse-axial (TD-AD)
+exceptional strength–ductility synergy under axial loading. The under­              plane. For electron backscatter diffraction (EBSD, model DigiView5)
+lying mechanism entails a dynamic competition between dislocation                   observation, electropolishing was performed in an electrolyte of 8 vol%
+storage and texture-mediated plasticity. Li et al. [24] further explored            perchloric acid and 92 vol% ethanol at 0 ◦ C and 27 V for 25 s. The EBSD
+the plastic anisotropy of cold-rolled Ti-2Al-2.5Zr alloy, noting that               scan step size was 0.7 μm, and raw data were processed with TSL OIM
+prismatic <a> slip dominates the transverse deformation process. This               software using image denoising. Transmission electron microscopy
+prevalence stems from the large angular misorientation between the                  (TEM, model FEI Tecnai F30) specimens were prepared as follows:
+grain c-axis and the loading direction, which yields elevated SFs. Along            0.5 mm-thick slices were wire-electrode cut from the bulk alloy, ground
+the normal direction, {10-12} extension twinning plays a primary role,              to a final thickness of around 40 μm, and punched into 3 mm-diameter
+with pyramid <c+a> slip acting as a supplementary mechanism to                      discs. The discs were then twin-jet electropolished in a mixture of 20 vol
+accommodate localized strain.                                                       % perchloric acid and 80 vol% methanol at 0 ◦ C and 35 V. TEM images
+    Nevertheless, investigations concerning TA16 alloy have largely                 were subsequently processed and quantitatively analyzed using Digital
+been confined to processing under uniaxial stress states, and a system­             Micrograph (DM) software to yield the final microstructural
+atic understanding of the microstructural evolution and strengthening               characterization.
+mechanisms operative in this alloy tube under the complex stress con­
+ditions of cyclic reciprocating cold rolling remains incomplete. Existing           2.4. Finite element simulation
+studies offer limited quantitative analysis and micro-mechanism-based
+theoretical guidance, rendering it difficult to provide precise support                 To identify optimal rolling parameters, a three-dimensional elas­
+for optimizing multi-pass cold rolling procedures. To address this gap,             tic–plastic finite element model of multi-pass three-roll cold rolling (LD
+the present work introduces finite element numerical simulation to                  type) for TA16 alloy tubes was established in ABAQUS (Fig. 2a) with
+
+                                                                                2
+Y. Xia et al.                                                                                                         Materials Science & Engineering A 975 (2026) 150869
+
+
+
+
+Fig. 1. Schematic illustration of the fabrication process and sampling protocol for TA16 alloy tubes: (a) Microstructure of the as-extruded tube blank; (b) Grain size
+distribution of the as-extruded tube blank.
+
+
+
+
+Fig. 2. Schematic diagram of finite element modeling and parameter design: (a) assembly drawing of the rolling setup; (b) mesh generation of the tube blank; (c)
+movement trajectory; (d) true stress–strain curve of the tube blank.
+
+
+explicit dynamic analysis. Model dimensions matched the fabrication                   and assigned discrete rigid body properties, neglecting their elastic
+process described earlier. The tube blank was meshed with C3D8R ele­                  deformation. This simplification not only significantly reduces the
+ments, and the material constitutive response was defined from room-                  computational cost but also effectively minimizes penetration between
+temperature tensile test data in Section 2.2. The simulation focused on               the tube blank mesh and the roll surfaces, while avoiding numerical
+equivalent stress–strain distribution during the final pass under per-pass            convergence issues caused by contact vibrations. Furthermore, this
+reductions of 25%, 35%, 45%, and 55% to evaluate deformation uni­                     model focuses the rolling process on the direct interaction between the
+formity, providing a theoretical basis for subsequent process                         rolls and the tube blank, without considering the complex motion
+optimization.                                                                         coupling among the sleeve, slideway, and rolls.
+   In the actual cold rolling simulation, the elastic modulus of the rolls                The motion of the rolls was precisely controlled using displacement
+is much higher than that of the tube, and their actual deformation is                 boundary conditions, with radial reduction and axial feed realized
+typically on the micrometer scale. To improve computational efficiency,               through prescribed displacement curves (Fig. 2c). To achieve cyclic
+the rolls, pusher block, and mandrel were simplified as shell structures              reciprocating rolling, the rolls performed reciprocating motion along the
+
+
+                                                                                  3
+Y. Xia et al.                                                                                                       Materials Science & Engineering A 975 (2026) 150869
+
+
+axial direction within a set time period, while pure rolling was achieved           affecting the final forming quality and service performance of the tube.
+by controlling the rotational radian about their own axes (Fig. 2d),                In contrast, at a reduction of 45% (Fig. 4c), the stress distribution on the
+thereby avoiding tube fracture or roll stalling. When the rolls moved into          inner surface is more uniform, and the overall stress level is significantly
+the return section, the pusher block executed the feeding and rotation of           lower, indicating good deformation compatibility under this condition,
+the tube blank, completing the simulation of one rolling cycle.                     which is beneficial for achieving tubes with stable forming quality.
+                                                                                        For multi-roll rolling of seamless titanium alloy tubes, the metal
+3. Results                                                                          deformation is mainly concentrated in the reducing section and the wall
+                                                                                    thickness reduction section. To further elucidate the material flow
+3.1. Analysis of simulation results                                                 behavior and stress–strain response at different stages, a systematic
+                                                                                    stress–strain analysis was conducted on key cross-sections. In the
+    To investigate the influence of the multi-pass cold rolling process on          reducing section (cross-section A-A), the roll groove first contacts the
+the forming quality of seamless titanium alloy tubes, the effect of                 tube blank, resulting in significant radial compression. As the reduction
+different reductions was analyzed through simulations within a pro­                 increases, the contact area between the groove and the tube blank
+cessing window of Q value between 1 and 2. The results are shown in                 gradually expands and extends toward the ridge region, leading to a
+Fig. 3. At a small reduction (Fig. 3a and b), surface wrinkling defects             gradient distribution of reduction along the groove cross-sectional pro­
+tended to occur. This is mainly because the relatively small billet size            file (Fig. 5a2–d2). Upon entering the wall thickness reduction section
+and the large contact area between the rolls and the tube lead to                   (cross-section B-B), the groove further compresses the already contacted
+dominance of frictional shear forces, resulting in insufficient material            metal. The ears formed in the previous pass are fully flattened during
+flow and subsequent local shear instability. With a moderate increase in            this pass, and the wall thickness continues to decrease. At this stage, in
+reduction (Fig. 3c), the surface forming quality improved significantly.            addition to flowing axially to achieve tube elongation, a portion of the
+Under this condition, the metal filling was uniform and adequate, the               compressed metal flows toward the roll gap region, where constraints
+stress distribution in the finished tube section was reasonable, and no             are relatively weak, resulting in localized metal accumulation and out­
+obvious stress concentration was observed, indicating a coordinated and             ward expansion, thereby forming new ear structures. Analysis of the
+stable deformation process. However, when the reduction was further                 stress fields in each cross-section (Fig. 5a1–d1) reveals that when the
+increased (Fig. 3d), cracking directly occurred on the tube surface. This           reduction is either too low or too high, the tube is prone to significant
+is primarily attributed to the high specific strength and poor room-                stress concentration zones. Under the condition of 45% reduction, the
+temperature plasticity of titanium alloys; excessive reduction exacer­              stress distribution is relatively uniform, further confirming the superi­
+bates work hardening, causing the local strain to rapidly exceed the                ority of this process parameter in improving the forming quality of the
+material limit, leading to brittle cracking.                                        tube.
+    When the reduction reached 55%, macro instability and cracking                      In summary, controlling the single-pass deformation at approxi­
+occurred in the tube (as shown in Fig. 3d), and thus this condition is not          mately 45% enables uniform metal flow, effectively avoids surface
+discussed further. Fig. 4(a, b) shows the stress contour distribution on            wrinkling and cracking, and yields the most uniform internal stress field,
+the inner surface under a small reduction. It can be observed that the              making it the optimal process parameter for ensuring forming quality.
+stress distribution on the inner wall is uneven, with localized stress              Based on this process, the tube dimensions for each pass were deter­
+concentration (indicated by the red dashed circles). Such stress con­               mined accordingly. To further elucidate the micro-mechanisms under­
+centration may serve as a source of microcrack initiation, thereby                  lying the property optimization under this parameter, the
+
+
+
+
+                          Fig. 3. Stress contour distribution on the outer surface of the tube formed under different rolling processes.
+
+                                                                                4
+Y. Xia et al.                                                                                                        Materials Science & Engineering A 975 (2026) 150869
+
+
+
+
+        Fig. 4. Stress contour distribution on the inner surface of the tube formed under different rolling processes: (a) ε = 25%; (b) ε = 35%; (c) ε = 45%.
+
+
+
+
+Fig. 5. Distribution of cross-sectional stress–strain fields in the tube during deformation stages under different rolling processes: (a) ε = 25%; (b) ε = 35%; (c)
+ε = 45%; (d) ε = 55%; A-A reducing section; B-B wall thickness reduction section.
+
+microstructure and key mechanical properties of the rolled tubes were                 markedly along the rolling direction, and the average grain size refines
+characterized.                                                                        to 2.52 μm (Fig. 6c), producing a typical fibrous flow texture. Fig. 6d, e
+                                                                                      illustrates grain boundary evolution in the multi-pass cold-rolled TA16
+                                                                                      alloy tube. The distribution of high-angle grain boundaries (HAGBs,
+3.2. Microstructural characterization                                                 θ > 15◦ , black) and low-angle grain boundaries (LAGBs, 2◦ < θ < 15◦ ,
+                                                                                      green) traces substructure development during deformation. As rolling
+    Original equiaxed grains coexist with partially fragmented grains,                passes increase, dislocation pile-ups create local stress fields at grain
+and extensive twin features are observed within the grains based on                   boundaries, promoting nucleation of dislocation walls and subgrain
+preliminary EBSD orientation imaging. The average grain size is                       boundaries [26]. Consequently, the proportion of LAGBs rises sharply
+11.28 μm, preliminarily indicating that plastic deformation at this stage             from 43.8% in the initial state to 67.8% (Fig. 6f). This dense subgrain
+is governed by a combined action of slip and twinning [25]. The crys­                 boundary network enhances work-hardening capacity by hindering
+tallographic type and detailed characteristics of these twins will be                 dislocation migration [16]. Kernel average misorientation (KAM) anal­
+further addressed in the TEM analysis later in this study. With increasing            ysis of EBSD data was performed to quantify dislocation density evolu­
+cold rolling passes, the equiaxed grains vanish entirely, replaced by a               tion. As shown in Fig. 6g-i, the average KAM value increases from 1.36 to
+banded structure of deformed microstructures (Fig. 6b). Grains elongate
+
+                                                                                  5
+Y. Xia et al.                                                                                                             Materials Science & Engineering A 975 (2026) 150869
+
+
+
+
+Fig. 6. Microstructural characteristics of TA16 alloy tubes under different cold rolling passes: (a, d, g) Af specimen; (b, e, h) Ae specimen; (c) Grain size distribution;
+(h) Proportion of grain boundaries; (i) KAM distribution.
+
+
+1.79 after cold rolling, and the expansion of green regions reflects                     <10-10>//AD texture (pole density 7.09). This texture evolution
+intensified crystal deformation accompanied by a significant rise in                     essentially originates from the lattice rotation mechanism dominated by
+geometrically necessary dislocation (GND) density [27,28].                               dislocation slip under the rolling stress field. The continuous activation
+    During the multi-pass cold rolling of TA16 alloy tubes, the evolution                of the {10-10} prismatic slip system promotes the preferred alignment of
+of crystallographic preferred orientation induced by plastic deformation                 grains along the AD, ultimately leading to the pronounced
+can be quantitatively characterized using pole figures [29]. As shown in                 work-hardening characteristics observed in the cold-rolled tube.
+Fig. 7a, b, after cold rolling of the initial billet, the original atypical                  To confirm the crystallographic type of the twin features observed in
+bimodal texture distributed along the TD evolves, characterized by a                     the EBSD analysis above, bright-field TEM imaging combined with
+significant deflection of the grain <0001> axis toward the TD. The                       selected area electron diffraction (SAED) was employed to characterize
+maximum texture intensity is located in the polar angle range of                         the microstructure of the alloy after different cold rolling passes.
+60◦ –70◦ , corresponding to a bimodal texture composed of <0001>//TD                     Through SAED pattern analysis of the region marked by the red circle in
+and <10-10>//AD components, with pole densities of 3.55 and 2.49,                        Fig. 8a (at the twin), as shown in Fig. 8b, the twins formed in the Af
+respectively. After multi-pass rolling (Fig. 7c and d), the basal radial                 specimen were identified as {10-12}<-1011> ETWs, consistent with the
+texture weakens, and the grain c-axis further deflects toward the TD over                crystallographic characteristics of Ti alloys with an HCP structure,
+a wide range of 30◦ –90◦ . The texture intensity increases from 6.46 to                  where limited slip systems render twinning a favorable mechanism for
+8.05, forming a typical bimodal structure dominated by a strong                          accommodating deformation [24]. Further observation reveals
+
+
+                                                                                     6
+Y. Xia et al.                                                                                                         Materials Science & Engineering A 975 (2026) 150869
+
+
+
+
+Fig. 7. Texture analysis of TA16 alloy tubes at different cold rolling passes: (a) Af specimen pole figure; (b) Af specimen inverse pole figure; (c) Ae specimen pole
+figure; (d) Ae specimen inverse pole figure.
+
+
+
+
+Fig. 8. Bright-field TEM images of TA16 alloy tubes subjected to different cold rolling passes: (a, c) Bright-field TEM images of the Af specimen; (b) SAED pattern;
+(d–f) Bright-field TEM images of the Ae specimen.
+
+
+significant dislocation accumulation near twin boundaries (Fig. 8a),                  where dislocation motion is impeded by the twin boundaries, resulting
+
+
+                                                                                  7
+Y. Xia et al.                                                                                                         Materials Science & Engineering A 975 (2026) 150869
+
+
+in the formation of high-density dislocation clusters, confirming the               Table 1
+pinning effect of ETW boundaries on matrix dislocations. As shown in                Mechanical performance evolution of TA16 alloy tubes with varying cold rolling
+Fig. 8c, at this stage the grains still maintain a relatively intact equiaxed       passes.
+morphology, with dislocations not prominently accumulating at grain                  Specimens               El (%)                  YS (MPa)               UTS (MPa)
+boundaries but rather distributed in the form of intragranular disloca­              Extruded tube           24.0 ± 1.3              428 ± 2.5              561 ± 3.2
+tion tangles.                                                                        Af specimen             15.2 ± 0.5              606 ± 3.0              688 ± 5.7
+    With increasing cold rolling passes, the {10-12}<10-1-1> ETWs                    Ae specimen              9.5 ± 0.6              750 ± 4.6              852 ± 4.8
+gradually become difficult to identify, which is attributed to the frag­
+mentation of twin structures due to cumulative deformation during
+                                                                                    Fracture surface observations reveal distinct morphological differences
+multi-pass rolling: repeated rolling induces severe shear deformation in
+                                                                                    among the specimens. The as-extruded tube exhibits a large number of
+the matrix grains, twin boundaries are cut and torn by newly generated
+                                                                                    large and deep equiaxed dimples on the fracture surface, accompanied
+dislocations, and the continuous twin lamellae break down into fine
+                                                                                    by clear tearing ridges and serpentine shear patterns (Fig. 9b and c). The
+fragments, significantly reducing the contrast difference with the
+                                                                                    micropores are fully grown, and the matrix exhibits a high degree of
+deformed matrix. Meanwhile, the alloy enters a state of severe plastic
+                                                                                    plastic flow, which are typical characteristics of highly ductile fracture
+deformation. Driven by rolling forces, dislocations move directionally
+                                                                                    [16]. In contrast, the Af specimen (Fig. 9d) shows a reduction in dimple
+along the maximum shear stress direction, accumulating on specific slip
+                                                                                    size and shallower dimples, with an overall rougher fracture surface.
+planes to form high-density dislocation bands (Fig. 8d). Grains elongate
+                                                                                    This observation is consistent with the increase in strength and the slight
+along the rolling direction, and the original grain boundaries become
+                                                                                    decrease in ductility. For the Ae specimen (Fig. 9e), although dimple
+blurred due to extensive dislocation proliferation and entanglement,
+                                                                                    structures formed by microvoid coalescence are still present, indicating
+resulting in a structure partitioned by dislocation bands. Bright-field
+                                                                                    that the fracture remains ductile in nature, the dimples are much finer
+TEM observations (Fig. 8e and f) show that numerous dislocation tan­
+                                                                                    and shallower, with insufficiently developed tearing ridges. The degree
+gles and dislocation walls are distributed both within and at the
+                                                                                    of plastic deformation prior to microvoid coalescence is significantly
+boundaries of the fibrous structure. The essence of this evolution lies in
+                                                                                    weaker than that in the as-extruded tube and the Af specimen. These
+the accumulation of deformation energy during rolling. Dislocations
+                                                                                    microscopic features correspond well to the macroscopic mechanical
+multiply through mechanisms such as Frank–Read sources, and due to
+                                                                                    behavior observed in the stress-strain curves, where the Ae specimen
+repulsive interactions between dislocations and constraints imposed by
+                                                                                    exhibits a short uniform plastic deformation regime and relatively low
+slip planes, their free movement is restricted, driving the transformation
+                                                                                    overall ductility.
+from an equiaxed to a fibrous grain morphology. This provides a
+microstructural basis for understanding the changes in mechanical
+                                                                                    4. Discussion
+properties of the alloy after cold rolling [30].
+
+                                                                                    4.1. Twinning mechanism
+3.3. Mechanical property analysis
+
+                                                                                        Through detailed characterization of locally magnified regions, a
+    The mechanical properties and fracture morphologies of the
+                                                                                    clear regularity in the crystallographic evolution of the TA16 alloy
+extruded tube blank and tubes after different rolling passes were sys­
+                                                                                    during multi-pass rolling was observed. With the progressive accumu­
+tematically investigated, with the results presented in Fig. 9 and Table 1.
+                                                                                    lation of rolling strain, the original grains undergo severe fragmentation
+In terms of tensile properties (Fig. 9a), the extruded tube exhibited the
+                                                                                    and exhibit a streamlined distribution along the rolling direction,
+best ductility, with an elongation of 24.0 ± 1.3%. In contrast, its yield
+                                                                                    accompanied by the formation of a strong preferred orientation within
+strength and ultimate tensile strength were relatively low, at
+                                                                                    the material, confirming a systematic transformation of the crystallo­
+428 ± 2.5 MPa and 561 ± 3.2 MPa, respectively. After multi-pass roll­
+                                                                                    graphic texture during rolling [26]. Orientation imaging analysis in
+ing, the strength of the specimens showed a significant increasing trend,
+                                                                                    Fig. 10a–c and 10(d–f) reveals that {10-12} ETWs exhibit differential
+while ductility decreased correspondingly. Among them, the Ae spec­
+                                                                                    growth characteristics within the deformed grains. The approximately
+imen exhibited the most outstanding strength, with yield strength and
+                                                                                    85◦ lattice rotation induced by these twins has been verified through
+ultimate tensile strength reaching 750 ± 4.6 MPa and 852 ± 4.8 MPa,
+                                                                                    misorientation analysis (as indicated by the yellow dashed regions in the
+respectively, but its ductility decreased to a minimum, with an elonga­
+                                                                                    figures). Notably, after multi-pass rolling, the {10-12} ETWs themselves
+tion of only 9.5 ± 0.6%.Observation of the fracture surfaces revealed
+                                                                                    undergo fragmentation, and the fragmented twins can further hinder
+distinct differences in fracture morphology among the specimens.
+
+
+
+
+Fig. 9. Mechanical performance and tensile fracture morphology characterization of TA16 alloy tubes subjected to different cold rolling passes: (a) Engineering
+stress–strain curves; (b–e) Tensile fracture surface morphologies.
+
+                                                                                8
+Y. Xia et al.                                                                                                      Materials Science & Engineering A 975 (2026) 150869
+
+
+
+
+Fig. 10. Twinning mechanism of the TA16 alloy under different cold rolling passes: (a–c) Af specimen; (d–f) Ae specimen; (a, d) IPF maps; (b, e) twin distribution
+maps; (c, f) misorientation profiles of selected twins; (g) SFs of selected twins in the Af specimen; (h) SFs of selected twins in the Ae specimen.
+
+
+dislocation motion, thereby generating a work-hardening effect.                     based on KAM maps shows a distinct dislocation density gradient near
+    Regarding the deformation characteristics of HCP structural mate­               the twin interfaces, a phenomenon that directly confirms the composite
+rials, this study reveals the polar nature of twin activation: {10-12}              deformation mechanism in which twins coordinate dislocation motion
+ETWs coordinate plastic deformation through a c-axis elongation                     through interface migration [20,24].
+mechanism. Their activation is strictly governed by the crystallographic
+orientation and can only occur effectively when the SFs satisfies the
+conditions of “tension parallel to the c-axis” or “compression perpen­              4.2. Slip deformation mechanism
+dicular to the c-axis” [31]. Analysis of the evolution of SFs distribution
+(Fig. 10g and h) shows that a relatively high factor value of 0.42 in the               For α-phase titanium alloys with an HCP structure, plastic defor­
+initial deformation stage (corresponding to a twin volume fraction of               mation is governed by five types of slip systems: basal <a>, prismatic
+2.7% in the Af specimen) ensures effective twin activation. In contrast,            <a>, pyramidal <a>, first-order pyramidal <c+a>, and second-order
+the factor value decreases to 0.30 in the final rolling stage (corre­               pyramidal <c+a> [32]. The CRSS ratios of these five slip systems are
+sponding to a twin volume fraction of 0.8% in the Ae specimen), clearly             reported as 2.3:1:3.0:3.0:3.0 [33]. After normalization with respect to
+revealing the attenuation mechanism of the contribution of twinning to              prismatic slip, prismatic slip exhibits the lowest intrinsic resistance,
+plastic deformation due to changes in the strain path. In view of the               followed by basal slip, while all pyramidal <c+a> slip systems show the
+decreased twin volume fraction, the reduced SF, and the TEM-observed                highest resistance. The Schmid factor (SF) alone is insufficient for
+twin fragmentation and dislocation accumulation, it is evident that                 accurately evaluating the activation propensity of slip systems; there­
+twinning progressively gives way to slip as the dominant deformation                fore, a normalized driving force, defined as X = SF/CRSS, is adopted to
+mechanism with increasing rolling passes. Spatially resolved analysis               assess the ease of slip activation, where a higher X value indicates a
+                                                                                    greater likelihood of activation [34,35]. Fig. 11 presents the SF
+
+                                                                                9
+Y. Xia et al.                                                                                                         Materials Science & Engineering A 975 (2026) 150869
+
+
+
+
+Fig. 11. Slip mechanism of the TA16 alloy under different cold rolling passes: (a–c) Af specimen; (d–f) Ae specimen; (a, d) basal <a> slip; (b, e) prismatic <a> slip;
+(c, f) pyramidal <a+c> slip; (g) SFs values of the Af specimen; (h) SFs values of the Ae specimen.
+
+
+distributions for basal, prismatic, and first-order pyramidal <c+a> slips             low due to a CRSS 2.3 times higher than that of prismatic slip. Mean­
+in the Af (early rolling stage) and Ae (final rolling stage) specimens.               while, pyramidal <c+a> slip, with its considerably higher intrinsic
+Combined with the normalized driving force, these distributions clearly               resistance, is also difficult to activate extensively; both slip systems
+distinguish the difference in dominant slip mechanisms between the two                contribute only minimally as auxiliary mechanisms to accommodate
+stages.                                                                               deformation.
+    In the early rolling stage (Af specimen), the average SF for prismatic                With increasing strain accumulation during multi-pass cold rolling,
+slip reaches 0.31, exceeding the generally accepted activation threshold              substantial lattice rotation of grains occurs, which disrupts the geo­
+of 0.3 [36]. When weighted by the lowest CRSS, the normalized driving                 metric compatibility for prismatic slip, causing its average SF to drop
+force for prismatic slip is significantly higher than that for basal slip and         sharply from 0.31 to 0.19-below the activation threshold of 0.3. After
+pyramidal <c+a> slip, establishing prismatic slip as the dominant                     normalization, the driving force for prismatic slip in the final Ae spec­
+mechanism during plastic deformation. Although basal slip exhibits a                  imen is approximately 0.19. In contrast, basal slip maintains a relatively
+certain SF advantage overall, its normalized driving force is relatively              stable orientation condition throughout the rolling process, consistently
+
+
+                                                                                 10
+Y. Xia et al.                                                                                                        Materials Science & Engineering A 975 (2026) 150869
+
+
+exhibiting a high SF with an average value of approximately 0.45, cor­                   In the early rolling stage (Af specimen), distinct diffraction contrast
+responding to a normalized driving force of about 0.20. The driving                  differences were observed under the two imaging conditions: under g =
+forces of these two slip systems are numerically very close, with no                 (01-10), extensive continuous dislocation tangles were visible (Fig. 12a);
+significant disparity, indicating that prismatic slip has not completely             upon switching to g = (0001), most of the dislocation contrasts dis­
+lost its activity but no longer possesses the dominant advantage it held in          appeared, indicating that deformation was dominated by <a>-type
+the earlier stage. To satisfy the von Mises [18] criterion for plastic               dislocations, with very few pyramidal <c+a> dislocations present
+compatibility in polycrystalline materials, basal slip, prismatic slip, and          (Fig. 12b). Combined with EBSD and normalized driving force calcula­
+first-order pyramidal <c+a> slip all participate in plastic flow, jointly            tions, the Schmid factor for prismatic slip in the Af specimen reached
+accommodating the imposed strain. Among them, basal slip provides the                0.31, with the slip driving force far exceeding that of other slip systems.
+primary deformation component due to its consistently high SF; pris­                 The extensive <a> dislocations observed in the specimen originated
+matic slip still contributes but to a much weaker extent; and pyramidal              predominantly from prismatic <a> slip, and plastic deformation was
+<c+a> slip, constrained by its high CRSS (3.0 times that of prismatic                governed by prismatic slip. After multi-pass cold rolling (Ae specimen),
+slip), can only be locally activated to supplement strain along the c-axis.          the diffraction characteristics changed significantly: the <a> dislocation
+Overall, in the Ae specimen, the three types of slip systems collectively            contrast under g = (01-10) weakened notably (Fig. 12c). Grain rotation
+accommodate plastic deformation, but the contribution of prismatic slip              reduced the Schmid factor for prismatic slip to 0.19, and after normal­
+is markedly reduced and is no longer the dominant mechanism. The total               ization, its driving force became comparable to that of basal slip. Pris­
+number of slip systems that can efficiently participate in deformation               matic slip no longer held a dominant advantage, and prismatic slip alone
+decreases compared to the earlier stage, resulting in a reduced capacity             could no longer accommodate the plastic deformation. At this stage,
+for plastic compatibility, which macroscopically manifests as increased              basal and prismatic slips jointly provided <a> dislocations to accom­
+strength and significantly decreased elongation.                                     modate the fundamental deformation; meanwhile, under g = (0001)
+    Relying solely on EBSD-based Schmid factor analysis can only indi­               imaging, numerous intersecting dislocation bands appeared (Fig. 12d),
+rectly indicate the tendency for slip activation from crystallographic               which were identified as pyramidal <c+a> dislocations serving to
+orientation, lacking direct observational evidence of dislocations at the            compensate for strain along the c-axis.
+nanoscale. Therefore, this study employed two-beam TEM diffraction                       The TEM observations are consistent with the EBSD and normalized
+characterization, selecting g = (0001) for basal diffraction and g = (01-            driving force analyses: as rolling strain increases, the Schmid factor for
+10) for prismatic diffraction. The g•b = 0 extinction criterion was used             prismatic slip decreases and its contribution weakens significantly. To
+to distinguish between <a>-type and pyramidal <c+a> dislocations                     satisfy the von Mises [18] plastic compatibility condition, basal <a> slip
+[16], [37], combined with orientation statistics to verify the evolution of          and pyramidal <c+a> slip simultaneously participate in deformation,
+slip mechanisms with increasing strain.                                              and the three types of slip systems collectively accomplish the plastic
+
+
+
+
+Fig. 12. TEM characterization of dislocation structures in TA16 alloy tubes under different cold rolling passes, including selected-area electron diffraction (SAED)
+patterns and two-beam bright-field images acquired under various diffraction vectors. (a, b) Af specimen; (c, d) Ae specimen.
+
+                                                                                11
+Y. Xia et al.                                                                                                       Materials Science & Engineering A 975 (2026) 150869
+
+
+flow, fully elucidating the transition of slip mechanisms during the cold            slip simultaneously participates in accommodating the plastic flow.
+rolling process of this alloy.                                                       Meanwhile, to compensate for the strain along the c-axis and fulfill the
+    During the plastic deformation of the TA16 alloy, the slip behavior of           von Mises plastic compatibility criterion, pyramidal <c+a> slip is also
+the α phase is schematically illustrated in Fig. 13. At room temperature,            activated, collectively maintaining strain compatibility among grains
+prismatic slip possesses the lowest intrinsic CRSS among all slip systems            [18]. Although multiple slip systems cooperate to accommodate defor­
+in α-titanium, making it the most readily activated slip mode, and its               mation, the overall number of slip systems that can be efficiently acti­
+activation level directly governs the ductility of the material [24]. Based          vated decreases, leading to a marked reduction in room-temperature
+on the pole figure analysis in Fig. 7a, the c-axes of the majority of                ductility.
+α-phase grains in the Af specimen are deflected from the AD direction by
+approximately 60◦ -70◦ , corresponding to the polar angle of the texture
+                                                                                     4.3. Strengthening mechanism
+intensity peak in the basal pole figure. This orientation results in a
+relatively high Schmid factor for prismatic slip and thus a dominant
+                                                                                         The data presented in Fig. 9a demonstrate that with an increasing
+driving force for slip activation; consequently, deformation is governed
+                                                                                     number of cold rolling passes, the YS and UTS of the TA16 alloy tubes
+by prismatic slip (Fig. 12a and b). With increasing rolling passes,
+                                                                                     undergo a marked elevation, whereas the EL exhibits a continuous
+continuous lattice rotation of grains occurs, leading to a progressive
+                                                                                     decline. This evolution in mechanical properties is primarily governed
+increase in the angle θ between the c-axis and the loading direction, and
+                                                                                     by grain refinement strengthening and dislocation strengthening, which
+a corresponding continuous decrease in the Schmid factor for prismatic
+                                                                                     together constitute the core driving force for the continuous strength
+slip [38]. In the final Ae specimen, the normalized driving force for
+                                                                                     enhancement during the cold rolling process. It should be noted that
+prismatic slip decreases substantially, approaching that of basal slip, and
+                                                                                     solid solution strengthening is determined by the content of alloying
+thus prismatic slip no longer possesses the dominant advantage it held in
+                                                                                     elements such as Al and Zr, and does not vary with the increase of
+the earlier stage. The activation resistance for slip increases notably,
+                                                                                     deformation during cold rolling. Therefore, it is a constant strengthening
+resulting in higher macroscopic deformation resistance and enhanced
+                                                                                     component independent of deformation and is only superposed in the
+strength. At this stage, prismatic slip alone is insufficient to satisfy the
+                                                                                     subsequent quantitative calculation of the total yield strength. The as-
+plastic compatibility requirements of polycrystalline deformation. Basal
+                                                                                     extruded TA16 tube blank possesses an equiaxed grain morphology.
+
+
+
+
+        Fig. 13. Schematic of α-phase slip mechanisms in TA16 alloy: (a) α-phase orientation; (b) Af specimen slip behavior; (c) Ae specimen slip behavior.
+
+                                                                                12
+Y. Xia et al.                                                                                                       Materials Science & Engineering A 975 (2026) 150869
+
+
+Following multi-pass cold rolling at a per-pass reduction of 45%, the                 chanical properties of the material. The Taylor hardening model is a
+imposed rolling stress induces elongation of the original grains along the            widely adopted methodology for quantifying the contribution of dislo­
+rolling direction and their subsequent fragmentation into a micron-scale              cation strengthening [43], and its expression is as follows:
+fine-grained structure. Simultaneously, the fraction of low-angle grain                            √̅̅
+                                                                                      σ dis = αMGb ρ                                                    (3)
+boundaries rises from 43.8% to 67.8% (Fig. 6d–f), giving rise to a dense
+subgrain boundary network. In accordance with grain refinement
+                                                                                      where α denotes a geometric constant (assigned a value of 0.2 [44]); M is
+strengthening principles, both the refinement of grains and the prolif­
+                                                                                      the Taylor factor for the α phase, taken to be approximately 5 [45]; G
+eration of subgrain boundaries augment the impediment to dislocation
+                                                                                      represents the shear modulus (44 GPa [45]); b corresponds to the Bur­
+glide, thereby contributing to strength enhancement, while also gener­
+                                                                                      gers vector magnitude (approximately 0.295 nm [45]); and ρ signifies
+ating additional sites for dislocation multiplication [39]. Dislocation
+                                                                                      the GND density derived from KAM analysis. KAM analysis constitutes a
+strengthening constitutes the principal source of strength increment.
+                                                                                      reliable approach for delineating deformed regions and quantifying
+During cold rolling, extensive dislocation multiplication occurs via the
+                                                                                      GND density [42]. In general, an elevated KAM value reflects a greater
+Frank–Read mechanism [40]. Given the restricted number of slip sys­
+                                                                                      degree of material deformation and a correspondingly higher disloca­
+tems available in the HCP α phase and the repulsive interactions among
+                                                                                      tion density [46]. Fig. 14 presents KAM maps for both the Af and Ae
+dislocations, their mobility is constrained, culminating in the develop­
+                                                                                      specimens, facilitating an examination of GND evolution. The mean
+ment of high-density dislocation tangles and dislocation bands. The rise
+                                                                                      GND density, computed via the expression provided below [47], serves
+in KAM value from 1.36◦ to 1.79◦ corroborates this elevation in dislo­
+                                                                                      to characterize the dislocation density at successive rolling stages:
+cation density. These dislocation configurations mutually obstruct one
+another during tensile straining, substantially increasing deformation                ρGND = 2KAM/(μb)                                                             (4)
+resistance-a factor that primarily accounts for the enhancement in YS
+and UTS. Concurrently, this impeded dislocation motion is also                        In this relation, μ designates the EBSD step size and b the magnitude of
+responsible for the reduction in EL. Additionally, the alloying elements              the Burgers vector. As indicated by the computed values (Fig. 14c), the
+Al (2.0 wt%) and Zr (2.5 wt%) remain in solid solution within the                     GND densities for the Af and Ae specimens amount to 2.3 × 1014/m2 and
+α-phase matrix, imparting a solid solution strengthening contribution.                2.94 × 1014/m2, respectively. Upon substitution into Eqs. (3) and (4),
+Although of secondary magnitude, this effect intensifies the resistance to            the resultant contributions from dislocation strengthening are deter­
+dislocation motion through lattice distortion and the drag exerted by                 mined to be 258.9 MPa and 292.3 MPa for the two conditions.
+Cottrell atmospheres, thereby elevating slip resistance [41], working                      In the TA16 alloy, the solute species consist of Al and Zr. The solid
+synergistically with grain refinement strengthening and dislocation                   solution hardening imparted by these elements can be evaluated using
+strengthening to elevate the overall strength of the material. To quan­               the following formula [44]:
+titatively analyze the strengthening effect of the cold rolling process on                     (          )2/3
+                                                                                                 ∑ 3/2
+the mechanical properties of the TA16 alloy, the contribution of each                  σ SSS =      Bi Xi                                                    (5)
+strengthening mechanism was superimposed to calculate the proportion                            i
+of yield strength (σYS) for specimens after different passes.The yield
+strength can be approximately expressed as the sum of the contributions               where Bi signifies the solid solution strengthening coefficient, with
+from grain refinement strengthening, dislocation strengthening, and                   BAl = 285 MPa at− 2/3, BZr = 1201 MPa at− 2/3 [45]. Xi denotes the
+solid solution strengthening, as defined by the following relation [42]:              concentration of solute atoms. In this investigation, the mean atomic
+                                                                                      percentages of these solute species were obtained via energy-dispersive
+σ YS = σ 0 + σ HP + σ dis + σ SSS                                         (1)         X-ray spectroscopy (EDS), and the corresponding strengthening pa­
+                                                                                      rameters were sourced from prior literature to evaluate the solid solu­
+In this expression, σ0 denotes the intrinsic lattice friction stress of the
+                                                                                      tion strengthening increment. Collectively, the computed solid solution
+alloy (for titanium, σ0 = 172.5 MPa [43]), σHP represents the strength­
+                                                                                      strengthening contribution for the TA16 alloy specimens examined
+ening contribution from Hall-Petch grain boundary refinement of the α
+                                                                                      herein amounts to 108.9 MPa.
+phase, σdis corresponds to the contribution from dislocation strength­
+                                                                                          Fig. 15 compares the theoretically predicted yield strength with the
+ening, and σ sss accounts for solid solution strengthening.
+                                                                                      experimentally measured yield strength for the Af and Ae specimens. A
+    Owing to their distinct atomic arrangement, which deviates mark­
+                                                                                      remarkable degree of consistency is observed between the predicted and
+edly from that of the crystalline interior, grain boundaries serve as
+                                                                                      experimental values for both specimens, which verifies the validity of
+highly effective barriers to dislocation motion. Consequently, grain
+                                                                                      the strengthening mechanisms proposed in this study. Among all the
+refinement introduces additional impediments to dislocation glide,
+                                                                                      strength components, dislocation strengthening contributes the largest
+thereby augmenting strength. The classical Hall-Petch relationship [43]
+                                                                                      proportion to the total yield strength, indicating that dislocation
+is employed to quantify the contribution arising from grain boundary
+                                                                                      tangling and pile-up are the dominant factors governing the strength
+strengthening:
+                                                                                      level of the alloy. However, in terms of the strength increment from the
+                1
+                                                                          (2)         Af specimen to the Ae specimen, the contribution of grain refinement
+σ HP = kd− 2
+                                                                                      strengthening is larger, reflecting a more significant role of grain
+where k is the Hall-Petch coefficient, assigned a value of 360 MPa μm1/2              refinement in promoting strength enhancement. These results reveal the
+[45], and d represents the average grain size of the TA16 alloy. As                   quantitative constitutive relationship of the contributions from different
+illustrated in Fig. 6c, f, the mean grain size at the initial rolling stage is        strengthening mechanisms and provide a quantitative basis for further
+approximately 11.28 μm, which undergoes refinement to 2.52 μm                         understanding the strengthening and toughening mechanisms of the
+following multi-pass cold rolling to the final pass. The computed grain               TA16 alloy during cold rolling.
+refinement strengthening increments for these respective conditions are                   As depicted in Fig. 16, a pronounced interdependence exists between
+approximately 80.5 MPa and 170.1 MPa, values that directly reflect the                the evolving plastic deformation mechanisms and the mechanical
+progressive accumulation of strength enhancement resulting from                       properties of the TA16 alloy tube blank throughout the cold rolling
+continuous grain refinement throughout the rolling sequence.                          process. The annealed tube blank, characterized by a uniform grain
+    The plastic deformation during the rolling process generates a                    distribution and low dislocation density, exhibits favorable initial
+certain number of dislocations within the cold-rolled TA16 alloy tube,                ductility. Upon the application of cold rolling deformation, however, the
+and and these dislocations play a pivotal role in governing the me­                   dynamic progression of microstructural defects assumes control over the
+                                                                                      mechanical response. Successive rolling passes induce grain
+
+                                                                                 13
+Y. Xia et al.                                                                                                         Materials Science & Engineering A 975 (2026) 150869
+
+
+
+
+Fig. 14. GND density distribution maps and statistical results for TA16 alloy tubes subjected to different cold rolling passes: (a) Af specimen; (b) Ae specimen; (c)
+Quantitative statistics of GND density.
+
+
+                                                                                      augmentation of alloy strength. Furthermore, extensive dislocation
+                                                                                      entanglement and pile-up severely restrict dislocation glide, while a
+                                                                                      notable decline in the volume fraction of deformation twins diminishes
+                                                                                      the capacity for twin-mediated plastic flow. These concurrent phe­
+                                                                                      nomena collectively engender a steady reduction in ductility as the
+                                                                                      number of rolling passes increases. The observed strength–ductility
+                                                                                      trade-off stems fundamentally from a dynamic interplay between work
+                                                                                      hardening and embrittlement mechanisms operative during rolling.
+                                                                                      Once the rolling reduction surpasses a critical limit, the defect density
+                                                                                      approaches saturation, whereupon further plastic strain facilitates
+                                                                                      microcrack nucleation and hastens the onset of plastic instability.
+
+                                                                                      5. Conclusions
+
+                                                                                          In this investigation, the optimal rolling parameters were identified
+                                                                                      through finite element simulations, and the underlying evolution
+                                                                                      mechanisms of the microstructure and mechanical properties of TA16
+                                                                                      alloy tubes subjected to multi-pass cold rolling were systematically
+                                                                                      unraveled. The primary findings are summarized as follows.
+
+Fig. 15. Comparison between the theoretically predicted yield strength and the        1. Maintaining the per-pass reduction near 45% effectively suppresses
+experimentally measured yield strength for the Af and Ae specimens.                      surface wrinkling from inadequate deformation and cracking from
+                                                                                         excessive strain, while also yielding the most homogeneous stress
+fragmentation and refinement, concurrent with a marked escalation in                     distribution throughout the tube.
+dislocation density. The combined operation of grain boundary                         2. The cold rolling process facilitates continuous grain refinement,
+strengthening and dislocation strengthening leads to a progressive                       reducing the mean grain size significantly from 19.68 μm to 2.52 μm.
+
+
+
+
+                                Fig. 16. Schematic diagram of the deformation mechanism of the tube during plastic deformation.
+
+                                                                                 14
+Y. Xia et al.                                                                                                                          Materials Science & Engineering A 975 (2026) 150869
+
+
+   Concurrently, the crystallographic texture transitions from a                                  [7] X. Cui, Y. Zhao, S. Yin, J. He, Deformation behavior of anisotropic Ta18 titanium
+                                                                                                      alloy tube in hydroforming process at room temperature, Adv Ind Manuf Eng 10
+   randomly oriented state to a pronounced {10-10}//AD fiber texture.
+                                                                                                      (2025) 100159, https://doi.org/10.1016/J.AIME.2025.100159.
+3. The operative deformation mechanism undergoes a fundamental                                    [8] Z. Niu, Z. Yue, Z. Xia, W. Liu, S. Zhang, A. Xu, A generalized electro-thermo-
+   transition with accumulating strain, evolving from twin-coordinated                                mechanical framework for electrically assisted tube forming: case study on TA18
+   plastic deformation during the early stages to a regime fully gov­                                 titanium alloy, J. Mater. Process. Technol. 343 (2025) 118974, https://doi.org/
+                                                                                                      10.1016/j.jmatprotec.2025.118974.
+   erned by dislocation slip at later stages. The development of a strong                         [9] G. Wu, S. Li, J. Li, J. Chen, R. Li, J. Guo, et al., Texture evolution during multi-pass
+   texture constrains prismatic slip, thereby compelling the activation                               cold rolling and annealing of Ti-2Al-1.5 Mn alloy, J. Alloys Compd. 971 (2024)
+   of hard-oriented pyramidal <c+a> slip to maintain strain                                           172705, https://doi.org/10.1016/j.jallcom.2023.172705.
+                                                                                                 [10] Y. Su, H. Fan, F. You, F. Kong, X. Wang, Y. Chen, Improved tensile properties of a
+   compatibility.                                                                                     novel near-α titanium alloy via tailoring microstructure by hot-rolling, Mater. Sci.
+4. Multi-pass cold rolling markedly elevates the yield strength and ul­                               Eng. A 790 (2020) 139588, https://doi.org/10.1016/j.msea.2020.139588.
+   timate tensile strength of the TA16 alloy to 750 MPa and 852 MPa,                             [11] M.S. Lee, A.R. Jo, S.K. Hwang, Y.T. Hyun, T.S. Jun, The role of strain rate and
+                                                                                                      texture in the deformation of commercially pure titanium at cryogenic
+   respectively. Among the strengthening contributions, grain refine­                                 temperature, J. Mater. Sci. Technol. 827 (2021) 142042, https://doi.org/10.1016/
+   ment strengthening exerts a particularly substantial influence on the                              j.msea.2021.142042.
+   overall strength enhancement. Nevertheless, the elongation is                                 [12] D. Liu, D. Liu, M. Guagliano, X. Xu, K. Fan, S. Bagherifard, Contribution of
+                                                                                                      ultrasonic surface rolling process to the fatigue properties of TB8 alloy with body-
+   severely reduced to 9.5%, a consequence primarily attributable to                                  centered cubic structure, J. Mater. Sci. Technol. 61 (2021) 63–74, https://doi.org/
+   pronounced work hardening and the significant suppression of                                       10.1016/j.jmst.2020.05.047.
+   prismatic slip.                                                                               [13] S.H. Mills, C. Dellacorte, R.D. Noebe, B. Amin Ahmadi, A.P. Stebner, Rolling
+                                                                                                      contact fatigue deformation mechanisms of nickel-rich nickel-titanium-hafnium
+                                                                                                      alloys, Acta Mater. 209 (2021) 116784, https://doi.org/10.1016/j.
+CRediT authorship contribution statement                                                              actamat.2021.116784.
+                                                                                                 [14] W. Chen, C. Li, X. Zhang, C. Chen, Y. Lin, K. Zhou, Deformation-induced variations
+                                                                                                      in microstructure evolution and mechanical properties of bi-modal Ti-55511
+   Yanlong Xia: Data curation, Investigation, Methodology, Software,                                  titanium alloy, J. Alloys Compd. 783 (2019) 709–717, https://doi.org/10.1016/j.
+Validation, Writing – original draft, Writing – review & editing.                                     jallcom.2018.12.262.
+Guiyang Yu: Data curation, Investigation, Validation. Byung-Ho Yoon:                             [15] Z. Du, Q. He, R. Chen, F. Liu, J. Zhang, F. Yang, et al., Rolling reduction-dependent
+                                                                                                      deformation mechanisms and tensile properties in a β titanium alloy, J. Mater. Sci.
+Methodology, Resources, Validation. Peng Cao: Methodology, Re­                                        Technol. 104 (2022) 183–193, https://doi.org/10.1016/j.jmst.2021.05.071.
+sources, Validation. Yanliang Yi: Project administration, Supervision,                           [16] Z. Jia, Q. Zhao, Y. Zhang, Y. Xu, Y. Chen, X. Deng, et al., Hot and cold rolling of a
+Writing – review & editing. Zhentao Yu: Project administration, Su­                                   novel near-α titanium alloy: mechanical properties and underlying deformation
+                                                                                                      mechanism, Mater. Sci. Eng. A 863 (2023) 144543, https://doi.org/10.1016/j.
+pervision, Writing – review & editing.
+                                                                                                      msea.2022.144543.
+                                                                                                 [17] S. Wang, G. Jin, Y. Wu, X. Liu, G. Chen, Study on deformation mechanism of Ti-
+                                                                                                      2Al-2.5 Zr alloy tube in the flattening test, J. Mater. Sci. Technol. 90 (2021)
+Declaration of competing interest                                                                     108–120, https://doi.org/10.1016/j.jmst.2021.03.009.
+                                                                                                 [18] S. Wei, J. Kim, C.C. Tasan, In-situ investigation of plasticity in a Ti-Al-V-Fe (α+ β)
+                                                                                                      alloy: slip mechanisms, strain localization, and partitioning, Int. J. Plast. 148
+    The authors declare that they have no known competing financial                                   (2022) 103131, https://doi.org/10.1016/j.ijplas.2021.103131.
+interests or personal relationships that could have appeared to influence                        [19] T. Wang, B. Li, M. Li, Y. Li, Z. Wang, Z. Nie, Effects of strain rates on deformation
+the work reported in this paper.                                                                      twinning behavior in α-titanium, Mater. Charact. 106 (2015) 218–225, https://doi.
+                                                                                                      org/10.1016/j.matchar.2015.05.016.
+                                                                                                 [20] X. Wen, H. Huang, H. Wu, M. Zhou, Y. Bu, X. Yuan, et al., Enhanced plastic
+Acknowledgements                                                                                      deformation capacity in hexagonal-close-packed medium entropy alloys via
+                                                                                                      facilitating cross slip, J. Mater. Sci. Technol. 134 (2023) 1–10, https://doi.org/
+                                                                                                      10.1016/j.jmst.2022.05.059.
+   This work was supported by the National Key Research and Devel­                               [21] B. Wei, S. Ni, Y. Liu, M. Song, Structural characterization of the 112‾ 2 twin
+opment Program of China (Grant Nos. 2023YFB3710701 and                                                boundary and the corresponding stress accommodation mechanisms in pure
+                                                                                                      titanium, J. Mater. Sci. Technol. 72 (2021) 114–121, https://doi.org/10.1016/j.
+2023YFB3710705), and by the Open Fund of the State Key Laboratory of
+                                                                                                      jmst.2020.07.030.
+Vanadium and Titanium Resources Comprehensive Utilization (Grant                                 [22] K. Li, J. Yang, Y. Yi, X. Liu, Y. Liu, L. Zhang, et al., Enhanced strength-ductility
+No. 2025P4FZG06).                                                                                     synergy and mechanisms of heterostructured Ti6Al4V-Cu alloys produced by laser
+                                                                                                      powder bed fusion, Acta Mater. 256 (2023) 119112, https://doi.org/10.1016/J.
+                                                                                                      ACTAMAT.2023.119112.
+Data availability                                                                                [23] W. Wang, L. Yuan, H. Zhang, Z. Wei, H. Zhang, W. Zhang, Cold-rolled Ti-Al-V-Zr-Fe
+                                                                                                      titanium alloy tubing with outstanding tensile properties, J. Alloys Compd. 931
+    Data will be made available on request.                                                           (2023) 167558, https://doi.org/10.1016/j.jallcom.2022.167558.
+                                                                                                 [24] H. Li, J. Yu, W. Jia, Q. Lin, J. Wu, G. Chen, Experimental and mechanistic
+                                                                                                      investigation on the plastic anisotropic deformation behavior of α-phase titanium
+References                                                                                            alloy Ti-2Al-2.5 Zr, J. Mater. Sci. Technol. 212 (2025) 17–34, https://doi.org/
+                                                                                                      10.1016/j.jmst.2024.05.057.
+                                                                                                 [25] D. Nagarajan, Quantitative measurements of strain-induced twinning in Mg, Mg-Al
+ [1] S. Wang, Z. Ning, P. Li, M. Li, Q. Lin, H. Wu, et al., Study on the crack nucleation
+                                                                                                      and Mg-Zn solid solutions, J. Mater. Sci. Technol. 860 (2022) 144292, https://doi.
+     mechanism of Ti-2Al-2.5Zr alloy in low cycle fatigue: quasi in-situ experiments and
+                                                                                                      org/10.1016/j.msea.2022.144292.
+     crystal plasticity simulation, Int. J. Plast. 165 (2023) 103604, https://doi.org/
+                                                                                                 [26] D. Wang, Q. Fan, X. Cheng, Y. Zhou, R. Shi, Y. Qian, et al., Texture evolution and
+     10.1016/j.ijplas.2023.103604.
+                                                                                                      slip mode of a Ti-5.5 Mo-7.2 Al-4.5 Zr-2.6 Sn-2.1 Cr dual-phase alloy during cold
+ [2] J. Yu, B. Li, Z. Ning, X. Guo, J. Wu, G. Chen, Facet cracking mechanism of Ti-2Al-
+                                                                                                      rolling based on multiscale crystal plasticity finite element model, J. Mater. Sci.
+     2.5Zr alloy under high-cycle fatigue loadings at room temperature and 350◦ C, Int.
+                                                                                                      Technol. 111 (2022) 76–87, https://doi.org/10.1016/j.jmst.2021.09.030.
+     J. Fatig. 194 (2025) 108845, https://doi.org/10.1016/J.IJFATIGUE.2025.108845.
+                                                                                                 [27] H. Jiang, Y. Lu, X. An, J. Qin, T. Xie, F. Jin, et al., Effect of Al/Ti ratio on the
+ [3] D.A. Pumpyanskiy, A.G. Illarionov, F.V. Vodolazskiy, Y.I. Kosmatskiy, Y.
+                                                                                                      microstructure, texture and incipient plasticity of (CoNiCr0. 5) 95AlxTiy high
+     N. Loginov, P.A. Yu, et al., Material science aspects of titanium tube production.
+                                                                                                      entropy alloys, J. Mater. Sci. Technol. 866 (2023) 144651, https://doi.org/
+     Part 2. Production of cold-rolled tubes, Metallurgist 67 (2024) 1482–1493, https://
+                                                                                                      10.1016/j.msea.2023.144651.
+     doi.org/10.1007/s11015-024-01641-5.
+                                                                                                 [28] Y. Li, P. Gao, J. Yu, S. Jin, S. Chen, M. Zhan, Mesoscale deformation mechanisms in
+ [4] A. Vodolazskiy, B. Gornostaeva, A. Illarionov, Structure and properties of hot-
+                                                                                                      relation with slip and grain boundary sliding in TA15 titanium alloy during tensile
+     extruded tube of titanium alloy PT7M - ScienceDirect, Mater. Today Proc. 19
+                                                                                                      deformation, J. Mater. Sci. Technol. 98 (2022) 72–86, https://doi.org/10.1016/j.
+     (2019) 2200–2204, https://doi.org/10.1016/j.matpr.2019.07.378.
+                                                                                                      jmst.2021.05.008.
+ [5] Z. Lei, P. Gao, X. Wang, M. Zhan, H. Li, Analysis of anisotropy mechanism in the
+                                                                                                 [29] J. Wu, M. Zhao, L. Xiao, W. Li, W. Hui, L. Jingjing, Microstructure and twin
+     mechanical property of titanium alloy tube formed through hot flow forming,
+                                                                                                      behavior of Ti-2Al-2.5 Zr during cold pilgering, Mater. Res. Express 8 (2021)
+     J. Mater. Sci. Technol. 86 (2021) 77–90, https://doi.org/10.1016/J.
+                                                                                                      096515, https://doi.org/10.1088/2053-1591/ac22c2.
+     JMST.2021.01.038.
+                                                                                                 [30] C. Lan, Y. Wu, L. Guo, H. Chen, F. Chen, Microstructure, texture evolution and
+ [6] Y. Zhang, M. Zhan, X. Fan, Y. K, Forming of pure titanium tubes by combined
+                                                                                                      mechanical properties of cold rolled Ti-32.5 Nb-6.8 Zr-2.7 Sn biomedical beta
+     spinning-ultrasonic surface rolling process: microstructure and mechanical
+                                                                                                      titanium alloy, J. Mater. Sci. Technol. 34 (2018) 788–792, https://doi.org/
+     properties, Manuf. Processes 105 (2023) 70–83, https://doi.org/10.1016/J.
+                                                                                                      10.1016/j.jmst.2017.04.017.
+     JMAPRO.2023.09.035.
+
+
+                                                                                            15
+Y. Xia et al.                                                                                                                            Materials Science & Engineering A 975 (2026) 150869
+
+[31] L. Nervo, A. King, A. Fitzner, W. Ludwig, M. Preuss, A study of deformation                    [40] S. Joseph, K. Joseph, T.C. Lindley, D. Dye, The role of dwell hold on the dislocation
+     twinning in a titanium alloy by X-ray diffraction contrast tomography, Acta Mater.                  mechanisms of fatigue in a near alpha titanium alloy, Int. J. Plast. 131 (2020)
+     105 (2016) 417–428, https://doi.org/10.1016/j.actamat.2015.12.032.                                  102743, https://doi.org/10.1016/j.ijplas.2020.102743.
+[32] C. Liu, R. Thomas, T. Sun, J. Donoghue, X. Zhang, T.L. Burnett, et al., Multi-                 [41] T. Neeraj, D.H. Hou, G.S. Daehn, M.J. Mills, Phenomenological and microstructural
+     dimensional study of the effect of early slip activity on fatigue crack initiation in a             analysis of room temperature creep in titanium alloys, Acta Mater. 48 (2000)
+     near-α titanium alloy, Acta Mater. 233 (2022) 117967, https://doi.org/10.1016/j.                    1225–1238, https://doi.org/10.1016/s1359-6454(99)00426-7.
+     actamat.2022.117967.                                                                           [42] Q.M. Tian, Y. Yang, Y.B. Tan, S. Xiang, F. Zhao, X.M. Ji, et al., Synergistically
+[33] S. Wang, P. Li, Y. Wu, X. Liu, Q. Lin, G. Chen, Micromechanical behavior of Ti-2Al-                 enhancing the strength and ductility of TA15 titanium alloy through hot rolling
+     2.5Zr alloy under cyclic loading using crystal plasticity modeling, Int. J. Fatig. 161              and short-time annealing, J. Alloys Compd. 1038 (2025) 182796, https://doi.org/
+     (2022) 106890, https://doi.org/10.1016/j.ijfatigue.2022.106890.                                     10.1016/j.Jallcom.2025.182796.
+[34] I. Bantounas, D. Dye, T.C. Lindley, The effect of grain orientation on fracture                [43] T. Lin, L. Zhou, Y. Guo, P. Xu, Y. Li, J. Zhang, et al., Synergic strength-ductility
+     morphology during high-cycle fatigue of Ti–6Al–4V, Acta Mater. 57 (2009)                            enhancement in bimodal titanium alloy via a heterogeneous structure induced by
+     3584–3595, https://doi.org/10.1016/j.actamat.2009.04.018.                                           the <c + a> slip, J. Mater. Sci. Technol. 204 (2025) 255–267, https://doi.org/
+[35] S. Sunil, N. Verdhan, R. Kapoor, C.B. Basak, R.N. Singh, J.K. Chakravartty, Effect of               10.1016/j.Jmst.2024.04.012.
+     orientation and presence of hydride on the fatigue crack growth behavior of Zr–2.5             [44] R. Ji, K. Zhu, H. Zhang, H. Luo, J. Mao, Microstructure evolution, mechanical
+     wt% Nb, Int. J. Fatig. 85 (2016) 49–56, https://doi.org/10.1016/j.                                  response and strengthening models for TA15 titanium alloy during thermal
+     ijfatigue.2015.12.005.                                                                              processes: a brief review, J. Mater. Res. Technol. 28 (2024) 1644–1656, https://
+[36] L. Ma, M. Wan, W. Li, J. Shao, X. Han, J. Zhang, On the superplastic deformation                    doi.org/10.1016/j.Jmrt.2023.12.099.
+     mechanisms of near-α TNW700 titanium alloy, J. Mater. Sci. Technol. 108 (2022)                 [45] D. Li, H. Huang, C. Chen, S. Liu, X. Liu, X. Zhang, et al., Additive manufacturing of
+     173–185, https://doi.org/10.1016/J.JMST.2021.08.065.                                                high strength near β titanium alloy Ti-55511 by engineering nanoscale secondary α
+[37] Y. Chong, R. Gholizadeh, T. Tsuru, R. Zhang, K. Inoue, W. Gao, et al., Grain                        laths via in-situ heat treatment, Mater. Sci. Eng. A 814 (2021) 141245, https://doi.
+     refinement in titanium prevents low temperature oxygen embrittlement, Nat.                          org/10.1016/j.Msea.2021.141245.
+     Commun. 14 (2023) 404, https://doi.org/10.1038/s41467-023-36030-0.                             [46] Z. Li, Q. Kang, G. Wang, X. Sui, Y. Liu, S. Luo, Microstructure evolution during hot-
+[38] W. Li, Z. Chen, J. Liu, S. Zhu, G. Sui, Q. Wang, Rolling texture and its effect on                  packed rolling and mechanical properties anisotropy of as-rolled network-
+     tensile property of a near-α titanium alloy Ti60 plate, J. Mater. Sci. Technol. 35                  structured TiBw/TA15 composites, Mater. Sci. Eng. A 849 (2022) 143518, https://
+     (2019) 790–798, https://doi.org/10.1016/j.jmst.2018.10.032.                                         doi.org/10.1016/j.Msea.2022.143518.
+[39] P. Zhao, G. Yuan, R. Wang, B. Guan, Y. Jia, X. Zhang, et al., Grain-refining and               [47] S. Li, S. Li, L. Liu, L. Gao, Y. Fu, X. Zhang, et al., High temperature softening
+     strengthening mechanisms of bulk ultrafine grained CP-Ti processed by L-ECAP                        mechanism of powder metallurgy TA15 alloy, Mater. Sci. Eng. A 877 (2023)
+     and MDF, J. Mater. Sci. Technol. 83 (2021) 196–207, https://doi.org/10.1016/J.                      145160, https://doi.org/10.1016/j.Msea.2023.145160.
+     JMST.2021.01.019.
+
+
+
+
+                                                                                               16
+

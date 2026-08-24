@@ -1,0 +1,819 @@
+Materials Transactions, Vol. 48, No. 11 (2007) pp. 2800 to 2808
+Special Issue on Structural and Functional Control of Materials through Solid-Solid Phase Transformations in High Magnetic Fields
+#2007 The Japan Institute of Metals
+
+
+Annealing Texture and Microstructure Evolution in Titanium
+during Grain Growth in an External Magnetic Field
+Dmitri A. Molodov, Christian Bollmann, Peter J. Konijnenberg,
+Luis A. Barrales-Mora and Volker Mohles
+Institute of Physical Metallurgy and Metal Physics, RWTH Aachen University, D-52056 Aachen, Germany
+
+      The impact of a magnetic ﬁeld (17T) on texture and microstructure evolution in cold rolled (75%) commercially pure titanium was
+investigated. The speciﬁcally oriented titanium sheet specimens were heat treated at 1023 K in a magnetic ﬁeld of 17 T for 60, 120, 180 and 240
+minutes. X-ray diﬀraction and EBSD measurements were utilized to characterize the crystallographic texture and the grain microstructure. The
+magnetic annealing resulted in an asymmetry of the two major texture components that constantly increased with annealing time. This eﬀect is
+attributed to a magnetic driving force for grain growth arising from the anisotropic magnetic susceptibility of titanium. Complementary
+computer simulations of 2D grain growth were employed to analyze the eﬀect of a magnetic ﬁeld on texture and microstruture evolution. EBSD
+measurements as well as the computer simulations revealed that a magnetic ﬁeld aﬀects the grain growth kinetics. Grains with energetically
+preferred orientations grow faster and their fraction becomes larger than the fraction of more slowly growing grains with disfavored
+orientations. [doi:10.2320/matertrans.MI200701]
+
+(Received April 23, 2007; Accepted July 19, 2007; Published September 5, 2007)
+Keywords: grain growth, magnetic annealing, titanium, magnetic anisotropy
+
+
+
+1.   Introduction                                                               diﬀerence of the susceptibilities parallel k and perpendic-
+                                                                                ular ? to the principal (or c) axis of the crystal, 1 and 2 are
+   The mean grain size as well as the grain growth texture, i.e.                the angles between the c-axes in both neighboring grains and
+the resulting orientation distribution of the grains, determines                the magnetic ﬁeld direction. In contrast to the curvature
+to a great extent the physical and mechanical properties of                     driving force, the magnetic one does not depend on the
+polycrystals. Important changes of the grain microstructure                     boundary properties, i.e. on its energy and shape, but is
+and texture of crystalline solids are introduced in the course                  determined by the magnetic anisotropy of the material (),
+of recrystallization and grain growth during a heat treatment                   the strength of the applied magnetic ﬁeld and its orientation
+following plastic deformation.                                                  with respect to the two grains.
+   Grain growth proceeds by the motion of grain boundaries.                        An eﬀective magnetic driving force for each grain in a
+As was shown theoretically1,2) and proved by experiment,3–6)                    polycrystal can be expressed as the diﬀerence between the
+the rate of boundary migration v is proportional to the acting                  magnetic free energy density of this grain ! and an average
+driving force p                                                                 magnetic free energy density ! of its neighboring grains that
+                                                                                according to eq. (3) can be written as
+                                v ¼ mp;                                 ð1Þ                                                         !
+                                                                                                            0 H2         1X n
+where m is referred to as the grain boundary mobility.                                     pm ¼ !  ! ¼                       j
+   Polycrystals are always liable to grain growth owing to a                                                   2          n j
+                                                                                                              0                        1
+driving force arising from the curvature of the grain                                                                     Xn
+                                                                                                                                  2
+boundaries. This driving force is caused by the free energy                                                   B               cos    jC
+                                                                                                  1           @            j           A
+of the boundary itself since grain boundary motion towards                                                  2
+                                                                                               ¼ 0 H cos      2
+                                                                                                                                               ð4Þ
+its center of curvature leads to a reduction of grain boundary                                    2                            n
+area. Each boundary segment with the energy  and the local                     where  and j are the angles between the ﬁeld direction and
+curvature  experiences a force per unit area                                   principal axes of the considered grain and its n neighboring
+                                                                                grains. For instance, if  > 0 and for P      the grain and its
+                                 pbc ¼                                ð2Þ
+                                                                                surrounding the condition cos2   1=n  nj cos2 j < 0 is
+When a magnetically anisotropic crystalline solid with                          completed, the magnetic energy density in this grain is lower
+susceptibility   1 is exposed to a uniform magnetic ﬁeld                      than the average energy density of the adjacent grains
+an additional magnetic driving force pbm arises owing to the                    (! < ! ) and the magnetic driving force (pm < 0) favors the
+diﬀerence of the magnetic energy density ! in adjacent                          growth of this grain. Thus for each grain in the polycrystal
+grains7)                                                                        depending on particular grain orientation with regard to its
+                                                                                nearest neighbors and ﬁeld direction, the magnetic force can
+                                      0 H 2
+               pbm ¼ !1  !2 ¼               ð1  2 Þ                         act on its boundaries both with and against the curvature
+                                        2                                       forces.
+                       1
+                   ¼     0 H 2 ðcos2 1  cos2 2 Þ;                 ð3Þ        The orientation dependence of the magnetic driving force
+                       2                                                        provides an opportunity to inﬂuence and, therefore, to control
+where 0 is the magnetic constant, H is the magnetic ﬁeld                       development of the grain orientation distribution in a
+strength, 1 and 2 are the magnetic susceptibilities of                        polycrystal, i.e. crystallographic texture during grain growth,
+adjacent grains 1 and 2 along the ﬁeld direction,  is the                     by means of magnetic annealing. Experimentally this was
+                                                 Impact of a Magnetic Field on Grain Growth in Titanium                                                                                                        2801
+
+
+
+
+                                                                               Normalized Grain Area, <S>(t)/<S(0)
+                                H
+
+
+
+
+                                                                                                                                                       Area Change, (dS/dt)(γ mb ) -1
+                                                                                                                                                       Normalized Rate of Grain
+                                                                                                                                                                                        Topological Class, n
+
+                                                ND
+                                                                                                                     Normalized Time, t γ mb /<S(0)>
+
+                                                                                                                                 a                                                              b
+                               90°
+                                          32°
+                                                                               Fig. 2 (a) Computed normalized grain area S(t)/S(0) vs. time and (b) the
+                                                                                 rate of grain area change as function of the topological class n of a grain.
+
+
+                            RD           TD
+                                                                                  The experiments were carried out using a direct current
+                                                                               resistive 20 T Bitter magnet with a 195 mm bore diameter at
+                                                                               the National High Magnetic Field Laboratory in Tallahassee,
+                                                                               Florida, USA.
+Fig. 1 Orientation of specimens during magnetic annealing with respect to
+  the ﬁeld direction H. The rolling direction (RD) is oriented normal to the
+  magnetic ﬁeld; the transverse direction (TD) is tilted by 32 about RD to
+                                                                               2.2    Texture measurements and grain microstructure
+  have in one of the two texture components the c-axis perpendicular to the           characterization
+  ﬁeld direction.                                                                 Texture and microstructure were characterized by X-ray
+                                                                               diﬀraction and orientation imaging microscopy (EBSD with
+ﬁrst demonstrated for grain growth in diamagnetic zinc.8)                      HKL Channel 5 software in a FEG-SEM). The orientation
+More recent experiments revealed that texture development                      distribution functions (ODFs) were determined from a set of
+in paramagnetic titanium can also be substantially aﬀected by                  six incomplete pole ﬁgures f0002g, f101 0g, f112 0g, f101 1g,
+annealing in a high magnetic ﬁeld.9,10) In the current study                   f101 2g and f101 3g measured with Co K radiation by means
+further experimental and computational investigations into                     of a fully automated texture goniometer in back reﬂection
+the magnetically aﬀected microstructure evolution during                       mode. The ODFs were computed by using the series
+grain growth in titanium were conducted.                                       expansion method with positivity criterion.11,12) The sample
+                                                                               symmetry was regarded triclinic to account for asymmetric
+2.   Applied Methods                                                           textures after annealing in the magnetic ﬁeld. Details
+                                                                               concerning the sample preparation for macrotexture meas-
+2.1 Specimens and magnetic annealing                                           urements are given elsewhere.9) The samples for EBSD
+   Commercially pure (cp) titanium with a chemical compo-                      measurements were additionally electrolytically polished in a
+sition and an initial microstructure given in Ref. 9) was used                 solution of 300 ml CH3 OH, 180 ml C6 H14 O2 , 30 ml HClO4
+in the experiment. A sheet (4.4 mm in thickness) of this                       and 1 ml Vogel-Sparbeize (proprietary product of Buehler
+material was rolled at room temperature to a ﬁnal thickness of                 company).
+1.1 mm, equivalent to a reduction of 75%. The cold rolled
+specimens were annealed at 1023 K in a magnetic ﬁeld                           2.3 2D modeling of grain growth
+of 17 T for 60, 120, 180 and 240 minutes. Prior to the                            We employed complementary computer simulations of 2D
+application of the magnetic ﬁeld all specimens were annealed                   grain growth to analyze the eﬀect of a magnetic ﬁeld on
+for 15 min at 1023 K to allow for complete recrystallization                   texture and microstruture evolution in titanium. The simu-
+and to make sure that the application of a magnetic ﬁeld                       lation algorithm is based on vertex and front-tracking models
+occurred at an advanced stage of conventional grain growth.                    which are most appropriate for curvature driven grain
+Reference specimens were annealed at the same temperature                      growth.13–16) The grain structure in this algorithm is repre-
+for the same time without any magnetic ﬁeld. Also, some                        sented by diﬀerently oriented grains, separated by boundaries
+specimens were annealed for 15 min at 1023 K at zero ﬁeld to                   that intersect at triple junctions (real vertices). The grain
+characterize the microstructure of the specimens just prior to                 boundaries in turn consist of points (virtual vertices) along
+the application of the magnetic ﬁeld. To avoid an oxidation,                   the boundary length according to the boundary curvature.17)
+the specimens were encapsulated in a vacuum of 2  105 Pa                     During grain growth without an external ﬁeld all virtual
+in quartz tubes before annealing. A platinum resistance                        vertices move under the local curvature driving force p ¼
+temperature detector placed outside the tube in close vicinity                 pc ¼    perpendicular to the boundary. In the presence of a
+to the specimens was utilized for temperature control.                         magnetic ﬁeld the kinetic equation of boundary motion v ¼
+   In order to aﬀect the texture and microstructure evolution                  mb p is solved for all virtual vertices with a driving force p
+by a magnetic ﬁeld, the specimens were oriented during                         equal to the sum of curvature and magnetic driving forces
+magnetic annealing as shown in Fig. 1. The rolling direction                   p ¼ pc þ pm , where pm is calculated according to eq. (3).17)
+was oriented perpendicular to the ﬁeld, whereas the trans-                        Figure 2 depicts the simulated grain size evolution of a 2D
+verse direction was tilted around the rolling direction by 32                 polycrystal at zero ﬁeld, i.e. under a pure curvature driving
+with respect to the ﬁeld direction. A tilt angle of 32 makes                  force. Figure 2(a) shows the computed time dependence of
+one of the two texture components to have the c-axis                           the normalized mean grain area. The mean grain area is seen
+perpendicular to the ﬁeld direction.9)                                         to increase linearly with annealing time (Fig. 2(a)). This
+2802                                              D. A. Molodov, C. Bollmann, P. J. Konijnenberg, L. A. Barrales-Mora and V. Mohles
+
+                    RD                                    ϕ2                                 ϕ2                     {0002}         RD                                         ϕ2                                                ϕ2
+     {0002}                                   0                        60        0                        60                                                 0                                          60        0                                   60
+                                         0                                  0                                                                           0                                                    0
+
+
+
+                                                          2.0
+                                                                 4.0                               4.0
+                                                                                            2.0
+                                                   4.0
+                                                                                      4.0
+                                                                                                                                                        Φ                                                    Φ
+                                                                                                                                                                                                                                12.0
+TD                                       Φ                                  Φ                                  TD                                                       12.0
+                                                                                                                                                                      7.0                                                 7.0
+                                                                                                                                                                        4.0                                                            4.0
+                                                                                                                                                                                                                                2.0
+                                                                                                                                                                                    2.0
+
+
+
+
+                                         90                                 90                                                                          90                                                   90
+     Intensity levels: 1.0 1.5 2.0 3.0                                                                              Intensity levels: 1.0 3.0 6.0 9.0
+        (max 3.5)                                 Constant ϕ1 = 180°                 Constant ϕ1 = 0°                  (max 13.6) 12.0                           Constant ϕ1 = 180°                                   Constant ϕ 1 = 0°
+
+                                                                                                                    {0002}         RD                                         ϕ2                                                ϕ2
+                    a                                     b                                  c                                                               0                                          60        0                                   60
+                                                                                                                                                        0                                                    0
+
+
+Fig. 3 Texture of investigated titanium after 75% reduction by rolling: (a)
+  (0002) pole ﬁgure, ODF sections at (b) ’1 ¼ 180 and (c) ’1 ¼ 0 .                                           TD                                       Φ                             20.0
+                                                                                                                                                                                                             Φ
+                                                                                                                                                                                                                                12.0
+
+                                                                                                                                                                              12.0         7.0                            7.0
+                                                                                                                                                                                           4.0                                         4.0
+                                                                                                                                                                                                                                2.0
+
+                                                                                                                                                                                    2.0
+
+
+
+
+behavior is characteristic for curvature driven normal grain                                                                                            90                                                   90
+                                                                                                                    Intensity levels: 1.0 3.0 6.0 9.0
+                                                                                                                                                                 Constant ϕ 1 = 180°                                  Constant ϕ 1 = 0°
+growth in homogeneous systems (constant grain boundary                                                                 (max 14.0) 12.0
+
+
+energy and mobility). Furthermore, it was assessed whether                                                                          a                                          b                                                c
+the model reproduces the topological microstructure evolu-
+                                                                                                               Fig. 4 (a) (0002) pole ﬁgures and ODF sections at (b) ’1 ¼ 180 and (c)
+tion according to the von Neumann-Mullins relation,18)                                                           ’1 ¼ 0 for specimens annealed at 1023 K for 75 min (top) and for 15 min
+which connects the rate of grain area change dS=dt to the                                                        at zero ﬁeld plus 60 min in a magnetic ﬁeld of 17 T (bottom).
+topological class n of a grain (Fig. 2(b)). The agreement
+between the classical relation18)
+                                                                                                                    {0002}        RD                                          ϕ2                                                ϕ2
+                   dS mb                                                                                                                              0
+                                                                                                                                                             0                                          60
+                                                                                                                                                                                                              0
+                                                                                                                                                                                                                  0                                  60
+
+                      ¼       ðn  6Þ  1:047mb ðn  6Þ                                                 ð5Þ
+                   dt   3
+                                                                                                                                                                                                                                            12.0
+
+
+and the linear ﬁt of the simulated results dS=dt ¼                                                             TD                                       Φ                 12.0
+                                                                                                                                                                                                 12.0        Φ
+                                                                                                                                                                                                                                              7.0
+                                                                                                                                                                          7.0                     4.0
+
+1:044mb ðn  6:0029Þ is excellent. The results convincingly                                                                                                                         2.0                                                      2.0    4.0
+
+
+
+
+demonstrate the capability of the used simulation model to
+study grain growth in homogeneous 2D systems.                                                                       Intensity levels: 1.0 3.0 6.0 9.0
+                                                                                                                                                        90
+                                                                                                                                                                 Constant ϕ 1 = 180°
+                                                                                                                                                                                                             90
+                                                                                                                                                                                                                      Constant ϕ1 = 0°
+                                                                                                                       (max 12.9) 12.0
+
+                                                                                                                    {0002}         RD                                         ϕ2                                                ϕ2
+                                                                                                                                                             0                                          60        0                                   60
+3.      Magnetically Aﬀected Texture and Grain Structure                                                                                                 0                                                    0
+                                                                                                                                                                                    2.0                                                        2.0
+
+        Evolution                                                                                                                                                       7.0
+                                                                                                                                                                     12.0
+                                                                                                                                                                              4.0
+                                                                                                                                                                                                                                      4.0
+
+                                                                                                                                                                                                                                        7.0
+                                                                                                                                                                                                                                 12.0
+                                                                                                                                                                                          20.0
+
+
+                                                                                                               TD                                       Φ                                                    Φ
+3.1   Texture evolution during grain growth in magnetic
+      ﬁeld
+   The cold-rolling texture with two symmetrical peaks in the                                                       Intensity levels: 1.0 3.0 6.0 9.0
+                                                                                                                                                        90                                                   90
+                                                                                                                                                                 Constant ϕ 1 = 180°                                  Constant ϕ 1 = 0°
+(0002) pole ﬁgure (Fig. 3) measured after 75% reduction is                                                             (max 16.8) 12.0 15.0
+
+
+very similar to those already reported in literature for low                                                                       a                                           b                                                c
+alloyed titanium.19,20) As seen in the ’1 ¼ 0 and ’1 ¼ 180                                                   Fig. 5 (a) (0002) pole ﬁgures and ODF sections at (b) ’1 ¼ 180 and (c)
+ODF sections (Figs. 3(b), (c)), two major ODF peaks are                                                          ’1 ¼ 0 for specimens annealed at 1023 K for 135 min (top) and for 15 min
+widely spread around the orientations (’1 , , ’2 ) = {(0,35,0)                                                  at zero ﬁeld plus 120 min in a magnetic ﬁeld of 17 T (bottom).
+and (180,35,0)} in Euler space.
+   The grain growth texture after 15 min and subsequent
+60 min annealing at 750 is characterized by the highest                                                       about 65% of the zero ﬁeld intensity. The texture asymmetry
+ODF density at (0,35,30) and (180,35,30) (Fig. 4). The ODF                                                     continuously increases with annealing time. After magnetic
+sections ’1 ¼ 0 and ’1 ¼ 180 depict, however, that the                                                       annealing for 240 min the intensity ratio of both major ODF
+ODF density remains high in the entire angular range of ’2 . It                                                peaks amounts to 3.5 (Fig. 7). However, since a magnetic
+is worth noting that a similar texture was also measured for                                                   ﬁeld aﬀects the intensity of all orientations with ’1 ¼ 0 /
+the reference specimen annealed at 1023 K for 15 min.                                                          180 and  ¼ 35 in the entire interval of ’2 , a more
+   With the progressing grain growth at 1023 K (120 and                                                        appropriate way to reveal the magnetically induced texture
+180 min) the (0002) pole ﬁgure remains nearly symmetrical                                                      anisotropy and its increase with annealing time is to compare
+(Fig. 5 and 6) with the major ODF peaks shifted towards                                                        the (0002) pole density of both major peaks centered around
+(0,35,40) and (180,35,40).                                                                                     (0,35,’2 ) and (180,35,’2 ) (Fig. 8).
+   The application of a magnetic ﬁeld of 17 T after 15 min                                                        The development of an asymmetrical texture during
+conventional annealing dramatically aﬀects the texture                                                         magnetic annealing is obviously caused by the additional
+evolution during grain growth. As also observed in our                                                         magnetic driving force during grain growth. During magnetic
+previous experiments,9) the peaks in the (0002) pole ﬁgures                                                    annealing the specimens were oriented in such a manner that
+do not remain symmetrical anymore. After magnetic anneal-                                                      the c-axes of the grains which compose a texture peak around
+ing for 60 min the ODF intensity at (180,35,30) exceeds the                                                    the orientations (180,35,’2 ) were aligned perpendicular to
+corresponding intensity after annealing at zero ﬁeld by a                                                      the ﬁeld direction. With the diﬀerence in magnetic suscepti-
+factor of 1.34, whereas the intensity at (0,35,30) decreases to                                                bility parallel and perpendicular to the c-axis  > 0 for
+                                                                                                        Impact of a Magnetic Field on Grain Growth in Titanium                                                                                         2803
+
+                     RD                                            ϕ2                                                              ϕ2                                                                     ϕ1=180°           18            ϕ1=0°
+      {0002}                                    0                                                  60                 0                                     60
+
+
+
+
+                                                                                                                                                                                   <0002> pole density
+                                            0                                                                     0                                                                                                         15
+
+                                                                                                                                                                                                                            12
+                                                    12.0                                12.0
+
+TD                                         Φ                7.0                                                  Φ                                   12.0
+                                                                                                                                                                                                                             9
+                                                    4.0
+                                                                                                                                          7.0
+                                                           2.0                                                                          4.0          2.0
+                                                                                                                                                                                                                             6
+
+                                                                                                                                                                                                                             3
+
+                                           90                                                                    90                                                                                                          0
+     Intensity levels: 1.0 3.0 6.0 9.0
+        (max 11.9)                                  Constant ϕ 1 = 180°                                                   Constant ϕ 1 = 0°                                        90                      60       30           0   30      60   90
+
+                    RD                                             ϕ2                                                              ϕ2                                                                                Angle Φ / deg
+      {0002}                                    0                                                  60                 0                                     60
+                                            0                                                                     0
+                                                                                                                                                                                                                                 a
+                                                                                                                                                                                                          ϕ1=180°          18             ϕ1=0°
+
+
+
+
+                                                                                                                                                                                   <0002> pole density
+                                                                                20.0                                                                                                                                       15
+                                           Φ                                                                     Φ
+                                                                                                                                        12.0
+TD                                                                                   12.0                                                      7.0
+
+                                                                                       4.0
+                                                                                              7.0                                              4.0
+                                                                                                                                                                                                                           12
+                                                                                             2.0                                                2.0
+
+
+                                                                                                                                                                                                                            9
+
+                                                                                                                                                                                                                            6
+                                           90                                                                    90
+     Intensity levels: 1.0 3.0 6.0 9.0
+                                                    Constant ϕ 1 = 180°                                                   Constant ϕ 1 = 0°
+        (max 17.6) 12.0 15.0 17.0                                                                                                                                                                                           3
+
+                     a                                              b                                                              c                                                                                        0
+                                                                                                                                                                                   90                      60       30           0   30     60    90
+                                                                                                                                                                                                                     Angle Φ / deg
+Fig. 6 (a) (0002) pole ﬁgures and ODF sections at (b) ’1 ¼ 180 and (c)
+  ’1 ¼ 0 for specimens annealed at 1023 K for 195 min (top) and for 15 min                                                                                                                                                      b
+  at zero ﬁeld plus 180 min in a magnetic ﬁeld of 17 T (bottom).                                                                                                                                          ϕ1=180°          18             ϕ1=0°
+
+
+
+
+                                                                                                                                                                                   <0002> pole density
+                                                                                                                                                                                                                           15
+
+                                                                                                                                                                                                                           12
+
+                                                                                                                                                                                                                            9
+      {0002}         RD                                            ϕ2                                                              ϕ2
+                                                0                                                  60                 0                                     60
+                                            0                                                                     0                                                                                                         6
+                                                                        2.0
+                                                                  4.0
+                                                                                                                                        2.0                                                                                 3
+                                                                 7.0
+                                                                                                                                         4.0
+                                                                  12.0        20.0
+                                                                                                                                 7.0
+                                                                                                                                                                                                                            0
+                                           Φ                                                                     Φ
+                                                                                        30.0
+TD
+                                                                                                                                                                                   90                      60       30           0   30      60   90
+                                                                                                                                                                                                                         Angle Φ / deg
+                                                                                                                                                                                                                                 c
+                                           90                                                                    90                                                                                       ϕ1=180°          18             ϕ1=0°
+  Intensity levels: 1.0 3.0 6.0 9.0 12.0
+                                                                                                                                                                                   <0002> pole density
+
+
+
+
+     (max 21.4) 15.0 18.0 21.0                      Constant ϕ 1 = 180°                                                   Constant ϕ 1 = 0°
+                                                                                                                                                                                                                           15
+
+                     a                                                 b                                                           c                                                                                       12
+
+                                                                                                                                                                                                                            9
+                                                                                                                                  
+Fig. 7 (a) (0002) pole ﬁgures and ODF sections at (b) ’1 ¼ 180 and (c)
+                                                                                                                                                                                                                            6
+  ’1 ¼ 0 for specimens annealed at 1023 K for 15 min at zero ﬁeld and
+  240 min in a magnetic ﬁeld of 17 T.                                                                                                                                                                                       3
+
+                                                                                                                                                                                                                            0
+                                                                                                                                                                                   90                      60       30           0   30     60    90
+                                                                                                                                                                                                                     Angle Φ / deg
+titanium, the magnetic free energy density of these grains                                                                                                                                                                       d
+attains a minimum that results in an additional driving force                                                                                                                                             ϕ1=180°          24             ϕ1=0°
+                                                                                                                                                                                    <0002> pole density
+
+
+
+
+                                                                                                                                                                                                                           21
+for their growth (pm < 0).
+                                                                                                                                                                                                                           18
+   As seen in Fig. 8, an increase of the (180,35,’2 ) peak                                                                                                                                                                 15
+
+intensity during magnetic annealing corresponds to a de-                                                                                                                                                                   12
+                                                                                                                                                                                                                            9
+crease of the intensity of the (0,35,’2 ) peak. This means that
+                                                                                                                                                                                                                            6
+on average grains close to the energetically favorable                                                                                                                                                                      3
+
+orientations (180,35,’2 ) (pm < 0) grow at the expense of                                                                                                                                                                   0
+                                                                                                                                                                                   90                      60       30           0   30     60    90
+grains close to (0,35,’2 ), whose free energy is increased in a                                                                                                                                                      Angle Φ / deg
+magnetic ﬁeld by the amount pm > 0 (eq. (3)). Accordingly,                                                                                                                                                                       e
+grains with the (180,35,’2 ) orientations can be expected to
+grow signiﬁcantly larger than grains comprising the other                                                                                                        Fig. 8 (0002) pole density along TD (Figs. 5–8) for 75%-rolled Ti sheet
+peak.                                                                                                                                                              samples after annealing at 1023 K (a) for 75 min without ﬁeld; (b) for
+                                                                                                                                                                   15 min at zero ﬁeld and 60 min, (c) 120 min, (d) 180 min, (e) 240 min in a
+   Figure 9 shows the texture development in a 2D-poly-                                                                                                            magnetic ﬁeld of 17 T.
+crystal as obtained by computer simulations of 2D grain
+growth. These simulations made use of the actual exper-
+imental conditions. The initial microstructure and texture was                                                                                                   depending on their surroundings, grains close to (180 ,
+reconstructed from individual orientation data (EBSD map-                                                                                                        35 ,’2 ) will experience an additional force to grow (pm < 0),
+ping) measured on a Ti specimen annealed for 15 min at                                                                                                           since their c-axes are aligned nearly normal to the ﬁeld
+1023 K (Table 1). Grain boundary energy and mobility were                                                                                                        direction and thus, contain the smallest magnetic energy
+assumed to be uniform. The magnetic energy density was                                                                                                           density.
+computed for each grain and the condition that the magnetic                                                                                                         The results of simulations quantitatively agree with
+ﬁeld was applied perpendicular to the rolling direction of the                                                                                                   experimental observations. After annealing at zero ﬁeld the
+specimen and inclined 32 from the transverse direction, as                                                                                                      simulated texture remains symmetrical (Fig. 9(b)), whereas
+indicated by a cross in the pole ﬁgure in Fig. 9(c). Therefore,                                                                                                  after magnetic annealing the (180,35,’2 ) texture peak with
+2804                                D. A. Molodov, C. Bollmann, P. J. Konijnenberg, L. A. Barrales-Mora and V. Mohles
+
+                                                                                     the sheet normal (ND). In this case grains with c-axis parallel
+                                                                                     to the (’1 ,90,’2 ) orientations (i.e. with c-axes perpendicular
+                                                                                     to ND) possess a minimum magnetic free energy and
+                                                                                     therefore experience an additional driving force for their
+                                                                                     growth (pm < 0). This results in a texture with maximum
+                                                                                     (0002) pole intensity at (’1 ,90,’2 ) and minimum at (’1 ,0,’2 )
+                                                                                     (Fig. 10(b)). Second, a magnetic ﬁeld was directed parallel to
+                                                                                     the rolling direction (RD). Correspondingly, a maximum
+               a                        b                          c                 magnetic energy was generated in grains with the c-axis
+                                                                                     aligned along (90,90,’2 ) (i.e. RD), and the magnetic driving
+Fig. 9 (a) (0002) pole ﬁgure of a 75%-rolled Ti sheet sample after
+  annealing at 1023 K for 15 min; (b) and (c) - simulated pole ﬁgures after
+                                                                                     force promoted their shrinkage (pm > 0), whereas in grains
+  subsequent 10 min annealing for a 2D Ti-polycrystal without ﬁeld (b) and           with the c-axis perpendicular to RD (i.e. aligned along (0/
+  in a magnetic ﬁeld of 17 T (c) (ﬁeld direction is indicated by a white cross).     180,,’2 )) this force favored their expansion (pm < 0). As a
+                                                                                     consequence, a texture with a maximum intensity at (0/
+                                                                                     180,,’2 ) developed (Fig. 10(c)). The simulations substan-
+c-axes perpendicular to the ﬁeld becomes much stronger than                          tiate that the texture evolution during grain growth in a
+the other peak (Fig. 9(c)).                                                          magnetic ﬁeld of magnetically anisotropic titanium is due to
+   The ability of a magnetic ﬁeld to produce preferred                               an additional orientation dependent magnetic driving force.
+orientations in a polycrystal during grain growth is perfectly
+captured by computer simulations, where a magnetic ﬁeld                              3.2  Grain microstructure development during grain
+was applied to a 2D polycrystal with initially random                                     growth in a magnetic ﬁeld
+orientation distribution (Fig. 10(a)). The initial grain micro-                         The magnitude of the texture peaks obtained by X-ray
+structure for these simulations was generated by means of                            diﬀraction is determined by the total area of grains having a
+Voronoi tesselation and consisted of 20000 grains with                               respective orientation. Macrotexture measurements therefore
+normally distributed grain size. To prove that the produced                          do not render information on the grain microstructure with
+texture was caused exclusively by the magnetic ﬁeld, the                             respect to grain size and number of grains making up
+simulations were performed for two diﬀerent specimen                                 diﬀerent texture components. This information can, however,
+orientations. First, the magnetic ﬁeld was applied parallel to                       be obtained by orientation imaging with EBSD. Since the
+
+
+         Table 1 Mean grain size, number of grains and fraction of diﬀerent grain subsets as obtained by orientation microscopy (EBSD in a
+           SEM).
+
+                                            Total number of                                     Mean grain size,       Number of          Grain
+        Time              Field                                            Subset
+                                                 grains                                              mm                  grains          fraction
+                                                                             both                     39                 8207             0,98
+       15 min              0T                    8648                   {0 ,35 ,8’2 }               39                 4321             0,50
+                                                                       {180 ,35 ,8’2 }              40                 3981             0,46
+                                                                             both                     83                 6371             0,98
+                           0T                    6532                   {0 ,35 ,8’2 }               82                 3276             0,50
+        (15)                                                           {180 ,35 ,8’2 }              83                 3095             0,48
+         +
+       60 min                                                                both                     87                 5619             0,98
+                          17 T                   5919                   {0 ,35 ,8’2 }               85                 2598             0,44
+                                                                       {180 ,35 ,’2 }               88                 3021             0,54
+                                                                             both                     103                4268             0,98
+                           0T                    4407                   {0 ,35 ,8’2 }               104                2328             0,54
+         (15)                                                          {180 ,35 ,8’2 }              102                1940             0,43
+          +
+       120 min                                                               both                     109                3337             0,98
+                          17 T                   3539                   {0 ,35 ,8’2 }               102                1369             0,34
+                                                                       {180 ,35 ,8’2 }              116                1968             0,64
+                                                                             both                     118                2898             0,98
+                           0T                    3026                   {0 ,35 ,8’2 }               117                1704             0,57
+         (15)                                                          {180 ,35 ,8’2 }              118                1194             0,41
+          +
+       180 min                                                               both                     126                2447             0,99
+                          17 T                   2569                   {0 ,35 ,8’2 }               116                992              0,33
+                                                                       {180 ,35 ,8’2 }              135                1455             0,66
+         (15)                                                                both                     139                1850             0,98
+          +               17 T                   1976                   {0 ,35 ,8’2 }               126                593              0,24
+       240 min                                                         {180 ,35 ,8’2 }              152                1257             0,74
+                                                 Impact of a Magnetic Field on Grain Growth in Titanium                                                                                                                                                     2805
+
+
+
+
+                                                                                                                          a                                                                                                   b
+
+            a                         b                        c
+
+Fig. 10 Simulated texture development during grain growth in a 2D Ti-
+  polycrystal in a magnetic ﬁeld. (0002) pole ﬁgures for the specimen (a)
+  with an initially random texture and for the same specimen after 25 min
+  annealing in a magnetic ﬁeld of 20 T parallel to (b) the sheet normal (ND)
+  and (c) the rolling direction (RD).
+                                                                                                                          c                                                                                                   d
+
+
+observed textures in the current experiments were charac-
+terized by a high ODF density at the (0/180,35,’2 ), it is
+reasonable to subdivide the whole set of grains into two
+subsets with orientations around (0,35,’2 ) and (180,35,’2 ).
+These two subsets represent the two texture peaks in the
+(0002) pole ﬁgures in Figs. 4–8. For an assignment of the
+                                                                                                                          e                                                                                                   f
+grains to one of the two subsets a cut-oﬀ radius of 35 per
+subset was applied. An overlapping of subsets was avoided
+                                                                                                                      other grains
+by the restrictive condition that each orientation can belong
+to only one, the nearest, subset. The result is given in Table 1                                                   subset (0,35,ϕ2)
+
+and Fig. 11. Since the observed texture is rather sharp a
+threshold grain misorientation of 3 was used to delimitate                                                       subset (180,35,ϕ 2)
+
+diﬀerent grains.
+   The results reveal that the overall growth kinetics of all                                                                                                         g
+grains (Fig. 12), are enhanced by a magnetic ﬁeld. In the
+entire investigated annealing time interval the mean grain                     Fig. 11 Grain microstructures obtained by orientation imaging with EBSD
+size after magnetic annealing was found to be slightly but                       after annealing at 1023 K for (a) 75 min, (c) 135 min and (e) 195 min at
+distinctly larger than after annealing at zero ﬁeld. In both                     zero ﬁeld and for 15 min at zero ﬁeld and (b) 60 min, (d) 120 min, (f)
+                                                                                 180 min and (g) 240 min in a magnetic ﬁeld of 17 T.
+cases the growth kinetics follows a relation d     ¼ ktn , where d
+and t denote the mean grain size and the annealing time,
+respectively. The magnitude of the exponent n for magnetic                                                 180                                                                                        180
+
+                                                                                                           160                                                                                        160
+annealing at 17T, n17T ¼ 0:39, was obtained by a linear ﬁt of
+                                                                               Mean Grain Size, <D> / µm
+
+
+
+
+                                                                                                                                                                          Mean Grain Size, <D> / µm
+
+
+
+
+                                                                                                           140                                                                                        140
+
+the diagram in Fig. 12 and was found to be slightly higher                                                 120                                                                                        120
+                                                                                                                                                                                                             (180,35,ϕ 2)
+
+
+than the exponent n0T ¼ 0:37 for zero ﬁeld annealing. As                                                   100                                                                                        100                                      all grains
+
+seen in Table 1, there is no diﬀerence in the growth kinetics
+                                                                                                                                                                                                      80              (0,35,ϕ 2)
+                                                                                                           80
+for grains in diﬀerent grain subsets in specimens annealed
+without ﬁeld. By contrast, as expected from results of                                                     60
+                                                                                                                                                                                                      60
+                                                                                                                                                                                                        60       90         120        150   180   210 240 270 300
+                                                                                                             60     90        120       150   180   210 240 270 300
+macrotexture measurements (Fig. 8), in specimens annealed                                                                 Time, t / min
+                                                                                                                                                                                                                         Time, t / min
+
+in a magnetic ﬁeld the mean size of grains in the subset                                                                            a                                                                                              b
+(180,35,’2 ) was larger than in the subset (0,35,’2 ).
+Figure 12(b) illustrates that the growth kinetics in the grain                 Fig. 12 Mean grain size vs. annealing time (a) for specimens annealed at
+                                     ð180;35;’2 Þ                                1023 K at zero ﬁeld (open symbols) and in a ﬁeld of 17 T (solid symbols)
+subset (180,35,’2 ) are faster (n17T              ¼ 0:44) than the
+                                                                                 and (b) in diﬀerent grain subsets in specimens during magnetic annealing.
+average kinetics of all grains, whereas growth is retarded for
+                                  ð0;35;’2 Þ
+grains in the subset (0,35,’2 ) (n17T        ¼ 0:32).
+                                                                                2
+   A qualitatively very similar behaviour, i.e. that a magnetic                dð0;35;’ 2Þ
+                                                                                           ¼ 1:45, whereas the ratio of the pole intensity for
+ﬁeld slows down or increase the growth rate of diﬀerently                      both texture components in Fig. 8(e) amounts to 4.3. As
+oriented grains, is also obtained by a computer simulation of                  given in Table 1 and illustrated in Fig. 14, a magnetic
+magnetically aﬀected grain growth in a 2D polycrystal                          annealing also results in a substantial change of the number
+(Fig. 13).                                                                     of grains in both grain subsets. The two major texture peaks
+   However, the observed texture anisotropy after magnetic                     in the (0002) pole ﬁgures after annealings without ﬁeld are
+annealing can not be completely justiﬁed by this relatively                    not completely symmetric (Figs. 4–6) which is reﬂected by
+slight diﬀerence in the mean size of grains in diﬀerent grain                  the non-equal number of grains in the respective subsets: the
+subsets. For instance, the ratio of the mean grain area in both                grain fraction in subset (0,35,’2 ) was slightly larger than this
+                                                          2
+subsets after 240 min magnetic annealing is dð180;35;’          2Þ
+                                                                   =           in subset (180,35,’2 ) (Table 1). However, after magnetic
+2806                                                 D. A. Molodov, C. Bollmann, P. J. Konijnenberg, L. A. Barrales-Mora and V. Mohles
+
+       Mean Grain Size, <D> / µm
+
+
+
+
+                                                                                                 Grain Fraction
+
+
+
+
+                                                                                                                                       Grain Fraction
+                                                                                                                   Time, t / s                          Time, t / s
+
+                                                                                                                       a                                    b
+                                                      Time, t / s
+
+
+
+
+                                                                                                                                       Grain Fraction
+                                                                                                Grain Fraction
+Fig. 13 Grain growth kinetics obtained by computer simulations for
+  magnetically annealed specimen.
+
+
+
+                                    1
+                                                                                                                  Time, t / min                         Time, t / min
+
+                                   0.8
+                                                                                                                       c                                    d
+          Grain Fraction
+
+
+
+
+                                                                                               Fig. 15 Computed grain fractions in diﬀerent grain subsets vs. annealing
+                                   0.6
+                                                                                                 time at zero ﬁeld and in a ﬁeld of 17 T. (a) and (b) – grain subsets
+                                                                                                 (180,35,’2 ) and (0,35,’2 ), respectively; initial grain structure – micro-
+                                   0.4                                                           structure after 15 min annealing of the 75%-rolled Ti sheet at 1023 K; the
+                                                                                                 magnetic ﬁeld was directed as shown in Fig. 9. (c) and (d) – grain subsets
+                                   0.2                                                           (’1 ,90,’2 ) and (all other grains); magnetic ﬁeld was directed along the
+                                                                                                 sheet normal and applied to the grain structure with random orientation
+                                    0                                                            distribution.
+                                     30   60   90   120   150       180   210   240   270
+                                                     Time, t / min
+
+Fig. 14 Grain fractions in the (180,35,’2 ) (solid symbols) and (0,35,’2 )                     ing both texture peaks in the (0002) pole ﬁgures after
+  (open symbols) subsets after anealing at 1023 K in a magnetic ﬁeld of 17 T.                  magnetic annealing (Figs. 4–7) can be attributed to magneti-
+                                                                                               cally shifted grain growth kinetics. As shown in our previous
+                                                                                               study,21) the Hillert relation22) for the growth rate of grains
+annealing the grains in the energetically favored subset                                       with size R in the presence of a magnetic ﬁeld can be
+(180,35,’2 ) substantially outnumber the grains in the                                         extended to
+disfavored subset (0,35,’2 ) (Fig. 14).                                                                               dR         1 1
+   The same behaviour is also captured by computer                                                                       ¼ mb ð  Þ  mb pm                           ð6Þ
+simulations. As shown in Fig. 15(a)–(b), the fraction of the                                                          dt         R R
+energetically favored grain subset (180,35,’2 ) (pm < 0)                                       where  and mb are the grain boundary energy and mobility
+increases during the annealing in the ﬁeld, whereas the                                        (equal for all grain boundaries), and  is a dimensionless
+fraction of the (0,35,’2 ) grain subset decreases. If a magnetic                               constant. In contrast to the classical Hillert approach, the
+ﬁeld is applied parallel to the sheet normal (ND) (see Fig. 10)                                mean grain size R is not the critical size of grains which
+and therefore grains with  ¼ 90 have the minimum                                             neither grow nor shrink anymore. If grain growth occurs in a
+magnetic free energy, similar results are obtained for the                                     magnetic ﬁeld, the threshold grain size Rth can be expressed
+change of grain fractions in (’1 ,90,’2 ) and (all other grains)                               as21)
+subsets (Fig. 15(c)–(d)).                                                                                                      R
+   Therefore, the analysis of individual orientation measure-                                                        Rth ¼                              ð7Þ
+                                                                                                                                R pm
+ments and the results of computer simulations reveal that a                                                                 1
+magnetic ﬁeld aﬀects the grain growth kinetics in such a way                                                                     
+that the growth of grains with energetically favored orienta-                                  Due their ‘‘high energy’’ orientations, grains comprising the
+tions is enhanced, whereas the growth of grains with                                           (0,35,’2 ) texture peak on average experience a positive
+disfavored orientations is retarded. Moreover, grains with                                     magnetic driving force, pm > 0, while for ‘‘low energy’’
+energetically preferred orientations do not only grow faster,                                  grains of the (180,35,’2 ) peak a magnetic driving force is
+but their number fraction is larger than half of all grains and                                negative, pm < 0. Therefore, according to eq. (7), the
+continuously rises during magnetic annealing, while the                                        threshold grain size for shrinkage or growth of high energy
+fraction of grains with disfavored orientations decreases. It is                               grains increases, whereas it decreases for low energy grains.
+worth noting that this result provides a possible explanation                                  Correspondingly, more high energy grains shrink and
+for the magnetic enhancement of the growth kinetics                                            disappear and, on the other hand, more low energy grains
+averaged over all grains: the faster growth rate in a larger                                   grow than it would be the case at zero ﬁeld. Obviously this
+and constantly rising grain fraction necessarily results in an                                 should result in an increase or decrease of the number
+increased average growth rate.                                                                 fractions of the diﬀerently oriented grains as observed in the
+   The observed diﬀerence in the number of grains compris-                                     current experiment and simulations.
+                                                                                                         Impact of a Magnetic Field on Grain Growth in Titanium                                 2807
+
+                                                                                                                                     moves in opposite directions for grains with energetically
+                                                                                                                                     favored and disfavored orientations. In Ref. 23), where the
+                                                                                                                                     von Neumann-Mullins approach was extended to account the
+                                                                                                                                     inﬂuence of a magnetic ﬁeld, was shown that the topological
+                                                                                                                                     class of the stable grains can be expressed as
+                                                                                                                                                                             
+                                                                     a                                              b                                                  Rth pm
+                                                                                                                                                          nth ¼ 6 1 þ                        ð8Þ
+                                                                                                                                                                         
+Fig. 16 Computed grain size distributions for grains with low (’1 ,90,’2 )
+  and high (all other orientations) magnetic energy; (a) before and (b) after                                                        According to eq. (8), the topological class of the stable grains
+  magnetic annealing for 10 minutes in a ﬁeld of 17 T, oriented parallel to                                                          in preferred energetic conﬁgurations (pm < 0), is reduced to
+  the sheet normal (ND).                                                                                                             nth < 6 and raised to nth > 6 for grains in unfavored
+                                                                                                                                     conﬁgurations (pm > 0). This practically means that grains
+                                                                                                                                     with topological class 6 do not remain stable anymore in the
+                                                                                                                                     magnetic ﬁeld, but either grow or shrink, that results in a
+Grain Fraction
+
+
+
+
+                                                                                                                                     signiﬁcant decrease of the fraction of grains with n ¼ 6 in a
+                                                                                        Grain Fraction
+
+
+
+
+                                                                                                                                     2D-polycrystal after magnetic annealing (Fig. 17(b)).
+                                                                                                                                        Obviously, a magnetic ﬁeld in the current experiment and
+                                                                                                                                     simulations could facilitate the observed changes in the
+                                                            Topological Class, n                              Topological Class, n
+                                                                                                                                     orientation distribution of grains and growth kinetics of
+                                                                     a                                              b                diﬀerently oriented grains since the magnitude of the
+Fig. 17 Computed grain fractions vs. topological class (a) in subsets with
+                                                                                                                                     generated magnetic driving force during grain growth was
+  energetically favored and disfavored grain orientations after magnetic                                                             comparable to curvature forces. Indeed, for normal (contin-
+  annealing at 17 T for 10 min; (b) for all grains after the annealing at zero                                                       uous) grain growth eq. (2) can be re-written as
+  ﬁeld and at 17 T; the magnetic ﬁeld was directed along the sheet normal
+  (ND) and applied to the grain structure with random orientation                                                                                                        2
+                                                                                                                                                                  pc ¼      ;                    ð9Þ
+  distribution.                                                                                                                                                           r
+                                                                                                                                     where r is the radius of curvature, which usually scales with
+                                                                                                                                     the grain size but exeeds it by about an order of magnitude.
+                 Rate of Grain Area Change, dS/dt /µm2 /s
+
+
+
+
+                                                                                                                                     For a mean grain size of about 40 mm that corresponds to the
+                                                                                                                                     grain structure in the investigated titanium before the
+                                                                                                                                     application of a magnetic ﬁeld (see Table 1), the curvature
+                                                                                                                                     force amounts to about 2 kJ/m3 and then decreases with a
+                                                                                                                                     rising mean grain size during the annealing. In contrast,
+                                                                                                                                     according to eq. (3) the maximum magnetic driving force
+                                                                                                                                     in the current experiment (Ti ¼ 1:18  105 ,24) ﬁeld
+                                                                                                                                     strength H ¼ 1:35  107 A/m, c-axes of grains oriented
+                                                                                   Topological Class, n                              close to (180,35,’2 ) are almost normal to the ﬁeld direction)
+                                                                                                                                     remains constant during annealing. It is equal to the diﬀer-
+                                                                                                                                     ence of the magnetic energy density between grains with
+Fig. 18 Computed rate of grain area change for diﬀerently oriented grains                                                            ideal orientations (0,35,’2 ) and (180,35,’2 ) and amounts to
+                                                                                                                                     about pmax             3
+  after 10 min annealing in a ﬁeld of 17 T.                                                                                                  m ¼ 1:5 kJ/m .
+                                                                                                                                        Apparently, for ﬁne-grained structures the magnetic driv-
+                                                                                                                                     ing force generated by a magnetic ﬁeld of the same strength is
+   The results of simulations also revealed that the magneti-                                                                        much smaller than the curvature force and, therefore, is
+cally aﬀected grain growth kinetics is consequentially                                                                               unlikely to cause measurable texture anisotropy during the
+reﬂected in the behaviour of the grain size distribution for                                                                         annealing. It is worth noting, however, that the impact of a
+diﬀerently oriented grains. Figure 16 depicts these distribu-                                                                        magnetic ﬁeld on grain growth is not only conﬁned to a
+tions for energetically favored and disfavored grains before                                                                         change of the net driving force for grain boundary motion. As
+and after the magnetic annealing. The magnetic annealing is                                                                          was observed recently in experiments with 78%-cold rolled
+seen to result in a distinct shift of grain size distributions to                                                                    titanium,25) grain growth at its early stage during annealing at
+smaller and larger grain sizes for high and low energy grains,                                                                       803 K (mean grain sizes in the range between 2 and 3 mm)
+respectively.                                                                                                                        was found to be distinctly enhanced by a magnetic ﬁeld of
+   An application of a magnetic ﬁeld during annealing results                                                                        19T that was attributed to the magnetically accelerated grain
+not only in the change of the growth rate of diﬀerently                                                                              boundary mobility.25)
+oriented grains, but substantially alters the ﬁnal distribution
+of the grains of diﬀerent topological classes (Fig. 17). As                                                                          4.    Summary
+seen in Fig. 18, in the presence of a magnetic ﬁeld the
+computed dependence of the rate of the grain area change                                                                               The eﬀect of a magnetic ﬁeld on texture and grain
+dS=dt on the topological class n of the grain does not intersect                                                                     microstructure evolution during grain growth in titanium was
+the n-axis at n ¼ 6 (see Fig. 2). Rather this dependence                                                                             addressed. Annealing of 75% rolled titanium sheet specimens
+2808                          D. A. Molodov, C. Bollmann, P. J. Konijnenberg, L. A. Barrales-Mora and V. Mohles
+
+in a speciﬁc inclined conﬁguration at 1023 K in a magnetic              REFERENCES
+ﬁeld of 17 T for 60, 120, 180 and 240 minutes results in an
+increasing asymmetry of the usually symmetrical texture.                  1)   R. Smoluchowski: Phys. Rev. 83 (1951) 69–74.
+                                                                          2)   D. Turnbull: J. Metals 3 (1951) 661–667.
+The intensity of the texture peak composed by orientations
+                                                                          3)   R. A. Vandermeer: Trans. AIME 233 (1965) 266–271.
+close to (180,35,’2 ) rises, while the intensity of the (0,35,’2 )        4)   V. Y. Aristov, V. E. Fradkov and L. S. Shvindlerman: Phys. Met.
+peaks decreases. Obviously, this behaviour is due to the                       Metall. 45 (1979) 83–87.
+additional driving force for grain growth arising in a                    5)   D. A. Molodov, G. Gottstein, F. Heringhaus and L. S. Shvindlerman:
+magnetic ﬁeld and caused by the anisotropy of the magnetic                     Acta Mater. 46 (1998) 5627–5632.
+                                                                          6)   D. A. Molodov, V. A. Ivanov and G. Gottstein: Acta Mater. 55 (2007)
+susceptibility of paramagnetic titanium. The remarkable
+                                                                               1843–1848.
+property of a magnetic ﬁeld to produce preferred orientations             7)   W. W. Mullins: Acta Metall. 4 (1956) 421–432.
+in a magnetically anisotropic material was further analyzied              8)   A. D. Sheikh-Ali, D. A. Molodov and H. Garmestani: Scripta Mater. 46
+by computer simulations of 2D grain growth.                                    (2002) 857–862.
+   EBSD measurements as well as simulations revealed that                 9)   D. A. Molodov and A. D. Sheikh-Ali: Acta Mater. 52 (2004) 4377–
+                                                                               4383.
+the grain growth kinetics in titanium become orientation
+                                                                        10)    D. A. Molodov, P. J. Konijnenberg, N. Bozzolo and A. D. Sheikh-Ali:
+dependent in a magnetic ﬁeld. The growth of grains with                        Mater. Letters 59 (2005) 3209–3213.
+energetically favored orientations is enhanced, whereas the             11)    M. Dahms and H. J. Bunge: J. Appl. Cryst. 22 (1989) 439–447.
+growth of grains with disfavored orientations is retarded.              12)    M. Dahms: Appl. Cryst. 25 (1992) 259–267.
+However, grains with energetically preferred orientations not           13)    K. Kawasaki, T. Nagai and K. Nakashima: Phil. Mag. 60 (1989) 399–
+                                                                               421.
+only grow faster, but their fraction is larger than a half of the       14)    D. Weigand, Y. Brechet and J. Lepinoux: Phil. Mag. B 78 (1998) 329–
+total grains number and continuously rises during magnetic                     352.
+annealing, while the fraction of slower growing grains with             15)    H. J. Frost, C. V. Thompson, C. L. Howe and J. Whang: Scripta Metall.
+disfavored orientations decreases. Furthermore, as shown by                    Mater. 22 (1988) 65–70.
+computer simulations, the application of a magnetic ﬁeld                16)    W. Fayad, C. V. Thompson and H. J. Frost: Scripta Mater. 40 (1999)
+                                                                               1199–1204.
+during annealing results not only in the change of the growth
+                                                                        17)    L. A. Barrales-Mora, V. Mohles, P. J. Konijnenberg and D. A.
+rate of diﬀerently oriented grains, but distinctly alters the                  Molodov: Comp. Mater. Sci. 39 (2007) 160–165.
+ﬁnal distribution of the grains of diﬀerent topological classes.        18)    W. W. Mullins: J. Appl. Phys. 27 (1956) 900–904.
+                                                                        19)    A. K. Singh and R. A. Schwarzer: Z. Metallk. 91 (2000) 702–716.
+Acknowledgements                                                        20)    F. Wagner, N. Bozzolo, O. Van Landuyt and T. Grosdidier: Acta Mater.
+                                                                               50 (2000) 1245–1259.
+                                                                        21)    D. A. Molodov and P. J. Konijnenberg: Scripta Mater. 54 (2006) 977–
+   The authors express their gratitude to the Deutsche                         981.
+Forschungsgemeinschaft for ﬁnancial support (Grant MO                   22)    M. Hillert: Acta Metall. 13 (1965) 227–238.
+848/6-2). Part of this work was performed at the National               23)    D. A. Molodov, P. J. Konijnenberg, L. A. Barrales-Mora and V.
+High Magnetic Field Laboratory, which is supported by NSF                      Mohles: J. Mater. Sci. 41 (2006) 7853–7861.
+                                                                        24)    N. V. Vol’kenshtein, E. V. Galoshina and E. B. Panikovskaya: Sov.
+Cooperative Agreement No. DMR-0084173, by the State of
+                                                                               Phys. JETP 40 (1975) 730–734.
+Florida and by the DOE. The help of Dr. Bruce Brandt and                25)    D. A. Molodov, Chr. Bollmann and G. Gottstein: Mater. Sci. Eng. A
+his team (DC Field Facility of NHMFL) in performing                            467 (2007) 71–77.
+magnetic annealing experiments is gratefully acknowledged.
+

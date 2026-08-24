@@ -1,0 +1,10 @@
+initialize mtex-6.1.1  ... done!
+I found another version of MTEX and remove it from the current search path!
+initialize mtex-6.1.1  ... done!
+GRAIN_SIZE sample=7d reduction=0.00%
+GRAIN_SIZE sample=6.48d reduction=14.31%
+GRAIN_SIZE sample=6.02d reduction=26.04%
+GRAIN_SIZE sample=5.6d reduction=36.00%
+GRAIN_SIZE sample=5.25d reduction=43.75%
+GRAIN_SIZE sample=5d reduction=48.98%
+GRAIN_SIZE_FINAL_EXPORT_COMPLETE

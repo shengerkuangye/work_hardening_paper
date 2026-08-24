@@ -1,0 +1,20 @@
+# Header: Project1::ebsd_sample_648_map_13 cleaned-Dil::Ti-Hex	::ODF   8/7/2026
+# 
+Texture Name: Harmonic: L=16, HW=5.0
+Calculation Method: Harmonic Series Expansion
+Series Rank (l): 16
+Gaussian Smoothing: 5.0º
+Sample Symmetry: Triclinic
+Representation: Euler Angles (Bunge)
+Style: Intensity
+<0.701   Color rgb:   0   0 255
+<1.000   Color rgb:   0 145 109
+<1.427   Color rgb:  36 255   0
+<2.037   Color rgb: 182 255   0
+<2.907   Color rgb: 255 218   0
+<4.149   Color rgb: 255 146   0
+<5.921   Color rgb: 255  73   0
+>5.921   Color rgb: 255   0   0
+Constant Sections: phi2
+Horizontal Sections: phi1(0.0°-90.0°)
+Vertical Sections: PHI(0.0°-90.0°)

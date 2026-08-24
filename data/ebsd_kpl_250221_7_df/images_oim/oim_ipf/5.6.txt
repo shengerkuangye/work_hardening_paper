@@ -1,0 +1,9 @@
+# Header: Project1::ebsd_sample_56_map_9 cleaned-Dil::Ti-Hex	::IPF   8/7/2026
+# 
+
+Gray Scale Map Type:<none>
+
+Color Coded Map Type: Inverse Pole Figure [001]
+
+
+Boundaries: <none> 

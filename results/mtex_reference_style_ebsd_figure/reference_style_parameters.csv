@@ -1,0 +1,2 @@
+boundary_detection_deg,hagb_threshold_deg,min_grain_pixels,kam_order,kam_cutoff_deg,grain_bin_width_um,misorientation_bin_width_deg,kam_bin_width_deg
+2,15,5,1,5,2,2,0.2
