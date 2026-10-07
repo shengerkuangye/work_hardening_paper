@@ -1,0 +1,32 @@
+[
+  {
+    "image_id": "0028",
+    "box": [
+      880,
+      609,
+      1680,
+      1129
+    ],
+    "selection": "elongated-feature neighborhood; type unassigned"
+  },
+  {
+    "image_id": "0031",
+    "box": [
+      640,
+      575,
+      1440,
+      1095
+    ],
+    "selection": "elongated-feature neighborhood; type unassigned"
+  },
+  {
+    "image_id": "0034",
+    "box": [
+      492,
+      574,
+      1292,
+      1094
+    ],
+    "selection": "elongated-feature neighborhood; type unassigned"
+  }
+]

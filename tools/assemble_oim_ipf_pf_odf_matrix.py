@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 from dataclasses import dataclass
+import os
 from pathlib import Path
 import re
 from string import ascii_lowercase
@@ -52,14 +53,26 @@ LEGEND_PATTERN = re.compile(
 
 
 def font(size: int, *, bold: bool = False) -> ImageFont.FreeTypeFont:
-    candidates = (
+    custom_font_dir = os.environ.get("OIM_FONT_DIR")
+    candidates = [
         Path("C:/Windows/Fonts/arialbd.ttf" if bold else "C:/Windows/Fonts/arial.ttf"),
         Path("C:/Windows/Fonts/calibrib.ttf" if bold else "C:/Windows/Fonts/calibri.ttf"),
-    )
+        Path("/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"),
+        Path("/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf"),
+        Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+    ]
+    if custom_font_dir:
+        candidates.insert(
+            0,
+            Path(custom_font_dir) / ("LiberationSans-Bold.ttf" if bold else "LiberationSans-Regular.ttf"),
+        )
     for candidate in candidates:
         if candidate.exists():
             return ImageFont.truetype(str(candidate), size=size)
-    raise FileNotFoundError("Arial or Calibri was not found in C:/Windows/Fonts")
+    raise FileNotFoundError(
+        "No supported Arial, Calibri, Liberation Sans, Noto Sans, or DejaVu Sans font was found. "
+        "Set OIM_FONT_DIR to a directory containing LiberationSans-Regular.ttf and LiberationSans-Bold.ttf."
+    )
 
 
 def parse_legend(path: Path) -> list[LegendBin]:

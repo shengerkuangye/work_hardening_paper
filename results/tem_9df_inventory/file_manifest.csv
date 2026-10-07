@@ -1,0 +1,252 @@
+﻿path,size_bytes,extension,acquisition_id,source_group,filename_description,manuscript_state,section,sample_mapping_basis,mrc_nx,mrc_ny,mrc_nz,mrc_mode
+data/9_DF/DF/0001 - 7MM 520 mm Camera Ceta-0.png,17380732,.png,0001,7MM,520 mm Camera Ceta-0,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0001 - 7MM 520 mm Camera Ceta.mrc,34464768,.mrc,0001,7MM,520 mm Camera Ceta,M-7.00,longitudinal,"author confirmation, 2026-09-26",4096,4096,1,1
+data/9_DF/DF/0001 - 7MM 520 mm Camera Ceta.tif,50350029,.tif,0001,7MM,520 mm Camera Ceta,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0001 - 7MM 520 mm Camera.emd,33780211,.emd,0001,7MM,520 mm Camera,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0002 - 7MM 11000 x Camera Ceta.mrc,34464768,.mrc,0002,7MM,11000 x Camera Ceta,M-7.00,longitudinal,"author confirmation, 2026-09-26",4096,4096,1,1
+data/9_DF/DF/0002 - 7MM 11000 x Camera Ceta.tif,50350282,.tif,0002,7MM,11000 x Camera Ceta,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0002 - 7MM 11000 x Camera.emd,33867179,.emd,0002,7MM,11000 x Camera,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0003 - 7MM 520 mm Camera Ceta-0.png,253526,.png,0003,7MM,520 mm Camera Ceta-0,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0003 - 7MM 520 mm Camera Ceta.mrc,34464768,.mrc,0003,7MM,520 mm Camera Ceta,M-7.00,longitudinal,"author confirmation, 2026-09-26",4096,4096,1,1
+data/9_DF/DF/0003 - 7MM 520 mm Camera Ceta.tif,50350029,.tif,0003,7MM,520 mm Camera Ceta,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0003 - 7MM 520 mm Camera.emd,33701116,.emd,0003,7MM,520 mm Camera,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0004 - 7MM 520 mm Camera Ceta-0.png,247133,.png,0004,7MM,520 mm Camera Ceta-0,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0004 - 7MM 520 mm Camera Ceta.mrc,34464768,.mrc,0004,7MM,520 mm Camera Ceta,M-7.00,longitudinal,"author confirmation, 2026-09-26",4096,4096,1,1
+data/9_DF/DF/0004 - 7MM 520 mm Camera Ceta.tif,50350029,.tif,0004,7MM,520 mm Camera Ceta,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0004 - 7MM 520 mm Camera.emd,33701899,.emd,0004,7MM,520 mm Camera,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0005 - 7MM 520 mm Camera Ceta-0.png,246622,.png,0005,7MM,520 mm Camera Ceta-0,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0005 - 7MM 520 mm Camera Ceta.mrc,34464768,.mrc,0005,7MM,520 mm Camera Ceta,M-7.00,longitudinal,"author confirmation, 2026-09-26",4096,4096,1,1
+data/9_DF/DF/0005 - 7MM 520 mm Camera Ceta.tif,50350030,.tif,0005,7MM,520 mm Camera Ceta,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0005 - 7MM 520 mm Camera.emd,33700816,.emd,0005,7MM,520 mm Camera,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0006 - 7MM 22500 x STEM BF-S.mrc,9298944,.mrc,0006,7MM,22500 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0006 - 7MM 22500 x STEM BF-S.tif,12602074,.tif,0006,7MM,22500 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0006 - 7MM 22500 x STEM DF-O.mrc,9298944,.mrc,0006,7MM,22500 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0006 - 7MM 22500 x STEM DF-O.tif,12602072,.tif,0006,7MM,22500 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0006 - 7MM 22500 x STEM DF-S.mrc,9298944,.mrc,0006,7MM,22500 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0006 - 7MM 22500 x STEM DF-S.tif,12602074,.tif,0006,7MM,22500 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0006 - 7MM 22500 x STEM HAADF.mrc,9298944,.mrc,0006,7MM,22500 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0006 - 7MM 22500 x STEM HAADF.tif,12601934,.tif,0006,7MM,22500 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0006 - 7MM 22500 x STEM.emd,34029506,.emd,0006,7MM,22500 x STEM,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0007 - 7MM 32000 x STEM BF-S.mrc,9298944,.mrc,0007,7MM,32000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0007 - 7MM 32000 x STEM BF-S.tif,12602074,.tif,0007,7MM,32000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0007 - 7MM 32000 x STEM DF-O.mrc,9298944,.mrc,0007,7MM,32000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0007 - 7MM 32000 x STEM DF-O.tif,12602074,.tif,0007,7MM,32000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0007 - 7MM 32000 x STEM DF-S.mrc,9298944,.mrc,0007,7MM,32000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0007 - 7MM 32000 x STEM DF-S.tif,12602074,.tif,0007,7MM,32000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0007 - 7MM 32000 x STEM HAADF.mrc,9298944,.mrc,0007,7MM,32000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0007 - 7MM 32000 x STEM HAADF.tif,12601934,.tif,0007,7MM,32000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0007 - 7MM 32000 x STEM.emd,34058633,.emd,0007,7MM,32000 x STEM,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0008 - 7MM 45000 x STEM BF-S.mrc,9298944,.mrc,0008,7MM,45000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0008 - 7MM 45000 x STEM BF-S.tif,12602072,.tif,0008,7MM,45000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0008 - 7MM 45000 x STEM DF-O.mrc,9298944,.mrc,0008,7MM,45000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0008 - 7MM 45000 x STEM DF-O.tif,12602072,.tif,0008,7MM,45000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0008 - 7MM 45000 x STEM DF-S.mrc,9298944,.mrc,0008,7MM,45000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0008 - 7MM 45000 x STEM DF-S.tif,12602072,.tif,0008,7MM,45000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0008 - 7MM 45000 x STEM HAADF.mrc,9298944,.mrc,0008,7MM,45000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0008 - 7MM 45000 x STEM HAADF.tif,12601934,.tif,0008,7MM,45000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0008 - 7MM 45000 x STEM.emd,34056039,.emd,0008,7MM,45000 x STEM,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0009 - 7MM 22500 x STEM BF-S.mrc,9298944,.mrc,0009,7MM,22500 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0009 - 7MM 22500 x STEM BF-S.tif,12602072,.tif,0009,7MM,22500 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0009 - 7MM 22500 x STEM DF-O.mrc,9298944,.mrc,0009,7MM,22500 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0009 - 7MM 22500 x STEM DF-O.tif,12602072,.tif,0009,7MM,22500 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0009 - 7MM 22500 x STEM DF-S.mrc,9298944,.mrc,0009,7MM,22500 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0009 - 7MM 22500 x STEM DF-S.tif,12602072,.tif,0009,7MM,22500 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0009 - 7MM 22500 x STEM HAADF.mrc,9298944,.mrc,0009,7MM,22500 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0009 - 7MM 22500 x STEM HAADF.tif,12601934,.tif,0009,7MM,22500 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0009 - 7MM 22500 x STEM.emd,34007749,.emd,0009,7MM,22500 x STEM,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0010 - 7MM 32000 x STEM BF-S.mrc,9298944,.mrc,0010,7MM,32000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0010 - 7MM 32000 x STEM BF-S.tif,12602074,.tif,0010,7MM,32000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0010 - 7MM 32000 x STEM DF-O.mrc,9298944,.mrc,0010,7MM,32000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0010 - 7MM 32000 x STEM DF-O.tif,12602074,.tif,0010,7MM,32000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0010 - 7MM 32000 x STEM DF-S.mrc,9298944,.mrc,0010,7MM,32000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0010 - 7MM 32000 x STEM DF-S.tif,12602074,.tif,0010,7MM,32000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0010 - 7MM 32000 x STEM HAADF.mrc,9298944,.mrc,0010,7MM,32000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0010 - 7MM 32000 x STEM HAADF.tif,12601934,.tif,0010,7MM,32000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0010 - 7MM 32000 x STEM.emd,34039333,.emd,0010,7MM,32000 x STEM,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0011 - 7MM 45000 x STEM BF-S.mrc,9298944,.mrc,0011,7MM,45000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0011 - 7MM 45000 x STEM BF-S.tif,12602074,.tif,0011,7MM,45000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0011 - 7MM 45000 x STEM DF-O.mrc,9298944,.mrc,0011,7MM,45000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0011 - 7MM 45000 x STEM DF-O.tif,12602074,.tif,0011,7MM,45000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0011 - 7MM 45000 x STEM DF-S.mrc,9298944,.mrc,0011,7MM,45000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0011 - 7MM 45000 x STEM DF-S.tif,12602074,.tif,0011,7MM,45000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0011 - 7MM 45000 x STEM HAADF.mrc,9298944,.mrc,0011,7MM,45000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0011 - 7MM 45000 x STEM HAADF.tif,12601934,.tif,0011,7MM,45000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0011 - 7MM 45000 x STEM.emd,34045895,.emd,0011,7MM,45000 x STEM,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0012 - 7MM 22500 x STEM BF-S.mrc,9298944,.mrc,0012,7MM,22500 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0012 - 7MM 22500 x STEM BF-S.tif,12602074,.tif,0012,7MM,22500 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0012 - 7MM 22500 x STEM DF-O.mrc,9298944,.mrc,0012,7MM,22500 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0012 - 7MM 22500 x STEM DF-O.tif,12602074,.tif,0012,7MM,22500 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0012 - 7MM 22500 x STEM DF-S.mrc,9298944,.mrc,0012,7MM,22500 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0012 - 7MM 22500 x STEM DF-S.tif,12602074,.tif,0012,7MM,22500 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0012 - 7MM 22500 x STEM HAADF.mrc,9298944,.mrc,0012,7MM,22500 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0012 - 7MM 22500 x STEM HAADF.tif,12601934,.tif,0012,7MM,22500 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0012 - 7MM 22500 x STEM.emd,34007761,.emd,0012,7MM,22500 x STEM,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0013 - 7MM 32000 x STEM BF-S.mrc,9298944,.mrc,0013,7MM,32000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0013 - 7MM 32000 x STEM BF-S.tif,12602074,.tif,0013,7MM,32000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0013 - 7MM 32000 x STEM DF-O.mrc,9298944,.mrc,0013,7MM,32000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0013 - 7MM 32000 x STEM DF-O.tif,12602074,.tif,0013,7MM,32000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0013 - 7MM 32000 x STEM DF-S.mrc,9298944,.mrc,0013,7MM,32000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0013 - 7MM 32000 x STEM DF-S.tif,12602074,.tif,0013,7MM,32000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0013 - 7MM 32000 x STEM HAADF.mrc,9298944,.mrc,0013,7MM,32000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0013 - 7MM 32000 x STEM HAADF.tif,12601934,.tif,0013,7MM,32000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0013 - 7MM 32000 x STEM.emd,34036374,.emd,0013,7MM,32000 x STEM,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0014 - 7MM 45000 x STEM BF-S.mrc,9298944,.mrc,0014,7MM,45000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0014 - 7MM 45000 x STEM BF-S.tif,12602074,.tif,0014,7MM,45000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0014 - 7MM 45000 x STEM DF-O.mrc,9298944,.mrc,0014,7MM,45000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0014 - 7MM 45000 x STEM DF-O.tif,12602074,.tif,0014,7MM,45000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0014 - 7MM 45000 x STEM DF-S.mrc,9298944,.mrc,0014,7MM,45000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0014 - 7MM 45000 x STEM DF-S.tif,12602074,.tif,0014,7MM,45000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0014 - 7MM 45000 x STEM HAADF.mrc,9298944,.mrc,0014,7MM,45000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0014 - 7MM 45000 x STEM HAADF.tif,12601934,.tif,0014,7MM,45000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0014 - 7MM 45000 x STEM.emd,34040521,.emd,0014,7MM,45000 x STEM,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0015 - 7MM 22500 x STEM BF-S.mrc,9298944,.mrc,0015,7MM,22500 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0015 - 7MM 22500 x STEM BF-S.tif,12602072,.tif,0015,7MM,22500 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0015 - 7MM 22500 x STEM DF-O.mrc,9298944,.mrc,0015,7MM,22500 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0015 - 7MM 22500 x STEM DF-O.tif,12602072,.tif,0015,7MM,22500 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0015 - 7MM 22500 x STEM DF-S.mrc,9298944,.mrc,0015,7MM,22500 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0015 - 7MM 22500 x STEM DF-S.tif,12602072,.tif,0015,7MM,22500 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0015 - 7MM 22500 x STEM HAADF.mrc,9298944,.mrc,0015,7MM,22500 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0015 - 7MM 22500 x STEM HAADF.tif,12601932,.tif,0015,7MM,22500 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0015 - 7MM 22500 x STEM.emd,34005482,.emd,0015,7MM,22500 x STEM,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0016 - 7MM 32000 x STEM BF-S.mrc,9298944,.mrc,0016,7MM,32000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0016 - 7MM 32000 x STEM BF-S.tif,12602072,.tif,0016,7MM,32000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0016 - 7MM 32000 x STEM DF-O.mrc,9298944,.mrc,0016,7MM,32000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0016 - 7MM 32000 x STEM DF-O.tif,12602072,.tif,0016,7MM,32000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0016 - 7MM 32000 x STEM DF-S.mrc,9298944,.mrc,0016,7MM,32000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0016 - 7MM 32000 x STEM DF-S.tif,12602072,.tif,0016,7MM,32000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0016 - 7MM 32000 x STEM HAADF.mrc,9298944,.mrc,0016,7MM,32000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0016 - 7MM 32000 x STEM HAADF.tif,12601934,.tif,0016,7MM,32000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0016 - 7MM 32000 x STEM.emd,34036808,.emd,0016,7MM,32000 x STEM,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0017 - 7MM 45000 x STEM BF-S.mrc,9298944,.mrc,0017,7MM,45000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0017 - 7MM 45000 x STEM BF-S.tif,12602072,.tif,0017,7MM,45000 x STEM BF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0017 - 7MM 45000 x STEM DF-O.mrc,9298944,.mrc,0017,7MM,45000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0017 - 7MM 45000 x STEM DF-O.tif,12602072,.tif,0017,7MM,45000 x STEM DF-O,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0017 - 7MM 45000 x STEM DF-S.mrc,9298944,.mrc,0017,7MM,45000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0017 - 7MM 45000 x STEM DF-S.tif,12602072,.tif,0017,7MM,45000 x STEM DF-S,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0017 - 7MM 45000 x STEM HAADF.mrc,9298944,.mrc,0017,7MM,45000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0017 - 7MM 45000 x STEM HAADF.tif,12601934,.tif,0017,7MM,45000 x STEM HAADF,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0017 - 7MM 45000 x STEM.emd,34039437,.emd,0017,7MM,45000 x STEM,M-7.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0018 - 5MM 520 mm Camera Ceta-0.png,18316598,.png,0018,5MM,520 mm Camera Ceta-0,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0018 - 5MM 520 mm Camera Ceta.mrc,34464768,.mrc,0018,5MM,520 mm Camera Ceta,Y-5.00,longitudinal,"author confirmation, 2026-09-26",4096,4096,1,1
+data/9_DF/DF/0018 - 5MM 520 mm Camera Ceta.tif,50350054,.tif,0018,5MM,520 mm Camera Ceta,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0018 - 5MM 520 mm Camera.emd,33771816,.emd,0018,5MM,520 mm Camera,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0019 - 5MM 520 mm Camera Ceta-0.png,10367657,.png,0019,5MM,520 mm Camera Ceta-0,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0019 - 5MM 520 mm Camera Ceta.mrc,34464768,.mrc,0019,5MM,520 mm Camera Ceta,Y-5.00,longitudinal,"author confirmation, 2026-09-26",4096,4096,1,1
+data/9_DF/DF/0019 - 5MM 520 mm Camera Ceta.tif,50350032,.tif,0019,5MM,520 mm Camera Ceta,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0019 - 5MM 520 mm Camera.emd,33699368,.emd,0019,5MM,520 mm Camera,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0020 - 5MM 520 mm Camera Ceta-0.png,78340,.png,0020,5MM,520 mm Camera Ceta-0,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0020 - 5MM 520 mm Camera Ceta.mrc,34464768,.mrc,0020,5MM,520 mm Camera Ceta,Y-5.00,longitudinal,"author confirmation, 2026-09-26",4096,4096,1,1
+data/9_DF/DF/0020 - 5MM 520 mm Camera Ceta.tif,50350053,.tif,0020,5MM,520 mm Camera Ceta,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0020 - 5MM 520 mm Camera.emd,33705619,.emd,0020,5MM,520 mm Camera,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0022 - 5MM 520 mm Camera Ceta-0.png,69997,.png,0022,5MM,520 mm Camera Ceta-0,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0022 - 5MM 520 mm Camera Ceta.mrc,34464768,.mrc,0022,5MM,520 mm Camera Ceta,Y-5.00,longitudinal,"author confirmation, 2026-09-26",4096,4096,1,1
+data/9_DF/DF/0022 - 5MM 520 mm Camera Ceta.tif,50350053,.tif,0022,5MM,520 mm Camera Ceta,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0022 - 5MM 520 mm Camera.emd,33704250,.emd,0022,5MM,520 mm Camera,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0023 - 5MM 22500 x STEM BF-S.mrc,9298944,.mrc,0023,5MM,22500 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0023 - 5MM 22500 x STEM BF-S.tif,12602076,.tif,0023,5MM,22500 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0023 - 5MM 22500 x STEM DF-O.mrc,9298944,.mrc,0023,5MM,22500 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0023 - 5MM 22500 x STEM DF-O.tif,12602076,.tif,0023,5MM,22500 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0023 - 5MM 22500 x STEM DF-S.mrc,9298944,.mrc,0023,5MM,22500 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0023 - 5MM 22500 x STEM DF-S.tif,12602076,.tif,0023,5MM,22500 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0023 - 5MM 22500 x STEM HAADF.mrc,9298944,.mrc,0023,5MM,22500 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0023 - 5MM 22500 x STEM HAADF.tif,12601936,.tif,0023,5MM,22500 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0023 - 5MM 22500 x STEM.emd,34029248,.emd,0023,5MM,22500 x STEM,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0024 - 5MM 32000 x STEM BF-S.mrc,9298944,.mrc,0024,5MM,32000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0024 - 5MM 32000 x STEM BF-S.tif,12602076,.tif,0024,5MM,32000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0024 - 5MM 32000 x STEM DF-O.mrc,9298944,.mrc,0024,5MM,32000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0024 - 5MM 32000 x STEM DF-O.tif,12602076,.tif,0024,5MM,32000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0024 - 5MM 32000 x STEM DF-S.mrc,9298944,.mrc,0024,5MM,32000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0024 - 5MM 32000 x STEM DF-S.tif,12602076,.tif,0024,5MM,32000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0024 - 5MM 32000 x STEM HAADF.mrc,9298944,.mrc,0024,5MM,32000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0024 - 5MM 32000 x STEM HAADF.tif,12601936,.tif,0024,5MM,32000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0024 - 5MM 32000 x STEM.emd,34059965,.emd,0024,5MM,32000 x STEM,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0025 - 5MM 45000 x STEM BF-S.mrc,9298944,.mrc,0025,5MM,45000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0025 - 5MM 45000 x STEM BF-S.tif,12602076,.tif,0025,5MM,45000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0025 - 5MM 45000 x STEM DF-O.mrc,9298944,.mrc,0025,5MM,45000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0025 - 5MM 45000 x STEM DF-O.tif,12602076,.tif,0025,5MM,45000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0025 - 5MM 45000 x STEM DF-S.mrc,9298944,.mrc,0025,5MM,45000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0025 - 5MM 45000 x STEM DF-S.tif,12602076,.tif,0025,5MM,45000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0025 - 5MM 45000 x STEM HAADF.mrc,9298944,.mrc,0025,5MM,45000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0025 - 5MM 45000 x STEM HAADF.tif,12601936,.tif,0025,5MM,45000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0025 - 5MM 45000 x STEM.emd,34110676,.emd,0025,5MM,45000 x STEM,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0026 - 5MM 22500 x STEM BF-S.mrc,9298944,.mrc,0026,5MM,22500 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0026 - 5MM 22500 x STEM BF-S.tif,12602064,.tif,0026,5MM,22500 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0026 - 5MM 22500 x STEM DF-O.mrc,9298944,.mrc,0026,5MM,22500 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0026 - 5MM 22500 x STEM DF-O.tif,12602064,.tif,0026,5MM,22500 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0026 - 5MM 22500 x STEM DF-S.mrc,9298944,.mrc,0026,5MM,22500 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0026 - 5MM 22500 x STEM DF-S.tif,12602064,.tif,0026,5MM,22500 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0026 - 5MM 22500 x STEM HAADF.mrc,9298944,.mrc,0026,5MM,22500 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0026 - 5MM 22500 x STEM HAADF.tif,12601924,.tif,0026,5MM,22500 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0026 - 5MM 22500 x STEM.emd,34036378,.emd,0026,5MM,22500 x STEM,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0027 - 5MM 32000 x STEM BF-S.mrc,9298944,.mrc,0027,5MM,32000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0027 - 5MM 32000 x STEM BF-S.tif,12602072,.tif,0027,5MM,32000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0027 - 5MM 32000 x STEM DF-O.mrc,9298944,.mrc,0027,5MM,32000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0027 - 5MM 32000 x STEM DF-O.tif,12602072,.tif,0027,5MM,32000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0027 - 5MM 32000 x STEM DF-S.mrc,9298944,.mrc,0027,5MM,32000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0027 - 5MM 32000 x STEM DF-S.tif,12602072,.tif,0027,5MM,32000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0027 - 5MM 32000 x STEM HAADF.mrc,9298944,.mrc,0027,5MM,32000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0027 - 5MM 32000 x STEM HAADF.tif,12601934,.tif,0027,5MM,32000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0027 - 5MM 32000 x STEM.emd,34074979,.emd,0027,5MM,32000 x STEM,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0028 - 5MM 45000 x STEM BF-S.mrc,9298944,.mrc,0028,5MM,45000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0028 - 5MM 45000 x STEM BF-S.tif,12602074,.tif,0028,5MM,45000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0028 - 5MM 45000 x STEM DF-O.mrc,9298944,.mrc,0028,5MM,45000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0028 - 5MM 45000 x STEM DF-O.tif,12602074,.tif,0028,5MM,45000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0028 - 5MM 45000 x STEM DF-S.mrc,9298944,.mrc,0028,5MM,45000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0028 - 5MM 45000 x STEM DF-S.tif,12602074,.tif,0028,5MM,45000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0028 - 5MM 45000 x STEM HAADF.mrc,9298944,.mrc,0028,5MM,45000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0028 - 5MM 45000 x STEM HAADF.tif,12601934,.tif,0028,5MM,45000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0028 - 5MM 45000 x STEM.emd,34093017,.emd,0028,5MM,45000 x STEM,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0029 - 5MM 22500 x STEM BF-S.mrc,9298944,.mrc,0029,5MM,22500 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0029 - 5MM 22500 x STEM BF-S.tif,12602074,.tif,0029,5MM,22500 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0029 - 5MM 22500 x STEM DF-O.mrc,9298944,.mrc,0029,5MM,22500 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0029 - 5MM 22500 x STEM DF-O.tif,12602074,.tif,0029,5MM,22500 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0029 - 5MM 22500 x STEM DF-S.mrc,9298944,.mrc,0029,5MM,22500 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0029 - 5MM 22500 x STEM DF-S.tif,12602074,.tif,0029,5MM,22500 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0029 - 5MM 22500 x STEM HAADF.mrc,9298944,.mrc,0029,5MM,22500 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0029 - 5MM 22500 x STEM HAADF.tif,12601936,.tif,0029,5MM,22500 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0029 - 5MM 22500 x STEM.emd,34009975,.emd,0029,5MM,22500 x STEM,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0030 - 5MM 32000 x STEM BF-S.mrc,9298944,.mrc,0030,5MM,32000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0030 - 5MM 32000 x STEM BF-S.tif,12602074,.tif,0030,5MM,32000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0030 - 5MM 32000 x STEM DF-O.mrc,9298944,.mrc,0030,5MM,32000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0030 - 5MM 32000 x STEM DF-O.tif,12602074,.tif,0030,5MM,32000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0030 - 5MM 32000 x STEM DF-S.mrc,9298944,.mrc,0030,5MM,32000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0030 - 5MM 32000 x STEM DF-S.tif,12602074,.tif,0030,5MM,32000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0030 - 5MM 32000 x STEM HAADF.mrc,9298944,.mrc,0030,5MM,32000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0030 - 5MM 32000 x STEM HAADF.tif,12601936,.tif,0030,5MM,32000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0030 - 5MM 32000 x STEM.emd,34040923,.emd,0030,5MM,32000 x STEM,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0031 - 5MM 45000 x STEM BF-S.mrc,9298944,.mrc,0031,5MM,45000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0031 - 5MM 45000 x STEM BF-S.tif,12602076,.tif,0031,5MM,45000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0031 - 5MM 45000 x STEM DF-O.mrc,9298944,.mrc,0031,5MM,45000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0031 - 5MM 45000 x STEM DF-O.tif,12602076,.tif,0031,5MM,45000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0031 - 5MM 45000 x STEM DF-S.mrc,9298944,.mrc,0031,5MM,45000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0031 - 5MM 45000 x STEM DF-S.tif,12602076,.tif,0031,5MM,45000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0031 - 5MM 45000 x STEM HAADF.mrc,9298944,.mrc,0031,5MM,45000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0031 - 5MM 45000 x STEM HAADF.tif,12601938,.tif,0031,5MM,45000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0031 - 5MM 45000 x STEM.emd,34062172,.emd,0031,5MM,45000 x STEM,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0032 - 5MM 22500 x STEM BF-S.mrc,9298944,.mrc,0032,5MM,22500 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0032 - 5MM 22500 x STEM BF-S.tif,12602076,.tif,0032,5MM,22500 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0032 - 5MM 22500 x STEM DF-O.mrc,9298944,.mrc,0032,5MM,22500 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0032 - 5MM 22500 x STEM DF-O.tif,12602076,.tif,0032,5MM,22500 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0032 - 5MM 22500 x STEM DF-S.mrc,9298944,.mrc,0032,5MM,22500 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0032 - 5MM 22500 x STEM DF-S.tif,12602076,.tif,0032,5MM,22500 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0032 - 5MM 22500 x STEM HAADF.mrc,9298944,.mrc,0032,5MM,22500 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0032 - 5MM 22500 x STEM HAADF.tif,12601936,.tif,0032,5MM,22500 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0032 - 5MM 22500 x STEM.emd,34015976,.emd,0032,5MM,22500 x STEM,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0033 - 5MM 32000 x STEM BF-S.mrc,9298944,.mrc,0033,5MM,32000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0033 - 5MM 32000 x STEM BF-S.tif,12602074,.tif,0033,5MM,32000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0033 - 5MM 32000 x STEM DF-O.mrc,9298944,.mrc,0033,5MM,32000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0033 - 5MM 32000 x STEM DF-O.tif,12602074,.tif,0033,5MM,32000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0033 - 5MM 32000 x STEM DF-S.mrc,9298944,.mrc,0033,5MM,32000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0033 - 5MM 32000 x STEM DF-S.tif,12602074,.tif,0033,5MM,32000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0033 - 5MM 32000 x STEM HAADF.mrc,9298944,.mrc,0033,5MM,32000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0033 - 5MM 32000 x STEM HAADF.tif,12601936,.tif,0033,5MM,32000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0033 - 5MM 32000 x STEM.emd,34042553,.emd,0033,5MM,32000 x STEM,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0034 - 5MM 45000 x STEM BF-S.mrc,9298944,.mrc,0034,5MM,45000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0034 - 5MM 45000 x STEM BF-S.tif,12602076,.tif,0034,5MM,45000 x STEM BF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0034 - 5MM 45000 x STEM DF-O.mrc,9298944,.mrc,0034,5MM,45000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0034 - 5MM 45000 x STEM DF-O.tif,12602076,.tif,0034,5MM,45000 x STEM DF-O,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0034 - 5MM 45000 x STEM DF-S.mrc,9298944,.mrc,0034,5MM,45000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0034 - 5MM 45000 x STEM DF-S.tif,12602076,.tif,0034,5MM,45000 x STEM DF-S,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0034 - 5MM 45000 x STEM HAADF.mrc,9298944,.mrc,0034,5MM,45000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",2048,2048,1,6
+data/9_DF/DF/0034 - 5MM 45000 x STEM HAADF.tif,12601936,.tif,0034,5MM,45000 x STEM HAADF,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,
+data/9_DF/DF/0034 - 5MM 45000 x STEM.emd,34087834,.emd,0034,5MM,45000 x STEM,Y-5.00,longitudinal,"author confirmation, 2026-09-26",,,,

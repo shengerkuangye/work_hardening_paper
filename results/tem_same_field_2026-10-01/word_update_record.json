@@ -1,0 +1,15 @@
+{
+  "target": "/home/abcd/repos/work_hardening_paper/2026-09-27/2026-09-27-ta4.docx",
+  "backup": "/home/abcd/repos/work_hardening_paper/.codex_tmp/tem_same_field_h62wwy7d/before.docx",
+  "changed_paragraphs": [
+    107,
+    109,
+    110
+  ],
+  "figure_paragraph": 108,
+  "obsolete_duplicate_tem_drawing_removed": [
+    "/word/media/image14.png"
+  ],
+  "conclusion_text_preserved": true,
+  "untargeted_xml_verified": true
+}

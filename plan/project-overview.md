@@ -21,3 +21,5 @@
 ## Reference-use principle
 
 参考论文用于借鉴“工艺/载荷—性能—组织—变形机制—强化定量”的研究结构及验证层级，不直接迁移 TA16 冷轧管材的连续晶粒细化、孪晶衰减或滑移机制结论到 TA4 旋锻棒材。
+
+正式来源：`references/xia_2026_ta16_cold_rolling_microstructure_property.pdf`；结构化笔记：`extracted_literature_notes/xia_2026_ta16_cold_rolling_summary.md`；DOI：10.1016/j.msea.2026.150869。

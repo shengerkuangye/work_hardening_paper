@@ -1,0 +1,173 @@
+{
+  "file_count": 251,
+  "bytes": 4033487960,
+  "extensions": {
+    ".png": 8,
+    ".mrc": 105,
+    ".tif": 105,
+    ".emd": 33
+  },
+  "source_groups": {
+    "7MM": 127,
+    "5MM": 124
+  },
+  "acquisitions_by_group_and_kind": {
+    "5MM_Camera": 4,
+    "5MM_STEM": 12,
+    "7MM_Camera": 5,
+    "7MM_STEM": 12
+  },
+  "instrument_models": [
+    "Talos F200X"
+  ],
+  "acceleration_voltages_V": [
+    "200000"
+  ],
+  "acquisition_start_dates_utc": [
+    "2026-09-23"
+  ],
+  "detector_counts": {
+    "BM-Ceta": 9,
+    "BF-S": 24,
+    "DF-S": 48,
+    "HAADF": 24
+  },
+  "pixel_sizes_by_group_detector_unit": [
+    [
+      "5MM",
+      "BF-S",
+      "1.0761216647789286e-09",
+      "m"
+    ],
+    [
+      "5MM",
+      "BF-S",
+      "1.5218658530938747e-09",
+      "m"
+    ],
+    [
+      "5MM",
+      "BF-S",
+      "2.1703696219522647e-09",
+      "m"
+    ],
+    [
+      "5MM",
+      "BM-Ceta",
+      "11392609.098140769",
+      "1/m"
+    ],
+    [
+      "5MM",
+      "DF-S",
+      "1.0761216647789286e-09",
+      "m"
+    ],
+    [
+      "5MM",
+      "DF-S",
+      "1.5218658530938747e-09",
+      "m"
+    ],
+    [
+      "5MM",
+      "DF-S",
+      "2.1703696219522647e-09",
+      "m"
+    ],
+    [
+      "5MM",
+      "HAADF",
+      "1.0761216647789286e-09",
+      "m"
+    ],
+    [
+      "5MM",
+      "HAADF",
+      "1.5218658530938747e-09",
+      "m"
+    ],
+    [
+      "5MM",
+      "HAADF",
+      "2.1703696219522647e-09",
+      "m"
+    ],
+    [
+      "7MM",
+      "BF-S",
+      "1.0761216647789286e-09",
+      "m"
+    ],
+    [
+      "7MM",
+      "BF-S",
+      "1.5218658530938747e-09",
+      "m"
+    ],
+    [
+      "7MM",
+      "BF-S",
+      "2.1703696219522647e-09",
+      "m"
+    ],
+    [
+      "7MM",
+      "BM-Ceta",
+      "1.3665301976556193e-09",
+      "m"
+    ],
+    [
+      "7MM",
+      "BM-Ceta",
+      "11392609.098140769",
+      "1/m"
+    ],
+    [
+      "7MM",
+      "DF-S",
+      "1.0761216647789286e-09",
+      "m"
+    ],
+    [
+      "7MM",
+      "DF-S",
+      "1.5218658530938747e-09",
+      "m"
+    ],
+    [
+      "7MM",
+      "DF-S",
+      "2.1703696219522647e-09",
+      "m"
+    ],
+    [
+      "7MM",
+      "HAADF",
+      "1.0761216647789286e-09",
+      "m"
+    ],
+    [
+      "7MM",
+      "HAADF",
+      "1.5218658530938747e-09",
+      "m"
+    ],
+    [
+      "7MM",
+      "HAADF",
+      "2.1703696219522647e-09",
+      "m"
+    ]
+  ],
+  "missing_integer_ids_in_range": [
+    21
+  ],
+  "confirmed_state_mapping": {
+    "7MM": "M-7.00",
+    "5MM": "Y-5.00"
+  },
+  "confirmed_section": "longitudinal",
+  "confirmation_basis": "author confirmation, 2026-09-26",
+  "interpretation": "Missing ID does not establish a missing experiment. Source-to-state mapping and longitudinal section confirmed; independent specimen/field repeats remain unknown."
+}

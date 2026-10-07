@@ -1,0 +1,63 @@
+{
+  "purpose": "Select existing TEM/STEM images using provisional diffraction-row indexing; no new measurements requested.",
+  "method": "MRC local maxima, manually selected systematic rows, integer-order least-squares spacing fit; independent two-dimensional zone-pattern metric check.",
+  "nominal_lattice_nm": {
+    "a": 0.295,
+    "c": 0.468
+  },
+  "lattice_reference": "https://www.sciencedirect.com/science/article/pii/S0167577X11015072",
+  "primary_pairs": {
+    "M-7.00": [
+      "0014 / DP0004",
+      "0011 / DP0003"
+    ],
+    "Y-5.00": [
+      "0031 / DP0020",
+      "0028 / DP0019"
+    ]
+  },
+  "third_conditions": {
+    "M-7.00": "0017 / DP0005",
+    "Y-5.00": "0034 / DP0022"
+  },
+  "interpretation": [
+    "0003 and 0019 match the 0002 row; 0004 and 0020 match {10-10}; 0005 and 0022 match {10-11}.",
+    "These are provisional row-family identifications from recorded diffraction patterns, not certifications of actual STEM excitation error or strict two-beam conditions.",
+    "Equivalent indices/signs are not uniquely assigned. Curly braces indicate reflection family, not a confirmed active slip plane.",
+    "0002 is a useful primary g.b test for a-type vs c-component contrast; additional constraints are needed to uniquely distinguish c from c+a.",
+    "Visual low-magnification landmarks support overlapping fields. Automated high-magnification SIFT matches were insufficient and rejected; no image registration, warping or same-dislocation labels were applied.",
+    "TIFF stage-angle differences remain as recorded in the earlier pairing audit; these do not change the measured diffraction-row spacings.",
+    "No completed per-dislocation visibility matrix or a-to-c+a population transition is claimed."
+  ],
+  "image_processing": "Full TIFF frames; proportional resizing and external text only. Peak-audit images have explicit analysis overlays. No synthetic structures or selective enhancement.",
+  "source_sha256": {
+    "data/9_DF/DF/0001 - 7MM 520 mm Camera Ceta.mrc": "421eaaed88ae50376c2149ecf128d266c627bf4813464b3d21ee567853ab0a99",
+    "data/9_DF/DF/0001 - 7MM 520 mm Camera Ceta.tif": "a31abe780b19ce70cefcafdb20e2bc319c416fad7a7a78492057fd82b0cf0d53",
+    "data/9_DF/DF/0003 - 7MM 520 mm Camera Ceta.mrc": "ea045b6beed573c40c48272ffcf3da0fa774cc4b8d41cdf4d54ef63f45039b22",
+    "data/9_DF/DF/0003 - 7MM 520 mm Camera Ceta.tif": "4a2a4934924651d6f781cc9e02f1d7a244a27fbf1d145f7d4b8d9ee5318fcd4e",
+    "data/9_DF/DF/0004 - 7MM 520 mm Camera Ceta.mrc": "885fbb49ca36334f350f2656774098409ec23854ca59e52b6ed6117c15100988",
+    "data/9_DF/DF/0004 - 7MM 520 mm Camera Ceta.tif": "e18cb468095c65dcd828069b4c495b98a6e58419e936c9a5dca2bea279411217",
+    "data/9_DF/DF/0005 - 7MM 520 mm Camera Ceta.mrc": "6365791bfdf095e13758ceb008bbdf2992f10827d3ca45302270e748b2b8f9ad",
+    "data/9_DF/DF/0005 - 7MM 520 mm Camera Ceta.tif": "a52dbfd94b72b6449bd570306333a0ab9170b3641960e2f4c3545c0e3665d6d6",
+    "data/9_DF/DF/0009 - 7MM 22500 x STEM BF-S.tif": "644c4e08295da0f9436709ad4b11b6d1ac55974c8f956c8904fa9a66d399f071",
+    "data/9_DF/DF/0011 - 7MM 45000 x STEM BF-S.tif": "71a57931f3eabcc509f6202b5306ffd76956d2232f6c75ed76d5d8958072a1e0",
+    "data/9_DF/DF/0012 - 7MM 22500 x STEM BF-S.tif": "bbd90e3d8c4437b4984c99f08dc389ae478889573602042dbab52c542bbc4b45",
+    "data/9_DF/DF/0014 - 7MM 45000 x STEM BF-S.tif": "0b2ee17bdf1e0455bdcac653283c93e3bb299a78705442537e9f6cc7a533d185",
+    "data/9_DF/DF/0015 - 7MM 22500 x STEM BF-S.tif": "bcff1b7ce575826bcbad0f1793f9c71ad9249986d155cf7cc08e43d0727fed53",
+    "data/9_DF/DF/0017 - 7MM 45000 x STEM BF-S.tif": "46c145d16376f485e37d39dc633baa02d27c0bd9722ec6eab86a88b72dd42959",
+    "data/9_DF/DF/0018 - 5MM 520 mm Camera Ceta.mrc": "425f8deae31728972db3cfaa15d0f87d1b7758455b1f496f293d5fc4beb6615c",
+    "data/9_DF/DF/0018 - 5MM 520 mm Camera Ceta.tif": "57527e837f64729d547ea600cc0dae5c4fca41b7d2a818b3a6e6c3af112c9426",
+    "data/9_DF/DF/0019 - 5MM 520 mm Camera Ceta.mrc": "d8bdbe85f4899ec85681c30b8e0c5882eb76e4818c439032f0b434fa1cf21f60",
+    "data/9_DF/DF/0019 - 5MM 520 mm Camera Ceta.tif": "386b5cc285e17e5d8c25c770bddc51129435b93e9a1b3064f7d3b41cf9d29fd0",
+    "data/9_DF/DF/0020 - 5MM 520 mm Camera Ceta.mrc": "3f0881438867310542eb63179a383248b34fe8b761a1eefd4b45f2c3171897ea",
+    "data/9_DF/DF/0020 - 5MM 520 mm Camera Ceta.tif": "51c1151ebc493a5495028e105ea70a12e36397ecfd9f5149a8f5a1fba5a8ddf8",
+    "data/9_DF/DF/0022 - 5MM 520 mm Camera Ceta.mrc": "1b3fcf358e538321f3c0ea2b08463eed6476e340e78cd60665893c179b517f48",
+    "data/9_DF/DF/0022 - 5MM 520 mm Camera Ceta.tif": "532d645133b1d0698d07b517495a05c9c86e4d925f22eb94054f17d6f3ffff68",
+    "data/9_DF/DF/0026 - 5MM 22500 x STEM BF-S.tif": "249cabfdd8cf4caa1168d8c0fc61c281dd9711b48841b24d8d15c92e023aba07",
+    "data/9_DF/DF/0028 - 5MM 45000 x STEM BF-S.tif": "4da3dd8b20b142d0fb37d89339d907d2e4498e3505522267f1383da5639e0335",
+    "data/9_DF/DF/0029 - 5MM 22500 x STEM BF-S.tif": "449f9da035562a84a5f4d72b87d960cda58005093cff4f4b9d22ecf583dc443b",
+    "data/9_DF/DF/0031 - 5MM 45000 x STEM BF-S.tif": "04fe1cdd3ecf650e09b2fcfbabde7d0cc4f6e0f9172fd46e29de90b696eedd74",
+    "data/9_DF/DF/0032 - 5MM 22500 x STEM BF-S.tif": "55eb869c61ece772a54d6af86b0e30efcec5f94a3f721e969b389877b0b95e1b",
+    "data/9_DF/DF/0034 - 5MM 45000 x STEM BF-S.tif": "0a40c6dfa4ba13847e73e94237d67cf95be790af4ed515491661817242a58447"
+  }
+}

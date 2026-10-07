@@ -1,0 +1,132 @@
+{"kind":"deck","id":"pr/lb6kma","name":"Deck"}
+{"kind":"layout","layoutId":"bd7135c6-a509-498a-a09f-cdd1ee9a59c9","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"6b684315-7a8d-49f2-a592-9ad04b635239","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/bf37ax","slide":1,"title":"Gr4B23271 COMMERCIAL-PURITY TITANIUM","textShapes":4}
+{"kind":"textbox","id":"sh/ny9ona9g","slide":1,"name":"cover-kicker","text":"Gr4B23271 COMMERCIAL-PURITY TITANIUM","textPreview":"Gr4B23271 COMMERCIAL-PURITY TITANIUM","textChars":36,"textLines":1,"bbox":[58,54,560,32]}
+{"kind":"textbox","id":"sh/ozipgfql","slide":1,"name":"cover-title","text":"冷变形微观组织与\n强化机制图集","textPreview":"冷变形微观组织与 | 强化机制图集","textChars":15,"textLines":2,"bbox":[58,150,545,190]}
+{"kind":"textbox","id":"sh/p0r6pkr6","slide":1,"name":"cover-subtitle","text":"按参考文献 Fig. 6、7、10、11、14 和 15 的内容层级整理","textPreview":"按参考文献 Fig. 6、7、10、11、14 和 15 的内容层级整理","textChars":36,"textLines":1,"bbox":[58,374,530,78]}
+{"kind":"shape","id":"sh/etgna58j","slide":1,"bbox":[58,505,78,6]}
+{"kind":"textbox","id":"sh/fupoja94","slide":1,"name":"cover-footer","text":"六种直径状态｜EBSD、织构、施密特因子、GND与强化贡献","textPreview":"六种直径状态｜EBSD、织构、施密特因子、GND与强化贡献","textChars":29,"textLines":1,"bbox":[58,545,545,52]}
+{"kind":"shape","id":"sh/1wr6lkra","slide":1,"bbox":[638,0,12,720]}
+{"kind":"image","id":"im/5o3mdw7q","slide":1,"name":"","alt":"5毫米状态IPF-AD取向图","bbox":[650,0,630,720]}
+{"kind":"notes","id":"nt/bf37ax","slide":1,"text":"[Sources]\n- /home/abcd/repos/work_hardening_paper/results/mtex_fig6_component_gallery/01_ipf_maps/5p00mm_48p98pct_ipf_ad.png\n- /home/abcd/.codex/attachments/5af1bb34-83d6-475b-986a-40466be5f276/Numerical simulation of cold working and microstructure–property(1).pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/ipcruu","slide":2,"title":"Fig. 6a","textShapes":4}
+{"kind":"textbox","id":"sh/ob6d4fml","slide":2,"name":"section-2","text":"Fig. 6a","textPreview":"Fig. 6a","textChars":7,"textLines":1,"bbox":[52,30,155,42]}
+{"kind":"textbox","id":"sh/nadwval0","slide":2,"name":"title-2","text":"六状态 IPF–AD 取向分布","textPreview":"六状态 IPF–AD 取向分布","textChars":15,"textLines":1,"bbox":[194,25,990,54]}
+{"kind":"shape","id":"sh/294v254f","slide":2,"bbox":[52,91,1176,2]}
+{"kind":"shape","id":"sh/18vet03u","slide":2,"bbox":[52,91,118,4]}
+{"kind":"shape","id":"sh/07md0vmp","slide":2,"name":"figure-field-2","bbox":[52,112,1176,548]}
+{"kind":"textbox","id":"sh/el4vy54j","slide":2,"name":"footer-label-2","text":"Gr4B23271｜cold deformation series","textPreview":"Gr4B23271｜cold deformation series","textChars":33,"textLines":1,"bbox":[52,678,480,22]}
+{"kind":"textbox","id":"sh/l4ze543e","slide":2,"name":"footer-page-2","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1170,676,58,24]}
+{"kind":"image","id":"im/65s7eh4v","slide":2,"name":"","alt":"六种冷变形状态的IPF-AD图","bbox":[60,120,1160,532]}
+{"kind":"notes","id":"nt/ipcruu","slide":2,"text":"[Sources]\n- /home/abcd/repos/work_hardening_paper/results/mtex_fig6_component_gallery/montages/ipf_ad_six_state_montage.png\n- /home/abcd/.codex/attachments/5af1bb34-83d6-475b-986a-40466be5f276/Numerical simulation of cold working and microstructure–property(1).pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/4xn9s1","slide":3,"title":"Fig. 6b","textShapes":4}
+{"kind":"textbox","id":"sh/p8vilkna","slide":3,"name":"section-3","text":"Fig. 6b","textPreview":"Fig. 6b","textChars":7,"textLines":1,"bbox":[52,30,155,42]}
+{"kind":"textbox","id":"sh/il4za5oj","slide":3,"name":"title-3","text":"六状态晶界空间分布","textPreview":"六状态晶界空间分布","textChars":9,"textLines":1,"bbox":[194,25,990,54]}
+{"kind":"shape","id":"sh/36dgja54","slide":3,"bbox":[52,91,1176,2]}
+{"kind":"shape","id":"sh/gj2h8f6t","slide":3,"bbox":[52,91,118,4]}
+{"kind":"shape","id":"sh/hkbyhkne","slide":3,"name":"figure-field-3","bbox":[52,112,1176,548]}
+{"kind":"textbox","id":"sh/vitgfa58","slide":3,"name":"footer-label-3","text":"Gr4B23271｜cold deformation series","textPreview":"Gr4B23271｜cold deformation series","textChars":33,"textLines":1,"bbox":[52,678,480,22]}
+{"kind":"textbox","id":"sh/0f6hkz6x","slide":3,"name":"footer-page-3","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1170,676,58,24]}
+{"kind":"image","id":"im/retcj6pw","slide":3,"name":"","alt":"六种冷变形状态的晶界图","bbox":[60,120,1160,532]}
+{"kind":"notes","id":"nt/4xn9s1","slide":3,"text":"[Sources]\n- /home/abcd/repos/work_hardening_paper/results/mtex_fig6_component_gallery/montages/gb_six_state_montage.png\n- /home/abcd/.codex/attachments/5af1bb34-83d6-475b-986a-40466be5f276/Numerical simulation of cold working and microstructure–property(1).pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/fputa1","slide":4,"title":"Fig. 6c","textShapes":4}
+{"kind":"textbox","id":"sh/hkfa9cji","slide":4,"name":"section-4","text":"Fig. 6c","textPreview":"Fig. 6c","textChars":7,"textLines":1,"bbox":[52,30,155,42]}
+{"kind":"textbox","id":"sh/uhoryh0r","slide":4,"name":"title-4","text":"六状态 KAM 空间分布","textPreview":"六状态 KAM 空间分布","textChars":12,"textLines":1,"bbox":[194,25,990,54]}
+{"kind":"shape","id":"sh/vixs7m1c","slide":4,"bbox":[52,91,1176,2]}
+{"kind":"shape","id":"sh/8vm9w7il","slide":4,"bbox":[52,91,118,4]}
+{"kind":"shape","id":"sh/9gva5cj6","slide":4,"name":"figure-field-4","bbox":[52,112,1176,548]}
+{"kind":"textbox","id":"sh/7ud83210","slide":4,"name":"footer-label-4","text":"Gr4B23271｜cold deformation series","textPreview":"Gr4B23271｜cold deformation series","textChars":33,"textLines":1,"bbox":[52,678,480,22]}
+{"kind":"textbox","id":"sh/srq98bi5","slide":4,"name":"footer-page-4","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1170,676,58,24]}
+{"kind":"image","id":"im/3i9cruh0","slide":4,"name":"","alt":"六种冷变形状态的KAM图","bbox":[60,120,1160,532]}
+{"kind":"notes","id":"nt/fputa1","slide":4,"text":"[Sources]\n- /home/abcd/repos/work_hardening_paper/results/mtex_fig6_component_gallery/montages/kam_six_state_montage.png\n- /home/abcd/.codex/attachments/5af1bb34-83d6-475b-986a-40466be5f276/Numerical simulation of cold working and microstructure–property(1).pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/1li595","slide":5,"title":"Fig. 6d","textShapes":4}
+{"kind":"textbox","id":"sh/hsfixczq","slide":5,"name":"section-5","text":"Fig. 6d","textPreview":"Fig. 6d","textChars":7,"textLines":1,"bbox":[52,30,155,42]}
+{"kind":"textbox","id":"sh/u54jmxgz","slide":5,"name":"title-5","text":"六状态 HAGB 晶粒尺寸分布","textPreview":"六状态 HAGB 晶粒尺寸分布","textChars":15,"textLines":1,"bbox":[194,25,990,54]}
+{"kind":"shape","id":"sh/v6d0v2hk","slide":5,"bbox":[52,91,1176,2]}
+{"kind":"shape","id":"sh/83m1knyt","slide":5,"bbox":[52,91,118,4]}
+{"kind":"shape","id":"sh/t4vitsze","slide":5,"name":"figure-field-5","bbox":[52,112,1176,548]}
+{"kind":"textbox","id":"sh/72d0riho","slide":5,"name":"footer-label-5","text":"Gr4B23271｜cold deformation series","textPreview":"Gr4B23271｜cold deformation series","textChars":33,"textLines":1,"bbox":[52,678,480,22]}
+{"kind":"textbox","id":"sh/czq1wryd","slide":5,"name":"footer-page-5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1170,676,58,24]}
+{"kind":"image","id":"im/zipcvud0","slide":5,"name":"","alt":"六种冷变形状态的HAGB晶粒尺寸分布","bbox":[60,120,1160,532]}
+{"kind":"notes","id":"nt/1li595","slide":5,"text":"[Sources]\n- /home/abcd/repos/work_hardening_paper/results/mtex_fig6_component_gallery/montages/hagb_grain_size_six_state_montage.png\n- /home/abcd/.codex/attachments/5af1bb34-83d6-475b-986a-40466be5f276/Numerical simulation of cold working and microstructure–property(1).pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/st38hr","slide":6,"title":"Fig. 6e","textShapes":4}
+{"kind":"textbox","id":"sh/s3edw7mt","slide":6,"name":"section-6","text":"Fig. 6e","textPreview":"Fig. 6e","textChars":7,"textLines":1,"bbox":[52,30,155,42]}
+{"kind":"textbox","id":"sh/r2lcn258","slide":6,"name":"title-6","text":"六状态晶界取向差分布","textPreview":"六状态晶界取向差分布","textChars":10,"textLines":1,"bbox":[194,25,990,54]}
+{"kind":"shape","id":"sh/61cbux4n","slide":6,"bbox":[52,91,1176,2]}
+{"kind":"shape","id":"sh/503ulcn2","slide":6,"bbox":[52,91,118,4]}
+{"kind":"shape","id":"sh/4zuts7mh","slide":6,"name":"figure-field-6","bbox":[52,112,1176,548]}
+{"kind":"textbox","id":"sh/ixcbqx4r","slide":6,"name":"footer-label-6","text":"Gr4B23271｜cold deformation series","textPreview":"Gr4B23271｜cold deformation series","textChars":33,"textLines":1,"bbox":[52,678,480,22]}
+{"kind":"textbox","id":"sh/hc3uhsn6","slide":6,"name":"footer-page-6","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1170,676,58,24]}
+{"kind":"image","id":"im/a5or2lwn","slide":6,"name":"","alt":"六种冷变形状态的晶界取向差分布","bbox":[60,120,1160,532]}
+{"kind":"notes","id":"nt/st38hr","slide":6,"text":"[Sources]\n- /home/abcd/repos/work_hardening_paper/results/mtex_fig6_component_gallery/montages/boundary_misorientation_six_state_montage.png\n- /home/abcd/.codex/attachments/5af1bb34-83d6-475b-986a-40466be5f276/Numerical simulation of cold working and microstructure–property(1).pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/y2ve16","slide":7,"title":"Fig. 6f","textShapes":4}
+{"kind":"textbox","id":"sh/5cjq5cjy","slide":7,"name":"section-7","text":"Fig. 6f","textPreview":"Fig. 6f","textChars":7,"textLines":1,"bbox":[52,30,155,42]}
+{"kind":"textbox","id":"sh/i9s7ux07","slide":7,"name":"title-7","text":"六状态 KAM 统计分布","textPreview":"六状态 KAM 统计分布","textChars":12,"textLines":1,"bbox":[194,25,990,54]}
+{"kind":"shape","id":"sh/3a18321s","slide":7,"bbox":[52,91,1176,2]}
+{"kind":"shape","id":"sh/g7aps7i1","slide":7,"bbox":[52,91,118,4]}
+{"kind":"shape","id":"sh/h8jq1sjm","slide":7,"name":"figure-field-7","bbox":[52,112,1176,548]}
+{"kind":"textbox","id":"sh/v6h8z21w","slide":7,"name":"footer-label-7","text":"Gr4B23271｜cold deformation series","textPreview":"Gr4B23271｜cold deformation series","textChars":33,"textLines":1,"bbox":[52,678,480,22]}
+{"kind":"textbox","id":"sh/03u94ril","slide":7,"name":"footer-page-7","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1170,676,58,24]}
+{"kind":"image","id":"im/zy90321c","slide":7,"name":"","alt":"六种冷变形状态的KAM统计分布","bbox":[60,120,1160,532]}
+{"kind":"notes","id":"nt/y2ve16","slide":7,"text":"[Sources]\n- /home/abcd/repos/work_hardening_paper/results/mtex_fig6_component_gallery/montages/kam_distribution_six_state_montage.png\n- /home/abcd/.codex/attachments/5af1bb34-83d6-475b-986a-40466be5f276/Numerical simulation of cold working and microstructure–property(1).pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/32gdyl","slide":8,"title":"Fig. 7","textShapes":4}
+{"kind":"textbox","id":"sh/zmt87q1k","slide":8,"name":"section-8","text":"Fig. 7","textPreview":"Fig. 7","textChars":6,"textLines":1,"bbox":[52,30,155,42]}
+{"kind":"textbox","id":"sh/knm9gv25","slide":8,"name":"title-8","text":"六状态极图与逆极图的织构演化","textPreview":"六状态极图与逆极图的织构演化","textChars":14,"textLines":1,"bbox":[194,25,990,54]}
+{"kind":"shape","id":"sh/lovq90jq","slide":8,"bbox":[52,91,1176,2]}
+{"kind":"shape","id":"sh/m94ri50b","slide":8,"bbox":[52,91,118,4]}
+{"kind":"shape","id":"sh/7ad8ba1g","slide":8,"name":"figure-field-8","bbox":[52,112,1176,548]}
+{"kind":"textbox","id":"sh/9cvadkjm","slide":8,"name":"footer-label-8","text":"Gr4B23271｜cold deformation series","textPreview":"Gr4B23271｜cold deformation series","textChars":33,"textLines":1,"bbox":[52,678,480,22]}
+{"kind":"textbox","id":"sh/ud4r6507","slide":8,"name":"footer-page-8","text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[1170,676,58,24]}
+{"kind":"image","id":"im/lg3u58ze","slide":8,"name":"","alt":"六种冷变形状态的极图和逆极图组合","bbox":[60,120,1160,532]}
+{"kind":"notes","id":"nt/32gdyl","slide":8,"text":"[Sources]\n- /home/abcd/repos/work_hardening_paper/results/mtex_fig7_texture_gallery/reference_style/montages/fig7_reference_style_six_state_montage.png\n- /home/abcd/.codex/attachments/5af1bb34-83d6-475b-986a-40466be5f276/Numerical simulation of cold working and microstructure–property(1).pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/stjtn5","slide":9,"title":"Fig. 10a","textShapes":4}
+{"kind":"textbox","id":"sh/u9kn6p83","slide":9,"name":"section-9","text":"Fig. 10a","textPreview":"Fig. 10a","textChars":8,"textLines":1,"bbox":[52,30,155,42]}
+{"kind":"textbox","id":"sh/hwvm14re","slide":9,"name":"title-9","text":"柱面〈a〉滑移施密特因子分布","textPreview":"柱面〈a〉滑移施密特因子分布","textChars":14,"textLines":1,"bbox":[194,25,990,54]}
+{"kind":"shape","id":"sh/gvm58zqt","slide":9,"bbox":[52,91,1176,2]}
+{"kind":"shape","id":"sh/3yd43upk","slide":9,"bbox":[52,91,118,4]}
+{"kind":"shape","id":"sh/ix4na98z","slide":9,"name":"figure-field-9","bbox":[52,112,1176,548]}
+{"kind":"textbox","id":"sh/4zm5czq5","slide":9,"name":"footer-label-9","text":"Gr4B23271｜cold deformation series","textPreview":"Gr4B23271｜cold deformation series","textChars":33,"textLines":1,"bbox":[52,678,480,22]}
+{"kind":"textbox","id":"sh/j294ra9g","slide":9,"name":"footer-page-9","text":"9","textPreview":"9","textChars":1,"textLines":1,"bbox":[1170,676,58,24]}
+{"kind":"image","id":"im/k7mpgjy1","slide":9,"name":"","alt":"六种冷变形状态的柱面a滑移施密特因子分布","bbox":[60,120,1160,532]}
+{"kind":"notes","id":"nt/stjtn5","slide":9,"text":"[Sources]\n- /home/abcd/repos/work_hardening_paper/results/mtex_prismatic_schmid_distribution/prismatic_a_schmid_distribution_6state.png\n- /home/abcd/.codex/attachments/5af1bb34-83d6-475b-986a-40466be5f276/Numerical simulation of cold working and microstructure–property(1).pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/lgxm30","slide":10,"title":"Fig. 10b","textShapes":4}
+{"kind":"textbox","id":"sh/xw7yt0na","slide":10,"name":"section-10","text":"Fig. 10b","textPreview":"Fig. 10b","textChars":8,"textLines":1,"bbox":[52,30,155,42]}
+{"kind":"textbox","id":"sh/atwzyloj","slide":10,"name":"title-10","text":"锥面〈c+a〉滑移施密特因子分布","textPreview":"锥面〈c+a〉滑移施密特因子分布","textChars":16,"textLines":1,"bbox":[194,25,990,54]}
+{"kind":"shape","id":"sh/bu5grq54","slide":10,"bbox":[52,91,1176,2]}
+{"kind":"shape","id":"sh/orehwv6d","slide":10,"bbox":[52,91,118,4]}
+{"kind":"shape","id":"sh/psnyp0ny","slide":10,"name":"figure-field-10","bbox":[52,112,1176,548]}
+{"kind":"textbox","id":"sh/nq5gnq5s","slide":10,"name":"footer-label-10","text":"Gr4B23271｜cold deformation series","textPreview":"Gr4B23271｜cold deformation series","textChars":33,"textLines":1,"bbox":[52,678,480,22]}
+{"kind":"textbox","id":"sh/03uxsb6h","slide":10,"name":"footer-page-10","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1170,676,58,24]}
+{"kind":"image","id":"im/fu9cbid0","slide":10,"name":"","alt":"六种冷变形状态的锥面c+a滑移施密特因子分布","bbox":[60,120,1160,532]}
+{"kind":"notes","id":"nt/lgxm30","slide":10,"text":"[Sources]\n- /home/abcd/repos/work_hardening_paper/results/mtex_pyramidal_ca_schmid_distribution/pyramidal_ca_schmid_distribution_6state.png\n- /home/abcd/.codex/attachments/5af1bb34-83d6-475b-986a-40466be5f276/Numerical simulation of cold working and microstructure–property(1).pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/tqlh3w","slide":11,"title":"Fig. 11","textShapes":4}
+{"kind":"textbox","id":"sh/t4j2lk7m","slide":11,"name":"section-11","text":"Fig. 11","textPreview":"Fig. 11","textChars":7,"textLines":1,"bbox":[52,30,155,42]}
+{"kind":"textbox","id":"sh/61sja5ov","slide":11,"name":"title-11","text":"初始态与最大变形态的滑移族施密特因子","textPreview":"初始态与最大变形态的滑移族施密特因子","textChars":18,"textLines":1,"bbox":[194,25,990,54]}
+{"kind":"shape","id":"sh/721kjapg","slide":11,"bbox":[52,91,1176,2]}
+{"kind":"shape","id":"sh/g7ulgf6x","slide":11,"bbox":[52,91,118,4]}
+{"kind":"shape","id":"sh/1832pk7i","slide":11,"name":"figure-field-11","bbox":[52,112,1176,548]}
+{"kind":"textbox","id":"sh/f61knapc","slide":11,"name":"footer-label-11","text":"Gr4B23271｜cold deformation series","textPreview":"Gr4B23271｜cold deformation series","textChars":33,"textLines":1,"bbox":[52,678,480,22]}
+{"kind":"textbox","id":"sh/ovulkz69","slide":11,"name":"footer-page-11","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1170,676,58,24]}
+{"kind":"image","id":"im/nu9kbeps","slide":11,"name":"","alt":"7毫米和5毫米状态的三类滑移族施密特因子空间图及分布","bbox":[60,120,1160,532]}
+{"kind":"notes","id":"nt/tqlh3w","slide":11,"text":"[Sources]\n- /home/abcd/repos/work_hardening_paper/results/mtex_reference_style_fig11_schmid/reference_style_fig11_schmid_7d_5d.png\n- /home/abcd/.codex/attachments/5af1bb34-83d6-475b-986a-40466be5f276/Numerical simulation of cold working and microstructure–property(1).pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/54c2oi","slide":12,"title":"Fig. 14","textShapes":4}
+{"kind":"textbox","id":"sh/edcr2lo7","slide":12,"name":"section-12","text":"Fig. 14","textPreview":"Fig. 14","textChars":7,"textLines":1,"bbox":[52,30,155,42]}
+{"kind":"textbox","id":"sh/1gnaxgny","slide":12,"name":"title-12","text":"六状态 KAM–GND 空间分布与统计","textPreview":"六状态 KAM–GND 空间分布与统计","textChars":19,"textLines":1,"bbox":[194,25,990,54]}
+{"kind":"shape","id":"sh/0fu94v6d","slide":12,"bbox":[52,91,1176,2]}
+{"kind":"shape","id":"sh/ni5szq54","slide":12,"bbox":[52,91,118,4]}
+{"kind":"shape","id":"sh/2hwb6loj","slide":12,"name":"figure-field-12","bbox":[52,112,1176,548]}
+{"kind":"textbox","id":"sh/ojet8v6p","slide":12,"name":"footer-label-12","text":"Gr4B23271｜cold deformation series","textPreview":"Gr4B23271｜cold deformation series","textChars":33,"textLines":1,"bbox":[52,678,480,22]}
+{"kind":"textbox","id":"sh/bm5s3a50","slide":12,"name":"footer-page-12","text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1170,676,58,24]}
+{"kind":"image","id":"im/87m98j2p","slide":12,"name":"","alt":"六种冷变形状态的KAM估算GND空间图和统计分布","bbox":[60,120,1160,532]}
+{"kind":"notes","id":"nt/54c2oi","slide":12,"text":"[Sources]\n- /home/abcd/repos/work_hardening_paper/results/mtex_reference_style_fig14_gnd/reference_style_fig14_gnd_six_diameters.png\n- /home/abcd/.codex/attachments/5af1bb34-83d6-475b-986a-40466be5f276/Numerical simulation of cold working and microstructure–property(1).pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/p6hps4","slide":13,"title":"Fig. 15","textShapes":4}
+{"kind":"textbox","id":"sh/5w3u1ob2","slide":13,"name":"section-13","text":"Fig. 15","textPreview":"Fig. 15","textChars":7,"textLines":1,"bbox":[52,30,155,42]}
+{"kind":"textbox","id":"sh/itcbqtcb","slide":13,"name":"title-13","text":"基体与三种强化贡献的屈服强度分解","textPreview":"基体与三种强化贡献的屈服强度分解","textChars":16,"textLines":1,"bbox":[194,25,990,54]}
+{"kind":"shape","id":"sh/3ulczytw","slide":13,"bbox":[52,91,1176,2]}
+{"kind":"shape","id":"sh/szudw3ud","slide":13,"bbox":[52,91,118,4]}
+{"kind":"shape","id":"sh/dknu58by","slide":13,"name":"figure-field-13","bbox":[52,112,1176,548]}
+{"kind":"textbox","id":"sh/rylc3yts","slide":13,"name":"footer-label-13","text":"Gr4B23271｜cold deformation series","textPreview":"Gr4B23271｜cold deformation series","textChars":33,"textLines":1,"bbox":[52,678,480,22]}
+{"kind":"textbox","id":"sh/83atkju9","slide":13,"name":"footer-page-13","text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1170,676,58,24]}
+{"kind":"image","id":"im/bu50rm5s","slide":13,"name":"","alt":"六种冷变形状态的基体固溶晶界和位错强化贡献图","bbox":[60,120,1160,532]}
+{"kind":"notes","id":"nt/p6hps4","slide":13,"text":"[Sources]\n- /home/abcd/repos/work_hardening_paper/results/reference_three_factor_strengthening/figures/calibrated/reference_three_factor_strengthening_calibrated_montage.png\n- /home/abcd/.codex/attachments/5af1bb34-83d6-475b-986a-40466be5f276/Numerical simulation of cold working and microstructure–property(1).pdf\n[/Sources]"}

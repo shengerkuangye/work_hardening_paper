@@ -1,0 +1,9 @@
+﻿panel,image_id,diffraction_id,feature_label,source_x,source_y,label_x,label_y,role,same_dislocation_cross_panel,burgers_vector
+a,0014,0004,A1,820,905,605,830,comparison line feature,not established,unassigned
+b,0011,0003,B1,1270,644,1110,510,retained-line/c-component candidate under provisional indexing,not established,unassigned
+b,0011,0003,B2,778,1120,570,1030,retained-line/c-component candidate under provisional indexing,not established,unassigned
+c,0017,0005,C1,1460,1050,1240,940,comparison line feature,not established,unassigned
+d,0031,0020,D1,360,1790,150,1650,comparison line feature,not established,unassigned
+e,0028,0019,E1,410,536,225,440,retained-line/c-component candidate under provisional indexing,not established,unassigned
+e,0028,0019,E2,621,652,400,735,retained-line/c-component candidate under provisional indexing,not established,unassigned
+f,0034,0022,F1,1590,1390,1370,1280,comparison line feature,not established,unassigned

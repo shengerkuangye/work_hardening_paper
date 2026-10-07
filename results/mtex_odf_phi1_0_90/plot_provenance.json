@@ -1,0 +1,121 @@
+{
+  "phi1_display_deg": [
+    0,
+    90
+  ],
+  "Phi_display_deg": [
+    0,
+    90
+  ],
+  "phi2_sections_deg": [
+    0,
+    30,
+    60
+  ],
+  "specimen_symmetry": "1",
+  "display_grid_deg": 5,
+  "density_csv_grid_deg": 1,
+  "mrd_color_limits": [
+    0,
+    10.7577898869387
+  ],
+  "window_renormalized": false,
+  "panel_box_aspect": 1,
+  "data_aspect": 1,
+  "panel_pixel_sizes_at_canvas_dpi": [
+    [
+      154.28571428571425,
+      154.28571428571422
+    ],
+    [
+      154.28571428571428,
+      154.28571428571422
+    ],
+    [
+      154.28571428571433,
+      154.28571428571422
+    ],
+    [
+      154.28571428571425,
+      154.28571428571433
+    ],
+    [
+      154.28571428571428,
+      154.28571428571433
+    ],
+    [
+      154.28571428571433,
+      154.28571428571433
+    ],
+    [
+      154.28571428571425,
+      154.28571428571422
+    ],
+    [
+      154.28571428571428,
+      154.28571428571422
+    ],
+    [
+      154.28571428571433,
+      154.28571428571422
+    ],
+    [
+      154.2857142857143,
+      154.28571428571433
+    ],
+    [
+      154.28571428571428,
+      154.28571428571433
+    ],
+    [
+      154.28571428571433,
+      154.28571428571433
+    ],
+    [
+      154.28571428571425,
+      154.28571428571422
+    ],
+    [
+      154.28571428571428,
+      154.28571428571422
+    ],
+    [
+      154.28571428571433,
+      154.28571428571422
+    ],
+    [
+      154.28571428571425,
+      154.28571428571422
+    ],
+    [
+      154.28571428571428,
+      154.28571428571422
+    ],
+    [
+      154.28571428571433,
+      154.28571428571422
+    ]
+  ],
+  "max_odf_labels": "Full orientation space, retained from original figure",
+  "display_negative_density": "clipped at zero, same as original figure",
+  "density_sha256": {
+    "density_7d_phi2_00.csv": "c7539ba5d0ce97407e5ddd905a8ebdc0ea45bb05e862c03c65b5852f55bcc97f",
+    "density_7d_phi2_30.csv": "e4ea3b1c6e0980fa99d62feda742a4026ef7c6874d49513b921c89ef3d215314",
+    "density_7d_phi2_60.csv": "e8779f7df30e1419ffbfaa9311104ccaaa109f969e88cbd0bb140730e0385fc8",
+    "density_6.48d_phi2_00.csv": "5e176b824b8bbd1d1f9db56e387b95ace2d762fed7c1ac63964ce5075a16a1e2",
+    "density_6.48d_phi2_30.csv": "5e8662edded91e93bca52c4b88bd9a9f9c55c9b22818e2b476be7794760f940c",
+    "density_6.48d_phi2_60.csv": "e3f09279b039d49f506b921239e2aa1a79fb428dc32d8b65867c30887d14290d",
+    "density_6.02d_phi2_00.csv": "cbca6f84aaebb1b90c82b347f49be32d0297dade823717bd2a4a912313c0802e",
+    "density_6.02d_phi2_30.csv": "0bd8d519b7b19460f1b8f2a5b1b1060776908fff1bea308379b9e92084c810b4",
+    "density_6.02d_phi2_60.csv": "b41570f1801a0cee6160cbb38d25297cabbbf32670413db4219530d8445350b2",
+    "density_5.6d_phi2_00.csv": "c57115403f0f1cd56b6108cc07a947f7d43d03278f0eb9676e7523415b92f1e9",
+    "density_5.6d_phi2_30.csv": "960f40af5b0a042dc0e0538b563d1cc8fe46e2229930ea8fb7297ae21dd429f9",
+    "density_5.6d_phi2_60.csv": "f30bf60c9b5560a2ec64f39b0f96f0874be11a190beff0dd1990ba6347c5cf19",
+    "density_5.25d_phi2_00.csv": "4411a283e2f7d924e58e137f0871c17f2a28620f50fc3502379d4fd0e63690a1",
+    "density_5.25d_phi2_30.csv": "9ea64cc9dbc2f0497d33c30bf4e4bcb443de53f783aef41603d024feed710459",
+    "density_5.25d_phi2_60.csv": "aac76d9e3f3c03e71278a8ceefb3d0192984490045747f87f2f687e8a6bf0db6",
+    "density_5d_phi2_00.csv": "e8da6c3c2914ee09588c3df27880e648c67ec4d3cfaa2787b5839f2de02fbbc8",
+    "density_5d_phi2_30.csv": "9665a2941c42cfd14033aa123c2ae7d61abc116f19ce0228c88a7a085629bb79",
+    "density_5d_phi2_60.csv": "72c54135c26d2bf26828e306302bdb3c24e71d28ccdac81cf09157d22c060d1e"
+  }
+}

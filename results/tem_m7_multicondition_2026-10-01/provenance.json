@@ -1,0 +1,80 @@
+{
+  "state": "M-7.00",
+  "panels": [
+    {
+      "panel": "a",
+      "acquisition": "0009",
+      "source": "data/9_DF/DF/0009 - 7MM 22500 x STEM BF-S.tif",
+      "sha256": "644c4e08295da0f9436709ad4b11b6d1ac55974c8f956c8904fa9a66d399f071"
+    },
+    {
+      "panel": "d",
+      "acquisition": "0011",
+      "source": "data/9_DF/DF/0011 - 7MM 45000 x STEM BF-S.tif",
+      "sha256": "71a57931f3eabcc509f6202b5306ffd76956d2232f6c75ed76d5d8958072a1e0"
+    },
+    {
+      "panel": "g",
+      "acquisition": "0003",
+      "source": "data/9_DF/DF/0003 - 7MM 520 mm Camera Ceta.tif",
+      "sha256": "4a2a4934924651d6f781cc9e02f1d7a244a27fbf1d145f7d4b8d9ee5318fcd4e"
+    },
+    {
+      "panel": "b",
+      "acquisition": "0012",
+      "source": "data/9_DF/DF/0012 - 7MM 22500 x STEM BF-S.tif",
+      "sha256": "bbd90e3d8c4437b4984c99f08dc389ae478889573602042dbab52c542bbc4b45"
+    },
+    {
+      "panel": "e",
+      "acquisition": "0014",
+      "source": "data/9_DF/DF/0014 - 7MM 45000 x STEM BF-S.tif",
+      "sha256": "0b2ee17bdf1e0455bdcac653283c93e3bb299a78705442537e9f6cc7a533d185"
+    },
+    {
+      "panel": "h",
+      "acquisition": "0004",
+      "source": "data/9_DF/DF/0004 - 7MM 520 mm Camera Ceta.tif",
+      "sha256": "e18cb468095c65dcd828069b4c495b98a6e58419e936c9a5dca2bea279411217"
+    },
+    {
+      "panel": "c",
+      "acquisition": "0015",
+      "source": "data/9_DF/DF/0015 - 7MM 22500 x STEM BF-S.tif",
+      "sha256": "bcff1b7ce575826bcbad0f1793f9c71ad9249986d155cf7cc08e43d0727fed53"
+    },
+    {
+      "panel": "f",
+      "acquisition": "0017",
+      "source": "data/9_DF/DF/0017 - 7MM 45000 x STEM BF-S.tif",
+      "sha256": "46c145d16376f485e37d39dc633baa02d27c0bd9722ec6eab86a88b72dd42959"
+    },
+    {
+      "panel": "i",
+      "acquisition": "0005",
+      "source": "data/9_DF/DF/0005 - 7MM 520 mm Camera Ceta.tif",
+      "sha256": "a52dbfd94b72b6449bd570306333a0ab9170b3641960e2f4c3545c0e3665d6d6"
+    }
+  ],
+  "image_processing": "Full original frames, proportional resizing only; no warping, contrast edits or synthetic defects.",
+  "markers": "Yellow polygon: measured coverage of high-magnification image in the same column.",
+  "field_status": "Within-condition low/high maps verified. Cross-condition registration and individual dislocation identity unconfirmed; no common-feature labels.",
+  "diffraction": "Provisional systematic-row family labels (*); no assertion of actual selected g or single-dislocation extinction.",
+  "source_annotation_mapping": [
+    [
+      "0009",
+      "0011",
+      "0003"
+    ],
+    [
+      "0012",
+      "0014",
+      "0004"
+    ],
+    [
+      "0015",
+      "0017",
+      "0005"
+    ]
+  ]
+}

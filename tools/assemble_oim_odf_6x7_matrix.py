@@ -245,15 +245,6 @@ def build_matrix(source_root: Path, output_dir: Path) -> tuple[Path, Path]:
     canvas.save(png_path, format="PNG", dpi=(600, 600), optimize=True)
     canvas.save(tiff_path, format="TIFF", dpi=(600, 600), compression="tiff_lzw")
 
-    # Keep the previously delivered ODF filenames current, so they no longer
-    # point to the superseded 2 x 3 whole-image montage.
-    canvas.save(output_dir / "oim_odf_six_diameters.png", format="PNG", dpi=(600, 600), optimize=True)
-    canvas.save(
-        output_dir / "oim_odf_six_diameters.tif",
-        format="TIFF",
-        dpi=(600, 600),
-        compression="tiff_lzw",
-    )
     canvas.close()
 
     print(f"Detected source crop boxes: {reference_boxes}")

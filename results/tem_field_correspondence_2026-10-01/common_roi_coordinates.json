@@ -1,0 +1,542 @@
+[
+  {
+    "image_id": "0028",
+    "region": "R1",
+    "box": [
+      550,
+      600,
+      950,
+      1000
+    ],
+    "center": [
+      750,
+      800
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      750,
+      800
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0031",
+    "region": "R1",
+    "box": [
+      279,
+      591,
+      679,
+      991
+    ],
+    "center": [
+      479,
+      791
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      750,
+      800
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0034",
+    "region": "R1",
+    "box": [
+      124,
+      600,
+      524,
+      1000
+    ],
+    "center": [
+      324,
+      800
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      750,
+      800
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0028",
+    "region": "R2",
+    "box": [
+      900,
+      600,
+      1300,
+      1000
+    ],
+    "center": [
+      1100,
+      800
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1100,
+      800
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0031",
+    "region": "R2",
+    "box": [
+      647,
+      572,
+      1047,
+      972
+    ],
+    "center": [
+      847,
+      772
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1100,
+      800
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0034",
+    "region": "R2",
+    "box": [
+      495,
+      574,
+      895,
+      974
+    ],
+    "center": [
+      695,
+      774
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1100,
+      800
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0028",
+    "region": "R3",
+    "box": [
+      1300,
+      600,
+      1700,
+      1000
+    ],
+    "center": [
+      1500,
+      800
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1500,
+      800
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0031",
+    "region": "R3",
+    "box": [
+      1067,
+      550,
+      1467,
+      950
+    ],
+    "center": [
+      1267,
+      750
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1500,
+      800
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0034",
+    "region": "R3",
+    "box": [
+      920,
+      544,
+      1320,
+      944
+    ],
+    "center": [
+      1120,
+      744
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1500,
+      800
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0028",
+    "region": "R4",
+    "box": [
+      550,
+      1000,
+      950,
+      1400
+    ],
+    "center": [
+      750,
+      1200
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      750,
+      1200
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0031",
+    "region": "R4",
+    "box": [
+      301,
+      1011,
+      701,
+      1411
+    ],
+    "center": [
+      501,
+      1211
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      750,
+      1200
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0034",
+    "region": "R4",
+    "box": [
+      153,
+      1025,
+      553,
+      1425
+    ],
+    "center": [
+      353,
+      1225
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      750,
+      1200
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0028",
+    "region": "R5",
+    "box": [
+      900,
+      1000,
+      1300,
+      1400
+    ],
+    "center": [
+      1100,
+      1200
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1100,
+      1200
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0031",
+    "region": "R5",
+    "box": [
+      669,
+      992,
+      1069,
+      1392
+    ],
+    "center": [
+      869,
+      1192
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1100,
+      1200
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0034",
+    "region": "R5",
+    "box": [
+      525,
+      999,
+      925,
+      1399
+    ],
+    "center": [
+      725,
+      1199
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1100,
+      1200
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0028",
+    "region": "R6",
+    "box": [
+      1300,
+      1000,
+      1700,
+      1400
+    ],
+    "center": [
+      1500,
+      1200
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1500,
+      1200
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0031",
+    "region": "R6",
+    "box": [
+      1089,
+      970,
+      1489,
+      1370
+    ],
+    "center": [
+      1289,
+      1170
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1500,
+      1200
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0034",
+    "region": "R6",
+    "box": [
+      950,
+      969,
+      1350,
+      1369
+    ],
+    "center": [
+      1150,
+      1169
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1500,
+      1200
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0028",
+    "region": "R7",
+    "box": [
+      550,
+      1450,
+      950,
+      1850
+    ],
+    "center": [
+      750,
+      1650
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      750,
+      1650
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0031",
+    "region": "R7",
+    "box": [
+      326,
+      1484,
+      726,
+      1884
+    ],
+    "center": [
+      526,
+      1684
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      750,
+      1650
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0034",
+    "region": "R7",
+    "box": [
+      187,
+      1503,
+      587,
+      1903
+    ],
+    "center": [
+      387,
+      1703
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      750,
+      1650
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0028",
+    "region": "R8",
+    "box": [
+      900,
+      1450,
+      1300,
+      1850
+    ],
+    "center": [
+      1100,
+      1650
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1100,
+      1650
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0031",
+    "region": "R8",
+    "box": [
+      693,
+      1465,
+      1093,
+      1865
+    ],
+    "center": [
+      893,
+      1665
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1100,
+      1650
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0034",
+    "region": "R8",
+    "box": [
+      558,
+      1476,
+      958,
+      1876
+    ],
+    "center": [
+      758,
+      1676
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1100,
+      1650
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0028",
+    "region": "R9",
+    "box": [
+      1300,
+      1450,
+      1700,
+      1850
+    ],
+    "center": [
+      1500,
+      1650
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1500,
+      1650
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0031",
+    "region": "R9",
+    "box": [
+      1113,
+      1443,
+      1513,
+      1843
+    ],
+    "center": [
+      1313,
+      1643
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1500,
+      1650
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  },
+  {
+    "image_id": "0034",
+    "region": "R9",
+    "box": [
+      983,
+      1447,
+      1383,
+      1847
+    ],
+    "center": [
+      1183,
+      1647
+    ],
+    "nominal_reference_image": "0028",
+    "nominal_reference_point": [
+      1500,
+      1650
+    ],
+    "position_basis": "edge-landmark similarity fit composed with measured within-condition magnification maps"
+  }
+]

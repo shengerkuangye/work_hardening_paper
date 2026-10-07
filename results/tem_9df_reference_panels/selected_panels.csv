@@ -1,0 +1,11 @@
+﻿figure,panel,state,stem_id,channel,condition_label,source_tiff,diffraction_id,purpose,processing,interpretation_limit
+A,a,M-7.00,0009,BF-S,C2,data/9_DF/DF/0009 - 7MM 22500 x STEM BF-S.tif,0003,overview,full exported frame; proportional resizing only,morphology only
+A,b,M-7.00,0011,BF-S,C2,data/9_DF/DF/0011 - 7MM 45000 x STEM BF-S.tif,0003,curved/intersecting line contrast,full exported frame; proportional resizing only,morphology only
+A,c,M-7.00,0011,DF-S,C2,data/9_DF/DF/0011 - 7MM 45000 x STEM DF-S.tif,0003,same-acquisition complementary detector,full exported frame; proportional resizing only,morphology only
+A,d,Y-5.00,0026,BF-S,C2,data/9_DF/DF/0026 - 5MM 22500 x STEM BF-S.tif,0019,overview,full exported frame; proportional resizing only,morphology only
+A,e,Y-5.00,0028,BF-S,C2,data/9_DF/DF/0028 - 5MM 45000 x STEM BF-S.tif,0019,curved/intersecting line contrast,full exported frame; proportional resizing only,morphology only
+A,f,Y-5.00,0028,DF-S,C2,data/9_DF/DF/0028 - 5MM 45000 x STEM DF-S.tif,0019,same-acquisition complementary detector,full exported frame; proportional resizing only,morphology only
+B,a,M-7.00,0011,BF-S,C2,data/9_DF/DF/0011 - 7MM 45000 x STEM BF-S.tif,0003,condition C2; diffraction tilt mismatch,full exported frame; proportional resizing only,candidate comparison; no assigned g or b
+B,b,M-7.00,0017,BF-S,C4,data/9_DF/DF/0017 - 7MM 45000 x STEM BF-S.tif,0005,condition C4; g unindexed,full exported frame; proportional resizing only,candidate comparison; no assigned g or b
+B,c,Y-5.00,0028,BF-S,C2,data/9_DF/DF/0028 - 5MM 45000 x STEM BF-S.tif,0019,condition C2; g unindexed,full exported frame; proportional resizing only,candidate comparison; no assigned g or b
+B,d,Y-5.00,0034,BF-S,C4,data/9_DF/DF/0034 - 5MM 45000 x STEM BF-S.tif,0022,condition C4; g unindexed,full exported frame; proportional resizing only,candidate comparison; no assigned g or b

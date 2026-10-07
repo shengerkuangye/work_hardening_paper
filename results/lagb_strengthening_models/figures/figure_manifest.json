@@ -1,0 +1,63 @@
+{
+  "source": "results/lagb_strengthening_models/lagb_strengthening_models.json",
+  "models": {
+    "strict": {
+      "individual": [
+        {
+          "sample": "7d",
+          "svg": "results/lagb_strengthening_models/figures/strict/individual/strict_7d.svg"
+        },
+        {
+          "sample": "6.48d",
+          "svg": "results/lagb_strengthening_models/figures/strict/individual/strict_6.48d.svg"
+        },
+        {
+          "sample": "6.02d",
+          "svg": "results/lagb_strengthening_models/figures/strict/individual/strict_6.02d.svg"
+        },
+        {
+          "sample": "5.6d",
+          "svg": "results/lagb_strengthening_models/figures/strict/individual/strict_5.6d.svg"
+        },
+        {
+          "sample": "5.25d",
+          "svg": "results/lagb_strengthening_models/figures/strict/individual/strict_5.25d.svg"
+        },
+        {
+          "sample": "5d",
+          "svg": "results/lagb_strengthening_models/figures/strict/individual/strict_5d.svg"
+        }
+      ],
+      "montage": "results/lagb_strengthening_models/figures/strict_strengthening_montage.svg"
+    },
+    "closest": {
+      "individual": [
+        {
+          "sample": "7d",
+          "svg": "results/lagb_strengthening_models/figures/closest/individual/closest_7d.svg"
+        },
+        {
+          "sample": "6.48d",
+          "svg": "results/lagb_strengthening_models/figures/closest/individual/closest_6.48d.svg"
+        },
+        {
+          "sample": "6.02d",
+          "svg": "results/lagb_strengthening_models/figures/closest/individual/closest_6.02d.svg"
+        },
+        {
+          "sample": "5.6d",
+          "svg": "results/lagb_strengthening_models/figures/closest/individual/closest_5.6d.svg"
+        },
+        {
+          "sample": "5.25d",
+          "svg": "results/lagb_strengthening_models/figures/closest/individual/closest_5.25d.svg"
+        },
+        {
+          "sample": "5d",
+          "svg": "results/lagb_strengthening_models/figures/closest/individual/closest_5d.svg"
+        }
+      ],
+      "montage": "results/lagb_strengthening_models/figures/closest_strengthening_montage.svg"
+    }
+  }
+}

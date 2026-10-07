@@ -1,0 +1,78 @@
+{
+  "panels": [
+    {
+      "panel": "a",
+      "acquisition": "0026",
+      "source": "data/9_DF/DF/0026 - 5MM 22500 x STEM BF-S.tif",
+      "sha256": "249cabfdd8cf4caa1168d8c0fc61c281dd9711b48841b24d8d15c92e023aba07"
+    },
+    {
+      "panel": "d",
+      "acquisition": "0028",
+      "source": "data/9_DF/DF/0028 - 5MM 45000 x STEM BF-S.tif",
+      "sha256": "4da3dd8b20b142d0fb37d89339d907d2e4498e3505522267f1383da5639e0335"
+    },
+    {
+      "panel": "g",
+      "acquisition": "0019",
+      "source": "data/9_DF/DF/0019 - 5MM 520 mm Camera Ceta.tif",
+      "sha256": "386b5cc285e17e5d8c25c770bddc51129435b93e9a1b3064f7d3b41cf9d29fd0"
+    },
+    {
+      "panel": "b",
+      "acquisition": "0029",
+      "source": "data/9_DF/DF/0029 - 5MM 22500 x STEM BF-S.tif",
+      "sha256": "449f9da035562a84a5f4d72b87d960cda58005093cff4f4b9d22ecf583dc443b"
+    },
+    {
+      "panel": "e",
+      "acquisition": "0031",
+      "source": "data/9_DF/DF/0031 - 5MM 45000 x STEM BF-S.tif",
+      "sha256": "04fe1cdd3ecf650e09b2fcfbabde7d0cc4f6e0f9172fd46e29de90b696eedd74"
+    },
+    {
+      "panel": "h",
+      "acquisition": "0020",
+      "source": "data/9_DF/DF/0020 - 5MM 520 mm Camera Ceta.tif",
+      "sha256": "51c1151ebc493a5495028e105ea70a12e36397ecfd9f5149a8f5a1fba5a8ddf8"
+    },
+    {
+      "panel": "c",
+      "acquisition": "0032",
+      "source": "data/9_DF/DF/0032 - 5MM 22500 x STEM BF-S.tif",
+      "sha256": "55eb869c61ece772a54d6af86b0e30efcec5f94a3f721e969b389877b0b95e1b"
+    },
+    {
+      "panel": "f",
+      "acquisition": "0034",
+      "source": "data/9_DF/DF/0034 - 5MM 45000 x STEM BF-S.tif",
+      "sha256": "0a40c6dfa4ba13847e73e94237d67cf95be790af4ed515491661817242a58447"
+    },
+    {
+      "panel": "i",
+      "acquisition": "0022",
+      "source": "data/9_DF/DF/0022 - 5MM 520 mm Camera Ceta.tif",
+      "sha256": "532d645133b1d0698d07b517495a05c9c86e4d925f22eb94054f17d6f3ffff68"
+    }
+  ],
+  "image_processing": "Full original frames, proportional resizing only; no warping, contrast edits or synthetic defects.",
+  "markers": "L: shared foil-edge landmark; yellow polygon: measured coverage of high-magnification image in the same column.",
+  "diffraction": "Provisional systematic-row family labels; no assertion of actual selected g or single-dislocation extinction.",
+  "source_annotation_mapping": [
+    [
+      "0026",
+      "0028",
+      "0019"
+    ],
+    [
+      "0029",
+      "0031",
+      "0020"
+    ],
+    [
+      "0032",
+      "0034",
+      "0022"
+    ]
+  ]
+}

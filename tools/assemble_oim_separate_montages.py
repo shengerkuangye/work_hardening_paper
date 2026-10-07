@@ -1,4 +1,4 @@
-"""Create separate six-diameter OIM montages for IPF, PF, and ODF."""
+"""Create separate six-diameter OIM montages for IPF and PF."""
 
 from __future__ import annotations
 
@@ -210,74 +210,6 @@ def build_pf(source_root: Path, output_dir: Path) -> tuple[Path, Path]:
     return paths
 
 
-def build_odf(source_root: Path, output_dir: Path) -> tuple[Path, Path]:
-    odf_dir = source_root / "oim_odf"
-    header_height = 230
-    footer_height = 72
-    legend_width = 184
-    cell_width = PANEL_SIZE + legend_width
-    row_height = PANEL_HEADER + PANEL_SIZE
-    width = 2 * OUTER_MARGIN + 3 * cell_width + 2 * COLUMN_GAP
-    height = header_height + 2 * row_height + ROW_GAP + footer_height
-    canvas = Image.new("RGB", (width, height), "white")
-    draw = ImageDraw.Draw(canvas)
-
-    main_font = font(54, bold=True)
-    sub_font = font(30)
-    title_font = font(36)
-    letter_font = font(39, bold=True)
-    legend_font = font(22)
-    footer_font = font(26)
-
-    centered_text(draw, width // 2, 12, "OIM Ti-Hex orientation distribution function sections", main_font)
-    centered_lines(
-        draw,
-        width // 2,
-        80,
-        [
-            "Bunge Euler space: phi1=0-90 deg, PHI=0-90 deg, phi2=0-60 deg (interval 10 deg)",
-            "Harmonic series expansion: L=16, smoothing=5 deg, sample symmetry=Triclinic",
-        ],
-        sub_font,
-        line_gap=8,
-    )
-    draw.line((OUTER_MARGIN, header_height - 1, width - OUTER_MARGIN, header_height - 1), fill="#888888", width=2)
-
-    for index, sample in enumerate(SAMPLES):
-        row, column = divmod(index, 3)
-        cell_x = OUTER_MARGIN + column * (cell_width + COLUMN_GAP)
-        row_y = header_height + row * (row_height + ROW_GAP)
-        image_y = row_y + PANEL_HEADER
-        draw_panel_heading(draw, cell_x, row_y, sample, index, title_font, letter_font)
-        panel = prepare_panel(
-            odf_dir / f"oim_odf_{sample.stem}.jpg",
-            PANEL_SIZE,
-            expect_size=(1024, 1024),
-        )
-        paste_and_verify(canvas, draw, panel, cell_x, image_y)
-        panel.close()
-        bins = parse_legend(odf_dir / f"{sample.stem}.txt")
-        draw_intensity_legend(
-            draw,
-            cell_x + PANEL_SIZE + 12,
-            image_y + 112,
-            bins,
-            legend_font,
-        )
-
-    centered_text(
-        draw,
-        width // 2,
-        height - 49,
-        "Each panel retains its specimen-specific OIM auto bins; compare peak locations directly, but compare intensities using the adjacent bins.",
-        footer_font,
-        fill="#333333",
-    )
-    paths = save_outputs(canvas, output_dir, "oim_odf_six_diameters")
-    canvas.close()
-    return paths
-
-
 def parse_args() -> argparse.Namespace:
     repository = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
@@ -301,7 +233,6 @@ if __name__ == "__main__":
     results = {
         "IPF": build_ipf(source, output),
         "PF": build_pf(source, output),
-        "ODF": build_odf(source, output),
     }
     for name, (png, tiff) in results.items():
         print(f"{name} PNG: {png}")

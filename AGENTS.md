@@ -43,6 +43,8 @@ This project supports writing an academic paper focused on the work hardening me
   - cited literature.
 - If a conclusion needs EBSD-derived quantities such as KAM, GND density, grain size, misorientation, or texture intensity, check whether those data exist locally before asserting them.
 - On Windows, run MATLAB batches hidden with `Start-Process -WindowStyle Hidden` and `-nodesktop -nosplash -noFigureWindows -batch`; after exit, inventory `matlab.exe`, `MATLAB.exe`, and `MATLABWindow.exe`, clean only exact run-owned orphan `MATLABWindow.exe` PIDs after verifying launcher/main counts are zero, and never kill a pre-existing or interactive user process.
+- On Linux, run every MTEX/MATLAB batch through `tools/run_mtex_guarded.sh`; do not launch long-running work with bare `matlab`, `nohup`, or `matlab ... &`. The wrapper must keep the project lock, completion marker, hard timeout, run SID and before/after process inventory enabled. It may terminate only processes belonging to that run-owned SID and must never use global `pkill`, `killall`, or name-only cleanup.
+- Store formal MTEX outputs under a named `results/` directory and keep per-run logs, PID/SID records, completion markers and test artifacts under `.codex_tmp/`, which is not committed.
 
 ## Academic Wording Requirements
 

@@ -1,0 +1,15 @@
+parameter,value
+figure_basis,layout and content adapted from Xia et al. MSEA 975 (2026) Fig. 14
+input_variant,raw
+grain_detection_deg,2
+kam_order,1
+kam_cutoff_deg,5
+ebsd_step_um,0.5
+burgers_vector_nm,0.295
+gnd_equation,rho_GND=2*KAM/(step*b)
+kam_angle_unit_in_equation,radian
+gnd_map_max_1e14_m2,8
+gnd_hist_max_1e14_m2,12
+gnd_hist_bin_width_1e14_m2,0.1
+distribution_weighting,Ti-Hex pixel frequency
+interpretive_limit,KAM-derived GND estimate; not total dislocation density

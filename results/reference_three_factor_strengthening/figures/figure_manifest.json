@@ -1,0 +1,97 @@
+{
+  "source": "results/reference_three_factor_strengthening/reference_three_factor_strengthening.json",
+  "models": {
+    "literature": {
+      "individual": [
+        {
+          "sample": "7d",
+          "svg": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_7d.svg",
+          "png": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_7d.png",
+          "tif": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_7d.tif"
+        },
+        {
+          "sample": "6.48d",
+          "svg": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_6.48d.svg",
+          "png": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_6.48d.png",
+          "tif": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_6.48d.tif"
+        },
+        {
+          "sample": "6.02d",
+          "svg": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_6.02d.svg",
+          "png": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_6.02d.png",
+          "tif": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_6.02d.tif"
+        },
+        {
+          "sample": "5.6d",
+          "svg": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_5.6d.svg",
+          "png": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_5.6d.png",
+          "tif": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_5.6d.tif"
+        },
+        {
+          "sample": "5.25d",
+          "svg": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_5.25d.svg",
+          "png": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_5.25d.png",
+          "tif": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_5.25d.tif"
+        },
+        {
+          "sample": "5d",
+          "svg": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_5d.svg",
+          "png": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_5d.png",
+          "tif": "results/reference_three_factor_strengthening/figures/individual/reference_three_factor_5d.tif"
+        }
+      ],
+      "montage": {
+        "svg": "results/reference_three_factor_strengthening/figures/reference_three_factor_strengthening_montage.svg",
+        "png": "results/reference_three_factor_strengthening/figures/reference_three_factor_strengthening_montage.png",
+        "tif": "results/reference_three_factor_strengthening/figures/reference_three_factor_strengthening_montage.tif",
+        "pdf": "results/reference_three_factor_strengthening/figures/reference_three_factor_strengthening_montage.pdf"
+      }
+    },
+    "calibrated": {
+      "individual": [
+        {
+          "sample": "7d",
+          "svg": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_7d_calibrated.svg",
+          "png": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_7d_calibrated.png",
+          "tif": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_7d_calibrated.tif"
+        },
+        {
+          "sample": "6.48d",
+          "svg": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_6.48d_calibrated.svg",
+          "png": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_6.48d_calibrated.png",
+          "tif": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_6.48d_calibrated.tif"
+        },
+        {
+          "sample": "6.02d",
+          "svg": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_6.02d_calibrated.svg",
+          "png": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_6.02d_calibrated.png",
+          "tif": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_6.02d_calibrated.tif"
+        },
+        {
+          "sample": "5.6d",
+          "svg": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_5.6d_calibrated.svg",
+          "png": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_5.6d_calibrated.png",
+          "tif": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_5.6d_calibrated.tif"
+        },
+        {
+          "sample": "5.25d",
+          "svg": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_5.25d_calibrated.svg",
+          "png": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_5.25d_calibrated.png",
+          "tif": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_5.25d_calibrated.tif"
+        },
+        {
+          "sample": "5d",
+          "svg": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_5d_calibrated.svg",
+          "png": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_5d_calibrated.png",
+          "tif": "results/reference_three_factor_strengthening/figures/calibrated/individual/reference_three_factor_5d_calibrated.tif"
+        }
+      ],
+      "montage": {
+        "svg": "results/reference_three_factor_strengthening/figures/calibrated/reference_three_factor_strengthening_calibrated_montage.svg",
+        "png": "results/reference_three_factor_strengthening/figures/calibrated/reference_three_factor_strengthening_calibrated_montage.png",
+        "tif": "results/reference_three_factor_strengthening/figures/calibrated/reference_three_factor_strengthening_calibrated_montage.tif",
+        "pdf": "results/reference_three_factor_strengthening/figures/calibrated/reference_three_factor_strengthening_calibrated_montage.pdf"
+      }
+    }
+  }
+}

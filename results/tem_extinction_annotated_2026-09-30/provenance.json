@@ -1,0 +1,20 @@
+{
+  "purpose": "User-requested annotation and assembly of existing experimental images",
+  "c_plus_a_status": "candidate for further analysis; no unique Burgers-vector assignment",
+  "source_pixels": "full frames, embedded lossless PNG conversions; no local enhancement or synthetic reconstruction",
+  "annotation_semantics": "Panel-specific labels; not a completed extinction/visibility matrix",
+  "source_sha256": {
+    "data/9_DF/DF/0014 - 7MM 45000 x STEM BF-S.tif": "0b2ee17bdf1e0455bdcac653283c93e3bb299a78705442537e9f6cc7a533d185",
+    "data/9_DF/DF/0011 - 7MM 45000 x STEM BF-S.tif": "71a57931f3eabcc509f6202b5306ffd76956d2232f6c75ed76d5d8958072a1e0",
+    "data/9_DF/DF/0017 - 7MM 45000 x STEM BF-S.tif": "46c145d16376f485e37d39dc633baa02d27c0bd9722ec6eab86a88b72dd42959",
+    "data/9_DF/DF/0031 - 5MM 45000 x STEM BF-S.tif": "04fe1cdd3ecf650e09b2fcfbabde7d0cc4f6e0f9172fd46e29de90b696eedd74",
+    "data/9_DF/DF/0028 - 5MM 45000 x STEM BF-S.tif": "4da3dd8b20b142d0fb37d89339d907d2e4498e3505522267f1383da5639e0335",
+    "data/9_DF/DF/0034 - 5MM 45000 x STEM BF-S.tif": "0a40c6dfa4ba13847e73e94237d67cf95be790af4ed515491661817242a58447",
+    "data/9_DF/DF/0004 - 7MM 520 mm Camera Ceta.tif": "e18cb468095c65dcd828069b4c495b98a6e58419e936c9a5dca2bea279411217",
+    "data/9_DF/DF/0003 - 7MM 520 mm Camera Ceta.tif": "4a2a4934924651d6f781cc9e02f1d7a244a27fbf1d145f7d4b8d9ee5318fcd4e",
+    "data/9_DF/DF/0005 - 7MM 520 mm Camera Ceta.tif": "a52dbfd94b72b6449bd570306333a0ab9170b3641960e2f4c3545c0e3665d6d6",
+    "data/9_DF/DF/0020 - 5MM 520 mm Camera Ceta.tif": "51c1151ebc493a5495028e105ea70a12e36397ecfd9f5149a8f5a1fba5a8ddf8",
+    "data/9_DF/DF/0019 - 5MM 520 mm Camera Ceta.tif": "386b5cc285e17e5d8c25c770bddc51129435b93e9a1b3064f7d3b41cf9d29fd0",
+    "data/9_DF/DF/0022 - 5MM 520 mm Camera Ceta.tif": "532d645133b1d0698d07b517495a05c9c86e4d925f22eb94054f17d6f3ffff68"
+  }
+}

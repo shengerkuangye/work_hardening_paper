@@ -1,0 +1,30 @@
+{
+  "source_sha256": {
+    "results/mtex_grain_size_distribution_matrix/hagb_grain_size_summary.csv": "ea4f3fcc15cda08c571155d2a6cbf138bd058d863a8dba68e4a6db2f0e794423",
+    "results/mtex_grain_size_distribution_matrix/hagb_grain_size_by_grain.csv": "254f5f9512b06d63c56d265f21d9840523b7915d15295d2288b12c3617f4a353",
+    "results/mtex_grain_size_distribution_matrix/hagb_grain_size_histograms.csv": "98c260c75508323fde7ac1f3e0eaf67ae9dd2717d687a3c878f3d7da4856ba0e",
+    "results/mtex_fig6_component_gallery/montages/hagb_grain_size_six_state_montage.tif": "f38f86a5c908722c71ff85633393c473f09972ee3ba23d3ae3665baf1585661b",
+    "results/mtex_fig6_component_gallery/montages/hagb_grain_size_six_state_montage.png": "2f6ce02dccc50b5906fa4a6e237d19f0663d100ff8775b69ca9406e93cd4a97f",
+    "results/mtex_fig6_component_gallery/montages/hagb_grain_size_six_state_montage.pdf": "06859661fdf45b07bea922c0e696fbc63e2406e961344da265e9e4f54fb6ae6c",
+    "results/mtex_fig6_component_gallery/07_hagb_grain_size/hagb_grain_size_summary_used.csv": "ea4f3fcc15cda08c571155d2a6cbf138bd058d863a8dba68e4a6db2f0e794423"
+  },
+  "originals_unchanged": true,
+  "formula": "ECD_norm = ECD_observed * sqrt(nominal_diameter_mm / 7.00)",
+  "source_sample_to_nominal_diameter": {
+    "7d": 7.0,
+    "6.48d": 6.5,
+    "6.02d": 6.02,
+    "5.6d": 5.6,
+    "5.25d": 5.25,
+    "5d": 5.0
+  },
+  "bin_width_um": 2,
+  "retained_grains": 13580,
+  "assumptions": [
+    "uniform axisymmetric volume-preserving deformation",
+    "grain geometry follows macroscopic deformation"
+  ],
+  "interpretation": "Reference-geometry-normalized longitudinal-section ECD; not a measured 3D grain size.",
+  "exclusions": "No new exclusions; original >=5-pixel grain selection and boundary-touching grains retained.",
+  "validation": "All raw histograms and means reproduced; transformed lognormal parameters verified; normalized means match Table 3."
+}

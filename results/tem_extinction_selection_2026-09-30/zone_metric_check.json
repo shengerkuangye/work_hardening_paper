@@ -1,0 +1,36 @@
+[
+  {
+    "diffraction_id": "0001",
+    "fit_spots": 80,
+    "a_star_row_g_nm_inv": 3.882487253205139,
+    "0002_g_nm_inv": 4.194462811063282,
+    "angle_deg": 90.13446251173134,
+    "row_ratio_c_to_a": 1.0803545607524134,
+    "basis_a_pixels": [
+      324.24577947032645,
+      -104.89279534314768
+    ],
+    "basis_c_pixels": [
+      112.49900879206263,
+      350.5653859862828
+    ],
+    "interpretation": "Near <1-210>-type zone metric; representative basal reciprocal axis, not unique signed indices."
+  },
+  {
+    "diffraction_id": "0018",
+    "fit_spots": 80,
+    "a_star_row_g_nm_inv": 3.8997864955559995,
+    "0002_g_nm_inv": 4.232678849500691,
+    "angle_deg": 90.4578611483271,
+    "row_ratio_c_to_a": 1.08536168693441,
+    "basis_a_pixels": [
+      337.3246201159896,
+      58.19951580884043
+    ],
+    "basis_c_pixels": [
+      -66.09120286656105,
+      365.60275081165787
+    ],
+    "interpretation": "Near <1-210>-type zone metric; representative basal reciprocal axis, not unique signed indices."
+  }
+]

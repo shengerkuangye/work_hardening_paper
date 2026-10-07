@@ -1,0 +1,21 @@
+{
+  "paired_stem_acquisitions": 24,
+  "channel_records": 96,
+  "selected_panel_records": 10,
+  "tilt_close_records": 12,
+  "tilt_mismatch_records": 12,
+  "tilt_audit_threshold_deg": 0.05,
+  "threshold_note": "bookkeeping only; closeness is not proof of identical excitation or field",
+  "selected_source_sha256_unchanged": {
+    "data/9_DF/DF/0009 - 7MM 22500 x STEM BF-S.tif": "644c4e08295da0f9436709ad4b11b6d1ac55974c8f956c8904fa9a66d399f071",
+    "data/9_DF/DF/0011 - 7MM 45000 x STEM BF-S.tif": "71a57931f3eabcc509f6202b5306ffd76956d2232f6c75ed76d5d8958072a1e0",
+    "data/9_DF/DF/0011 - 7MM 45000 x STEM DF-S.tif": "b3add7e93083b1c831183a928358326289ddaaff0529d468af6ff00ea2e50c46",
+    "data/9_DF/DF/0026 - 5MM 22500 x STEM BF-S.tif": "249cabfdd8cf4caa1168d8c0fc61c281dd9711b48841b24d8d15c92e023aba07",
+    "data/9_DF/DF/0028 - 5MM 45000 x STEM BF-S.tif": "4da3dd8b20b142d0fb37d89339d907d2e4498e3505522267f1383da5639e0335",
+    "data/9_DF/DF/0028 - 5MM 45000 x STEM DF-S.tif": "7726349d826b5b8ffacf9fcf5cbd8889f295e9b3247dfa9797558ee5e11c5606",
+    "data/9_DF/DF/0017 - 7MM 45000 x STEM BF-S.tif": "46c145d16376f485e37d39dc633baa02d27c0bd9722ec6eab86a88b72dd42959",
+    "data/9_DF/DF/0034 - 5MM 45000 x STEM BF-S.tif": "0a40c6dfa4ba13847e73e94237d67cf95be790af4ed515491661817242a58447"
+  },
+  "manuscript_modified": false,
+  "raw_source_modified": false
+}
